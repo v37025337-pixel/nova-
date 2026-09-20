@@ -63,7 +63,7 @@ def finish(kernel, output, protocol, freeze, started):
         results[tid] = evaluate([{"program": memory[pid], "rows": task["train"] + task["holdout"]}], memory)["results"][0]
     write_json(output / "regression.json", results)
     events, head = checkpoint(kernel, output)
-    backup = ROOT / "state/autonomous-cycle-v1-backup.sqlite"
+    backup = ROOT / "state" / (output.name + "-backup.sqlite")
     if backup.exists():
         raise ContractError("refusing to overwrite an earlier backup")
     kernel.journal.backup(backup)

@@ -12,7 +12,7 @@
   "runtime": "nova_core.kernel.Kernel",
   "schema": "nova.release.v1",
   "source_sha256": {
-    "nova_core/__init__.py": "f86e2c0115df63304165a2557e24b56b4aa676ebe11608900587380e55d8b762",
+    "nova_core/__init__.py": "51e9c1497229a4ddb22578321681397bf4940044ec7f1febc80fd06290218572",
     "nova_core/__main__.py": "552e86184da846843b150a3d48628cd1026ea9990c863111dd6570d8560c86cb",
     "nova_core/adaptation.py": "8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796",
     "nova_core/autonomy.py": "55031be1f2f5f87920f19635c39e6aa1e2af8087b6bff5f3d41e7976d7db4c54",
@@ -29,11 +29,11 @@
     "nova_core/sandbox_worker.py": "11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96",
     "nova_core/sequence.py": "cd1ac5a145caeb9a4fa9c181aeb3bbbd021e4a59b37bbee5d2440b27081f06d2",
     "nova_core/specifications.py": "3c34a078b8500dc1f9a13ea140c85fe9df7d4294986470989aafe128841b45c3",
-    "nova_core/synthesis.py": "6a61f72491c514ec8706ff52913c679a0cee126189bc4cf3b692cf6a0a5016f7"
+    "nova_core/synthesis.py": "7e61fe88d70eaf5485a82be3b98aba1e00dd2384847d635b80b04f8dbe014e19"
   },
   "state_model": "one_runtime_one_queue_one_causal_journal",
   "verification": "tests/test_autonomy.py",
-  "verification_protocol": "experience/autonomous-cycle-v1/protocol.json",
-  "version": "0.5.0",
+  "verification_protocol": "experience/autonomous-cycle-v2/protocol.json",
+  "version": "0.5.1",
   "yado_design_lineage": "docs/yado-lineage.json"
 }
