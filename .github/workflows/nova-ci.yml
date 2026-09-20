@@ -22,3 +22,6 @@ jobs:
       - run: python scripts/verify_release.py
       - run: python -m nova_core --state /tmp/nova-ci.sqlite learn examples/three_generations.json --steps 3
       - run: python -m nova_core --state /tmp/nova-ci.sqlite verify
+      - name: Restore and replay trained generation 8
+        if: matrix.python == '3.12'
+        run: python scripts/run_development_chain.py --restore experience/development-chain-v1/journal.json --state /tmp/nova-trained-ci.sqlite

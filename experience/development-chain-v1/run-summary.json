@@ -1,0 +1,171 @@
+{
+  "active_generation": 8,
+  "engine_commit": "c233ff5c984dba5a411b484d8f401bcc4c11392f",
+  "events": 12,
+  "journal_head": "e9224850ef71ea452682460172a8b2ac6980a754223dc83448b1e66e61fe820f",
+  "limitations": [
+    "real execution on frozen metadata captured from public upstream repositories",
+    "prepared curriculum within existing expression grammar",
+    "not an independent general-intelligence benchmark",
+    "task goals and reference outputs are maintainer-authored",
+    "native programs are selected by the unchanged runtime without LLM candidate generation",
+    "this run does not implement host-engine self-rewrite or prove consciousness"
+  ],
+  "lineage": [
+    {
+      "from": 4,
+      "genome_parent_matches": true,
+      "previous_program_used": true,
+      "to": 5
+    },
+    {
+      "from": 5,
+      "genome_parent_matches": true,
+      "previous_program_used": true,
+      "to": 6
+    },
+    {
+      "from": 6,
+      "genome_parent_matches": true,
+      "previous_program_used": true,
+      "to": 7
+    },
+    {
+      "from": 7,
+      "genome_parent_matches": true,
+      "previous_program_used": true,
+      "to": 8
+    }
+  ],
+  "new_admissions": 5,
+  "new_attempts": 6,
+  "new_queries": {
+    "passed": 25,
+    "source_repositories": 5,
+    "total": 25
+  },
+  "parent_generation": 3,
+  "protocol_commit": "14b96166eff3631610ae272da24352cb29382ec0",
+  "protocol_sha256": "e7b0bd8bb133ba3546442cf8db56c977aafcb245c52a4cd7790ee11292b9bfd4",
+  "restart_and_backup_replay": {
+    "returncode": 0,
+    "seconds": 15.720010453002033,
+    "status": "PASS"
+  },
+  "runtime_changed": false,
+  "schema": "nova.development-run.v1",
+  "stages": [
+    {
+      "generation": 4,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [],
+      "program": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+      "reason": "VERIFIED_IMPROVEMENT",
+      "search_attempts": 100,
+      "status": "ADMITTED",
+      "task": "40-json-document"
+    },
+    {
+      "generation": 5,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [
+        "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00"
+      ],
+      "program": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "reason": "VERIFIED_IMPROVEMENT",
+      "search_attempts": 836,
+      "status": "ADMITTED",
+      "task": "50-package-name"
+    },
+    {
+      "generation": 6,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [
+        "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+      ],
+      "program": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+      "reason": "VERIFIED_IMPROVEMENT",
+      "search_attempts": 120,
+      "status": "ADMITTED",
+      "task": "60-uppercase-name"
+    },
+    {
+      "generation": 7,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [
+        "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+        "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996"
+      ],
+      "program": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+      "reason": "VERIFIED_IMPROVEMENT",
+      "search_attempts": 130,
+      "status": "ADMITTED",
+      "task": "70-package-record"
+    },
+    {
+      "generation": 8,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [
+        "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8"
+      ],
+      "program": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+      "reason": "VERIFIED_IMPROVEMENT",
+      "search_attempts": 140,
+      "status": "ADMITTED",
+      "task": "80-serialized-record"
+    },
+    {
+      "generation": 8,
+      "holdout": null,
+      "parents": [],
+      "program": null,
+      "reason": "SEARCH_EXHAUSTED",
+      "search_attempts": 12000,
+      "status": "WITHHOLD",
+      "task": "90-sha256-deficit-control"
+    }
+  ],
+  "status": "PASS",
+  "timings": [
+    {
+      "seconds": 0.06625668000197038,
+      "task": "40-json-document"
+    },
+    {
+      "seconds": 0.14095368299967959,
+      "task": "50-package-name"
+    },
+    {
+      "seconds": 0.18987952000316,
+      "task": "60-uppercase-name"
+    },
+    {
+      "seconds": 0.20585239499996533,
+      "task": "70-package-record"
+    },
+    {
+      "seconds": 0.3505045669990068,
+      "task": "80-serialized-record"
+    },
+    {
+      "seconds": 7.8706361609984015,
+      "task": "90-sha256-deficit-control"
+    }
+  ],
+  "total_seconds": 32.31846775699887
+}

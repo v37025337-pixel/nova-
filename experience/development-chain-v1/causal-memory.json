@@ -1,0 +1,195 @@
+{
+  "experiences": {
+    "10-trim": [
+      {
+        "causes": {
+          "gene_events": {},
+          "previous_attempt": null,
+          "task_event": 2
+        },
+        "context": "7be8ff1b993d1c87a423cd02627bec3b7045df6a458d368ab3cf225d688308c9",
+        "event": 3,
+        "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 90,
+        "status": "ADMITTED"
+      }
+    ],
+    "20-normalize": [
+      {
+        "causes": {
+          "gene_events": {
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+          },
+          "previous_attempt": null,
+          "task_event": 2
+        },
+        "context": "4cd54a7204aa9d75e25c6f664654e9c8431658d660b0828b6c96cfcb02d59e47",
+        "event": 4,
+        "memory_context": "48f1683fe447d9c4d21b1aa9ed190beedb044b8b2af5009172dcbde1449afa8d",
+        "program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 100,
+        "status": "ADMITTED"
+      }
+    ],
+    "30-record": [
+      {
+        "causes": {
+          "gene_events": {
+            "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a": 4,
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+          },
+          "previous_attempt": null,
+          "task_event": 2
+        },
+        "context": "d691134f9538bb60c060c9be9bb65b96bc625869ef3ae7c32232a1df96900f29",
+        "event": 5,
+        "memory_context": "d24cb71e6a172086528e635df833f06a45899353d2de2a276f7d4eaa5dddfee5",
+        "program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 110,
+        "status": "ADMITTED"
+      }
+    ],
+    "40-json-document": [
+      {
+        "causes": {
+          "gene_events": {},
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "1dbce7ae7a5abc43da08f56babd5d43409a08ea7c142399986aba175683ec871",
+        "event": 7,
+        "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "program": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 100,
+        "status": "ADMITTED"
+      }
+    ],
+    "50-package-name": [
+      {
+        "causes": {
+          "gene_events": {
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "9ac751b427dde9056ed1bfd53d19ad66766ee416fd80316009cbca2c05aef111",
+        "event": 8,
+        "memory_context": "50369ad20105634d053719e76a160641542e29ce0a2a6ec08cd9748b63aad541",
+        "program": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 836,
+        "status": "ADMITTED"
+      }
+    ],
+    "60-uppercase-name": [
+      {
+        "causes": {
+          "gene_events": {
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "492dc1a1a254c683cc78e72348e7eaa94e8e08108db82aa58ba6e6e5f11b6546",
+        "event": 9,
+        "memory_context": "f29d54ad5d44765e023b6e0410403f13d31f0f67041659eae19b45622e04e882",
+        "program": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 120,
+        "status": "ADMITTED"
+      }
+    ],
+    "70-package-record": [
+      {
+        "causes": {
+          "gene_events": {
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "54812115d6fe84a31b551e464542adf4ec71b7a2d7d82d595fe9e9ad1ffb66b1",
+        "event": 10,
+        "memory_context": "950415556f9b7a4c76bb7c3b9f762e45e142830a4956f2e2165b04d0140ec595",
+        "program": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 130,
+        "status": "ADMITTED"
+      }
+    ],
+    "80-serialized-record": [
+      {
+        "causes": {
+          "gene_events": {
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+            "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "aaccc5f90dceec7c72fc054d8367cc993cd88653c0371fcb5a51ac467489c0af",
+        "event": 11,
+        "memory_context": "5ac7116db54b195d11f54824121e269e807685aca5bdf4e9492c724ee8c67ad1",
+        "program": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 140,
+        "status": "ADMITTED"
+      }
+    ],
+    "90-sha256-deficit-control": [
+      {
+        "causes": {
+          "gene_events": {
+            "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": 11,
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+            "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "c5e2cf732a2fd4c1f917fd3a6a16fad48d4aed7a48185623306a76848ef42853",
+        "event": 12,
+        "memory_context": "2d66eeed3f1a52cc4c45a8176d36e3ba9a586fcdab767d2fa3b24d57fd6d1aa9",
+        "program": null,
+        "reason": "SEARCH_EXHAUSTED",
+        "search_attempts": 12000,
+        "status": "WITHHOLD"
+      }
+    ]
+  },
+  "gene_events": {
+    "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": 11,
+    "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+    "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+    "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+    "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7,
+    "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87": 5,
+    "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a": 4,
+    "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+  },
+  "schema": "nova.causal-memory.v1",
+  "task_events": {
+    "10-trim": 2,
+    "20-normalize": 2,
+    "30-record": 2,
+    "40-json-document": 6,
+    "50-package-name": 6,
+    "60-uppercase-name": 6,
+    "70-package-record": 6,
+    "80-serialized-record": 6,
+    "90-sha256-deficit-control": 6
+  }
+}
