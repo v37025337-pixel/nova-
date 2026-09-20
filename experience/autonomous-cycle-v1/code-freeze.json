@@ -1,0 +1,8 @@
+{
+  "local_commit": "14b9a2cef98c96744e85704ad302bd828e6bef7f",
+  "github_commit": "e20cdf126bba2925aca753871bf36d6644f73e61",
+  "tree_sha": "28482caa83d8aee087e70b6f1382ed3b1aea2977",
+  "tree_equality_verified": true,
+  "branch": "nova-autonomous-cycle-20260920",
+  "note": "Identical Git trees; connector commit metadata differs. Remote source freeze was published before native document reads and candidate generation."
+}

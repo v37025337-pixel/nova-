@@ -1,0 +1,36 @@
+{
+  "event": 53,
+  "freeze": "8a416cb0514d566ebbc58d07bc03198c1a1b54da26785ba5ac589e9f29e0762b",
+  "frozen": {
+    "contract": {
+      "ablation_required": true,
+      "fresh_min": 16,
+      "input_fields": [
+        "left",
+        "right"
+      ],
+      "law": "lexicographic_integer_components",
+      "output": "boolean",
+      "properties": [
+        "irreflexive",
+        "asymmetric",
+        "transitive",
+        "declared_order_law"
+      ],
+      "regression_threshold": 1,
+      "success_threshold": 1
+    },
+    "goal": "d5f0013f6e8a4818377c1436b9508a975665b3eda1b10427c9b9cff7789a1b54",
+    "parent_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+    "runtime": "de46433fa333d0d03a819e5beba22ef99a916873f0b62f05677b16c6fb0cca47",
+    "source_documents": [
+      "eccd193d829aecdfeb53db14804d7ab47559ecd65abff78e088a427edc62ea02",
+      "1f84d994de626faec44cd20296f264b72cba74e2b92a81f78b478ee0da0ac806"
+    ]
+  },
+  "goal": "auto-79de4103fcc2a60b3e2bbe9b",
+  "kind": "autonomy_step",
+  "phase": "SEARCH_FROZEN",
+  "reason": "INPUTS_AND_CRITERIA_FROZEN",
+  "status": "SEARCH_FROZEN"
+}

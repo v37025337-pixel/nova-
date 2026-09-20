@@ -1,0 +1,47 @@
+{
+  "query": "version numeric ordering specification",
+  "provider": "connected Exa search",
+  "requested_results": 12,
+  "received_results": 12,
+  "allowed_hosts": [
+    "peps.python.org",
+    "docs.python.org",
+    "packaging.python.org",
+    "www.rfc-editor.org",
+    "csrc.nist.gov",
+    "nvlpubs.nist.gov"
+  ],
+  "eligible_results": 2,
+  "filter": "public HTTPS and exact native allowed hosts; first 12 unique eligible results; literal highlights truncated to 2048 characters",
+  "attempts": [
+    {
+      "provider": "web",
+      "query": "version numeric ordering specification",
+      "eligible": 0
+    },
+    {
+      "provider": "web",
+      "query": "version numeric ordering specification with explicit site operators for the same allowed hosts",
+      "eligible": 0
+    },
+    {
+      "provider": "Exa",
+      "eligible": 2
+    }
+  ],
+  "returned_urls": [
+    "https://semver.org/spec/v2.0.0.html",
+    "https://peps.python.org/pep-0440/",
+    "https://packaging.python.org/en/latest/specifications/version-specifiers/?highlight=version",
+    "https://semver.org/",
+    "https://github.com/coreutils/coreutils/blob/master/doc/sort-version.texi",
+    "https://rpm.org/docs/latest/man/rpm-version.7",
+    "https://learn.microsoft.com/en-us/nuget/concepts/package-versioning",
+    "https://ruby-doc.org/3.2.5/stdlibs/rubygems/Gem/Version.html",
+    "https://github.com/pypa/packaging.python.org/blob/main/source/specifications/version-specifiers.rst",
+    "https://manpages.debian.org/testing/dpkg-dev/deb-version.5.en.html",
+    "https://github.com/uapi-group/specifications/blob/main/specs/version_format_specification.md",
+    "https://man7.org/linux/man-pages/man7/deb-version.7.html"
+  ],
+  "broker_fallback": "The first search backend returned only out-of-domain results; same native query retried through a second backend."
+}

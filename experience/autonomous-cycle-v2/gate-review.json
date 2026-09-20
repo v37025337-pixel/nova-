@@ -1,0 +1,134 @@
+{
+  "claim": "bounded endogenous subgoal discovery and native knowledge requests observed; autonomous capability evolution not established",
+  "gates": [
+    {
+      "evidence": "Native relation subgoal derived from an operator-originated failed permutation; maintainer-written two-law ontology. No wholly new externally discovered problem family.",
+      "id": 1,
+      "requirement": "New deficit discovered from errors, memory and external data; no operator-queued next task.",
+      "status": "PARTIAL"
+    },
+    {
+      "evidence": {
+        "artifact": "frozen-goal.json",
+        "goal_ids": [
+          "auto-79de4103fcc2a60b3e2bbe9b"
+        ]
+      },
+      "id": 2,
+      "requirement": "Native concrete goal: inputs, output property, success criterion and downstream utility.",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "artifact": "search-freeze.json",
+        "runtime_and_frozen_files_unchanged": true
+      },
+      "id": 3,
+      "requirement": "Goal, parent genome, runtime, source documents and PASS rules frozen before solution generation.",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "limit": "Representation-based routing between two implemented paths, not a general search over all change classes.",
+        "selected": [
+          "ALGORITHM_MECHANISM"
+        ]
+      },
+      "id": 4,
+      "requirement": "Native selection of program, engine policy, grammar or algorithm mechanism, with evidence.",
+      "status": "PARTIAL"
+    },
+    {
+      "evidence": {
+        "limit": "Allowed domains and I/O broker supplied by maintainer; literal documents selected by native ranking.",
+        "native_queries": [
+          "version numeric ordering specification"
+        ],
+        "sources": [
+          {
+            "journal_matches": true,
+            "raw_hash_valid": true,
+            "source_sha256": "2868757b7ed1b125ecfee4a7c6169df3736c42cc68dd1b7c8c3d81c6f22455de",
+            "text_hash_valid": true,
+            "url": "https://peps.python.org/pep-0440/"
+          },
+          {
+            "journal_matches": true,
+            "raw_hash_valid": true,
+            "source_sha256": "875b39f969dcac835b81a8c51f38018ab6445bae7c9061853ec45efb5f42ed55",
+            "text_hash_valid": true,
+            "url": "https://packaging.python.org/en/latest/specifications/version-specifiers/?highlight=version"
+          }
+        ]
+      },
+      "id": 5,
+      "requirement": "Native knowledge query/source selection; provenance and hashes; evaluation separated.",
+      "status": "PASS"
+    },
+    {
+      "evidence": {
+        "frozen_candidates": 0,
+        "outcomes": [
+          "KNOWLEDGE_NOT_EXECUTABLE_IN_CURRENT_GRAMMAR"
+        ]
+      },
+      "id": 6,
+      "requirement": "Kernel-generated executable mechanism, isolated compilation; no ready library implementation.",
+      "status": "FAIL"
+    },
+    {
+      "evidence": {
+        "fresh_cases": 0,
+        "fresh_evaluations": 0
+      },
+      "id": 7,
+      "requirement": "Fresh blind external evaluation after freeze, 100 percent, no adjustment.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": {
+        "passed": 114,
+        "skills": 19,
+        "total": 114
+      },
+      "id": 8,
+      "requirement": "All inherited G0 through G20 skills retained at 100 percent.",
+      "status": "PASS"
+    },
+    {
+      "evidence": "No new accepted mechanism was available for a causal removal experiment.",
+      "id": 9,
+      "requirement": "Removing precisely the new capability reduces new-task performance.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": {
+        "new_admissions": 0,
+        "new_generation_rollback": "NOT_RUN",
+        "separate_process_cold_replay": true
+      },
+      "id": 10,
+      "requirement": "Atomic admission, separate-process cold replay, exact previous-genome rollback.",
+      "status": "PARTIAL"
+    },
+    {
+      "evidence": "No admitted autonomous generation followed by native discovery and execution of a transfer task.",
+      "id": 11,
+      "requirement": "After restart, native discovery and execution of another task using the admitted mechanism.",
+      "status": "NOT_RUN"
+    },
+    {
+      "evidence": {
+        "accepted_autonomous_generations": 0,
+        "causal_three_generation_chain": false,
+        "required": 3
+      },
+      "id": 12,
+      "requirement": "Three consecutive generations, each causally uses its predecessor; all preceding gates met.",
+      "status": "FAIL"
+    }
+  ],
+  "schema": "nova.strict-autonomy-review.v1",
+  "status": "WITHHOLD",
+  "unit_tests_are_not_autonomy_evidence": true
+}
