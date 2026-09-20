@@ -1,0 +1,16 @@
+{
+  "action": {
+    "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT",
+    "status": "IDLE"
+  },
+  "generation": 22,
+  "genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+  "head": "aad52000975a368c5f00bbaeaefff6cde61d78a7e0a22483222fb4f90d415c1a",
+  "knowledge_documents": 5,
+  "native_call_counts": {
+    "nova_core.autonomy.propose": 1,
+    "nova_core.autonomy.relation_goal": 1,
+    "nova_core.library_evolution.transfer_goal": 1
+  },
+  "tasks": 22
+}

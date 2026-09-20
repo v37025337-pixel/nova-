@@ -1,0 +1,42 @@
+{
+  "author": "external verifier, after run; not native Nova diagnosis",
+  "checks": {
+    "active_skill_cases_pass": 192,
+    "active_skills": 21,
+    "baseline_all_packet_steps_and_restart_idle": true,
+    "cold_replay_matches_result_head": true,
+    "distinct_raw_hashes_absent_from_parent": 16,
+    "frozen_code_and_protocol_match": true,
+    "knowledge_events_exactly_match_accepted_packets": 3,
+    "literal_packet_prefixes_match_archived_bytes": 4,
+    "new_event_kinds": {
+      "knowledge": 3
+    },
+    "parent_prefix_preserved": true,
+    "primary_events": 69,
+    "primary_head": "aad52000975a368c5f00bbaeaefff6cde61d78a7e0a22483222fb4f90d415c1a",
+    "primary_journal_unchanged": true,
+    "raw_responses_verified": 16,
+    "rejected_packet_has_unique_id_and_no_journal_change": true,
+    "result_hash_chain_recomputed": "6712e7e724d61b232fddb908e5eade82d959391a889c530655d59a1a4e45552a",
+    "runtime_release_sources_match": 20,
+    "source_selection_hash_matches": true,
+    "stream_receipt_and_packet_hashes_match": true
+  },
+  "input_sizes": {
+    "accepted_literal_characters": 15966,
+    "accepted_packet_characters_with_metadata": 19355,
+    "all_raw_bytes": 255791,
+    "complete_accepted_responses": [
+      "molecular-properties",
+      "atmospheric-molecules"
+    ]
+  },
+  "limits": [
+    "Integrity verification does not demonstrate semantic understanding or autonomous goal generation.",
+    "No new candidate existed; fresh-blind capability evaluation and causal ablation were not applicable."
+  ],
+  "schema": "nova.unlabelled-stream.integrity.v1",
+  "status": "PASS",
+  "verified_at": "2026-09-20T20:36:30.234640+00:00"
+}
