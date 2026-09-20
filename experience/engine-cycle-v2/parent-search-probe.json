@@ -1,0 +1,7 @@
+{
+  "attempts": 12000,
+  "data": "training_only",
+  "program": null,
+  "selection": "training_only",
+  "task": "100-deep-normalize"
+}

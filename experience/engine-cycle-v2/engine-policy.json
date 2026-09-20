@@ -1,0 +1,30 @@
+{
+  "attempts": 12000,
+  "binary": [
+    "get",
+    "add",
+    "sub",
+    "mul",
+    "equal",
+    "less"
+  ],
+  "depth": 4,
+  "early_stop": true,
+  "id": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+  "parent": null,
+  "queue": "deficit_then_previous_cost",
+  "schema": "nova.engine-policy.v1",
+  "typed": true,
+  "unary": [
+    "upper",
+    "length",
+    "strip",
+    "parse_json",
+    "json",
+    "lower",
+    "sum",
+    "sort",
+    "keys"
+  ],
+  "unary_first": true
+}

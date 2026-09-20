@@ -1,0 +1,391 @@
+{
+  "state": {
+    "active_generation": 8,
+    "active_runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+    "active_tasks": {
+      "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+      "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+      "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+      "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+      "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+      "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+      "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+    },
+    "admissions_total": 8,
+    "attempts_total": 9,
+    "claim": "bounded_program_and_engine_policy_learning",
+    "engine_policy": null,
+    "events": 13,
+    "genome": "6c9c76cf0cc6285bba9f2f34b19e24dfb9a1c7b4ee165d65d8befcf967e42bc7",
+    "head": "808ead90d1b666c3946a7db8fda6f7e99bff07d09ca43598b95f415b193e7b92",
+    "next_task": null,
+    "programs_active": 8,
+    "queue": {
+      "10-trim": "ADMITTED",
+      "20-normalize": "ADMITTED",
+      "30-record": "ADMITTED",
+      "40-json-document": "ADMITTED",
+      "50-package-name": "ADMITTED",
+      "60-uppercase-name": "ADMITTED",
+      "70-package-record": "ADMITTED",
+      "80-serialized-record": "ADMITTED",
+      "90-sha256-deficit-control": "WAITING_FOR_NEW_MEMORY"
+    },
+    "runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+    "schema": "nova.kernel.v2",
+    "self_model": {
+      "search_attempts_total": 13626,
+      "successful_admissions": 8,
+      "withheld_attempts": 1
+    },
+    "tasks_total": 9,
+    "upgrade_required": false
+  },
+  "status": "UPGRADED",
+  "transition": {
+    "author": "maintainer",
+    "from": "2710609f9abbc4fb9534ae9b0ca2c30061bec373aedb9f136fb8173d0f5ca087",
+    "generation": 8,
+    "genome": "6c9c76cf0cc6285bba9f2f34b19e24dfb9a1c7b4ee165d65d8befcf967e42bc7",
+    "kind": "runtime_upgrade",
+    "previous_head": "e9224850ef71ea452682460172a8b2ac6980a754223dc83448b1e66e61fe820f",
+    "regression": {
+      "10-trim": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "Alice"
+          },
+          {
+            "ok": true,
+            "output": "Bob"
+          },
+          {
+            "ok": true,
+            "output": "Straße"
+          },
+          {
+            "ok": true,
+            "output": "Carol"
+          },
+          {
+            "ok": true,
+            "output": "dAVID"
+          },
+          {
+            "ok": true,
+            "output": "éva"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "20-normalize": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "ALICE"
+          },
+          {
+            "ok": true,
+            "output": "BOB"
+          },
+          {
+            "ok": true,
+            "output": "STRASSE"
+          },
+          {
+            "ok": true,
+            "output": "CAROL"
+          },
+          {
+            "ok": true,
+            "output": "DAVID"
+          },
+          {
+            "ok": true,
+            "output": "ÉVA"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "30-record": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "length": 5,
+              "name": "ALICE"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 3,
+              "name": "BOB"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 7,
+              "name": "STRASSE"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 5,
+              "name": "CAROL"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 5,
+              "name": "DAVID"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 3,
+              "name": "ÉVA"
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "40-json-document": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "name": "ajv",
+              "repository": "ajv-validator/ajv",
+              "version": "8.20.0"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "angular-srcs",
+              "repository": "angular/angular",
+              "version": "22.3.0-next.0"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "axios",
+              "repository": "axios/axios",
+              "version": "1.20.0"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "babel",
+              "repository": "babel/babel",
+              "version": "8.0.6"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "chai",
+              "repository": "chaijs/chai",
+              "version": "0.0.0-development"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "chalk",
+              "repository": "chalk/chalk",
+              "version": "6.0.0"
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "50-package-name": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "chart.js"
+          },
+          {
+            "ok": true,
+            "output": "cheerio"
+          },
+          {
+            "ok": true,
+            "output": "d3"
+          },
+          {
+            "ok": true,
+            "output": "@date-fns/root"
+          },
+          {
+            "ok": true,
+            "output": "eslint"
+          },
+          {
+            "ok": true,
+            "output": "express"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "60-uppercase-name": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "FASTIFY"
+          },
+          {
+            "ok": true,
+            "output": "HONO"
+          },
+          {
+            "ok": true,
+            "output": "DAYJS"
+          },
+          {
+            "ok": true,
+            "output": "IMMER"
+          },
+          {
+            "ok": true,
+            "output": "@JEST/MONOREPO"
+          },
+          {
+            "ok": true,
+            "output": "JQUERY"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "70-package-record": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "length": 3,
+              "name": "KOA"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 6,
+              "name": "LODASH"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 16,
+              "name": "MERMAID-MONOREPO"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 16,
+              "name": "@TYPESCRIPT/REPO"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 5,
+              "name": "MOCHA"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 6,
+              "name": "MOMENT"
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "80-serialized-record": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "{\"length\":4,\"name\":\"NOCK\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":7,\"name\":\"ZUSTAND\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":8,\"name\":\"PRETTIER\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":5,\"name\":\"RAMDA\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":5,\"name\":\"REDUX\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":6,\"name\":\"ROLLUP\"}"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      }
+    },
+    "to": {
+      "engine_author": "maintainer",
+      "engine_policy_author": "kernel_bounded_experience_conditioned_mutation",
+      "faculties": {
+        "CODE": "native_expression_synthesis_and_ast_execution",
+        "INTELLIGENCE": "experience_conditioned_verified_gene_selection",
+        "LOGIC": "contracts_deficits_and_admission_evidence",
+        "THINKING": "causal_goal_selection_and_continuation"
+      },
+      "program_author": "kernel_training_only",
+      "python": [
+        3,
+        12
+      ],
+      "runtime": "single_state_single_queue_single_journal",
+      "schema": "nova.kernel.v2",
+      "search": {
+        "attempts": 12000,
+        "depth": 3
+      },
+      "sources": {
+        "__init__.py": "b0c750095a311217132e95b6f6f494a6050ea879ec1b674ee6d8bfda853b3214",
+        "__main__.py": "4298caa0bbb8ff5dc3393eca97e38a42bb104360da27d86d686caab16ed21e0a",
+        "adaptation.py": "50a64f921a3b7c65da6529142a440ec1ea3029faef5b5a28db5c776955fc8e99",
+        "compatibility.py": "fabd482115df5ae2a19188e695e3b80e9df2e1516bae68fe442764df02e2a89a",
+        "contracts.py": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe",
+        "evaluation.py": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2",
+        "genetics.py": "bb96c69030adcffd7ea4642918c3a18e091a1860dfb6021d13d5d98073016d0a",
+        "kernel.py": "56d84a0290d95a230c4c5a02489521870057669fc4c10d1857c5d8eb423742e6",
+        "language.py": "1368b722cb49acee05dc422b5fd8adff9de4fb9fdb2aeb2e7990d87e344f7487",
+        "memory.py": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777",
+        "synthesis.py": "a7e36bc9ca027d126578668bfc9bb6997c7542ce6e4426baec5ae6e92f1a533c"
+      }
+    },
+    "verification": "full_legacy_replay_and_inherited_program_regression"
+  }
+}

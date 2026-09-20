@@ -1,0 +1,158 @@
+{
+  "checks": {
+    "cold_restart": true,
+    "engine_admitted": true,
+    "final_generation": true,
+    "fresh_queries": true,
+    "inherited_queries": true,
+    "old_search_cannot_solve_first_new_task": true,
+    "ordered_program_admissions": true,
+    "previous_program_reuse": true,
+    "rollback": true,
+    "unsupported_hash_withheld": true
+  },
+  "claim_boundary": "bounded search-policy evolution; no new primitive, external model training, internet study or arbitrary host-source rewrite",
+  "cold_restart_seconds": 34.693122498003504,
+  "cycle_seconds": 124.61808461200053,
+  "engine_training": {
+    "candidate_attempts": 599,
+    "parent_attempts": 1626,
+    "tasks": [
+      {
+        "candidate_attempts": 12,
+        "candidate_solved": true,
+        "memory": [],
+        "parent_attempts": 90,
+        "parent_solved": true,
+        "task": "10-trim"
+      },
+      {
+        "candidate_attempts": 17,
+        "candidate_solved": true,
+        "memory": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "parent_attempts": 100,
+        "parent_solved": true,
+        "task": "20-normalize"
+      },
+      {
+        "candidate_attempts": 25,
+        "candidate_solved": true,
+        "memory": [
+          "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "parent_attempts": 110,
+        "parent_solved": true,
+        "task": "30-record"
+      },
+      {
+        "candidate_attempts": 14,
+        "candidate_solved": true,
+        "memory": [],
+        "parent_attempts": 100,
+        "parent_solved": true,
+        "task": "40-json-document"
+      },
+      {
+        "candidate_attempts": 430,
+        "candidate_solved": true,
+        "memory": [
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00"
+        ],
+        "parent_attempts": 836,
+        "parent_solved": true,
+        "task": "50-package-name"
+      },
+      {
+        "candidate_attempts": 28,
+        "candidate_solved": true,
+        "memory": [
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00"
+        ],
+        "parent_attempts": 120,
+        "parent_solved": true,
+        "task": "60-uppercase-name"
+      },
+      {
+        "candidate_attempts": 30,
+        "candidate_solved": true,
+        "memory": [
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00"
+        ],
+        "parent_attempts": 130,
+        "parent_solved": true,
+        "task": "70-package-record"
+      },
+      {
+        "candidate_attempts": 43,
+        "candidate_solved": true,
+        "memory": [
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00"
+        ],
+        "parent_attempts": 140,
+        "parent_solved": true,
+        "task": "80-serialized-record"
+      }
+    ]
+  },
+  "events": 20,
+  "generation": 12,
+  "head": "7dc199de2af009abe40956ee91438adc425b61c3f014a5d7cf07894375d9e75b",
+  "inherited_queries": {
+    "passed": 25,
+    "total": 25
+  },
+  "links": [
+    {
+      "child": 11,
+      "parent": 10,
+      "used_previous_program": true
+    },
+    {
+      "child": 12,
+      "parent": 11,
+      "used_previous_program": true
+    }
+  ],
+  "new_queries": {
+    "passed": 12,
+    "total": 12
+  },
+  "parent_head": "e9224850ef71ea452682460172a8b2ac6980a754223dc83448b1e66e61fe820f",
+  "protocol_commit": "872d8cdaf493f25ac55a604a6cc53ba24a8a26aa",
+  "status": "PASS",
+  "timings": [
+    {
+      "seconds": 0.41521094699783134,
+      "task": "@engine:experience-ranked-search-v2"
+    },
+    {
+      "seconds": 0.458633109999937,
+      "task": "100-deep-normalize"
+    },
+    {
+      "seconds": 0.23996109099971363,
+      "task": "110-deep-record"
+    },
+    {
+      "seconds": 0.26152681200255756,
+      "task": "120-deep-serialized"
+    },
+    {
+      "seconds": 9.17257434000203,
+      "task": "90-sha256-deficit-control"
+    },
+    {
+      "seconds": 9.434866093997698,
+      "task": null
+    }
+  ]
+}

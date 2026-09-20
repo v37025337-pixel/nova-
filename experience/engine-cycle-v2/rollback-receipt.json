@@ -1,0 +1,404 @@
+{
+  "audit": {
+    "active_generation": 8,
+    "active_runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+    "active_tasks": {
+      "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+      "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+      "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+      "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+      "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+      "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+      "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+    },
+    "admissions_total": 12,
+    "attempts_total": 14,
+    "claim": "bounded_program_and_engine_policy_learning",
+    "engine_policy": null,
+    "events": 21,
+    "genome": "6c9c76cf0cc6285bba9f2f34b19e24dfb9a1c7b4ee165d65d8befcf967e42bc7",
+    "head": "6f92a6fb1ad2f20ac65132ad0ca23dff011863aed73000d78b244915ede63390",
+    "next_task": null,
+    "programs_active": 8,
+    "queue": {
+      "10-trim": "ADMITTED",
+      "100-deep-normalize": "EVALUATION_CONSUMED",
+      "110-deep-record": "EVALUATION_CONSUMED",
+      "120-deep-serialized": "EVALUATION_CONSUMED",
+      "20-normalize": "ADMITTED",
+      "30-record": "ADMITTED",
+      "40-json-document": "ADMITTED",
+      "50-package-name": "ADMITTED",
+      "60-uppercase-name": "ADMITTED",
+      "70-package-record": "ADMITTED",
+      "80-serialized-record": "ADMITTED",
+      "90-sha256-deficit-control": "WAITING_FOR_NEW_MEMORY",
+      "@engine:experience-ranked-search-v2": "EVALUATION_CONSUMED"
+    },
+    "runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+    "schema": "nova.kernel.v2",
+    "self_model": {
+      "search_attempts_total": 20817,
+      "successful_admissions": 12,
+      "withheld_attempts": 2
+    },
+    "status": "PASS",
+    "tasks_total": 12,
+    "upgrade_required": false,
+    "verification": "full_deterministic_semantic_replay"
+  },
+  "event": {
+    "from": 12,
+    "kind": "rollback",
+    "target": 8
+  },
+  "head": "6f92a6fb1ad2f20ac65132ad0ca23dff011863aed73000d78b244915ede63390",
+  "queries": [
+    {
+      "expected": {
+        "name": "socket.io",
+        "repository": "socketio/socket.io",
+        "version": null
+      },
+      "input": {
+        "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+        "field": "name"
+      },
+      "output": {
+        "name": "socket.io",
+        "repository": "socketio/socket.io",
+        "version": null
+      },
+      "passed": true,
+      "source": "socketio/socket.io",
+      "task": "40-json-document"
+    },
+    {
+      "expected": "socket.io",
+      "input": {
+        "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+        "field": "name"
+      },
+      "output": "socket.io",
+      "passed": true,
+      "source": "socketio/socket.io",
+      "task": "50-package-name"
+    },
+    {
+      "expected": "SOCKET.IO",
+      "input": {
+        "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+        "field": "name"
+      },
+      "output": "SOCKET.IO",
+      "passed": true,
+      "source": "socketio/socket.io",
+      "task": "60-uppercase-name"
+    },
+    {
+      "expected": {
+        "length": 9,
+        "name": "SOCKET.IO"
+      },
+      "input": {
+        "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+        "field": "name"
+      },
+      "output": {
+        "length": 9,
+        "name": "SOCKET.IO"
+      },
+      "passed": true,
+      "source": "socketio/socket.io",
+      "task": "70-package-record"
+    },
+    {
+      "expected": "{\"length\":9,\"name\":\"SOCKET.IO\"}",
+      "input": {
+        "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+        "field": "name"
+      },
+      "output": "{\"length\":9,\"name\":\"SOCKET.IO\"}",
+      "passed": true,
+      "source": "socketio/socket.io",
+      "task": "80-serialized-record"
+    },
+    {
+      "expected": {
+        "name": "svelte-monorepo",
+        "repository": "sveltejs/svelte",
+        "version": "0.0.1"
+      },
+      "input": {
+        "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+        "field": "name"
+      },
+      "output": {
+        "name": "svelte-monorepo",
+        "repository": "sveltejs/svelte",
+        "version": "0.0.1"
+      },
+      "passed": true,
+      "source": "sveltejs/svelte",
+      "task": "40-json-document"
+    },
+    {
+      "expected": "svelte-monorepo",
+      "input": {
+        "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+        "field": "name"
+      },
+      "output": "svelte-monorepo",
+      "passed": true,
+      "source": "sveltejs/svelte",
+      "task": "50-package-name"
+    },
+    {
+      "expected": "SVELTE-MONOREPO",
+      "input": {
+        "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+        "field": "name"
+      },
+      "output": "SVELTE-MONOREPO",
+      "passed": true,
+      "source": "sveltejs/svelte",
+      "task": "60-uppercase-name"
+    },
+    {
+      "expected": {
+        "length": 15,
+        "name": "SVELTE-MONOREPO"
+      },
+      "input": {
+        "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+        "field": "name"
+      },
+      "output": {
+        "length": 15,
+        "name": "SVELTE-MONOREPO"
+      },
+      "passed": true,
+      "source": "sveltejs/svelte",
+      "task": "70-package-record"
+    },
+    {
+      "expected": "{\"length\":15,\"name\":\"SVELTE-MONOREPO\"}",
+      "input": {
+        "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+        "field": "name"
+      },
+      "output": "{\"length\":15,\"name\":\"SVELTE-MONOREPO\"}",
+      "passed": true,
+      "source": "sveltejs/svelte",
+      "task": "80-serialized-record"
+    },
+    {
+      "expected": {
+        "name": "root",
+        "repository": "TanStack/query",
+        "version": null
+      },
+      "input": {
+        "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+        "field": "name"
+      },
+      "output": {
+        "name": "root",
+        "repository": "TanStack/query",
+        "version": null
+      },
+      "passed": true,
+      "source": "TanStack/query",
+      "task": "40-json-document"
+    },
+    {
+      "expected": "root",
+      "input": {
+        "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+        "field": "name"
+      },
+      "output": "root",
+      "passed": true,
+      "source": "TanStack/query",
+      "task": "50-package-name"
+    },
+    {
+      "expected": "ROOT",
+      "input": {
+        "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+        "field": "name"
+      },
+      "output": "ROOT",
+      "passed": true,
+      "source": "TanStack/query",
+      "task": "60-uppercase-name"
+    },
+    {
+      "expected": {
+        "length": 4,
+        "name": "ROOT"
+      },
+      "input": {
+        "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+        "field": "name"
+      },
+      "output": {
+        "length": 4,
+        "name": "ROOT"
+      },
+      "passed": true,
+      "source": "TanStack/query",
+      "task": "70-package-record"
+    },
+    {
+      "expected": "{\"length\":4,\"name\":\"ROOT\"}",
+      "input": {
+        "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+        "field": "name"
+      },
+      "output": "{\"length\":4,\"name\":\"ROOT\"}",
+      "passed": true,
+      "source": "TanStack/query",
+      "task": "80-serialized-record"
+    },
+    {
+      "expected": {
+        "name": "commander",
+        "repository": "tj/commander.js",
+        "version": "15.0.0"
+      },
+      "input": {
+        "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+        "field": "name"
+      },
+      "output": {
+        "name": "commander",
+        "repository": "tj/commander.js",
+        "version": "15.0.0"
+      },
+      "passed": true,
+      "source": "tj/commander.js",
+      "task": "40-json-document"
+    },
+    {
+      "expected": "commander",
+      "input": {
+        "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+        "field": "name"
+      },
+      "output": "commander",
+      "passed": true,
+      "source": "tj/commander.js",
+      "task": "50-package-name"
+    },
+    {
+      "expected": "COMMANDER",
+      "input": {
+        "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+        "field": "name"
+      },
+      "output": "COMMANDER",
+      "passed": true,
+      "source": "tj/commander.js",
+      "task": "60-uppercase-name"
+    },
+    {
+      "expected": {
+        "length": 9,
+        "name": "COMMANDER"
+      },
+      "input": {
+        "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+        "field": "name"
+      },
+      "output": {
+        "length": 9,
+        "name": "COMMANDER"
+      },
+      "passed": true,
+      "source": "tj/commander.js",
+      "task": "70-package-record"
+    },
+    {
+      "expected": "{\"length\":9,\"name\":\"COMMANDER\"}",
+      "input": {
+        "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+        "field": "name"
+      },
+      "output": "{\"length\":9,\"name\":\"COMMANDER\"}",
+      "passed": true,
+      "source": "tj/commander.js",
+      "task": "80-serialized-record"
+    },
+    {
+      "expected": {
+        "name": "uuid",
+        "repository": "uuidjs/uuid",
+        "version": "14.0.2"
+      },
+      "input": {
+        "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+        "field": "name"
+      },
+      "output": {
+        "name": "uuid",
+        "repository": "uuidjs/uuid",
+        "version": "14.0.2"
+      },
+      "passed": true,
+      "source": "uuidjs/uuid",
+      "task": "40-json-document"
+    },
+    {
+      "expected": "uuid",
+      "input": {
+        "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+        "field": "name"
+      },
+      "output": "uuid",
+      "passed": true,
+      "source": "uuidjs/uuid",
+      "task": "50-package-name"
+    },
+    {
+      "expected": "UUID",
+      "input": {
+        "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+        "field": "name"
+      },
+      "output": "UUID",
+      "passed": true,
+      "source": "uuidjs/uuid",
+      "task": "60-uppercase-name"
+    },
+    {
+      "expected": {
+        "length": 4,
+        "name": "UUID"
+      },
+      "input": {
+        "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+        "field": "name"
+      },
+      "output": {
+        "length": 4,
+        "name": "UUID"
+      },
+      "passed": true,
+      "source": "uuidjs/uuid",
+      "task": "70-package-record"
+    },
+    {
+      "expected": "{\"length\":4,\"name\":\"UUID\"}",
+      "input": {
+        "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+        "field": "name"
+      },
+      "output": "{\"length\":4,\"name\":\"UUID\"}",
+      "passed": true,
+      "source": "uuidjs/uuid",
+      "task": "80-serialized-record"
+    }
+  ]
+}

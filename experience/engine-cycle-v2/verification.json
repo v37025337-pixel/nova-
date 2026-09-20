@@ -1,0 +1,27 @@
+{
+  "commit_tested": "872d8cdaf493f25ac55a604a6cc53ba24a8a26aa",
+  "legacy_g8_replay": {
+    "expected_head": "e9224850ef71ea452682460172a8b2ac6980a754223dc83448b1e66e61fe820f",
+    "result": "PASS"
+  },
+  "release_manifest": {
+    "command": "python scripts/verify_release.py",
+    "exit_code": 0,
+    "source_files": 11
+  },
+  "runtime_sources_sha256": "86df2b12af2d04dc6a38585e9c1c5afae3cbffb1d65032147a73333ab486514d",
+  "status": "PASS",
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "tests": 46
+  },
+  "wheel": {
+    "isolated_install_directory": "/tmp/nova-engine-installed",
+    "learned_generations": 3,
+    "run_outside_repository": true,
+    "semantic_replay": "PASS",
+    "sha256": "1e994fd04f5febb40032b5078e9455d4659e1095e86ee5db51402cdf4b33cd7e",
+    "version": "0.2.0"
+  }
+}

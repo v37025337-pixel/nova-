@@ -25,3 +25,6 @@ jobs:
       - name: Restore and replay trained generation 8
         if: matrix.python == '3.12'
         run: python scripts/run_development_chain.py --restore experience/development-chain-v1/journal.json --state /tmp/nova-trained-ci.sqlite
+      - name: Restore and replay evolved generation 12
+        if: matrix.python == '3.12'
+        run: python scripts/run_development_chain.py --restore experience/engine-cycle-v2/journal.json --state /tmp/nova-evolved-ci.sqlite
