@@ -1,0 +1,70 @@
+{
+  "authorship": {
+    "goal_implementation_and_admission": "must originate in native runtime; absent outputs remain absent",
+    "protocol_observer_and_diagnosis": "maintainer",
+    "runtime": "unchanged NOVA 0.2"
+  },
+  "baseline_checks": [
+    "Exact parent journal and all 20 events retained.",
+    "Full deterministic semantic replay during restore and cold worker startup.",
+    "Regression of every active task across its existing train and holdout, separately labelled baseline evidence."
+  ],
+  "entrypoint": {
+    "call": "Kernel.develop(steps=1)",
+    "forced_retries": 0,
+    "new_tasks": 0,
+    "stop_on_idle": true,
+    "task_id_argument": null
+  },
+  "fresh_blind_contract": {
+    "coverage_required": [
+      "UTF-8 text",
+      "empty strings",
+      "multi-block inputs",
+      "padding boundaries",
+      "embedded zero bytes in encoded text"
+    ],
+    "if_no_native_candidate": "Do not construct, evaluate or claim a hidden suite.",
+    "old_examples": "Existing SHA-256 examples and holdout never count as fresh blind.",
+    "retries": "One frozen candidate; no adjustment from holdout outcomes.",
+    "separation": "New inputs and oracle belong only to an isolated verifier; no access from candidate generation or its execution environment.",
+    "timing": "After a genuinely native implementation is frozen and compile/sandbox validated."
+  },
+  "no_solution_injection": [
+    "No ready SHA-256 implementation, pseudocode translation, operation-specific template, external LLM candidate, imported wrapper, hash-table answer lookup or native task selection by the observer.",
+    "The existing contracts.digest uses SHA-256 for identity and journal integrity; observer use of it is not a generated SHA-256 capability."
+  ],
+  "parent_commit": "2abd90abccd93c6a078968d5c9b573fdeb9be11c",
+  "parent_generation": 12,
+  "parent_head": "7dc199de2af009abe40956ee91438adc425b61c3f014a5d7cf07894375d9e75b",
+  "parent_journal": "experience/engine-cycle-v2/journal.json",
+  "pass_contract": "Generation 13 requires all 12 native gates with real evidence. Successful baseline replay, program admission, engine-policy admission or verifier tests cannot substitute for grammar evolution.",
+  "python": [
+    3,
+    12
+  ],
+  "required_gates": [
+    "native_deficit_selection",
+    "native_missing_primitive_diagnosis",
+    "native_primitive_implementation",
+    "candidate_compile",
+    "candidate_sandbox",
+    "fresh_hidden_holdout",
+    "candidate_full_regression",
+    "causal_ablation",
+    "genome_admission",
+    "post_admission_restart",
+    "post_admission_replay",
+    "native_next_goal_selection"
+  ],
+  "result_policy": {
+    "ERROR": "Invalid setup, altered sources/protocol, bad replay or unexpected state mutation.",
+    "PASS": "Unavailable to this entry-only probe; requires a complete native capability pipeline and a new protocol.",
+    "WITHHOLD": "A required native transition was not reached; G12 remains active."
+  },
+  "runtime_sources_sha256": "86df2b12af2d04dc6a38585e9c1c5afae3cbffb1d65032147a73333ab486514d",
+  "schema": "nova.grammar-challenge.protocol.v1",
+  "scope": "First necessary native-entry gate on the unchanged G12 runtime; the complete capability generator/sandbox/admission pipeline is not implemented in this observer. Stop at the first unavailable native transition.",
+  "target_for_observer_only": "90-sha256-deficit-control",
+  "target_generation_if_all_gates_pass": 13
+}
