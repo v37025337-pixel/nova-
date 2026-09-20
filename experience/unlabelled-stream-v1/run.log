@@ -1,0 +1,9 @@
+{"stage": "replaying_G22", "parent_head": "aad52000975a368c5f00bbaeaefff6cde61d78a7e0a22483222fb4f90d415c1a"}
+{"stage": "baseline", "status": "IDLE", "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT"}
+{"stage": "packet", "packet": 1, "ingress": "ACCEPTED", "knowledge_count": 6, "action": {"status": "IDLE", "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT"}}
+{"stage": "packet", "packet": 2, "ingress": "ACCEPTED", "knowledge_count": 7, "action": {"status": "IDLE", "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT"}}
+{"stage": "packet", "packet": 3, "ingress": "ACCEPTED", "knowledge_count": 8, "action": {"status": "IDLE", "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT"}}
+{"stage": "packet", "packet": 4, "ingress": "REJECTED", "knowledge_count": 8, "action": {"status": "IDLE", "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT"}}
+{"stage": "run_complete", "selection_verdict": "WITHHOLD_NO_NATIVE_DEFICIT", "accepted_packets": 3, "rejected_packets": 1, "delivered_coverage": {"successful_unique_responses": 12, "domains": 6, "formats": 3}, "new_admissions": 0, "regression": {"passed": 192, "total": 192, "skills": 21}}
+SEPARATE_PROCESS_REPLAY
+{"stage": "cold_replay", "status": "PASS", "next_action": {"status": "IDLE", "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT"}}

@@ -1,0 +1,116 @@
+[
+  {
+    "action": {
+      "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT",
+      "status": "IDLE"
+    },
+    "after_head": "3188866fc7970d090f99a53208cdaa9db654320df562ecc354632342f4ee9875",
+    "before_head": "aad52000975a368c5f00bbaeaefff6cde61d78a7e0a22483222fb4f90d415c1a",
+    "before_knowledge_count": 5,
+    "generation": 22,
+    "genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+    "ingress": "ACCEPTED",
+    "knowledge_count": 6,
+    "native_call_counts": {
+      "nova_core.autonomy.propose": 1,
+      "nova_core.autonomy.relation_goal": 1,
+      "nova_core.library_evolution.transfer_goal": 1
+    },
+    "packet": 1,
+    "receipt": {
+      "digest": "ab781dec798cbf9a3dee45476a1ab6cd2089e2d73cf05d1e6c3793a05bcf913a",
+      "registered": "unlabelled-packet-1-92ed9e9da946d0d60425"
+    },
+    "source_ids": [
+      "earthquakes-json",
+      "space-weather-forecast",
+      "plant-taxonomy",
+      "population"
+    ]
+  },
+  {
+    "action": {
+      "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT",
+      "status": "IDLE"
+    },
+    "after_head": "663465189ab47ff81218afc85776fc937795fb8a9d82c377340beb44b72501de",
+    "before_head": "3188866fc7970d090f99a53208cdaa9db654320df562ecc354632342f4ee9875",
+    "before_knowledge_count": 6,
+    "generation": 22,
+    "genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+    "ingress": "ACCEPTED",
+    "knowledge_count": 7,
+    "native_call_counts": {
+      "nova_core.autonomy.propose": 1,
+      "nova_core.autonomy.relation_goal": 1,
+      "nova_core.library_evolution.transfer_goal": 1
+    },
+    "packet": 2,
+    "receipt": {
+      "digest": "8d57a8b9175f10d43415dbeaf113b8226531315578e2a01312577baa936f340f",
+      "registered": "unlabelled-packet-2-fec6c40a21fa2ca800d7"
+    },
+    "source_ids": [
+      "molecular-properties",
+      "sqlite-repository",
+      "earthquakes-csv",
+      "solar-radio-flux"
+    ]
+  },
+  {
+    "action": {
+      "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT",
+      "status": "IDLE"
+    },
+    "after_head": "6712e7e724d61b232fddb908e5eade82d959391a889c530655d59a1a4e45552a",
+    "before_head": "663465189ab47ff81218afc85776fc937795fb8a9d82c377340beb44b72501de",
+    "before_knowledge_count": 7,
+    "generation": 22,
+    "genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+    "ingress": "ACCEPTED",
+    "knowledge_count": 8,
+    "native_call_counts": {
+      "nova_core.autonomy.propose": 1,
+      "nova_core.autonomy.relation_goal": 1,
+      "nova_core.library_evolution.transfer_goal": 1
+    },
+    "packet": 3,
+    "receipt": {
+      "digest": "c412c08cf10634ee6e8490cb06b7d53b2409aa95aabcd528f8a1abcd124d0f6e",
+      "registered": "unlabelled-packet-3-660937801d41c6655b16"
+    },
+    "source_ids": [
+      "animal-taxonomy",
+      "gdp",
+      "atmospheric-molecules",
+      "xarray-package"
+    ]
+  },
+  {
+    "action": {
+      "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT",
+      "status": "IDLE"
+    },
+    "after_head": "6712e7e724d61b232fddb908e5eade82d959391a889c530655d59a1a4e45552a",
+    "before_head": "6712e7e724d61b232fddb908e5eade82d959391a889c530655d59a1a4e45552a",
+    "before_knowledge_count": 8,
+    "error": "ContractError",
+    "generation": 22,
+    "genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+    "ingress": "REJECTED",
+    "knowledge_count": 8,
+    "native_call_counts": {
+      "nova_core.autonomy.propose": 1,
+      "nova_core.autonomy.relation_goal": 1,
+      "nova_core.library_evolution.transfer_goal": 1
+    },
+    "packet": 4,
+    "reason": "duplicate knowledge identity or knowledge budget",
+    "source_ids": [
+      "earthquakes-xml",
+      "space-weather-scales",
+      "bird-taxonomy",
+      "numpy-repository"
+    ]
+  }
+]

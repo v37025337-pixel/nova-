@@ -1,0 +1,68 @@
+{
+  "accepted_packets": 3,
+  "active_generation": 22,
+  "cold_replay": "PASS",
+  "completed_at": "2026-09-20T20:30:43.928229+00:00",
+  "coverage_threshold_met": true,
+  "delivered_coverage": {
+    "domains": 6,
+    "formats": 3,
+    "successful_unique_responses": 12
+  },
+  "delivered_source_ids": [
+    "animal-taxonomy",
+    "atmospheric-molecules",
+    "earthquakes-csv",
+    "earthquakes-json",
+    "gdp",
+    "molecular-properties",
+    "plant-taxonomy",
+    "population",
+    "solar-radio-flux",
+    "space-weather-forecast",
+    "sqlite-repository",
+    "xarray-package"
+  ],
+  "events": 72,
+  "final_knowledge_count": 8,
+  "genome_unchanged": true,
+  "head": "6712e7e724d61b232fddb908e5eade82d959391a889c530655d59a1a4e45552a",
+  "historical_prefix_preserved": true,
+  "http_attempts": 16,
+  "http_successes": 16,
+  "initial_knowledge_count": 5,
+  "limits": [
+    "bounded excerpts, not whole documents or all of the internet",
+    "retrieval is fresh; source records may describe historical periods",
+    "source selection and transport are operator-supplied",
+    "stored knowledge is not evidence of semantic understanding"
+  ],
+  "native_diagnosis": null,
+  "native_goals": [],
+  "new_admissions": 0,
+  "new_operator_task_events": 0,
+  "operator_analysis": {
+    "author": "external verifier, not Nova",
+    "evidence": [
+      "native call traces in observations.json",
+      "unchanged autonomy.py relation_goal and library_evolution.py transfer_goal",
+      "capability.py validate_knowledge"
+    ],
+    "finding": "goal discovery reads historical failed tasks and admitted transfer records; newly stored raw knowledge is not an input to either goal constructor",
+    "ingress_limit": "knowledge budget is eight documents; G22 already stores five"
+  },
+  "regression": {
+    "passed": 192,
+    "skills": 21,
+    "total": 192
+  },
+  "rejected_packets": 1,
+  "restart_selection": {
+    "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT",
+    "status": "IDLE"
+  },
+  "runtime_unchanged": true,
+  "schema": "nova.unlabelled-stream.result.v1",
+  "selection_verdict": "WITHHOLD_NO_NATIVE_DEFICIT",
+  "status": "WITHHOLD_NO_NATIVE_DEFICIT"
+}

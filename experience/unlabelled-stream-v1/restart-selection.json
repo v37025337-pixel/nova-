@@ -1,0 +1,11 @@
+{
+  "action": {
+    "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT",
+    "status": "IDLE"
+  },
+  "native_call_counts": {
+    "nova_core.autonomy.propose": 1,
+    "nova_core.autonomy.relation_goal": 1,
+    "nova_core.library_evolution.transfer_goal": 1
+  }
+}

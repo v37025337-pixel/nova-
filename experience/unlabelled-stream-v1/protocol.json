@@ -1,0 +1,89 @@
+{
+  "answer_labels": false,
+  "controls": [
+    "baseline native step on exact G22 without new data",
+    "native step after every accepted or rejected packet",
+    "no new operator task events",
+    "goal and genome changes checked against exact parent",
+    "full active-skill regression",
+    "separate-process semantic replay of full result journal"
+  ],
+  "frozen_files": [
+    "scripts/run_unlabelled_stream.py",
+    "experience/unlabelled-stream-v1/sources.json",
+    "canonical/release.json",
+    "nova_core/__init__.py",
+    "nova_core/__main__.py",
+    "nova_core/adaptation.py",
+    "nova_core/autonomy.py",
+    "nova_core/capability.py",
+    "nova_core/compatibility.py",
+    "nova_core/contracts.py",
+    "nova_core/evaluation.py",
+    "nova_core/extensions.py",
+    "nova_core/genetics.py",
+    "nova_core/isolation.py",
+    "nova_core/kernel.py",
+    "nova_core/language.py",
+    "nova_core/library_evolution.py",
+    "nova_core/memory.py",
+    "nova_core/python_tools.py",
+    "nova_core/sandbox_worker.py",
+    "nova_core/sequence.py",
+    "nova_core/specifications.py",
+    "nova_core/synthesis.py"
+  ],
+  "goal_acceptance": {
+    "evidence": "at least three distinct observed instances from at least two fresh source URLs; repeated copies are not independent evidence",
+    "must_be_emitted_by": "unchanged Kernel.step",
+    "novel_vs_parent_goals": true,
+    "operator_named_deficit_counts_as_native": false,
+    "requires": [
+      "concrete failure or falsifiable self-prediction",
+      "native ranking and selection of the repeated deficit",
+      "verifiable goal with inputs, expected property, strict success threshold and utility",
+      "references to new source identities or hashes"
+    ]
+  },
+  "ingress": "existing Kernel.study, four mixed-source packets followed by Kernel.step",
+  "limits": [
+    "bounded excerpts, not whole documents or all of the internet",
+    "retrieval is fresh; source records may describe historical periods",
+    "source selection and transport are operator-supplied",
+    "stored knowledge is not evidence of semantic understanding"
+  ],
+  "minimum_delivered_coverage": {
+    "domains": 5,
+    "formats": 3,
+    "successful_unique_responses": 8
+  },
+  "packetization": {
+    "excerpt": "first 1500 Unicode characters of decoded original response, no field selection or transformation",
+    "max_document_characters": 8192,
+    "metadata": "source ID, URL, format, raw SHA-256 and observed retrieval time; no questions, objectives or evaluative labels",
+    "preserve_existing_knowledge": true,
+    "retry_rejected_ingress": false,
+    "sources_per_packet": 4,
+    "width": 32,
+    "width_reason": "existing knowledge envelope requires a word-width field; it supplies no task, oracle or data interpretation"
+  },
+  "parent_commit": "ce5f6f754a87990bdcd2d6e4d675a85cf4f12663",
+  "parent_generation": 22,
+  "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+  "parent_head": "aad52000975a368c5f00bbaeaefff6cde61d78a7e0a22483222fb4f90d415c1a",
+  "parent_journal": "experience/python-learning-v1/journal.json",
+  "runtime_changes": false,
+  "runtime_sha256": "262f4df9cb2358acfd732410cfadf395cdb904a055f33bf29abd2eafaec9f2a7",
+  "schema": "nova.unlabelled-stream.protocol.v1",
+  "sources_sha256": "d01aa30b261448f4a82d073fecf8c4b0b68a6b80e098bfbbf7daac067781eb82",
+  "stop": "four fixed packets or first GOAL_FROZEN; no candidate generation or hidden answers in this experiment",
+  "task_registration": false,
+  "transport": {
+    "attempts_per_source": 1,
+    "concurrency": 3,
+    "https_get_only": true,
+    "max_response_bytes": 2000000,
+    "source_selection": "operator-selected broad primary public APIs, fixed before fetch; no content-dependent substitutions",
+    "timeout_seconds": 20
+  }
+}
