@@ -1,0 +1,73 @@
+{
+  "active_generation": 12,
+  "baseline_journal_unchanged": true,
+  "baseline_regression": {
+    "passed": 66,
+    "tasks": 11,
+    "total": 66
+  },
+  "claim": "entry gate not passed; no grammar evolution and no generation 13",
+  "events": 20,
+  "evolution_verdict": "WITHHOLD",
+  "execution_status": "COMPLETED",
+  "first_unmet_gate": "native_deficit_selection",
+  "fresh_hidden_cases_evaluated": 0,
+  "gates": [
+    {
+      "gate": "native_deficit_selection",
+      "status": "BLOCKED"
+    },
+    {
+      "gate": "native_missing_primitive_diagnosis",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "native_primitive_implementation",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "candidate_compile",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "candidate_sandbox",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "fresh_hidden_holdout",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "candidate_full_regression",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "causal_ablation",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "genome_admission",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "post_admission_restart",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "post_admission_replay",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "native_next_goal_selection",
+      "status": "NOT_REACHED"
+    }
+  ],
+  "native_primitive_candidates": 0,
+  "native_result_type": "IDLE",
+  "native_selected_task": null,
+  "protocol_commit": "29da1b30bc91c2efe2fd60adb5aed3e170e9b5df",
+  "runtime_sources_sha256": "86df2b12af2d04dc6a38585e9c1c5afae3cbffb1d65032147a73333ab486514d",
+  "schema": "nova.grammar-challenge-result.v1",
+  "seconds": 50.487551827998686,
+  "state_head": "7dc199de2af009abe40956ee91438adc425b61c3f014a5d7cf07894375d9e75b"
+}

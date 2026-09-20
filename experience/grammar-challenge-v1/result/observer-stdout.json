@@ -1,0 +1,1048 @@
+{
+  "after": {
+    "active_generation": 12,
+    "active_runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+    "active_tasks": {
+      "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+      "100-deep-normalize": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+      "110-deep-record": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+      "120-deep-serialized": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+      "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+      "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+      "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+      "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+      "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+      "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+    },
+    "admissions_total": 12,
+    "attempts_total": 14,
+    "claim": "bounded_program_and_engine_policy_learning",
+    "engine_policy": {
+      "attempts": 12000,
+      "binary": [
+        "get",
+        "add",
+        "sub",
+        "mul",
+        "equal",
+        "less"
+      ],
+      "depth": 4,
+      "early_stop": true,
+      "id": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+      "parent": null,
+      "queue": "deficit_then_previous_cost",
+      "schema": "nova.engine-policy.v1",
+      "typed": true,
+      "unary": [
+        "upper",
+        "length",
+        "strip",
+        "parse_json",
+        "json",
+        "lower",
+        "sum",
+        "sort",
+        "keys"
+      ],
+      "unary_first": true
+    },
+    "events": 20,
+    "genome": "5758e10360b3a7e16862e75d0738c06bb959f819022f54287230f0fc5ff32591",
+    "head": "7dc199de2af009abe40956ee91438adc425b61c3f014a5d7cf07894375d9e75b",
+    "next_task": null,
+    "programs_active": 11,
+    "queue": {
+      "10-trim": "ADMITTED",
+      "100-deep-normalize": "ADMITTED",
+      "110-deep-record": "ADMITTED",
+      "120-deep-serialized": "ADMITTED",
+      "20-normalize": "ADMITTED",
+      "30-record": "ADMITTED",
+      "40-json-document": "ADMITTED",
+      "50-package-name": "ADMITTED",
+      "60-uppercase-name": "ADMITTED",
+      "70-package-record": "ADMITTED",
+      "80-serialized-record": "ADMITTED",
+      "90-sha256-deficit-control": "WAITING_FOR_NEW_MEMORY",
+      "@engine:experience-ranked-search-v2": "ADMITTED"
+    },
+    "runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+    "schema": "nova.kernel.v2",
+    "self_model": {
+      "search_attempts_total": 20817,
+      "successful_admissions": 12,
+      "withheld_attempts": 2
+    },
+    "tasks_total": 12,
+    "upgrade_required": false
+  },
+  "baseline_preserved": true,
+  "baseline_regression": {
+    "10-trim": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": "Alice"
+        },
+        {
+          "ok": true,
+          "output": "Bob"
+        },
+        {
+          "ok": true,
+          "output": "Straße"
+        },
+        {
+          "ok": true,
+          "output": "Carol"
+        },
+        {
+          "ok": true,
+          "output": "dAVID"
+        },
+        {
+          "ok": true,
+          "output": "éva"
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "100-deep-normalize": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": "\"ASTER\""
+        },
+        {
+          "ok": true,
+          "output": "\"BEGONIA\""
+        },
+        {
+          "ok": true,
+          "output": "\"CROCUS\""
+        },
+        {
+          "ok": true,
+          "output": "\"DÁLIA\""
+        },
+        {
+          "ok": true,
+          "output": "\"ÉDELWEISS\""
+        },
+        {
+          "ok": true,
+          "output": "\"ΙΡΙΔΑ\""
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "110-deep-record": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": {
+            "length": 4,
+            "name": "FERN"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 8,
+            "name": "GARDENIA"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 7,
+            "name": "HEATHER"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 6,
+            "name": "JASMIN"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 4,
+            "name": "KÁLA"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 5,
+            "name": "ЛИЛИЯ"
+          }
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "120-deep-serialized": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": "{\"length\":8,\"name\":\"MAGNOLIA\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":9,\"name\":\"NARCISSUS\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":6,\"name\":\"ORCHID\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":7,\"name\":\"PIVOŇKA\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":6,\"name\":\"QUINCE\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":4,\"name\":\"РОЗА\"}"
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "20-normalize": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": "ALICE"
+        },
+        {
+          "ok": true,
+          "output": "BOB"
+        },
+        {
+          "ok": true,
+          "output": "STRASSE"
+        },
+        {
+          "ok": true,
+          "output": "CAROL"
+        },
+        {
+          "ok": true,
+          "output": "DAVID"
+        },
+        {
+          "ok": true,
+          "output": "ÉVA"
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "30-record": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": {
+            "length": 5,
+            "name": "ALICE"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 3,
+            "name": "BOB"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 7,
+            "name": "STRASSE"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 5,
+            "name": "CAROL"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 5,
+            "name": "DAVID"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 3,
+            "name": "ÉVA"
+          }
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "40-json-document": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": {
+            "name": "ajv",
+            "repository": "ajv-validator/ajv",
+            "version": "8.20.0"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "name": "angular-srcs",
+            "repository": "angular/angular",
+            "version": "22.3.0-next.0"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "name": "axios",
+            "repository": "axios/axios",
+            "version": "1.20.0"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "name": "babel",
+            "repository": "babel/babel",
+            "version": "8.0.6"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "name": "chai",
+            "repository": "chaijs/chai",
+            "version": "0.0.0-development"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "name": "chalk",
+            "repository": "chalk/chalk",
+            "version": "6.0.0"
+          }
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "50-package-name": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": "chart.js"
+        },
+        {
+          "ok": true,
+          "output": "cheerio"
+        },
+        {
+          "ok": true,
+          "output": "d3"
+        },
+        {
+          "ok": true,
+          "output": "@date-fns/root"
+        },
+        {
+          "ok": true,
+          "output": "eslint"
+        },
+        {
+          "ok": true,
+          "output": "express"
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "60-uppercase-name": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": "FASTIFY"
+        },
+        {
+          "ok": true,
+          "output": "HONO"
+        },
+        {
+          "ok": true,
+          "output": "DAYJS"
+        },
+        {
+          "ok": true,
+          "output": "IMMER"
+        },
+        {
+          "ok": true,
+          "output": "@JEST/MONOREPO"
+        },
+        {
+          "ok": true,
+          "output": "JQUERY"
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "70-package-record": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": {
+            "length": 3,
+            "name": "KOA"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 6,
+            "name": "LODASH"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 16,
+            "name": "MERMAID-MONOREPO"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 16,
+            "name": "@TYPESCRIPT/REPO"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 5,
+            "name": "MOCHA"
+          }
+        },
+        {
+          "ok": true,
+          "output": {
+            "length": 6,
+            "name": "MOMENT"
+          }
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    },
+    "80-serialized-record": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": "{\"length\":4,\"name\":\"NOCK\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":7,\"name\":\"ZUSTAND\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":8,\"name\":\"PRETTIER\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":5,\"name\":\"RAMDA\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":5,\"name\":\"REDUX\"}"
+        },
+        {
+          "ok": true,
+          "output": "{\"length\":6,\"name\":\"ROLLUP\"}"
+        }
+      ],
+      "passed": 6,
+      "total": 6
+    }
+  },
+  "before": {
+    "active_generation": 12,
+    "active_runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+    "active_tasks": {
+      "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+      "100-deep-normalize": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+      "110-deep-record": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+      "120-deep-serialized": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+      "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+      "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+      "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+      "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+      "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+      "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+    },
+    "admissions_total": 12,
+    "attempts_total": 14,
+    "claim": "bounded_program_and_engine_policy_learning",
+    "engine_policy": {
+      "attempts": 12000,
+      "binary": [
+        "get",
+        "add",
+        "sub",
+        "mul",
+        "equal",
+        "less"
+      ],
+      "depth": 4,
+      "early_stop": true,
+      "id": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+      "parent": null,
+      "queue": "deficit_then_previous_cost",
+      "schema": "nova.engine-policy.v1",
+      "typed": true,
+      "unary": [
+        "upper",
+        "length",
+        "strip",
+        "parse_json",
+        "json",
+        "lower",
+        "sum",
+        "sort",
+        "keys"
+      ],
+      "unary_first": true
+    },
+    "events": 20,
+    "genome": "5758e10360b3a7e16862e75d0738c06bb959f819022f54287230f0fc5ff32591",
+    "head": "7dc199de2af009abe40956ee91438adc425b61c3f014a5d7cf07894375d9e75b",
+    "next_task": null,
+    "programs_active": 11,
+    "queue": {
+      "10-trim": "ADMITTED",
+      "100-deep-normalize": "ADMITTED",
+      "110-deep-record": "ADMITTED",
+      "120-deep-serialized": "ADMITTED",
+      "20-normalize": "ADMITTED",
+      "30-record": "ADMITTED",
+      "40-json-document": "ADMITTED",
+      "50-package-name": "ADMITTED",
+      "60-uppercase-name": "ADMITTED",
+      "70-package-record": "ADMITTED",
+      "80-serialized-record": "ADMITTED",
+      "90-sha256-deficit-control": "WAITING_FOR_NEW_MEMORY",
+      "@engine:experience-ranked-search-v2": "ADMITTED"
+    },
+    "runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+    "schema": "nova.kernel.v2",
+    "self_model": {
+      "search_attempts_total": 20817,
+      "successful_admissions": 12,
+      "withheld_attempts": 2
+    },
+    "tasks_total": 12,
+    "upgrade_required": false
+  },
+  "candidate_compile_invocations": 0,
+  "candidate_sandbox_invocations": 0,
+  "complete_capability_pipeline_implemented": false,
+  "evolution_verdict": "WITHHOLD",
+  "external_contract_probes": {
+    "author": "external_verifier",
+    "binary": [
+      "add",
+      "sub",
+      "mul",
+      "equal",
+      "less",
+      "get"
+    ],
+    "expanded_policy_operator_set": {
+      "error": "ContractError",
+      "message": "engine policy identity or bounds mismatch",
+      "rejected": true
+    },
+    "new_expression_operation": {
+      "error": "ContractError",
+      "message": "unknown expression or unavailable parent",
+      "rejected": true
+    },
+    "unary": [
+      "strip",
+      "lower",
+      "upper",
+      "length",
+      "parse_json",
+      "json",
+      "sum",
+      "sort",
+      "keys"
+    ]
+  },
+  "external_intervention": {
+    "new_tasks_registered": 0,
+    "retries_forced": 0,
+    "runtime_files_modified": 0,
+    "source_candidates_supplied": 0
+  },
+  "first_unmet_gate": "native_deficit_selection",
+  "gates": [
+    {
+      "gate": "native_deficit_selection",
+      "status": "BLOCKED"
+    },
+    {
+      "gate": "native_missing_primitive_diagnosis",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "native_primitive_implementation",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "candidate_compile",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "candidate_sandbox",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "fresh_hidden_holdout",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "candidate_full_regression",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "causal_ablation",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "genome_admission",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "post_admission_restart",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "post_admission_replay",
+      "status": "NOT_REACHED"
+    },
+    {
+      "gate": "native_next_goal_selection",
+      "status": "NOT_REACHED"
+    }
+  ],
+  "hidden_holdout": {
+    "evaluated_cases": 0,
+    "status": "NOT_CREATED_NO_ELIGIBLE_CANDIDATE"
+  },
+  "native_diagnosis": null,
+  "native_primitive_candidates": [],
+  "native_result": {
+    "state": {
+      "active_generation": 12,
+      "active_runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+      "active_tasks": {
+        "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+        "100-deep-normalize": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+        "110-deep-record": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+        "120-deep-serialized": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+        "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+        "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+        "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+        "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+        "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+        "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+        "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+      },
+      "admissions_total": 12,
+      "attempts_total": 14,
+      "claim": "bounded_program_and_engine_policy_learning",
+      "engine_policy": {
+        "attempts": 12000,
+        "binary": [
+          "get",
+          "add",
+          "sub",
+          "mul",
+          "equal",
+          "less"
+        ],
+        "depth": 4,
+        "early_stop": true,
+        "id": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "parent": null,
+        "queue": "deficit_then_previous_cost",
+        "schema": "nova.engine-policy.v1",
+        "typed": true,
+        "unary": [
+          "upper",
+          "length",
+          "strip",
+          "parse_json",
+          "json",
+          "lower",
+          "sum",
+          "sort",
+          "keys"
+        ],
+        "unary_first": true
+      },
+      "events": 20,
+      "genome": "5758e10360b3a7e16862e75d0738c06bb959f819022f54287230f0fc5ff32591",
+      "head": "7dc199de2af009abe40956ee91438adc425b61c3f014a5d7cf07894375d9e75b",
+      "next_task": null,
+      "programs_active": 11,
+      "queue": {
+        "10-trim": "ADMITTED",
+        "100-deep-normalize": "ADMITTED",
+        "110-deep-record": "ADMITTED",
+        "120-deep-serialized": "ADMITTED",
+        "20-normalize": "ADMITTED",
+        "30-record": "ADMITTED",
+        "40-json-document": "ADMITTED",
+        "50-package-name": "ADMITTED",
+        "60-uppercase-name": "ADMITTED",
+        "70-package-record": "ADMITTED",
+        "80-serialized-record": "ADMITTED",
+        "90-sha256-deficit-control": "WAITING_FOR_NEW_MEMORY",
+        "@engine:experience-ranked-search-v2": "ADMITTED"
+      },
+      "runtime_digest": "dee4a341f6bfe4f86da8556a81147de7834c227d93a7ec62c9696e2bd8f756e4",
+      "schema": "nova.kernel.v2",
+      "self_model": {
+        "search_attempts_total": 20817,
+        "successful_admissions": 12,
+        "withheld_attempts": 2
+      },
+      "tasks_total": 12,
+      "upgrade_required": false
+    },
+    "steps": [
+      {
+        "reason": "NO_ELIGIBLE_DEFICIT",
+        "status": "IDLE"
+      }
+    ]
+  },
+  "native_result_type": "IDLE",
+  "native_selected_task": null,
+  "queue_before": [
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "13b60901a30b4c56a582b65c20f49241bd00dbe58b307f95c7d4fdad042d6f45",
+        "previous_attempt": 3,
+        "previous_cost": 90,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+          "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+          "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 2,
+      "task": "10-trim"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "13b60901a30b4c56a582b65c20f49241bd00dbe58b307f95c7d4fdad042d6f45",
+        "previous_attempt": 4,
+        "previous_cost": 100,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+          "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+          "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 2,
+      "task": "20-normalize"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "13b60901a30b4c56a582b65c20f49241bd00dbe58b307f95c7d4fdad042d6f45",
+        "previous_attempt": 5,
+        "previous_cost": 110,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+          "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+          "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 2,
+      "task": "30-record"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+        "previous_attempt": 7,
+        "previous_cost": 100,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+          "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 6,
+      "task": "40-json-document"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+        "previous_attempt": 8,
+        "previous_cost": 836,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+          "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 6,
+      "task": "50-package-name"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+        "previous_attempt": 9,
+        "previous_cost": 120,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+          "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 6,
+      "task": "60-uppercase-name"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+        "previous_attempt": 10,
+        "previous_cost": 130,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+          "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 6,
+      "task": "70-package-record"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+        "previous_attempt": 11,
+        "previous_cost": 140,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+          "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 6,
+      "task": "80-serialized-record"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+        "previous_attempt": 20,
+        "previous_cost": 6274,
+        "previous_failures": 2,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+          "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+        ]
+      },
+      "status": "WAITING_FOR_NEW_MEMORY",
+      "submitted_event": 6,
+      "task": "90-sha256-deficit-control"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "bdabb80e9f8227cf960b1b1824b5bcfeec46723853075ccc1361ae91f8111b60",
+        "previous_attempt": 17,
+        "previous_cost": 230,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+          "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+          "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 15,
+      "task": "100-deep-normalize"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "bdabb80e9f8227cf960b1b1824b5bcfeec46723853075ccc1361ae91f8111b60",
+        "previous_attempt": 18,
+        "previous_cost": 63,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+          "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+          "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 15,
+      "task": "110-deep-record"
+    },
+    {
+      "plan": {
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "memory_context": "bdabb80e9f8227cf960b1b1824b5bcfeec46723853075ccc1361ae91f8111b60",
+        "previous_attempt": 19,
+        "previous_cost": 25,
+        "previous_failures": 0,
+        "strategy": "verified_gene_composition",
+        "usable_genes": [
+          "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+          "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+          "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00"
+        ]
+      },
+      "status": "ADMITTED",
+      "submitted_event": 15,
+      "task": "120-deep-serialized"
+    },
+    {
+      "kind": "ENGINE",
+      "plan": {
+        "memory_context": "dafe8514bab9a21d135fd7b17923bafd00963e4d56967cf23171bc63d8dcf04a",
+        "previous_attempt": null
+      },
+      "status": "ADMITTED",
+      "submitted_event": 14,
+      "task": "@engine:experience-ranked-search-v2"
+    }
+  ],
+  "schema": "nova.grammar-entry-observation.v1",
+  "scope": "native_entry_probe_on_unchanged_runtime",
+  "unresolved_deficits_observed_externally": {
+    "90-sha256-deficit-control": {
+      "history": [
+        {
+          "causes": {
+            "gene_events": {
+              "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": 11,
+              "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+              "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+              "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+              "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+            },
+            "previous_attempt": null,
+            "task_event": 6
+          },
+          "context": "c5e2cf732a2fd4c1f917fd3a6a16fad48d4aed7a48185623306a76848ef42853",
+          "event": 12,
+          "memory_context": "2d66eeed3f1a52cc4c45a8176d36e3ba9a586fcdab767d2fa3b24d57fd6d1aa9",
+          "program": null,
+          "reason": "SEARCH_EXHAUSTED",
+          "search_attempts": 12000,
+          "status": "WITHHOLD"
+        },
+        {
+          "causes": {
+            "gene_events": {
+              "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": 11,
+              "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+              "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+              "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+              "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+            },
+            "previous_attempt": 12,
+            "task_event": 6
+          },
+          "context": "8377e0daa103f675cfe18ac497ab0fac6add2ec7a37fc68c9464d03c8857236d",
+          "event": 20,
+          "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+          "program": null,
+          "reason": "SEARCH_EXHAUSTED",
+          "search_attempts": 6274,
+          "status": "WITHHOLD"
+        }
+      ],
+      "queue_status": "WAITING_FOR_NEW_MEMORY"
+    }
+  }
+}

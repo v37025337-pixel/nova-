@@ -1,0 +1,18 @@
+{
+  "meaning": "observer and existing runtime tests only; not grammar evolution",
+  "release_manifest": {
+    "command": "python scripts/verify_release.py",
+    "exit_code": 0,
+    "source_files": 11,
+    "version": "0.2.0"
+  },
+  "runtime_modified": false,
+  "runtime_sources_sha256": "86df2b12af2d04dc6a38585e9c1c5afae3cbffb1d65032147a73333ab486514d",
+  "status": "PASS",
+  "tested_protocol_commit": "29da1b30bc91c2efe2fd60adb5aed3e170e9b5df",
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "tests": 51
+  }
+}
