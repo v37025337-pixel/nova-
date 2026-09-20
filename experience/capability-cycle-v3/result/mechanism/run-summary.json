@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "causal_ablation": true,
+    "cold_replay": true,
+    "fresh_blind_admission": true,
+    "generated_body": true,
+    "independent_query": true,
+    "native_continuation": true,
+    "native_goal": true,
+    "regression": true,
+    "rollback": true
+  },
+  "claim": "word_equation_capability_transfer_only; not_SHA256_milestone",
+  "fresh_passed": 24,
+  "fresh_total": 24,
+  "head": "2b28191415c1ef90b80da2b856c15fd06d04e4116f98c4e4ce36c0320b7354e1",
+  "status": "PASS"
+}

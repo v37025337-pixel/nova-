@@ -1,0 +1,44 @@
+{
+  "genome": {
+    "bindings": {
+      "old-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+    },
+    "genes": [
+      "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+    ],
+    "id": "ccca2c73418de97ca71257ba8e542ab5ed7584053fead511890e80413129e46f",
+    "parent": "3f5b9969073ce988b400332ff9bc7f99bb3361be230e0c7899e6329661e9f0f7",
+    "schema": "nova.genome.v1"
+  },
+  "status": {
+    "active_generation": 1,
+    "active_runtime_digest": "1cca075b4299f74c0443466d379bbe1c4792dfa1045ab5ca641576fcfc81ed6d",
+    "active_tasks": {
+      "old-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+    },
+    "admissions_total": 3,
+    "attempts_total": 5,
+    "capabilities_active": [],
+    "claim": "bounded_program_policy_and_specification_conditioned_word_grammar_learning",
+    "engine_policy": null,
+    "events": 11,
+    "genome": "ccca2c73418de97ca71257ba8e542ab5ed7584053fead511890e80413129e46f",
+    "head": "0749360dd7829d20a95a813e44b81ff2b7a5821d53476d3c091b574bf5d01216",
+    "next_task": null,
+    "programs_active": 1,
+    "queue": {
+      "old-trim": "ADMITTED",
+      "word-xor": "EVALUATION_CONSUMED",
+      "word-xor-transfer": "EVALUATION_CONSUMED"
+    },
+    "runtime_digest": "1cca075b4299f74c0443466d379bbe1c4792dfa1045ab5ca641576fcfc81ed6d",
+    "schema": "nova.kernel.v3",
+    "self_model": {
+      "search_attempts_total": 24106,
+      "successful_admissions": 3,
+      "withheld_attempts": 2
+    },
+    "tasks_total": 3,
+    "upgrade_required": false
+  }
+}

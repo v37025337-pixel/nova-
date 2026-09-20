@@ -1,0 +1,410 @@
+{
+  "10-trim": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "Alice"
+      },
+      {
+        "ok": true,
+        "output": "Bob"
+      },
+      {
+        "ok": true,
+        "output": "Straße"
+      },
+      {
+        "ok": true,
+        "output": "Carol"
+      },
+      {
+        "ok": true,
+        "output": "dAVID"
+      },
+      {
+        "ok": true,
+        "output": "éva"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "100-deep-normalize": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "\"ASTER\""
+      },
+      {
+        "ok": true,
+        "output": "\"BEGONIA\""
+      },
+      {
+        "ok": true,
+        "output": "\"CROCUS\""
+      },
+      {
+        "ok": true,
+        "output": "\"DÁLIA\""
+      },
+      {
+        "ok": true,
+        "output": "\"ÉDELWEISS\""
+      },
+      {
+        "ok": true,
+        "output": "\"ΙΡΙΔΑ\""
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "110-deep-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "length": 4,
+          "name": "FERN"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 8,
+          "name": "GARDENIA"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 7,
+          "name": "HEATHER"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 6,
+          "name": "JASMIN"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 4,
+          "name": "KÁLA"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "ЛИЛИЯ"
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "120-deep-serialized": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "{\"length\":8,\"name\":\"MAGNOLIA\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":9,\"name\":\"NARCISSUS\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":6,\"name\":\"ORCHID\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":7,\"name\":\"PIVOŇKA\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":6,\"name\":\"QUINCE\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":4,\"name\":\"РОЗА\"}"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "20-normalize": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "ALICE"
+      },
+      {
+        "ok": true,
+        "output": "BOB"
+      },
+      {
+        "ok": true,
+        "output": "STRASSE"
+      },
+      {
+        "ok": true,
+        "output": "CAROL"
+      },
+      {
+        "ok": true,
+        "output": "DAVID"
+      },
+      {
+        "ok": true,
+        "output": "ÉVA"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "30-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "ALICE"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 3,
+          "name": "BOB"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 7,
+          "name": "STRASSE"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "CAROL"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "DAVID"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 3,
+          "name": "ÉVA"
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "40-json-document": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "name": "ajv",
+          "repository": "ajv-validator/ajv",
+          "version": "8.20.0"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "angular-srcs",
+          "repository": "angular/angular",
+          "version": "22.3.0-next.0"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "axios",
+          "repository": "axios/axios",
+          "version": "1.20.0"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "babel",
+          "repository": "babel/babel",
+          "version": "8.0.6"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "chai",
+          "repository": "chaijs/chai",
+          "version": "0.0.0-development"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "chalk",
+          "repository": "chalk/chalk",
+          "version": "6.0.0"
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "50-package-name": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "chart.js"
+      },
+      {
+        "ok": true,
+        "output": "cheerio"
+      },
+      {
+        "ok": true,
+        "output": "d3"
+      },
+      {
+        "ok": true,
+        "output": "@date-fns/root"
+      },
+      {
+        "ok": true,
+        "output": "eslint"
+      },
+      {
+        "ok": true,
+        "output": "express"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "60-uppercase-name": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "FASTIFY"
+      },
+      {
+        "ok": true,
+        "output": "HONO"
+      },
+      {
+        "ok": true,
+        "output": "DAYJS"
+      },
+      {
+        "ok": true,
+        "output": "IMMER"
+      },
+      {
+        "ok": true,
+        "output": "@JEST/MONOREPO"
+      },
+      {
+        "ok": true,
+        "output": "JQUERY"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "70-package-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "length": 3,
+          "name": "KOA"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 6,
+          "name": "LODASH"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 16,
+          "name": "MERMAID-MONOREPO"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 16,
+          "name": "@TYPESCRIPT/REPO"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "MOCHA"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 6,
+          "name": "MOMENT"
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "80-serialized-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "{\"length\":4,\"name\":\"NOCK\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":7,\"name\":\"ZUSTAND\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":8,\"name\":\"PRETTIER\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":5,\"name\":\"RAMDA\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":5,\"name\":\"REDUX\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":6,\"name\":\"ROLLUP\"}"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  }
+}

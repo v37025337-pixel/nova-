@@ -1,0 +1,37 @@
+{
+  "active_generation": 3,
+  "active_runtime_digest": "1cca075b4299f74c0443466d379bbe1c4792dfa1045ab5ca641576fcfc81ed6d",
+  "active_tasks": {
+    "old-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "word-xor": "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+    "word-xor-transfer": "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736"
+  },
+  "admissions_total": 3,
+  "attempts_total": 5,
+  "capabilities_active": [
+    "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+  ],
+  "claim": "bounded_program_policy_and_specification_conditioned_word_grammar_learning",
+  "engine_policy": null,
+  "events": 10,
+  "genome": "da96cbce7db6ab738e081c794dca03f90fbb886c3fa457412afe789ab697d22e",
+  "head": "2b28191415c1ef90b80da2b856c15fd06d04e4116f98c4e4ce36c0320b7354e1",
+  "next_task": null,
+  "programs_active": 4,
+  "queue": {
+    "old-trim": "ADMITTED",
+    "word-xor": "ADMITTED",
+    "word-xor-transfer": "ADMITTED"
+  },
+  "runtime_digest": "1cca075b4299f74c0443466d379bbe1c4792dfa1045ab5ca641576fcfc81ed6d",
+  "schema": "nova.kernel.v3",
+  "self_model": {
+    "search_attempts_total": 24106,
+    "successful_admissions": 3,
+    "withheld_attempts": 2
+  },
+  "status": "PASS",
+  "tasks_total": 3,
+  "upgrade_required": false,
+  "verification": "full_deterministic_semantic_replay"
+}

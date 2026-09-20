@@ -1,0 +1,83 @@
+{
+  "active_generation": 12,
+  "active_runtime_digest": "1cca075b4299f74c0443466d379bbe1c4792dfa1045ab5ca641576fcfc81ed6d",
+  "active_tasks": {
+    "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "100-deep-normalize": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "110-deep-record": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "120-deep-serialized": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+  },
+  "admissions_total": 12,
+  "attempts_total": 14,
+  "capabilities_active": [],
+  "claim": "bounded_program_policy_and_specification_conditioned_word_grammar_learning",
+  "engine_policy": {
+    "attempts": 12000,
+    "binary": [
+      "get",
+      "add",
+      "sub",
+      "mul",
+      "equal",
+      "less"
+    ],
+    "depth": 4,
+    "early_stop": true,
+    "id": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+    "parent": null,
+    "queue": "deficit_then_previous_cost",
+    "schema": "nova.engine-policy.v1",
+    "typed": true,
+    "unary": [
+      "upper",
+      "length",
+      "strip",
+      "parse_json",
+      "json",
+      "lower",
+      "sum",
+      "sort",
+      "keys"
+    ],
+    "unary_first": true
+  },
+  "events": 26,
+  "genome": "5758e10360b3a7e16862e75d0738c06bb959f819022f54287230f0fc5ff32591",
+  "head": "87a2fb19b56830c65d5b0296e41d97acfdb5f9a0579c3df23026de4627590fa3",
+  "next_task": null,
+  "programs_active": 11,
+  "queue": {
+    "10-trim": "ADMITTED",
+    "100-deep-normalize": "ADMITTED",
+    "110-deep-record": "ADMITTED",
+    "120-deep-serialized": "ADMITTED",
+    "20-normalize": "ADMITTED",
+    "30-record": "ADMITTED",
+    "40-json-document": "ADMITTED",
+    "50-package-name": "ADMITTED",
+    "60-uppercase-name": "ADMITTED",
+    "70-package-record": "ADMITTED",
+    "80-serialized-record": "ADMITTED",
+    "90-sha256-deficit-control": "WAITING_FOR_NEW_MEMORY",
+    "@capability:90-sha256-deficit-control": "WAITING_FOR_NEW_KNOWLEDGE",
+    "@engine:experience-ranked-search-v2": "ADMITTED"
+  },
+  "runtime_digest": "1cca075b4299f74c0443466d379bbe1c4792dfa1045ab5ca641576fcfc81ed6d",
+  "schema": "nova.kernel.v3",
+  "self_model": {
+    "search_attempts_total": 20817,
+    "successful_admissions": 12,
+    "withheld_attempts": 2
+  },
+  "status": "PASS",
+  "tasks_total": 12,
+  "upgrade_required": false,
+  "verification": "full_deterministic_semantic_replay"
+}

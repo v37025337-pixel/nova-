@@ -1,0 +1,914 @@
+{
+  "capability_experiences": {
+    "90-sha256-deficit-control": [
+      {
+        "child_genome": null,
+        "domain": "CAPABILITY",
+        "event": 22,
+        "freeze": "97d73bfc7bed3295932dfb65c49e4a64c31f2cc847fbaf042e3b06d4b7bbf20d",
+        "kind": "capability_freeze",
+        "parent_generation": 12,
+        "parent_genome": "5758e10360b3a7e16862e75d0738c06bb959f819022f54287230f0fc5ff32591",
+        "primitive": null,
+        "program": null,
+        "reason": "KNOWLEDGE_MISSING",
+        "report": {
+          "argument_bindings_tested": 0,
+          "candidate_budget": 64,
+          "candidates_deferred_by_budget": 0,
+          "diagnosis": {
+            "hypothesis": "BUDGET_OR_REPRESENTATION_OR_KNOWLEDGE_GAP",
+            "knowledge": "MISSING_ALGORITHM_SPECIFICATION",
+            "observed": "SEARCH_EXHAUSTED",
+            "proof_of_global_impossibility": false,
+            "search": "BOUNDED_FRONTIER_EXHAUSTED",
+            "source_events": [
+              12,
+              20
+            ],
+            "training_output_types": [
+              "str"
+            ],
+            "unavailable_native_word_operations": [],
+            "unsupported_specification_constructs": []
+          },
+          "hidden_cases_seen": 0,
+          "learning": [],
+          "next_requirement": "algorithm_specification",
+          "sandbox_smoke": null
+        },
+        "selection": {
+          "kind": "CAPABILITY",
+          "plan": {
+            "memory_context": "2571cfa3431d30aa271e98783c4a45c4ec96ae74c5f97205cca67bbbe04e55b8",
+            "previous_attempt": 20
+          },
+          "policy": "oldest_remembered_exhausted_deficit_then_task_id",
+          "target": "90-sha256-deficit-control",
+          "task": "@capability:90-sha256-deficit-control"
+        },
+        "status": "WITHHOLD",
+        "workspace": {
+          "CODE": {
+            "author": "kernel_equation_compiler",
+            "generated": [],
+            "selected": null
+          },
+          "INTELLIGENCE": {
+            "hypothesis": "BUDGET_OR_REPRESENTATION_OR_KNOWLEDGE_GAP",
+            "knowledge": "MISSING_ALGORITHM_SPECIFICATION",
+            "observed": "SEARCH_EXHAUSTED",
+            "proof_of_global_impossibility": false,
+            "search": "BOUNDED_FRONTIER_EXHAUSTED",
+            "source_events": [
+              12,
+              20
+            ],
+            "training_output_types": [
+              "str"
+            ],
+            "unavailable_native_word_operations": [],
+            "unsupported_specification_constructs": []
+          },
+          "LOGIC": {
+            "fresh_evaluation_required": true,
+            "verdict": "KNOWLEDGE_MISSING"
+          },
+          "THINKING": {
+            "action": "EXTEND_GRAMMAR_TO_RESOLVE_REMEMBERED_DEFICIT",
+            "cause": 20,
+            "origin": "kernel_causal_memory",
+            "required_result": "new_primitive_and_training_fit_before_fresh_evaluation",
+            "task": "90-sha256-deficit-control"
+          },
+          "context": "1851e9f2b1cb8d7eb066b0b8ee6077a53c2cde2caa1c914998ba0e129cd1b36a"
+        }
+      },
+      {
+        "child_genome": null,
+        "domain": "CAPABILITY",
+        "event": 26,
+        "freeze": "7617112d4a9950afadffe025af210a4fec0f819c334d76db5be1922b21be5626",
+        "kind": "capability_freeze",
+        "parent_generation": 12,
+        "parent_genome": "5758e10360b3a7e16862e75d0738c06bb959f819022f54287230f0fc5ff32591",
+        "primitive": null,
+        "program": null,
+        "reason": "SPECIFICATION_LANGUAGE_INCOMPLETE",
+        "report": {
+          "argument_bindings_tested": 0,
+          "candidate_budget": 64,
+          "candidates_deferred_by_budget": 0,
+          "diagnosis": {
+            "hypothesis": "REPRESENTATION_GAP",
+            "knowledge": "AVAILABLE",
+            "observed": "SEARCH_EXHAUSTED",
+            "proof_of_global_impossibility": false,
+            "search": "BOUNDED_FRONTIER_EXHAUSTED",
+            "source_events": [
+              12,
+              20
+            ],
+            "training_output_types": [
+              "str"
+            ],
+            "unavailable_native_word_operations": [
+              "and",
+              "not",
+              "rotr",
+              "shr",
+              "xor"
+            ],
+            "unsupported_specification_constructs": [
+              "byte_encoding_padding_and_blocks",
+              "indexed_recurrence_and_iteration"
+            ]
+          },
+          "hidden_cases_seen": 0,
+          "learning": [
+            {
+              "author": "kernel_equation_compiler",
+              "genes": [],
+              "knowledge_author": "NIST publication, unedited pdftotext -layout section extracts; PDF SHA256 0455b406d89648d20cbde375561e19c245b9815e894164c2670772e3d54deb82",
+              "rejected": [],
+              "specification": "69b3eb8ec0395c0d72f35934f3072249535423e40a48f84413ff5c72b3e8939b",
+              "unsupported": [
+                "indexed_recurrence_and_iteration",
+                "byte_encoding_padding_and_blocks"
+              ]
+            },
+            {
+              "author": "kernel_equation_compiler",
+              "genes": [
+                {
+                  "definition": {
+                    "expression": "( x & y) ^ (~x & z)",
+                    "name": "Ch",
+                    "parameters": [
+                      "x",
+                      "y",
+                      "z"
+                    ],
+                    "width": 32
+                  },
+                  "id": "10d8b2a2d69d469df73a61d10ad6292b86828621ec3db567d7435856a92a6a16",
+                  "ir": [
+                    "xor",
+                    [
+                      "and",
+                      [
+                        "arg",
+                        "x"
+                      ],
+                      [
+                        "arg",
+                        "y"
+                      ]
+                    ],
+                    [
+                      "and",
+                      [
+                        "not",
+                        [
+                          "arg",
+                          "x"
+                        ]
+                      ],
+                      [
+                        "arg",
+                        "z"
+                      ]
+                    ]
+                  ],
+                  "language": "nova.word-expression.v1",
+                  "parents": [],
+                  "source": "def solve(inputs):\n    return word('xor', 32, word('and', 32, inputs['x'], inputs['y']), word('and', 32, word('not', 32, inputs['x']), inputs['z']))\n",
+                  "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+                },
+                {
+                  "definition": {
+                    "expression": "( x & y) ^ ( x & z ) ^ ( y & z )",
+                    "name": "Maj",
+                    "parameters": [
+                      "x",
+                      "y",
+                      "z"
+                    ],
+                    "width": 32
+                  },
+                  "id": "4c3fbbad8150811282ca41fa3f21ce0e2f47c7b9d025cb330d77872795854ad1",
+                  "ir": [
+                    "xor",
+                    [
+                      "xor",
+                      [
+                        "and",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "arg",
+                          "y"
+                        ]
+                      ],
+                      [
+                        "and",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "arg",
+                          "z"
+                        ]
+                      ]
+                    ],
+                    [
+                      "and",
+                      [
+                        "arg",
+                        "y"
+                      ],
+                      [
+                        "arg",
+                        "z"
+                      ]
+                    ]
+                  ],
+                  "language": "nova.word-expression.v1",
+                  "parents": [],
+                  "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('and', 32, inputs['x'], inputs['y']), word('and', 32, inputs['x'], inputs['z'])), word('and', 32, inputs['y'], inputs['z']))\n",
+                  "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+                },
+                {
+                  "definition": {
+                    "expression": "ROTR(x,2)         ^ ROTR(x,13) ^ ROTR(x,22)",
+                    "name": "Sigma_256_0",
+                    "parameters": [
+                      "x"
+                    ],
+                    "width": 32
+                  },
+                  "id": "6932efde33fc7373d21ebf153cafea455e2bae62e3c8940bf5bb6a65d8852b1f",
+                  "ir": [
+                    "xor",
+                    [
+                      "xor",
+                      [
+                        "rotr",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "literal",
+                          2
+                        ]
+                      ],
+                      [
+                        "rotr",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "literal",
+                          13
+                        ]
+                      ]
+                    ],
+                    [
+                      "rotr",
+                      [
+                        "arg",
+                        "x"
+                      ],
+                      [
+                        "literal",
+                        22
+                      ]
+                    ]
+                  ],
+                  "language": "nova.word-expression.v1",
+                  "parents": [],
+                  "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, inputs['x'], 2), word('rotr', 32, inputs['x'], 13)), word('rotr', 32, inputs['x'], 22))\n",
+                  "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+                },
+                {
+                  "definition": {
+                    "expression": "ROTR(x,6)         ^ ROTR(x,11) ^ ROTR(x,25)",
+                    "name": "Sigma_256_1",
+                    "parameters": [
+                      "x"
+                    ],
+                    "width": 32
+                  },
+                  "id": "d94a56c99a9c329a15e19e87431fda48f4c11b4cd0ecd98d482ed9ae2c10018f",
+                  "ir": [
+                    "xor",
+                    [
+                      "xor",
+                      [
+                        "rotr",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "literal",
+                          6
+                        ]
+                      ],
+                      [
+                        "rotr",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "literal",
+                          11
+                        ]
+                      ]
+                    ],
+                    [
+                      "rotr",
+                      [
+                        "arg",
+                        "x"
+                      ],
+                      [
+                        "literal",
+                        25
+                      ]
+                    ]
+                  ],
+                  "language": "nova.word-expression.v1",
+                  "parents": [],
+                  "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, inputs['x'], 6), word('rotr', 32, inputs['x'], 11)), word('rotr', 32, inputs['x'], 25))\n",
+                  "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+                },
+                {
+                  "definition": {
+                    "expression": "ROTR(x,7) ^ ROTR(x,18) ^ SHR(x,3)",
+                    "name": "sigma_256_0",
+                    "parameters": [
+                      "x"
+                    ],
+                    "width": 32
+                  },
+                  "id": "f33f9046828a829f28ca4ce2ab8daa0acc04ac92186219d309b3f8bd2c187779",
+                  "ir": [
+                    "xor",
+                    [
+                      "xor",
+                      [
+                        "rotr",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "literal",
+                          7
+                        ]
+                      ],
+                      [
+                        "rotr",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "literal",
+                          18
+                        ]
+                      ]
+                    ],
+                    [
+                      "shr",
+                      [
+                        "arg",
+                        "x"
+                      ],
+                      [
+                        "literal",
+                        3
+                      ]
+                    ]
+                  ],
+                  "language": "nova.word-expression.v1",
+                  "parents": [],
+                  "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, inputs['x'], 7), word('rotr', 32, inputs['x'], 18)), word('shr', 32, inputs['x'], 3))\n",
+                  "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+                },
+                {
+                  "definition": {
+                    "expression": "ROTR(x,17) ^ ROTR(x,19) ^ SHR(x,10)",
+                    "name": "sigma_256_1",
+                    "parameters": [
+                      "x"
+                    ],
+                    "width": 32
+                  },
+                  "id": "759bcbec2012fdfd9efb9fa748cadea606af41176290630f2221eda74f96544c",
+                  "ir": [
+                    "xor",
+                    [
+                      "xor",
+                      [
+                        "rotr",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "literal",
+                          17
+                        ]
+                      ],
+                      [
+                        "rotr",
+                        [
+                          "arg",
+                          "x"
+                        ],
+                        [
+                          "literal",
+                          19
+                        ]
+                      ]
+                    ],
+                    [
+                      "shr",
+                      [
+                        "arg",
+                        "x"
+                      ],
+                      [
+                        "literal",
+                        10
+                      ]
+                    ]
+                  ],
+                  "language": "nova.word-expression.v1",
+                  "parents": [],
+                  "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, inputs['x'], 17), word('rotr', 32, inputs['x'], 19)), word('shr', 32, inputs['x'], 10))\n",
+                  "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+                }
+              ],
+              "knowledge_author": "NIST publication, unedited pdftotext -layout section extracts; PDF SHA256 0455b406d89648d20cbde375561e19c245b9815e894164c2670772e3d54deb82",
+              "rejected": [],
+              "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff",
+              "unsupported": []
+            },
+            {
+              "author": "kernel_equation_compiler",
+              "genes": [],
+              "knowledge_author": "NIST publication, unedited pdftotext -layout section extracts; PDF SHA256 0455b406d89648d20cbde375561e19c245b9815e894164c2670772e3d54deb82",
+              "rejected": [],
+              "specification": "2d257b400c53bcf091d0793ede40b5b292b6aa7b3443362e82e29717da9d335e",
+              "unsupported": [
+                "byte_encoding_padding_and_blocks"
+              ]
+            }
+          ],
+          "next_requirement": "specification_compiler_for:byte_encoding_padding_and_blocks,indexed_recurrence_and_iteration",
+          "sandbox_smoke": {
+            "isolation": "linux_seccomp_v1",
+            "results": [
+              {
+                "outcomes": [
+                  {
+                    "ok": true,
+                    "output": 0
+                  }
+                ],
+                "passed": 1,
+                "total": 1
+              },
+              {
+                "outcomes": [
+                  {
+                    "ok": true,
+                    "output": 0
+                  }
+                ],
+                "passed": 1,
+                "total": 1
+              },
+              {
+                "outcomes": [
+                  {
+                    "ok": true,
+                    "output": 0
+                  }
+                ],
+                "passed": 1,
+                "total": 1
+              },
+              {
+                "outcomes": [
+                  {
+                    "ok": true,
+                    "output": 0
+                  }
+                ],
+                "passed": 1,
+                "total": 1
+              },
+              {
+                "outcomes": [
+                  {
+                    "ok": true,
+                    "output": 0
+                  }
+                ],
+                "passed": 1,
+                "total": 1
+              },
+              {
+                "outcomes": [
+                  {
+                    "ok": true,
+                    "output": 0
+                  }
+                ],
+                "passed": 1,
+                "total": 1
+              }
+            ],
+            "status": "PASS"
+          }
+        },
+        "selection": {
+          "kind": "CAPABILITY",
+          "plan": {
+            "memory_context": "9d3036848798fb6df51c618124cc021494538ee410515e035f4726eb9261c497",
+            "previous_attempt": 20
+          },
+          "policy": "oldest_remembered_exhausted_deficit_then_task_id",
+          "target": "90-sha256-deficit-control",
+          "task": "@capability:90-sha256-deficit-control"
+        },
+        "status": "WITHHOLD",
+        "workspace": {
+          "CODE": {
+            "author": "kernel_equation_compiler",
+            "generated": [
+              "10d8b2a2d69d469df73a61d10ad6292b86828621ec3db567d7435856a92a6a16",
+              "4c3fbbad8150811282ca41fa3f21ce0e2f47c7b9d025cb330d77872795854ad1",
+              "6932efde33fc7373d21ebf153cafea455e2bae62e3c8940bf5bb6a65d8852b1f",
+              "d94a56c99a9c329a15e19e87431fda48f4c11b4cd0ecd98d482ed9ae2c10018f",
+              "f33f9046828a829f28ca4ce2ab8daa0acc04ac92186219d309b3f8bd2c187779",
+              "759bcbec2012fdfd9efb9fa748cadea606af41176290630f2221eda74f96544c"
+            ],
+            "selected": null
+          },
+          "INTELLIGENCE": {
+            "hypothesis": "REPRESENTATION_GAP",
+            "knowledge": "AVAILABLE",
+            "observed": "SEARCH_EXHAUSTED",
+            "proof_of_global_impossibility": false,
+            "search": "BOUNDED_FRONTIER_EXHAUSTED",
+            "source_events": [
+              12,
+              20
+            ],
+            "training_output_types": [
+              "str"
+            ],
+            "unavailable_native_word_operations": [
+              "and",
+              "not",
+              "rotr",
+              "shr",
+              "xor"
+            ],
+            "unsupported_specification_constructs": [
+              "byte_encoding_padding_and_blocks",
+              "indexed_recurrence_and_iteration"
+            ]
+          },
+          "LOGIC": {
+            "fresh_evaluation_required": true,
+            "verdict": "SPECIFICATION_LANGUAGE_INCOMPLETE"
+          },
+          "THINKING": {
+            "action": "EXTEND_GRAMMAR_TO_RESOLVE_REMEMBERED_DEFICIT",
+            "cause": 20,
+            "origin": "kernel_causal_memory",
+            "required_result": "new_primitive_and_training_fit_before_fresh_evaluation",
+            "task": "90-sha256-deficit-control"
+          },
+          "context": "e5fb97b4a2a2d3dcd4743c2a8fd1677454d133942a7271a508f25d3a4377c842"
+        }
+      }
+    ]
+  },
+  "experiences": {
+    "10-trim": [
+      {
+        "causes": {
+          "gene_events": {},
+          "previous_attempt": null,
+          "task_event": 2
+        },
+        "context": "7be8ff1b993d1c87a423cd02627bec3b7045df6a458d368ab3cf225d688308c9",
+        "event": 3,
+        "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 90,
+        "status": "ADMITTED"
+      }
+    ],
+    "100-deep-normalize": [
+      {
+        "causes": {
+          "gene_events": {},
+          "previous_attempt": null,
+          "task_event": 15
+        },
+        "context": "8a51f350c7ee9d9db6568681177651fdede65c5375f26acaa5848b909212e2f8",
+        "event": 17,
+        "memory_context": "ec768d08f18a6dba966ad6c6db840373ef0fdf9e6d9fa877b8d7d61a13139acb",
+        "program": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 230,
+        "status": "ADMITTED"
+      }
+    ],
+    "110-deep-record": [
+      {
+        "causes": {
+          "gene_events": {
+            "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186": 17
+          },
+          "previous_attempt": null,
+          "task_event": 15
+        },
+        "context": "a80112b451d140a04d6e3e44aa268cc8a7febd151d354969828176e15ee6d67b",
+        "event": 18,
+        "memory_context": "75f2451dfd858176eae89057185a969fe31195318d74617d9b1a91ecdab8a197",
+        "program": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 63,
+        "status": "ADMITTED"
+      }
+    ],
+    "120-deep-serialized": [
+      {
+        "causes": {
+          "gene_events": {
+            "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934": 18,
+            "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186": 17
+          },
+          "previous_attempt": null,
+          "task_event": 15
+        },
+        "context": "bd271e47c1d61dfccdaff540d1b1dffc29b4eaed1b8e2773d5776c274ecdf787",
+        "event": 19,
+        "memory_context": "c743e44442c67ca5dca8a10eb5ea46a908c1592240d37c1e128dbb89ee25047b",
+        "program": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 25,
+        "status": "ADMITTED"
+      }
+    ],
+    "20-normalize": [
+      {
+        "causes": {
+          "gene_events": {
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+          },
+          "previous_attempt": null,
+          "task_event": 2
+        },
+        "context": "4cd54a7204aa9d75e25c6f664654e9c8431658d660b0828b6c96cfcb02d59e47",
+        "event": 4,
+        "memory_context": "48f1683fe447d9c4d21b1aa9ed190beedb044b8b2af5009172dcbde1449afa8d",
+        "program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 100,
+        "status": "ADMITTED"
+      }
+    ],
+    "30-record": [
+      {
+        "causes": {
+          "gene_events": {
+            "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a": 4,
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+          },
+          "previous_attempt": null,
+          "task_event": 2
+        },
+        "context": "d691134f9538bb60c060c9be9bb65b96bc625869ef3ae7c32232a1df96900f29",
+        "event": 5,
+        "memory_context": "d24cb71e6a172086528e635df833f06a45899353d2de2a276f7d4eaa5dddfee5",
+        "program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 110,
+        "status": "ADMITTED"
+      }
+    ],
+    "40-json-document": [
+      {
+        "causes": {
+          "gene_events": {},
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "1dbce7ae7a5abc43da08f56babd5d43409a08ea7c142399986aba175683ec871",
+        "event": 7,
+        "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "program": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 100,
+        "status": "ADMITTED"
+      }
+    ],
+    "50-package-name": [
+      {
+        "causes": {
+          "gene_events": {
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "9ac751b427dde9056ed1bfd53d19ad66766ee416fd80316009cbca2c05aef111",
+        "event": 8,
+        "memory_context": "50369ad20105634d053719e76a160641542e29ce0a2a6ec08cd9748b63aad541",
+        "program": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 836,
+        "status": "ADMITTED"
+      }
+    ],
+    "60-uppercase-name": [
+      {
+        "causes": {
+          "gene_events": {
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "492dc1a1a254c683cc78e72348e7eaa94e8e08108db82aa58ba6e6e5f11b6546",
+        "event": 9,
+        "memory_context": "f29d54ad5d44765e023b6e0410403f13d31f0f67041659eae19b45622e04e882",
+        "program": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 120,
+        "status": "ADMITTED"
+      }
+    ],
+    "70-package-record": [
+      {
+        "causes": {
+          "gene_events": {
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "54812115d6fe84a31b551e464542adf4ec71b7a2d7d82d595fe9e9ad1ffb66b1",
+        "event": 10,
+        "memory_context": "950415556f9b7a4c76bb7c3b9f762e45e142830a4956f2e2165b04d0140ec595",
+        "program": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 130,
+        "status": "ADMITTED"
+      }
+    ],
+    "80-serialized-record": [
+      {
+        "causes": {
+          "gene_events": {
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+            "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "aaccc5f90dceec7c72fc054d8367cc993cd88653c0371fcb5a51ac467489c0af",
+        "event": 11,
+        "memory_context": "5ac7116db54b195d11f54824121e269e807685aca5bdf4e9492c724ee8c67ad1",
+        "program": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 140,
+        "status": "ADMITTED"
+      }
+    ],
+    "90-sha256-deficit-control": [
+      {
+        "causes": {
+          "gene_events": {
+            "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": 11,
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+            "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": null,
+          "task_event": 6
+        },
+        "context": "c5e2cf732a2fd4c1f917fd3a6a16fad48d4aed7a48185623306a76848ef42853",
+        "event": 12,
+        "memory_context": "2d66eeed3f1a52cc4c45a8176d36e3ba9a586fcdab767d2fa3b24d57fd6d1aa9",
+        "program": null,
+        "reason": "SEARCH_EXHAUSTED",
+        "search_attempts": 12000,
+        "status": "WITHHOLD"
+      },
+      {
+        "causes": {
+          "gene_events": {
+            "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": 11,
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+            "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+          },
+          "previous_attempt": 12,
+          "task_event": 6
+        },
+        "context": "8377e0daa103f675cfe18ac497ab0fac6add2ec7a37fc68c9464d03c8857236d",
+        "event": 20,
+        "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+        "program": null,
+        "reason": "SEARCH_EXHAUSTED",
+        "search_attempts": 6274,
+        "status": "WITHHOLD"
+      }
+    ],
+    "@engine:experience-ranked-search-v2": [
+      {
+        "causes": {
+          "gene_events": {
+            "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": 11,
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+            "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7,
+            "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87": 5,
+            "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a": 4,
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+          },
+          "previous_attempt": null,
+          "task_event": 14
+        },
+        "context": "190b0bd4cb35f177c109a1be4e55d60dc0d87f078f2273560748edda5396c74b",
+        "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+        "event": 16,
+        "memory_context": "4d42467c4f0ca1236be916381185265060db65eec09dc292f2105b91ea0fa8ff",
+        "program": null,
+        "reason": "VERIFIED_ENGINE_IMPROVEMENT",
+        "search_attempts": 599,
+        "status": "ADMITTED"
+      }
+    ]
+  },
+  "gene_events": {
+    "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": 11,
+    "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934": 18,
+    "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+    "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+    "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+    "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7,
+    "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186": 17,
+    "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00": 19,
+    "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87": 5,
+    "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a": 4,
+    "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+  },
+  "knowledge": {
+    "fips180-4-algorithm": "69b3eb8ec0395c0d72f35934f3072249535423e40a48f84413ff5c72b3e8939b",
+    "fips180-4-functions": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff",
+    "fips180-4-preprocessing": "2d257b400c53bcf091d0793ede40b5b292b6aa7b3443362e82e29717da9d335e"
+  },
+  "schema": "nova.causal-memory.v1",
+  "task_events": {
+    "10-trim": 2,
+    "100-deep-normalize": 15,
+    "110-deep-record": 15,
+    "120-deep-serialized": 15,
+    "20-normalize": 2,
+    "30-record": 2,
+    "40-json-document": 6,
+    "50-package-name": 6,
+    "60-uppercase-name": 6,
+    "70-package-record": 6,
+    "80-serialized-record": 6,
+    "90-sha256-deficit-control": 6,
+    "@engine:experience-ranked-search-v2": 14
+  }
+}

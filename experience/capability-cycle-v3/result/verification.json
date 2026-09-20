@@ -1,0 +1,32 @@
+{
+  "ci": {
+    "commit": "473ed1d4f2086be406e79fb7d3f2a5722aab17d6",
+    "conclusion": "success",
+    "python": [
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
+    "url": "https://github.com/v37025337-pixel/nova-/actions/runs/35518758367"
+  },
+  "code_and_protocol_commit": "473ed1d4f2086be406e79fb7d3f2a5722aab17d6",
+  "cycle": {
+    "command": "python -u scripts/run_capability_cycle.py --state state/capability-cycle-v3.sqlite --output experience/capability-cycle-v3/result --protocol-commit 473ed1d4f2086be406e79fb7d3f2a5722aab17d6",
+    "exit_code": 2,
+    "meaning": "Strict SHA256 milestone WITHHOLD; bounded word mechanism PASS"
+  },
+  "release_manifest": {
+    "command": "python scripts/verify_release.py",
+    "exit_code": 0,
+    "source_files": 15,
+    "status": "PASS"
+  },
+  "runtime_sources_sha256": "0aa3565fa7f80e4adc169e01a0a8779b02a019ff1c893d4ab2cd5c7a591d562f",
+  "runtime_version": "0.3.0",
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "exit_code": 0,
+    "status": "PASS",
+    "tests": 63
+  }
+}

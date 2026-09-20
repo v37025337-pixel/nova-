@@ -1,0 +1,236 @@
+{
+  "dataset": "931390fe8cb9bcfa7e0f07cb1bba18b777a47a575e3857ee2893ff1a4d8418eb",
+  "event": 10,
+  "gate": {
+    "ablation": [
+      {
+        "failed_without_parent": true,
+        "parent": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+        "passed_without_parent": 0
+      }
+    ],
+    "baseline_holdout": {
+      "outcomes": [
+        {
+          "ok": false,
+          "output": 543
+        },
+        {
+          "ok": false,
+          "output": 1030
+        }
+      ],
+      "passed": 0,
+      "total": 2
+    },
+    "genetics": {
+      "candidate_genome": "da96cbce7db6ab738e081c794dca03f90fbb886c3fa457412afe789ab697d22e",
+      "parent_genome": "1ae080a5cf0efe34712c0a1fa8d3e0253e49dd78d6f86bf3772b1dffe6166d1a",
+      "passed": true
+    },
+    "holdout": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": 305
+        },
+        {
+          "ok": true,
+          "output": 1771
+        }
+      ],
+      "passed": 2,
+      "total": 2
+    },
+    "reason": "VERIFIED_IMPROVEMENT",
+    "regression": {
+      "old-trim": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "alpha"
+          },
+          {
+            "ok": true,
+            "output": "beta"
+          },
+          {
+            "ok": true,
+            "output": "gamma"
+          },
+          {
+            "ok": true,
+            "output": "delta"
+          }
+        ],
+        "passed": 4,
+        "total": 4
+      },
+      "word-xor": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": 12
+          },
+          {
+            "ok": true,
+            "output": 57
+          },
+          {
+            "ok": true,
+            "output": 97
+          },
+          {
+            "ok": true,
+            "output": 43
+          }
+        ],
+        "passed": 4,
+        "total": 4
+      }
+    },
+    "train": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": 828
+        },
+        {
+          "ok": true,
+          "output": 485
+        }
+      ],
+      "passed": 2,
+      "total": 2
+    }
+  },
+  "generation": 3,
+  "kind": "step",
+  "mutation": {
+    "added_genes": [
+      "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736"
+    ],
+    "child_genome": {
+      "bindings": {
+        "old-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+        "word-xor": "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+        "word-xor-transfer": "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736"
+      },
+      "capabilities": [
+        "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+      ],
+      "genes": [
+        "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736",
+        "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+        "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+        "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+      ],
+      "id": "da96cbce7db6ab738e081c794dca03f90fbb886c3fa457412afe789ab697d22e",
+      "parent": "1ae080a5cf0efe34712c0a1fa8d3e0253e49dd78d6f86bf3772b1dffe6166d1a",
+      "schema": "nova.genome.v3"
+    },
+    "expression_parents": [
+      "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+    ],
+    "inherited_genes": [
+      "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+      "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+      "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+    ],
+    "kind": "COMPOSE_AND_ADD_GENE",
+    "parent_genome": "1ae080a5cf0efe34712c0a1fa8d3e0253e49dd78d6f86bf3772b1dffe6166d1a"
+  },
+  "parent_generation": 2,
+  "program": {
+    "id": "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736",
+    "ir": [
+      "apply",
+      "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+      [
+        "object",
+        {
+          "x": [
+            "input",
+            "left"
+          ],
+          "y": [
+            "input",
+            "right"
+          ]
+        }
+      ]
+    ],
+    "language": "nova.expression.v1",
+    "parents": [
+      "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+    ],
+    "source": "def solve(inputs, recall):\n    return recall('6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc', {'x': inputs['left'], 'y': inputs['right']})\n"
+  },
+  "reason": "VERIFIED_IMPROVEMENT",
+  "selection": {
+    "baseline_train": {
+      "outcomes": [
+        {
+          "ok": false,
+          "output": 1007
+        },
+        {
+          "ok": false,
+          "output": 402
+        }
+      ],
+      "passed": 0,
+      "total": 2
+    },
+    "memory_context": "0a6c369e8ce9ae4304d5df1be9ba6857c91d02c048de25b785770b888f0e3478",
+    "plan": {
+      "memory_context": "0a6c369e8ce9ae4304d5df1be9ba6857c91d02c048de25b785770b888f0e3478",
+      "previous_attempt": 6,
+      "previous_failures": 1,
+      "strategy": "verified_gene_composition",
+      "usable_genes": [
+        "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+      ]
+    },
+    "policy": "largest_training_deficit_then_task_id",
+    "task": "word-xor-transfer"
+  },
+  "status": "ADMITTED",
+  "synthesis": {
+    "attempts": 14,
+    "selection": "training_only"
+  },
+  "workspace": {
+    "CODE": {
+      "attempts": 14,
+      "program": "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736",
+      "selection": "training_only"
+    },
+    "INTELLIGENCE": {
+      "memory_context": "0a6c369e8ce9ae4304d5df1be9ba6857c91d02c048de25b785770b888f0e3478",
+      "previous_attempt": 6,
+      "previous_failures": 1,
+      "strategy": "verified_gene_composition",
+      "usable_genes": [
+        "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+      ]
+    },
+    "LOGIC": {
+      "baseline_train": "6c1fa6068529c1cb738f06a4f0fd605e1569891601a260c35d160dad0f95b91e",
+      "evidence": "057e85703be9e440558add1aeafcafd50b2119b7b35e03afc55e96f4a3133636",
+      "verdict": "VERIFIED_IMPROVEMENT"
+    },
+    "THINKING": {
+      "causes": {
+        "gene_events": {
+          "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc": 9
+        },
+        "previous_attempt": 6,
+        "task_event": 4
+      },
+      "goal": "word-xor-transfer",
+      "policy": "largest_training_deficit_then_task_id"
+    },
+    "context": "7bdcd5b257b9f7dbcd6bfff048235a29d3d576882a3fe0e07cac0ec41383a08d"
+  }
+}

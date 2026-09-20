@@ -1,0 +1,240 @@
+{
+  "child_genome": {
+    "bindings": {
+      "old-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+      "word-xor": "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a"
+    },
+    "capabilities": [
+      "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+    ],
+    "genes": [
+      "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+      "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+      "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+    ],
+    "id": "1ae080a5cf0efe34712c0a1fa8d3e0253e49dd78d6f86bf3772b1dffe6166d1a",
+    "parent": "ccca2c73418de97ca71257ba8e542ab5ed7584053fead511890e80413129e46f",
+    "schema": "nova.genome.v3"
+  },
+  "domain": "CAPABILITY",
+  "event": 8,
+  "freeze": "29e3cd75c543b34585dde20b572cc979b02f1c77123790f02c977e23cb24bcd9",
+  "kind": "capability_freeze",
+  "parent_generation": 1,
+  "parent_genome": "ccca2c73418de97ca71257ba8e542ab5ed7584053fead511890e80413129e46f",
+  "primitive": {
+    "definition": {
+      "expression": "x ^ y",
+      "name": "mix",
+      "parameters": [
+        "x",
+        "y"
+      ],
+      "width": 32
+    },
+    "id": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+    "ir": [
+      "xor",
+      [
+        "arg",
+        "x"
+      ],
+      [
+        "arg",
+        "y"
+      ]
+    ],
+    "language": "nova.word-expression.v1",
+    "parents": [],
+    "source": "def solve(inputs):\n    return word('xor', 32, inputs['x'], inputs['y'])\n",
+    "specification": "a016766105e582f254aa9a2331b98e531aae30fe37826926325c12cc73d02481"
+  },
+  "program": {
+    "id": "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+    "ir": [
+      "apply",
+      "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+      [
+        "object",
+        {
+          "x": [
+            "input",
+            "a"
+          ],
+          "y": [
+            "input",
+            "b"
+          ]
+        }
+      ]
+    ],
+    "language": "nova.expression.v1",
+    "parents": [
+      "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+    ],
+    "source": "def solve(inputs, recall):\n    return recall('6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc', {'x': inputs['a'], 'y': inputs['b']})\n"
+  },
+  "reason": "CANDIDATE_FROZEN",
+  "report": {
+    "argument_bindings_tested": 2,
+    "candidate_budget": 64,
+    "candidates_deferred_by_budget": 0,
+    "diagnosis": {
+      "hypothesis": "REPRESENTATION_GAP",
+      "knowledge": "AVAILABLE",
+      "observed": "SEARCH_EXHAUSTED",
+      "proof_of_global_impossibility": false,
+      "search": "ATTEMPT_BUDGET_REACHED",
+      "source_events": [
+        5
+      ],
+      "training_output_types": [
+        "int"
+      ],
+      "unavailable_native_word_operations": [
+        "not",
+        "xor"
+      ],
+      "unsupported_specification_constructs": []
+    },
+    "hidden_cases_seen": 0,
+    "learning": [
+      {
+        "author": "kernel_equation_compiler",
+        "genes": [
+          {
+            "definition": {
+              "expression": "x ^ y",
+              "name": "mix",
+              "parameters": [
+                "x",
+                "y"
+              ],
+              "width": 32
+            },
+            "id": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+            "ir": [
+              "xor",
+              [
+                "arg",
+                "x"
+              ],
+              [
+                "arg",
+                "y"
+              ]
+            ],
+            "language": "nova.word-expression.v1",
+            "parents": [],
+            "source": "def solve(inputs):\n    return word('xor', 32, inputs['x'], inputs['y'])\n",
+            "specification": "a016766105e582f254aa9a2331b98e531aae30fe37826926325c12cc73d02481"
+          },
+          {
+            "definition": {
+              "expression": "~x",
+              "name": "flip",
+              "parameters": [
+                "x"
+              ],
+              "width": 32
+            },
+            "id": "d8a514a72abec3944820085665b5a2aec114a204684bbb772d8a11d6fc52b24d",
+            "ir": [
+              "not",
+              [
+                "arg",
+                "x"
+              ]
+            ],
+            "language": "nova.word-expression.v1",
+            "parents": [],
+            "source": "def solve(inputs):\n    return word('not', 32, inputs['x'])\n",
+            "specification": "a016766105e582f254aa9a2331b98e531aae30fe37826926325c12cc73d02481"
+          }
+        ],
+        "knowledge_author": "Maintainer supplies mathematical equations; Nova compiles gene bodies and selects bindings; independent fresh oracle only after freeze.",
+        "rejected": [],
+        "specification": "a016766105e582f254aa9a2331b98e531aae30fe37826926325c12cc73d02481",
+        "unsupported": []
+      }
+    ],
+    "next_requirement": "fresh_independent_holdout",
+    "sandbox_smoke": {
+      "isolation": "linux_seccomp_v1",
+      "results": [
+        {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 0
+            }
+          ],
+          "passed": 1,
+          "total": 1
+        },
+        {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 4294967295
+            }
+          ],
+          "passed": 1,
+          "total": 1
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "selection": {
+    "kind": "CAPABILITY",
+    "plan": {
+      "memory_context": "2ded710d5b003e13dd3edb88bec0d27d19e74e948564c7b2bf0428ca66f327d6",
+      "previous_attempt": 5
+    },
+    "policy": "oldest_remembered_exhausted_deficit_then_task_id",
+    "target": "word-xor",
+    "task": "@capability:word-xor"
+  },
+  "status": "FROZEN",
+  "workspace": {
+    "CODE": {
+      "author": "kernel_equation_compiler",
+      "generated": [
+        "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+        "d8a514a72abec3944820085665b5a2aec114a204684bbb772d8a11d6fc52b24d"
+      ],
+      "selected": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+    },
+    "INTELLIGENCE": {
+      "hypothesis": "REPRESENTATION_GAP",
+      "knowledge": "AVAILABLE",
+      "observed": "SEARCH_EXHAUSTED",
+      "proof_of_global_impossibility": false,
+      "search": "ATTEMPT_BUDGET_REACHED",
+      "source_events": [
+        5
+      ],
+      "training_output_types": [
+        "int"
+      ],
+      "unavailable_native_word_operations": [
+        "not",
+        "xor"
+      ],
+      "unsupported_specification_constructs": []
+    },
+    "LOGIC": {
+      "fresh_evaluation_required": true,
+      "verdict": "CANDIDATE_FROZEN"
+    },
+    "THINKING": {
+      "action": "EXTEND_GRAMMAR_TO_RESOLVE_REMEMBERED_DEFICIT",
+      "cause": 5,
+      "origin": "kernel_causal_memory",
+      "required_result": "new_primitive_and_training_fit_before_fresh_evaluation",
+      "task": "word-xor"
+    },
+    "context": "3ab3a4c0eac69b826a14a2da11f4d35adbfe8135afc2732a959a0c38a5e9b03f"
+  }
+}

@@ -1,0 +1,446 @@
+{
+  "domain": "CAPABILITY",
+  "event": 9,
+  "freeze": "29e3cd75c543b34585dde20b572cc979b02f1c77123790f02c977e23cb24bcd9",
+  "generation": 2,
+  "kind": "capability_evaluation",
+  "parent_generation": 1,
+  "reason": "VERIFIED_CAPABILITY_IMPROVEMENT",
+  "report": {
+    "ablation": {
+      "best_inherited_passed": 0,
+      "claim": "improvement_over_recorded_bounded_search_and_active_genes",
+      "old_grammar_failure_event": 5,
+      "removed_primitive": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+      "without_primitive": {
+        "outcomes": [
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          },
+          {
+            "error": "ContractError",
+            "ok": false
+          }
+        ],
+        "passed": 0,
+        "total": 24
+      }
+    },
+    "fresh_holdout": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": 0
+        },
+        {
+          "ok": true,
+          "output": 4294967295
+        },
+        {
+          "ok": true,
+          "output": 0
+        },
+        {
+          "ok": true,
+          "output": 2147483649
+        },
+        {
+          "ok": true,
+          "output": 2143990503
+        },
+        {
+          "ok": true,
+          "output": 4029747108
+        },
+        {
+          "ok": true,
+          "output": 2407102575
+        },
+        {
+          "ok": true,
+          "output": 3841760945
+        },
+        {
+          "ok": true,
+          "output": 1776523699
+        },
+        {
+          "ok": true,
+          "output": 1993898907
+        },
+        {
+          "ok": true,
+          "output": 3277908716
+        },
+        {
+          "ok": true,
+          "output": 3731242436
+        },
+        {
+          "ok": true,
+          "output": 1344576696
+        },
+        {
+          "ok": true,
+          "output": 3445830973
+        },
+        {
+          "ok": true,
+          "output": 1423318131
+        },
+        {
+          "ok": true,
+          "output": 1635605902
+        },
+        {
+          "ok": true,
+          "output": 3003335290
+        },
+        {
+          "ok": true,
+          "output": 4182242741
+        },
+        {
+          "ok": true,
+          "output": 315482469
+        },
+        {
+          "ok": true,
+          "output": 2120912350
+        },
+        {
+          "ok": true,
+          "output": 2598596051
+        },
+        {
+          "ok": true,
+          "output": 391429506
+        },
+        {
+          "ok": true,
+          "output": 1106804946
+        },
+        {
+          "ok": true,
+          "output": 3235594732
+        }
+      ],
+      "passed": 24,
+      "total": 24
+    },
+    "isolation": "linux_seccomp_v1",
+    "original_holdout": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": 97
+        },
+        {
+          "ok": true,
+          "output": 43
+        }
+      ],
+      "passed": 2,
+      "total": 2
+    },
+    "regression": {
+      "old-trim": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "alpha"
+          },
+          {
+            "ok": true,
+            "output": "beta"
+          },
+          {
+            "ok": true,
+            "output": "gamma"
+          },
+          {
+            "ok": true,
+            "output": "delta"
+          }
+        ],
+        "passed": 4,
+        "total": 4
+      }
+    },
+    "train": {
+      "outcomes": [
+        {
+          "ok": true,
+          "output": 12
+        },
+        {
+          "ok": true,
+          "output": 57
+        }
+      ],
+      "passed": 2,
+      "total": 2
+    }
+  },
+  "rows": [
+    {
+      "input": {
+        "a": 0,
+        "b": 0
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": 4294967295,
+        "b": 0
+      },
+      "output": 4294967295
+    },
+    {
+      "input": {
+        "a": 4294967295,
+        "b": 4294967295
+      },
+      "output": 0
+    },
+    {
+      "input": {
+        "a": 2147483648,
+        "b": 1
+      },
+      "output": 2147483649
+    },
+    {
+      "input": {
+        "a": 415473079,
+        "b": 1728655184
+      },
+      "output": 2143990503
+    },
+    {
+      "input": {
+        "a": 3969596298,
+        "b": 480916526
+      },
+      "output": 4029747108
+    },
+    {
+      "input": {
+        "a": 278145803,
+        "b": 2683130724
+      },
+      "output": 2407102575
+    },
+    {
+      "input": {
+        "a": 1294258466,
+        "b": 2849525651
+      },
+      "output": 3841760945
+    },
+    {
+      "input": {
+        "a": 978341139,
+        "b": 1404294304
+      },
+      "output": 1776523699
+    },
+    {
+      "input": {
+        "a": 341211966,
+        "b": 1653473445
+      },
+      "output": 1993898907
+    },
+    {
+      "input": {
+        "a": 1524080947,
+        "b": 2578926559
+      },
+      "output": 3277908716
+    },
+    {
+      "input": {
+        "a": 2293046358,
+        "b": 1456152978
+      },
+      "output": 3731242436
+    },
+    {
+      "input": {
+        "a": 1553064475,
+        "b": 213221027
+      },
+      "output": 1344576696
+    },
+    {
+      "input": {
+        "a": 3648448696,
+        "b": 336977285
+      },
+      "output": 3445830973
+    },
+    {
+      "input": {
+        "a": 2071796705,
+        "b": 799737746
+      },
+      "output": 1423318131
+    },
+    {
+      "input": {
+        "a": 2375739088,
+        "b": 3974609758
+      },
+      "output": 1635605902
+    },
+    {
+      "input": {
+        "a": 4247938364,
+        "b": 1311844166
+      },
+      "output": 3003335290
+    },
+    {
+      "input": {
+        "a": 349418115,
+        "b": 3985917750
+      },
+      "output": 4182242741
+    },
+    {
+      "input": {
+        "a": 2605001965,
+        "b": 2307444104
+      },
+      "output": 315482469
+    },
+    {
+      "input": {
+        "a": 726287212,
+        "b": 1428213426
+      },
+      "output": 2120912350
+    },
+    {
+      "input": {
+        "a": 2465367448,
+        "b": 135391307
+      },
+      "output": 2598596051
+    },
+    {
+      "input": {
+        "a": 4192287384,
+        "b": 4004874010
+      },
+      "output": 391429506
+    },
+    {
+      "input": {
+        "a": 3725587686,
+        "b": 2683794484
+      },
+      "output": 1106804946
+    },
+    {
+      "input": {
+        "a": 42163848,
+        "b": 3260555108
+      },
+      "output": 3235594732
+    }
+  ],
+  "status": "ADMITTED",
+  "target": "word-xor"
+}

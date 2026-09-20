@@ -1,0 +1,1392 @@
+{
+  "events": [
+    {
+      "kind": "genesis",
+      "manifest": {
+        "capability_author": "kernel_specification_conditioned_equation_compiler",
+        "capability_dialect": "bounded_word_equations_not_arbitrary_algorithm_prose",
+        "engine_author": "maintainer",
+        "engine_policy_author": "kernel_bounded_experience_conditioned_mutation",
+        "faculties": {
+          "CODE": "native_expression_synthesis_and_ast_execution",
+          "INTELLIGENCE": "experience_conditioned_verified_gene_selection",
+          "LOGIC": "contracts_deficits_and_admission_evidence",
+          "THINKING": "causal_goal_selection_and_continuation"
+        },
+        "program_author": "kernel_training_only",
+        "python": [
+          3,
+          12
+        ],
+        "runtime": "single_state_single_queue_single_journal",
+        "schema": "nova.kernel.v3",
+        "search": {
+          "attempts": 12000,
+          "depth": 3
+        },
+        "sources": {
+          "__init__.py": "8838a49211c4f67d00c1991641e90a398fe73e987b4d9344c70d4be3c24a8f65",
+          "__main__.py": "b5f9eebcbbfa9021a02046975e7ba1e66e071430630d4ed2b877257267c8707d",
+          "adaptation.py": "d3ae9a32d3114e0fd9d1e09af66d95fcb0a0c58cf1d14b5ec8619c45643bcaae",
+          "capability.py": "958b67d38066e99c6724b0fab8bfd81dbf977ea2f38bef1bc7b9a158c27963e5",
+          "compatibility.py": "8bf37d4842d4e3a44eb25198c0b1514551301550f85a5b403f7ad4ab04b2168c",
+          "contracts.py": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe",
+          "evaluation.py": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2",
+          "extensions.py": "10b1d37e6d6c29c46115e57e00dba433408414716dea141287afdd4af892ce0b",
+          "genetics.py": "e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0",
+          "isolation.py": "c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3",
+          "kernel.py": "1b48f47a4379b7eebd6f1b8e5f3afea11ebf9b1e8e7aee0ddc2c8b2ae547ca83",
+          "language.py": "1f9d77224b5e14ac35f06d92e6417211cd6aa8f1de544d2d8a9b1a5ab5e1237b",
+          "memory.py": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777",
+          "sandbox_worker.py": "11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96",
+          "synthesis.py": "dc21ae933680c1440aec1c232fb973e93c23933b4206c9e727bacd3de3a15379"
+        }
+      }
+    },
+    {
+      "kind": "tasks",
+      "tasks": [
+        {
+          "holdout": [
+            {
+              "input": {
+                "text": " gamma "
+              },
+              "output": "gamma"
+            },
+            {
+              "input": {
+                "text": " delta "
+              },
+              "output": "delta"
+            }
+          ],
+          "id": "old-trim",
+          "source": "operator:regression-control",
+          "train": [
+            {
+              "input": {
+                "text": " alpha "
+              },
+              "output": "alpha"
+            },
+            {
+              "input": {
+                "text": " beta "
+              },
+              "output": "beta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset": "801131bfa188f54956efffe90401551dac30a82f4833233abec3131f06476077",
+      "event": 3,
+      "gate": {
+        "ablation": [],
+        "baseline_holdout": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": " gamma "
+            },
+            {
+              "ok": false,
+              "output": " delta "
+            }
+          ],
+          "passed": 0,
+          "total": 2
+        },
+        "genetics": {
+          "candidate_genome": "ccca2c73418de97ca71257ba8e542ab5ed7584053fead511890e80413129e46f",
+          "parent_genome": "3f5b9969073ce988b400332ff9bc7f99bb3361be230e0c7899e6329661e9f0f7",
+          "passed": true
+        },
+        "holdout": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": "gamma"
+            },
+            {
+              "ok": true,
+              "output": "delta"
+            }
+          ],
+          "passed": 2,
+          "total": 2
+        },
+        "reason": "VERIFIED_IMPROVEMENT",
+        "regression": {},
+        "train": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": "alpha"
+            },
+            {
+              "ok": true,
+              "output": "beta"
+            }
+          ],
+          "passed": 2,
+          "total": 2
+        }
+      },
+      "generation": 1,
+      "kind": "step",
+      "mutation": {
+        "added_genes": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "child_genome": {
+          "bindings": {
+            "old-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          },
+          "genes": [
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          ],
+          "id": "ccca2c73418de97ca71257ba8e542ab5ed7584053fead511890e80413129e46f",
+          "parent": "3f5b9969073ce988b400332ff9bc7f99bb3361be230e0c7899e6329661e9f0f7",
+          "schema": "nova.genome.v1"
+        },
+        "expression_parents": [],
+        "inherited_genes": [],
+        "kind": "ADD_GENE",
+        "parent_genome": "3f5b9969073ce988b400332ff9bc7f99bb3361be230e0c7899e6329661e9f0f7"
+      },
+      "parent_generation": 0,
+      "program": {
+        "id": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+        "ir": [
+          "call",
+          "strip",
+          [
+            "input",
+            "text"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return primitive('strip', inputs['text'])\n"
+      },
+      "reason": "VERIFIED_IMPROVEMENT",
+      "selection": {
+        "baseline_train": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": " alpha "
+            },
+            {
+              "ok": false,
+              "output": " beta "
+            }
+          ],
+          "passed": 0,
+          "total": 2
+        },
+        "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "plan": {
+          "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "native_primitive_search",
+          "usable_genes": []
+        },
+        "policy": "largest_training_deficit_then_task_id",
+        "task": "old-trim"
+      },
+      "status": "ADMITTED",
+      "synthesis": {
+        "attempts": 90,
+        "selection": "training_only"
+      },
+      "workspace": {
+        "CODE": {
+          "attempts": 90,
+          "program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+          "selection": "training_only"
+        },
+        "INTELLIGENCE": {
+          "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "native_primitive_search",
+          "usable_genes": []
+        },
+        "LOGIC": {
+          "baseline_train": "fe4f0b5a3cb3b77fc913e9daf8332f5bdafeb1107899be029d4718327f68e472",
+          "evidence": "3b7236ef7935e2bbf8b6a820387408ccb891e264b6b0152dfc2f065ceebb8ce2",
+          "verdict": "VERIFIED_IMPROVEMENT"
+        },
+        "THINKING": {
+          "causes": {
+            "gene_events": {},
+            "previous_attempt": null,
+            "task_event": 2
+          },
+          "goal": "old-trim",
+          "policy": "largest_training_deficit_then_task_id"
+        },
+        "context": "3abf22480ea5469abd7741fc741bf632ae8c83a73c4521a74e61d171d20e4ff8"
+      }
+    },
+    {
+      "kind": "tasks",
+      "tasks": [
+        {
+          "holdout": [
+            {
+              "input": {
+                "a": 53,
+                "b": 84
+              },
+              "output": 97
+            },
+            {
+              "input": {
+                "a": 100,
+                "b": 79
+              },
+              "output": 43
+            }
+          ],
+          "id": "word-xor",
+          "source": "operator:word-algebra-mechanism-control-not-sha256",
+          "train": [
+            {
+              "input": {
+                "a": 7,
+                "b": 11
+              },
+              "output": 12
+            },
+            {
+              "input": {
+                "a": 42,
+                "b": 19
+              },
+              "output": 57
+            }
+          ]
+        },
+        {
+          "holdout": [
+            {
+              "input": {
+                "left": 543,
+                "right": 814
+              },
+              "output": 305
+            },
+            {
+              "input": {
+                "left": 1030,
+                "right": 749
+              },
+              "output": 1771
+            }
+          ],
+          "id": "word-xor-transfer",
+          "source": "operator:word-algebra-mechanism-control-not-sha256",
+          "train": [
+            {
+              "input": {
+                "left": 1007,
+                "right": 211
+              },
+              "output": 828
+            },
+            {
+              "input": {
+                "left": 402,
+                "right": 119
+              },
+              "output": 485
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dataset": "baf556a4cbf44a584bc48c1cf44791f14e798336f6fde4d5d07e3ebb5a9d0562",
+      "event": 5,
+      "gate": null,
+      "generation": 1,
+      "kind": "step",
+      "mutation": null,
+      "parent_generation": 1,
+      "program": null,
+      "reason": "SEARCH_EXHAUSTED",
+      "selection": {
+        "baseline_train": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": 7
+            },
+            {
+              "ok": false,
+              "output": 42
+            }
+          ],
+          "passed": 0,
+          "total": 2
+        },
+        "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "plan": {
+          "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "native_primitive_search",
+          "usable_genes": []
+        },
+        "policy": "largest_training_deficit_then_task_id",
+        "task": "word-xor"
+      },
+      "status": "WITHHOLD",
+      "synthesis": {
+        "attempts": 12000,
+        "selection": "training_only"
+      },
+      "workspace": {
+        "CODE": {
+          "attempts": 12000,
+          "program": null,
+          "selection": "training_only"
+        },
+        "INTELLIGENCE": {
+          "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "native_primitive_search",
+          "usable_genes": []
+        },
+        "LOGIC": {
+          "baseline_train": "7d5a396a8b0ffe2d28425c784a47757bdfa098b761e2e20bdde0978c59b62140",
+          "evidence": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "verdict": "SEARCH_EXHAUSTED"
+        },
+        "THINKING": {
+          "causes": {
+            "gene_events": {},
+            "previous_attempt": null,
+            "task_event": 4
+          },
+          "goal": "word-xor",
+          "policy": "largest_training_deficit_then_task_id"
+        },
+        "context": "5062fa1b5c930e7678452e7fbae4c618101f6d5556fc2936de93916b0ab3935d"
+      }
+    },
+    {
+      "dataset": "931390fe8cb9bcfa7e0f07cb1bba18b777a47a575e3857ee2893ff1a4d8418eb",
+      "event": 6,
+      "gate": null,
+      "generation": 1,
+      "kind": "step",
+      "mutation": null,
+      "parent_generation": 1,
+      "program": null,
+      "reason": "SEARCH_EXHAUSTED",
+      "selection": {
+        "baseline_train": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": 1007
+            },
+            {
+              "ok": false,
+              "output": 402
+            }
+          ],
+          "passed": 0,
+          "total": 2
+        },
+        "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "plan": {
+          "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "native_primitive_search",
+          "usable_genes": []
+        },
+        "policy": "largest_training_deficit_then_task_id",
+        "task": "word-xor-transfer"
+      },
+      "status": "WITHHOLD",
+      "synthesis": {
+        "attempts": 12000,
+        "selection": "training_only"
+      },
+      "workspace": {
+        "CODE": {
+          "attempts": 12000,
+          "program": null,
+          "selection": "training_only"
+        },
+        "INTELLIGENCE": {
+          "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "native_primitive_search",
+          "usable_genes": []
+        },
+        "LOGIC": {
+          "baseline_train": "6c1fa6068529c1cb738f06a4f0fd605e1569891601a260c35d160dad0f95b91e",
+          "evidence": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "verdict": "SEARCH_EXHAUSTED"
+        },
+        "THINKING": {
+          "causes": {
+            "gene_events": {},
+            "previous_attempt": null,
+            "task_event": 4
+          },
+          "goal": "word-xor-transfer",
+          "policy": "largest_training_deficit_then_task_id"
+        },
+        "context": "eb9d7a24078305fcb46df332132a674fe0eab8b77e4d504a9e7081db22ae250a"
+      }
+    },
+    {
+      "kind": "knowledge",
+      "specification": {
+        "id": "word-algebra",
+        "provenance": "Maintainer supplies mathematical equations; Nova compiles gene bodies and selects bindings; independent fresh oracle only after freeze.",
+        "source": "operator:unsigned-word-mathematical-specification",
+        "text": "mix(x,y) = x ^ y\nflip(x) = ~x",
+        "title": "Word algebra control",
+        "width": 32
+      }
+    },
+    {
+      "child_genome": {
+        "bindings": {
+          "old-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+          "word-xor": "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a"
+        },
+        "capabilities": [
+          "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+        ],
+        "genes": [
+          "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+          "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "id": "1ae080a5cf0efe34712c0a1fa8d3e0253e49dd78d6f86bf3772b1dffe6166d1a",
+        "parent": "ccca2c73418de97ca71257ba8e542ab5ed7584053fead511890e80413129e46f",
+        "schema": "nova.genome.v3"
+      },
+      "domain": "CAPABILITY",
+      "event": 8,
+      "freeze": "29e3cd75c543b34585dde20b572cc979b02f1c77123790f02c977e23cb24bcd9",
+      "kind": "capability_freeze",
+      "parent_generation": 1,
+      "parent_genome": "ccca2c73418de97ca71257ba8e542ab5ed7584053fead511890e80413129e46f",
+      "primitive": {
+        "definition": {
+          "expression": "x ^ y",
+          "name": "mix",
+          "parameters": [
+            "x",
+            "y"
+          ],
+          "width": 32
+        },
+        "id": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+        "ir": [
+          "xor",
+          [
+            "arg",
+            "x"
+          ],
+          [
+            "arg",
+            "y"
+          ]
+        ],
+        "language": "nova.word-expression.v1",
+        "parents": [],
+        "source": "def solve(inputs):\n    return word('xor', 32, inputs['x'], inputs['y'])\n",
+        "specification": "a016766105e582f254aa9a2331b98e531aae30fe37826926325c12cc73d02481"
+      },
+      "program": {
+        "id": "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+        "ir": [
+          "apply",
+          "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+          [
+            "object",
+            {
+              "x": [
+                "input",
+                "a"
+              ],
+              "y": [
+                "input",
+                "b"
+              ]
+            }
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+        ],
+        "source": "def solve(inputs, recall):\n    return recall('6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc', {'x': inputs['a'], 'y': inputs['b']})\n"
+      },
+      "reason": "CANDIDATE_FROZEN",
+      "report": {
+        "argument_bindings_tested": 2,
+        "candidate_budget": 64,
+        "candidates_deferred_by_budget": 0,
+        "diagnosis": {
+          "hypothesis": "REPRESENTATION_GAP",
+          "knowledge": "AVAILABLE",
+          "observed": "SEARCH_EXHAUSTED",
+          "proof_of_global_impossibility": false,
+          "search": "ATTEMPT_BUDGET_REACHED",
+          "source_events": [
+            5
+          ],
+          "training_output_types": [
+            "int"
+          ],
+          "unavailable_native_word_operations": [
+            "not",
+            "xor"
+          ],
+          "unsupported_specification_constructs": []
+        },
+        "hidden_cases_seen": 0,
+        "learning": [
+          {
+            "author": "kernel_equation_compiler",
+            "genes": [
+              {
+                "definition": {
+                  "expression": "x ^ y",
+                  "name": "mix",
+                  "parameters": [
+                    "x",
+                    "y"
+                  ],
+                  "width": 32
+                },
+                "id": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+                "ir": [
+                  "xor",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "arg",
+                    "y"
+                  ]
+                ],
+                "language": "nova.word-expression.v1",
+                "parents": [],
+                "source": "def solve(inputs):\n    return word('xor', 32, inputs['x'], inputs['y'])\n",
+                "specification": "a016766105e582f254aa9a2331b98e531aae30fe37826926325c12cc73d02481"
+              },
+              {
+                "definition": {
+                  "expression": "~x",
+                  "name": "flip",
+                  "parameters": [
+                    "x"
+                  ],
+                  "width": 32
+                },
+                "id": "d8a514a72abec3944820085665b5a2aec114a204684bbb772d8a11d6fc52b24d",
+                "ir": [
+                  "not",
+                  [
+                    "arg",
+                    "x"
+                  ]
+                ],
+                "language": "nova.word-expression.v1",
+                "parents": [],
+                "source": "def solve(inputs):\n    return word('not', 32, inputs['x'])\n",
+                "specification": "a016766105e582f254aa9a2331b98e531aae30fe37826926325c12cc73d02481"
+              }
+            ],
+            "knowledge_author": "Maintainer supplies mathematical equations; Nova compiles gene bodies and selects bindings; independent fresh oracle only after freeze.",
+            "rejected": [],
+            "specification": "a016766105e582f254aa9a2331b98e531aae30fe37826926325c12cc73d02481",
+            "unsupported": []
+          }
+        ],
+        "next_requirement": "fresh_independent_holdout",
+        "sandbox_smoke": {
+          "isolation": "linux_seccomp_v1",
+          "results": [
+            {
+              "outcomes": [
+                {
+                  "ok": true,
+                  "output": 0
+                }
+              ],
+              "passed": 1,
+              "total": 1
+            },
+            {
+              "outcomes": [
+                {
+                  "ok": true,
+                  "output": 4294967295
+                }
+              ],
+              "passed": 1,
+              "total": 1
+            }
+          ],
+          "status": "PASS"
+        }
+      },
+      "selection": {
+        "kind": "CAPABILITY",
+        "plan": {
+          "memory_context": "2ded710d5b003e13dd3edb88bec0d27d19e74e948564c7b2bf0428ca66f327d6",
+          "previous_attempt": 5
+        },
+        "policy": "oldest_remembered_exhausted_deficit_then_task_id",
+        "target": "word-xor",
+        "task": "@capability:word-xor"
+      },
+      "status": "FROZEN",
+      "workspace": {
+        "CODE": {
+          "author": "kernel_equation_compiler",
+          "generated": [
+            "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+            "d8a514a72abec3944820085665b5a2aec114a204684bbb772d8a11d6fc52b24d"
+          ],
+          "selected": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+        },
+        "INTELLIGENCE": {
+          "hypothesis": "REPRESENTATION_GAP",
+          "knowledge": "AVAILABLE",
+          "observed": "SEARCH_EXHAUSTED",
+          "proof_of_global_impossibility": false,
+          "search": "ATTEMPT_BUDGET_REACHED",
+          "source_events": [
+            5
+          ],
+          "training_output_types": [
+            "int"
+          ],
+          "unavailable_native_word_operations": [
+            "not",
+            "xor"
+          ],
+          "unsupported_specification_constructs": []
+        },
+        "LOGIC": {
+          "fresh_evaluation_required": true,
+          "verdict": "CANDIDATE_FROZEN"
+        },
+        "THINKING": {
+          "action": "EXTEND_GRAMMAR_TO_RESOLVE_REMEMBERED_DEFICIT",
+          "cause": 5,
+          "origin": "kernel_causal_memory",
+          "required_result": "new_primitive_and_training_fit_before_fresh_evaluation",
+          "task": "word-xor"
+        },
+        "context": "3ab3a4c0eac69b826a14a2da11f4d35adbfe8135afc2732a959a0c38a5e9b03f"
+      }
+    },
+    {
+      "domain": "CAPABILITY",
+      "event": 9,
+      "freeze": "29e3cd75c543b34585dde20b572cc979b02f1c77123790f02c977e23cb24bcd9",
+      "generation": 2,
+      "kind": "capability_evaluation",
+      "parent_generation": 1,
+      "reason": "VERIFIED_CAPABILITY_IMPROVEMENT",
+      "report": {
+        "ablation": {
+          "best_inherited_passed": 0,
+          "claim": "improvement_over_recorded_bounded_search_and_active_genes",
+          "old_grammar_failure_event": 5,
+          "removed_primitive": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+          "without_primitive": {
+            "outcomes": [
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              },
+              {
+                "error": "ContractError",
+                "ok": false
+              }
+            ],
+            "passed": 0,
+            "total": 24
+          }
+        },
+        "fresh_holdout": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 0
+            },
+            {
+              "ok": true,
+              "output": 4294967295
+            },
+            {
+              "ok": true,
+              "output": 0
+            },
+            {
+              "ok": true,
+              "output": 2147483649
+            },
+            {
+              "ok": true,
+              "output": 2143990503
+            },
+            {
+              "ok": true,
+              "output": 4029747108
+            },
+            {
+              "ok": true,
+              "output": 2407102575
+            },
+            {
+              "ok": true,
+              "output": 3841760945
+            },
+            {
+              "ok": true,
+              "output": 1776523699
+            },
+            {
+              "ok": true,
+              "output": 1993898907
+            },
+            {
+              "ok": true,
+              "output": 3277908716
+            },
+            {
+              "ok": true,
+              "output": 3731242436
+            },
+            {
+              "ok": true,
+              "output": 1344576696
+            },
+            {
+              "ok": true,
+              "output": 3445830973
+            },
+            {
+              "ok": true,
+              "output": 1423318131
+            },
+            {
+              "ok": true,
+              "output": 1635605902
+            },
+            {
+              "ok": true,
+              "output": 3003335290
+            },
+            {
+              "ok": true,
+              "output": 4182242741
+            },
+            {
+              "ok": true,
+              "output": 315482469
+            },
+            {
+              "ok": true,
+              "output": 2120912350
+            },
+            {
+              "ok": true,
+              "output": 2598596051
+            },
+            {
+              "ok": true,
+              "output": 391429506
+            },
+            {
+              "ok": true,
+              "output": 1106804946
+            },
+            {
+              "ok": true,
+              "output": 3235594732
+            }
+          ],
+          "passed": 24,
+          "total": 24
+        },
+        "isolation": "linux_seccomp_v1",
+        "original_holdout": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 97
+            },
+            {
+              "ok": true,
+              "output": 43
+            }
+          ],
+          "passed": 2,
+          "total": 2
+        },
+        "regression": {
+          "old-trim": {
+            "outcomes": [
+              {
+                "ok": true,
+                "output": "alpha"
+              },
+              {
+                "ok": true,
+                "output": "beta"
+              },
+              {
+                "ok": true,
+                "output": "gamma"
+              },
+              {
+                "ok": true,
+                "output": "delta"
+              }
+            ],
+            "passed": 4,
+            "total": 4
+          }
+        },
+        "train": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 12
+            },
+            {
+              "ok": true,
+              "output": 57
+            }
+          ],
+          "passed": 2,
+          "total": 2
+        }
+      },
+      "rows": [
+        {
+          "input": {
+            "a": 0,
+            "b": 0
+          },
+          "output": 0
+        },
+        {
+          "input": {
+            "a": 4294967295,
+            "b": 0
+          },
+          "output": 4294967295
+        },
+        {
+          "input": {
+            "a": 4294967295,
+            "b": 4294967295
+          },
+          "output": 0
+        },
+        {
+          "input": {
+            "a": 2147483648,
+            "b": 1
+          },
+          "output": 2147483649
+        },
+        {
+          "input": {
+            "a": 415473079,
+            "b": 1728655184
+          },
+          "output": 2143990503
+        },
+        {
+          "input": {
+            "a": 3969596298,
+            "b": 480916526
+          },
+          "output": 4029747108
+        },
+        {
+          "input": {
+            "a": 278145803,
+            "b": 2683130724
+          },
+          "output": 2407102575
+        },
+        {
+          "input": {
+            "a": 1294258466,
+            "b": 2849525651
+          },
+          "output": 3841760945
+        },
+        {
+          "input": {
+            "a": 978341139,
+            "b": 1404294304
+          },
+          "output": 1776523699
+        },
+        {
+          "input": {
+            "a": 341211966,
+            "b": 1653473445
+          },
+          "output": 1993898907
+        },
+        {
+          "input": {
+            "a": 1524080947,
+            "b": 2578926559
+          },
+          "output": 3277908716
+        },
+        {
+          "input": {
+            "a": 2293046358,
+            "b": 1456152978
+          },
+          "output": 3731242436
+        },
+        {
+          "input": {
+            "a": 1553064475,
+            "b": 213221027
+          },
+          "output": 1344576696
+        },
+        {
+          "input": {
+            "a": 3648448696,
+            "b": 336977285
+          },
+          "output": 3445830973
+        },
+        {
+          "input": {
+            "a": 2071796705,
+            "b": 799737746
+          },
+          "output": 1423318131
+        },
+        {
+          "input": {
+            "a": 2375739088,
+            "b": 3974609758
+          },
+          "output": 1635605902
+        },
+        {
+          "input": {
+            "a": 4247938364,
+            "b": 1311844166
+          },
+          "output": 3003335290
+        },
+        {
+          "input": {
+            "a": 349418115,
+            "b": 3985917750
+          },
+          "output": 4182242741
+        },
+        {
+          "input": {
+            "a": 2605001965,
+            "b": 2307444104
+          },
+          "output": 315482469
+        },
+        {
+          "input": {
+            "a": 726287212,
+            "b": 1428213426
+          },
+          "output": 2120912350
+        },
+        {
+          "input": {
+            "a": 2465367448,
+            "b": 135391307
+          },
+          "output": 2598596051
+        },
+        {
+          "input": {
+            "a": 4192287384,
+            "b": 4004874010
+          },
+          "output": 391429506
+        },
+        {
+          "input": {
+            "a": 3725587686,
+            "b": 2683794484
+          },
+          "output": 1106804946
+        },
+        {
+          "input": {
+            "a": 42163848,
+            "b": 3260555108
+          },
+          "output": 3235594732
+        }
+      ],
+      "status": "ADMITTED",
+      "target": "word-xor"
+    },
+    {
+      "dataset": "931390fe8cb9bcfa7e0f07cb1bba18b777a47a575e3857ee2893ff1a4d8418eb",
+      "event": 10,
+      "gate": {
+        "ablation": [
+          {
+            "failed_without_parent": true,
+            "parent": "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+            "passed_without_parent": 0
+          }
+        ],
+        "baseline_holdout": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": 543
+            },
+            {
+              "ok": false,
+              "output": 1030
+            }
+          ],
+          "passed": 0,
+          "total": 2
+        },
+        "genetics": {
+          "candidate_genome": "da96cbce7db6ab738e081c794dca03f90fbb886c3fa457412afe789ab697d22e",
+          "parent_genome": "1ae080a5cf0efe34712c0a1fa8d3e0253e49dd78d6f86bf3772b1dffe6166d1a",
+          "passed": true
+        },
+        "holdout": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 305
+            },
+            {
+              "ok": true,
+              "output": 1771
+            }
+          ],
+          "passed": 2,
+          "total": 2
+        },
+        "reason": "VERIFIED_IMPROVEMENT",
+        "regression": {
+          "old-trim": {
+            "outcomes": [
+              {
+                "ok": true,
+                "output": "alpha"
+              },
+              {
+                "ok": true,
+                "output": "beta"
+              },
+              {
+                "ok": true,
+                "output": "gamma"
+              },
+              {
+                "ok": true,
+                "output": "delta"
+              }
+            ],
+            "passed": 4,
+            "total": 4
+          },
+          "word-xor": {
+            "outcomes": [
+              {
+                "ok": true,
+                "output": 12
+              },
+              {
+                "ok": true,
+                "output": 57
+              },
+              {
+                "ok": true,
+                "output": 97
+              },
+              {
+                "ok": true,
+                "output": 43
+              }
+            ],
+            "passed": 4,
+            "total": 4
+          }
+        },
+        "train": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 828
+            },
+            {
+              "ok": true,
+              "output": 485
+            }
+          ],
+          "passed": 2,
+          "total": 2
+        }
+      },
+      "generation": 3,
+      "kind": "step",
+      "mutation": {
+        "added_genes": [
+          "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736"
+        ],
+        "child_genome": {
+          "bindings": {
+            "old-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+            "word-xor": "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+            "word-xor-transfer": "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736"
+          },
+          "capabilities": [
+            "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+          ],
+          "genes": [
+            "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736",
+            "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+            "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          ],
+          "id": "da96cbce7db6ab738e081c794dca03f90fbb886c3fa457412afe789ab697d22e",
+          "parent": "1ae080a5cf0efe34712c0a1fa8d3e0253e49dd78d6f86bf3772b1dffe6166d1a",
+          "schema": "nova.genome.v3"
+        },
+        "expression_parents": [
+          "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+        ],
+        "inherited_genes": [
+          "33a7405e3f1211b9cb49383898674d86d317343eb65dc22db73012264c2a595a",
+          "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "kind": "COMPOSE_AND_ADD_GENE",
+        "parent_genome": "1ae080a5cf0efe34712c0a1fa8d3e0253e49dd78d6f86bf3772b1dffe6166d1a"
+      },
+      "parent_generation": 2,
+      "program": {
+        "id": "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736",
+        "ir": [
+          "apply",
+          "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc",
+          [
+            "object",
+            {
+              "x": [
+                "input",
+                "left"
+              ],
+              "y": [
+                "input",
+                "right"
+              ]
+            }
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+        ],
+        "source": "def solve(inputs, recall):\n    return recall('6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc', {'x': inputs['left'], 'y': inputs['right']})\n"
+      },
+      "reason": "VERIFIED_IMPROVEMENT",
+      "selection": {
+        "baseline_train": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": 1007
+            },
+            {
+              "ok": false,
+              "output": 402
+            }
+          ],
+          "passed": 0,
+          "total": 2
+        },
+        "memory_context": "0a6c369e8ce9ae4304d5df1be9ba6857c91d02c048de25b785770b888f0e3478",
+        "plan": {
+          "memory_context": "0a6c369e8ce9ae4304d5df1be9ba6857c91d02c048de25b785770b888f0e3478",
+          "previous_attempt": 6,
+          "previous_failures": 1,
+          "strategy": "verified_gene_composition",
+          "usable_genes": [
+            "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+          ]
+        },
+        "policy": "largest_training_deficit_then_task_id",
+        "task": "word-xor-transfer"
+      },
+      "status": "ADMITTED",
+      "synthesis": {
+        "attempts": 14,
+        "selection": "training_only"
+      },
+      "workspace": {
+        "CODE": {
+          "attempts": 14,
+          "program": "1edb3ca2f69ce38b7079668a99613f3fc4702935802066180c03884fdbf71736",
+          "selection": "training_only"
+        },
+        "INTELLIGENCE": {
+          "memory_context": "0a6c369e8ce9ae4304d5df1be9ba6857c91d02c048de25b785770b888f0e3478",
+          "previous_attempt": 6,
+          "previous_failures": 1,
+          "strategy": "verified_gene_composition",
+          "usable_genes": [
+            "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc"
+          ]
+        },
+        "LOGIC": {
+          "baseline_train": "6c1fa6068529c1cb738f06a4f0fd605e1569891601a260c35d160dad0f95b91e",
+          "evidence": "057e85703be9e440558add1aeafcafd50b2119b7b35e03afc55e96f4a3133636",
+          "verdict": "VERIFIED_IMPROVEMENT"
+        },
+        "THINKING": {
+          "causes": {
+            "gene_events": {
+              "6cb60e59f51ee45552dfb49f0767fe5c91acbe27cd33b0a722f4e386837b74dc": 9
+            },
+            "previous_attempt": 6,
+            "task_event": 4
+          },
+          "goal": "word-xor-transfer",
+          "policy": "largest_training_deficit_then_task_id"
+        },
+        "context": "7bdcd5b257b9f7dbcd6bfff048235a29d3d576882a3fe0e07cac0ec41383a08d"
+      }
+    }
+  ],
+  "head": "2b28191415c1ef90b80da2b856c15fd06d04e4116f98c4e4ce36c0320b7354e1",
+  "schema": "nova.journal.export.v1"
+}

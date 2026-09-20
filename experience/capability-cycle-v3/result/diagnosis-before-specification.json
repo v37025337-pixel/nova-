@@ -1,0 +1,83 @@
+{
+  "child_genome": null,
+  "domain": "CAPABILITY",
+  "event": 22,
+  "freeze": "97d73bfc7bed3295932dfb65c49e4a64c31f2cc847fbaf042e3b06d4b7bbf20d",
+  "kind": "capability_freeze",
+  "parent_generation": 12,
+  "parent_genome": "5758e10360b3a7e16862e75d0738c06bb959f819022f54287230f0fc5ff32591",
+  "primitive": null,
+  "program": null,
+  "reason": "KNOWLEDGE_MISSING",
+  "report": {
+    "argument_bindings_tested": 0,
+    "candidate_budget": 64,
+    "candidates_deferred_by_budget": 0,
+    "diagnosis": {
+      "hypothesis": "BUDGET_OR_REPRESENTATION_OR_KNOWLEDGE_GAP",
+      "knowledge": "MISSING_ALGORITHM_SPECIFICATION",
+      "observed": "SEARCH_EXHAUSTED",
+      "proof_of_global_impossibility": false,
+      "search": "BOUNDED_FRONTIER_EXHAUSTED",
+      "source_events": [
+        12,
+        20
+      ],
+      "training_output_types": [
+        "str"
+      ],
+      "unavailable_native_word_operations": [],
+      "unsupported_specification_constructs": []
+    },
+    "hidden_cases_seen": 0,
+    "learning": [],
+    "next_requirement": "algorithm_specification",
+    "sandbox_smoke": null
+  },
+  "selection": {
+    "kind": "CAPABILITY",
+    "plan": {
+      "memory_context": "2571cfa3431d30aa271e98783c4a45c4ec96ae74c5f97205cca67bbbe04e55b8",
+      "previous_attempt": 20
+    },
+    "policy": "oldest_remembered_exhausted_deficit_then_task_id",
+    "target": "90-sha256-deficit-control",
+    "task": "@capability:90-sha256-deficit-control"
+  },
+  "status": "WITHHOLD",
+  "workspace": {
+    "CODE": {
+      "author": "kernel_equation_compiler",
+      "generated": [],
+      "selected": null
+    },
+    "INTELLIGENCE": {
+      "hypothesis": "BUDGET_OR_REPRESENTATION_OR_KNOWLEDGE_GAP",
+      "knowledge": "MISSING_ALGORITHM_SPECIFICATION",
+      "observed": "SEARCH_EXHAUSTED",
+      "proof_of_global_impossibility": false,
+      "search": "BOUNDED_FRONTIER_EXHAUSTED",
+      "source_events": [
+        12,
+        20
+      ],
+      "training_output_types": [
+        "str"
+      ],
+      "unavailable_native_word_operations": [],
+      "unsupported_specification_constructs": []
+    },
+    "LOGIC": {
+      "fresh_evaluation_required": true,
+      "verdict": "KNOWLEDGE_MISSING"
+    },
+    "THINKING": {
+      "action": "EXTEND_GRAMMAR_TO_RESOLVE_REMEMBERED_DEFICIT",
+      "cause": 20,
+      "origin": "kernel_causal_memory",
+      "required_result": "new_primitive_and_training_fit_before_fresh_evaluation",
+      "task": "90-sha256-deficit-control"
+    },
+    "context": "1851e9f2b1cb8d7eb066b0b8ee6077a53c2cde2caa1c914998ba0e129cd1b36a"
+  }
+}
