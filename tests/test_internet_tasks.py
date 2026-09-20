@@ -1,9 +1,11 @@
 """Boundary contracts for the operator-owned internet adapter."""
 
 import unittest
+import tempfile
+from pathlib import Path
 
 from nova_core.contracts import ContractError
-from scripts.run_internet_tasks import checked_url, example
+from scripts.run_internet_tasks import checked_url, example, save_program
 
 
 class InternetAdapterTests(unittest.TestCase):
@@ -26,6 +28,19 @@ class InternetAdapterTests(unittest.TestCase):
         receipt = {"projection": {"name": "abc", "version": "1.0"}}
         self.assertEqual(example("250-online-hash-json", receipt)["output"],
                          '{"digest":"ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad","name":"ABC"}')
+
+    def test_rejected_candidate_preserves_admitted_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output = Path(directory)
+            accepted = {"generation": 20, "status": "ADMITTED", "selection": {"task": "hash"},
+                        "program": {"source": "accepted code\n"}}
+            rejected = {"generation": 20, "status": "WITHHOLD", "selection": {"task": "versions"},
+                        "program": {"source": "rejected code\n"}}
+            a = save_program(accepted, output)
+            b = save_program(rejected, output)
+            self.assertNotEqual(a, b)
+            self.assertEqual(a.read_text(), "accepted code\n")
+            self.assertEqual(b.read_text(), "rejected code\n")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,9 @@
+test_independent_sha_reference_uses_original_name (tests.test_internet_tasks.InternetAdapterTests.test_independent_sha_reference_uses_original_name) ... ok
+test_numeric_version_oracle_is_not_lexical_sort (tests.test_internet_tasks.InternetAdapterTests.test_numeric_version_oracle_is_not_lexical_sort) ... ok
+test_only_explicit_public_api_paths_are_accepted (tests.test_internet_tasks.InternetAdapterTests.test_only_explicit_public_api_paths_are_accepted) ... ok
+test_rejected_candidate_preserves_admitted_source (tests.test_internet_tasks.InternetAdapterTests.test_rejected_candidate_preserves_admitted_source) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK

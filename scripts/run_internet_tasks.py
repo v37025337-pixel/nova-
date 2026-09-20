@@ -200,6 +200,17 @@ def export(kernel, output):
     return head, events
 
 
+def save_program(record, output):
+    """A rejected candidate must never replace an admitted generation's source."""
+    if not record.get("program"):
+        return None
+    task = re.sub(r"[^A-Za-z0-9_.-]", "_", record["selection"]["task"])
+    filename = f"generated-g{record.get('generation', 'pending')}-{task}-{record['status']}.py"
+    path = output / filename
+    path.write_text(record["program"]["source"], encoding="utf-8")
+    return path
+
+
 def run(output, state_path):
     if output.exists() or state_path.exists():
         raise ContractError("use new output and state paths; previous experiments are immutable")
@@ -238,8 +249,7 @@ def run(output, state_path):
             announce("step", task=record.get("selection", {}).get("task"), status=record["status"],
                      reason=record["reason"], generation=record.get("generation"),
                      attempts=record.get("synthesis", {}).get("attempts"), seconds=time.monotonic()-step_started)
-            if record.get("program"):
-                (output / ("generated-g" + str(record["generation"]) + ".py")).write_text(record["program"]["source"])
+            save_program(record, output)
             if record["status"] in ("IDLE", "WAITING", "FROZEN"):
                 break
         frozen = kernel.status()

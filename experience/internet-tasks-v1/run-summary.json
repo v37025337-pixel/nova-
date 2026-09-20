@@ -1,0 +1,149 @@
+{
+  "active_generation": 20,
+  "claim_boundary": "operator-authored task/oracle; native goal selection and synthesis; bounded HTTPS adapter",
+  "execution_checks": {
+    "admitted_fresh_queries": true,
+    "all_tasks_attempted": true,
+    "cold_replay": true,
+    "fresh_sources_after_freeze": true,
+    "frozen_runtime": true,
+    "historical_prefix_preserved": true,
+    "inherited_hash_boundaries": true,
+    "live_https": true,
+    "regression": true
+  },
+  "fresh_queries": {
+    "passed": 18,
+    "total": 21
+  },
+  "hash_boundaries": {
+    "passed": 20,
+    "total": 20
+  },
+  "head": "27d725ad4f5a0bab5fcb12ff5e4c9af5b9aabeda8e9746f8200a5885693c9028",
+  "new_admissions": 6,
+  "parent_generation": 14,
+  "regression": {
+    "passed": 114,
+    "skills": 19,
+    "total": 114
+  },
+  "schema": "nova.internet-task-results.v1",
+  "seconds": 285.36310387999765,
+  "source_domains": [
+    "pypi.org",
+    "api.github.com"
+  ],
+  "source_requests": 18,
+  "state": "/workspace/scratch/fe9d73306cdf/nova-internet/state/internet-tasks-v1.sqlite",
+  "state_backup": "/workspace/scratch/fe9d73306cdf/nova-internet/state/internet-tasks-v1-backup.sqlite",
+  "status": "PARTIAL",
+  "tasks": [
+    {
+      "description": "Sum byte sizes of up to 32 current distribution files",
+      "fresh_passed": 3,
+      "fresh_total": 3,
+      "generation": 15,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [],
+      "reason": "VERIFIED_IMPROVEMENT",
+      "status": "ADMITTED",
+      "task": "200-distribution-bytes"
+    },
+    {
+      "description": "Count, sum and numerically sort the same byte sizes",
+      "fresh_passed": 3,
+      "fresh_total": 3,
+      "generation": 16,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [
+        "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750"
+      ],
+      "reason": "VERIFIED_IMPROVEMENT",
+      "status": "ADMITTED",
+      "task": "210-distribution-summary"
+    },
+    {
+      "description": "Serialize that summary into canonical JSON",
+      "fresh_passed": 3,
+      "fresh_total": 3,
+      "generation": 17,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [
+        "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9"
+      ],
+      "reason": "VERIFIED_IMPROVEMENT",
+      "status": "ADMITTED",
+      "task": "220-distribution-json"
+    },
+    {
+      "description": "Add GitHub star and fork counts",
+      "fresh_passed": 3,
+      "fresh_total": 3,
+      "generation": 18,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [],
+      "reason": "VERIFIED_IMPROVEMENT",
+      "status": "ADMITTED",
+      "task": "230-repository-counts"
+    },
+    {
+      "description": "Return their sum and their difference",
+      "fresh_passed": 3,
+      "fresh_total": 3,
+      "generation": 19,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [
+        "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8"
+      ],
+      "reason": "VERIFIED_IMPROVEMENT",
+      "status": "ADMITTED",
+      "task": "240-repository-record"
+    },
+    {
+      "description": "Serialize the inherited name/SHA-256 record",
+      "fresh_passed": 3,
+      "fresh_total": 3,
+      "generation": 20,
+      "holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parents": [
+        "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011"
+      ],
+      "reason": "VERIFIED_IMPROVEMENT",
+      "status": "ADMITTED",
+      "task": "250-online-hash-json"
+    },
+    {
+      "description": "Sort dotted numeric releases by integer components",
+      "fresh_passed": 0,
+      "fresh_total": 3,
+      "generation": 20,
+      "holdout": {
+        "passed": 0,
+        "total": 3
+      },
+      "parents": [],
+      "reason": "HOLDOUT_FAILED",
+      "status": "WITHHOLD",
+      "task": "290-numeric-version-order"
+    }
+  ]
+}
