@@ -7,7 +7,7 @@ from .evaluation import score
 from .genetics import genome
 from .language import BINARY, UNARY, execute
 from .synthesis import ERRORS, MAX_ATTEMPTS, MAX_DEPTH, synthesize
-from .extensions import LANGUAGE as WORD_LANGUAGE
+from .extensions import is_extension
 
 
 def trial_spec(raw):
@@ -49,7 +49,7 @@ def derive_policy(programs, previous=None):
             walk(node[2])
 
     for program in programs.values():
-        if program.get("language") != WORD_LANGUAGE:
+        if not is_extension(program):
             walk(program["ir"])
     rank = lambda operations: sorted(operations, key=lambda op: (-counts[op], operations.index(op)))
     body = {"schema": "nova.engine-policy.v1", "parent": previous["id"] if previous else None,
@@ -63,7 +63,7 @@ def derive_policy(programs, previous=None):
 def compatible(memory, rows):
     usable = {}
     for pid, program in memory.items():
-        if program.get("language") == WORD_LANGUAGE:
+        if is_extension(program):
             usable[pid] = program
             continue
         try:

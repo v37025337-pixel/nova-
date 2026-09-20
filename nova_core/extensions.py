@@ -11,12 +11,17 @@ from functools import lru_cache
 from itertools import islice, product
 
 from .contracts import ContractError, digest, normalized
+from . import sequence
 
 LANGUAGE = "nova.word-expression.v1"
 OPS = {ast.BitXor: "xor", ast.BitAnd: "and", ast.BitOr: "or",
        ast.Add: "add", ast.Sub: "sub", ast.Mult: "mul",
        ast.LShift: "shl", ast.RShift: "shr"}
 CALLS = {"ROTR": "rotr", "ROTL": "rotl", "SHR": "shr"}
+
+
+def is_extension(program):
+    return program.get("language") in (LANGUAGE, sequence.LANGUAGE)
 
 
 def specification(raw):
@@ -129,6 +134,9 @@ def gene(definition, spec_digest):
 
 
 def check(g):
+    if g.get("language") == sequence.LANGUAGE:
+        sequence.check(g)
+        return
     if gene(g["definition"], g["specification"]) != g:
         raise ContractError("primitive body/source/provenance mismatch")
 
@@ -141,6 +149,8 @@ def compiled(source):
 
 
 def execute(g, inputs):
+    if g.get("language") == sequence.LANGUAGE:
+        return sequence.execute(g, inputs)
     check(g)
     params, width = g["definition"]["parameters"], g["definition"]["width"]
     if (type(inputs) is not dict or set(inputs) != set(params) or
@@ -193,12 +203,15 @@ def applications(g, training, memory):
     from .language import interpret
     width = g["definition"]["width"]
     nodes = [["input", k] for k in sorted(training[0]["input"])]
-    nodes += [["ref", pid] for pid, p in memory.items() if p["language"] != LANGUAGE]
+    nodes += [["ref", pid] for pid, p in memory.items() if not is_extension(p)]
     eligible = []
     for node in nodes[:64]:
         try:
             values = [interpret(node, row["input"], memory) for row in training]
-            if all(type(v) is int and 0 <= v < 2 ** width for v in values):
+            valid = (all(type(v) is str and len(v.encode("utf-8")) <= sequence.MAX_BYTES for v in values)
+                     if g["language"] == sequence.LANGUAGE else
+                     all(type(v) is int and 0 <= v < 2 ** width for v in values))
+            if valid:
                 eligible.append(node)
         except (ContractError, KeyError, TypeError, ValueError, OverflowError, RecursionError):
             continue

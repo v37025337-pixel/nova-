@@ -12,11 +12,11 @@ from .contracts import ContractError, IntegrityError, dataset_id, digest, encode
 from .evaluation import baseline, gate, score
 from .genetics import genome, vary
 from .language import execute
-from .extensions import LANGUAGE as WORD_LANGUAGE
+from .extensions import is_extension
 from .memory import Journal, ZERO
 from .synthesis import ERRORS, MAX_ATTEMPTS, MAX_DEPTH, synthesize
 
-SCHEMA = "nova.kernel.v3"
+SCHEMA = "nova.kernel.v4"
 
 
 def runtime_manifest():
@@ -30,8 +30,8 @@ def runtime_manifest():
                           "INTELLIGENCE": "experience_conditioned_verified_gene_selection"},
             "program_author": "kernel_training_only", "engine_author": "maintainer",
             "engine_policy_author": "kernel_bounded_experience_conditioned_mutation",
-            "capability_author": "kernel_specification_conditioned_equation_compiler",
-            "capability_dialect": "bounded_word_equations_not_arbitrary_algorithm_prose"}
+            "capability_author": "kernel_specification_conditioned_document_compiler",
+            "capability_dialect": "bounded_word_equations_and_typeset_block_recurrences"}
 
 
 def initial_state():
@@ -56,7 +56,7 @@ def intelligence(state, tid, memory):
     task = state["tasks"][tid]
     usable = {}
     for pid, program in memory.items():
-        if program.get("language") == WORD_LANGUAGE:
+        if is_extension(program):
             usable[pid] = program
             continue
         try:
@@ -228,9 +228,9 @@ def validate_trial(state, trial):
 
 def upgrade_proposal(state, target, previous_head):
     source = state["runtime_manifest"]
-    if (not recognized_legacy(source) or target["schema"] not in ("nova.kernel.v2", "nova.kernel.v3") or
-            source["schema"] == target["schema"] or
-            target["schema"] == "nova.kernel.v2" and not recognized_legacy(target)):
+    if (not recognized_legacy(source) or target["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4") or
+            source["schema"] >= target["schema"] or
+            target["schema"] != SCHEMA and not recognized_legacy(target)):
         raise ContractError("unsupported runtime transition")
     active, memory, _ = context(state)
     regression = {tid: score(memory[pid], state["tasks"][tid]["train"] + state["tasks"][tid]["holdout"], memory)
@@ -298,7 +298,7 @@ class Kernel:
                         raise IntegrityError("step replay/evidence mismatch")
                     apply_step(state, body)
                 elif body.get("kind") == "engine_trial" and set(body) == {"kind", "trial"}:
-                    if state["runtime_manifest"]["schema"] not in ("nova.kernel.v2", "nova.kernel.v3"):
+                    if state["runtime_manifest"]["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4"):
                         raise ContractError("engine policy requires runtime upgrade")
                     trial = trial_spec(body["trial"])
                     if encode(trial) != encode(body["trial"]):
@@ -315,16 +315,16 @@ class Kernel:
                         raise IntegrityError("runtime upgrade evidence mismatch")
                     state["runtime_manifest"] = target
                 elif body.get("kind") == "knowledge" and set(body) == {"kind", "specification"}:
-                    self._require_current(state)
+                    self._require_capability_runtime(state)
                     spec = capability.validate_knowledge(state, body["specification"])
                     state["knowledge"][spec["id"]] = spec
                 elif body.get("kind") == "capability_freeze":
-                    self._require_current(state)
+                    self._require_capability_runtime(state)
                     if encode(propose(state)) != encode(body):
                         raise IntegrityError("native capability freeze replay mismatch")
                     capability.apply_freeze(state, body)
                 elif body.get("kind") == "capability_evaluation":
-                    self._require_current(state)
+                    self._require_capability_runtime(state)
                     frozen = state["capability_pending"][body["target"]]
                     _, memory, _ = context(state)
                     if encode(capability.evaluate_frozen(state, frozen, body["rows"], memory)) != encode(body):
@@ -347,6 +347,10 @@ class Kernel:
     def _require_current(self, state):
         if encode(state["runtime_manifest"]) != encode(self.manifest):
             raise ContractError("legacy state is read-only; run upgrade before new mutations")
+
+    def _require_capability_runtime(self, state):
+        if not capability.enabled(state):
+            raise ContractError("capability event before runtime support")
 
     def upgrade(self):
         state, head, _ = self._load(force=True)
@@ -476,7 +480,7 @@ class Kernel:
                                "withheld_attempts": state["attempts"] - state["admissions"],
                                "search_attempts_total": sum(h["search_attempts"] for history in state["experience"].values() for h in history)},
                 "capabilities_active": state["genomes"][state["current"]].get("capabilities", []),
-                "claim": "bounded_program_policy_and_specification_conditioned_word_grammar_learning"}
+                "claim": "bounded_program_policy_and_specification_conditioned_grammar_learning"}
 
     def audit(self, expected_head=None):
         self._load(force=True)

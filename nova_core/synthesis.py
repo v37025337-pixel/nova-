@@ -2,7 +2,7 @@
 
 from .contracts import ContractError, digest, encode, equal
 from .language import BINARY, UNARY, candidate, interpret
-from .extensions import LANGUAGE as WORD_LANGUAGE, applications
+from .extensions import applications, is_extension
 
 MAX_ATTEMPTS = 12000
 MAX_DEPTH = 3
@@ -123,7 +123,7 @@ def synthesize(training, memory, policy=None):
     for key in sorted(training[0]["input"]):
         add(["input", key], 0)
     for pid, p in memory.items():
-        if p.get("language") != WORD_LANGUAGE:
+        if not is_extension(p):
             add(["ref", pid], 0)
     constants = [-1, 0, 1, 2, "", None, True, False]
     for row in training:
@@ -135,7 +135,7 @@ def synthesize(training, memory, policy=None):
     for val in constants[:64]:
         add(["const", val], 0)
     for p in memory.values():
-        if p.get("language") == WORD_LANGUAGE:
+        if is_extension(p):
             for node in applications(p, training, memory):
                 add(node, 1)
     found = result()

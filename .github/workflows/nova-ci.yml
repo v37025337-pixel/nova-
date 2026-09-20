@@ -28,3 +28,6 @@ jobs:
       - name: Restore and replay evolved generation 12
         if: matrix.python == '3.12'
         run: python scripts/run_development_chain.py --restore experience/engine-cycle-v2/journal.json --state /tmp/nova-evolved-ci.sqlite
+      - name: Replay historical 0.3 capability admission
+        if: matrix.python == '3.12'
+        run: python scripts/run_development_chain.py --restore experience/capability-cycle-v3/result/mechanism/journal.json --state /tmp/nova-word-ci.sqlite

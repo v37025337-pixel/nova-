@@ -1,0 +1,71 @@
+{
+  "claim_boundary": "maintainer supplied a bounded notation reader and elementary sequence semantics; Nova compiles a documented algorithm and inherits it only after gates; no ready implementation, algorithm invention or general intelligence claim",
+  "extra_fresh_cases": [
+    "random text with Unicode and NUL",
+    "random text with multibyte Unicode"
+  ],
+  "fresh_holdout_rule": "24 random examples generated only after native candidate freeze; external hashlib oracle; compiler sees no evaluation rows",
+  "fresh_lengths": [
+    17,
+    31,
+    55,
+    56,
+    57,
+    63,
+    64,
+    65,
+    111,
+    119,
+    120,
+    127,
+    128,
+    129,
+    255,
+    256,
+    257,
+    511,
+    512,
+    513,
+    1023,
+    1024
+  ],
+  "frozen_files": [
+    "experience/algorithm-cycle-v4/protocol.json",
+    "experience/algorithm-cycle-v4/specification-notation.json",
+    "experience/algorithm-cycle-v4/specification-interface.json",
+    "experience/algorithm-cycle-v4/transfer-task.json",
+    "scripts/run_algorithm_cycle.py"
+  ],
+  "input_domain": "UTF-8 text up to 1024 bytes",
+  "new_knowledge": [
+    "specification-notation.json",
+    "specification-interface.json"
+  ],
+  "parent_generation": 12,
+  "parent_head": "87a2fb19b56830c65d5b0296e41d97acfdb5f9a0579c3df23026de4627590fa3",
+  "parent_journal": "experience/capability-cycle-v3/result/journal.json",
+  "python": [
+    3,
+    12
+  ],
+  "runtime_sources_sha256": "e6711b1a5209bb9d86c7836150f872746af88b4f26a5cb66236d2ee974a8f853",
+  "schema": "nova.algorithm-cycle.protocol.v1",
+  "sha_task": "90-sha256-deficit-control",
+  "strict_pass": [
+    "historical G12 prefix unchanged",
+    "native selection of remembered SHA deficit and diagnosis",
+    "generated full body from external mathematical specification",
+    "compile and Linux seccomp",
+    "fresh-blind 24/24 and original holdout",
+    "regression of every previous skill",
+    "zero passes after primitive ablation",
+    "G13 admission",
+    "G13 cold deterministic replay",
+    "native next goal after restart",
+    "G14 using G13 adapter",
+    "final regression and new queries",
+    "G14 cold deterministic replay",
+    "rollback to G12"
+  ],
+  "transfer_task": "130-hash-record"
+}

@@ -11,10 +11,11 @@ from .genetics import genome
 from .isolation import evaluate
 from .language import candidate
 from .synthesis import MAX_ATTEMPTS
+from . import sequence, specifications
 
 
 def enabled(state):
-    return state["runtime_manifest"]["schema"] == "nova.kernel.v3"
+    return state["runtime_manifest"]["schema"] in ("nova.kernel.v3", "nova.kernel.v4")
 
 
 def queue(state, rows):
@@ -29,6 +30,8 @@ def queue(state, rows):
         if not history or history[-1]["reason"] != "SEARCH_EXHAUSTED":
             continue
         token = digest([tid, state["genomes"][state["current"]]["id"], state["knowledge"]])
+        if state["runtime_manifest"]["schema"] == "nova.kernel.v4":
+            token = digest([token, "typeset_block_recurrence_v1"])
         pending = state["capability_pending"].get(tid)
         status = "PENDING"
         if pending and pending["parent_generation"] == state["current"]:
@@ -72,8 +75,17 @@ def freeze(state, selection, memory):
     training = state["tasks"][tid]["train"]
     parent = state["genomes"][state["current"]]
     diagnosed, documents = diagnosis(training, state["experience"][tid], state["knowledge"])
+    algorithm = None
+    if state["runtime_manifest"]["schema"] == "nova.kernel.v4":
+        algorithm = specifications.learn(state["knowledge"])
+        diagnosed["algorithm_compiler"] = {k: v for k, v in algorithm.items() if k != "genes"}
+        if algorithm["genes"]:
+            diagnosed["resolved_by_sequence_compiler"] = diagnosed["unsupported_specification_constructs"]
+            diagnosed["unsupported_specification_constructs"] = []
     # The compiler API and argument binder have no held-out data parameter.
     generated = [g for doc in documents for g in doc["genes"]]
+    if algorithm:
+        generated += algorithm["genes"]
     genes = generated[:64]
     program = chosen = None
     tested = 0
@@ -92,7 +104,7 @@ def freeze(state, selection, memory):
     # This is a smoke check, explicitly not an independent algorithm holdout.
     jobs = []
     for g in genes:
-        inputs = {p: 0 for p in g["definition"]["parameters"]}
+        inputs = {p: "" if g["language"] == sequence.LANGUAGE else 0 for p in g["definition"]["parameters"]}
         jobs.append({"program": g, "rows": [{"input": inputs, "output": execute_word(g, inputs)}]})
     sandbox = evaluate(jobs, {}) if jobs else None
     reason = "CANDIDATE_FROZEN" if program else "NO_TRAINING_FIT"
@@ -114,6 +126,8 @@ def freeze(state, selection, memory):
     report = {"diagnosis": diagnosed, "learning": documents, "sandbox_smoke": sandbox,
               "candidate_budget": 64, "candidates_deferred_by_budget": max(0, len(generated) - 64),
               "argument_bindings_tested": tested, "hidden_cases_seen": 0, "next_requirement": next_requirement}
+    if algorithm:
+        report["algorithm_learning"] = algorithm
     body = {"kind": "capability_freeze", "domain": "CAPABILITY", "selection": selection,
             "status": "FROZEN" if program else "WITHHOLD", "reason": reason,
             "event": state["last_event"] + 1, "parent_generation": state["current"],
@@ -124,6 +138,8 @@ def freeze(state, selection, memory):
                           "CODE": {"author": "kernel_equation_compiler", "generated": [g["id"] for g in genes],
                                    "selected": chosen["id"] if chosen else None},
                           "LOGIC": {"verdict": reason, "fresh_evaluation_required": True}}}
+    if chosen and chosen["language"] == sequence.LANGUAGE:
+        body["workspace"]["CODE"]["author"] = "kernel_document_compiler"
     return {**body, "freeze": digest(body)}
 
 

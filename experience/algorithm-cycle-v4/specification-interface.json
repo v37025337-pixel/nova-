@@ -1,0 +1,8 @@
+{
+  "id": "text-interface",
+  "provenance": "Maintainer declares task representation and encoding, not algorithm or answers.",
+  "source": "operator:task-encoding-contract",
+  "text": "Text inputs use UTF-8. Return output words as lowercase hexadecimal in the specified word order. This is an interface convention, not a hash implementation.",
+  "title": "Text input and output representation",
+  "width": 32
+}

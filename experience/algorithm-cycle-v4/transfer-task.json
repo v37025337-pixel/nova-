@@ -1,0 +1,68 @@
+{
+  "holdout": [
+    {
+      "input": {
+        "document": "{\"name\": \"consecutive-generation\"}",
+        "field": "name"
+      },
+      "output": {
+        "digest": "ded30a255670b4341c247df08d9a8bdc227370e180a0516ae77dc567fc0206fb",
+        "name": "CONSECUTIVE-GENERATION"
+      }
+    },
+    {
+      "input": {
+        "document": "{\"name\": \"future-native-goal\"}",
+        "field": "name"
+      },
+      "output": {
+        "digest": "68e7ece3f27918d1f26a9c127cb13f2dbe6db0684de158da7b96a6346a94882d",
+        "name": "FUTURE-NATIVE-GOAL"
+      }
+    },
+    {
+      "input": {
+        "document": "{\"name\": \"сложение-опыта\"}",
+        "field": "name"
+      },
+      "output": {
+        "digest": "e3a0f2981cbdc0b7b3655b4fd0018274b93a33cf35f7a48fad72d4a9a254ea7a",
+        "name": "СЛОЖЕНИЕ-ОПЫТА"
+      }
+    }
+  ],
+  "id": "130-hash-record",
+  "source": "operator:next-goal-fixture-before-capability-generation; independent SHA oracle in evaluator",
+  "train": [
+    {
+      "input": {
+        "document": "{\"name\": \"sequence-integration\"}",
+        "field": "name"
+      },
+      "output": {
+        "digest": "2e01e7550633329a8d86a2b5ff92fb8f65f112dc5fa3ce374c95890a13055dd2",
+        "name": "SEQUENCE-INTEGRATION"
+      }
+    },
+    {
+      "input": {
+        "document": "{\"name\": \"byte-vector-learning\"}",
+        "field": "name"
+      },
+      "output": {
+        "digest": "7db4edd35a99941dde6aba6426b79d4633c0db2d36fe2ef1df448de2512def2a",
+        "name": "BYTE-VECTOR-LEARNING"
+      }
+    },
+    {
+      "input": {
+        "document": "{\"name\": \"recurrence-runtime\"}",
+        "field": "name"
+      },
+      "output": {
+        "digest": "a50e4ddab1c0e0c75931fbb09318a722382807754b044844e4aaf8c8fc37f6eb",
+        "name": "RECURRENCE-RUNTIME"
+      }
+    }
+  ]
+}

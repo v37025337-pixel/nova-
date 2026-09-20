@@ -55,7 +55,7 @@ def validate(node, memory, depth=0, budget=None):
     if tag == "ref" and len(node) == 2 and type(node[1]) is str and node[1] in memory:
         return
     if (tag == "apply" and len(node) == 3 and type(node[1]) is str and node[1] in memory and
-            memory[node[1]].get("language") == extensions.LANGUAGE):
+            extensions.is_extension(memory[node[1]])):
         extensions.check(memory[node[1]])
         validate(node[2], memory, depth + 1, budget)
         return
@@ -114,7 +114,7 @@ def candidate(node, memory):
 
 
 def check(program, memory):
-    if program.get("language") == extensions.LANGUAGE:
+    if extensions.is_extension(program):
         extensions.check(program)
         return
     if candidate(program["ir"], memory) != program:
@@ -141,7 +141,7 @@ def execute(program, inputs, memory):
         check(p, memory)
         active.add(p["id"])
         try:
-            if p.get("language") == extensions.LANGUAGE:
+            if extensions.is_extension(p):
                 return extensions.execute(p, data)
             return normalized(_compiled(p["source"])(data, recall))
         finally:
