@@ -1,0 +1,68 @@
+{
+  "experiences": {
+    "10-trim": [
+      {
+        "causes": {
+          "gene_events": {},
+          "previous_attempt": null,
+          "task_event": 2
+        },
+        "context": "7be8ff1b993d1c87a423cd02627bec3b7045df6a458d368ab3cf225d688308c9",
+        "event": 3,
+        "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 90,
+        "status": "ADMITTED"
+      }
+    ],
+    "20-normalize": [
+      {
+        "causes": {
+          "gene_events": {
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+          },
+          "previous_attempt": null,
+          "task_event": 2
+        },
+        "context": "4cd54a7204aa9d75e25c6f664654e9c8431658d660b0828b6c96cfcb02d59e47",
+        "event": 4,
+        "memory_context": "48f1683fe447d9c4d21b1aa9ed190beedb044b8b2af5009172dcbde1449afa8d",
+        "program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 100,
+        "status": "ADMITTED"
+      }
+    ],
+    "30-record": [
+      {
+        "causes": {
+          "gene_events": {
+            "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a": 4,
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+          },
+          "previous_attempt": null,
+          "task_event": 2
+        },
+        "context": "d691134f9538bb60c060c9be9bb65b96bc625869ef3ae7c32232a1df96900f29",
+        "event": 5,
+        "memory_context": "d24cb71e6a172086528e635df833f06a45899353d2de2a276f7d4eaa5dddfee5",
+        "program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+        "reason": "VERIFIED_IMPROVEMENT",
+        "search_attempts": 110,
+        "status": "ADMITTED"
+      }
+    ]
+  },
+  "gene_events": {
+    "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87": 5,
+    "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a": 4,
+    "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+  },
+  "schema": "nova.causal-memory.v1",
+  "task_events": {
+    "10-trim": 2,
+    "20-normalize": 2,
+    "30-record": 2
+  }
+}

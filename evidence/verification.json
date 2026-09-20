@@ -1,0 +1,127 @@
+{
+  "base_commit": "aec3ae1baf645eb62053b22a67967568e6d760d8",
+  "claim_limits": [
+    "public maintainer-authored curriculum, not an independent intelligence benchmark",
+    "bounded native program-gene development, not host-engine self-rewrite",
+    "no consciousness claim",
+    "cloud CI status is separate from this local evidence"
+  ],
+  "commands": [
+    {
+      "command": "python -m nova_core --state STATE learn /workspace/scratch/f8f4c207f895/nova-/examples/three_generations.json --steps 3",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE predict 30-record --input {\"text\":\"  новый разум  \"}",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE verify --expected-head 7ebfac5150d2a41a309cee1836ce8c7dc5a823e9045e3e6bcf87a8cd4c9df222",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE export",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE memory",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE queue",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE genome",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE backup /tmp/nova-release-proof-0zrhxuvm/backup.sqlite",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE rollback 1",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE verify",
+      "returncode": 0
+    },
+    {
+      "command": "python -m nova_core --state STATE verify --expected-head 7ebfac5150d2a41a309cee1836ce8c7dc5a823e9045e3e6bcf87a8cd4c9df222",
+      "returncode": 0
+    }
+  ],
+  "packaging": {
+    "build_command": "python -m pip wheel --no-index --no-deps --no-build-isolation .",
+    "build_returncode": 0,
+    "isolated_install_returncode": 0,
+    "wheel_sha256": "0efdc36c688ccc60814b4e01b13175b1d5f90169ab20a304e0aef545afc5dbe0"
+  },
+  "python": "3.12.14",
+  "runtime_manifest": {
+    "command": "python scripts/verify_release.py",
+    "returncode": 0,
+    "source_files": 9
+  },
+  "runtime_proof": {
+    "active_genome": "4b71695eb409a853d5e8c927e1e35ae3f90a77a7e7adbd3440b7cc4294667eeb",
+    "admissions": 3,
+    "all_four_faculties_present": true,
+    "causal_experiences": 3,
+    "executed_from": "installed wheel outside repository",
+    "fresh_query": {
+      "output": {
+        "length": 11,
+        "name": "НОВЫЙ РАЗУМ"
+      }
+    },
+    "generation_chain": [
+      1,
+      2,
+      3
+    ],
+    "genome_inheritance": true,
+    "history_admissions_preserved": 3,
+    "holdout_passed": [
+      3,
+      3,
+      3
+    ],
+    "holdout_total": [
+      3,
+      3,
+      3
+    ],
+    "journal_head": "7ebfac5150d2a41a309cee1836ce8c7dc5a823e9045e3e6bcf87a8cd4c9df222",
+    "online_backup_restore": "PASS",
+    "queue_statuses": [
+      "ADMITTED",
+      "ADMITTED",
+      "ADMITTED"
+    ],
+    "rollback_to_generation": 1,
+    "separate_process_restart_and_replay": "PASS",
+    "successive_program_reuse": true
+  },
+  "schema": "nova.verification.v1",
+  "source_sha256": {
+    "nova_core/__init__.py": "987d369b712971bb85be2a6f8c365486b18b284b41f52efaff3ed651514613a1",
+    "nova_core/__main__.py": "8ff1419e8c37c34b1338a17c3f1ab7e693045c54963fdd7647ddc4e1b9eebc1b",
+    "nova_core/contracts.py": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe",
+    "nova_core/evaluation.py": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2",
+    "nova_core/genetics.py": "f492111a5c3bd501d82cf2f3de15619cc98d2df680c9ba9b5624bd91dd02ee7a",
+    "nova_core/kernel.py": "d1ee42c7f3e8c78013e708dede6d9471261c2be7bbe5540b914bf47cb261a1a6",
+    "nova_core/language.py": "1368b722cb49acee05dc422b5fd8adff9de4fb9fdb2aeb2e7990d87e344f7487",
+    "nova_core/memory.py": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777",
+    "nova_core/synthesis.py": "50a2bff3701aaa48bd06d316114583a20c0775939ca0dfda5aca321b94b81feb"
+  },
+  "status": "PASS",
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 34,
+    "returncode": 0,
+    "seconds": 5.645
+  },
+  "verified_at_utc": "2026-09-20T13:08:11.378889+00:00"
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "nova.yado.design-lineage.v1",
+  "source_repository": "v37025337-pixel/EVA",
+  "source_commit": "162c49b23d1920eb7cb6980d8cfa787ba8e440b5",
+  "use": "maintainer-authored new implementation informed by inspected YADO contracts and tests",
+  "legacy_statuses_inherited": false,
+  "legacy_runtime_imported": false,
+  "sources": [
+    {
+      "path": "successor/PROGRAM_DEVELOPMENT.md",
+      "sha256": "bc459cf3a4f42771f6c3176c9464d78ca443cbf35ca1c0d3dfe558995ca144f2",
+      "url": "https://github.com/v37025337-pixel/EVA/blob/162c49b23d1920eb7cb6980d8cfa787ba8e440b5/successor/PROGRAM_DEVELOPMENT.md",
+      "lesson_applied": "Keep engine authorship distinct from native program selection; reuse admitted program memory."
+    },
+    {
+      "path": "successor/tests/test_json_semantics_v2.py",
+      "sha256": "0ff8ae38ca5e6aeee48f770fd33516027fa62f5119a7d1a501cf713700f8a969",
+      "url": "https://github.com/v37025337-pixel/EVA/blob/162c49b23d1920eb7cb6980d8cfa787ba8e440b5/successor/tests/test_json_semantics_v2.py",
+      "lesson_applied": "Use order-independent object equality and distinguish JSON booleans from numbers."
+    },
+    {
+      "path": "successor/tests/test_memory_retry.py",
+      "sha256": "52a5df9e78d0a150e680b690f346eaa0d54ea908f847950a91a5fcb1cec0b457",
+      "url": "https://github.com/v37025337-pixel/EVA/blob/162c49b23d1920eb7cb6980d8cfa787ba8e440b5/successor/tests/test_memory_retry.py",
+      "lesson_applied": "Retry an exhausted search only after a new verified program-memory context."
+    },
+    {
+      "path": "successor/tests/test_task_replay_integrity.py",
+      "sha256": "178cfbd290cd9118e934fa7ffda7ee7473d524125f4dbd3df10051e460ff685d",
+      "url": "https://github.com/v37025337-pixel/EVA/blob/162c49b23d1920eb7cb6980d8cfa787ba8e440b5/successor/tests/test_task_replay_integrity.py",
+      "lesson_applied": "Recompute results and verdicts during replay, including rehashed false evidence."
+    }
+  ]
+}

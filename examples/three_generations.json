@@ -1,0 +1,152 @@
+[
+  {
+    "id": "10-trim",
+    "source": "nova:public-maintainer-authored-curriculum-v1",
+    "train": [
+      {
+        "input": {
+          "text": "  Alice "
+        },
+        "output": "Alice"
+      },
+      {
+        "input": {
+          "text": " Bob  "
+        },
+        "output": "Bob"
+      },
+      {
+        "input": {
+          "text": "  Straße   "
+        },
+        "output": "Straße"
+      }
+    ],
+    "holdout": [
+      {
+        "input": {
+          "text": "  Carol  "
+        },
+        "output": "Carol"
+      },
+      {
+        "input": {
+          "text": " dAVID "
+        },
+        "output": "dAVID"
+      },
+      {
+        "input": {
+          "text": "\téva \n"
+        },
+        "output": "éva"
+      }
+    ]
+  },
+  {
+    "id": "20-normalize",
+    "source": "nova:public-maintainer-authored-curriculum-v1",
+    "train": [
+      {
+        "input": {
+          "text": "  Alice "
+        },
+        "output": "ALICE"
+      },
+      {
+        "input": {
+          "text": " Bob  "
+        },
+        "output": "BOB"
+      },
+      {
+        "input": {
+          "text": "  Straße   "
+        },
+        "output": "STRASSE"
+      }
+    ],
+    "holdout": [
+      {
+        "input": {
+          "text": "  Carol  "
+        },
+        "output": "CAROL"
+      },
+      {
+        "input": {
+          "text": " dAVID "
+        },
+        "output": "DAVID"
+      },
+      {
+        "input": {
+          "text": "\téva \n"
+        },
+        "output": "ÉVA"
+      }
+    ]
+  },
+  {
+    "id": "30-record",
+    "source": "nova:public-maintainer-authored-curriculum-v1",
+    "train": [
+      {
+        "input": {
+          "text": "  Alice "
+        },
+        "output": {
+          "name": "ALICE",
+          "length": 5
+        }
+      },
+      {
+        "input": {
+          "text": " Bob  "
+        },
+        "output": {
+          "name": "BOB",
+          "length": 3
+        }
+      },
+      {
+        "input": {
+          "text": "  Straße   "
+        },
+        "output": {
+          "name": "STRASSE",
+          "length": 7
+        }
+      }
+    ],
+    "holdout": [
+      {
+        "input": {
+          "text": "  Carol  "
+        },
+        "output": {
+          "name": "CAROL",
+          "length": 5
+        }
+      },
+      {
+        "input": {
+          "text": " dAVID "
+        },
+        "output": {
+          "name": "DAVID",
+          "length": 5
+        }
+      },
+      {
+        "input": {
+          "text": "\téva \n"
+        },
+        "output": {
+          "name": "ÉVA",
+          "length": 3
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,708 @@
+{
+  "state": {
+    "active_generation": 3,
+    "active_tasks": {
+      "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+      "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+      "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87"
+    },
+    "admissions_total": 3,
+    "attempts_total": 3,
+    "claim": "bounded_program_learning",
+    "events": 5,
+    "genome": "4b71695eb409a853d5e8c927e1e35ae3f90a77a7e7adbd3440b7cc4294667eeb",
+    "head": "7ebfac5150d2a41a309cee1836ce8c7dc5a823e9045e3e6bcf87a8cd4c9df222",
+    "next_task": null,
+    "programs_active": 3,
+    "queue": {
+      "10-trim": "ADMITTED",
+      "20-normalize": "ADMITTED",
+      "30-record": "ADMITTED"
+    },
+    "runtime_digest": "2710609f9abbc4fb9534ae9b0ca2c30061bec373aedb9f136fb8173d0f5ca087",
+    "schema": "nova.kernel.v1",
+    "self_model": {
+      "search_attempts_total": 300,
+      "successful_admissions": 3,
+      "withheld_attempts": 0
+    },
+    "tasks_total": 3
+  },
+  "steps": [
+    {
+      "dataset": "33668c732c17ec441b81674f52146f083d8c2a96da2d8ba46c7c4f525ce2ada5",
+      "event": 3,
+      "gate": {
+        "ablation": [],
+        "baseline_holdout": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": "  Carol  "
+            },
+            {
+              "ok": false,
+              "output": " dAVID "
+            },
+            {
+              "ok": false,
+              "output": "\téva \n"
+            }
+          ],
+          "passed": 0,
+          "total": 3
+        },
+        "genetics": {
+          "candidate_genome": "7f10cae00f0bb63835bcc50f0cf069acf89430b032835666d447adf4eee36c35",
+          "parent_genome": "3f5b9969073ce988b400332ff9bc7f99bb3361be230e0c7899e6329661e9f0f7",
+          "passed": true
+        },
+        "holdout": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": "Carol"
+            },
+            {
+              "ok": true,
+              "output": "dAVID"
+            },
+            {
+              "ok": true,
+              "output": "éva"
+            }
+          ],
+          "passed": 3,
+          "total": 3
+        },
+        "reason": "VERIFIED_IMPROVEMENT",
+        "regression": {},
+        "train": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": "Alice"
+            },
+            {
+              "ok": true,
+              "output": "Bob"
+            },
+            {
+              "ok": true,
+              "output": "Straße"
+            }
+          ],
+          "passed": 3,
+          "total": 3
+        }
+      },
+      "generation": 1,
+      "kind": "step",
+      "mutation": {
+        "added_genes": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "child_genome": {
+          "bindings": {
+            "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          },
+          "genes": [
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          ],
+          "id": "7f10cae00f0bb63835bcc50f0cf069acf89430b032835666d447adf4eee36c35",
+          "parent": "3f5b9969073ce988b400332ff9bc7f99bb3361be230e0c7899e6329661e9f0f7",
+          "schema": "nova.genome.v1"
+        },
+        "expression_parents": [],
+        "inherited_genes": [],
+        "kind": "ADD_GENE",
+        "parent_genome": "3f5b9969073ce988b400332ff9bc7f99bb3361be230e0c7899e6329661e9f0f7"
+      },
+      "parent_generation": 0,
+      "program": {
+        "id": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+        "ir": [
+          "call",
+          "strip",
+          [
+            "input",
+            "text"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return primitive('strip', inputs['text'])\n"
+      },
+      "reason": "VERIFIED_IMPROVEMENT",
+      "selection": {
+        "baseline_train": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": "  Alice "
+            },
+            {
+              "ok": false,
+              "output": " Bob  "
+            },
+            {
+              "ok": false,
+              "output": "  Straße   "
+            }
+          ],
+          "passed": 0,
+          "total": 3
+        },
+        "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "plan": {
+          "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "native_primitive_search",
+          "usable_genes": []
+        },
+        "policy": "largest_training_deficit_then_task_id",
+        "task": "10-trim"
+      },
+      "status": "ADMITTED",
+      "synthesis": {
+        "attempts": 90,
+        "selection": "training_only"
+      },
+      "workspace": {
+        "CODE": {
+          "attempts": 90,
+          "program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+          "selection": "training_only"
+        },
+        "INTELLIGENCE": {
+          "memory_context": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "native_primitive_search",
+          "usable_genes": []
+        },
+        "LOGIC": {
+          "baseline_train": "73e53e41545c992bf38ae72dba8c080830b52b2aeacd0d99b774a0279a9d913c",
+          "evidence": "fe4bfd7813233a66fe3a066128a6868aec42ac3c8758d5dbc14acf630d140679",
+          "verdict": "VERIFIED_IMPROVEMENT"
+        },
+        "THINKING": {
+          "causes": {
+            "gene_events": {},
+            "previous_attempt": null,
+            "task_event": 2
+          },
+          "goal": "10-trim",
+          "policy": "largest_training_deficit_then_task_id"
+        },
+        "context": "7be8ff1b993d1c87a423cd02627bec3b7045df6a458d368ab3cf225d688308c9"
+      }
+    },
+    {
+      "dataset": "cd77cfefd8e47ede1ff65186aa9d480398399879d22996eb574318b50a00021c",
+      "event": 4,
+      "gate": {
+        "ablation": [
+          {
+            "failed_without_parent": true,
+            "parent": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+            "passed_without_parent": 0
+          }
+        ],
+        "baseline_holdout": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": "  Carol  "
+            },
+            {
+              "ok": false,
+              "output": " dAVID "
+            },
+            {
+              "ok": false,
+              "output": "\téva \n"
+            }
+          ],
+          "passed": 0,
+          "total": 3
+        },
+        "genetics": {
+          "candidate_genome": "1d402b612bc27a3bb32df97e41d3610e57a86e879d83ac3eaf5c91e99d577212",
+          "parent_genome": "7f10cae00f0bb63835bcc50f0cf069acf89430b032835666d447adf4eee36c35",
+          "passed": true
+        },
+        "holdout": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": "CAROL"
+            },
+            {
+              "ok": true,
+              "output": "DAVID"
+            },
+            {
+              "ok": true,
+              "output": "ÉVA"
+            }
+          ],
+          "passed": 3,
+          "total": 3
+        },
+        "reason": "VERIFIED_IMPROVEMENT",
+        "regression": {
+          "10-trim": {
+            "outcomes": [
+              {
+                "ok": true,
+                "output": "Alice"
+              },
+              {
+                "ok": true,
+                "output": "Bob"
+              },
+              {
+                "ok": true,
+                "output": "Straße"
+              },
+              {
+                "ok": true,
+                "output": "Carol"
+              },
+              {
+                "ok": true,
+                "output": "dAVID"
+              },
+              {
+                "ok": true,
+                "output": "éva"
+              }
+            ],
+            "passed": 6,
+            "total": 6
+          }
+        },
+        "train": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": "ALICE"
+            },
+            {
+              "ok": true,
+              "output": "BOB"
+            },
+            {
+              "ok": true,
+              "output": "STRASSE"
+            }
+          ],
+          "passed": 3,
+          "total": 3
+        }
+      },
+      "generation": 2,
+      "kind": "step",
+      "mutation": {
+        "added_genes": [
+          "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+        ],
+        "child_genome": {
+          "bindings": {
+            "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+            "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+          },
+          "genes": [
+            "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          ],
+          "id": "1d402b612bc27a3bb32df97e41d3610e57a86e879d83ac3eaf5c91e99d577212",
+          "parent": "7f10cae00f0bb63835bcc50f0cf069acf89430b032835666d447adf4eee36c35",
+          "schema": "nova.genome.v1"
+        },
+        "expression_parents": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "inherited_genes": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "kind": "COMPOSE_AND_ADD_GENE",
+        "parent_genome": "7f10cae00f0bb63835bcc50f0cf069acf89430b032835666d447adf4eee36c35"
+      },
+      "parent_generation": 1,
+      "program": {
+        "id": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+        "ir": [
+          "call",
+          "upper",
+          [
+            "ref",
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "source": "def solve(inputs, recall):\n    return primitive('upper', recall('de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46', inputs))\n"
+      },
+      "reason": "VERIFIED_IMPROVEMENT",
+      "selection": {
+        "baseline_train": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": "  Alice "
+            },
+            {
+              "ok": false,
+              "output": " Bob  "
+            },
+            {
+              "ok": false,
+              "output": "  Straße   "
+            }
+          ],
+          "passed": 0,
+          "total": 3
+        },
+        "memory_context": "48f1683fe447d9c4d21b1aa9ed190beedb044b8b2af5009172dcbde1449afa8d",
+        "plan": {
+          "memory_context": "48f1683fe447d9c4d21b1aa9ed190beedb044b8b2af5009172dcbde1449afa8d",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "verified_gene_composition",
+          "usable_genes": [
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          ]
+        },
+        "policy": "largest_training_deficit_then_task_id",
+        "task": "20-normalize"
+      },
+      "status": "ADMITTED",
+      "synthesis": {
+        "attempts": 100,
+        "selection": "training_only"
+      },
+      "workspace": {
+        "CODE": {
+          "attempts": 100,
+          "program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+          "selection": "training_only"
+        },
+        "INTELLIGENCE": {
+          "memory_context": "48f1683fe447d9c4d21b1aa9ed190beedb044b8b2af5009172dcbde1449afa8d",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "verified_gene_composition",
+          "usable_genes": [
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          ]
+        },
+        "LOGIC": {
+          "baseline_train": "73e53e41545c992bf38ae72dba8c080830b52b2aeacd0d99b774a0279a9d913c",
+          "evidence": "c278c0a37df6bf810bc4327949d4b9779a72747f7f684a13b9f4ec398741e1e7",
+          "verdict": "VERIFIED_IMPROVEMENT"
+        },
+        "THINKING": {
+          "causes": {
+            "gene_events": {
+              "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+            },
+            "previous_attempt": null,
+            "task_event": 2
+          },
+          "goal": "20-normalize",
+          "policy": "largest_training_deficit_then_task_id"
+        },
+        "context": "4cd54a7204aa9d75e25c6f664654e9c8431658d660b0828b6c96cfcb02d59e47"
+      }
+    },
+    {
+      "dataset": "8781cf171b51653ed70d41e665563937bb54309e126b6d5cef65a33e3f0a4ab6",
+      "event": 5,
+      "gate": {
+        "ablation": [
+          {
+            "failed_without_parent": true,
+            "parent": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+            "passed_without_parent": 0
+          }
+        ],
+        "baseline_holdout": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": "  Carol  "
+            },
+            {
+              "ok": false,
+              "output": " dAVID "
+            },
+            {
+              "ok": false,
+              "output": "\téva \n"
+            }
+          ],
+          "passed": 0,
+          "total": 3
+        },
+        "genetics": {
+          "candidate_genome": "4b71695eb409a853d5e8c927e1e35ae3f90a77a7e7adbd3440b7cc4294667eeb",
+          "parent_genome": "1d402b612bc27a3bb32df97e41d3610e57a86e879d83ac3eaf5c91e99d577212",
+          "passed": true
+        },
+        "holdout": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": {
+                "length": 5,
+                "name": "CAROL"
+              }
+            },
+            {
+              "ok": true,
+              "output": {
+                "length": 5,
+                "name": "DAVID"
+              }
+            },
+            {
+              "ok": true,
+              "output": {
+                "length": 3,
+                "name": "ÉVA"
+              }
+            }
+          ],
+          "passed": 3,
+          "total": 3
+        },
+        "reason": "VERIFIED_IMPROVEMENT",
+        "regression": {
+          "10-trim": {
+            "outcomes": [
+              {
+                "ok": true,
+                "output": "Alice"
+              },
+              {
+                "ok": true,
+                "output": "Bob"
+              },
+              {
+                "ok": true,
+                "output": "Straße"
+              },
+              {
+                "ok": true,
+                "output": "Carol"
+              },
+              {
+                "ok": true,
+                "output": "dAVID"
+              },
+              {
+                "ok": true,
+                "output": "éva"
+              }
+            ],
+            "passed": 6,
+            "total": 6
+          },
+          "20-normalize": {
+            "outcomes": [
+              {
+                "ok": true,
+                "output": "ALICE"
+              },
+              {
+                "ok": true,
+                "output": "BOB"
+              },
+              {
+                "ok": true,
+                "output": "STRASSE"
+              },
+              {
+                "ok": true,
+                "output": "CAROL"
+              },
+              {
+                "ok": true,
+                "output": "DAVID"
+              },
+              {
+                "ok": true,
+                "output": "ÉVA"
+              }
+            ],
+            "passed": 6,
+            "total": 6
+          }
+        },
+        "train": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": {
+                "length": 5,
+                "name": "ALICE"
+              }
+            },
+            {
+              "ok": true,
+              "output": {
+                "length": 3,
+                "name": "BOB"
+              }
+            },
+            {
+              "ok": true,
+              "output": {
+                "length": 7,
+                "name": "STRASSE"
+              }
+            }
+          ],
+          "passed": 3,
+          "total": 3
+        }
+      },
+      "generation": 3,
+      "kind": "step",
+      "mutation": {
+        "added_genes": [
+          "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87"
+        ],
+        "child_genome": {
+          "bindings": {
+            "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+            "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+            "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87"
+          },
+          "genes": [
+            "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+            "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          ],
+          "id": "4b71695eb409a853d5e8c927e1e35ae3f90a77a7e7adbd3440b7cc4294667eeb",
+          "parent": "1d402b612bc27a3bb32df97e41d3610e57a86e879d83ac3eaf5c91e99d577212",
+          "schema": "nova.genome.v1"
+        },
+        "expression_parents": [
+          "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+        ],
+        "inherited_genes": [
+          "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "kind": "COMPOSE_AND_ADD_GENE",
+        "parent_genome": "1d402b612bc27a3bb32df97e41d3610e57a86e879d83ac3eaf5c91e99d577212"
+      },
+      "parent_generation": 2,
+      "program": {
+        "id": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+        "ir": [
+          "object",
+          {
+            "length": [
+              "call",
+              "length",
+              [
+                "ref",
+                "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+              ]
+            ],
+            "name": [
+              "ref",
+              "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+            ]
+          }
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+        ],
+        "source": "def solve(inputs, recall):\n    return {'length': primitive('length', recall('dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a', inputs)), 'name': recall('dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a', inputs)}\n"
+      },
+      "reason": "VERIFIED_IMPROVEMENT",
+      "selection": {
+        "baseline_train": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": "  Alice "
+            },
+            {
+              "ok": false,
+              "output": " Bob  "
+            },
+            {
+              "ok": false,
+              "output": "  Straße   "
+            }
+          ],
+          "passed": 0,
+          "total": 3
+        },
+        "memory_context": "d24cb71e6a172086528e635df833f06a45899353d2de2a276f7d4eaa5dddfee5",
+        "plan": {
+          "memory_context": "d24cb71e6a172086528e635df833f06a45899353d2de2a276f7d4eaa5dddfee5",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "verified_gene_composition",
+          "usable_genes": [
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+            "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+          ]
+        },
+        "policy": "largest_training_deficit_then_task_id",
+        "task": "30-record"
+      },
+      "status": "ADMITTED",
+      "synthesis": {
+        "attempts": 110,
+        "selection": "training_only"
+      },
+      "workspace": {
+        "CODE": {
+          "attempts": 110,
+          "program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+          "selection": "training_only"
+        },
+        "INTELLIGENCE": {
+          "memory_context": "d24cb71e6a172086528e635df833f06a45899353d2de2a276f7d4eaa5dddfee5",
+          "previous_attempt": null,
+          "previous_failures": 0,
+          "strategy": "verified_gene_composition",
+          "usable_genes": [
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+            "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+          ]
+        },
+        "LOGIC": {
+          "baseline_train": "73e53e41545c992bf38ae72dba8c080830b52b2aeacd0d99b774a0279a9d913c",
+          "evidence": "d097a1e2a780b209d0d2aa550b4159838ef15cbe789f6eb47c625f12801970f8",
+          "verdict": "VERIFIED_IMPROVEMENT"
+        },
+        "THINKING": {
+          "causes": {
+            "gene_events": {
+              "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a": 4,
+              "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": 3
+            },
+            "previous_attempt": null,
+            "task_event": 2
+          },
+          "goal": "30-record",
+          "policy": "largest_training_deficit_then_task_id"
+        },
+        "context": "d691134f9538bb60c060c9be9bb65b96bc625869ef3ae7c32232a1df96900f29"
+      }
+    }
+  ]
+}

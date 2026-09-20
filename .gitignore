@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# NOVA mutable state and local verification outputs
+state/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
