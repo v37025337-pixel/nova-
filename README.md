@@ -52,6 +52,14 @@ python -m nova_core --state state/nova.sqlite develop --steps 10
 [algorithm-cycle-v4](experience/algorithm-cycle-v4/README.md).
 Правила приёма, seccomp, единый журнал и откат сохраняются.
 
+Фактический прогон 0.4: **G12 → G13 → G14, PASS**. Nova выбрала сохранённый
+дефицит SHA-256 и скомпилировала полный алгоритм из спецификации. На свежем
+holdout получено 24/24, после удаления примитива — 0/24; 11 прежних навыков
+сохранили 66/66. После cold replay ядро само выбрало следующую задачу и за
+8 кандидатов составило программу из нового SHA-навыка и прежней обработки
+имени. Итог: 78/78 по 13 навыкам, 8/8 новых запросов, полный replay G14 и
+rollback копии к G12. [Сводка проверок](experience/algorithm-cycle-v4/result/run-summary.json).
+
 ## Развитие языка в 0.3
 
 В той же очереди появились цели `@capability:<task>`: ядро само выбирает
@@ -279,7 +287,9 @@ python scripts/verify_release.py
 ```
 
 GitHub Actions повторяет проверки на Python 3.11, 3.12 и 3.13. Локально полученные
-результаты находятся в `evidence/verification.json`. Статус облачного CI следует
+результаты первого релиза находятся в `evidence/verification.json`, проверки 0.4 —
+в [verification.json](experience/algorithm-cycle-v4/verification/verification.json).
+Статус облачного CI следует
 смотреть отдельно в Actions: локальный результат не заменяет удалённый запуск.
 
 ## Точная граница возможностей

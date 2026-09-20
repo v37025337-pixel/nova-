@@ -31,3 +31,6 @@ jobs:
       - name: Replay historical 0.3 capability admission
         if: matrix.python == '3.12'
         run: python scripts/run_development_chain.py --restore experience/capability-cycle-v3/result/mechanism/journal.json --state /tmp/nova-word-ci.sqlite
+      - name: Restore and replay generated algorithm generation 14
+        if: matrix.python == '3.12'
+        run: python scripts/run_development_chain.py --restore experience/algorithm-cycle-v4/result/journal.json --state /tmp/nova-algorithm-ci.sqlite

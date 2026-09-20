@@ -1,0 +1,69 @@
+{
+  "bindings": {
+    "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "100-deep-normalize": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "110-deep-record": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "120-deep-serialized": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "130-hash-record": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+    "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+    "90-sha256-deficit-control": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f"
+  },
+  "capabilities": [
+    "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e"
+  ],
+  "engine": {
+    "attempts": 12000,
+    "binary": [
+      "get",
+      "add",
+      "sub",
+      "mul",
+      "equal",
+      "less"
+    ],
+    "depth": 4,
+    "early_stop": true,
+    "id": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+    "parent": null,
+    "queue": "deficit_then_previous_cost",
+    "schema": "nova.engine-policy.v1",
+    "typed": true,
+    "unary": [
+      "upper",
+      "length",
+      "strip",
+      "parse_json",
+      "json",
+      "lower",
+      "sum",
+      "sort",
+      "keys"
+    ],
+    "unary_first": true
+  },
+  "genes": [
+    "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+    "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+    "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e",
+    "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+    "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+  ],
+  "id": "646ae294fa51df77b2e583b7b15e3fa2d4105a9d3b6dec3a3e7678a121c3b33e",
+  "parent": "c0603df2e5bc8e0ee4dd2c6d225e0d560de0ebf3f095c4218d26f0d37ae26418",
+  "schema": "nova.genome.v3"
+}

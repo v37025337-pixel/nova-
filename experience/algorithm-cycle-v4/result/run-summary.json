@@ -1,0 +1,41 @@
+{
+  "ablation_without_primitive": 0,
+  "checks": {
+    "causal_ablation": true,
+    "g13_admission": true,
+    "g13_cold_replay": true,
+    "g14_cold_replay": true,
+    "g14_uses_g13": true,
+    "historical_prefix_preserved": true,
+    "inherited_regression": true,
+    "isolated_fresh_blind": true,
+    "native_deficit_selection": true,
+    "native_generated_sequence_body": true,
+    "native_goal": true,
+    "native_next_goal_after_restart": true,
+    "post_admission_queries": true,
+    "rollback": true
+  },
+  "claim_boundary": "specification-guided bounded capability evolution; maintainer supplied reader and interface, no ready SHA implementation; not autonomous algorithm invention",
+  "fresh_holdout": {
+    "passed": 24,
+    "total": 24
+  },
+  "g13_head": "c1c7be6c333e9b37b5f3ab9b5294730cea7d6211c83f116e98c6ab73114c6648",
+  "generation": 14,
+  "head": "d481ce23719102a3b4da0504e9df3169be374033ede703e6aa0281627d563aa4",
+  "input_domain": "UTF-8 text up to 1024 bytes",
+  "parent_head": "87a2fb19b56830c65d5b0296e41d97acfdb5f9a0579c3df23026de4627590fa3",
+  "protocol_commit": "63226976d944ff9b95e0e0463f381b0229c4dda9",
+  "queries": {
+    "passed": 8,
+    "total": 8
+  },
+  "regression": {
+    "passed": 78,
+    "skills": 13,
+    "total": 78
+  },
+  "seconds": 423.36960632000046,
+  "status": "PASS"
+}

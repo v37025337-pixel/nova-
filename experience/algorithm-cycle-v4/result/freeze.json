@@ -1,0 +1,2983 @@
+{
+  "child_genome": {
+    "bindings": {
+      "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+      "100-deep-normalize": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+      "110-deep-record": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+      "120-deep-serialized": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+      "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+      "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+      "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+      "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+      "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+      "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+      "90-sha256-deficit-control": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f"
+    },
+    "capabilities": [
+      "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e"
+    ],
+    "engine": {
+      "attempts": 12000,
+      "binary": [
+        "get",
+        "add",
+        "sub",
+        "mul",
+        "equal",
+        "less"
+      ],
+      "depth": 4,
+      "early_stop": true,
+      "id": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+      "parent": null,
+      "queue": "deficit_then_previous_cost",
+      "schema": "nova.engine-policy.v1",
+      "typed": true,
+      "unary": [
+        "upper",
+        "length",
+        "strip",
+        "parse_json",
+        "json",
+        "lower",
+        "sum",
+        "sort",
+        "keys"
+      ],
+      "unary_first": true
+    },
+    "genes": [
+      "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+      "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+      "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+      "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e",
+      "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+      "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+      "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+      "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+      "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+      "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+      "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+      "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+    ],
+    "id": "c0603df2e5bc8e0ee4dd2c6d225e0d560de0ebf3f095c4218d26f0d37ae26418",
+    "parent": "5758e10360b3a7e16862e75d0738c06bb959f819022f54287230f0fc5ff32591",
+    "schema": "nova.genome.v3"
+  },
+  "domain": "CAPABILITY",
+  "event": 32,
+  "freeze": "50b22419e463bdcc7da24e5099a5ad68dc3ae99065be00bbc20e7236ed1f7d6e",
+  "kind": "capability_freeze",
+  "parent_generation": 12,
+  "parent_genome": "5758e10360b3a7e16862e75d0738c06bb959f819022f54287230f0fc5ff32591",
+  "primitive": {
+    "definition": {
+      "input_type": "utf8_text",
+      "max_bytes": 1024,
+      "parameters": [
+        "message"
+      ],
+      "width": 32
+    },
+    "derivation": {
+      "algorithm_document": "69b3eb8ec0395c0d72f35934f3072249535423e40a48f84413ff5c72b3e8939b",
+      "byte_order": "big",
+      "constant_counts": {
+        "K": 64
+      },
+      "encoding": "UTF-8",
+      "initial_counts": {
+        "H": 8
+      },
+      "output_indices": [
+        [
+          "H",
+          0
+        ],
+        [
+          "H",
+          1
+        ],
+        [
+          "H",
+          2
+        ],
+        [
+          "H",
+          3
+        ],
+        [
+          "H",
+          4
+        ],
+        [
+          "H",
+          5
+        ],
+        [
+          "H",
+          6
+        ],
+        [
+          "H",
+          7
+        ]
+      ],
+      "padding": {
+        "bit": 1,
+        "length_bits": 64,
+        "modulus": 512,
+        "target": 448
+      },
+      "reader": "typeset_block_recurrence_v1",
+      "scope": "specified_algorithm_compilation_not_algorithm_invention",
+      "steps": [
+        {
+          "kind": "piecewise_recurrence",
+          "ranges": [
+            [
+              0,
+              15
+            ],
+            [
+              16,
+              63
+            ]
+          ],
+          "step": 1
+        },
+        {
+          "count": 8,
+          "kind": "ordered_assignments",
+          "step": 2
+        },
+        {
+          "assignments": 10,
+          "kind": "bounded_iteration",
+          "range": [
+            0,
+            63
+          ],
+          "step": 3
+        },
+        {
+          "count": 8,
+          "kind": "ordered_assignments",
+          "step": 4
+        }
+      ]
+    },
+    "id": "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e",
+    "ir": {
+      "body": [
+        [
+          "set",
+          "novaBytes",
+          [
+            "utf8",
+            [
+              "input",
+              "message"
+            ]
+          ]
+        ],
+        [
+          "set",
+          "novaBlocks",
+          [
+            "chunks",
+            [
+              "pad",
+              [
+                "var",
+                "novaBytes"
+              ],
+              [
+                "literal",
+                1
+              ],
+              [
+                "literal",
+                448
+              ],
+              [
+                "literal",
+                512
+              ],
+              [
+                "literal",
+                64
+              ],
+              [
+                "literal",
+                "big"
+              ]
+            ],
+            [
+              "literal",
+              64
+            ]
+          ]
+        ],
+        [
+          "set",
+          "K",
+          [
+            "literal",
+            [
+              1116352408,
+              1899447441,
+              3049323471,
+              3921009573,
+              961987163,
+              1508970993,
+              2453635748,
+              2870763221,
+              3624381080,
+              310598401,
+              607225278,
+              1426881987,
+              1925078388,
+              2162078206,
+              2614888103,
+              3248222580,
+              3835390401,
+              4022224774,
+              264347078,
+              604807628,
+              770255983,
+              1249150122,
+              1555081692,
+              1996064986,
+              2554220882,
+              2821834349,
+              2952996808,
+              3210313671,
+              3336571891,
+              3584528711,
+              113926993,
+              338241895,
+              666307205,
+              773529912,
+              1294757372,
+              1396182291,
+              1695183700,
+              1986661051,
+              2177026350,
+              2456956037,
+              2730485921,
+              2820302411,
+              3259730800,
+              3345764771,
+              3516065817,
+              3600352804,
+              4094571909,
+              275423344,
+              430227734,
+              506948616,
+              659060556,
+              883997877,
+              958139571,
+              1322822218,
+              1537002063,
+              1747873779,
+              1955562222,
+              2024104815,
+              2227730452,
+              2361852424,
+              2428436474,
+              2756734187,
+              3204031479,
+              3329325298
+            ]
+          ]
+        ],
+        [
+          "set",
+          "H",
+          [
+            "literal",
+            [
+              1779033703,
+              3144134277,
+              1013904242,
+              2773480762,
+              1359893119,
+              2600822924,
+              528734635,
+              1541459225
+            ]
+          ]
+        ],
+        [
+          "for",
+          "i",
+          [
+            "literal",
+            1
+          ],
+          [
+            "size",
+            [
+              "var",
+              "novaBlocks"
+            ]
+          ],
+          [
+            [
+              "set",
+              "previous_H",
+              [
+                "copy",
+                [
+                  "var",
+                  "H"
+                ]
+              ]
+            ],
+            [
+              "set",
+              "M",
+              [
+                "words",
+                [
+                  "at",
+                  [
+                    "var",
+                    "novaBlocks"
+                  ],
+                  [
+                    "word",
+                    "sub",
+                    [
+                      "var",
+                      "i"
+                    ],
+                    [
+                      "literal",
+                      1
+                    ]
+                  ]
+                ],
+                [
+                  "literal",
+                  32
+                ],
+                [
+                  "literal",
+                  "big"
+                ]
+              ]
+            ],
+            [
+              "set",
+              "W",
+              [
+                "zeros",
+                [
+                  "literal",
+                  64
+                ]
+              ]
+            ],
+            [
+              "for",
+              "t",
+              [
+                "literal",
+                0
+              ],
+              [
+                "literal",
+                15
+              ],
+              [
+                [
+                  "put",
+                  "W",
+                  [
+                    "var",
+                    "t"
+                  ],
+                  [
+                    "at",
+                    [
+                      "var",
+                      "M"
+                    ],
+                    [
+                      "var",
+                      "t"
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "for",
+              "t",
+              [
+                "literal",
+                16
+              ],
+              [
+                "literal",
+                63
+              ],
+              [
+                [
+                  "put",
+                  "W",
+                  [
+                    "var",
+                    "t"
+                  ],
+                  [
+                    "word",
+                    "add",
+                    [
+                      "word",
+                      "add",
+                      [
+                        "word",
+                        "add",
+                        [
+                          "call",
+                          "sigma_256_1",
+                          [
+                            "at",
+                            [
+                              "var",
+                              "W"
+                            ],
+                            [
+                              "word",
+                              "sub",
+                              [
+                                "var",
+                                "t"
+                              ],
+                              [
+                                "literal",
+                                2
+                              ]
+                            ]
+                          ]
+                        ],
+                        [
+                          "at",
+                          [
+                            "var",
+                            "W"
+                          ],
+                          [
+                            "word",
+                            "sub",
+                            [
+                              "var",
+                              "t"
+                            ],
+                            [
+                              "literal",
+                              7
+                            ]
+                          ]
+                        ]
+                      ],
+                      [
+                        "call",
+                        "sigma_256_0",
+                        [
+                          "at",
+                          [
+                            "var",
+                            "W"
+                          ],
+                          [
+                            "word",
+                            "sub",
+                            [
+                              "var",
+                              "t"
+                            ],
+                            [
+                              "literal",
+                              15
+                            ]
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "at",
+                      [
+                        "var",
+                        "W"
+                      ],
+                      [
+                        "word",
+                        "sub",
+                        [
+                          "var",
+                          "t"
+                        ],
+                        [
+                          "literal",
+                          16
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "set",
+              "a",
+              [
+                "at",
+                [
+                  "var",
+                  "previous_H"
+                ],
+                [
+                  "literal",
+                  0
+                ]
+              ]
+            ],
+            [
+              "set",
+              "b",
+              [
+                "at",
+                [
+                  "var",
+                  "previous_H"
+                ],
+                [
+                  "literal",
+                  1
+                ]
+              ]
+            ],
+            [
+              "set",
+              "c",
+              [
+                "at",
+                [
+                  "var",
+                  "previous_H"
+                ],
+                [
+                  "literal",
+                  2
+                ]
+              ]
+            ],
+            [
+              "set",
+              "d",
+              [
+                "at",
+                [
+                  "var",
+                  "previous_H"
+                ],
+                [
+                  "literal",
+                  3
+                ]
+              ]
+            ],
+            [
+              "set",
+              "e",
+              [
+                "at",
+                [
+                  "var",
+                  "previous_H"
+                ],
+                [
+                  "literal",
+                  4
+                ]
+              ]
+            ],
+            [
+              "set",
+              "f",
+              [
+                "at",
+                [
+                  "var",
+                  "previous_H"
+                ],
+                [
+                  "literal",
+                  5
+                ]
+              ]
+            ],
+            [
+              "set",
+              "g",
+              [
+                "at",
+                [
+                  "var",
+                  "previous_H"
+                ],
+                [
+                  "literal",
+                  6
+                ]
+              ]
+            ],
+            [
+              "set",
+              "h",
+              [
+                "at",
+                [
+                  "var",
+                  "previous_H"
+                ],
+                [
+                  "literal",
+                  7
+                ]
+              ]
+            ],
+            [
+              "for",
+              "t",
+              [
+                "literal",
+                0
+              ],
+              [
+                "literal",
+                63
+              ],
+              [
+                [
+                  "set",
+                  "T1",
+                  [
+                    "word",
+                    "add",
+                    [
+                      "word",
+                      "add",
+                      [
+                        "word",
+                        "add",
+                        [
+                          "word",
+                          "add",
+                          [
+                            "var",
+                            "h"
+                          ],
+                          [
+                            "call",
+                            "Sigma_256_1",
+                            [
+                              "var",
+                              "e"
+                            ]
+                          ]
+                        ],
+                        [
+                          "call",
+                          "Ch",
+                          [
+                            "var",
+                            "e"
+                          ],
+                          [
+                            "var",
+                            "f"
+                          ],
+                          [
+                            "var",
+                            "g"
+                          ]
+                        ]
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "K"
+                        ],
+                        [
+                          "var",
+                          "t"
+                        ]
+                      ]
+                    ],
+                    [
+                      "at",
+                      [
+                        "var",
+                        "W"
+                      ],
+                      [
+                        "var",
+                        "t"
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "set",
+                  "T2",
+                  [
+                    "word",
+                    "add",
+                    [
+                      "call",
+                      "Sigma_256_0",
+                      [
+                        "var",
+                        "a"
+                      ]
+                    ],
+                    [
+                      "call",
+                      "Maj",
+                      [
+                        "var",
+                        "a"
+                      ],
+                      [
+                        "var",
+                        "b"
+                      ],
+                      [
+                        "var",
+                        "c"
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "set",
+                  "h",
+                  [
+                    "var",
+                    "g"
+                  ]
+                ],
+                [
+                  "set",
+                  "g",
+                  [
+                    "var",
+                    "f"
+                  ]
+                ],
+                [
+                  "set",
+                  "f",
+                  [
+                    "var",
+                    "e"
+                  ]
+                ],
+                [
+                  "set",
+                  "e",
+                  [
+                    "word",
+                    "add",
+                    [
+                      "var",
+                      "d"
+                    ],
+                    [
+                      "var",
+                      "T1"
+                    ]
+                  ]
+                ],
+                [
+                  "set",
+                  "d",
+                  [
+                    "var",
+                    "c"
+                  ]
+                ],
+                [
+                  "set",
+                  "c",
+                  [
+                    "var",
+                    "b"
+                  ]
+                ],
+                [
+                  "set",
+                  "b",
+                  [
+                    "var",
+                    "a"
+                  ]
+                ],
+                [
+                  "set",
+                  "a",
+                  [
+                    "word",
+                    "add",
+                    [
+                      "var",
+                      "T1"
+                    ],
+                    [
+                      "var",
+                      "T2"
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "put",
+              "H",
+              [
+                "literal",
+                0
+              ],
+              [
+                "word",
+                "add",
+                [
+                  "var",
+                  "a"
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    0
+                  ]
+                ]
+              ]
+            ],
+            [
+              "put",
+              "H",
+              [
+                "literal",
+                1
+              ],
+              [
+                "word",
+                "add",
+                [
+                  "var",
+                  "b"
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    1
+                  ]
+                ]
+              ]
+            ],
+            [
+              "put",
+              "H",
+              [
+                "literal",
+                2
+              ],
+              [
+                "word",
+                "add",
+                [
+                  "var",
+                  "c"
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    2
+                  ]
+                ]
+              ]
+            ],
+            [
+              "put",
+              "H",
+              [
+                "literal",
+                3
+              ],
+              [
+                "word",
+                "add",
+                [
+                  "var",
+                  "d"
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    3
+                  ]
+                ]
+              ]
+            ],
+            [
+              "put",
+              "H",
+              [
+                "literal",
+                4
+              ],
+              [
+                "word",
+                "add",
+                [
+                  "var",
+                  "e"
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    4
+                  ]
+                ]
+              ]
+            ],
+            [
+              "put",
+              "H",
+              [
+                "literal",
+                5
+              ],
+              [
+                "word",
+                "add",
+                [
+                  "var",
+                  "f"
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    5
+                  ]
+                ]
+              ]
+            ],
+            [
+              "put",
+              "H",
+              [
+                "literal",
+                6
+              ],
+              [
+                "word",
+                "add",
+                [
+                  "var",
+                  "g"
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    6
+                  ]
+                ]
+              ]
+            ],
+            [
+              "put",
+              "H",
+              [
+                "literal",
+                7
+              ],
+              [
+                "word",
+                "add",
+                [
+                  "var",
+                  "h"
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    7
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ],
+      "functions": {
+        "Ch": {
+          "expression": "( x & y) ^ (~x & z)",
+          "name": "Ch",
+          "parameters": [
+            "x",
+            "y",
+            "z"
+          ],
+          "width": 32
+        },
+        "Maj": {
+          "expression": "( x & y) ^ ( x & z ) ^ ( y & z )",
+          "name": "Maj",
+          "parameters": [
+            "x",
+            "y",
+            "z"
+          ],
+          "width": 32
+        },
+        "Sigma_256_0": {
+          "expression": "ROTR(x,2)         ^ ROTR(x,13) ^ ROTR(x,22)",
+          "name": "Sigma_256_0",
+          "parameters": [
+            "x"
+          ],
+          "width": 32
+        },
+        "Sigma_256_1": {
+          "expression": "ROTR(x,6)         ^ ROTR(x,11) ^ ROTR(x,25)",
+          "name": "Sigma_256_1",
+          "parameters": [
+            "x"
+          ],
+          "width": 32
+        },
+        "sigma_256_0": {
+          "expression": "ROTR(x,7) ^ ROTR(x,18) ^ SHR(x,3)",
+          "name": "sigma_256_0",
+          "parameters": [
+            "x"
+          ],
+          "width": 32
+        },
+        "sigma_256_1": {
+          "expression": "ROTR(x,17) ^ ROTR(x,19) ^ SHR(x,10)",
+          "name": "sigma_256_1",
+          "parameters": [
+            "x"
+          ],
+          "width": 32
+        }
+      },
+      "result": [
+        "hex",
+        [
+          "array",
+          [
+            "at",
+            [
+              "var",
+              "H"
+            ],
+            [
+              "literal",
+              0
+            ]
+          ],
+          [
+            "at",
+            [
+              "var",
+              "H"
+            ],
+            [
+              "literal",
+              1
+            ]
+          ],
+          [
+            "at",
+            [
+              "var",
+              "H"
+            ],
+            [
+              "literal",
+              2
+            ]
+          ],
+          [
+            "at",
+            [
+              "var",
+              "H"
+            ],
+            [
+              "literal",
+              3
+            ]
+          ],
+          [
+            "at",
+            [
+              "var",
+              "H"
+            ],
+            [
+              "literal",
+              4
+            ]
+          ],
+          [
+            "at",
+            [
+              "var",
+              "H"
+            ],
+            [
+              "literal",
+              5
+            ]
+          ],
+          [
+            "at",
+            [
+              "var",
+              "H"
+            ],
+            [
+              "literal",
+              6
+            ]
+          ],
+          [
+            "at",
+            [
+              "var",
+              "H"
+            ],
+            [
+              "literal",
+              7
+            ]
+          ]
+        ],
+        [
+          "literal",
+          32
+        ],
+        [
+          "literal",
+          "big"
+        ]
+      ]
+    },
+    "language": "nova.sequence.v1",
+    "parents": [],
+    "source": "def fn_Ch(v_x, v_y, v_z):\n    return word('xor', 32, word('and', 32, v_x, v_y), word('and', 32, word('not', 32, v_x), v_z))\n\ndef fn_Maj(v_x, v_y, v_z):\n    return word('xor', 32, word('xor', 32, word('and', 32, v_x, v_y), word('and', 32, v_x, v_z)), word('and', 32, v_y, v_z))\n\ndef fn_Sigma_256_0(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 2), word('rotr', 32, v_x, 13)), word('rotr', 32, v_x, 22))\n\ndef fn_Sigma_256_1(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 6), word('rotr', 32, v_x, 11)), word('rotr', 32, v_x, 25))\n\ndef fn_sigma_256_0(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 7), word('rotr', 32, v_x, 18)), word('shr', 32, v_x, 3))\n\ndef fn_sigma_256_1(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 17), word('rotr', 32, v_x, 19)), word('shr', 32, v_x, 10))\n\ndef solve(inputs):\n    budget = [20000]\n    v_novaBytes = s_utf8(inputs['message'])\n    v_novaBlocks = s_chunks(s_pad(v_novaBytes, 1, 448, 512, 64, 'big'), 64)\n    v_K = [1116352408, 1899447441, 3049323471, 3921009573, 961987163, 1508970993, 2453635748, 2870763221, 3624381080, 310598401, 607225278, 1426881987, 1925078388, 2162078206, 2614888103, 3248222580, 3835390401, 4022224774, 264347078, 604807628, 770255983, 1249150122, 1555081692, 1996064986, 2554220882, 2821834349, 2952996808, 3210313671, 3336571891, 3584528711, 113926993, 338241895, 666307205, 773529912, 1294757372, 1396182291, 1695183700, 1986661051, 2177026350, 2456956037, 2730485921, 2820302411, 3259730800, 3345764771, 3516065817, 3600352804, 4094571909, 275423344, 430227734, 506948616, 659060556, 883997877, 958139571, 1322822218, 1537002063, 1747873779, 1955562222, 2024104815, 2227730452, 2361852424, 2428436474, 2756734187, 3204031479, 3329325298]\n    v_H = [1779033703, 3144134277, 1013904242, 2773480762, 1359893119, 2600822924, 528734635, 1541459225]\n    for v_i in s_range(1, s_size(v_novaBlocks), budget):\n        v_previous_H = s_copy(v_H)\n        v_M = s_words(s_at(v_novaBlocks, word('sub', 32, v_i, 1)), 32, 'big')\n        v_W = s_zeros(64)\n        for v_t in s_range(0, 15, budget):\n            s_put(v_W, v_t, s_at(v_M, v_t))\n        for v_t in s_range(16, 63, budget):\n            s_put(v_W, v_t, word('add', 32, word('add', 32, word('add', 32, fn_sigma_256_1(s_at(v_W, word('sub', 32, v_t, 2))), s_at(v_W, word('sub', 32, v_t, 7))), fn_sigma_256_0(s_at(v_W, word('sub', 32, v_t, 15)))), s_at(v_W, word('sub', 32, v_t, 16))))\n        v_a = s_at(v_previous_H, 0)\n        v_b = s_at(v_previous_H, 1)\n        v_c = s_at(v_previous_H, 2)\n        v_d = s_at(v_previous_H, 3)\n        v_e = s_at(v_previous_H, 4)\n        v_f = s_at(v_previous_H, 5)\n        v_g = s_at(v_previous_H, 6)\n        v_h = s_at(v_previous_H, 7)\n        for v_t in s_range(0, 63, budget):\n            v_T1 = word('add', 32, word('add', 32, word('add', 32, word('add', 32, v_h, fn_Sigma_256_1(v_e)), fn_Ch(v_e, v_f, v_g)), s_at(v_K, v_t)), s_at(v_W, v_t))\n            v_T2 = word('add', 32, fn_Sigma_256_0(v_a), fn_Maj(v_a, v_b, v_c))\n            v_h = v_g\n            v_g = v_f\n            v_f = v_e\n            v_e = word('add', 32, v_d, v_T1)\n            v_d = v_c\n            v_c = v_b\n            v_b = v_a\n            v_a = word('add', 32, v_T1, v_T2)\n        s_put(v_H, 0, word('add', 32, v_a, s_at(v_previous_H, 0)))\n        s_put(v_H, 1, word('add', 32, v_b, s_at(v_previous_H, 1)))\n        s_put(v_H, 2, word('add', 32, v_c, s_at(v_previous_H, 2)))\n        s_put(v_H, 3, word('add', 32, v_d, s_at(v_previous_H, 3)))\n        s_put(v_H, 4, word('add', 32, v_e, s_at(v_previous_H, 4)))\n        s_put(v_H, 5, word('add', 32, v_f, s_at(v_previous_H, 5)))\n        s_put(v_H, 6, word('add', 32, v_g, s_at(v_previous_H, 6)))\n        s_put(v_H, 7, word('add', 32, v_h, s_at(v_previous_H, 7)))\n    return s_hex([s_at(v_H, 0), s_at(v_H, 1), s_at(v_H, 2), s_at(v_H, 3), s_at(v_H, 4), s_at(v_H, 5), s_at(v_H, 6), s_at(v_H, 7)], 32, 'big')\n",
+    "specifications": [
+      "12d75bff175933a84eebaae8fa19d6e5d195ed1638f069da479d9f9cfaca216b",
+      "2d257b400c53bcf091d0793ede40b5b292b6aa7b3443362e82e29717da9d335e",
+      "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff",
+      "69b3eb8ec0395c0d72f35934f3072249535423e40a48f84413ff5c72b3e8939b",
+      "7d456868a54fcce83e7f22beabd5cc27eb90f0c39da8ae5db309c94827c88c68"
+    ]
+  },
+  "program": {
+    "id": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+    "ir": [
+      "apply",
+      "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e",
+      [
+        "object",
+        {
+          "message": [
+            "ref",
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+          ]
+        }
+      ]
+    ],
+    "language": "nova.expression.v1",
+    "parents": [
+      "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e"
+    ],
+    "source": "def solve(inputs, recall):\n    return recall('75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e', {'message': recall('50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895', inputs)})\n"
+  },
+  "reason": "CANDIDATE_FROZEN",
+  "report": {
+    "algorithm_learning": {
+      "author": "kernel_document_compiler",
+      "compiler": "typeset_block_recurrence_v1",
+      "genes": [
+        {
+          "definition": {
+            "input_type": "utf8_text",
+            "max_bytes": 1024,
+            "parameters": [
+              "message"
+            ],
+            "width": 32
+          },
+          "derivation": {
+            "algorithm_document": "69b3eb8ec0395c0d72f35934f3072249535423e40a48f84413ff5c72b3e8939b",
+            "byte_order": "big",
+            "constant_counts": {
+              "K": 64
+            },
+            "encoding": "UTF-8",
+            "initial_counts": {
+              "H": 8
+            },
+            "output_indices": [
+              [
+                "H",
+                0
+              ],
+              [
+                "H",
+                1
+              ],
+              [
+                "H",
+                2
+              ],
+              [
+                "H",
+                3
+              ],
+              [
+                "H",
+                4
+              ],
+              [
+                "H",
+                5
+              ],
+              [
+                "H",
+                6
+              ],
+              [
+                "H",
+                7
+              ]
+            ],
+            "padding": {
+              "bit": 1,
+              "length_bits": 64,
+              "modulus": 512,
+              "target": 448
+            },
+            "reader": "typeset_block_recurrence_v1",
+            "scope": "specified_algorithm_compilation_not_algorithm_invention",
+            "steps": [
+              {
+                "kind": "piecewise_recurrence",
+                "ranges": [
+                  [
+                    0,
+                    15
+                  ],
+                  [
+                    16,
+                    63
+                  ]
+                ],
+                "step": 1
+              },
+              {
+                "count": 8,
+                "kind": "ordered_assignments",
+                "step": 2
+              },
+              {
+                "assignments": 10,
+                "kind": "bounded_iteration",
+                "range": [
+                  0,
+                  63
+                ],
+                "step": 3
+              },
+              {
+                "count": 8,
+                "kind": "ordered_assignments",
+                "step": 4
+              }
+            ]
+          },
+          "id": "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e",
+          "ir": {
+            "body": [
+              [
+                "set",
+                "novaBytes",
+                [
+                  "utf8",
+                  [
+                    "input",
+                    "message"
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "novaBlocks",
+                [
+                  "chunks",
+                  [
+                    "pad",
+                    [
+                      "var",
+                      "novaBytes"
+                    ],
+                    [
+                      "literal",
+                      1
+                    ],
+                    [
+                      "literal",
+                      448
+                    ],
+                    [
+                      "literal",
+                      512
+                    ],
+                    [
+                      "literal",
+                      64
+                    ],
+                    [
+                      "literal",
+                      "big"
+                    ]
+                  ],
+                  [
+                    "literal",
+                    64
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "K",
+                [
+                  "literal",
+                  [
+                    1116352408,
+                    1899447441,
+                    3049323471,
+                    3921009573,
+                    961987163,
+                    1508970993,
+                    2453635748,
+                    2870763221,
+                    3624381080,
+                    310598401,
+                    607225278,
+                    1426881987,
+                    1925078388,
+                    2162078206,
+                    2614888103,
+                    3248222580,
+                    3835390401,
+                    4022224774,
+                    264347078,
+                    604807628,
+                    770255983,
+                    1249150122,
+                    1555081692,
+                    1996064986,
+                    2554220882,
+                    2821834349,
+                    2952996808,
+                    3210313671,
+                    3336571891,
+                    3584528711,
+                    113926993,
+                    338241895,
+                    666307205,
+                    773529912,
+                    1294757372,
+                    1396182291,
+                    1695183700,
+                    1986661051,
+                    2177026350,
+                    2456956037,
+                    2730485921,
+                    2820302411,
+                    3259730800,
+                    3345764771,
+                    3516065817,
+                    3600352804,
+                    4094571909,
+                    275423344,
+                    430227734,
+                    506948616,
+                    659060556,
+                    883997877,
+                    958139571,
+                    1322822218,
+                    1537002063,
+                    1747873779,
+                    1955562222,
+                    2024104815,
+                    2227730452,
+                    2361852424,
+                    2428436474,
+                    2756734187,
+                    3204031479,
+                    3329325298
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "H",
+                [
+                  "literal",
+                  [
+                    1779033703,
+                    3144134277,
+                    1013904242,
+                    2773480762,
+                    1359893119,
+                    2600822924,
+                    528734635,
+                    1541459225
+                  ]
+                ]
+              ],
+              [
+                "for",
+                "i",
+                [
+                  "literal",
+                  1
+                ],
+                [
+                  "size",
+                  [
+                    "var",
+                    "novaBlocks"
+                  ]
+                ],
+                [
+                  [
+                    "set",
+                    "previous_H",
+                    [
+                      "copy",
+                      [
+                        "var",
+                        "H"
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "M",
+                    [
+                      "words",
+                      [
+                        "at",
+                        [
+                          "var",
+                          "novaBlocks"
+                        ],
+                        [
+                          "word",
+                          "sub",
+                          [
+                            "var",
+                            "i"
+                          ],
+                          [
+                            "literal",
+                            1
+                          ]
+                        ]
+                      ],
+                      [
+                        "literal",
+                        32
+                      ],
+                      [
+                        "literal",
+                        "big"
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "W",
+                    [
+                      "zeros",
+                      [
+                        "literal",
+                        64
+                      ]
+                    ]
+                  ],
+                  [
+                    "for",
+                    "t",
+                    [
+                      "literal",
+                      0
+                    ],
+                    [
+                      "literal",
+                      15
+                    ],
+                    [
+                      [
+                        "put",
+                        "W",
+                        [
+                          "var",
+                          "t"
+                        ],
+                        [
+                          "at",
+                          [
+                            "var",
+                            "M"
+                          ],
+                          [
+                            "var",
+                            "t"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "for",
+                    "t",
+                    [
+                      "literal",
+                      16
+                    ],
+                    [
+                      "literal",
+                      63
+                    ],
+                    [
+                      [
+                        "put",
+                        "W",
+                        [
+                          "var",
+                          "t"
+                        ],
+                        [
+                          "word",
+                          "add",
+                          [
+                            "word",
+                            "add",
+                            [
+                              "word",
+                              "add",
+                              [
+                                "call",
+                                "sigma_256_1",
+                                [
+                                  "at",
+                                  [
+                                    "var",
+                                    "W"
+                                  ],
+                                  [
+                                    "word",
+                                    "sub",
+                                    [
+                                      "var",
+                                      "t"
+                                    ],
+                                    [
+                                      "literal",
+                                      2
+                                    ]
+                                  ]
+                                ]
+                              ],
+                              [
+                                "at",
+                                [
+                                  "var",
+                                  "W"
+                                ],
+                                [
+                                  "word",
+                                  "sub",
+                                  [
+                                    "var",
+                                    "t"
+                                  ],
+                                  [
+                                    "literal",
+                                    7
+                                  ]
+                                ]
+                              ]
+                            ],
+                            [
+                              "call",
+                              "sigma_256_0",
+                              [
+                                "at",
+                                [
+                                  "var",
+                                  "W"
+                                ],
+                                [
+                                  "word",
+                                  "sub",
+                                  [
+                                    "var",
+                                    "t"
+                                  ],
+                                  [
+                                    "literal",
+                                    15
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ],
+                          [
+                            "at",
+                            [
+                              "var",
+                              "W"
+                            ],
+                            [
+                              "word",
+                              "sub",
+                              [
+                                "var",
+                                "t"
+                              ],
+                              [
+                                "literal",
+                                16
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "a",
+                    [
+                      "at",
+                      [
+                        "var",
+                        "previous_H"
+                      ],
+                      [
+                        "literal",
+                        0
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "b",
+                    [
+                      "at",
+                      [
+                        "var",
+                        "previous_H"
+                      ],
+                      [
+                        "literal",
+                        1
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "c",
+                    [
+                      "at",
+                      [
+                        "var",
+                        "previous_H"
+                      ],
+                      [
+                        "literal",
+                        2
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "d",
+                    [
+                      "at",
+                      [
+                        "var",
+                        "previous_H"
+                      ],
+                      [
+                        "literal",
+                        3
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "e",
+                    [
+                      "at",
+                      [
+                        "var",
+                        "previous_H"
+                      ],
+                      [
+                        "literal",
+                        4
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "f",
+                    [
+                      "at",
+                      [
+                        "var",
+                        "previous_H"
+                      ],
+                      [
+                        "literal",
+                        5
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "g",
+                    [
+                      "at",
+                      [
+                        "var",
+                        "previous_H"
+                      ],
+                      [
+                        "literal",
+                        6
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "h",
+                    [
+                      "at",
+                      [
+                        "var",
+                        "previous_H"
+                      ],
+                      [
+                        "literal",
+                        7
+                      ]
+                    ]
+                  ],
+                  [
+                    "for",
+                    "t",
+                    [
+                      "literal",
+                      0
+                    ],
+                    [
+                      "literal",
+                      63
+                    ],
+                    [
+                      [
+                        "set",
+                        "T1",
+                        [
+                          "word",
+                          "add",
+                          [
+                            "word",
+                            "add",
+                            [
+                              "word",
+                              "add",
+                              [
+                                "word",
+                                "add",
+                                [
+                                  "var",
+                                  "h"
+                                ],
+                                [
+                                  "call",
+                                  "Sigma_256_1",
+                                  [
+                                    "var",
+                                    "e"
+                                  ]
+                                ]
+                              ],
+                              [
+                                "call",
+                                "Ch",
+                                [
+                                  "var",
+                                  "e"
+                                ],
+                                [
+                                  "var",
+                                  "f"
+                                ],
+                                [
+                                  "var",
+                                  "g"
+                                ]
+                              ]
+                            ],
+                            [
+                              "at",
+                              [
+                                "var",
+                                "K"
+                              ],
+                              [
+                                "var",
+                                "t"
+                              ]
+                            ]
+                          ],
+                          [
+                            "at",
+                            [
+                              "var",
+                              "W"
+                            ],
+                            [
+                              "var",
+                              "t"
+                            ]
+                          ]
+                        ]
+                      ],
+                      [
+                        "set",
+                        "T2",
+                        [
+                          "word",
+                          "add",
+                          [
+                            "call",
+                            "Sigma_256_0",
+                            [
+                              "var",
+                              "a"
+                            ]
+                          ],
+                          [
+                            "call",
+                            "Maj",
+                            [
+                              "var",
+                              "a"
+                            ],
+                            [
+                              "var",
+                              "b"
+                            ],
+                            [
+                              "var",
+                              "c"
+                            ]
+                          ]
+                        ]
+                      ],
+                      [
+                        "set",
+                        "h",
+                        [
+                          "var",
+                          "g"
+                        ]
+                      ],
+                      [
+                        "set",
+                        "g",
+                        [
+                          "var",
+                          "f"
+                        ]
+                      ],
+                      [
+                        "set",
+                        "f",
+                        [
+                          "var",
+                          "e"
+                        ]
+                      ],
+                      [
+                        "set",
+                        "e",
+                        [
+                          "word",
+                          "add",
+                          [
+                            "var",
+                            "d"
+                          ],
+                          [
+                            "var",
+                            "T1"
+                          ]
+                        ]
+                      ],
+                      [
+                        "set",
+                        "d",
+                        [
+                          "var",
+                          "c"
+                        ]
+                      ],
+                      [
+                        "set",
+                        "c",
+                        [
+                          "var",
+                          "b"
+                        ]
+                      ],
+                      [
+                        "set",
+                        "b",
+                        [
+                          "var",
+                          "a"
+                        ]
+                      ],
+                      [
+                        "set",
+                        "a",
+                        [
+                          "word",
+                          "add",
+                          [
+                            "var",
+                            "T1"
+                          ],
+                          [
+                            "var",
+                            "T2"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "put",
+                    "H",
+                    [
+                      "literal",
+                      0
+                    ],
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "a"
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "previous_H"
+                        ],
+                        [
+                          "literal",
+                          0
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "put",
+                    "H",
+                    [
+                      "literal",
+                      1
+                    ],
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "b"
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "previous_H"
+                        ],
+                        [
+                          "literal",
+                          1
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "put",
+                    "H",
+                    [
+                      "literal",
+                      2
+                    ],
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "c"
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "previous_H"
+                        ],
+                        [
+                          "literal",
+                          2
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "put",
+                    "H",
+                    [
+                      "literal",
+                      3
+                    ],
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "d"
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "previous_H"
+                        ],
+                        [
+                          "literal",
+                          3
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "put",
+                    "H",
+                    [
+                      "literal",
+                      4
+                    ],
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "e"
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "previous_H"
+                        ],
+                        [
+                          "literal",
+                          4
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "put",
+                    "H",
+                    [
+                      "literal",
+                      5
+                    ],
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "f"
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "previous_H"
+                        ],
+                        [
+                          "literal",
+                          5
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "put",
+                    "H",
+                    [
+                      "literal",
+                      6
+                    ],
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "g"
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "previous_H"
+                        ],
+                        [
+                          "literal",
+                          6
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "put",
+                    "H",
+                    [
+                      "literal",
+                      7
+                    ],
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "h"
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "previous_H"
+                        ],
+                        [
+                          "literal",
+                          7
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            "functions": {
+              "Ch": {
+                "expression": "( x & y) ^ (~x & z)",
+                "name": "Ch",
+                "parameters": [
+                  "x",
+                  "y",
+                  "z"
+                ],
+                "width": 32
+              },
+              "Maj": {
+                "expression": "( x & y) ^ ( x & z ) ^ ( y & z )",
+                "name": "Maj",
+                "parameters": [
+                  "x",
+                  "y",
+                  "z"
+                ],
+                "width": 32
+              },
+              "Sigma_256_0": {
+                "expression": "ROTR(x,2)         ^ ROTR(x,13) ^ ROTR(x,22)",
+                "name": "Sigma_256_0",
+                "parameters": [
+                  "x"
+                ],
+                "width": 32
+              },
+              "Sigma_256_1": {
+                "expression": "ROTR(x,6)         ^ ROTR(x,11) ^ ROTR(x,25)",
+                "name": "Sigma_256_1",
+                "parameters": [
+                  "x"
+                ],
+                "width": 32
+              },
+              "sigma_256_0": {
+                "expression": "ROTR(x,7) ^ ROTR(x,18) ^ SHR(x,3)",
+                "name": "sigma_256_0",
+                "parameters": [
+                  "x"
+                ],
+                "width": 32
+              },
+              "sigma_256_1": {
+                "expression": "ROTR(x,17) ^ ROTR(x,19) ^ SHR(x,10)",
+                "name": "sigma_256_1",
+                "parameters": [
+                  "x"
+                ],
+                "width": 32
+              }
+            },
+            "result": [
+              "hex",
+              [
+                "array",
+                [
+                  "at",
+                  [
+                    "var",
+                    "H"
+                  ],
+                  [
+                    "literal",
+                    0
+                  ]
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "H"
+                  ],
+                  [
+                    "literal",
+                    1
+                  ]
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "H"
+                  ],
+                  [
+                    "literal",
+                    2
+                  ]
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "H"
+                  ],
+                  [
+                    "literal",
+                    3
+                  ]
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "H"
+                  ],
+                  [
+                    "literal",
+                    4
+                  ]
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "H"
+                  ],
+                  [
+                    "literal",
+                    5
+                  ]
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "H"
+                  ],
+                  [
+                    "literal",
+                    6
+                  ]
+                ],
+                [
+                  "at",
+                  [
+                    "var",
+                    "H"
+                  ],
+                  [
+                    "literal",
+                    7
+                  ]
+                ]
+              ],
+              [
+                "literal",
+                32
+              ],
+              [
+                "literal",
+                "big"
+              ]
+            ]
+          },
+          "language": "nova.sequence.v1",
+          "parents": [],
+          "source": "def fn_Ch(v_x, v_y, v_z):\n    return word('xor', 32, word('and', 32, v_x, v_y), word('and', 32, word('not', 32, v_x), v_z))\n\ndef fn_Maj(v_x, v_y, v_z):\n    return word('xor', 32, word('xor', 32, word('and', 32, v_x, v_y), word('and', 32, v_x, v_z)), word('and', 32, v_y, v_z))\n\ndef fn_Sigma_256_0(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 2), word('rotr', 32, v_x, 13)), word('rotr', 32, v_x, 22))\n\ndef fn_Sigma_256_1(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 6), word('rotr', 32, v_x, 11)), word('rotr', 32, v_x, 25))\n\ndef fn_sigma_256_0(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 7), word('rotr', 32, v_x, 18)), word('shr', 32, v_x, 3))\n\ndef fn_sigma_256_1(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 17), word('rotr', 32, v_x, 19)), word('shr', 32, v_x, 10))\n\ndef solve(inputs):\n    budget = [20000]\n    v_novaBytes = s_utf8(inputs['message'])\n    v_novaBlocks = s_chunks(s_pad(v_novaBytes, 1, 448, 512, 64, 'big'), 64)\n    v_K = [1116352408, 1899447441, 3049323471, 3921009573, 961987163, 1508970993, 2453635748, 2870763221, 3624381080, 310598401, 607225278, 1426881987, 1925078388, 2162078206, 2614888103, 3248222580, 3835390401, 4022224774, 264347078, 604807628, 770255983, 1249150122, 1555081692, 1996064986, 2554220882, 2821834349, 2952996808, 3210313671, 3336571891, 3584528711, 113926993, 338241895, 666307205, 773529912, 1294757372, 1396182291, 1695183700, 1986661051, 2177026350, 2456956037, 2730485921, 2820302411, 3259730800, 3345764771, 3516065817, 3600352804, 4094571909, 275423344, 430227734, 506948616, 659060556, 883997877, 958139571, 1322822218, 1537002063, 1747873779, 1955562222, 2024104815, 2227730452, 2361852424, 2428436474, 2756734187, 3204031479, 3329325298]\n    v_H = [1779033703, 3144134277, 1013904242, 2773480762, 1359893119, 2600822924, 528734635, 1541459225]\n    for v_i in s_range(1, s_size(v_novaBlocks), budget):\n        v_previous_H = s_copy(v_H)\n        v_M = s_words(s_at(v_novaBlocks, word('sub', 32, v_i, 1)), 32, 'big')\n        v_W = s_zeros(64)\n        for v_t in s_range(0, 15, budget):\n            s_put(v_W, v_t, s_at(v_M, v_t))\n        for v_t in s_range(16, 63, budget):\n            s_put(v_W, v_t, word('add', 32, word('add', 32, word('add', 32, fn_sigma_256_1(s_at(v_W, word('sub', 32, v_t, 2))), s_at(v_W, word('sub', 32, v_t, 7))), fn_sigma_256_0(s_at(v_W, word('sub', 32, v_t, 15)))), s_at(v_W, word('sub', 32, v_t, 16))))\n        v_a = s_at(v_previous_H, 0)\n        v_b = s_at(v_previous_H, 1)\n        v_c = s_at(v_previous_H, 2)\n        v_d = s_at(v_previous_H, 3)\n        v_e = s_at(v_previous_H, 4)\n        v_f = s_at(v_previous_H, 5)\n        v_g = s_at(v_previous_H, 6)\n        v_h = s_at(v_previous_H, 7)\n        for v_t in s_range(0, 63, budget):\n            v_T1 = word('add', 32, word('add', 32, word('add', 32, word('add', 32, v_h, fn_Sigma_256_1(v_e)), fn_Ch(v_e, v_f, v_g)), s_at(v_K, v_t)), s_at(v_W, v_t))\n            v_T2 = word('add', 32, fn_Sigma_256_0(v_a), fn_Maj(v_a, v_b, v_c))\n            v_h = v_g\n            v_g = v_f\n            v_f = v_e\n            v_e = word('add', 32, v_d, v_T1)\n            v_d = v_c\n            v_c = v_b\n            v_b = v_a\n            v_a = word('add', 32, v_T1, v_T2)\n        s_put(v_H, 0, word('add', 32, v_a, s_at(v_previous_H, 0)))\n        s_put(v_H, 1, word('add', 32, v_b, s_at(v_previous_H, 1)))\n        s_put(v_H, 2, word('add', 32, v_c, s_at(v_previous_H, 2)))\n        s_put(v_H, 3, word('add', 32, v_d, s_at(v_previous_H, 3)))\n        s_put(v_H, 4, word('add', 32, v_e, s_at(v_previous_H, 4)))\n        s_put(v_H, 5, word('add', 32, v_f, s_at(v_previous_H, 5)))\n        s_put(v_H, 6, word('add', 32, v_g, s_at(v_previous_H, 6)))\n        s_put(v_H, 7, word('add', 32, v_h, s_at(v_previous_H, 7)))\n    return s_hex([s_at(v_H, 0), s_at(v_H, 1), s_at(v_H, 2), s_at(v_H, 3), s_at(v_H, 4), s_at(v_H, 5), s_at(v_H, 6), s_at(v_H, 7)], 32, 'big')\n",
+          "specifications": [
+            "12d75bff175933a84eebaae8fa19d6e5d195ed1638f069da479d9f9cfaca216b",
+            "2d257b400c53bcf091d0793ede40b5b292b6aa7b3443362e82e29717da9d335e",
+            "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff",
+            "69b3eb8ec0395c0d72f35934f3072249535423e40a48f84413ff5c72b3e8939b",
+            "7d456868a54fcce83e7f22beabd5cc27eb90f0c39da8ae5db309c94827c88c68"
+          ]
+        }
+      ],
+      "missing": []
+    },
+    "argument_bindings_tested": 3,
+    "candidate_budget": 64,
+    "candidates_deferred_by_budget": 0,
+    "diagnosis": {
+      "algorithm_compiler": {
+        "author": "kernel_document_compiler",
+        "compiler": "typeset_block_recurrence_v1",
+        "missing": []
+      },
+      "hypothesis": "REPRESENTATION_GAP",
+      "knowledge": "AVAILABLE",
+      "observed": "SEARCH_EXHAUSTED",
+      "proof_of_global_impossibility": false,
+      "resolved_by_sequence_compiler": [
+        "byte_encoding_padding_and_blocks",
+        "indexed_recurrence_and_iteration"
+      ],
+      "search": "BOUNDED_FRONTIER_EXHAUSTED",
+      "source_events": [
+        12,
+        20
+      ],
+      "training_output_types": [
+        "str"
+      ],
+      "unavailable_native_word_operations": [
+        "and",
+        "not",
+        "rotr",
+        "shr",
+        "xor"
+      ],
+      "unsupported_specification_constructs": []
+    },
+    "hidden_cases_seen": 0,
+    "learning": [
+      {
+        "author": "kernel_equation_compiler",
+        "genes": [],
+        "knowledge_author": "NIST publication, unedited pdftotext -layout section extracts; PDF SHA256 0455b406d89648d20cbde375561e19c245b9815e894164c2670772e3d54deb82",
+        "rejected": [],
+        "specification": "69b3eb8ec0395c0d72f35934f3072249535423e40a48f84413ff5c72b3e8939b",
+        "unsupported": [
+          "indexed_recurrence_and_iteration",
+          "byte_encoding_padding_and_blocks"
+        ]
+      },
+      {
+        "author": "kernel_equation_compiler",
+        "genes": [
+          {
+            "definition": {
+              "expression": "( x & y) ^ (~x & z)",
+              "name": "Ch",
+              "parameters": [
+                "x",
+                "y",
+                "z"
+              ],
+              "width": 32
+            },
+            "id": "10d8b2a2d69d469df73a61d10ad6292b86828621ec3db567d7435856a92a6a16",
+            "ir": [
+              "xor",
+              [
+                "and",
+                [
+                  "arg",
+                  "x"
+                ],
+                [
+                  "arg",
+                  "y"
+                ]
+              ],
+              [
+                "and",
+                [
+                  "not",
+                  [
+                    "arg",
+                    "x"
+                  ]
+                ],
+                [
+                  "arg",
+                  "z"
+                ]
+              ]
+            ],
+            "language": "nova.word-expression.v1",
+            "parents": [],
+            "source": "def solve(inputs):\n    return word('xor', 32, word('and', 32, inputs['x'], inputs['y']), word('and', 32, word('not', 32, inputs['x']), inputs['z']))\n",
+            "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+          },
+          {
+            "definition": {
+              "expression": "( x & y) ^ ( x & z ) ^ ( y & z )",
+              "name": "Maj",
+              "parameters": [
+                "x",
+                "y",
+                "z"
+              ],
+              "width": 32
+            },
+            "id": "4c3fbbad8150811282ca41fa3f21ce0e2f47c7b9d025cb330d77872795854ad1",
+            "ir": [
+              "xor",
+              [
+                "xor",
+                [
+                  "and",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "arg",
+                    "y"
+                  ]
+                ],
+                [
+                  "and",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "arg",
+                    "z"
+                  ]
+                ]
+              ],
+              [
+                "and",
+                [
+                  "arg",
+                  "y"
+                ],
+                [
+                  "arg",
+                  "z"
+                ]
+              ]
+            ],
+            "language": "nova.word-expression.v1",
+            "parents": [],
+            "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('and', 32, inputs['x'], inputs['y']), word('and', 32, inputs['x'], inputs['z'])), word('and', 32, inputs['y'], inputs['z']))\n",
+            "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+          },
+          {
+            "definition": {
+              "expression": "ROTR(x,2)         ^ ROTR(x,13) ^ ROTR(x,22)",
+              "name": "Sigma_256_0",
+              "parameters": [
+                "x"
+              ],
+              "width": 32
+            },
+            "id": "6932efde33fc7373d21ebf153cafea455e2bae62e3c8940bf5bb6a65d8852b1f",
+            "ir": [
+              "xor",
+              [
+                "xor",
+                [
+                  "rotr",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "literal",
+                    2
+                  ]
+                ],
+                [
+                  "rotr",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "literal",
+                    13
+                  ]
+                ]
+              ],
+              [
+                "rotr",
+                [
+                  "arg",
+                  "x"
+                ],
+                [
+                  "literal",
+                  22
+                ]
+              ]
+            ],
+            "language": "nova.word-expression.v1",
+            "parents": [],
+            "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, inputs['x'], 2), word('rotr', 32, inputs['x'], 13)), word('rotr', 32, inputs['x'], 22))\n",
+            "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+          },
+          {
+            "definition": {
+              "expression": "ROTR(x,6)         ^ ROTR(x,11) ^ ROTR(x,25)",
+              "name": "Sigma_256_1",
+              "parameters": [
+                "x"
+              ],
+              "width": 32
+            },
+            "id": "d94a56c99a9c329a15e19e87431fda48f4c11b4cd0ecd98d482ed9ae2c10018f",
+            "ir": [
+              "xor",
+              [
+                "xor",
+                [
+                  "rotr",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "literal",
+                    6
+                  ]
+                ],
+                [
+                  "rotr",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "literal",
+                    11
+                  ]
+                ]
+              ],
+              [
+                "rotr",
+                [
+                  "arg",
+                  "x"
+                ],
+                [
+                  "literal",
+                  25
+                ]
+              ]
+            ],
+            "language": "nova.word-expression.v1",
+            "parents": [],
+            "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, inputs['x'], 6), word('rotr', 32, inputs['x'], 11)), word('rotr', 32, inputs['x'], 25))\n",
+            "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+          },
+          {
+            "definition": {
+              "expression": "ROTR(x,7) ^ ROTR(x,18) ^ SHR(x,3)",
+              "name": "sigma_256_0",
+              "parameters": [
+                "x"
+              ],
+              "width": 32
+            },
+            "id": "f33f9046828a829f28ca4ce2ab8daa0acc04ac92186219d309b3f8bd2c187779",
+            "ir": [
+              "xor",
+              [
+                "xor",
+                [
+                  "rotr",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "literal",
+                    7
+                  ]
+                ],
+                [
+                  "rotr",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "literal",
+                    18
+                  ]
+                ]
+              ],
+              [
+                "shr",
+                [
+                  "arg",
+                  "x"
+                ],
+                [
+                  "literal",
+                  3
+                ]
+              ]
+            ],
+            "language": "nova.word-expression.v1",
+            "parents": [],
+            "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, inputs['x'], 7), word('rotr', 32, inputs['x'], 18)), word('shr', 32, inputs['x'], 3))\n",
+            "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+          },
+          {
+            "definition": {
+              "expression": "ROTR(x,17) ^ ROTR(x,19) ^ SHR(x,10)",
+              "name": "sigma_256_1",
+              "parameters": [
+                "x"
+              ],
+              "width": 32
+            },
+            "id": "759bcbec2012fdfd9efb9fa748cadea606af41176290630f2221eda74f96544c",
+            "ir": [
+              "xor",
+              [
+                "xor",
+                [
+                  "rotr",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "literal",
+                    17
+                  ]
+                ],
+                [
+                  "rotr",
+                  [
+                    "arg",
+                    "x"
+                  ],
+                  [
+                    "literal",
+                    19
+                  ]
+                ]
+              ],
+              [
+                "shr",
+                [
+                  "arg",
+                  "x"
+                ],
+                [
+                  "literal",
+                  10
+                ]
+              ]
+            ],
+            "language": "nova.word-expression.v1",
+            "parents": [],
+            "source": "def solve(inputs):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, inputs['x'], 17), word('rotr', 32, inputs['x'], 19)), word('shr', 32, inputs['x'], 10))\n",
+            "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff"
+          }
+        ],
+        "knowledge_author": "NIST publication, unedited pdftotext -layout section extracts; PDF SHA256 0455b406d89648d20cbde375561e19c245b9815e894164c2670772e3d54deb82",
+        "rejected": [],
+        "specification": "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff",
+        "unsupported": []
+      },
+      {
+        "author": "kernel_equation_compiler",
+        "genes": [],
+        "knowledge_author": "NIST, unedited pdftotext -layout section 3.1; PDF SHA256 0455b406d89648d20cbde375561e19c245b9815e894164c2670772e3d54deb82",
+        "rejected": [],
+        "specification": "12d75bff175933a84eebaae8fa19d6e5d195ed1638f069da479d9f9cfaca216b",
+        "unsupported": [
+          "byte_encoding_padding_and_blocks"
+        ]
+      },
+      {
+        "author": "kernel_equation_compiler",
+        "genes": [],
+        "knowledge_author": "NIST publication, unedited pdftotext -layout section extracts; PDF SHA256 0455b406d89648d20cbde375561e19c245b9815e894164c2670772e3d54deb82",
+        "rejected": [],
+        "specification": "2d257b400c53bcf091d0793ede40b5b292b6aa7b3443362e82e29717da9d335e",
+        "unsupported": [
+          "byte_encoding_padding_and_blocks"
+        ]
+      },
+      {
+        "author": "kernel_equation_compiler",
+        "genes": [],
+        "knowledge_author": "Maintainer declares task representation and encoding, not algorithm or answers.",
+        "rejected": [],
+        "specification": "7d456868a54fcce83e7f22beabd5cc27eb90f0c39da8ae5db309c94827c88c68",
+        "unsupported": []
+      }
+    ],
+    "next_requirement": "fresh_independent_holdout",
+    "sandbox_smoke": {
+      "isolation": "linux_seccomp_v1",
+      "results": [
+        {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 0
+            }
+          ],
+          "passed": 1,
+          "total": 1
+        },
+        {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 0
+            }
+          ],
+          "passed": 1,
+          "total": 1
+        },
+        {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 0
+            }
+          ],
+          "passed": 1,
+          "total": 1
+        },
+        {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 0
+            }
+          ],
+          "passed": 1,
+          "total": 1
+        },
+        {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 0
+            }
+          ],
+          "passed": 1,
+          "total": 1
+        },
+        {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 0
+            }
+          ],
+          "passed": 1,
+          "total": 1
+        },
+        {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          ],
+          "passed": 1,
+          "total": 1
+        }
+      ],
+      "status": "PASS"
+    }
+  },
+  "selection": {
+    "kind": "CAPABILITY",
+    "plan": {
+      "memory_context": "d443890a1f67a921c55ac4d95fa45dc3cc918697f196d756e972a5916589d361",
+      "previous_attempt": 20
+    },
+    "policy": "oldest_remembered_exhausted_deficit_then_task_id",
+    "target": "90-sha256-deficit-control",
+    "task": "@capability:90-sha256-deficit-control"
+  },
+  "status": "FROZEN",
+  "workspace": {
+    "CODE": {
+      "author": "kernel_document_compiler",
+      "generated": [
+        "10d8b2a2d69d469df73a61d10ad6292b86828621ec3db567d7435856a92a6a16",
+        "4c3fbbad8150811282ca41fa3f21ce0e2f47c7b9d025cb330d77872795854ad1",
+        "6932efde33fc7373d21ebf153cafea455e2bae62e3c8940bf5bb6a65d8852b1f",
+        "d94a56c99a9c329a15e19e87431fda48f4c11b4cd0ecd98d482ed9ae2c10018f",
+        "f33f9046828a829f28ca4ce2ab8daa0acc04ac92186219d309b3f8bd2c187779",
+        "759bcbec2012fdfd9efb9fa748cadea606af41176290630f2221eda74f96544c",
+        "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e"
+      ],
+      "selected": "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e"
+    },
+    "INTELLIGENCE": {
+      "algorithm_compiler": {
+        "author": "kernel_document_compiler",
+        "compiler": "typeset_block_recurrence_v1",
+        "missing": []
+      },
+      "hypothesis": "REPRESENTATION_GAP",
+      "knowledge": "AVAILABLE",
+      "observed": "SEARCH_EXHAUSTED",
+      "proof_of_global_impossibility": false,
+      "resolved_by_sequence_compiler": [
+        "byte_encoding_padding_and_blocks",
+        "indexed_recurrence_and_iteration"
+      ],
+      "search": "BOUNDED_FRONTIER_EXHAUSTED",
+      "source_events": [
+        12,
+        20
+      ],
+      "training_output_types": [
+        "str"
+      ],
+      "unavailable_native_word_operations": [
+        "and",
+        "not",
+        "rotr",
+        "shr",
+        "xor"
+      ],
+      "unsupported_specification_constructs": []
+    },
+    "LOGIC": {
+      "fresh_evaluation_required": true,
+      "verdict": "CANDIDATE_FROZEN"
+    },
+    "THINKING": {
+      "action": "EXTEND_GRAMMAR_TO_RESOLVE_REMEMBERED_DEFICIT",
+      "cause": 20,
+      "origin": "kernel_causal_memory",
+      "required_result": "new_primitive_and_training_fit_before_fresh_evaluation",
+      "task": "90-sha256-deficit-control"
+    },
+    "context": "91d459dbcd560224fc81a97e5ebf6b011231ece73ac262b991469a431c1e15a5"
+  }
+}

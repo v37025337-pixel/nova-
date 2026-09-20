@@ -1,0 +1,43 @@
+{
+  "boundary": "compiler conformance and compatibility verification; see separate run-summary for actual fresh-blind cycle",
+  "cloud_ci": {
+    "conclusion": "success",
+    "id": 35521052935,
+    "python": [
+      "3.11",
+      "3.12",
+      "3.13"
+    ],
+    "url": "https://github.com/v37025337-pixel/nova-/actions/runs/35521052935"
+  },
+  "legacy_replays": {
+    "g12-legacy-replay": {
+      "head": "87a2fb19b56830c65d5b0296e41d97acfdb5f9a0579c3df23026de4627590fa3",
+      "runtime_sources_match": true,
+      "status": "PASS"
+    },
+    "word-legacy-replay": {
+      "head": "2b28191415c1ef90b80da2b856c15fd06d04e4116f98c4e4ce36c0320b7354e1",
+      "job_id": 106105087696,
+      "status": "PASS",
+      "verification": "cloud CI restore of historical 0.3 word admission on exact source commit"
+    }
+  },
+  "python": "3.12.14",
+  "release_manifest": {
+    "command": "python scripts/verify_release.py",
+    "source_files": 17,
+    "status": "PASS"
+  },
+  "runtime_sources_sha256": "e6711b1a5209bb9d86c7836150f872746af88b4f26a5cb66236d2ee974a8f853",
+  "schema": "nova.algorithm-cycle.verification.v1",
+  "source_commit": "63226976d944ff9b95e0e0463f381b0229c4dda9",
+  "status": "PASS",
+  "unit_tests": {
+    "command": "python -m unittest discover -s tests -v",
+    "passed": 70,
+    "returncode": 0,
+    "seconds": 18.278
+  },
+  "version": "0.4.0"
+}

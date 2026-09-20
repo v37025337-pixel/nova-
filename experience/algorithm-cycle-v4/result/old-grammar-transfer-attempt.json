@@ -1,0 +1,100 @@
+{
+  "dataset": "dc95f977709484999d405001033430530093fea18b13fd25a0a4f50444333678",
+  "event": 29,
+  "gate": null,
+  "generation": 12,
+  "kind": "step",
+  "mutation": null,
+  "parent_generation": 12,
+  "program": null,
+  "reason": "SEARCH_EXHAUSTED",
+  "selection": {
+    "baseline_train": {
+      "outcomes": [
+        {
+          "ok": false,
+          "output": "{\"name\": \"sequence-integration\"}"
+        },
+        {
+          "ok": false,
+          "output": "{\"name\": \"byte-vector-learning\"}"
+        },
+        {
+          "ok": false,
+          "output": "{\"name\": \"recurrence-runtime\"}"
+        }
+      ],
+      "passed": 0,
+      "total": 3
+    },
+    "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+    "plan": {
+      "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+      "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+      "previous_attempt": null,
+      "previous_cost": 0,
+      "previous_failures": 0,
+      "strategy": "verified_gene_composition",
+      "usable_genes": [
+        "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+        "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+        "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+        "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+        "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+      ]
+    },
+    "policy": "largest_training_deficit_then_previous_cost_then_task_id",
+    "task": "130-hash-record"
+  },
+  "status": "WITHHOLD",
+  "synthesis": {
+    "attempts": 6246,
+    "considered": 27648,
+    "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+    "selection": "training_only",
+    "type_pruned": 21402
+  },
+  "workspace": {
+    "CODE": {
+      "attempts": 6246,
+      "program": null,
+      "selection": "training_only"
+    },
+    "INTELLIGENCE": {
+      "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+      "memory_context": "ec47c9a65f18b29d9f78852b4a73bae20fcf16cd57407b64c8912b9eaae39c37",
+      "previous_attempt": null,
+      "previous_cost": 0,
+      "previous_failures": 0,
+      "strategy": "verified_gene_composition",
+      "usable_genes": [
+        "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+        "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+        "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+        "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+        "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c"
+      ]
+    },
+    "LOGIC": {
+      "baseline_train": "ae901206d3b24984af45c902670abe7ef25cf3a8552b3c85bdc2466c2934500e",
+      "evidence": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "verdict": "SEARCH_EXHAUSTED"
+    },
+    "THINKING": {
+      "causes": {
+        "gene_events": {
+          "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": 11,
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": 8,
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": 9,
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": 10,
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": 7
+        },
+        "previous_attempt": null,
+        "task_event": 28
+      },
+      "goal": "130-hash-record",
+      "policy": "largest_training_deficit_then_previous_cost_then_task_id"
+    },
+    "context": "ebebbcfd96b9791fa92957faacb20c67c051eb39f1bc2c98b05ebbd1db899fbd"
+  }
+}
