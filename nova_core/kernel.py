@@ -16,7 +16,7 @@ from .extensions import is_extension
 from .memory import Journal, ZERO
 from .synthesis import ERRORS, MAX_ATTEMPTS, MAX_DEPTH, synthesize
 
-SCHEMA = "nova.kernel.v5"
+SCHEMA = "nova.kernel.v6"
 
 
 def runtime_manifest():
@@ -32,7 +32,8 @@ def runtime_manifest():
             "engine_policy_author": "kernel_bounded_experience_conditioned_mutation",
             "capability_author": "kernel_specification_conditioned_document_compiler",
             "capability_dialect": "bounded_word_equations_and_typeset_block_recurrences",
-            "autonomy": "bounded_failure_conditioned_relational_subgoals_with_external_io"}
+            "autonomy": "bounded_failure_conditioned_relational_subgoals_with_external_io",
+            "python_tools": "pure_stdlib_composition_and_inherited_relation_transfer"}
 
 
 def initial_state():
@@ -233,7 +234,7 @@ def validate_trial(state, trial):
 
 def upgrade_proposal(state, target, previous_head):
     source = state["runtime_manifest"]
-    if (not recognized_legacy(source) or target["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5") or
+    if (not recognized_legacy(source) or target["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6") or
             source["schema"] >= target["schema"] or
             target["schema"] != SCHEMA and not recognized_legacy(target)):
         raise ContractError("unsupported runtime transition")
@@ -303,7 +304,7 @@ class Kernel:
                         raise IntegrityError("step replay/evidence mismatch")
                     apply_step(state, body)
                 elif body.get("kind") == "engine_trial" and set(body) == {"kind", "trial"}:
-                    if state["runtime_manifest"]["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5"):
+                    if state["runtime_manifest"]["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6"):
                         raise ContractError("engine policy requires runtime upgrade")
                     trial = trial_spec(body["trial"])
                     if encode(trial) != encode(body["trial"]):

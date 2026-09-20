@@ -11,7 +11,7 @@ from functools import lru_cache
 from itertools import islice, product
 
 from .contracts import ContractError, digest, normalized
-from . import sequence
+from . import sequence, python_tools
 
 LANGUAGE = "nova.word-expression.v1"
 OPS = {ast.BitXor: "xor", ast.BitAnd: "and", ast.BitOr: "or",
@@ -21,7 +21,7 @@ CALLS = {"ROTR": "rotr", "ROTL": "rotl", "SHR": "shr"}
 
 
 def is_extension(program):
-    return program.get("language") in (LANGUAGE, sequence.LANGUAGE)
+    return program.get("language") in (LANGUAGE, sequence.LANGUAGE, python_tools.LANGUAGE)
 
 
 def specification(raw):
@@ -134,6 +134,9 @@ def gene(definition, spec_digest):
 
 
 def check(g):
+    if g.get("language") == python_tools.LANGUAGE:
+        python_tools.check(g)
+        return
     if g.get("language") == sequence.LANGUAGE:
         sequence.check(g)
         return
@@ -148,7 +151,9 @@ def compiled(source):
     return namespace["solve"]
 
 
-def execute(g, inputs):
+def execute(g, inputs, recall=None):
+    if g.get("language") == python_tools.LANGUAGE:
+        return python_tools.execute(g, inputs, recall)
     if g.get("language") == sequence.LANGUAGE:
         return sequence.execute(g, inputs)
     check(g)
@@ -201,6 +206,11 @@ def learn(raw):
 def applications(g, training, memory):
     """Enumerate bounded argument bindings, using training inputs only."""
     from .language import interpret
+    if g.get("language") == python_tools.LANGUAGE:
+        params = g["definition"]["parameters"]
+        if all(set(row["input"]) == set(params) for row in training):
+            yield ["apply", g["id"], ["object", {k: ["input", k] for k in params}]]
+        return
     width = g["definition"]["width"]
     nodes = [["input", k] for k in sorted(training[0]["input"])]
     nodes += [["ref", pid] for pid, p in memory.items() if not is_extension(p)]
