@@ -1,0 +1,262 @@
+[
+  {
+    "expected": {
+      "name": "socket.io",
+      "repository": "socketio/socket.io",
+      "version": null
+    },
+    "input": {
+      "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "socketio/socket.io",
+    "task": "40-json-document"
+  },
+  {
+    "expected": "socket.io",
+    "input": {
+      "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "socketio/socket.io",
+    "task": "50-package-name"
+  },
+  {
+    "expected": "SOCKET.IO",
+    "input": {
+      "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "socketio/socket.io",
+    "task": "60-uppercase-name"
+  },
+  {
+    "expected": {
+      "length": 9,
+      "name": "SOCKET.IO"
+    },
+    "input": {
+      "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "socketio/socket.io",
+    "task": "70-package-record"
+  },
+  {
+    "expected": "{\"length\":9,\"name\":\"SOCKET.IO\"}",
+    "input": {
+      "document": "{\"name\":\"socket.io\",\"repository\":\"socketio/socket.io\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "socketio/socket.io",
+    "task": "80-serialized-record"
+  },
+  {
+    "expected": {
+      "name": "svelte-monorepo",
+      "repository": "sveltejs/svelte",
+      "version": "0.0.1"
+    },
+    "input": {
+      "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+      "field": "name"
+    },
+    "source": "sveltejs/svelte",
+    "task": "40-json-document"
+  },
+  {
+    "expected": "svelte-monorepo",
+    "input": {
+      "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+      "field": "name"
+    },
+    "source": "sveltejs/svelte",
+    "task": "50-package-name"
+  },
+  {
+    "expected": "SVELTE-MONOREPO",
+    "input": {
+      "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+      "field": "name"
+    },
+    "source": "sveltejs/svelte",
+    "task": "60-uppercase-name"
+  },
+  {
+    "expected": {
+      "length": 15,
+      "name": "SVELTE-MONOREPO"
+    },
+    "input": {
+      "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+      "field": "name"
+    },
+    "source": "sveltejs/svelte",
+    "task": "70-package-record"
+  },
+  {
+    "expected": "{\"length\":15,\"name\":\"SVELTE-MONOREPO\"}",
+    "input": {
+      "document": "{\"name\":\"svelte-monorepo\",\"repository\":\"sveltejs/svelte\",\"version\":\"0.0.1\"}",
+      "field": "name"
+    },
+    "source": "sveltejs/svelte",
+    "task": "80-serialized-record"
+  },
+  {
+    "expected": {
+      "name": "root",
+      "repository": "TanStack/query",
+      "version": null
+    },
+    "input": {
+      "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "TanStack/query",
+    "task": "40-json-document"
+  },
+  {
+    "expected": "root",
+    "input": {
+      "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "TanStack/query",
+    "task": "50-package-name"
+  },
+  {
+    "expected": "ROOT",
+    "input": {
+      "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "TanStack/query",
+    "task": "60-uppercase-name"
+  },
+  {
+    "expected": {
+      "length": 4,
+      "name": "ROOT"
+    },
+    "input": {
+      "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "TanStack/query",
+    "task": "70-package-record"
+  },
+  {
+    "expected": "{\"length\":4,\"name\":\"ROOT\"}",
+    "input": {
+      "document": "{\"name\":\"root\",\"repository\":\"TanStack/query\",\"version\":null}",
+      "field": "name"
+    },
+    "source": "TanStack/query",
+    "task": "80-serialized-record"
+  },
+  {
+    "expected": {
+      "name": "commander",
+      "repository": "tj/commander.js",
+      "version": "15.0.0"
+    },
+    "input": {
+      "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+      "field": "name"
+    },
+    "source": "tj/commander.js",
+    "task": "40-json-document"
+  },
+  {
+    "expected": "commander",
+    "input": {
+      "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+      "field": "name"
+    },
+    "source": "tj/commander.js",
+    "task": "50-package-name"
+  },
+  {
+    "expected": "COMMANDER",
+    "input": {
+      "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+      "field": "name"
+    },
+    "source": "tj/commander.js",
+    "task": "60-uppercase-name"
+  },
+  {
+    "expected": {
+      "length": 9,
+      "name": "COMMANDER"
+    },
+    "input": {
+      "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+      "field": "name"
+    },
+    "source": "tj/commander.js",
+    "task": "70-package-record"
+  },
+  {
+    "expected": "{\"length\":9,\"name\":\"COMMANDER\"}",
+    "input": {
+      "document": "{\"name\":\"commander\",\"repository\":\"tj/commander.js\",\"version\":\"15.0.0\"}",
+      "field": "name"
+    },
+    "source": "tj/commander.js",
+    "task": "80-serialized-record"
+  },
+  {
+    "expected": {
+      "name": "uuid",
+      "repository": "uuidjs/uuid",
+      "version": "14.0.2"
+    },
+    "input": {
+      "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+      "field": "name"
+    },
+    "source": "uuidjs/uuid",
+    "task": "40-json-document"
+  },
+  {
+    "expected": "uuid",
+    "input": {
+      "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+      "field": "name"
+    },
+    "source": "uuidjs/uuid",
+    "task": "50-package-name"
+  },
+  {
+    "expected": "UUID",
+    "input": {
+      "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+      "field": "name"
+    },
+    "source": "uuidjs/uuid",
+    "task": "60-uppercase-name"
+  },
+  {
+    "expected": {
+      "length": 4,
+      "name": "UUID"
+    },
+    "input": {
+      "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+      "field": "name"
+    },
+    "source": "uuidjs/uuid",
+    "task": "70-package-record"
+  },
+  {
+    "expected": "{\"length\":4,\"name\":\"UUID\"}",
+    "input": {
+      "document": "{\"name\":\"uuid\",\"repository\":\"uuidjs/uuid\",\"version\":\"14.0.2\"}",
+      "field": "name"
+    },
+    "source": "uuidjs/uuid",
+    "task": "80-serialized-record"
+  }
+]

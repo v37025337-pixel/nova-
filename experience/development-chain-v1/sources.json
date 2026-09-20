@@ -1,0 +1,692 @@
+[
+  {
+    "blob": "320354f8d467cd1776c7491028aefa78deffa864",
+    "immutable_blob_url": "https://api.github.com/repos/microsoft/TypeScript/git/blobs/320354f8d467cd1776c7491028aefa78deffa864",
+    "metadata": {
+      "name": "@typescript/repo",
+      "repository": "microsoft/TypeScript",
+      "version": "0.0.0"
+    },
+    "metadata_sha256": "09468ad0971ba56a82cd4d8d9dbd9b54ed76ae6db66b73a85f0a0c8e006930cc",
+    "path": "package.json",
+    "raw_sha256": "2828c1d269bd9c80d634131ec107ac69f1cfc3bf1f98d24c112c825c8acd7902",
+    "repository": "microsoft/TypeScript",
+    "status": "CAPTURED",
+    "url": "https://github.com/microsoft/TypeScript/blob/main/package.json"
+  },
+  {
+    "blob": "8213de8a8b875e21b80ad58b979aadc6cacd66ec",
+    "immutable_blob_url": "https://api.github.com/repos/eslint/eslint/git/blobs/8213de8a8b875e21b80ad58b979aadc6cacd66ec",
+    "metadata": {
+      "name": "eslint",
+      "repository": "eslint/eslint",
+      "version": "10.11.0"
+    },
+    "metadata_sha256": "e60e49ae1bbce36de6ca2f45f9881632fd17b4b62020d340e3338628115f1d64",
+    "path": "package.json",
+    "raw_sha256": "a747df3db3905b18b2acb3a6b12ef49659a8fc9055ce2a48057316b4aadf4248",
+    "repository": "eslint/eslint",
+    "status": "CAPTURED",
+    "url": "https://github.com/eslint/eslint/blob/main/package.json"
+  },
+  {
+    "blob": "399a7ff2b3d277ecebf9151449651fb0d36595f6",
+    "immutable_blob_url": "https://api.github.com/repos/prettier/prettier/git/blobs/399a7ff2b3d277ecebf9151449651fb0d36595f6",
+    "metadata": {
+      "name": "prettier",
+      "repository": "prettier/prettier",
+      "version": "3.10.0-dev"
+    },
+    "metadata_sha256": "b50e585d75877b5863129932f803641d3494eb262b87c0c30738bfc5d08d1d2f",
+    "path": "package.json",
+    "raw_sha256": "0f861b4b021d938e4f35caa9470f237f0de85edfa79310400c2c137a9113bb50",
+    "repository": "prettier/prettier",
+    "status": "CAPTURED",
+    "url": "https://github.com/prettier/prettier/blob/main/package.json"
+  },
+  {
+    "blob": "c98b436d222bff9b3851568e611dc3cf511dbe5d",
+    "immutable_blob_url": "https://api.github.com/repos/webpack/webpack/git/blobs/c98b436d222bff9b3851568e611dc3cf511dbe5d",
+    "metadata": {
+      "name": "webpack",
+      "repository": "webpack/webpack",
+      "version": "5.111.1"
+    },
+    "metadata_sha256": "188ff3ee71dd286fc7333c94c4b132caf974c2dbe2cf9513e6f74eb637459ec6",
+    "path": "package.json",
+    "raw_sha256": "29c28e9c0a425b4850f8c76ebd0c232d91c63555400cd677154b85ac5807ae9d",
+    "repository": "webpack/webpack",
+    "status": "CAPTURED",
+    "url": "https://github.com/webpack/webpack/blob/main/package.json"
+  },
+  {
+    "blob": "da34b03f1810fd31dbcc43ba60eb18d187170977",
+    "immutable_blob_url": "https://api.github.com/repos/rollup/rollup/git/blobs/da34b03f1810fd31dbcc43ba60eb18d187170977",
+    "metadata": {
+      "name": "rollup",
+      "repository": "rollup/rollup",
+      "version": "4.63.4"
+    },
+    "metadata_sha256": "7b0bdce14dbfb00240353064bb325c580e9ec208cedc4e884a4871042eee30a9",
+    "path": "package.json",
+    "raw_sha256": "c6e0dd13c3ffc69a86dcb354f8c15dd231d8f2e94a89165cbdacaca6fb4cab63",
+    "repository": "rollup/rollup",
+    "status": "CAPTURED",
+    "url": "https://github.com/rollup/rollup/blob/master/package.json"
+  },
+  {
+    "blob": "3f72840cbc12f48753781e2bb84ea2d5ac3685fe",
+    "immutable_blob_url": "https://api.github.com/repos/vitejs/vite/git/blobs/3f72840cbc12f48753781e2bb84ea2d5ac3685fe",
+    "metadata": {
+      "name": "@vitejs/vite-monorepo",
+      "repository": "vitejs/vite",
+      "version": null
+    },
+    "metadata_sha256": "67795dd7aaa4d9386d29b874f6588b283399fb452ea18f9e580c5b976e64fa84",
+    "path": "package.json",
+    "raw_sha256": "4656b4507b46b5e143ad1550298acc80acc436a785183afa5b8ff80e03a7bf72",
+    "repository": "vitejs/vite",
+    "status": "CAPTURED",
+    "url": "https://github.com/vitejs/vite/blob/main/package.json"
+  },
+  {
+    "blob": "c0d51b73c810ada9ac3fbd4b8b682940db0b0c53",
+    "repository": "vuejs/core",
+    "status": "NO_PACKAGE_NAME"
+  },
+  {
+    "error": "[{\"type\":\"text\",\"text\":\"InvalidInputException: GitHub path did not return readable file content: facebook/react/package.json\"}]",
+    "repository": "facebook/react",
+    "status": "UNAVAILABLE"
+  },
+  {
+    "blob": "41f93d526ca474f7c487e00b02ce6e940776f16e",
+    "immutable_blob_url": "https://api.github.com/repos/sveltejs/svelte/git/blobs/41f93d526ca474f7c487e00b02ce6e940776f16e",
+    "metadata": {
+      "name": "svelte-monorepo",
+      "repository": "sveltejs/svelte",
+      "version": "0.0.1"
+    },
+    "metadata_sha256": "818fded7edddeed3e9899cff000967c67aac642f33b0091d5101d75c71fc43be",
+    "path": "package.json",
+    "raw_sha256": "70894ffe10fc38f5b0c5d92b3a05fef49ef9fe72f5a259a5a2f603a87a836acd",
+    "repository": "sveltejs/svelte",
+    "status": "CAPTURED",
+    "url": "https://github.com/sveltejs/svelte/blob/main/package.json"
+  },
+  {
+    "blob": "ce5595db8aa0ea191b2b5577648719f5865b1f7f",
+    "immutable_blob_url": "https://api.github.com/repos/angular/angular/git/blobs/ce5595db8aa0ea191b2b5577648719f5865b1f7f",
+    "metadata": {
+      "name": "angular-srcs",
+      "repository": "angular/angular",
+      "version": "22.3.0-next.0"
+    },
+    "metadata_sha256": "c44c8c9a298ca4bf0beb813e6ee964b03e6ae31ec42c8b6ab68a20c9096cf6fc",
+    "path": "package.json",
+    "raw_sha256": "c363937e9126d4251748c37e7396ff382d4e732561a24cce4e5ae3f21aedfcaa",
+    "repository": "angular/angular",
+    "status": "CAPTURED",
+    "url": "https://github.com/angular/angular/blob/main/package.json"
+  },
+  {
+    "blob": "6e4d0a3109f30efea7da9284abcb66d190e36684",
+    "immutable_blob_url": "https://api.github.com/repos/babel/babel/git/blobs/6e4d0a3109f30efea7da9284abcb66d190e36684",
+    "metadata": {
+      "name": "babel",
+      "repository": "babel/babel",
+      "version": "8.0.6"
+    },
+    "metadata_sha256": "f4c0f0be95e36a80633551872418b889bb7aa0892eee9c6fc6410d5336418746",
+    "path": "package.json",
+    "raw_sha256": "3a7dadbb89ad7256b3a425e263fe92d3b123413aa3129c9ac426cad093c43d83",
+    "repository": "babel/babel",
+    "status": "CAPTURED",
+    "url": "https://github.com/babel/babel/blob/main/package.json"
+  },
+  {
+    "blob": "39c6bd0b87d1ffd345f64ebfd2df834a76768fea",
+    "immutable_blob_url": "https://api.github.com/repos/expressjs/express/git/blobs/39c6bd0b87d1ffd345f64ebfd2df834a76768fea",
+    "metadata": {
+      "name": "express",
+      "repository": "expressjs/express",
+      "version": "5.2.1"
+    },
+    "metadata_sha256": "e76c187694f2636f990fc4174aa4da80d80215abcbd0f2adf399e9b6690bac37",
+    "path": "package.json",
+    "raw_sha256": "2268b9a6428c2cd52f7a4559183592d87b86793e7598a6882c8ced5f8f06fb22",
+    "repository": "expressjs/express",
+    "status": "CAPTURED",
+    "url": "https://github.com/expressjs/express/blob/master/package.json"
+  },
+  {
+    "blob": "1599dd960be804bb583fc566d558004e2117578a",
+    "immutable_blob_url": "https://api.github.com/repos/fastify/fastify/git/blobs/1599dd960be804bb583fc566d558004e2117578a",
+    "metadata": {
+      "name": "fastify",
+      "repository": "fastify/fastify",
+      "version": "6.0.0-alpha.4"
+    },
+    "metadata_sha256": "e0fe05d92ec6997d3021401fcad271ba04f5e0e168b5b4bf147e26bd8ca16483",
+    "path": "package.json",
+    "raw_sha256": "4bfab1c73710d1f815e2c5bf7af3659f6a58da3d7875506ee8c7a051be561d96",
+    "repository": "fastify/fastify",
+    "status": "CAPTURED",
+    "url": "https://github.com/fastify/fastify/blob/main/package.json"
+  },
+  {
+    "blob": "8ecdd2ad8cf9caff53d056c31bca1d858cbfe422",
+    "immutable_blob_url": "https://api.github.com/repos/koajs/koa/git/blobs/8ecdd2ad8cf9caff53d056c31bca1d858cbfe422",
+    "metadata": {
+      "name": "koa",
+      "repository": "koajs/koa",
+      "version": "3.2.1"
+    },
+    "metadata_sha256": "db66b37994fa2f796add65e92b60e7d731601f27d3de7cac04f0eecd71d3356d",
+    "path": "package.json",
+    "raw_sha256": "9a019deef09df60eef7398f5fc7c68e0894b5bcb734b4b86023a15d267e32901",
+    "repository": "koajs/koa",
+    "status": "CAPTURED",
+    "url": "https://github.com/koajs/koa/blob/master/package.json"
+  },
+  {
+    "blob": "3125192e8738dba9cb040d478d4d8bbe9cc81626",
+    "immutable_blob_url": "https://api.github.com/repos/honojs/hono/git/blobs/3125192e8738dba9cb040d478d4d8bbe9cc81626",
+    "metadata": {
+      "name": "hono",
+      "repository": "honojs/hono",
+      "version": "4.13.8"
+    },
+    "metadata_sha256": "303b333875752daf9416af115e3f42119ed14aa0a02c0adfb6540728ac1809f1",
+    "path": "package.json",
+    "raw_sha256": "cafef790692456673dfe5e8644161830cfff3331cb34414c2baf576bb4135052",
+    "repository": "honojs/hono",
+    "status": "CAPTURED",
+    "url": "https://github.com/honojs/hono/blob/main/package.json"
+  },
+  {
+    "blob": "cbd3e1dd1c80da3961a6c75ba264e9cdbe0588cd",
+    "immutable_blob_url": "https://api.github.com/repos/axios/axios/git/blobs/cbd3e1dd1c80da3961a6c75ba264e9cdbe0588cd",
+    "metadata": {
+      "name": "axios",
+      "repository": "axios/axios",
+      "version": "1.20.0"
+    },
+    "metadata_sha256": "fb03c4881e5f49d50c2e9e58b6d978b600b28ae98f541cc28240c62758030a71",
+    "path": "package.json",
+    "raw_sha256": "cc221510be6315b0ebf648d7e4346680e47a828fafcbb9cc141922d2d219761e",
+    "repository": "axios/axios",
+    "status": "CAPTURED",
+    "url": "https://github.com/axios/axios/blob/v1.x/package.json"
+  },
+  {
+    "blob": "bd63a6e4f9c93994d2df936efd07e8766fe16896",
+    "immutable_blob_url": "https://api.github.com/repos/lodash/lodash/git/blobs/bd63a6e4f9c93994d2df936efd07e8766fe16896",
+    "metadata": {
+      "name": "lodash",
+      "repository": "lodash/lodash",
+      "version": "4.18.1"
+    },
+    "metadata_sha256": "e94896230a3e9538ef1dc604c680f122c7fcb30bd561177df48a4682b22a9e68",
+    "path": "package.json",
+    "raw_sha256": "d419382a9fa895e5da1e5146419f9fbc8fd8f579726052a479a010e3a2a5067a",
+    "repository": "lodash/lodash",
+    "status": "CAPTURED",
+    "url": "https://github.com/lodash/lodash/blob/main/package.json"
+  },
+  {
+    "blob": "eeb69f96530b0fe33d0177e5ce6a6f61d44e9115",
+    "immutable_blob_url": "https://api.github.com/repos/ramda/ramda/git/blobs/eeb69f96530b0fe33d0177e5ce6a6f61d44e9115",
+    "metadata": {
+      "name": "ramda",
+      "repository": "ramda/ramda",
+      "version": "0.32.0"
+    },
+    "metadata_sha256": "78a6b87ee4315917e22ff187168062af59d4755bc865049360e1e9ac97c1d8c2",
+    "path": "package.json",
+    "raw_sha256": "9609f9bcbe6cbc2b9038f9a5c65f402c6419b87fdf952a9355b7200986ed455a",
+    "repository": "ramda/ramda",
+    "status": "CAPTURED",
+    "url": "https://github.com/ramda/ramda/blob/master/package.json"
+  },
+  {
+    "blob": "6b07061e17e3ddafce8f373250f8f62446ddeaaf",
+    "immutable_blob_url": "https://api.github.com/repos/jquery/jquery/git/blobs/6b07061e17e3ddafce8f373250f8f62446ddeaaf",
+    "metadata": {
+      "name": "jquery",
+      "repository": "jquery/jquery",
+      "version": "4.0.0"
+    },
+    "metadata_sha256": "1ec2dd11dab6a59c0d61ed20469b1db476eac3b183bb47df3133387001270d64",
+    "path": "package.json",
+    "raw_sha256": "750738e4a0e2631879baa1311f90da3a6b4c782834ceabfd079ad2a9f73ef3b2",
+    "repository": "jquery/jquery",
+    "status": "CAPTURED",
+    "url": "https://github.com/jquery/jquery/blob/main/package.json"
+  },
+  {
+    "blob": "bc1b43cfe3a0dff5a94cecab4e8699ed7f61e309",
+    "immutable_blob_url": "https://api.github.com/repos/moment/moment/git/blobs/bc1b43cfe3a0dff5a94cecab4e8699ed7f61e309",
+    "metadata": {
+      "name": "moment",
+      "repository": "moment/moment",
+      "version": "2.31.0"
+    },
+    "metadata_sha256": "17f8c961617ef981b8e2a5975043a8fcb89d7244d6e351f1350a04d837ab1550",
+    "path": "package.json",
+    "raw_sha256": "f80a97bde19003e497bdf45f49bb6bf2ed6cc5333b739cffe8b20ae1a8568d35",
+    "repository": "moment/moment",
+    "status": "CAPTURED",
+    "url": "https://github.com/moment/moment/blob/develop/package.json"
+  },
+  {
+    "blob": "20af7f28e30d66ca5cdd333393f23f6214c2cfb1",
+    "immutable_blob_url": "https://api.github.com/repos/date-fns/date-fns/git/blobs/20af7f28e30d66ca5cdd333393f23f6214c2cfb1",
+    "metadata": {
+      "name": "@date-fns/root",
+      "repository": "date-fns/date-fns",
+      "version": "0.0.0"
+    },
+    "metadata_sha256": "28e40b0e1d2155746d493f36405fc747f0fd24fb0f8570c63f69a6da35a9254c",
+    "path": "package.json",
+    "raw_sha256": "f593c70a1c035652673278b518a83603fc1f4fbb3f88e7e915ca1cf7b3b95030",
+    "repository": "date-fns/date-fns",
+    "status": "CAPTURED",
+    "url": "https://github.com/date-fns/date-fns/blob/main/package.json"
+  },
+  {
+    "blob": "fbfa18e89b49c632f04c54b46dc28cf77af80699",
+    "immutable_blob_url": "https://api.github.com/repos/iamkun/dayjs/git/blobs/fbfa18e89b49c632f04c54b46dc28cf77af80699",
+    "metadata": {
+      "name": "dayjs",
+      "repository": "iamkun/dayjs",
+      "version": "0.0.0-development"
+    },
+    "metadata_sha256": "25942c0a5736a29be4611e52b82dbc8e51ed067a5316c30c6ae1f968ad526b1c",
+    "path": "package.json",
+    "raw_sha256": "aed812c68e714601cb4afdd2da3364a8ddd4b1ffafae15d3ddfbf28819da410b",
+    "repository": "iamkun/dayjs",
+    "status": "CAPTURED",
+    "url": "https://github.com/iamkun/dayjs/blob/dev/package.json"
+  },
+  {
+    "blob": "40f97e5efb4b87c91e12f925310129a8e37fe8a7",
+    "immutable_blob_url": "https://api.github.com/repos/uuidjs/uuid/git/blobs/40f97e5efb4b87c91e12f925310129a8e37fe8a7",
+    "metadata": {
+      "name": "uuid",
+      "repository": "uuidjs/uuid",
+      "version": "14.0.2"
+    },
+    "metadata_sha256": "2b454cd4f74c61da7bc2b64190fdac502588ebe2387d2355abb0c3a02b3f129c",
+    "path": "package.json",
+    "raw_sha256": "5015f1e7c6eed5c3816b4f35eb1af403377b1c4da19906dbaa3531444c781b3f",
+    "repository": "uuidjs/uuid",
+    "status": "CAPTURED",
+    "url": "https://github.com/uuidjs/uuid/blob/main/package.json"
+  },
+  {
+    "blob": "49902219125593e3f650d6d713103bf62be7ecd4",
+    "repository": "colinhacks/zod",
+    "status": "NO_PACKAGE_NAME"
+  },
+  {
+    "blob": "50fa6a639c704492f0a6c0c28a3c86d20321a395",
+    "immutable_blob_url": "https://api.github.com/repos/ajv-validator/ajv/git/blobs/50fa6a639c704492f0a6c0c28a3c86d20321a395",
+    "metadata": {
+      "name": "ajv",
+      "repository": "ajv-validator/ajv",
+      "version": "8.20.0"
+    },
+    "metadata_sha256": "b9ffb11cf73aa872824670bb88a5302a0c892eaec14133c5ccc4c58a1457d635",
+    "path": "package.json",
+    "raw_sha256": "1f9033ee5a6515e7d76938b7072941862d1ed228a6879cc7fe10cdeb75107989",
+    "repository": "ajv-validator/ajv",
+    "status": "CAPTURED",
+    "url": "https://github.com/ajv-validator/ajv/blob/master/package.json"
+  },
+  {
+    "blob": "8c69a22e830895411300763be37ff70cae04ff2e",
+    "immutable_blob_url": "https://api.github.com/repos/immerjs/immer/git/blobs/8c69a22e830895411300763be37ff70cae04ff2e",
+    "metadata": {
+      "name": "immer",
+      "repository": "immerjs/immer",
+      "version": "10.0.3-beta"
+    },
+    "metadata_sha256": "bc72338a79ebdb50a918ea4c4b69e15a6e630d52a786417e1623ee1e623bef36",
+    "path": "package.json",
+    "raw_sha256": "5e2c16b27903e7713d7317dd6ce46087755e20639522d22ed43cd854b34a8fc6",
+    "repository": "immerjs/immer",
+    "status": "CAPTURED",
+    "url": "https://github.com/immerjs/immer/blob/main/package.json"
+  },
+  {
+    "blob": "3847abb4c296ea88436ef937faa18d9c07e60419",
+    "immutable_blob_url": "https://api.github.com/repos/reduxjs/redux/git/blobs/3847abb4c296ea88436ef937faa18d9c07e60419",
+    "metadata": {
+      "name": "redux",
+      "repository": "reduxjs/redux",
+      "version": "5.0.1"
+    },
+    "metadata_sha256": "2ce2ed4dda7e78981c872ce14215a360f99b4cd59e000ba014b04e6c8c5c4774",
+    "path": "package.json",
+    "raw_sha256": "9156a13fb67bf28e88caa911514c02e54125c35dab135bae13be59ee82f6e23b",
+    "repository": "reduxjs/redux",
+    "status": "CAPTURED",
+    "url": "https://github.com/reduxjs/redux/blob/master/package.json"
+  },
+  {
+    "blob": "a9ccb1cb52ac915ff62f24478a4173058ebaaa75",
+    "immutable_blob_url": "https://api.github.com/repos/pmndrs/zustand/git/blobs/a9ccb1cb52ac915ff62f24478a4173058ebaaa75",
+    "metadata": {
+      "name": "zustand",
+      "repository": "pmndrs/zustand",
+      "version": "5.0.15"
+    },
+    "metadata_sha256": "b1986f496b72516c8366a1bd6663033453cdeb0c9f2f5f9905b605b995ae53c1",
+    "path": "package.json",
+    "raw_sha256": "66c10be1445b353f73151396fa4c13f43731d501fe8d849abac92731cb668f44",
+    "repository": "pmndrs/zustand",
+    "status": "CAPTURED",
+    "url": "https://github.com/pmndrs/zustand/blob/main/package.json"
+  },
+  {
+    "blob": "cc10124f2afe2f7076915545065b1a7c719f99df",
+    "immutable_blob_url": "https://api.github.com/repos/TanStack/query/git/blobs/cc10124f2afe2f7076915545065b1a7c719f99df",
+    "metadata": {
+      "name": "root",
+      "repository": "TanStack/query",
+      "version": null
+    },
+    "metadata_sha256": "160c7c892eaef616fa3195b648c64f39640db00d4d7a15b9c0a7cc4fa1842f28",
+    "path": "package.json",
+    "raw_sha256": "96dfa2a06103775255a9d6be5c9c39a4e7b3ac6594d8797f918bfaddc86d0c32",
+    "repository": "TanStack/query",
+    "status": "CAPTURED",
+    "url": "https://github.com/TanStack/query/blob/main/package.json"
+  },
+  {
+    "blob": "02ea789db91ba4ec93b26be9ca4ce491fa6dbc32",
+    "immutable_blob_url": "https://api.github.com/repos/socketio/socket.io/git/blobs/02ea789db91ba4ec93b26be9ca4ce491fa6dbc32",
+    "metadata": {
+      "name": "socket.io",
+      "repository": "socketio/socket.io",
+      "version": null
+    },
+    "metadata_sha256": "c31be716870b92a8c4252ffbfe028d979ac619a80b98b877d4c78862b049fddd",
+    "path": "package.json",
+    "raw_sha256": "4a4ca6740825b3d54dc7e077a27dd390f24b25851c1856aa409e2f8d476f8e85",
+    "repository": "socketio/socket.io",
+    "status": "CAPTURED",
+    "url": "https://github.com/socketio/socket.io/blob/main/package.json"
+  },
+  {
+    "blob": "9c02b50c669de2ca957f807bb011e1f80b4461a7",
+    "immutable_blob_url": "https://api.github.com/repos/d3/d3/git/blobs/9c02b50c669de2ca957f807bb011e1f80b4461a7",
+    "metadata": {
+      "name": "d3",
+      "repository": "d3/d3",
+      "version": "7.9.0"
+    },
+    "metadata_sha256": "6dcdca4336cef0e62f27ff7e2c1cbbe9997860449d90b1e1216c379c3507e9ae",
+    "path": "package.json",
+    "raw_sha256": "fbc10b238e56da7eeb0fdb1c8fc1d95fcbe8ec5a12df2b0344d8c835198b1e22",
+    "repository": "d3/d3",
+    "status": "CAPTURED",
+    "url": "https://github.com/d3/d3/blob/main/package.json"
+  },
+  {
+    "blob": "706e759d0bac62bd92b8fa47fc74e36db61a20cb",
+    "immutable_blob_url": "https://api.github.com/repos/chartjs/Chart.js/git/blobs/706e759d0bac62bd92b8fa47fc74e36db61a20cb",
+    "metadata": {
+      "name": "chart.js",
+      "repository": "chartjs/Chart.js",
+      "version": "4.5.1"
+    },
+    "metadata_sha256": "5a89d6cb9469c86605a909b8dda9bbfafd26d6d82e5358202b149b13a34b8c34",
+    "path": "package.json",
+    "raw_sha256": "1387d9f978eaf4f0273c8a5093e33890fccf487d268791fa42baf4964522a940",
+    "repository": "chartjs/Chart.js",
+    "status": "CAPTURED",
+    "url": "https://github.com/chartjs/Chart.js/blob/master/package.json"
+  },
+  {
+    "blob": "4638962c74e2b1f859162854a98b700f6306e293",
+    "immutable_blob_url": "https://api.github.com/repos/mermaid-js/mermaid/git/blobs/4638962c74e2b1f859162854a98b700f6306e293",
+    "metadata": {
+      "name": "mermaid-monorepo",
+      "repository": "mermaid-js/mermaid",
+      "version": "10.2.4"
+    },
+    "metadata_sha256": "0e30689513ab9ab50f42193a1151caa6a67c000472423b49e5cd43b3932ff440",
+    "path": "package.json",
+    "raw_sha256": "9b6b3a134d58da14f12009653bdcc6ef2685d70c243bffe07646f3dd69a9759c",
+    "repository": "mermaid-js/mermaid",
+    "status": "CAPTURED",
+    "url": "https://github.com/mermaid-js/mermaid/blob/develop/package.json"
+  },
+  {
+    "blob": "508c845a59458ecf5633dd75430256ca39897ed5",
+    "immutable_blob_url": "https://api.github.com/repos/mochajs/mocha/git/blobs/508c845a59458ecf5633dd75430256ca39897ed5",
+    "metadata": {
+      "name": "mocha",
+      "repository": "mochajs/mocha",
+      "version": "12.0.2"
+    },
+    "metadata_sha256": "628320e4340b4eae2bc5d97045ad80bf3d3b2e5a413d1b65b796a395f88208c0",
+    "path": "package.json",
+    "raw_sha256": "f0fe33e0c160447fe4d261cf461ded14ab034adae859a61abf9d1cfd9c7571fc",
+    "repository": "mochajs/mocha",
+    "status": "CAPTURED",
+    "url": "https://github.com/mochajs/mocha/blob/main/package.json"
+  },
+  {
+    "blob": "99737de0dae215394bb08f528c6d7717f0bf8a5b",
+    "immutable_blob_url": "https://api.github.com/repos/jestjs/jest/git/blobs/99737de0dae215394bb08f528c6d7717f0bf8a5b",
+    "metadata": {
+      "name": "@jest/monorepo",
+      "repository": "jestjs/jest",
+      "version": "0.0.0"
+    },
+    "metadata_sha256": "28fe1606762041020a9c1d0a9834ed38396d50f13b6263c2fa346356f1f106a7",
+    "path": "package.json",
+    "raw_sha256": "26ad07fc3456a85ff0448a2463552ec1a1ba7d38f1661e4479ad5810457b782c",
+    "repository": "jestjs/jest",
+    "status": "CAPTURED",
+    "url": "https://github.com/jestjs/jest/blob/main/package.json"
+  },
+  {
+    "blob": "a94344105a1cfa7042c2acb6837139c9f73974ea",
+    "immutable_blob_url": "https://api.github.com/repos/vitest-dev/vitest/git/blobs/a94344105a1cfa7042c2acb6837139c9f73974ea",
+    "metadata": {
+      "name": "@vitest/monorepo",
+      "repository": "vitest-dev/vitest",
+      "version": "5.0.1"
+    },
+    "metadata_sha256": "ef95e647e9c9cc82c816f27a2d46e1cd2764321ac94a82e744145240acfd7890",
+    "path": "package.json",
+    "raw_sha256": "05b4a2f46fbee76d8093e45c2d7d81ed5175db7cf8931f0c28a2e2646beecf9f",
+    "repository": "vitest-dev/vitest",
+    "status": "CAPTURED",
+    "url": "https://github.com/vitest-dev/vitest/blob/main/package.json"
+  },
+  {
+    "blob": "2f614da2145217409e93b5dfec2836d6e5ee5975",
+    "immutable_blob_url": "https://api.github.com/repos/chaijs/chai/git/blobs/2f614da2145217409e93b5dfec2836d6e5ee5975",
+    "metadata": {
+      "name": "chai",
+      "repository": "chaijs/chai",
+      "version": "0.0.0-development"
+    },
+    "metadata_sha256": "62a4f930d69e7673acc31f9ae8268a89d7e25dccdd16164d3f90d6b9fcf220fe",
+    "path": "package.json",
+    "raw_sha256": "a7b8fef2dac97b0c0dbfcffc9da700236c76be425fe2250f829f9eb1281f8f5e",
+    "repository": "chaijs/chai",
+    "status": "CAPTURED",
+    "url": "https://github.com/chaijs/chai/blob/main/package.json"
+  },
+  {
+    "blob": "2506da8829fae2db3da4a379b5736018dea72066",
+    "immutable_blob_url": "https://api.github.com/repos/sinonjs/sinon/git/blobs/2506da8829fae2db3da4a379b5736018dea72066",
+    "metadata": {
+      "name": "sinon",
+      "repository": "sinonjs/sinon",
+      "version": "22.1.0"
+    },
+    "metadata_sha256": "a1860e9d68b7836252733186c9456983b2f29c26e4767e1ce393585c5c83548d",
+    "path": "package.json",
+    "raw_sha256": "f31953e13e487b0fdd7f30c8290e1ce22d4a4d982171e04b786706a23457d67a",
+    "repository": "sinonjs/sinon",
+    "status": "CAPTURED",
+    "url": "https://github.com/sinonjs/sinon/blob/main/package.json"
+  },
+  {
+    "blob": "c07ebd1ce485682b8ca96c4d5d4eb1b1c8441e6f",
+    "immutable_blob_url": "https://api.github.com/repos/nock/nock/git/blobs/c07ebd1ce485682b8ca96c4d5d4eb1b1c8441e6f",
+    "metadata": {
+      "name": "nock",
+      "repository": "nock/nock",
+      "version": "0.0.0-development"
+    },
+    "metadata_sha256": "8f504d423ddb4eb79e4ee7e0158d96914df616d737cba71f24b6ee345c202324",
+    "path": "package.json",
+    "raw_sha256": "bdd1e714792ad16e69308fbab894b352d66dd062db3e90a9231e396fa1afe79d",
+    "repository": "nock/nock",
+    "status": "CAPTURED",
+    "url": "https://github.com/nock/nock/blob/main/package.json"
+  },
+  {
+    "blob": "700df69ba204b169f97f7616cfc6bffcfe519225",
+    "immutable_blob_url": "https://api.github.com/repos/cheeriojs/cheerio/git/blobs/700df69ba204b169f97f7616cfc6bffcfe519225",
+    "metadata": {
+      "name": "cheerio",
+      "repository": "cheeriojs/cheerio",
+      "version": "1.2.0"
+    },
+    "metadata_sha256": "6f04afea2cca918477918e5f70bfead8ee22221c9688c0cf5d510ed3604f6e8f",
+    "path": "package.json",
+    "raw_sha256": "cede9dfc9b66595d801edade2c35f0ba2bdfe6ab8f6ebf1b07d0318f77f0d26f",
+    "repository": "cheeriojs/cheerio",
+    "status": "CAPTURED",
+    "url": "https://github.com/cheeriojs/cheerio/blob/main/package.json"
+  },
+  {
+    "blob": "3dd0cc89b9b17b699cb2a57a6f7da1392e623707",
+    "immutable_blob_url": "https://api.github.com/repos/yargs/yargs/git/blobs/3dd0cc89b9b17b699cb2a57a6f7da1392e623707",
+    "metadata": {
+      "name": "yargs",
+      "repository": "yargs/yargs",
+      "version": "18.1.0"
+    },
+    "metadata_sha256": "a709cae606fe8d2f42c33bc2962ff9103058c2e5ec8eba2ad1f0257adeb7d8cd",
+    "path": "package.json",
+    "raw_sha256": "123eccb80757aea2792116a4d167b4751e96a8b3899b7989baecbb0bf7a5e45a",
+    "repository": "yargs/yargs",
+    "status": "CAPTURED",
+    "url": "https://github.com/yargs/yargs/blob/main/package.json"
+  },
+  {
+    "blob": "d8e5fd2aa27a0b57c96662527f29bafd9dc40a79",
+    "immutable_blob_url": "https://api.github.com/repos/tj/commander.js/git/blobs/d8e5fd2aa27a0b57c96662527f29bafd9dc40a79",
+    "metadata": {
+      "name": "commander",
+      "repository": "tj/commander.js",
+      "version": "15.0.0"
+    },
+    "metadata_sha256": "6cc66d9f7d083fbb7cc7ade6de9fc6e8db465f4eadf554b54cdef5423eec9173",
+    "path": "package.json",
+    "raw_sha256": "6ea3e19871a9a05fa0c8b89595b6df05d23d266936b9785607128fd420864337",
+    "repository": "tj/commander.js",
+    "status": "CAPTURED",
+    "url": "https://github.com/tj/commander.js/blob/master/package.json"
+  },
+  {
+    "blob": "87901b4dfbe5d4c8c167f24c2cb5e68fe361b51f",
+    "immutable_blob_url": "https://api.github.com/repos/sindresorhus/got/git/blobs/87901b4dfbe5d4c8c167f24c2cb5e68fe361b51f",
+    "metadata": {
+      "name": "got",
+      "repository": "sindresorhus/got",
+      "version": "16.0.0"
+    },
+    "metadata_sha256": "53464ab7b238fbba1a2f1e50d3fc818567f92d5ed2a7516d3f335bbd674a319b",
+    "path": "package.json",
+    "raw_sha256": "8fc78ea3a48c31bd0c6846e2829c6b1b7b933ea18cabecb36a812cb4b47bc153",
+    "repository": "sindresorhus/got",
+    "status": "CAPTURED",
+    "url": "https://github.com/sindresorhus/got/blob/main/package.json"
+  },
+  {
+    "blob": "cf57b6072000c48eef7fe432519e1c82b4ee3f56",
+    "immutable_blob_url": "https://api.github.com/repos/chalk/chalk/git/blobs/cf57b6072000c48eef7fe432519e1c82b4ee3f56",
+    "metadata": {
+      "name": "chalk",
+      "repository": "chalk/chalk",
+      "version": "6.0.0"
+    },
+    "metadata_sha256": "7f7b47c7bf037ed3cdf1fe77736b50e611cf5d70e54374aae968f7bbf2bf02f3",
+    "path": "package.json",
+    "raw_sha256": "5a853fc6dc0c529bc126f97645989e9d60d06a2e9b20f66a6b48b0e8ef9da3ef",
+    "repository": "chalk/chalk",
+    "status": "CAPTURED",
+    "url": "https://github.com/chalk/chalk/blob/main/package.json"
+  },
+  {
+    "blob": "f792b83b85ca1e81ace7cf0c930edf195b20c2ce",
+    "immutable_blob_url": "https://api.github.com/repos/sindresorhus/p-limit/git/blobs/f792b83b85ca1e81ace7cf0c930edf195b20c2ce",
+    "metadata": {
+      "name": "p-limit",
+      "repository": "sindresorhus/p-limit",
+      "version": "7.3.3"
+    },
+    "metadata_sha256": "162f6740418b43b17dc6d8b86fca5ff873a36a2201efa951e83cc6fb85056405",
+    "path": "package.json",
+    "raw_sha256": "daa6b0d168d7197eccbfef1c678e8f00b79d063129bf48f4ee2db38dc605ca7f",
+    "repository": "sindresorhus/p-limit",
+    "status": "CAPTURED",
+    "url": "https://github.com/sindresorhus/p-limit/blob/main/package.json"
+  },
+  {
+    "blob": "12097e4d5821ab0f2fd4ec9a436941f8ecaa8cad",
+    "immutable_blob_url": "https://api.github.com/repos/sindresorhus/execa/git/blobs/12097e4d5821ab0f2fd4ec9a436941f8ecaa8cad",
+    "metadata": {
+      "name": "execa",
+      "repository": "sindresorhus/execa",
+      "version": "10.0.1"
+    },
+    "metadata_sha256": "46fffd3aab965f58f6693bb5f7554af3e8a20c15e0efdb3dd30b36af0a085e7b",
+    "path": "package.json",
+    "raw_sha256": "fda71910ec57173f450b88928ad3e91e24798c6b035e4d898682e12b6bdd73a5",
+    "repository": "sindresorhus/execa",
+    "status": "CAPTURED",
+    "url": "https://github.com/sindresorhus/execa/blob/main/package.json"
+  },
+  {
+    "blob": "91caf862cd2de4a688d5327e6b9fc82b9dd2e7b2",
+    "immutable_blob_url": "https://api.github.com/repos/SBoudrias/Inquirer.js/git/blobs/91caf862cd2de4a688d5327e6b9fc82b9dd2e7b2",
+    "metadata": {
+      "name": "@inquirer/root",
+      "repository": "SBoudrias/Inquirer.js",
+      "version": null
+    },
+    "metadata_sha256": "2a4d1a6236bf81aed516a8626235f5ae61b398460bb9cc4141780eb59f439027",
+    "path": "package.json",
+    "raw_sha256": "12e0448591452a4d31643b3c523cb779051529b59a6df44a3c139431b1776389",
+    "repository": "SBoudrias/Inquirer.js",
+    "status": "CAPTURED",
+    "url": "https://github.com/SBoudrias/Inquirer.js/blob/main/package.json"
+  },
+  {
+    "blob": "243271d9a4f6f9b0a125e2dc0523738b7e1a5b24",
+    "immutable_blob_url": "https://api.github.com/repos/shelljs/shelljs/git/blobs/243271d9a4f6f9b0a125e2dc0523738b7e1a5b24",
+    "metadata": {
+      "name": "shelljs",
+      "repository": "shelljs/shelljs",
+      "version": "0.10.0"
+    },
+    "metadata_sha256": "83bccbe3e7c74bf535af0c3c4bb244812280a0ca37c5d7244b3797ad32ed6682",
+    "path": "package.json",
+    "raw_sha256": "da826fadc1aab65d3ba0071bf3bd30e9cf5d9934697677c2495329e7b64bbf5d",
+    "repository": "shelljs/shelljs",
+    "status": "CAPTURED",
+    "url": "https://github.com/shelljs/shelljs/blob/main/package.json"
+  }
+]

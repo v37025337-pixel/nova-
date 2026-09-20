@@ -1,0 +1,227 @@
+{
+  "claims": [
+    "real execution on frozen metadata captured from public upstream repositories",
+    "prepared curriculum within existing expression grammar",
+    "not an independent general-intelligence benchmark"
+  ],
+  "corpus_sha256": "44012cf4e582bea325febc47b0af1561feb0ef061f99d25a63354240ce0c89cf",
+  "created_at_utc": "2026-09-20T13:21:46.299682+00:00",
+  "engine_commit": "c233ff5c984dba5a411b484d8f401bcc4c11392f",
+  "engine_mutations_allowed_in_this_run": false,
+  "max_steps": 6,
+  "negative_control": "90-sha256-deficit-control",
+  "parent_generation": 3,
+  "parent_head": "7ebfac5150d2a41a309cee1836ce8c7dc5a823e9045e3e6bcf87a8cd4c9df222",
+  "parent_journal": "evidence/journal.json",
+  "positive_task_ids": [
+    "40-json-document",
+    "50-package-name",
+    "60-uppercase-name",
+    "70-package-record",
+    "80-serialized-record"
+  ],
+  "program_selection_actor": "NOVA runtime, training only",
+  "queries_sha256": "dec071309c370ee2b18048d0d6283b0e0fe132f93986b1730dd269711ed3fc18",
+  "roles": {
+    "SBoudrias/Inquirer.js": {
+      "split": "train",
+      "task": "90-sha256-deficit-control"
+    },
+    "TanStack/query": {
+      "split": "post_training_query",
+      "tasks": [
+        "40-json-document",
+        "50-package-name",
+        "60-uppercase-name",
+        "70-package-record",
+        "80-serialized-record"
+      ]
+    },
+    "ajv-validator/ajv": {
+      "split": "train",
+      "task": "40-json-document"
+    },
+    "angular/angular": {
+      "split": "train",
+      "task": "40-json-document"
+    },
+    "axios/axios": {
+      "split": "train",
+      "task": "40-json-document"
+    },
+    "babel/babel": {
+      "split": "holdout",
+      "task": "40-json-document"
+    },
+    "chaijs/chai": {
+      "split": "holdout",
+      "task": "40-json-document"
+    },
+    "chalk/chalk": {
+      "split": "holdout",
+      "task": "40-json-document"
+    },
+    "chartjs/Chart.js": {
+      "split": "train",
+      "task": "50-package-name"
+    },
+    "cheeriojs/cheerio": {
+      "split": "train",
+      "task": "50-package-name"
+    },
+    "d3/d3": {
+      "split": "train",
+      "task": "50-package-name"
+    },
+    "date-fns/date-fns": {
+      "split": "holdout",
+      "task": "50-package-name"
+    },
+    "eslint/eslint": {
+      "split": "holdout",
+      "task": "50-package-name"
+    },
+    "expressjs/express": {
+      "split": "holdout",
+      "task": "50-package-name"
+    },
+    "fastify/fastify": {
+      "split": "train",
+      "task": "60-uppercase-name"
+    },
+    "honojs/hono": {
+      "split": "train",
+      "task": "60-uppercase-name"
+    },
+    "iamkun/dayjs": {
+      "split": "train",
+      "task": "60-uppercase-name"
+    },
+    "immerjs/immer": {
+      "split": "holdout",
+      "task": "60-uppercase-name"
+    },
+    "jestjs/jest": {
+      "split": "holdout",
+      "task": "60-uppercase-name"
+    },
+    "jquery/jquery": {
+      "split": "holdout",
+      "task": "60-uppercase-name"
+    },
+    "koajs/koa": {
+      "split": "train",
+      "task": "70-package-record"
+    },
+    "lodash/lodash": {
+      "split": "train",
+      "task": "70-package-record"
+    },
+    "mermaid-js/mermaid": {
+      "split": "train",
+      "task": "70-package-record"
+    },
+    "microsoft/TypeScript": {
+      "split": "holdout",
+      "task": "70-package-record"
+    },
+    "mochajs/mocha": {
+      "split": "holdout",
+      "task": "70-package-record"
+    },
+    "moment/moment": {
+      "split": "holdout",
+      "task": "70-package-record"
+    },
+    "nock/nock": {
+      "split": "train",
+      "task": "80-serialized-record"
+    },
+    "pmndrs/zustand": {
+      "split": "train",
+      "task": "80-serialized-record"
+    },
+    "prettier/prettier": {
+      "split": "train",
+      "task": "80-serialized-record"
+    },
+    "ramda/ramda": {
+      "split": "holdout",
+      "task": "80-serialized-record"
+    },
+    "reduxjs/redux": {
+      "split": "holdout",
+      "task": "80-serialized-record"
+    },
+    "rollup/rollup": {
+      "split": "holdout",
+      "task": "80-serialized-record"
+    },
+    "shelljs/shelljs": {
+      "split": "train",
+      "task": "90-sha256-deficit-control"
+    },
+    "sindresorhus/execa": {
+      "split": "train",
+      "task": "90-sha256-deficit-control"
+    },
+    "sindresorhus/got": {
+      "split": "holdout",
+      "task": "90-sha256-deficit-control"
+    },
+    "sindresorhus/p-limit": {
+      "split": "holdout",
+      "task": "90-sha256-deficit-control"
+    },
+    "sinonjs/sinon": {
+      "split": "holdout",
+      "task": "90-sha256-deficit-control"
+    },
+    "socketio/socket.io": {
+      "split": "post_training_query",
+      "tasks": [
+        "40-json-document",
+        "50-package-name",
+        "60-uppercase-name",
+        "70-package-record",
+        "80-serialized-record"
+      ]
+    },
+    "sveltejs/svelte": {
+      "split": "post_training_query",
+      "tasks": [
+        "40-json-document",
+        "50-package-name",
+        "60-uppercase-name",
+        "70-package-record",
+        "80-serialized-record"
+      ]
+    },
+    "tj/commander.js": {
+      "split": "post_training_query",
+      "tasks": [
+        "40-json-document",
+        "50-package-name",
+        "60-uppercase-name",
+        "70-package-record",
+        "80-serialized-record"
+      ]
+    },
+    "uuidjs/uuid": {
+      "split": "post_training_query",
+      "tasks": [
+        "40-json-document",
+        "50-package-name",
+        "60-uppercase-name",
+        "70-package-record",
+        "80-serialized-record"
+      ]
+    }
+  },
+  "runtime_manifest_sha256": "68c528f0ea7d455d52279023601645d4d07debd990f59ea3ce49bba3c98e5a70",
+  "schema": "nova.development-protocol.v1",
+  "source_collection_actor": "assistant via authenticated GitHub read tools",
+  "source_inputs_modified_after_first_attempt": false,
+  "split_rule": "case-insensitive repository sort; six unique repositories per task: first three train, last three holdout; next five reserved for post-training queries",
+  "task_design_actor": "maintainer"
+}

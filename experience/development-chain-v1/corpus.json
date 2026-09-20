@@ -1,0 +1,344 @@
+[
+  {
+    "holdout": [
+      {
+        "input": {
+          "document": "{\"name\":\"babel\",\"repository\":\"babel/babel\",\"version\":\"8.0.6\"}",
+          "field": "name"
+        },
+        "output": {
+          "name": "babel",
+          "repository": "babel/babel",
+          "version": "8.0.6"
+        }
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"chai\",\"repository\":\"chaijs/chai\",\"version\":\"0.0.0-development\"}",
+          "field": "name"
+        },
+        "output": {
+          "name": "chai",
+          "repository": "chaijs/chai",
+          "version": "0.0.0-development"
+        }
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"chalk\",\"repository\":\"chalk/chalk\",\"version\":\"6.0.0\"}",
+          "field": "name"
+        },
+        "output": {
+          "name": "chalk",
+          "repository": "chalk/chalk",
+          "version": "6.0.0"
+        }
+      }
+    ],
+    "id": "40-json-document",
+    "source": "github-frozen-metadata:development-chain-v1:40-json-document",
+    "train": [
+      {
+        "input": {
+          "document": "{\"name\":\"ajv\",\"repository\":\"ajv-validator/ajv\",\"version\":\"8.20.0\"}",
+          "field": "name"
+        },
+        "output": {
+          "name": "ajv",
+          "repository": "ajv-validator/ajv",
+          "version": "8.20.0"
+        }
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"angular-srcs\",\"repository\":\"angular/angular\",\"version\":\"22.3.0-next.0\"}",
+          "field": "name"
+        },
+        "output": {
+          "name": "angular-srcs",
+          "repository": "angular/angular",
+          "version": "22.3.0-next.0"
+        }
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"axios\",\"repository\":\"axios/axios\",\"version\":\"1.20.0\"}",
+          "field": "name"
+        },
+        "output": {
+          "name": "axios",
+          "repository": "axios/axios",
+          "version": "1.20.0"
+        }
+      }
+    ]
+  },
+  {
+    "holdout": [
+      {
+        "input": {
+          "document": "{\"name\":\"@date-fns/root\",\"repository\":\"date-fns/date-fns\",\"version\":\"0.0.0\"}",
+          "field": "name"
+        },
+        "output": "@date-fns/root"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"eslint\",\"repository\":\"eslint/eslint\",\"version\":\"10.11.0\"}",
+          "field": "name"
+        },
+        "output": "eslint"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"express\",\"repository\":\"expressjs/express\",\"version\":\"5.2.1\"}",
+          "field": "name"
+        },
+        "output": "express"
+      }
+    ],
+    "id": "50-package-name",
+    "source": "github-frozen-metadata:development-chain-v1:50-package-name",
+    "train": [
+      {
+        "input": {
+          "document": "{\"name\":\"chart.js\",\"repository\":\"chartjs/Chart.js\",\"version\":\"4.5.1\"}",
+          "field": "name"
+        },
+        "output": "chart.js"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"cheerio\",\"repository\":\"cheeriojs/cheerio\",\"version\":\"1.2.0\"}",
+          "field": "name"
+        },
+        "output": "cheerio"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"d3\",\"repository\":\"d3/d3\",\"version\":\"7.9.0\"}",
+          "field": "name"
+        },
+        "output": "d3"
+      }
+    ]
+  },
+  {
+    "holdout": [
+      {
+        "input": {
+          "document": "{\"name\":\"immer\",\"repository\":\"immerjs/immer\",\"version\":\"10.0.3-beta\"}",
+          "field": "name"
+        },
+        "output": "IMMER"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"@jest/monorepo\",\"repository\":\"jestjs/jest\",\"version\":\"0.0.0\"}",
+          "field": "name"
+        },
+        "output": "@JEST/MONOREPO"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"jquery\",\"repository\":\"jquery/jquery\",\"version\":\"4.0.0\"}",
+          "field": "name"
+        },
+        "output": "JQUERY"
+      }
+    ],
+    "id": "60-uppercase-name",
+    "source": "github-frozen-metadata:development-chain-v1:60-uppercase-name",
+    "train": [
+      {
+        "input": {
+          "document": "{\"name\":\"fastify\",\"repository\":\"fastify/fastify\",\"version\":\"6.0.0-alpha.4\"}",
+          "field": "name"
+        },
+        "output": "FASTIFY"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"hono\",\"repository\":\"honojs/hono\",\"version\":\"4.13.8\"}",
+          "field": "name"
+        },
+        "output": "HONO"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"dayjs\",\"repository\":\"iamkun/dayjs\",\"version\":\"0.0.0-development\"}",
+          "field": "name"
+        },
+        "output": "DAYJS"
+      }
+    ]
+  },
+  {
+    "holdout": [
+      {
+        "input": {
+          "document": "{\"name\":\"@typescript/repo\",\"repository\":\"microsoft/TypeScript\",\"version\":\"0.0.0\"}",
+          "field": "name"
+        },
+        "output": {
+          "length": 16,
+          "name": "@TYPESCRIPT/REPO"
+        }
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"mocha\",\"repository\":\"mochajs/mocha\",\"version\":\"12.0.2\"}",
+          "field": "name"
+        },
+        "output": {
+          "length": 5,
+          "name": "MOCHA"
+        }
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"moment\",\"repository\":\"moment/moment\",\"version\":\"2.31.0\"}",
+          "field": "name"
+        },
+        "output": {
+          "length": 6,
+          "name": "MOMENT"
+        }
+      }
+    ],
+    "id": "70-package-record",
+    "source": "github-frozen-metadata:development-chain-v1:70-package-record",
+    "train": [
+      {
+        "input": {
+          "document": "{\"name\":\"koa\",\"repository\":\"koajs/koa\",\"version\":\"3.2.1\"}",
+          "field": "name"
+        },
+        "output": {
+          "length": 3,
+          "name": "KOA"
+        }
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"lodash\",\"repository\":\"lodash/lodash\",\"version\":\"4.18.1\"}",
+          "field": "name"
+        },
+        "output": {
+          "length": 6,
+          "name": "LODASH"
+        }
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"mermaid-monorepo\",\"repository\":\"mermaid-js/mermaid\",\"version\":\"10.2.4\"}",
+          "field": "name"
+        },
+        "output": {
+          "length": 16,
+          "name": "MERMAID-MONOREPO"
+        }
+      }
+    ]
+  },
+  {
+    "holdout": [
+      {
+        "input": {
+          "document": "{\"name\":\"ramda\",\"repository\":\"ramda/ramda\",\"version\":\"0.32.0\"}",
+          "field": "name"
+        },
+        "output": "{\"length\":5,\"name\":\"RAMDA\"}"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"redux\",\"repository\":\"reduxjs/redux\",\"version\":\"5.0.1\"}",
+          "field": "name"
+        },
+        "output": "{\"length\":5,\"name\":\"REDUX\"}"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"rollup\",\"repository\":\"rollup/rollup\",\"version\":\"4.63.4\"}",
+          "field": "name"
+        },
+        "output": "{\"length\":6,\"name\":\"ROLLUP\"}"
+      }
+    ],
+    "id": "80-serialized-record",
+    "source": "github-frozen-metadata:development-chain-v1:80-serialized-record",
+    "train": [
+      {
+        "input": {
+          "document": "{\"name\":\"nock\",\"repository\":\"nock/nock\",\"version\":\"0.0.0-development\"}",
+          "field": "name"
+        },
+        "output": "{\"length\":4,\"name\":\"NOCK\"}"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"zustand\",\"repository\":\"pmndrs/zustand\",\"version\":\"5.0.15\"}",
+          "field": "name"
+        },
+        "output": "{\"length\":7,\"name\":\"ZUSTAND\"}"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"prettier\",\"repository\":\"prettier/prettier\",\"version\":\"3.10.0-dev\"}",
+          "field": "name"
+        },
+        "output": "{\"length\":8,\"name\":\"PRETTIER\"}"
+      }
+    ]
+  },
+  {
+    "holdout": [
+      {
+        "input": {
+          "document": "{\"name\":\"got\",\"repository\":\"sindresorhus/got\",\"version\":\"16.0.0\"}",
+          "field": "name"
+        },
+        "output": "0497db517ef058cb6d3672d5ffe8f062fddabc4bf56aa1d254b7f078e9a79e49"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"p-limit\",\"repository\":\"sindresorhus/p-limit\",\"version\":\"7.3.3\"}",
+          "field": "name"
+        },
+        "output": "ceab5be4dc4226ae870339a44fdd73d0e26050b7d6121837d561db4a693b3acf"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"sinon\",\"repository\":\"sinonjs/sinon\",\"version\":\"22.1.0\"}",
+          "field": "name"
+        },
+        "output": "0a9d2aed8af6f9201d14f7be3ff8f59f76fa0c6f98d86a2eff8b6bc56936a47b"
+      }
+    ],
+    "id": "90-sha256-deficit-control",
+    "source": "github-frozen-metadata:development-chain-v1:90-sha256-deficit-control",
+    "train": [
+      {
+        "input": {
+          "document": "{\"name\":\"@inquirer/root\",\"repository\":\"SBoudrias/Inquirer.js\",\"version\":null}",
+          "field": "name"
+        },
+        "output": "aa47ed8e4cd105b589a59fc0884384fa95b544ef3acc5498f2278300bc1cb696"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"shelljs\",\"repository\":\"shelljs/shelljs\",\"version\":\"0.10.0\"}",
+          "field": "name"
+        },
+        "output": "e2e2e5605677a01350c0b7c18bea792a1f10e87dc5d5a33ed6fd670c537898e3"
+      },
+      {
+        "input": {
+          "document": "{\"name\":\"execa\",\"repository\":\"sindresorhus/execa\",\"version\":\"10.0.1\"}",
+          "field": "name"
+        },
+        "output": "e1d4ca802d959027d79bc2eef0fbd107c4e121554eced8bd7452f324474d5ce5"
+      }
+    ]
+  }
+]
