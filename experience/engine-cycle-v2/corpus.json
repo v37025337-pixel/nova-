@@ -1,0 +1,152 @@
+[
+  {
+    "holdout": [
+      {
+        "input": {
+          "payload": "\"  Dália \""
+        },
+        "output": "\"DÁLIA\""
+      },
+      {
+        "input": {
+          "payload": "\"ÉDELWEISS  \""
+        },
+        "output": "\"ÉDELWEISS\""
+      },
+      {
+        "input": {
+          "payload": "\" ΙΡΙΔΑ \""
+        },
+        "output": "\"ΙΡΙΔΑ\""
+      }
+    ],
+    "id": "100-deep-normalize",
+    "source": "maintainer:synthetic-engine-cycle-v2; independently calculated Python string/JSON oracles",
+    "train": [
+      {
+        "input": {
+          "payload": "\"  Aster  \""
+        },
+        "output": "\"ASTER\""
+      },
+      {
+        "input": {
+          "payload": "\"\\tBegonia \""
+        },
+        "output": "\"BEGONIA\""
+      },
+      {
+        "input": {
+          "payload": "\" Crocus\\n\""
+        },
+        "output": "\"CROCUS\""
+      }
+    ]
+  },
+  {
+    "holdout": [
+      {
+        "input": {
+          "payload": "\"  Jasmin \""
+        },
+        "output": {
+          "length": 6,
+          "name": "JASMIN"
+        }
+      },
+      {
+        "input": {
+          "payload": "\"KÁLA  \""
+        },
+        "output": {
+          "length": 4,
+          "name": "KÁLA"
+        }
+      },
+      {
+        "input": {
+          "payload": "\" Лилия \""
+        },
+        "output": {
+          "length": 5,
+          "name": "ЛИЛИЯ"
+        }
+      }
+    ],
+    "id": "110-deep-record",
+    "source": "maintainer:synthetic-engine-cycle-v2; independently calculated Python string/JSON oracles",
+    "train": [
+      {
+        "input": {
+          "payload": "\"  Fern  \""
+        },
+        "output": {
+          "length": 4,
+          "name": "FERN"
+        }
+      },
+      {
+        "input": {
+          "payload": "\"\\tGardenia \""
+        },
+        "output": {
+          "length": 8,
+          "name": "GARDENIA"
+        }
+      },
+      {
+        "input": {
+          "payload": "\" Heather\\n\""
+        },
+        "output": {
+          "length": 7,
+          "name": "HEATHER"
+        }
+      }
+    ]
+  },
+  {
+    "holdout": [
+      {
+        "input": {
+          "payload": "\"  Pivoňka \""
+        },
+        "output": "{\"length\":7,\"name\":\"PIVOŇKA\"}"
+      },
+      {
+        "input": {
+          "payload": "\"QUINCE  \""
+        },
+        "output": "{\"length\":6,\"name\":\"QUINCE\"}"
+      },
+      {
+        "input": {
+          "payload": "\" Роза \""
+        },
+        "output": "{\"length\":4,\"name\":\"РОЗА\"}"
+      }
+    ],
+    "id": "120-deep-serialized",
+    "source": "maintainer:synthetic-engine-cycle-v2; independently calculated Python string/JSON oracles",
+    "train": [
+      {
+        "input": {
+          "payload": "\"  Magnolia  \""
+        },
+        "output": "{\"length\":8,\"name\":\"MAGNOLIA\"}"
+      },
+      {
+        "input": {
+          "payload": "\"\\tNarcissus \""
+        },
+        "output": "{\"length\":9,\"name\":\"NARCISSUS\"}"
+      },
+      {
+        "input": {
+          "payload": "\" Orchid\\n\""
+        },
+        "output": "{\"length\":6,\"name\":\"ORCHID\"}"
+      }
+    ]
+  }
+]

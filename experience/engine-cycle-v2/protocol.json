@@ -1,0 +1,34 @@
+{
+  "authorship": {
+    "engine_policy_and_programs": "NOVA",
+    "host_upgrade_and_mutation_rules": "maintainer",
+    "tasks_and_oracles": "maintainer_synthetic_fixtures"
+  },
+  "calibration": "Before freezing, code was tested on unit fixtures and old G8 training tasks. New validation and continuation holdout outcomes have not been used to tune it.",
+  "claim_boundary": "bounded search-policy evolution; no new primitive, external model training, internet study or arbitrary host-source rewrite",
+  "continuation_gate": "engine admission then three native program admissions, previous-program reuse, heldout and old-skill regression",
+  "corpus_sha256": "e14715abb9956b273ed19f8835305df6fffee42bf9532ea89f10267bbfde7e6b",
+  "expected_final_generation": 12,
+  "fresh_gate": "one frozen policy; all 3 validation tasks train and holdout correct; no retries on reserved inputs",
+  "max_steps": 6,
+  "negative_task": "90-sha256-deficit-control",
+  "parent_commit": "738605e469a94a74af55a3a3fcd5c23afd354d9e",
+  "parent_generation": 8,
+  "parent_head": "e9224850ef71ea452682460172a8b2ac6980a754223dc83448b1e66e61fe820f",
+  "parent_journal": "experience/development-chain-v1/journal.json",
+  "policy_selection": "one candidate derived solely from active gene IR; operator frequency ranking and bounded reviewed mutation rules",
+  "positive_tasks": [
+    "100-deep-normalize",
+    "110-deep-record",
+    "120-deep-serialized"
+  ],
+  "python": [
+    3,
+    12
+  ],
+  "queries_sha256": "a8ee83c688167d2d4951a7f2ca5e41e23ff0157152960b119258366de5699eb7",
+  "runtime_sources_sha256": "86df2b12af2d04dc6a38585e9c1c5afae3cbffb1d65032147a73333ab486514d",
+  "schema": "nova.engine-cycle.protocol.v1",
+  "training_gate": "all prior admitted tasks solved from their pre-admission memory; strictly fewer expression evaluations in aggregate",
+  "trial_sha256": "fedca3e983f0e9c9a249b7e53566e84872dac03fbc5f8666ccdadeaaa0094418"
+}

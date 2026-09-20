@@ -1,0 +1,98 @@
+[
+  {
+    "expected": "\"SAKURA\"",
+    "input": {
+      "payload": "\"  Sakura  \""
+    },
+    "task": "100-deep-normalize"
+  },
+  {
+    "expected": {
+      "length": 6,
+      "name": "SAKURA"
+    },
+    "input": {
+      "payload": "\"  Sakura  \""
+    },
+    "task": "110-deep-record"
+  },
+  {
+    "expected": "{\"length\":6,\"name\":\"SAKURA\"}",
+    "input": {
+      "payload": "\"  Sakura  \""
+    },
+    "task": "120-deep-serialized"
+  },
+  {
+    "expected": "\"TULIP\"",
+    "input": {
+      "payload": "\"\\tTULIP \""
+    },
+    "task": "100-deep-normalize"
+  },
+  {
+    "expected": {
+      "length": 5,
+      "name": "TULIP"
+    },
+    "input": {
+      "payload": "\"\\tTULIP \""
+    },
+    "task": "110-deep-record"
+  },
+  {
+    "expected": "{\"length\":5,\"name\":\"TULIP\"}",
+    "input": {
+      "payload": "\"\\tTULIP \""
+    },
+    "task": "120-deep-serialized"
+  },
+  {
+    "expected": "\"WEISSDORN\"",
+    "input": {
+      "payload": "\" Weißdorn\\n\""
+    },
+    "task": "100-deep-normalize"
+  },
+  {
+    "expected": {
+      "length": 9,
+      "name": "WEISSDORN"
+    },
+    "input": {
+      "payload": "\" Weißdorn\\n\""
+    },
+    "task": "110-deep-record"
+  },
+  {
+    "expected": "{\"length\":9,\"name\":\"WEISSDORN\"}",
+    "input": {
+      "payload": "\" Weißdorn\\n\""
+    },
+    "task": "120-deep-serialized"
+  },
+  {
+    "expected": "\"ХРИЗАНТЕМА\"",
+    "input": {
+      "payload": "\"  Хризантема \""
+    },
+    "task": "100-deep-normalize"
+  },
+  {
+    "expected": {
+      "length": 10,
+      "name": "ХРИЗАНТЕМА"
+    },
+    "input": {
+      "payload": "\"  Хризантема \""
+    },
+    "task": "110-deep-record"
+  },
+  {
+    "expected": "{\"length\":10,\"name\":\"ХРИЗАНТЕМА\"}",
+    "input": {
+      "payload": "\"  Хризантема \""
+    },
+    "task": "120-deep-serialized"
+  }
+]

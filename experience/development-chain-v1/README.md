@@ -61,7 +61,10 @@
 
 Для продолжения используйте команду восстановления из корневого README.
 Полная контрольная точка — `journal.json`; состояние не зависит от повторной
-доступности GitHub. Для повторения того же опыта в новый файл и каталог:
+доступности GitHub. Runtime 0.2 читает её через явный контракт совместимости;
+перед новыми мутациями требуется `upgrade`. Для точного повторения опыта
+используйте commit `738605e469a94a74af55a3a3fcd5c23afd354d9e` (runtime 0.1)
+в отдельном checkout, затем новый файл и каталог:
 
 ```bash
 python scripts/run_development_chain.py --protocol-commit 14b96166eff3631610ae272da24352cb29382ec0 --state state/repeat.sqlite --output experience/development-chain-v1-repeat

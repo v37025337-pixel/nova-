@@ -1,0 +1,181 @@
+{
+  "id": "experience-ranked-search-v2",
+  "tasks": [
+    {
+      "holdout": [
+        {
+          "input": {
+            "value": "\"  ÉRABLE \""
+          },
+          "output": "\"érable\""
+        },
+        {
+          "input": {
+            "value": "\"ÅNGSTRÖM  \""
+          },
+          "output": "\"ångström\""
+        },
+        {
+          "input": {
+            "value": "\" ΩΜΕΓΑ \""
+          },
+          "output": "\"ωμεγα\""
+        }
+      ],
+      "id": "validation-deep-lower",
+      "source": "maintainer:synthetic-engine-cycle-v2; independently calculated Python string/JSON oracles",
+      "train": [
+        {
+          "input": {
+            "value": "\"  MAPLE  \""
+          },
+          "output": "\"maple\""
+        },
+        {
+          "input": {
+            "value": "\"\\tCEDAR \""
+          },
+          "output": "\"cedar\""
+        },
+        {
+          "input": {
+            "value": "\" Pine\\n\""
+          },
+          "output": "\"pine\""
+        }
+      ]
+    },
+    {
+      "holdout": [
+        {
+          "input": {
+            "left": 13,
+            "right": 5
+          },
+          "output": 65
+        },
+        {
+          "input": {
+            "left": -8,
+            "right": 6
+          },
+          "output": -48
+        },
+        {
+          "input": {
+            "left": 0,
+            "right": 19
+          },
+          "output": 0
+        }
+      ],
+      "id": "validation-product",
+      "source": "maintainer:synthetic-engine-cycle-v2; integer multiplication oracle",
+      "train": [
+        {
+          "input": {
+            "left": 4,
+            "right": 9
+          },
+          "output": 36
+        },
+        {
+          "input": {
+            "left": 11,
+            "right": -3
+          },
+          "output": -33
+        },
+        {
+          "input": {
+            "left": -7,
+            "right": -2
+          },
+          "output": 14
+        }
+      ]
+    },
+    {
+      "holdout": [
+        {
+          "input": {
+            "packet": {
+              "A": 3,
+              "b": false
+            }
+          },
+          "output": [
+            "A",
+            "b"
+          ]
+        },
+        {
+          "input": {
+            "packet": {
+              "a": 2,
+              "ü": 3,
+              "я": 1
+            }
+          },
+          "output": [
+            "a",
+            "ü",
+            "я"
+          ]
+        },
+        {
+          "input": {
+            "packet": {
+              "d": 8,
+              "ß": 4
+            }
+          },
+          "output": [
+            "d",
+            "ß"
+          ]
+        }
+      ],
+      "id": "validation-keys",
+      "source": "maintainer:synthetic-engine-cycle-v2; Python sorted object keys oracle",
+      "train": [
+        {
+          "input": {
+            "packet": {
+              "a": "red",
+              "k": 8
+            }
+          },
+          "output": [
+            "a",
+            "k"
+          ]
+        },
+        {
+          "input": {
+            "packet": {
+              "a": null,
+              "f": 7,
+              "δ": true
+            }
+          },
+          "output": [
+            "a",
+            "f",
+            "δ"
+          ]
+        },
+        {
+          "input": {
+            "packet": {
+              "z": 12
+            }
+          },
+          "output": [
+            "z"
+          ]
+        }
+      ]
+    }
+  ]
+}

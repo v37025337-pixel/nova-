@@ -20,6 +20,10 @@ def main(argv=None):
     commands.add_parser("queue")
     commands.add_parser("memory")
     commands.add_parser("genome")
+    commands.add_parser("upgrade")
+    evolve = commands.add_parser("evolve")
+    evolve.add_argument("suite", type=Path)
+    evolve.add_argument("--steps", type=int, default=1)
     learn = commands.add_parser("learn")
     learn.add_argument("corpus", type=Path)
     learn.add_argument("--steps", type=int, default=3)
@@ -65,6 +69,11 @@ def main(argv=None):
                     result = kernel.causal_memory()
                 elif args.command == "genome":
                     result = kernel.genome()
+                elif args.command == "upgrade":
+                    result = kernel.upgrade()
+                elif args.command == "evolve":
+                    kernel.register_engine_trial(decode(args.suite.read_text(encoding="utf-8")))
+                    result = kernel.develop(args.steps)
                 elif args.command == "predict":
                     result = {"output": kernel.predict(args.task, decode(args.input))}
                 elif args.command == "verify":

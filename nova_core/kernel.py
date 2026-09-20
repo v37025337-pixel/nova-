@@ -2,16 +2,19 @@
 
 import hashlib
 import sys
+from copy import deepcopy
 from pathlib import Path
 
+from .adaptation import engine_proposal, input_tokens, trial_dataset, trial_spec
+from .compatibility import recognized_legacy
 from .contracts import ContractError, IntegrityError, dataset_id, digest, encode, task_spec
 from .evaluation import baseline, gate, score
 from .genetics import genome, vary
 from .language import execute
-from .memory import Journal
+from .memory import Journal, ZERO
 from .synthesis import ERRORS, MAX_ATTEMPTS, MAX_DEPTH, synthesize
 
-SCHEMA = "nova.kernel.v1"
+SCHEMA = "nova.kernel.v2"
 
 
 def runtime_manifest():
@@ -23,7 +26,8 @@ def runtime_manifest():
                           "LOGIC": "contracts_deficits_and_admission_evidence",
                           "THINKING": "causal_goal_selection_and_continuation",
                           "INTELLIGENCE": "experience_conditioned_verified_gene_selection"},
-            "program_author": "kernel_training_only", "engine_author": "maintainer"}
+            "program_author": "kernel_training_only", "engine_author": "maintainer",
+            "engine_policy_author": "kernel_bounded_experience_conditioned_mutation"}
 
 
 def initial_state():
@@ -31,7 +35,7 @@ def initial_state():
             "genomes": {0: genome({})}, "task_events": {}, "gene_events": {},
             "experience": {}, "last_event": 1,
             "programs": {}, "current": 0, "attempted": set(),
-            "consumed": set(), "admissions": 0, "attempts": 0}
+            "consumed": set(), "admissions": 0, "attempts": 0, "engine_trials": {}}
 
 
 def context(state):
@@ -52,10 +56,15 @@ def intelligence(state, tid, memory):
         except ERRORS:
             continue
     history = state["experience"].get(tid, [])
-    return {"strategy": "verified_gene_composition" if usable else "native_primitive_search",
+    plan = {"strategy": "verified_gene_composition" if usable else "native_primitive_search",
             "usable_genes": list(usable), "memory_context": digest(sorted(usable)),
             "previous_attempt": history[-1]["event"] if history else None,
             "previous_failures": sum(h["status"] == "WITHHOLD" for h in history)}
+    policy = state["genomes"][state["current"]].get("engine")
+    if policy:
+        plan.update(engine=policy["id"], memory_context=digest([plan["memory_context"], policy["id"]]),
+                    previous_cost=history[-1]["search_attempts"] if history else 0)
+    return plan
 
 
 def task_queue(state):
@@ -75,6 +84,15 @@ def task_queue(state):
             status = "PENDING"
         rows.append({"task": tid, "status": status, "submitted_event": state["task_events"][tid],
                      "plan": plan})
+    policy = state["genomes"][state["current"]].get("engine")
+    for tid, trial in state["engine_trials"].items():
+        history = state["experience"].get(tid, [])
+        status = "EVALUATION_CONSUMED" if trial_dataset(trial) in state["consumed"] else "PENDING"
+        if policy and any(h.get("engine") == policy["id"] and h["status"] == "ADMITTED" for h in history):
+            status = "ADMITTED"
+        rows.append({"task": tid, "kind": "ENGINE", "status": status,
+                     "submitted_event": state["task_events"][tid],
+                     "plan": {"memory_context": digest([sorted(memory), policy]), "previous_attempt": None}})
     return rows
 
 
@@ -84,15 +102,18 @@ def choose(state):
         if item["status"] not in ("PENDING", "RETRY_READY"):
             continue
         tid = item["task"]
+        if item.get("kind") == "ENGINE":
+            return {"task": tid, "kind": "ENGINE", "memory_context": item["plan"]["memory_context"],
+                    "plan": item["plan"], "policy": "registered_engine_trial_before_programs"}
         task = state["tasks"][tid]
         result = score(baseline(task), task["train"], {})
         failure = 1 - result["passed"] / result["total"]
         options.append((-failure, tid, result, item["plan"]))
     if not options:
         return None
-    _, tid, observed, plan = min(options, key=lambda x: (x[0], x[1]))
+    _, tid, observed, plan = min(options, key=lambda x: (x[0], x[3].get("previous_cost", 0), x[1]))
     return {"task": tid, "memory_context": plan["memory_context"], "plan": plan, "baseline_train": observed,
-            "policy": "largest_training_deficit_then_task_id"}
+            "policy": "largest_training_deficit_then_previous_cost_then_task_id" if "engine" in plan else "largest_training_deficit_then_task_id"}
 
 
 def propose(state):
@@ -100,10 +121,12 @@ def propose(state):
     if selection is None:
         return {"status": "IDLE", "reason": "NO_ELIGIBLE_DEFICIT"}
     active, memory, _ = context(state)
+    if selection.get("kind") == "ENGINE":
+        return engine_proposal(state, selection, memory)
     task = state["tasks"][selection["task"]]
     plan = selection["plan"]
     search_memory = {pid: memory[pid] for pid in plan["usable_genes"]}
-    result = synthesize(task["train"], search_memory)
+    result = synthesize(task["train"], search_memory, state["genomes"][state["current"]].get("engine"))
     program = result["program"]
     mutation = vary(state["genomes"][state["current"]], task["id"], program, memory) if program else None
     report = gate(program, task, memory, active, state["tasks"]) if program else None
@@ -144,15 +167,18 @@ def apply_step(state, body):
         "status": body["status"], "reason": body["reason"],
         "program": body["program"]["id"] if body["program"] else None,
         "search_attempts": body["synthesis"]["attempts"]})
-    if body["program"] is not None:
+    if body.get("domain") == "ENGINE":
+        state["experience"][tid][-1]["engine"] = body["engine_candidate"]["id"]
+    if body["program"] is not None or body.get("domain") == "ENGINE":
         state["consumed"].add(body["dataset"])
     if body["status"] == "ADMITTED":
         program = body["program"]
-        state["programs"][program["id"]] = program
-        state["gene_events"].setdefault(program["id"], body["event"])
+        if program is not None:
+            state["programs"][program["id"]] = program
+            state["gene_events"].setdefault(program["id"], body["event"])
         state["genomes"][body["generation"]] = body["mutation"]["child_genome"]
         state["generations"][body["generation"]] = {
-            **state["generations"][state["current"]], tid: program["id"]}
+            **state["generations"][state["current"]], **({tid: program["id"]} if program else {})}
         state["parents"][body["generation"]] = state["current"]
         state["current"] = body["generation"]
         state["admissions"] += 1
@@ -169,10 +195,33 @@ def validate_rollback(state, target):
     raise ContractError("rollback target must be a strict active ancestor")
 
 
+def validate_trial(state, trial):
+    if "@engine:" + trial["id"] in state["engine_trials"] or len(state["engine_trials"]) >= 16:
+        raise ContractError("duplicate engine trial or trial limit reached")
+    existing = list(state["tasks"].values()) + [t for prior in state["engine_trials"].values() for t in prior["tasks"]]
+    if input_tokens(trial["tasks"]) & input_tokens(existing):
+        raise ContractError("engine validation inputs already used or reserved")
+
+
+def upgrade_proposal(state, target, previous_head):
+    if not recognized_legacy(state["runtime_manifest"]) or recognized_legacy(target):
+        raise ContractError("unsupported runtime transition")
+    active, memory, _ = context(state)
+    regression = {tid: score(memory[pid], state["tasks"][tid]["train"] + state["tasks"][tid]["holdout"], memory)
+                  for tid, pid in sorted(active.items())}
+    if any(r["passed"] != r["total"] for r in regression.values()):
+        raise IntegrityError("runtime transition regresses inherited programs")
+    return {"kind": "runtime_upgrade", "from": digest(state["runtime_manifest"]), "to": target,
+            "previous_head": previous_head, "generation": state["current"],
+            "genome": state["genomes"][state["current"]]["id"], "regression": regression,
+            "author": "maintainer", "verification": "full_legacy_replay_and_inherited_program_regression"}
+
+
 class Kernel:
     def __init__(self, path, create=False):
         self.journal = Journal(path, create=create)
         self.manifest = runtime_manifest()
+        self._cache = None
         try:
             events, head = self.journal.read()
             if not events:
@@ -184,13 +233,27 @@ class Kernel:
             self.close()
             raise
 
-    def _load(self):
+    def _load(self, force=False):
         events, head = self.journal.read()
-        if not events or encode(events[0]) != encode({"kind": "genesis", "manifest": self.manifest}):
+        origin = events[0].get("manifest") if events else None
+        if (not events or set(events[0]) != {"kind", "manifest"} or events[0]["kind"] != "genesis" or
+                encode(origin) != encode(self.manifest) and not recognized_legacy(origin)):
             raise IntegrityError("genesis/runtime mismatch; use the original engine for this state")
         state = initial_state()
+        state["runtime_manifest"] = origin
+        start = 1
+        prefix = digest([1, ZERO, events[0]])
+        # Hashes/canonical JSON are checked on every read. Only an identical,
+        # already semantically verified prefix can reuse this in-process cache.
+        if not force and self._cache and len(events) >= self._cache[0]:
+            count, cached_head, cached_state = self._cache
+            prefix_check = ZERO
+            for seq, body in enumerate(events[:count], 1):
+                prefix_check = digest([seq, prefix_check, body])
+            if prefix_check == cached_head:
+                state, start, prefix = deepcopy(cached_state), count, cached_head
         try:
-            for seq, body in enumerate(events[1:], 2):
+            for seq, body in enumerate(events[start:], start + 1):
                 if body.get("kind") == "tasks" and set(body) == {"kind", "tasks"}:
                     if type(body["tasks"]) is not list or not body["tasks"]:
                         raise ContractError("empty task event")
@@ -198,6 +261,9 @@ class Kernel:
                         task = task_spec(raw)
                         if encode(task) != encode(raw) or task["id"] in state["tasks"]:
                             raise ContractError("duplicate or noncanonical task event")
+                        reserved = [t for trial in state["engine_trials"].values() for t in trial["tasks"]]
+                        if input_tokens([task]) & input_tokens(reserved):
+                            raise ContractError("program task overlaps reserved engine validation")
                         state["tasks"][task["id"]] = task
                         state["task_events"][task["id"]] = seq
                 elif body.get("kind") == "step":
@@ -205,6 +271,19 @@ class Kernel:
                     if encode(propose(state)) != encode(body):
                         raise IntegrityError("step replay/evidence mismatch")
                     apply_step(state, body)
+                elif body.get("kind") == "engine_trial" and set(body) == {"kind", "trial"}:
+                    self._require_current(state)
+                    trial = trial_spec(body["trial"])
+                    if encode(trial) != encode(body["trial"]):
+                        raise ContractError("noncanonical engine trial")
+                    validate_trial(state, trial)
+                    tid = "@engine:" + trial["id"]
+                    state["engine_trials"][tid] = trial
+                    state["task_events"][tid] = seq
+                elif body.get("kind") == "runtime_upgrade":
+                    if encode(body) != encode(upgrade_proposal(state, self.manifest, prefix)):
+                        raise IntegrityError("runtime upgrade evidence mismatch")
+                    state["runtime_manifest"] = self.manifest
                 elif body.get("kind") == "rollback" and set(body) == {"kind", "target", "from"}:
                     if type(body["from"]) is not int or body["from"] != state["current"]:
                         raise ContractError("rollback parent mismatch")
@@ -213,15 +292,41 @@ class Kernel:
                 else:
                     raise ContractError("unknown event schema")
                 state["last_event"] = seq
+                prefix = digest([seq, prefix, body])
         except (ValueError, KeyError, TypeError, RecursionError) as exc:
             raise IntegrityError("semantic replay failed: " + str(exc)) from exc
+        self._cache = (len(events), head, deepcopy(state))
         return state, head, len(events)
+
+    def _require_current(self, state):
+        if encode(state["runtime_manifest"]) != encode(self.manifest):
+            raise ContractError("legacy state is read-only; run upgrade before new mutations")
+
+    def upgrade(self):
+        state, head, _ = self._load(force=True)
+        if encode(state["runtime_manifest"]) == encode(self.manifest):
+            return {"status": "CURRENT", "head": head}
+        body = upgrade_proposal(state, self.manifest, head)
+        self.journal.append(body, head)
+        return {"status": "UPGRADED", "transition": body, "state": self.status()}
+
+    def register_engine_trial(self, raw):
+        trial = trial_spec(raw)
+        state, head, _ = self._load()
+        self._require_current(state)
+        tid = "@engine:" + trial["id"]
+        if tid in state["engine_trials"] and encode(state["engine_trials"][tid]) == encode(trial):
+            return {"registered": []}
+        validate_trial(state, trial)
+        self.journal.append({"kind": "engine_trial", "trial": trial}, head)
+        return {"registered": [tid]}
 
     def register(self, specs):
         if type(specs) is not list or not 1 <= len(specs) <= 64:
             raise ContractError("register 1..64 tasks per batch")
         tasks = [task_spec(s) for s in specs]
         state, head, _ = self._load()
+        self._require_current(state)
         known = dict(state["tasks"])
         new = []
         for task in tasks:
@@ -229,6 +334,9 @@ class Kernel:
                 if known[task["id"]] != task:
                     raise ContractError("task id is immutable: " + task["id"])
             else:
+                reserved = [t for trial in state["engine_trials"].values() for t in trial["tasks"]]
+                if input_tokens([task]) & input_tokens(reserved):
+                    raise ContractError("program task overlaps reserved engine validation")
                 known[task["id"]] = task
                 new.append(task)
         if new:
@@ -237,6 +345,7 @@ class Kernel:
 
     def step(self):
         state, head, _ = self._load()
+        self._require_current(state)
         body = propose(state)
         if body["status"] != "IDLE":
             self.journal.append(body, head)
@@ -278,6 +387,7 @@ class Kernel:
 
     def rollback(self, generation):
         state, head, _ = self._load()
+        self._require_current(state)
         validate_rollback(state, generation)
         self.journal.append({"kind": "rollback", "from": state["current"], "target": generation}, head)
         return self.status()
@@ -288,6 +398,9 @@ class Kernel:
         next_choice = choose(state)
         return {"schema": SCHEMA, "head": head, "events": count,
                 "runtime_digest": digest(self.manifest), "active_generation": state["current"],
+                "active_runtime_digest": digest(state["runtime_manifest"]),
+                "upgrade_required": encode(state["runtime_manifest"]) != encode(self.manifest),
+                "engine_policy": state["genomes"][state["current"]].get("engine"),
                 "admissions_total": state["admissions"], "attempts_total": state["attempts"],
                 "tasks_total": len(state["tasks"]), "active_tasks": dict(active),
                 "programs_active": len(memory), "next_task": next_choice["task"] if next_choice else None,
@@ -296,9 +409,10 @@ class Kernel:
                 "self_model": {"successful_admissions": state["admissions"],
                                "withheld_attempts": state["attempts"] - state["admissions"],
                                "search_attempts_total": sum(h["search_attempts"] for history in state["experience"].values() for h in history)},
-                "claim": "bounded_program_learning"}
+                "claim": "bounded_program_and_engine_policy_learning"}
 
     def audit(self, expected_head=None):
+        self._load(force=True)
         result = self.status()
         if expected_head is not None and expected_head != result["head"]:
             raise IntegrityError("external journal head mismatch")
