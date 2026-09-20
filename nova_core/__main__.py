@@ -21,6 +21,11 @@ def main(argv=None):
     commands.add_parser("memory")
     commands.add_parser("genome")
     commands.add_parser("upgrade")
+    study = commands.add_parser("study")
+    study.add_argument("specification", type=Path)
+    study.add_argument("--steps", type=int, default=1)
+    assess = commands.add_parser("assess")
+    assess.add_argument("evaluation", type=Path)
     evolve = commands.add_parser("evolve")
     evolve.add_argument("suite", type=Path)
     evolve.add_argument("--steps", type=int, default=1)
@@ -74,6 +79,14 @@ def main(argv=None):
                 elif args.command == "evolve":
                     kernel.register_engine_trial(decode(args.suite.read_text(encoding="utf-8")))
                     result = kernel.develop(args.steps)
+                elif args.command == "study":
+                    kernel.study(decode(args.specification.read_text(encoding="utf-8")))
+                    result = kernel.develop(args.steps)
+                elif args.command == "assess":
+                    evaluation = decode(args.evaluation.read_text(encoding="utf-8"))
+                    if set(evaluation) != {"freeze", "rows"}:
+                        raise ContractError("evaluation requires frozen identity and fresh rows")
+                    result = kernel.assess(evaluation["freeze"], evaluation["rows"])
                 elif args.command == "predict":
                     result = {"output": kernel.predict(args.task, decode(args.input))}
                 elif args.command == "verify":

@@ -1,0 +1,30 @@
+{
+  "claim_boundary": "word-equation compiler is maintainer code; generated primitive bodies come from journalled external equations; partial functions, control-fixture PASS and runtime upgrade are not a SHA256/G13 PASS",
+  "fresh_holdout_rule": "external independent oracle; new random inputs generated only after journalled native freeze; no synthesis access",
+  "mechanism_fixture": "mechanism-fixture.json",
+  "parent_generation": 12,
+  "parent_head": "7dc199de2af009abe40956ee91438adc425b61c3f014a5d7cf07894375d9e75b",
+  "parent_journal": "experience/engine-cycle-v2/journal.json",
+  "python": [
+    3,
+    12
+  ],
+  "runtime_sources_sha256": "0aa3565fa7f80e4adc169e01a0a8779b02a019ff1c893d4ab2cd5c7a591d562f",
+  "schema": "nova.capability-cycle.protocol.v1",
+  "sha_task": "90-sha256-deficit-control",
+  "specification_files": [
+    "specification-functions.json",
+    "specification-preprocessing.json",
+    "specification-algorithm.json"
+  ],
+  "strict_pass": [
+    "native selection from causal memory",
+    "native goal and diagnosis",
+    "full generated candidate solving SHA training",
+    "isolated fresh holdout and all inherited regressions",
+    "ablation",
+    "admission",
+    "cold deterministic replay",
+    "native next goal"
+  ]
+}

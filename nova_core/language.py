@@ -4,6 +4,7 @@ import ast
 from functools import lru_cache
 
 from .contracts import ContractError, decode, digest, encode, equal, normalized
+from . import extensions
 
 LANGUAGE = "nova.expression.v1"
 UNARY = ("strip", "lower", "upper", "length", "parse_json", "json", "sum", "sort", "keys")
@@ -53,6 +54,11 @@ def validate(node, memory, depth=0, budget=None):
         return
     if tag == "ref" and len(node) == 2 and type(node[1]) is str and node[1] in memory:
         return
+    if (tag == "apply" and len(node) == 3 and type(node[1]) is str and node[1] in memory and
+            memory[node[1]].get("language") == extensions.LANGUAGE):
+        extensions.check(memory[node[1]])
+        validate(node[2], memory, depth + 1, budget)
+        return
     if tag == "call" and len(node) >= 2 and type(node[1]) is str:
         arity = 1 if node[1] in UNARY else 2 if node[1] in BINARY else -1
         if len(node) == arity + 2:
@@ -71,6 +77,8 @@ def validate(node, memory, depth=0, budget=None):
 def dependencies(node):
     if node[0] == "ref":
         return {node[1]}
+    if node[0] == "apply":
+        return {node[1]} | dependencies(node[2])
     children = node[2:] if node[0] == "call" else node[1].values() if node[0] == "object" else []
     return set().union(*(dependencies(child) for child in children))
 
@@ -83,6 +91,8 @@ def _ast(node):
         return ast.Constant(node[1])
     if tag == "ref":
         return ast.Call(ast.Name("recall", ast.Load()), [ast.Constant(node[1]), ast.Name("inputs", ast.Load())], [])
+    if tag == "apply":
+        return ast.Call(ast.Name("recall", ast.Load()), [ast.Constant(node[1]), _ast(node[2])], [])
     if tag == "call":
         return ast.Call(ast.Name("primitive", ast.Load()), [ast.Constant(node[1])] + [_ast(x) for x in node[2:]], [])
     return ast.Dict([ast.Constant(k) for k in sorted(node[1])], [_ast(node[1][k]) for k in sorted(node[1])])
@@ -104,6 +114,9 @@ def candidate(node, memory):
 
 
 def check(program, memory):
+    if program.get("language") == extensions.LANGUAGE:
+        extensions.check(program)
+        return
     if candidate(program["ir"], memory) != program:
         raise ContractError("program/source identity mismatch")
 
@@ -128,6 +141,8 @@ def execute(program, inputs, memory):
         check(p, memory)
         active.add(p["id"])
         try:
+            if p.get("language") == extensions.LANGUAGE:
+                return extensions.execute(p, data)
             return normalized(_compiled(p["source"])(data, recall))
         finally:
             active.remove(p["id"])
@@ -146,6 +161,8 @@ def interpret(node, inputs, memory):
         return node[1]
     if tag == "ref":
         return execute(memory[node[1]], inputs, memory)
+    if tag == "apply":
+        return execute(memory[node[1]], interpret(node[2], inputs, memory), memory)
     if tag == "call":
         return primitive(node[1], *(interpret(x, inputs, memory) for x in node[2:]))
     return {k: interpret(v, inputs, memory) for k, v in node[1].items()}

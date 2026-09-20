@@ -6,15 +6,17 @@ from copy import deepcopy
 from pathlib import Path
 
 from .adaptation import engine_proposal, input_tokens, trial_dataset, trial_spec
+from . import capability
 from .compatibility import recognized_legacy
 from .contracts import ContractError, IntegrityError, dataset_id, digest, encode, task_spec
 from .evaluation import baseline, gate, score
 from .genetics import genome, vary
 from .language import execute
+from .extensions import LANGUAGE as WORD_LANGUAGE
 from .memory import Journal, ZERO
 from .synthesis import ERRORS, MAX_ATTEMPTS, MAX_DEPTH, synthesize
 
-SCHEMA = "nova.kernel.v2"
+SCHEMA = "nova.kernel.v3"
 
 
 def runtime_manifest():
@@ -27,7 +29,9 @@ def runtime_manifest():
                           "THINKING": "causal_goal_selection_and_continuation",
                           "INTELLIGENCE": "experience_conditioned_verified_gene_selection"},
             "program_author": "kernel_training_only", "engine_author": "maintainer",
-            "engine_policy_author": "kernel_bounded_experience_conditioned_mutation"}
+            "engine_policy_author": "kernel_bounded_experience_conditioned_mutation",
+            "capability_author": "kernel_specification_conditioned_equation_compiler",
+            "capability_dialect": "bounded_word_equations_not_arbitrary_algorithm_prose"}
 
 
 def initial_state():
@@ -35,12 +39,15 @@ def initial_state():
             "genomes": {0: genome({})}, "task_events": {}, "gene_events": {},
             "experience": {}, "last_event": 1,
             "programs": {}, "current": 0, "attempted": set(),
-            "consumed": set(), "admissions": 0, "attempts": 0, "engine_trials": {}}
+            "consumed": set(), "admissions": 0, "attempts": 0, "engine_trials": {},
+            "knowledge": {}, "capability_attempted": set(), "capability_pending": {},
+            "capability_experience": {}, "capability_evaluated_inputs": set()}
 
 
 def context(state):
     active = state["generations"][state["current"]]
-    memory = {pid: state["programs"][pid] for pid in dict.fromkeys(active.values())}
+    ids = list(dict.fromkeys(active.values())) + state["genomes"][state["current"]].get("capabilities", [])
+    memory = {pid: state["programs"][pid] for pid in ids}
     return active, memory, digest(sorted(memory))
 
 
@@ -49,6 +56,9 @@ def intelligence(state, tid, memory):
     task = state["tasks"][tid]
     usable = {}
     for pid, program in memory.items():
+        if program.get("language") == WORD_LANGUAGE:
+            usable[pid] = program
+            continue
         try:
             for row in task["train"]:
                 execute(program, row["input"], memory)
@@ -93,15 +103,19 @@ def task_queue(state):
         rows.append({"task": tid, "kind": "ENGINE", "status": status,
                      "submitted_event": state["task_events"][tid],
                      "plan": {"memory_context": digest([sorted(memory), policy]), "previous_attempt": None}})
-    return rows
+    return rows + capability.queue(state, rows)
 
 
 def choose(state):
     options = []
+    extensions = []
     for item in task_queue(state):
         if item["status"] not in ("PENDING", "RETRY_READY"):
             continue
         tid = item["task"]
+        if item.get("kind") == "CAPABILITY":
+            extensions.append(item)
+            continue
         if item.get("kind") == "ENGINE":
             return {"task": tid, "kind": "ENGINE", "memory_context": item["plan"]["memory_context"],
                     "plan": item["plan"], "policy": "registered_engine_trial_before_programs"}
@@ -110,7 +124,11 @@ def choose(state):
         failure = 1 - result["passed"] / result["total"]
         options.append((-failure, tid, result, item["plan"]))
     if not options:
-        return None
+        if not extensions:
+            return None
+        item = min(extensions, key=lambda row: (row["submitted_event"], row["target"]))
+        return {"task": item["task"], "target": item["target"], "kind": "CAPABILITY",
+                "plan": item["plan"], "policy": "oldest_remembered_exhausted_deficit_then_task_id"}
     _, tid, observed, plan = min(options, key=lambda x: (x[0], x[3].get("previous_cost", 0), x[1]))
     return {"task": tid, "memory_context": plan["memory_context"], "plan": plan, "baseline_train": observed,
             "policy": "largest_training_deficit_then_previous_cost_then_task_id" if "engine" in plan else "largest_training_deficit_then_task_id"}
@@ -119,8 +137,13 @@ def choose(state):
 def propose(state):
     selection = choose(state)
     if selection is None:
+        waiting = [r for r in task_queue(state) if r["status"] == "WAITING_FOR_FRESH_HOLDOUT"]
+        if waiting:
+            return {"status": "WAITING", "reason": "FRESH_HOLDOUT_REQUIRED", "task": waiting[0]["target"]}
         return {"status": "IDLE", "reason": "NO_ELIGIBLE_DEFICIT"}
     active, memory, _ = context(state)
+    if selection.get("kind") == "CAPABILITY":
+        return capability.freeze(state, selection, memory)
     if selection.get("kind") == "ENGINE":
         return engine_proposal(state, selection, memory)
     task = state["tasks"][selection["task"]]
@@ -204,7 +227,10 @@ def validate_trial(state, trial):
 
 
 def upgrade_proposal(state, target, previous_head):
-    if not recognized_legacy(state["runtime_manifest"]) or recognized_legacy(target):
+    source = state["runtime_manifest"]
+    if (not recognized_legacy(source) or target["schema"] not in ("nova.kernel.v2", "nova.kernel.v3") or
+            source["schema"] == target["schema"] or
+            target["schema"] == "nova.kernel.v2" and not recognized_legacy(target)):
         raise ContractError("unsupported runtime transition")
     active, memory, _ = context(state)
     regression = {tid: score(memory[pid], state["tasks"][tid]["train"] + state["tasks"][tid]["holdout"], memory)
@@ -272,7 +298,8 @@ class Kernel:
                         raise IntegrityError("step replay/evidence mismatch")
                     apply_step(state, body)
                 elif body.get("kind") == "engine_trial" and set(body) == {"kind", "trial"}:
-                    self._require_current(state)
+                    if state["runtime_manifest"]["schema"] not in ("nova.kernel.v2", "nova.kernel.v3"):
+                        raise ContractError("engine policy requires runtime upgrade")
                     trial = trial_spec(body["trial"])
                     if encode(trial) != encode(body["trial"]):
                         raise ContractError("noncanonical engine trial")
@@ -281,9 +308,28 @@ class Kernel:
                     state["engine_trials"][tid] = trial
                     state["task_events"][tid] = seq
                 elif body.get("kind") == "runtime_upgrade":
-                    if encode(body) != encode(upgrade_proposal(state, self.manifest, prefix)):
+                    target = body["to"]
+                    if not recognized_legacy(target) and encode(target) != encode(self.manifest):
+                        raise IntegrityError("unknown runtime transition target")
+                    if encode(body) != encode(upgrade_proposal(state, target, prefix)):
                         raise IntegrityError("runtime upgrade evidence mismatch")
-                    state["runtime_manifest"] = self.manifest
+                    state["runtime_manifest"] = target
+                elif body.get("kind") == "knowledge" and set(body) == {"kind", "specification"}:
+                    self._require_current(state)
+                    spec = capability.validate_knowledge(state, body["specification"])
+                    state["knowledge"][spec["id"]] = spec
+                elif body.get("kind") == "capability_freeze":
+                    self._require_current(state)
+                    if encode(propose(state)) != encode(body):
+                        raise IntegrityError("native capability freeze replay mismatch")
+                    capability.apply_freeze(state, body)
+                elif body.get("kind") == "capability_evaluation":
+                    self._require_current(state)
+                    frozen = state["capability_pending"][body["target"]]
+                    _, memory, _ = context(state)
+                    if encode(capability.evaluate_frozen(state, frozen, body["rows"], memory)) != encode(body):
+                        raise IntegrityError("capability evaluation replay mismatch")
+                    capability.apply_evaluation(state, body)
                 elif body.get("kind") == "rollback" and set(body) == {"kind", "target", "from"}:
                     if type(body["from"]) is not int or body["from"] != state["current"]:
                         raise ContractError("rollback parent mismatch")
@@ -321,6 +367,24 @@ class Kernel:
         self.journal.append({"kind": "engine_trial", "trial": trial}, head)
         return {"registered": [tid]}
 
+    def study(self, raw):
+        state, head, _ = self._load()
+        self._require_current(state)
+        spec = capability.validate_knowledge(state, raw)
+        self.journal.append({"kind": "knowledge", "specification": spec}, head)
+        return {"registered": spec["id"], "digest": digest(spec)}
+
+    def assess(self, freeze_id, rows):
+        state, head, _ = self._load()
+        self._require_current(state)
+        frozen = next((f for f in state["capability_pending"].values() if f["freeze"] == freeze_id), None)
+        if frozen is None:
+            raise ContractError("unknown or already consumed frozen candidate")
+        _, memory, _ = context(state)
+        body = capability.evaluate_frozen(state, frozen, rows, memory)
+        self.journal.append(body, head)
+        return body
+
     def register(self, specs):
         if type(specs) is not list or not 1 <= len(specs) <= 64:
             raise ContractError("register 1..64 tasks per batch")
@@ -347,7 +411,7 @@ class Kernel:
         state, head, _ = self._load()
         self._require_current(state)
         body = propose(state)
-        if body["status"] != "IDLE":
+        if body["status"] not in ("IDLE", "WAITING"):
             self.journal.append(body, head)
         return body
 
@@ -358,7 +422,7 @@ class Kernel:
         for _ in range(steps):
             body = self.step()
             results.append(body)
-            if body["status"] == "IDLE":
+            if body["status"] in ("IDLE", "WAITING"):
                 break
         return {"steps": results, "state": self.status()}
 
@@ -369,7 +433,9 @@ class Kernel:
     def causal_memory(self):
         state, _, _ = self._load()
         return {"schema": "nova.causal-memory.v1", "experiences": state["experience"],
-                "task_events": state["task_events"], "gene_events": state["gene_events"]}
+                "task_events": state["task_events"], "gene_events": state["gene_events"],
+                "capability_experiences": state["capability_experience"],
+                "knowledge": {key: digest(spec) for key, spec in state["knowledge"].items()}}
 
     def genome(self):
         state, _, _ = self._load()
@@ -409,7 +475,8 @@ class Kernel:
                 "self_model": {"successful_admissions": state["admissions"],
                                "withheld_attempts": state["attempts"] - state["admissions"],
                                "search_attempts_total": sum(h["search_attempts"] for history in state["experience"].values() for h in history)},
-                "claim": "bounded_program_and_engine_policy_learning"}
+                "capabilities_active": state["genomes"][state["current"]].get("capabilities", []),
+                "claim": "bounded_program_policy_and_specification_conditioned_word_grammar_learning"}
 
     def audit(self, expected_head=None):
         self._load(force=True)

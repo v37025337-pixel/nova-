@@ -28,4 +28,24 @@ def legacy_manifest():
 
 
 def recognized_legacy(manifest):
-    return encode(manifest) == encode(legacy_manifest())
+    return any(encode(manifest) == encode(m) for m in (legacy_manifest(), v2_manifest()))
+
+
+# Exact 0.2.0 release (872d8cda); G12 embeds this manifest after the v1 upgrade.
+V2_SOURCES = {
+    "__init__.py": "b0c750095a311217132e95b6f6f494a6050ea879ec1b674ee6d8bfda853b3214",
+    "__main__.py": "4298caa0bbb8ff5dc3393eca97e38a42bb104360da27d86d686caab16ed21e0a",
+    "adaptation.py": "50a64f921a3b7c65da6529142a440ec1ea3029faef5b5a28db5c776955fc8e99",
+    "compatibility.py": "fabd482115df5ae2a19188e695e3b80e9df2e1516bae68fe442764df02e2a89a",
+    "contracts.py": V1_SOURCES["contracts.py"],
+    "evaluation.py": V1_SOURCES["evaluation.py"],
+    "genetics.py": "bb96c69030adcffd7ea4642918c3a18e091a1860dfb6021d13d5d98073016d0a",
+    "kernel.py": "56d84a0290d95a230c4c5a02489521870057669fc4c10d1857c5d8eb423742e6",
+    "language.py": V1_SOURCES["language.py"],
+    "memory.py": V1_SOURCES["memory.py"],
+    "synthesis.py": "a7e36bc9ca027d126578668bfc9bb6997c7542ce6e4426baec5ae6e92f1a533c"}
+
+
+def v2_manifest():
+    return {**legacy_manifest(), "schema": "nova.kernel.v2", "sources": dict(V2_SOURCES),
+            "engine_policy_author": "kernel_bounded_experience_conditioned_mutation"}

@@ -7,6 +7,7 @@ from .evaluation import score
 from .genetics import genome
 from .language import BINARY, UNARY, execute
 from .synthesis import ERRORS, MAX_ATTEMPTS, MAX_DEPTH, synthesize
+from .extensions import LANGUAGE as WORD_LANGUAGE
 
 
 def trial_spec(raw):
@@ -44,9 +45,12 @@ def derive_policy(programs, previous=None):
         elif node[0] == "object":
             for child in node[1].values():
                 walk(child)
+        elif node[0] == "apply":
+            walk(node[2])
 
     for program in programs.values():
-        walk(program["ir"])
+        if program.get("language") != WORD_LANGUAGE:
+            walk(program["ir"])
     rank = lambda operations: sorted(operations, key=lambda op: (-counts[op], operations.index(op)))
     body = {"schema": "nova.engine-policy.v1", "parent": previous["id"] if previous else None,
             "depth": min(4, (previous["depth"] if previous else MAX_DEPTH) + 1), "attempts": MAX_ATTEMPTS,
@@ -59,6 +63,9 @@ def derive_policy(programs, previous=None):
 def compatible(memory, rows):
     usable = {}
     for pid, program in memory.items():
+        if program.get("language") == WORD_LANGUAGE:
+            usable[pid] = program
+            continue
         try:
             for row in rows:
                 execute(program, row["input"], memory)
@@ -120,7 +127,7 @@ def engine_proposal(state, selection, memory):
         reason = "REGRESSION_FAILED"
     report = {"training": training, "validation": validation, "regression": regression,
               "frozen_candidate": candidate["id"], "reason": reason}
-    child = genome(active, parent["id"], candidate)
+    child = genome(active, parent["id"], candidate, parent.get("capabilities"))
     mutation = {"kind": "EVOLVE_ENGINE_POLICY", "parent_genome": parent["id"], "child_genome": child,
                 "inherited_genes": parent["genes"], "added_genes": [],
                 "engine_parent": candidate["parent"], "engine_child": candidate["id"]}

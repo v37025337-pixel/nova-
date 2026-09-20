@@ -1,0 +1,116 @@
+{
+  "specification": {
+    "id": "word-algebra",
+    "provenance": "Maintainer supplies mathematical equations; Nova compiles gene bodies and selects bindings; independent fresh oracle only after freeze.",
+    "source": "operator:unsigned-word-mathematical-specification",
+    "text": "mix(x,y) = x ^ y\nflip(x) = ~x",
+    "title": "Word algebra control",
+    "width": 32
+  },
+  "tasks": [
+    {
+      "holdout": [
+        {
+          "input": {
+            "text": " gamma "
+          },
+          "output": "gamma"
+        },
+        {
+          "input": {
+            "text": " delta "
+          },
+          "output": "delta"
+        }
+      ],
+      "id": "old-trim",
+      "source": "operator:regression-control",
+      "train": [
+        {
+          "input": {
+            "text": " alpha "
+          },
+          "output": "alpha"
+        },
+        {
+          "input": {
+            "text": " beta "
+          },
+          "output": "beta"
+        }
+      ]
+    },
+    {
+      "holdout": [
+        {
+          "input": {
+            "a": 53,
+            "b": 84
+          },
+          "output": 97
+        },
+        {
+          "input": {
+            "a": 100,
+            "b": 79
+          },
+          "output": 43
+        }
+      ],
+      "id": "word-xor",
+      "source": "operator:word-algebra-mechanism-control-not-sha256",
+      "train": [
+        {
+          "input": {
+            "a": 7,
+            "b": 11
+          },
+          "output": 12
+        },
+        {
+          "input": {
+            "a": 42,
+            "b": 19
+          },
+          "output": 57
+        }
+      ]
+    },
+    {
+      "holdout": [
+        {
+          "input": {
+            "left": 543,
+            "right": 814
+          },
+          "output": 305
+        },
+        {
+          "input": {
+            "left": 1030,
+            "right": 749
+          },
+          "output": 1771
+        }
+      ],
+      "id": "word-xor-transfer",
+      "source": "operator:word-algebra-mechanism-control-not-sha256",
+      "train": [
+        {
+          "input": {
+            "left": 1007,
+            "right": 211
+          },
+          "output": 828
+        },
+        {
+          "input": {
+            "left": 402,
+            "right": 119
+          },
+          "output": 485
+        }
+      ]
+    }
+  ]
+}
