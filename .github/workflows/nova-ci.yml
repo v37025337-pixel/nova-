@@ -34,3 +34,6 @@ jobs:
       - name: Restore and replay generated algorithm generation 14
         if: matrix.python == '3.12'
         run: python scripts/run_development_chain.py --restore experience/algorithm-cycle-v4/result/journal.json --state /tmp/nova-algorithm-ci.sqlite
+      - name: Restore G20 history and replay Python composition and transfer through G22
+        if: matrix.python == '3.12'
+        run: python scripts/run_development_chain.py --restore experience/python-learning-v1/journal.json --state /tmp/nova-python-learning-ci.sqlite

@@ -17,6 +17,7 @@ from .genetics import vary
 from .isolation import evaluate
 from .language import candidate
 from .synthesis import synthesize
+from . import library_evolution
 
 ALLOWED_HOSTS = ("peps.python.org", "docs.python.org", "packaging.python.org",
                  "www.rfc-editor.org", "csrc.nist.gov", "nvlpubs.nist.gov")
@@ -31,7 +32,7 @@ def initial():
 
 
 def enabled(state):
-    return state["runtime_manifest"]["schema"] == "nova.kernel.v5"
+    return state["runtime_manifest"]["schema"] in ("nova.kernel.v5", "nova.kernel.v6")
 
 
 def source_url(value):
@@ -47,7 +48,8 @@ def source_url(value):
 
 def relation_goal(state, memory):
     """No task IDs, package names, generation numbers or future labels are inputs."""
-    previous = {x["goal"]["deficit_id"] for x in state["autonomy"]["completed"]}
+    previous = {x["goal"]["deficit_id"] for x in state["autonomy"]["completed"]
+                if not library_evolution.retryable(x, state)}
     options = []
     for tid, history in sorted(state["experience"].items()):
         if tid not in state["tasks"] or tid in state["generations"][state["current"]]:
@@ -139,14 +141,21 @@ def propose(state, memory):
     if not a["enabled"]:
         return None
     if a["current"] is None:
-        goal = relation_goal(state, memory)
+        goal = library_evolution.transfer_goal(state, memory) if library_evolution.enabled(state) else None
+        goal = goal or relation_goal(state, memory)
         if goal is None:
             return {"status": "IDLE", "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT"}
         return event(state, "GOAL_FROZEN", status="GOAL_FROZEN", reason="NEW_RELATIONAL_SUBGOAL",
                      goal=goal, freeze=digest(goal))
     goal = a["current"]
+    if library_evolution.enabled(state) and goal["runtime_digest"] != digest(state["runtime_manifest"]):
+        return event(state, "WITHHOLD", status="WITHHOLD", reason="AUTONOMOUS_RUNTIME_STALE", goal=goal["id"])
     if goal["parent_genome"] != state["genomes"][state["current"]]["id"]:
         return event(state, "WITHHOLD", status="WITHHOLD", reason="AUTONOMOUS_GOAL_STALE", goal=goal["id"])
+    if library_evolution.enabled(state):
+        proposal = library_evolution.propose(state, memory)
+        if proposal is not None:
+            return proposal
     if a["phase"] == "GOAL_FROZEN":
         # Representation-based routing precedes code generation. It is an
         # explicit hypothesis, not a proof that the old search is impossible.
@@ -234,6 +243,8 @@ def build(state, memory):
 
 def validate_response(state, raw):
     a = state["autonomy"]
+    if library_evolution.enabled(state) and (a.get("request") or {}).get("kind") == "PYTHON_CATALOGUE":
+        return library_evolution.validate_response(state, raw)
     if a["phase"] != "REQUESTED" or not a["request"]:
         raise ContractError("there is no pending autonomous I/O request")
     normalized(raw)
@@ -272,6 +283,8 @@ def assess(state, frozen_id, rows, memory):
         raise ContractError("unknown or consumed autonomous candidate")
     if goal["parent_genome"] != state["genomes"][state["current"]]["id"]:
         raise ContractError("autonomous candidate belongs to another genome")
+    if library_evolution.enabled(state) and goal["runtime_digest"] != digest(state["runtime_manifest"]):
+        raise ContractError("autonomous candidate belongs to another runtime")
     if type(rows) is not list or not CONFIG["fresh_min"] <= len(rows) <= CONFIG["fresh_max"]:
         raise ContractError("autonomous assessment needs 16..24 fresh examples")
     tid = goal["id"]
@@ -292,8 +305,10 @@ def assess(state, frozen_id, rows, memory):
         old = state["tasks"][old_tid]
         regression[old_tid] = evaluate([{"program": memory[pid], "rows": old["train"] + old["holdout"]}], extended)["results"][0]
     parent_best = max((score(p, rows, memory)["passed"] for p in memory.values()), default=0)
+    dependencies = (library_evolution.dependency_closure(program, extended)
+                    if library_evolution.enabled(state) else program["parents"])
     ablation = {pid: evaluate([{"program": program, "rows": rows}], {k: v for k, v in extended.items() if k != pid})["results"][0]
-                for pid in program["parents"]}
+                for pid in dependencies}
     reason = "VERIFIED_AUTONOMOUS_SUBGOAL"
     if any(r["passed"] != r["total"] for r in result["results"]):
         reason = "AUTONOMOUS_HOLDOUT_FAILED"
@@ -305,6 +320,8 @@ def assess(state, frozen_id, rows, memory):
     # instead compare old active programs and ablate every inherited dependency.
     elif primitive and ablation.get(primitive["id"], {}).get("passed", len(rows)) == len(rows):
         reason = "NO_CAUSAL_CAPABILITY_IMPROVEMENT"
+    elif goal.get("required_capability") and ablation.get(goal["required_capability"], {}).get("passed", len(rows)) == len(rows):
+        reason = "NO_CAUSAL_TRANSFER"
     mutation = vary(state["genomes"][state["current"]], tid, program, memory) if primitive is None else None
     if primitive is not None:
         from .genetics import genome
@@ -328,6 +345,8 @@ def apply(state, body):
     if kind == "autonomy_response":
         a["responses"].append(body)
         a["phase"] = "SEARCH_RECEIVED" if body["response"]["kind"] == "SEARCH_RESULTS" else "DOCUMENT_RECEIVED"
+        if body["response"]["kind"] == "PYTHON_CATALOGUE":
+            a["phase"] = "PYTHON_CATALOGUE_RECEIVED"
         a["request"] = None
         return
     if kind == "autonomy_evaluation":
@@ -376,5 +395,6 @@ def status(state):
     return {"enabled": a["enabled"], "phase": a["phase"], "request": a["request"],
             "current_goal": a["current"], "completed": len(a["completed"]),
             "admissions": len(admitted), "required_generations": CONFIG["required_generations"],
-            "claim": "bounded_endogenous_relational_subgoal_loop",
+            "claim": ("bounded_library_assisted_subgoal_and_transfer" if library_evolution.enabled(state)
+                      else "bounded_endogenous_relational_subgoal_loop"),
             "autonomous_capability_evolution_proven": False}

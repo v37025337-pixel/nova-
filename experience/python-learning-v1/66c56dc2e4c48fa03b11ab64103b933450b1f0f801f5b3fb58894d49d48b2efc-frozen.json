@@ -1,0 +1,397 @@
+{
+  "candidate": {
+    "event": 61,
+    "freeze": "66c56dc2e4c48fa03b11ab64103b933450b1f0f801f5b3fb58894d49d48b2efc",
+    "goal": "auto-1ec0944f5900db6acb62dcb6",
+    "kind": "autonomy_step",
+    "parent_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+    "phase": "CANDIDATE_FROZEN",
+    "primitive": {
+      "author": "kernel_training_only_library_composition",
+      "catalogue": "5ea371b0b09683babcef5f9a1d0fc4af460c2916d5f3c54efacf4a8214713358",
+      "definition": {
+        "parameters": [
+          "left",
+          "right"
+        ]
+      },
+      "id": "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946",
+      "ir": [
+        "call",
+        "operator.lt",
+        [
+          "map",
+          "builtins.float",
+          [
+            "call",
+            "str.split",
+            [
+              "input",
+              "left"
+            ],
+            [
+              "const",
+              "."
+            ]
+          ]
+        ],
+        [
+          "map",
+          "builtins.float",
+          [
+            "call",
+            "str.split",
+            [
+              "input",
+              "right"
+            ],
+            [
+              "const",
+              "."
+            ]
+          ]
+        ]
+      ],
+      "language": "nova.python-composition.v1",
+      "parents": [],
+      "provenance": "7461aa4871bf082110f8585453d69afc50fb797878ecece15c8159ccf0335f6f",
+      "source": "def solve(inputs, recall):\n    return invoke('operator.lt', lift('builtins.float', invoke('str.split', inputs['left'], '.')), lift('builtins.float', invoke('str.split', inputs['right'], '.')))\n",
+      "tools": [
+        "builtins.float",
+        "operator.lt",
+        "str.split"
+      ]
+    },
+    "program": {
+      "id": "b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393",
+      "ir": [
+        "apply",
+        "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946",
+        [
+          "object",
+          {
+            "left": [
+              "input",
+              "left"
+            ],
+            "right": [
+              "input",
+              "right"
+            ]
+          }
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946"
+      ],
+      "source": "def solve(inputs, recall):\n    return recall('955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946', {'left': inputs['left'], 'right': inputs['right']})\n"
+    },
+    "reason": "AWAITING_FRESH_INDEPENDENT_EVALUATION",
+    "report": {
+      "algorithm_invention_claim": false,
+      "author": "kernel_training_only_library_composition",
+      "catalogue_receipt": "7461aa4871bf082110f8585453d69afc50fb797878ecece15c8159ccf0335f6f",
+      "fresh_cases_seen": 0,
+      "isolated_train": {
+        "isolation": "linux_seccomp_v1",
+        "results": [
+          {
+            "outcomes": [
+              {
+                "ok": true,
+                "output": true
+              },
+              {
+                "ok": true,
+                "output": true
+              },
+              {
+                "ok": true,
+                "output": false
+              },
+              {
+                "ok": true,
+                "output": false
+              },
+              {
+                "ok": true,
+                "output": false
+              },
+              {
+                "ok": true,
+                "output": false
+              },
+              {
+                "ok": true,
+                "output": true
+              },
+              {
+                "ok": true,
+                "output": true
+              },
+              {
+                "ok": true,
+                "output": true
+              },
+              {
+                "ok": true,
+                "output": false
+              },
+              {
+                "ok": true,
+                "output": true
+              },
+              {
+                "ok": true,
+                "output": false
+              },
+              {
+                "ok": true,
+                "output": false
+              },
+              {
+                "ok": true,
+                "output": true
+              },
+              {
+                "ok": true,
+                "output": false
+              },
+              {
+                "ok": true,
+                "output": true
+              }
+            ],
+            "passed": 16,
+            "total": 16
+          }
+        ],
+        "status": "PASS"
+      },
+      "search_attempts": 1530,
+      "tools_used": [
+        "builtins.float",
+        "operator.lt",
+        "str.split"
+      ]
+    },
+    "status": "FROZEN"
+  },
+  "goal": {
+    "best_inherited_train": 0,
+    "cause_event": 42,
+    "claim_boundary": "endogenous subgoal of an operator-originated failure; bounded property ontology",
+    "contract": {
+      "ablation_required": true,
+      "fresh_min": 16,
+      "input_fields": [
+        "left",
+        "right"
+      ],
+      "law": "lexicographic_integer_components",
+      "output": "boolean",
+      "properties": [
+        "irreflexive",
+        "asymmetric",
+        "transitive",
+        "declared_order_law"
+      ],
+      "regression_threshold": 1,
+      "success_threshold": 1
+    },
+    "deficit_id": "cfd70f94cccf01d8d9ce17b8569faff60f556f31de433f969d8f1aaba798279d",
+    "evidence_sources": [
+      "live-https:internet-tasks-v1:290-numeric-version-order; raw response hashes in sources.json"
+    ],
+    "id": "auto-1ec0944f5900db6acb62dcb6",
+    "observed_failure": "HOLDOUT_FAILED",
+    "observed_pair_count": 2968,
+    "origin": "native_analysis_of_failed_permutations",
+    "original_holdout": [
+      {
+        "input": {
+          "left": "1.26.8",
+          "right": "1.4"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "0.8.6",
+          "right": "1.5.1"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.26.14",
+          "right": "2.8.0"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.10.1",
+          "right": "2.2.1"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "2.1.1",
+          "right": "2.1.5"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "0.17",
+          "right": "0.9"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.13.0",
+          "right": "1.17.1"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.4.2",
+          "right": "1.14.6"
+        },
+        "output": true
+      }
+    ],
+    "parent_generation": 20,
+    "parent_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+    "root_dataset": "2247d273a2622c9011d65dd536e2b9de31e6eb4ce85bf3f2e38d6c10693f26b1",
+    "root_task": "290-numeric-version-order",
+    "root_task_origin": "operator",
+    "runtime_digest": "262f4df9cb2358acfd732410cfadf395cdb904a055f33bf29abd2eafaec9f2a7",
+    "search_terms": [
+      "version",
+      "numeric",
+      "ordering",
+      "specification"
+    ],
+    "training": [
+      {
+        "input": {
+          "left": "1.0.3",
+          "right": "1.14.6"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.25.2",
+          "right": "2.4.0"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.11.0",
+          "right": "1.9.1"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.26.8",
+          "right": "1.13"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "0.22",
+          "right": "0.19"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.0",
+          "right": "0.13"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "2.1.1",
+          "right": "2.1.2"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.18",
+          "right": "1.25.1"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.19.1",
+          "right": "1.25.2"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.12.1",
+          "right": "0.8.6"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.15.1",
+          "right": "1.26.10"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "2.6.1",
+          "right": "1.25.9"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "3.0.2",
+          "right": "2.1.1"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.26.2",
+          "right": "2.0.7"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.10.1",
+          "right": "0.2"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "2.1.0",
+          "right": "2.1.2"
+        },
+        "output": true
+      }
+    ],
+    "utility": "supply a reusable ordering relation missing from the failed permutation skill"
+  }
+}

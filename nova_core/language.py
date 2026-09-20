@@ -142,7 +142,7 @@ def execute(program, inputs, memory):
         active.add(p["id"])
         try:
             if extensions.is_extension(p):
-                return extensions.execute(p, data)
+                return extensions.execute(p, data, recall)
             return normalized(_compiled(p["source"])(data, recall))
         finally:
             active.remove(p["id"])
