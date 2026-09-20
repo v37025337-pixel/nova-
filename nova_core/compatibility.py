@@ -28,7 +28,7 @@ def legacy_manifest():
 
 
 def recognized_legacy(manifest):
-    return any(encode(manifest) == encode(m) for m in (legacy_manifest(), v2_manifest(), v3_manifest()))
+    return any(encode(manifest) == encode(m) for m in (legacy_manifest(), v2_manifest(), v3_manifest(), v4_manifest()))
 
 
 # Exact 0.2.0 release (872d8cda); G12 embeds this manifest after the v1 upgrade.
@@ -73,3 +73,42 @@ def v3_manifest():
     return {**v2_manifest(), "schema": "nova.kernel.v3", "sources": dict(V3_SOURCES),
             "capability_author": "kernel_specification_conditioned_equation_compiler",
             "capability_dialect": "bounded_word_equations_not_arbitrary_algorithm_prose"}
+
+
+# Exact runtime 0.4 used by G14 and G20; source pins are not relaxed.
+V4_MANIFEST = {'capability_author': 'kernel_specification_conditioned_document_compiler',
+ 'capability_dialect': 'bounded_word_equations_and_typeset_block_recurrences',
+ 'engine_author': 'maintainer',
+ 'engine_policy_author': 'kernel_bounded_experience_conditioned_mutation',
+ 'faculties': {'CODE': 'native_expression_synthesis_and_ast_execution',
+               'INTELLIGENCE': 'experience_conditioned_verified_gene_selection',
+               'LOGIC': 'contracts_deficits_and_admission_evidence',
+               'THINKING': 'causal_goal_selection_and_continuation'},
+ 'program_author': 'kernel_training_only',
+ 'python': [3, 12],
+ 'runtime': 'single_state_single_queue_single_journal',
+ 'schema': 'nova.kernel.v4',
+ 'search': {'attempts': 12000, 'depth': 3},
+ 'sources': {'__init__.py': '8ae5a78e10c88e838e9958ec0c9fb54aab14dbdeaefb92cced12b70eabe0fa2e',
+             '__main__.py': 'b5f9eebcbbfa9021a02046975e7ba1e66e071430630d4ed2b877257267c8707d',
+             'adaptation.py': '8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796',
+             'capability.py': '2a3bfbf8444e988a5fb1713a4ac59b3915ebb36f55c9e676b15e0b97e733f7ad',
+             'compatibility.py': '1ac090eb3ec20a521614459b26e556a6dad29f587c2430cf84e58c4272947596',
+             'contracts.py': '54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe',
+             'evaluation.py': '06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2',
+             'extensions.py': '181a8cdc13dce717d25cc345c92036a9a8fe14b9a436dfed954e79435f8d574b',
+             'genetics.py': 'e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0',
+             'isolation.py': 'c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3',
+             'kernel.py': '2dd6757aa4cae810ae818a4e6b10ee41c33e41c685b8a6bb7a5a6440d5b0b3b5',
+             'language.py': '3b955d15dde177d50644593eaf2365f8a15e4b09c43bc44c0790d4025b33c781',
+             'memory.py': '3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777',
+             'sandbox_worker.py': '11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96',
+             'sequence.py': 'cd1ac5a145caeb9a4fa9c181aeb3bbbd021e4a59b37bbee5d2440b27081f06d2',
+             'specifications.py': '3c34a078b8500dc1f9a13ea140c85fe9df7d4294986470989aafe128841b45c3',
+             'synthesis.py': '6a61f72491c514ec8706ff52913c679a0cee126189bc4cf3b692cf6a0a5016f7'}}
+
+def v4_manifest():
+    from copy import deepcopy
+    manifest = deepcopy(V4_MANIFEST)
+    manifest["python"] = list(sys.version_info[:2])
+    return manifest

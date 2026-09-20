@@ -21,6 +21,12 @@ def main(argv=None):
     commands.add_parser("memory")
     commands.add_parser("genome")
     commands.add_parser("upgrade")
+    autonomous = commands.add_parser("autonomous")
+    autonomous.add_argument("--steps", type=int, default=3)
+    response = commands.add_parser("respond")
+    response.add_argument("response", type=Path)
+    auto_assess = commands.add_parser("assess-autonomous")
+    auto_assess.add_argument("evaluation", type=Path)
     study = commands.add_parser("study")
     study.add_argument("specification", type=Path)
     study.add_argument("--steps", type=int, default=1)
@@ -76,6 +82,16 @@ def main(argv=None):
                     result = kernel.genome()
                 elif args.command == "upgrade":
                     result = kernel.upgrade()
+                elif args.command == "autonomous":
+                    kernel.start_autonomy()
+                    result = kernel.develop(args.steps)
+                elif args.command == "respond":
+                    result = kernel.autonomy_response(decode(args.response.read_text(encoding="utf-8")))
+                elif args.command == "assess-autonomous":
+                    evaluation = decode(args.evaluation.read_text(encoding="utf-8"))
+                    if set(evaluation) != {"freeze", "rows"}:
+                        raise ContractError("evaluation requires frozen identity and fresh rows")
+                    result = kernel.autonomy_assess(evaluation["freeze"], evaluation["rows"])
                 elif args.command == "evolve":
                     kernel.register_engine_trial(decode(args.suite.read_text(encoding="utf-8")))
                     result = kernel.develop(args.steps)

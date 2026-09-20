@@ -6,7 +6,7 @@ from copy import deepcopy
 from pathlib import Path
 
 from .adaptation import engine_proposal, input_tokens, trial_dataset, trial_spec
-from . import capability
+from . import capability, autonomy
 from .compatibility import recognized_legacy
 from .contracts import ContractError, IntegrityError, dataset_id, digest, encode, task_spec
 from .evaluation import baseline, gate, score
@@ -16,7 +16,7 @@ from .extensions import is_extension
 from .memory import Journal, ZERO
 from .synthesis import ERRORS, MAX_ATTEMPTS, MAX_DEPTH, synthesize
 
-SCHEMA = "nova.kernel.v4"
+SCHEMA = "nova.kernel.v5"
 
 
 def runtime_manifest():
@@ -31,7 +31,8 @@ def runtime_manifest():
             "program_author": "kernel_training_only", "engine_author": "maintainer",
             "engine_policy_author": "kernel_bounded_experience_conditioned_mutation",
             "capability_author": "kernel_specification_conditioned_document_compiler",
-            "capability_dialect": "bounded_word_equations_and_typeset_block_recurrences"}
+            "capability_dialect": "bounded_word_equations_and_typeset_block_recurrences",
+            "autonomy": "bounded_failure_conditioned_relational_subgoals_with_external_io"}
 
 
 def initial_state():
@@ -41,7 +42,8 @@ def initial_state():
             "programs": {}, "current": 0, "attempted": set(),
             "consumed": set(), "admissions": 0, "attempts": 0, "engine_trials": {},
             "knowledge": {}, "capability_attempted": set(), "capability_pending": {},
-            "capability_experience": {}, "capability_evaluated_inputs": set()}
+            "capability_experience": {}, "capability_evaluated_inputs": set(),
+            "autonomy": autonomy.initial()}
 
 
 def context(state):
@@ -135,6 +137,9 @@ def choose(state):
 
 
 def propose(state):
+    if autonomy.enabled(state) and state["autonomy"]["enabled"]:
+        _, memory, _ = context(state)
+        return autonomy.propose(state, memory)
     selection = choose(state)
     if selection is None:
         waiting = [r for r in task_queue(state) if r["status"] == "WAITING_FOR_FRESH_HOLDOUT"]
@@ -228,7 +233,7 @@ def validate_trial(state, trial):
 
 def upgrade_proposal(state, target, previous_head):
     source = state["runtime_manifest"]
-    if (not recognized_legacy(source) or target["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4") or
+    if (not recognized_legacy(source) or target["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5") or
             source["schema"] >= target["schema"] or
             target["schema"] != SCHEMA and not recognized_legacy(target)):
         raise ContractError("unsupported runtime transition")
@@ -298,7 +303,7 @@ class Kernel:
                         raise IntegrityError("step replay/evidence mismatch")
                     apply_step(state, body)
                 elif body.get("kind") == "engine_trial" and set(body) == {"kind", "trial"}:
-                    if state["runtime_manifest"]["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4"):
+                    if state["runtime_manifest"]["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5"):
                         raise ContractError("engine policy requires runtime upgrade")
                     trial = trial_spec(body["trial"])
                     if encode(trial) != encode(body["trial"]):
@@ -330,6 +335,24 @@ class Kernel:
                     if encode(capability.evaluate_frozen(state, frozen, body["rows"], memory)) != encode(body):
                         raise IntegrityError("capability evaluation replay mismatch")
                     capability.apply_evaluation(state, body)
+                elif body.get("kind") == "autonomy_start":
+                    if (not autonomy.enabled(state) or state["autonomy"]["enabled"] or
+                            body != {"kind": "autonomy_start", "config": autonomy.CONFIG}):
+                        raise ContractError("invalid autonomy start or runtime")
+                    autonomy.apply(state, body)
+                elif body.get("kind") == "autonomy_step":
+                    if not autonomy.enabled(state) or encode(propose(state)) != encode(body):
+                        raise IntegrityError("autonomous decision replay mismatch")
+                    autonomy.apply(state, body)
+                elif body.get("kind") == "autonomy_response":
+                    if not autonomy.enabled(state) or encode(autonomy.validate_response(state, body["response"])) != encode(body):
+                        raise IntegrityError("autonomous source response mismatch")
+                    autonomy.apply(state, body)
+                elif body.get("kind") == "autonomy_evaluation":
+                    _, memory, _ = context(state)
+                    if not autonomy.enabled(state) or encode(autonomy.assess(state, body["freeze"], body["rows"], memory)) != encode(body):
+                        raise IntegrityError("autonomous evaluation replay mismatch")
+                    autonomy.apply(state, body)
                 elif body.get("kind") == "rollback" and set(body) == {"kind", "target", "from"}:
                     if type(body["from"]) is not int or body["from"] != state["current"]:
                         raise ContractError("rollback parent mismatch")
@@ -370,6 +393,32 @@ class Kernel:
         validate_trial(state, trial)
         self.journal.append({"kind": "engine_trial", "trial": trial}, head)
         return {"registered": [tid]}
+
+    def start_autonomy(self):
+        state, head, _ = self._load()
+        self._require_current(state)
+        if not autonomy.enabled(state):
+            raise ContractError("autonomy requires runtime v5")
+        if state["autonomy"]["enabled"]:
+            return {"status": "CURRENT"}
+        body = {"kind": "autonomy_start", "config": autonomy.CONFIG}
+        self.journal.append(body, head)
+        return {"status": "STARTED", "config": autonomy.CONFIG}
+
+    def autonomy_response(self, response):
+        state, head, _ = self._load()
+        self._require_current(state)
+        body = autonomy.validate_response(state, response)
+        self.journal.append(body, head)
+        return {"status": "RECORDED", "event": body["event"]}
+
+    def autonomy_assess(self, freeze_id, rows):
+        state, head, _ = self._load()
+        self._require_current(state)
+        _, memory, _ = context(state)
+        body = autonomy.assess(state, freeze_id, rows, memory)
+        self.journal.append(body, head)
+        return body
 
     def study(self, raw):
         state, head, _ = self._load()
@@ -480,7 +529,8 @@ class Kernel:
                                "withheld_attempts": state["attempts"] - state["admissions"],
                                "search_attempts_total": sum(h["search_attempts"] for history in state["experience"].values() for h in history)},
                 "capabilities_active": state["genomes"][state["current"]].get("capabilities", []),
-                "claim": "bounded_program_policy_and_specification_conditioned_grammar_learning"}
+                "claim": "bounded_program_policy_and_specification_conditioned_grammar_learning",
+                **({"autonomy": autonomy.status(state)} if autonomy.enabled(state) else {})}
 
     def audit(self, expected_head=None):
         self._load(force=True)
