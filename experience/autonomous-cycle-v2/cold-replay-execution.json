@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-m",
+    "nova_core",
+    "--state",
+    "/workspace/scratch/fe9d73306cdf/nova-autonomy/state/autonomous-cycle-v2-backup.sqlite",
+    "verify",
+    "--expected-head",
+    "73097410c4d687df5682c720795189ee3a1b092a434dab31c1c04f0e260568f6"
+  ],
+  "returncode": 0,
+  "seconds": 48.273278945998754,
+  "expected_head": "73097410c4d687df5682c720795189ee3a1b092a434dab31c1c04f0e260568f6"
+}

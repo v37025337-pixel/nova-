@@ -1,0 +1,108 @@
+{
+  "change_since_previous_freeze": "Maintainer performance correction: reuse pure operand values in synthesis. Same operators, candidates, ordering, goals and acceptance rules; no fresh evaluation was seen.",
+  "fresh_max": 24,
+  "fresh_min": 16,
+  "fresh_pass_fraction": 1,
+  "fresh_policy": "OS entropy in a separate process after candidate freeze; no retries or candidate changes after evaluation",
+  "frozen_files": [
+    "canonical/release.json",
+    "nova_core/__init__.py",
+    "nova_core/__main__.py",
+    "nova_core/adaptation.py",
+    "nova_core/autonomy.py",
+    "nova_core/capability.py",
+    "nova_core/compatibility.py",
+    "nova_core/contracts.py",
+    "nova_core/evaluation.py",
+    "nova_core/extensions.py",
+    "nova_core/genetics.py",
+    "nova_core/isolation.py",
+    "nova_core/kernel.py",
+    "nova_core/language.py",
+    "nova_core/memory.py",
+    "nova_core/sandbox_worker.py",
+    "nova_core/sequence.py",
+    "nova_core/specifications.py",
+    "nova_core/synthesis.py",
+    "pyproject.toml",
+    "scripts/fresh_autonomous_evaluator.py",
+    "scripts/report_autonomous_cycle.py",
+    "scripts/run_autonomous_cycle.py",
+    "tests/test_autonomy.py",
+    "tests/test_synthesis_reuse.py"
+  ],
+  "gates": [
+    {
+      "id": 1,
+      "requirement": "New deficit discovered from errors, memory and external data; no operator-queued next task."
+    },
+    {
+      "id": 2,
+      "requirement": "Native concrete goal: inputs, output property, success criterion and downstream utility."
+    },
+    {
+      "id": 3,
+      "requirement": "Goal, parent genome, runtime, source documents and PASS rules frozen before solution generation."
+    },
+    {
+      "id": 4,
+      "requirement": "Native selection of program, engine policy, grammar or algorithm mechanism, with evidence."
+    },
+    {
+      "id": 5,
+      "requirement": "Native knowledge query/source selection; provenance and hashes; evaluation separated."
+    },
+    {
+      "id": 6,
+      "requirement": "Kernel-generated executable mechanism, isolated compilation; no ready library implementation."
+    },
+    {
+      "id": 7,
+      "requirement": "Fresh blind external evaluation after freeze, 100 percent, no adjustment."
+    },
+    {
+      "id": 8,
+      "requirement": "All inherited G0 through G20 skills retained at 100 percent."
+    },
+    {
+      "id": 9,
+      "requirement": "Removing precisely the new capability reduces new-task performance."
+    },
+    {
+      "id": 10,
+      "requirement": "Atomic admission, separate-process cold replay, exact previous-genome rollback."
+    },
+    {
+      "id": 11,
+      "requirement": "After restart, native discovery and execution of another task using the admitted mechanism."
+    },
+    {
+      "id": 12,
+      "requirement": "Three consecutive generations, each causally uses its predecessor; all preceding gates met."
+    }
+  ],
+  "goal_origin_policy": "no new tasks may be registered by this runner; old failures may supply observations, never fresh blind labels",
+  "knowledge_sources": "native request and native ranking; external search/HTTPS transport",
+  "known_architectural_limits": [
+    "The new problem constructor is maintainer-written and limited to relation subgoals of failed permutations.",
+    "The property ontology covers only numeric and dotted-integer comparison; this is not unrestricted problem invention.",
+    "The inherited failed task originated with the operator; a derived subgoal does not erase that provenance.",
+    "The existing specification compiler handles bounded word equations and block recurrences, not arbitrary natural-language algorithms.",
+    "This broker stops after an admission until an explicit process restart; it does not supply a transfer task."
+  ],
+  "max_documents_per_goal": 3,
+  "max_native_steps_per_goal": 24,
+  "max_search_results": 12,
+  "on_failure": "stop and preserve WITHHOLD; no prearranged fallback task",
+  "parent_generation": 20,
+  "parent_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+  "parent_head": "27d725ad4f5a0bab5fcb12ff5e4c9af5b9aabeda8e9746f8200a5885693c9028",
+  "parent_journal": "experience/internet-tasks-v1/journal.json",
+  "previous_attempt": "experience/autonomous-cycle-v1/abort.json",
+  "regression_pass_fraction": 1,
+  "required_generations": 3,
+  "runtime_author": "maintainer",
+  "runtime_sha256": "de46433fa333d0d03a819e5beba22ef99a916873f0b62f05677b16c6fb0cca47",
+  "schema": "nova.strict-autonomy-protocol.v1",
+  "search_transport_cache": "Previously obtained literal search results may be reused for an identical native query and allowed-host list; document GETs and all provenance are recorded."
+}

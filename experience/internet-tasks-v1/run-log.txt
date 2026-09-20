@@ -1,0 +1,30 @@
+{"stage": "https", "source": "https://pypi.org/pypi/packaging/json", "status": 200, "bytes": 90241, "split": "train"}
+{"stage": "https", "source": "https://pypi.org/pypi/PyYAML/json", "status": 200, "bytes": 558621, "split": "train"}
+{"stage": "https", "source": "https://pypi.org/pypi/cryptography/json", "status": 200, "bytes": 3219356, "split": "train"}
+{"stage": "https", "source": "https://api.github.com/repos/pallets/flask", "status": 200, "bytes": 6174, "split": "train"}
+{"stage": "https", "source": "https://api.github.com/repos/psf/requests", "status": 200, "bytes": 6016, "split": "train"}
+{"stage": "https", "source": "https://api.github.com/repos/encode/httpx", "status": 200, "bytes": 6063, "split": "train"}
+{"stage": "https", "source": "https://pypi.org/pypi/urllib3/json", "status": 200, "bytes": 160832, "split": "holdout"}
+{"stage": "https", "source": "https://pypi.org/pypi/MarkupSafe/json", "status": 200, "bytes": 832114, "split": "holdout"}
+{"stage": "https", "source": "https://pypi.org/pypi/cffi/json", "status": 200, "bytes": 1870503, "split": "holdout"}
+{"stage": "https", "source": "https://api.github.com/repos/pallets/click", "status": 200, "bytes": 6132, "split": "holdout"}
+{"stage": "https", "source": "https://api.github.com/repos/python/cpython", "status": 200, "bytes": 5996, "split": "holdout"}
+{"stage": "https", "source": "https://api.github.com/repos/pytest-dev/pytest", "status": 200, "bytes": 6366, "split": "holdout"}
+{"stage": "restore", "generation": 14, "head": "d481ce23719102a3b4da0504e9df3169be374033ede703e6aa0281627d563aa4"}
+{"stage": "step", "task": "200-distribution-bytes", "status": "ADMITTED", "reason": "VERIFIED_IMPROVEMENT", "generation": 15, "attempts": 12, "seconds": 1.5059075459976157}
+{"stage": "step", "task": "210-distribution-summary", "status": "ADMITTED", "reason": "VERIFIED_IMPROVEMENT", "generation": 16, "attempts": 14, "seconds": 2.9883711529982975}
+{"stage": "step", "task": "220-distribution-json", "status": "ADMITTED", "reason": "VERIFIED_IMPROVEMENT", "generation": 17, "attempts": 18, "seconds": 3.0664298970004893}
+{"stage": "step", "task": "230-repository-counts", "status": "ADMITTED", "reason": "VERIFIED_IMPROVEMENT", "generation": 18, "attempts": 272, "seconds": 3.1969518520018028}
+{"stage": "step", "task": "240-repository-record", "status": "ADMITTED", "reason": "VERIFIED_IMPROVEMENT", "generation": 19, "attempts": 327, "seconds": 3.099366526999802}
+{"stage": "step", "task": "250-online-hash-json", "status": "ADMITTED", "reason": "VERIFIED_IMPROVEMENT", "generation": 20, "attempts": 67, "seconds": 4.197451312000339}
+{"stage": "step", "task": "290-numeric-version-order", "status": "WITHHOLD", "reason": "HOLDOUT_FAILED", "generation": 20, "attempts": 1, "seconds": 5.181502811999962}
+{"stage": "step", "task": null, "status": "IDLE", "reason": "NO_ELIGIBLE_DEFICIT", "generation": null, "attempts": null, "seconds": 5.835029114001372}
+{"stage": "fresh_sources", "frozen_head": "27d725ad4f5a0bab5fcb12ff5e4c9af5b9aabeda8e9746f8200a5885693c9028"}
+{"stage": "https", "source": "https://pypi.org/pypi/certifi/json", "status": 200, "bytes": 113109, "split": "fresh"}
+{"stage": "https", "source": "https://pypi.org/pypi/charset-normalizer/json", "status": 200, "bytes": 2235066, "split": "fresh"}
+{"stage": "https", "source": "https://pypi.org/pypi/Pillow/json", "status": 200, "bytes": 3260194, "split": "fresh"}
+{"stage": "https", "source": "https://api.github.com/repos/psf/black", "status": 200, "bytes": 5861, "split": "fresh"}
+{"stage": "https", "source": "https://api.github.com/repos/pydantic/pydantic", "status": 200, "bytes": 6310, "split": "fresh"}
+{"stage": "https", "source": "https://api.github.com/repos/pypa/pip", "status": 200, "bytes": 5720, "split": "fresh"}
+{"stage": "cold_replay", "head": "27d725ad4f5a0bab5fcb12ff5e4c9af5b9aabeda8e9746f8200a5885693c9028"}
+{"stage": "complete", "status": "PARTIAL", "generation": 20, "admissions": 6, "fresh": {"passed": 18, "total": 21}, "regression": {"passed": 114, "total": 114, "skills": 19}, "checks": {"live_https": true, "all_tasks_attempted": true, "frozen_runtime": true, "historical_prefix_preserved": true, "fresh_sources_after_freeze": true, "admitted_fresh_queries": true, "inherited_hash_boundaries": true, "regression": true, "cold_replay": true}}

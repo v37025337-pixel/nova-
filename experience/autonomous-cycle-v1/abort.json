@@ -1,0 +1,16 @@
+{
+  "schema": "nova.autonomy-aborted.v1",
+  "status": "ABORTED",
+  "reason": "REPEATED_INHERITED_SUBEXPRESSION_EVALUATION",
+  "actor": "operator",
+  "completed_generations": 0,
+  "fresh_cases": 0,
+  "candidate_generated": false,
+  "last_recorded_phase": "SEARCH_FROZEN",
+  "head": "44dc7f20e378b29fcd0bdebd2af77f9a9db4ebe5f1cc8f119798b3ea39bce827",
+  "active_generation": 20,
+  "active_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+  "search_elapsed_seconds_before_abort": 400.75,
+  "observed_cost": "One inherited SHA-256 call took approximately 0.024 seconds; search repeatedly recomputed identical operand values across candidates.",
+  "follow_up": "General operand-value reuse with no new operators, candidate changes, task changes or evaluation feedback; a new run and freeze are required."
+}

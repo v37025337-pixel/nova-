@@ -1,0 +1,848 @@
+{
+  "10-trim": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "Alice"
+      },
+      {
+        "ok": true,
+        "output": "Bob"
+      },
+      {
+        "ok": true,
+        "output": "Straße"
+      },
+      {
+        "ok": true,
+        "output": "Carol"
+      },
+      {
+        "ok": true,
+        "output": "dAVID"
+      },
+      {
+        "ok": true,
+        "output": "éva"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "100-deep-normalize": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "\"ASTER\""
+      },
+      {
+        "ok": true,
+        "output": "\"BEGONIA\""
+      },
+      {
+        "ok": true,
+        "output": "\"CROCUS\""
+      },
+      {
+        "ok": true,
+        "output": "\"DÁLIA\""
+      },
+      {
+        "ok": true,
+        "output": "\"ÉDELWEISS\""
+      },
+      {
+        "ok": true,
+        "output": "\"ΙΡΙΔΑ\""
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "110-deep-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "length": 4,
+          "name": "FERN"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 8,
+          "name": "GARDENIA"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 7,
+          "name": "HEATHER"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 6,
+          "name": "JASMIN"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 4,
+          "name": "KÁLA"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "ЛИЛИЯ"
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "120-deep-serialized": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "{\"length\":8,\"name\":\"MAGNOLIA\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":9,\"name\":\"NARCISSUS\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":6,\"name\":\"ORCHID\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":7,\"name\":\"PIVOŇKA\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":6,\"name\":\"QUINCE\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":4,\"name\":\"РОЗА\"}"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "130-hash-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "digest": "2e01e7550633329a8d86a2b5ff92fb8f65f112dc5fa3ce374c95890a13055dd2",
+          "name": "SEQUENCE-INTEGRATION"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "digest": "7db4edd35a99941dde6aba6426b79d4633c0db2d36fe2ef1df448de2512def2a",
+          "name": "BYTE-VECTOR-LEARNING"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "digest": "a50e4ddab1c0e0c75931fbb09318a722382807754b044844e4aaf8c8fc37f6eb",
+          "name": "RECURRENCE-RUNTIME"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "digest": "ded30a255670b4341c247df08d9a8bdc227370e180a0516ae77dc567fc0206fb",
+          "name": "CONSECUTIVE-GENERATION"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "digest": "68e7ece3f27918d1f26a9c127cb13f2dbe6db0684de158da7b96a6346a94882d",
+          "name": "FUTURE-NATIVE-GOAL"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "digest": "e3a0f2981cbdc0b7b3655b4fd0018274b93a33cf35f7a48fad72d4a9a254ea7a",
+          "name": "СЛОЖЕНИЕ-ОПЫТА"
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "20-normalize": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "ALICE"
+      },
+      {
+        "ok": true,
+        "output": "BOB"
+      },
+      {
+        "ok": true,
+        "output": "STRASSE"
+      },
+      {
+        "ok": true,
+        "output": "CAROL"
+      },
+      {
+        "ok": true,
+        "output": "DAVID"
+      },
+      {
+        "ok": true,
+        "output": "ÉVA"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "200-distribution-bytes": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": 443368
+      },
+      {
+        "ok": true,
+        "output": 150484985
+      },
+      {
+        "ok": true,
+        "output": 15921589
+      },
+      {
+        "ok": true,
+        "output": 594689
+      },
+      {
+        "ok": true,
+        "output": 6510463
+      },
+      {
+        "ok": true,
+        "output": 588473
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "210-distribution-summary": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "bytes": 443368,
+          "files": 2,
+          "sizes": [
+            129956,
+            313412
+          ]
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "bytes": 150484985,
+          "files": 32,
+          "sizes": [
+            3825806,
+            3842826,
+            3973525,
+            4010153,
+            4035307,
+            4346031,
+            4361866,
+            4697300,
+            4708817,
+            4712478,
+            4715344,
+            4716039,
+            4723133,
+            4730023,
+            4730028,
+            4730293,
+            4730726,
+            4738357,
+            4746230,
+            4746720,
+            4751900,
+            4758474,
+            4772942,
+            4847362,
+            4862596,
+            4999247,
+            5014082,
+            5287201,
+            5308405,
+            5332388,
+            5353524,
+            5375862
+          ]
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "bytes": 15921589,
+          "files": 32,
+          "sizes": [
+            137658,
+            140344,
+            142415,
+            142543,
+            154003,
+            158561,
+            158763,
+            173252,
+            173973,
+            174019,
+            175577,
+            181669,
+            182063,
+            184227,
+            185826,
+            732872,
+            740646,
+            758828,
+            761089,
+            767081,
+            767463,
+            770293,
+            775116,
+            775556,
+            790181,
+            794986,
+            806638,
+            807870,
+            840793,
+            841159,
+            844011,
+            882114
+          ]
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "bytes": 594689,
+          "files": 2,
+          "sizes": [
+            135717,
+            458972
+          ]
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "bytes": 6510463,
+          "files": 32,
+          "sizes": [
+            174470,
+            174578,
+            179941,
+            183779,
+            183838,
+            184168,
+            184178,
+            184719,
+            184821,
+            185082,
+            185096,
+            204907,
+            205422,
+            205444,
+            205569,
+            208775,
+            210249,
+            211037,
+            211805,
+            213489,
+            214214,
+            214799,
+            217807,
+            218652,
+            218716,
+            218742,
+            219408,
+            220241,
+            221054,
+            221252,
+            221822,
+            222389
+          ]
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "bytes": 588473,
+          "files": 32,
+          "sizes": [
+            11615,
+            11631,
+            11631,
+            12020,
+            12057,
+            12058,
+            13876,
+            13932,
+            14540,
+            14571,
+            14572,
+            15056,
+            15077,
+            15105,
+            20282,
+            20681,
+            20705,
+            20745,
+            21471,
+            21524,
+            21529,
+            21887,
+            21962,
+            22050,
+            22923,
+            22940,
+            22947,
+            23015,
+            23692,
+            23760,
+            24287,
+            24332
+          ]
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "220-distribution-json": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "{\"bytes\":443368,\"files\":2,\"sizes\":[129956,313412]}"
+      },
+      {
+        "ok": true,
+        "output": "{\"bytes\":150484985,\"files\":32,\"sizes\":[3825806,3842826,3973525,4010153,4035307,4346031,4361866,4697300,4708817,4712478,4715344,4716039,4723133,4730023,4730028,4730293,4730726,4738357,4746230,4746720,4751900,4758474,4772942,4847362,4862596,4999247,5014082,5287201,5308405,5332388,5353524,5375862]}"
+      },
+      {
+        "ok": true,
+        "output": "{\"bytes\":15921589,\"files\":32,\"sizes\":[137658,140344,142415,142543,154003,158561,158763,173252,173973,174019,175577,181669,182063,184227,185826,732872,740646,758828,761089,767081,767463,770293,775116,775556,790181,794986,806638,807870,840793,841159,844011,882114]}"
+      },
+      {
+        "ok": true,
+        "output": "{\"bytes\":594689,\"files\":2,\"sizes\":[135717,458972]}"
+      },
+      {
+        "ok": true,
+        "output": "{\"bytes\":6510463,\"files\":32,\"sizes\":[174470,174578,179941,183779,183838,184168,184178,184719,184821,185082,185096,204907,205422,205444,205569,208775,210249,211037,211805,213489,214214,214799,217807,218652,218716,218742,219408,220241,221054,221252,221822,222389]}"
+      },
+      {
+        "ok": true,
+        "output": "{\"bytes\":588473,\"files\":32,\"sizes\":[11615,11631,11631,12020,12057,12058,13876,13932,14540,14571,14572,15056,15077,15105,20282,20681,20705,20745,21471,21524,21529,21887,21962,22050,22923,22940,22947,23015,23692,23760,24287,24332]}"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "230-repository-counts": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": 91747
+      },
+      {
+        "ok": true,
+        "output": 64863
+      },
+      {
+        "ok": true,
+        "output": 17212
+      },
+      {
+        "ok": true,
+        "output": 20156
+      },
+      {
+        "ok": true,
+        "output": 17908
+      },
+      {
+        "ok": true,
+        "output": 113234
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "240-repository-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "combined": 91747,
+          "difference": 57769
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "combined": 64863,
+          "difference": 43797
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "combined": 17212,
+          "difference": 13792
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "combined": 20156,
+          "difference": 15308
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "combined": 17908,
+          "difference": 11128
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "combined": 113234,
+          "difference": 41224
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "250-online-hash-json": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "{\"digest\":\"71669691cb0b0f1bf662939c0db0782fb1a71b103bba2564051bb58bf0e303e6\",\"name\":\"PACKAGING\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"digest\":\"e06554818e902b4ba339f066967c0000da3fcda4fd7eb4ef89c124fa78bda419\",\"name\":\"CRYPTOGRAPHY\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"digest\":\"ad205bd03dcba1f17e6de3d053e5e1b000a78a53935a48f7a2e22c8e335a603c\",\"name\":\"PYYAML\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"digest\":\"4e08df8645a52a3fa9c5d9bea56d95d55b911db35f652cbbe6016517e761acb5\",\"name\":\"URLLIB3\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"digest\":\"eb7a6b8bd65f9f6f4972f0cd6b9f1ac9d5c6c6049f82a2817612e9afdb157308\",\"name\":\"CFFI\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"digest\":\"6d518e7db225a33c2e813c76c2ac32bc6f55f1e38c2ca362009d69b8a887b9de\",\"name\":\"MARKUPSAFE\"}"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "30-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "ALICE"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 3,
+          "name": "BOB"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 7,
+          "name": "STRASSE"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "CAROL"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "DAVID"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 3,
+          "name": "ÉVA"
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "40-json-document": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "name": "ajv",
+          "repository": "ajv-validator/ajv",
+          "version": "8.20.0"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "angular-srcs",
+          "repository": "angular/angular",
+          "version": "22.3.0-next.0"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "axios",
+          "repository": "axios/axios",
+          "version": "1.20.0"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "babel",
+          "repository": "babel/babel",
+          "version": "8.0.6"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "chai",
+          "repository": "chaijs/chai",
+          "version": "0.0.0-development"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "name": "chalk",
+          "repository": "chalk/chalk",
+          "version": "6.0.0"
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "50-package-name": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "chart.js"
+      },
+      {
+        "ok": true,
+        "output": "cheerio"
+      },
+      {
+        "ok": true,
+        "output": "d3"
+      },
+      {
+        "ok": true,
+        "output": "@date-fns/root"
+      },
+      {
+        "ok": true,
+        "output": "eslint"
+      },
+      {
+        "ok": true,
+        "output": "express"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "60-uppercase-name": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "FASTIFY"
+      },
+      {
+        "ok": true,
+        "output": "HONO"
+      },
+      {
+        "ok": true,
+        "output": "DAYJS"
+      },
+      {
+        "ok": true,
+        "output": "IMMER"
+      },
+      {
+        "ok": true,
+        "output": "@JEST/MONOREPO"
+      },
+      {
+        "ok": true,
+        "output": "JQUERY"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "70-package-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": {
+          "length": 3,
+          "name": "KOA"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 6,
+          "name": "LODASH"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 16,
+          "name": "MERMAID-MONOREPO"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 16,
+          "name": "@TYPESCRIPT/REPO"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 5,
+          "name": "MOCHA"
+        }
+      },
+      {
+        "ok": true,
+        "output": {
+          "length": 6,
+          "name": "MOMENT"
+        }
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "80-serialized-record": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "{\"length\":4,\"name\":\"NOCK\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":7,\"name\":\"ZUSTAND\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":8,\"name\":\"PRETTIER\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":5,\"name\":\"RAMDA\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":5,\"name\":\"REDUX\"}"
+      },
+      {
+        "ok": true,
+        "output": "{\"length\":6,\"name\":\"ROLLUP\"}"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  },
+  "90-sha256-deficit-control": {
+    "outcomes": [
+      {
+        "ok": true,
+        "output": "aa47ed8e4cd105b589a59fc0884384fa95b544ef3acc5498f2278300bc1cb696"
+      },
+      {
+        "ok": true,
+        "output": "e2e2e5605677a01350c0b7c18bea792a1f10e87dc5d5a33ed6fd670c537898e3"
+      },
+      {
+        "ok": true,
+        "output": "e1d4ca802d959027d79bc2eef0fbd107c4e121554eced8bd7452f324474d5ce5"
+      },
+      {
+        "ok": true,
+        "output": "0497db517ef058cb6d3672d5ffe8f062fddabc4bf56aa1d254b7f078e9a79e49"
+      },
+      {
+        "ok": true,
+        "output": "ceab5be4dc4226ae870339a44fdd73d0e26050b7d6121837d561db4a693b3acf"
+      },
+      {
+        "ok": true,
+        "output": "0a9d2aed8af6f9201d14f7be3ff8f59f76fa0c6f98d86a2eff8b6bc56936a47b"
+      }
+    ],
+    "passed": 6,
+    "total": 6
+  }
+}

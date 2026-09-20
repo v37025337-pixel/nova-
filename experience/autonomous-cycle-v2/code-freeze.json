@@ -1,0 +1,9 @@
+{
+  "local_commit": "41a80902583b47649b667f5b0c33e940a0a3de19",
+  "github_commit": "624b06a1fdf4180f73d7f43ebf25109ed8b100fb",
+  "tree_sha": "aacf6497555f0f57ddb0c55f9f5a5472bff49c12",
+  "tree_equality_verified": true,
+  "branch": "nova-autonomous-cycle-20260920",
+  "published_before_run": true,
+  "note": "Identical Git trees; connector commit metadata differs. New freeze after a maintainer performance fix; earlier aborted attempt preserved."
+}

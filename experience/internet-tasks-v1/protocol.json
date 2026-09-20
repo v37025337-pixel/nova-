@@ -1,0 +1,57 @@
+{
+  "base_commit": "cc118a64c04fe845c5fea5abedc3c9674a43beac",
+  "claim_boundary": "operator-authored task/oracle; native goal selection and synthesis; bounded HTTPS adapter",
+  "created_at": "2026-09-20T16:28:25.331333+00:00",
+  "max_steps": 9,
+  "packages": {
+    "fresh": [
+      "certifi",
+      "charset-normalizer",
+      "Pillow"
+    ],
+    "holdout": [
+      "urllib3",
+      "cffi",
+      "MarkupSafe"
+    ],
+    "train": [
+      "packaging",
+      "cryptography",
+      "PyYAML"
+    ]
+  },
+  "parent_generation": 14,
+  "parent_head": "d481ce23719102a3b4da0504e9df3169be374033ede703e6aa0281627d563aa4",
+  "parent_journal": "experience/algorithm-cycle-v4/result/journal.json",
+  "projection": "first 32 PyPI urls; at most 32 evenly selected numeric releases; GitHub counts",
+  "repositories": {
+    "fresh": [
+      "pypa/pip",
+      "psf/black",
+      "pydantic/pydantic"
+    ],
+    "holdout": [
+      "pallets/click",
+      "pytest-dev/pytest",
+      "python/cpython"
+    ],
+    "train": [
+      "pallets/flask",
+      "psf/requests",
+      "encode/httpx"
+    ]
+  },
+  "runner_sha256": "4a1676dd397f4420976eb912649048d5b20df43e84432c31f15d68e9a5522730",
+  "runtime_sha256": "b94b7681ac687b75c6319037eb2fad59ac0ed459d6d7332fed32235ffb284401",
+  "schema": "nova.internet-tasks.v1",
+  "source_byte_limit": 8000000,
+  "tasks": {
+    "200-distribution-bytes": "Sum byte sizes of up to 32 current distribution files",
+    "210-distribution-summary": "Count, sum and numerically sort the same byte sizes",
+    "220-distribution-json": "Serialize that summary into canonical JSON",
+    "230-repository-counts": "Add GitHub star and fork counts",
+    "240-repository-record": "Return their sum and their difference",
+    "250-online-hash-json": "Serialize the inherited name/SHA-256 record",
+    "290-numeric-version-order": "Sort dotted numeric releases by integer components"
+  }
+}

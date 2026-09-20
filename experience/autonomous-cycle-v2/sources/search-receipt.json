@@ -1,0 +1,9 @@
+{
+  "query": "version numeric ordering specification",
+  "provider": "recorded Exa search response for identical native query",
+  "cache_hit": true,
+  "original_receipt": "experience/autonomous-cycle-v1/sources/search-receipt.json",
+  "original_response_sha256": "dba5920fcb4de17c553a4a385ec30a28c2738ce9b54a379b7bbcce3b07cddace",
+  "eligible_results": 2,
+  "transformation": "request ID replaced for new native request; URLs, titles and literal excerpts unchanged"
+}

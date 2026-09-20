@@ -1,0 +1,23 @@
+{
+  "extraction": "literal HTML text blocks ranked by native query terms; at most 8000 characters",
+  "final_url": "https://packaging.python.org/en/latest/specifications/version-specifiers/?highlight=version",
+  "http_status": 200,
+  "raw_bytes": 116603,
+  "raw_file": "document-02.html.gz",
+  "request": {
+    "goal": "auto-1ef898c68c81a59b6ec5d05f",
+    "id": "86d1f4a9bf2975c232f752b5271d8f043a653df39cc501405167d78c29e15cc9",
+    "kind": "READ",
+    "terms": [
+      "version",
+      "numeric",
+      "ordering",
+      "specification"
+    ],
+    "title": "Version specifiers - Python Packaging User Guide",
+    "url": "https://packaging.python.org/en/latest/specifications/version-specifiers/?highlight=version"
+  },
+  "response_sha256": "67f9ab918fa42588b670aeca1a1c3157f76e50d212cc4453d6ae99adba10f5c7",
+  "source_sha256": "875b39f969dcac835b81a8c51f38018ab6445bae7c9061853ec45efb5f42ed55",
+  "text_sha256": "bf3ac4de833608c5ac0a3420fe6cd047bec0d15f88f8da61d4a8b95551298451"
+}

@@ -1,0 +1,281 @@
+{
+  "active_generation": 20,
+  "active_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+  "backup": "/workspace/scratch/fe9d73306cdf/nova-autonomy/state/autonomous-cycle-v2-backup.sqlite",
+  "cold_replay": {
+    "head": "73097410c4d687df5682c720795189ee3a1b092a434dab31c1c04f0e260568f6",
+    "status": "PASS"
+  },
+  "completed": [
+    {
+      "goal": {
+        "best_inherited_train": 0,
+        "cause_event": 42,
+        "claim_boundary": "endogenous subgoal of an operator-originated failure; bounded property ontology",
+        "contract": {
+          "ablation_required": true,
+          "fresh_min": 16,
+          "input_fields": [
+            "left",
+            "right"
+          ],
+          "law": "lexicographic_integer_components",
+          "output": "boolean",
+          "properties": [
+            "irreflexive",
+            "asymmetric",
+            "transitive",
+            "declared_order_law"
+          ],
+          "regression_threshold": 1,
+          "success_threshold": 1
+        },
+        "deficit_id": "cfd70f94cccf01d8d9ce17b8569faff60f556f31de433f969d8f1aaba798279d",
+        "evidence_sources": [
+          "live-https:internet-tasks-v1:290-numeric-version-order; raw response hashes in sources.json"
+        ],
+        "id": "auto-79de4103fcc2a60b3e2bbe9b",
+        "observed_failure": "HOLDOUT_FAILED",
+        "observed_pair_count": 2968,
+        "origin": "native_analysis_of_failed_permutations",
+        "original_holdout": [
+          {
+            "input": {
+              "left": "1.26.8",
+              "right": "1.4"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "0.8.6",
+              "right": "1.5.1"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "1.26.14",
+              "right": "2.8.0"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "1.10.1",
+              "right": "2.2.1"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "2.1.1",
+              "right": "2.1.5"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "0.17",
+              "right": "0.9"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "1.13.0",
+              "right": "1.17.1"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "1.4.2",
+              "right": "1.14.6"
+            },
+            "output": true
+          }
+        ],
+        "parent_generation": 20,
+        "parent_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+        "root_dataset": "2247d273a2622c9011d65dd536e2b9de31e6eb4ce85bf3f2e38d6c10693f26b1",
+        "root_task": "290-numeric-version-order",
+        "root_task_origin": "operator",
+        "runtime_digest": "de46433fa333d0d03a819e5beba22ef99a916873f0b62f05677b16c6fb0cca47",
+        "search_terms": [
+          "version",
+          "numeric",
+          "ordering",
+          "specification"
+        ],
+        "training": [
+          {
+            "input": {
+              "left": "1.0.3",
+              "right": "1.14.6"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "1.25.2",
+              "right": "2.4.0"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "1.11.0",
+              "right": "1.9.1"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "1.26.8",
+              "right": "1.13"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "0.22",
+              "right": "0.19"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "1.0",
+              "right": "0.13"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "2.1.1",
+              "right": "2.1.2"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "1.18",
+              "right": "1.25.1"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "1.19.1",
+              "right": "1.25.2"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "1.12.1",
+              "right": "0.8.6"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "1.15.1",
+              "right": "1.26.10"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "2.6.1",
+              "right": "1.25.9"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "3.0.2",
+              "right": "2.1.1"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "1.26.2",
+              "right": "2.0.7"
+            },
+            "output": true
+          },
+          {
+            "input": {
+              "left": "1.10.1",
+              "right": "0.2"
+            },
+            "output": false
+          },
+          {
+            "input": {
+              "left": "2.1.0",
+              "right": "2.1.2"
+            },
+            "output": true
+          }
+        ],
+        "utility": "supply a reusable ordering relation missing from the failed permutation skill"
+      },
+      "outcome": {
+        "event": 54,
+        "goal": "auto-79de4103fcc2a60b3e2bbe9b",
+        "kind": "autonomy_step",
+        "phase": "WITHHOLD",
+        "reason": "KNOWLEDGE_NOT_EXECUTABLE_IN_CURRENT_GRAMMAR",
+        "report": {
+          "document_compilation": [
+            {
+              "document": "eccd193d829aecdfeb53db14804d7ab47559ecd65abff78e088a427edc62ea02",
+              "generated_genes": 0,
+              "unsupported": [
+                "byte_encoding_padding_and_blocks"
+              ]
+            },
+            {
+              "document": "1f84d994de626faec44cd20296f264b72cba74e2b92a81f78b478ee0da0ac806",
+              "generated_genes": 0,
+              "unsupported": [
+                "byte_encoding_padding_and_blocks"
+              ]
+            }
+          ],
+          "fresh_cases_seen": 0,
+          "native_search_attempts": 9539,
+          "next_requirement": "general string/sequence relation compiler; no ready library substitution"
+        },
+        "status": "WITHHOLD"
+      }
+    }
+  ],
+  "events": 54,
+  "fresh_cases": 0,
+  "head": "73097410c4d687df5682c720795189ee3a1b092a434dab31c1c04f0e260568f6",
+  "historical_prefix_preserved": true,
+  "new_admissions": 0,
+  "new_candidates": 0,
+  "parent_generation": 20,
+  "parent_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+  "protocol_commit": "41a80902583b47649b667f5b0c33e940a0a3de19",
+  "protocol_sha256": "9c1b811c7b9bdddccf91332f4ffc97dd1222e6222b5f1568c96c6689f1764687",
+  "regression": {
+    "passed": 114,
+    "skills": 19,
+    "total": 114
+  },
+  "runtime_unchanged_after_freeze": true,
+  "schema": "nova.autonomy-attempt.v1",
+  "seconds": 228.018297790004,
+  "source_hashes_verified": true,
+  "source_requests": 2,
+  "status": "WITHHOLD",
+  "strict_autonomy_proven": false,
+  "strict_gate_review": "gate-review.json"
+}

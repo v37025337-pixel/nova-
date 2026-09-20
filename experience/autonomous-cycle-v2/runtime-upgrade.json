@@ -1,0 +1,1013 @@
+{
+  "state": {
+    "active_generation": 20,
+    "active_runtime_digest": "de46433fa333d0d03a819e5beba22ef99a916873f0b62f05677b16c6fb0cca47",
+    "active_tasks": {
+      "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+      "100-deep-normalize": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+      "110-deep-record": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+      "120-deep-serialized": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+      "130-hash-record": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+      "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+      "200-distribution-bytes": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+      "210-distribution-summary": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+      "220-distribution-json": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+      "230-repository-counts": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+      "240-repository-record": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+      "250-online-hash-json": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+      "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+      "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+      "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+      "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+      "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+      "90-sha256-deficit-control": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f"
+    },
+    "admissions_total": 20,
+    "attempts_total": 24,
+    "autonomy": {
+      "admissions": 0,
+      "autonomous_capability_evolution_proven": false,
+      "claim": "bounded_endogenous_relational_subgoal_loop",
+      "completed": 0,
+      "current_goal": null,
+      "enabled": false,
+      "phase": "OFF",
+      "request": null,
+      "required_generations": 3
+    },
+    "capabilities_active": [
+      "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e"
+    ],
+    "claim": "bounded_program_policy_and_specification_conditioned_grammar_learning",
+    "engine_policy": {
+      "attempts": 12000,
+      "binary": [
+        "get",
+        "add",
+        "sub",
+        "mul",
+        "equal",
+        "less"
+      ],
+      "depth": 4,
+      "early_stop": true,
+      "id": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+      "parent": null,
+      "queue": "deficit_then_previous_cost",
+      "schema": "nova.engine-policy.v1",
+      "typed": true,
+      "unary": [
+        "upper",
+        "length",
+        "strip",
+        "parse_json",
+        "json",
+        "lower",
+        "sum",
+        "sort",
+        "keys"
+      ],
+      "unary_first": true
+    },
+    "events": 43,
+    "genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+    "head": "eace7d5021b8d2212c6934715f072bba99df3c5e5b12a561ea6ab44b08558443",
+    "next_task": null,
+    "programs_active": 20,
+    "queue": {
+      "10-trim": "ADMITTED",
+      "100-deep-normalize": "ADMITTED",
+      "110-deep-record": "ADMITTED",
+      "120-deep-serialized": "ADMITTED",
+      "130-hash-record": "ADMITTED",
+      "20-normalize": "ADMITTED",
+      "200-distribution-bytes": "ADMITTED",
+      "210-distribution-summary": "ADMITTED",
+      "220-distribution-json": "ADMITTED",
+      "230-repository-counts": "ADMITTED",
+      "240-repository-record": "ADMITTED",
+      "250-online-hash-json": "ADMITTED",
+      "290-numeric-version-order": "EVALUATION_CONSUMED",
+      "30-record": "ADMITTED",
+      "40-json-document": "ADMITTED",
+      "50-package-name": "ADMITTED",
+      "60-uppercase-name": "ADMITTED",
+      "70-package-record": "ADMITTED",
+      "80-serialized-record": "ADMITTED",
+      "90-sha256-deficit-control": "ADMITTED",
+      "@engine:experience-ranked-search-v2": "ADMITTED"
+    },
+    "runtime_digest": "de46433fa333d0d03a819e5beba22ef99a916873f0b62f05677b16c6fb0cca47",
+    "schema": "nova.kernel.v5",
+    "self_model": {
+      "search_attempts_total": 27785,
+      "successful_admissions": 20,
+      "withheld_attempts": 4
+    },
+    "tasks_total": 20,
+    "upgrade_required": false
+  },
+  "status": "UPGRADED",
+  "transition": {
+    "author": "maintainer",
+    "from": "b94b7681ac687b75c6319037eb2fad59ac0ed459d6d7332fed32235ffb284401",
+    "generation": 20,
+    "genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+    "kind": "runtime_upgrade",
+    "previous_head": "27d725ad4f5a0bab5fcb12ff5e4c9af5b9aabeda8e9746f8200a5885693c9028",
+    "regression": {
+      "10-trim": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "Alice"
+          },
+          {
+            "ok": true,
+            "output": "Bob"
+          },
+          {
+            "ok": true,
+            "output": "Straße"
+          },
+          {
+            "ok": true,
+            "output": "Carol"
+          },
+          {
+            "ok": true,
+            "output": "dAVID"
+          },
+          {
+            "ok": true,
+            "output": "éva"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "100-deep-normalize": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "\"ASTER\""
+          },
+          {
+            "ok": true,
+            "output": "\"BEGONIA\""
+          },
+          {
+            "ok": true,
+            "output": "\"CROCUS\""
+          },
+          {
+            "ok": true,
+            "output": "\"DÁLIA\""
+          },
+          {
+            "ok": true,
+            "output": "\"ÉDELWEISS\""
+          },
+          {
+            "ok": true,
+            "output": "\"ΙΡΙΔΑ\""
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "110-deep-record": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "length": 4,
+              "name": "FERN"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 8,
+              "name": "GARDENIA"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 7,
+              "name": "HEATHER"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 6,
+              "name": "JASMIN"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 4,
+              "name": "KÁLA"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 5,
+              "name": "ЛИЛИЯ"
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "120-deep-serialized": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "{\"length\":8,\"name\":\"MAGNOLIA\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":9,\"name\":\"NARCISSUS\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":6,\"name\":\"ORCHID\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":7,\"name\":\"PIVOŇKA\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":6,\"name\":\"QUINCE\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":4,\"name\":\"РОЗА\"}"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "130-hash-record": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "digest": "2e01e7550633329a8d86a2b5ff92fb8f65f112dc5fa3ce374c95890a13055dd2",
+              "name": "SEQUENCE-INTEGRATION"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "digest": "7db4edd35a99941dde6aba6426b79d4633c0db2d36fe2ef1df448de2512def2a",
+              "name": "BYTE-VECTOR-LEARNING"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "digest": "a50e4ddab1c0e0c75931fbb09318a722382807754b044844e4aaf8c8fc37f6eb",
+              "name": "RECURRENCE-RUNTIME"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "digest": "ded30a255670b4341c247df08d9a8bdc227370e180a0516ae77dc567fc0206fb",
+              "name": "CONSECUTIVE-GENERATION"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "digest": "68e7ece3f27918d1f26a9c127cb13f2dbe6db0684de158da7b96a6346a94882d",
+              "name": "FUTURE-NATIVE-GOAL"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "digest": "e3a0f2981cbdc0b7b3655b4fd0018274b93a33cf35f7a48fad72d4a9a254ea7a",
+              "name": "СЛОЖЕНИЕ-ОПЫТА"
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "20-normalize": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "ALICE"
+          },
+          {
+            "ok": true,
+            "output": "BOB"
+          },
+          {
+            "ok": true,
+            "output": "STRASSE"
+          },
+          {
+            "ok": true,
+            "output": "CAROL"
+          },
+          {
+            "ok": true,
+            "output": "DAVID"
+          },
+          {
+            "ok": true,
+            "output": "ÉVA"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "200-distribution-bytes": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": 443368
+          },
+          {
+            "ok": true,
+            "output": 150484985
+          },
+          {
+            "ok": true,
+            "output": 15921589
+          },
+          {
+            "ok": true,
+            "output": 594689
+          },
+          {
+            "ok": true,
+            "output": 6510463
+          },
+          {
+            "ok": true,
+            "output": 588473
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "210-distribution-summary": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "bytes": 443368,
+              "files": 2,
+              "sizes": [
+                129956,
+                313412
+              ]
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "bytes": 150484985,
+              "files": 32,
+              "sizes": [
+                3825806,
+                3842826,
+                3973525,
+                4010153,
+                4035307,
+                4346031,
+                4361866,
+                4697300,
+                4708817,
+                4712478,
+                4715344,
+                4716039,
+                4723133,
+                4730023,
+                4730028,
+                4730293,
+                4730726,
+                4738357,
+                4746230,
+                4746720,
+                4751900,
+                4758474,
+                4772942,
+                4847362,
+                4862596,
+                4999247,
+                5014082,
+                5287201,
+                5308405,
+                5332388,
+                5353524,
+                5375862
+              ]
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "bytes": 15921589,
+              "files": 32,
+              "sizes": [
+                137658,
+                140344,
+                142415,
+                142543,
+                154003,
+                158561,
+                158763,
+                173252,
+                173973,
+                174019,
+                175577,
+                181669,
+                182063,
+                184227,
+                185826,
+                732872,
+                740646,
+                758828,
+                761089,
+                767081,
+                767463,
+                770293,
+                775116,
+                775556,
+                790181,
+                794986,
+                806638,
+                807870,
+                840793,
+                841159,
+                844011,
+                882114
+              ]
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "bytes": 594689,
+              "files": 2,
+              "sizes": [
+                135717,
+                458972
+              ]
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "bytes": 6510463,
+              "files": 32,
+              "sizes": [
+                174470,
+                174578,
+                179941,
+                183779,
+                183838,
+                184168,
+                184178,
+                184719,
+                184821,
+                185082,
+                185096,
+                204907,
+                205422,
+                205444,
+                205569,
+                208775,
+                210249,
+                211037,
+                211805,
+                213489,
+                214214,
+                214799,
+                217807,
+                218652,
+                218716,
+                218742,
+                219408,
+                220241,
+                221054,
+                221252,
+                221822,
+                222389
+              ]
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "bytes": 588473,
+              "files": 32,
+              "sizes": [
+                11615,
+                11631,
+                11631,
+                12020,
+                12057,
+                12058,
+                13876,
+                13932,
+                14540,
+                14571,
+                14572,
+                15056,
+                15077,
+                15105,
+                20282,
+                20681,
+                20705,
+                20745,
+                21471,
+                21524,
+                21529,
+                21887,
+                21962,
+                22050,
+                22923,
+                22940,
+                22947,
+                23015,
+                23692,
+                23760,
+                24287,
+                24332
+              ]
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "220-distribution-json": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "{\"bytes\":443368,\"files\":2,\"sizes\":[129956,313412]}"
+          },
+          {
+            "ok": true,
+            "output": "{\"bytes\":150484985,\"files\":32,\"sizes\":[3825806,3842826,3973525,4010153,4035307,4346031,4361866,4697300,4708817,4712478,4715344,4716039,4723133,4730023,4730028,4730293,4730726,4738357,4746230,4746720,4751900,4758474,4772942,4847362,4862596,4999247,5014082,5287201,5308405,5332388,5353524,5375862]}"
+          },
+          {
+            "ok": true,
+            "output": "{\"bytes\":15921589,\"files\":32,\"sizes\":[137658,140344,142415,142543,154003,158561,158763,173252,173973,174019,175577,181669,182063,184227,185826,732872,740646,758828,761089,767081,767463,770293,775116,775556,790181,794986,806638,807870,840793,841159,844011,882114]}"
+          },
+          {
+            "ok": true,
+            "output": "{\"bytes\":594689,\"files\":2,\"sizes\":[135717,458972]}"
+          },
+          {
+            "ok": true,
+            "output": "{\"bytes\":6510463,\"files\":32,\"sizes\":[174470,174578,179941,183779,183838,184168,184178,184719,184821,185082,185096,204907,205422,205444,205569,208775,210249,211037,211805,213489,214214,214799,217807,218652,218716,218742,219408,220241,221054,221252,221822,222389]}"
+          },
+          {
+            "ok": true,
+            "output": "{\"bytes\":588473,\"files\":32,\"sizes\":[11615,11631,11631,12020,12057,12058,13876,13932,14540,14571,14572,15056,15077,15105,20282,20681,20705,20745,21471,21524,21529,21887,21962,22050,22923,22940,22947,23015,23692,23760,24287,24332]}"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "230-repository-counts": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": 91747
+          },
+          {
+            "ok": true,
+            "output": 64863
+          },
+          {
+            "ok": true,
+            "output": 17212
+          },
+          {
+            "ok": true,
+            "output": 20156
+          },
+          {
+            "ok": true,
+            "output": 17908
+          },
+          {
+            "ok": true,
+            "output": 113234
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "240-repository-record": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "combined": 91747,
+              "difference": 57769
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "combined": 64863,
+              "difference": 43797
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "combined": 17212,
+              "difference": 13792
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "combined": 20156,
+              "difference": 15308
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "combined": 17908,
+              "difference": 11128
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "combined": 113234,
+              "difference": 41224
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "250-online-hash-json": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "{\"digest\":\"71669691cb0b0f1bf662939c0db0782fb1a71b103bba2564051bb58bf0e303e6\",\"name\":\"PACKAGING\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"digest\":\"e06554818e902b4ba339f066967c0000da3fcda4fd7eb4ef89c124fa78bda419\",\"name\":\"CRYPTOGRAPHY\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"digest\":\"ad205bd03dcba1f17e6de3d053e5e1b000a78a53935a48f7a2e22c8e335a603c\",\"name\":\"PYYAML\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"digest\":\"4e08df8645a52a3fa9c5d9bea56d95d55b911db35f652cbbe6016517e761acb5\",\"name\":\"URLLIB3\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"digest\":\"eb7a6b8bd65f9f6f4972f0cd6b9f1ac9d5c6c6049f82a2817612e9afdb157308\",\"name\":\"CFFI\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"digest\":\"6d518e7db225a33c2e813c76c2ac32bc6f55f1e38c2ca362009d69b8a887b9de\",\"name\":\"MARKUPSAFE\"}"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "30-record": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "length": 5,
+              "name": "ALICE"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 3,
+              "name": "BOB"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 7,
+              "name": "STRASSE"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 5,
+              "name": "CAROL"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 5,
+              "name": "DAVID"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 3,
+              "name": "ÉVA"
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "40-json-document": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "name": "ajv",
+              "repository": "ajv-validator/ajv",
+              "version": "8.20.0"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "angular-srcs",
+              "repository": "angular/angular",
+              "version": "22.3.0-next.0"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "axios",
+              "repository": "axios/axios",
+              "version": "1.20.0"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "babel",
+              "repository": "babel/babel",
+              "version": "8.0.6"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "chai",
+              "repository": "chaijs/chai",
+              "version": "0.0.0-development"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "name": "chalk",
+              "repository": "chalk/chalk",
+              "version": "6.0.0"
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "50-package-name": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "chart.js"
+          },
+          {
+            "ok": true,
+            "output": "cheerio"
+          },
+          {
+            "ok": true,
+            "output": "d3"
+          },
+          {
+            "ok": true,
+            "output": "@date-fns/root"
+          },
+          {
+            "ok": true,
+            "output": "eslint"
+          },
+          {
+            "ok": true,
+            "output": "express"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "60-uppercase-name": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "FASTIFY"
+          },
+          {
+            "ok": true,
+            "output": "HONO"
+          },
+          {
+            "ok": true,
+            "output": "DAYJS"
+          },
+          {
+            "ok": true,
+            "output": "IMMER"
+          },
+          {
+            "ok": true,
+            "output": "@JEST/MONOREPO"
+          },
+          {
+            "ok": true,
+            "output": "JQUERY"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "70-package-record": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": {
+              "length": 3,
+              "name": "KOA"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 6,
+              "name": "LODASH"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 16,
+              "name": "MERMAID-MONOREPO"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 16,
+              "name": "@TYPESCRIPT/REPO"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 5,
+              "name": "MOCHA"
+            }
+          },
+          {
+            "ok": true,
+            "output": {
+              "length": 6,
+              "name": "MOMENT"
+            }
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "80-serialized-record": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "{\"length\":4,\"name\":\"NOCK\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":7,\"name\":\"ZUSTAND\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":8,\"name\":\"PRETTIER\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":5,\"name\":\"RAMDA\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":5,\"name\":\"REDUX\"}"
+          },
+          {
+            "ok": true,
+            "output": "{\"length\":6,\"name\":\"ROLLUP\"}"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      },
+      "90-sha256-deficit-control": {
+        "outcomes": [
+          {
+            "ok": true,
+            "output": "aa47ed8e4cd105b589a59fc0884384fa95b544ef3acc5498f2278300bc1cb696"
+          },
+          {
+            "ok": true,
+            "output": "e2e2e5605677a01350c0b7c18bea792a1f10e87dc5d5a33ed6fd670c537898e3"
+          },
+          {
+            "ok": true,
+            "output": "e1d4ca802d959027d79bc2eef0fbd107c4e121554eced8bd7452f324474d5ce5"
+          },
+          {
+            "ok": true,
+            "output": "0497db517ef058cb6d3672d5ffe8f062fddabc4bf56aa1d254b7f078e9a79e49"
+          },
+          {
+            "ok": true,
+            "output": "ceab5be4dc4226ae870339a44fdd73d0e26050b7d6121837d561db4a693b3acf"
+          },
+          {
+            "ok": true,
+            "output": "0a9d2aed8af6f9201d14f7be3ff8f59f76fa0c6f98d86a2eff8b6bc56936a47b"
+          }
+        ],
+        "passed": 6,
+        "total": 6
+      }
+    },
+    "to": {
+      "autonomy": "bounded_failure_conditioned_relational_subgoals_with_external_io",
+      "capability_author": "kernel_specification_conditioned_document_compiler",
+      "capability_dialect": "bounded_word_equations_and_typeset_block_recurrences",
+      "engine_author": "maintainer",
+      "engine_policy_author": "kernel_bounded_experience_conditioned_mutation",
+      "faculties": {
+        "CODE": "native_expression_synthesis_and_ast_execution",
+        "INTELLIGENCE": "experience_conditioned_verified_gene_selection",
+        "LOGIC": "contracts_deficits_and_admission_evidence",
+        "THINKING": "causal_goal_selection_and_continuation"
+      },
+      "program_author": "kernel_training_only",
+      "python": [
+        3,
+        12
+      ],
+      "runtime": "single_state_single_queue_single_journal",
+      "schema": "nova.kernel.v5",
+      "search": {
+        "attempts": 12000,
+        "depth": 3
+      },
+      "sources": {
+        "__init__.py": "51e9c1497229a4ddb22578321681397bf4940044ec7f1febc80fd06290218572",
+        "__main__.py": "552e86184da846843b150a3d48628cd1026ea9990c863111dd6570d8560c86cb",
+        "adaptation.py": "8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796",
+        "autonomy.py": "55031be1f2f5f87920f19635c39e6aa1e2af8087b6bff5f3d41e7976d7db4c54",
+        "capability.py": "462414002f61dea8eb38a48029fae283f023bc4a0f92fad76c07ca5467304d21",
+        "compatibility.py": "fd3affe8f7207abebafa7a35c9bbc8df7b51eef1cba6df0984595ec9f42cc1b7",
+        "contracts.py": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe",
+        "evaluation.py": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2",
+        "extensions.py": "181a8cdc13dce717d25cc345c92036a9a8fe14b9a436dfed954e79435f8d574b",
+        "genetics.py": "e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0",
+        "isolation.py": "c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3",
+        "kernel.py": "9df0546b3901ff515de95be8cf5ff4b16866837daeb91847dfb7e988a73e3da4",
+        "language.py": "3b955d15dde177d50644593eaf2365f8a15e4b09c43bc44c0790d4025b33c781",
+        "memory.py": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777",
+        "sandbox_worker.py": "11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96",
+        "sequence.py": "cd1ac5a145caeb9a4fa9c181aeb3bbbd021e4a59b37bbee5d2440b27081f06d2",
+        "specifications.py": "3c34a078b8500dc1f9a13ea140c85fe9df7d4294986470989aafe128841b45c3",
+        "synthesis.py": "7e61fe88d70eaf5485a82be3b98aba1e00dd2384847d635b80b04f8dbe014e19"
+      }
+    },
+    "verification": "full_legacy_replay_and_inherited_program_regression"
+  }
+}

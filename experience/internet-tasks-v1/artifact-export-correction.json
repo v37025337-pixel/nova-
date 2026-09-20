@@ -1,0 +1,53 @@
+{
+  "reason": "generation-only filename collided between an admitted program and a later rejected candidate",
+  "old_file_equal_rejected_candidate": true,
+  "old_file_equal_admitted_program": false,
+  "correction": "export exact sources from the unchanged step records using task/status-specific filenames",
+  "core_runtime_changed": false,
+  "candidate_selection_changed": false,
+  "journal_changed": false,
+  "files": [
+    {
+      "path": "generated-g15-200-distribution-bytes-ADMITTED.py",
+      "sha256": "6e192456dd7b8b74ab3f41531697c90c3f493daffd7b7f766bff8a886de21bb3",
+      "program": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+      "status": "ADMITTED"
+    },
+    {
+      "path": "generated-g16-210-distribution-summary-ADMITTED.py",
+      "sha256": "58d783db3a1e28f46754dc0abf3d7002776c8c06ab1dda9a8463e6ee8ee51688",
+      "program": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+      "status": "ADMITTED"
+    },
+    {
+      "path": "generated-g17-220-distribution-json-ADMITTED.py",
+      "sha256": "305eb2b2966d5d7ff146b55c5d6e8335626ecbabe0cd125b809d2f2fa1972a7b",
+      "program": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+      "status": "ADMITTED"
+    },
+    {
+      "path": "generated-g18-230-repository-counts-ADMITTED.py",
+      "sha256": "372d6f7768fbc084c6fc2238baf7d2193c0bb8eeb1c3363a2e86f396f1f25fbd",
+      "program": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+      "status": "ADMITTED"
+    },
+    {
+      "path": "generated-g19-240-repository-record-ADMITTED.py",
+      "sha256": "5a687681ceb11590ae8b07836c623e7f1687c7f08868739835ad16d14c623f6a",
+      "program": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+      "status": "ADMITTED"
+    },
+    {
+      "path": "generated-g20-250-online-hash-json-ADMITTED.py",
+      "sha256": "6ed2c3497d5b4ee9ecd82825c596044a4f791961f87016709ef94de922b26fbf",
+      "program": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+      "status": "ADMITTED"
+    },
+    {
+      "path": "generated-g20-290-numeric-version-order-WITHHOLD.py",
+      "sha256": "3dd29f9e08d25ecae075d57da9615da7c442b928d2360f49f5c92251a43e5d06",
+      "program": "a685289ee3da4a048eda64a8974f4018e87bb55a911499b36c551ee9948b2d9d",
+      "status": "WITHHOLD"
+    }
+  ]
+}

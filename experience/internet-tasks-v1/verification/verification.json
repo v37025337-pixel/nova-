@@ -1,0 +1,12 @@
+{
+  "raw_source_checksums": 18,
+  "raw_source_bytes": 12394674,
+  "frozen_training_source_digest": true,
+  "frozen_corpus_digest": true,
+  "runtime_unit_tests": 70,
+  "initial_combined_suite": 73,
+  "final_adapter_tests": 4,
+  "process_exit_code": 0,
+  "live_run_commit": "cc118a64",
+  "note": "After execution only evidence-export filenames were corrected; the measured kernel, candidates and data were not changed."
+}

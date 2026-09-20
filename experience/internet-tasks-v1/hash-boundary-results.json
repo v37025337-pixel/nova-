@@ -1,0 +1,222 @@
+[
+  {
+    "input": {
+      "document": "{\"name\": \"3\"}",
+      "field": "name"
+    },
+    "observed": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+    "output": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"d3e4f59ae91899d3b\"}",
+      "field": "name"
+    },
+    "observed": "ccaad4c286899d414f6673194b5541f5b873f8d19fe00ee2a432b7a58ba68c1f",
+    "output": "ccaad4c286899d414f6673194b5541f5b873f8d19fe00ee2a432b7a58ba68c1f",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"2250f243a7b7d2b33fd681795f91ac5\"}",
+      "field": "name"
+    },
+    "observed": "ffa67d35a5cf701028325af6358b53e3c048a0603eed3db3cc6efb05ca8675e0",
+    "output": "ffa67d35a5cf701028325af6358b53e3c048a0603eed3db3cc6efb05ca8675e0",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"3861d99d446618d16457804be39e02d9434bd43f044a56db4c26150\"}",
+      "field": "name"
+    },
+    "observed": "62c0800558494999e885ed383a88fe64a38a08548baea1295789188cef57a488",
+    "output": "62c0800558494999e885ed383a88fe64a38a08548baea1295789188cef57a488",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"ecc12cf4b2df0b3653f75d12d544273417ee2770cde578e432ee074f\"}",
+      "field": "name"
+    },
+    "observed": "3193427ca214ec83266a447c16ed29aec51ebd17872bd203149a9bd5a35d038f",
+    "output": "3193427ca214ec83266a447c16ed29aec51ebd17872bd203149a9bd5a35d038f",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"855556e566da6596542c929afc78be3660ee80ae268d96a3225e018a0\"}",
+      "field": "name"
+    },
+    "observed": "3c74fb66fafa8694159ddff691d9fa14c1106fb1f14ac0161ef988b6ba00104e",
+    "output": "3c74fb66fafa8694159ddff691d9fa14c1106fb1f14ac0161ef988b6ba00104e",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"33b6bb343792110a2ed4992cb0da26f4d6fc8257d779150664f0c7599542f58\"}",
+      "field": "name"
+    },
+    "observed": "c8548331e53ec4592741cd5361e17a2657a11a2bccc6c732d2759ee235a5ea2c",
+    "output": "c8548331e53ec4592741cd5361e17a2657a11a2bccc6c732d2759ee235a5ea2c",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"40f1fe83c6e579c4f50afcfd5c018243d8753a555d6ffc34749ce8588c3b1b68\"}",
+      "field": "name"
+    },
+    "observed": "43619af320ab3c88628f6d645dfc4e6875faa183f58e3818f4ef631703033582",
+    "output": "43619af320ab3c88628f6d645dfc4e6875faa183f58e3818f4ef631703033582",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"4868f4f8fb38d84d52a4a400db9b7fbf232737a0f7e8eadeca2adfc75549b8955\"}",
+      "field": "name"
+    },
+    "observed": "6eb33bfefcc7200eca167fd13f45ef0b69ab1fff3a1d7b565b1cee0a15b299a4",
+    "output": "6eb33bfefcc7200eca167fd13f45ef0b69ab1fff3a1d7b565b1cee0a15b299a4",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"ee09346248c15f8e6b42f377bc38d2f299a2fec9e5e2efdd7e7db445092659d9b0941b4db4e4e45080a7855785f99c6bb331c9bab090c753fede0de\"}",
+      "field": "name"
+    },
+    "observed": "dc272f17c142808c257a16be224b6ba4d064451c9fc0f4de4445c0bc3956a722",
+    "output": "dc272f17c142808c257a16be224b6ba4d064451c9fc0f4de4445c0bc3956a722",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"d072c19b515152ec65c9bf5c826d30210942f351ef665cfded4f2aa2eb1134ab678711e961f751cd899a86a112d74e22320ad9828b850b77b9105f92\"}",
+      "field": "name"
+    },
+    "observed": "a3be159191ec04defa83dc1e8025967d56b0d31b58ba85b4ca14ec4b741c6ddc",
+    "output": "a3be159191ec04defa83dc1e8025967d56b0d31b58ba85b4ca14ec4b741c6ddc",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"69efd1bbe0f9b54cf1f8822241f4df7c206a57c20cd53a9a1341d9e3c57824943c453b2645cb150dff3fbc55acff78ee32417567102e52e8f2a92d54aaea9a1\"}",
+      "field": "name"
+    },
+    "observed": "170773cb46c6d40f50f59d79967dc807175ed74ed0cf894e71e8dcc1f6e352ab",
+    "output": "170773cb46c6d40f50f59d79967dc807175ed74ed0cf894e71e8dcc1f6e352ab",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"ef7597759624f3a3052d8b610a4b2d6fa02c440adfcd131ed63b094577666e02a4f679dc98bafbb32555c92893a783eeb7a72b45805ba15006048b4644d16d63\"}",
+      "field": "name"
+    },
+    "observed": "0dec5e55aa3576799288dcbc45eff8617060e408b92aedffec9072bb8ca09795",
+    "output": "0dec5e55aa3576799288dcbc45eff8617060e408b92aedffec9072bb8ca09795",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"eeafcdf329e80c9c0424bcc6df78b81d51306b4bd68253a5d18d5cfba8e0f68795179f60f65ed07d8b0532f38b4ce0837511d1a58d74268801ecad2872ece4481d54753974302c5350d145d570c0709132671a10845d265b032c7899db1a997144aadba864c5fa40a3af7fb220c58bf904fd6ef9982d8226940510a709e0ba0\"}",
+      "field": "name"
+    },
+    "observed": "15852cb43e85ff7a9e9e715f03f0c8837377733e6432204936c230902d9a4048",
+    "output": "15852cb43e85ff7a9e9e715f03f0c8837377733e6432204936c230902d9a4048",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"8aabb1122b46ef6a689bcad96278a18eec0ae453b07d18c699ca3064c698ceeea2e0f643dbd777e7fee1e7a9e90a0850688976a204c05c22409cbc9fb8eb128089abdedb7eaea9b694cfc095fc9b50ecbb9885bab4662e1867dce342f97cc448b578fc0dd9e14967ae1f1d82baaf34734f78d8d7c0a84109703a522f7969d38c70e74ed840e6657c4605ea3e0cd66d9721fac28117f4088e11d444b8c16b4c852eee3beab06d0b1fbfcda7d58713860d45be614e37ecf1c030f2ce72c611cfef5e3ce515877602ef8bb79bd4e4819941bd218223b3eb7329a2d537798f74da538f1cf6ccda4f9cd02a9f2f9aed0fdf05b14864e0868f777ef2e77daab7f6d50\"}",
+      "field": "name"
+    },
+    "observed": "71276534b1951fa8f55c4b90bb50a4fb5a21102bacb90ee52a3f77fe05ef6e3c",
+    "output": "71276534b1951fa8f55c4b90bb50a4fb5a21102bacb90ee52a3f77fe05ef6e3c",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"e2ce0f24a1919bfde2754d4c71a12dd30a25dd6262d0e311460231baded4552591bceb862ab21cbc09d069c1a92e9c25d24df4748744ac86756505dbe42d4e6972d3ab31c20c0701d0d34fd28abb9c4d4d50c345778610c7cea000353e57d6054737ea35bdb2feeb0d391a82c636b894f8adfa6c41951be2fc997aecc0dbcf6b044d4989a2628e2766f9183443261b57ee861233565d389bfe97bf51ccc4130875743e1edd844309d9cafd221bd0af1549993431da2709efb933516fa98e06d0ad39c509e9b37536cb5b315ae1d2f8d6bdf2ddd39c84197ee7e58db385acfd5df2e2adfa4210222309d7e0b77a5d6c5505e409118026cb2faf754cedc7712597\"}",
+      "field": "name"
+    },
+    "observed": "7b4689f119616a750e4a9f601dcb20acae90f50c8e1e2028b34fcdec9c66ebeb",
+    "output": "7b4689f119616a750e4a9f601dcb20acae90f50c8e1e2028b34fcdec9c66ebeb",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"7ef99bd631e15d1f8bed3e41053453225bc7695b8e30a063d31f643a423ae5a18dae789f31fde6d0e619bdd1b3fd7eafc366aaf3483d1afd0c82008883e141d732f8e04f1d9d6b3523bbf1bb93d3b8af7caca73180688c9392e47127afdc12c8e1444a6dff5b7f50447ae8a6997a8d49ee5bd6ae9b3331e1cdfebc0a3228693f7a04c51531b470485a65fea9c63dc233b7a9dc7699a666f121a6eb95a8ba47c4c15cd1b78aae40c0e92e18262f6ea97656498fcb4c70d03c7666a0ce06e6bb423ca3f97b444be5bb8f5912d6507c36dd0094247fae34114cfc310176dcb3eed1f9adcaad6d8a01e4b98018c310f21319d2a0045318e1e58c0fd2f66dbc1fc229e\"}",
+      "field": "name"
+    },
+    "observed": "d3de58e2bd4b642feb8362787d244afa224e0896bae56d89c45001ba44ab47a7",
+    "output": "d3de58e2bd4b642feb8362787d244afa224e0896bae56d89c45001ba44ab47a7",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"9d82c1b40e0267548e7b6d7450c47f41a8859afae3040c1f725c7282ba479bcdc2a27d97260bfe17ae1855fe4f694f093f50219657109804db778525b3c2133a492e02c2374f72cea2465da0d3f85e0db3251f335ae6aafde6bcf2169c15913573f6c9b25cb3421d6fb2372fdf34911e6f0cb79edb1a9b0ecf9ded958862fa3c5961bc51643bbf15f14330b75cd8ad56c273bf82dcae4addc9c275b90b03216f96690c86741669eddcc6e286c68cf792cc3ad77acb7dca629ec067d71dc513295e74a3b604119c9ad2fffbe565fe1c805a9cdff4becec5d840c5cfccfc955d5c0184ced36c98cb68e0b6c3b062111a90f0dd36ee2e5c4d5066d7d0dbf67483760bcc3d4c0d18f8e980795166f40157c2e3ab55512cc48980dce5c2a0f39cb8324b8505a33f0b78246ce0de01b5883950561f448cd19598612e55907a5ba19bfed5f147cc6a3d8945b3c46071925f655a995769fa9a3227de13755c28381ae31341d4e959ca72b1846d0da205f8c612178547979b207c6080e39ba1135561228367430368c1e5b3702eb544056218e2996c87143a4f214e3d22ec6ef5a8a5abd01c78b1e5d7dff685ef15d79a4d379ff6dee793103839658bb3bbb558f91c20d21fa6853a6324603d27e8c5b0aaa7e89f4b70d8819552779558369cb5516640e68dd54c2eac94334defadd6c7677d27b0c0e91a9dcb5af3813929f9613e14a89\"}",
+      "field": "name"
+    },
+    "observed": "4961c2f64d12ad3412a8d36a868bca4a36662302d31eb04a5e408a537c7b040c",
+    "output": "4961c2f64d12ad3412a8d36a868bca4a36662302d31eb04a5e408a537c7b040c",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"d09407807edbff4f01ccef557bd788f3918fc40d1f79ec936772c83e023464c780021b92b66e450a48e00a0294704d859b2e1e71ca738efafeecb92f97a43abc8abf14c80bc3ef27aea5de9a99982837af82e954ab51d6c76c5f30d7ed2324bf34e6b2bc6dd4c30a32ce822623927714ec8adb07f02af538ebee7cc5f42073bc44a0ba3b3b8add371648d8d49352b6da93c4d95c0e15e7ed517a53c04399bfabbfc5193108cf37c1c06f62b233e7e2f5ff9b085bd9eb7150218b78764bdd311fbaad54605d11c629f6cba760fdaf3b30bb8b6009349336b4d11bcb1b2074e3acda1096cd89f6be0cd2b38ff654667babfa81d52564ce773d69831c8fe047a8e2f405e7eb40857d03d4ccd783311da5a1aad9feac81c5bc4dd973a3c31c077eb39d56e5a5c47675d77c2947f25e0905a7fd8caea76f36124103eda683034ad8e9e3d3af82393d120b5edd72ab8f1e490a07dff44031030757340a9cbe0fba982e005c910a599726c46bee212d6e20529cbfd27cef56cbc3e19ed049664124c366c94c106e1829843f0c31507f8c53ebde8241cbee3a6a12e42f176a5dd6826080b24db4ebc34104d3eb581ca922139ef56636fcdcf5776acd5ffc7286e86271aa2dca5594efc1a68be0c015bdf55eba79bc5ba166c31bdd5685f070bcefa8b44c5cb622d651453be85e47d70ae8afb591dae6649714b0a27d4e6864c8b6b1be71\"}",
+      "field": "name"
+    },
+    "observed": "f9d252a8964714bad704472e3b608f277db4a1a35470876c0c6a94434ab7af0f",
+    "output": "f9d252a8964714bad704472e3b608f277db4a1a35470876c0c6a94434ab7af0f",
+    "passed": true,
+    "source": "fresh-random-boundary",
+    "task": "90-sha256-deficit-control"
+  },
+  {
+    "input": {
+      "document": "{\"name\": \"b80774b63d6de4825b567d939d3dfa46f5dc2f67\\u0000\\u044f\\u0434\\u0440\\u043e-\\u00e9-\\u6771\\u4eac-\\ud83d\\ude80\"}",
+      "field": "name"
+    },
+    "observed": "37c44cab019b0b7021f5ed9f3ae843b09cf01a7bd93d38609fea438204e69ac4",
+    "output": "37c44cab019b0b7021f5ed9f3ae843b09cf01a7bd93d38609fea438204e69ac4",
+    "passed": true,
+    "source": "fresh-unicode-boundary",
+    "task": "90-sha256-deficit-control"
+  }
+]

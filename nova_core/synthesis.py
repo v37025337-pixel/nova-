@@ -1,7 +1,7 @@
 """Training-only, bounded enumerative synthesis with verified program reuse."""
 
 from .contracts import ContractError, digest, encode, equal
-from .language import BINARY, UNARY, candidate, interpret
+from .language import BINARY, UNARY, candidate, interpret, primitive
 from .extensions import applications, is_extension
 
 MAX_ATTEMPTS = 12000
@@ -72,7 +72,13 @@ def synthesize(training, memory, policy=None):
                 return None
         attempts += 1
         try:
-            values = [interpret(node, row["input"], memory) for row in training]
+            # All language primitives are pure. Operand values have already
+            # been interpreted on these exact training rows. Reusing them
+            # preserves search order, receipts and results while avoiding
+            # repeated execution of expensive inherited genes (e.g. hashing).
+            values = ([primitive(node[1], *args) for args in zip(*operands)]
+                      if operands is not None else
+                      [interpret(node, row["input"], memory) for row in training])
             signature = encode(values)
             if signature in seen:
                 return None

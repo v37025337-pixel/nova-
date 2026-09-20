@@ -1,0 +1,29 @@
+{
+  "event": 54,
+  "goal": "auto-79de4103fcc2a60b3e2bbe9b",
+  "kind": "autonomy_step",
+  "phase": "WITHHOLD",
+  "reason": "KNOWLEDGE_NOT_EXECUTABLE_IN_CURRENT_GRAMMAR",
+  "report": {
+    "document_compilation": [
+      {
+        "document": "eccd193d829aecdfeb53db14804d7ab47559ecd65abff78e088a427edc62ea02",
+        "generated_genes": 0,
+        "unsupported": [
+          "byte_encoding_padding_and_blocks"
+        ]
+      },
+      {
+        "document": "1f84d994de626faec44cd20296f264b72cba74e2b92a81f78b478ee0da0ac806",
+        "generated_genes": 0,
+        "unsupported": [
+          "byte_encoding_padding_and_blocks"
+        ]
+      }
+    ],
+    "fresh_cases_seen": 0,
+    "native_search_attempts": 9539,
+    "next_requirement": "general string/sequence relation compiler; no ready library substitution"
+  },
+  "status": "WITHHOLD"
+}

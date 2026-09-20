@@ -1,0 +1,23 @@
+{
+  "extraction": "literal HTML text blocks ranked by native query terms; at most 8000 characters",
+  "final_url": "https://peps.python.org/pep-0440/",
+  "http_status": 200,
+  "raw_bytes": 139055,
+  "raw_file": "document-01.html.gz",
+  "request": {
+    "goal": "auto-1ef898c68c81a59b6ec5d05f",
+    "id": "2bf87979cbbcdfb2da4e94075db383155c36f41a7e2c23b7d71c9d60a44e202a",
+    "kind": "READ",
+    "terms": [
+      "version",
+      "numeric",
+      "ordering",
+      "specification"
+    ],
+    "title": "PEP 440 – Version Identification and Dependency Specification | peps.python.org",
+    "url": "https://peps.python.org/pep-0440/"
+  },
+  "response_sha256": "37ef83c2c160ac7bd2adc655b96462cb1ed8b081d448813bdf3de53950c787fb",
+  "source_sha256": "2868757b7ed1b125ecfee4a7c6169df3736c42cc68dd1b7c8c3d81c6f22455de",
+  "text_sha256": "cd76738796ed1559e618a32196c0dcb8af0c3403a3f1df97f5354f9df6ad357b"
+}

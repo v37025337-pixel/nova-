@@ -1,0 +1,224 @@
+{
+  "event": 45,
+  "freeze": "d5f0013f6e8a4818377c1436b9508a975665b3eda1b10427c9b9cff7789a1b54",
+  "goal": {
+    "best_inherited_train": 0,
+    "cause_event": 42,
+    "claim_boundary": "endogenous subgoal of an operator-originated failure; bounded property ontology",
+    "contract": {
+      "ablation_required": true,
+      "fresh_min": 16,
+      "input_fields": [
+        "left",
+        "right"
+      ],
+      "law": "lexicographic_integer_components",
+      "output": "boolean",
+      "properties": [
+        "irreflexive",
+        "asymmetric",
+        "transitive",
+        "declared_order_law"
+      ],
+      "regression_threshold": 1,
+      "success_threshold": 1
+    },
+    "deficit_id": "cfd70f94cccf01d8d9ce17b8569faff60f556f31de433f969d8f1aaba798279d",
+    "evidence_sources": [
+      "live-https:internet-tasks-v1:290-numeric-version-order; raw response hashes in sources.json"
+    ],
+    "id": "auto-79de4103fcc2a60b3e2bbe9b",
+    "observed_failure": "HOLDOUT_FAILED",
+    "observed_pair_count": 2968,
+    "origin": "native_analysis_of_failed_permutations",
+    "original_holdout": [
+      {
+        "input": {
+          "left": "1.26.8",
+          "right": "1.4"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "0.8.6",
+          "right": "1.5.1"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.26.14",
+          "right": "2.8.0"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.10.1",
+          "right": "2.2.1"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "2.1.1",
+          "right": "2.1.5"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "0.17",
+          "right": "0.9"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.13.0",
+          "right": "1.17.1"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.4.2",
+          "right": "1.14.6"
+        },
+        "output": true
+      }
+    ],
+    "parent_generation": 20,
+    "parent_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+    "root_dataset": "2247d273a2622c9011d65dd536e2b9de31e6eb4ce85bf3f2e38d6c10693f26b1",
+    "root_task": "290-numeric-version-order",
+    "root_task_origin": "operator",
+    "runtime_digest": "de46433fa333d0d03a819e5beba22ef99a916873f0b62f05677b16c6fb0cca47",
+    "search_terms": [
+      "version",
+      "numeric",
+      "ordering",
+      "specification"
+    ],
+    "training": [
+      {
+        "input": {
+          "left": "1.0.3",
+          "right": "1.14.6"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.25.2",
+          "right": "2.4.0"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.11.0",
+          "right": "1.9.1"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.26.8",
+          "right": "1.13"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "0.22",
+          "right": "0.19"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.0",
+          "right": "0.13"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "2.1.1",
+          "right": "2.1.2"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.18",
+          "right": "1.25.1"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.19.1",
+          "right": "1.25.2"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.12.1",
+          "right": "0.8.6"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.15.1",
+          "right": "1.26.10"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "2.6.1",
+          "right": "1.25.9"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "3.0.2",
+          "right": "2.1.1"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "1.26.2",
+          "right": "2.0.7"
+        },
+        "output": true
+      },
+      {
+        "input": {
+          "left": "1.10.1",
+          "right": "0.2"
+        },
+        "output": false
+      },
+      {
+        "input": {
+          "left": "2.1.0",
+          "right": "2.1.2"
+        },
+        "output": true
+      }
+    ],
+    "utility": "supply a reusable ordering relation missing from the failed permutation skill"
+  },
+  "kind": "autonomy_step",
+  "phase": "GOAL_FROZEN",
+  "reason": "NEW_RELATIONAL_SUBGOAL",
+  "status": "GOAL_FROZEN"
+}

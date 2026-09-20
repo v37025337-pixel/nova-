@@ -1,0 +1,29 @@
+{
+  "cold_replay": {
+    "head": "73097410c4d687df5682c720795189ee3a1b092a434dab31c1c04f0e260568f6",
+    "status": "PASS"
+  },
+  "first_attempt": "../autonomous-cycle-v1/abort.json",
+  "freeze_preserved": true,
+  "limitations": [
+    "The full twelve-condition user objective remains unmet.",
+    "No real new-capability ablation, fresh blind test, post-admission rollback or transfer occurred.",
+    "Goal construction and routing remain bounded maintainer-written mechanisms."
+  ],
+  "new_autonomous_generations": 0,
+  "no_fresh_evaluation_exposed": true,
+  "regression": {
+    "passed": 114,
+    "skills": 19,
+    "total": 114
+  },
+  "release_manifest": "PASS",
+  "runtime_version": "0.5.1",
+  "schema": "nova.verification.v1",
+  "strict_experiment": "WITHHOLD",
+  "unit_tests": {
+    "log": "verification/unit-tests-85.txt",
+    "passed": 85,
+    "total": 85
+  }
+}
