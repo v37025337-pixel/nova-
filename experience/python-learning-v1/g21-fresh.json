@@ -1,0 +1,206 @@
+{
+  "freeze": "66c56dc2e4c48fa03b11ab64103b933450b1f0f801f5b3fb58894d49d48b2efc",
+  "rows": [
+    {
+      "input": {
+        "left": "169978.209.2",
+        "right": "169978.209.11"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "left": "347136.218.12",
+        "right": "347136.218.3"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "484259.346",
+        "right": "484259.346"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "810093.381",
+        "right": "810093.381.0"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "left": "93174.124.0",
+        "right": "93174.124"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "0157826.02",
+        "right": "157826.2"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "613881.202.999999",
+        "right": "613881.202.999998"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "558710.121.0.0.2",
+        "right": "558710.121.0.0.10"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "left": "478147.679.2",
+        "right": "478147.679.11"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "left": "329021.929.12",
+        "right": "329021.929.3"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "412366.704",
+        "right": "412366.704"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "291716.884",
+        "right": "291716.884.0"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "left": "704457.68.0",
+        "right": "704457.68"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "0813059.02",
+        "right": "813059.2"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "133692.270.999999",
+        "right": "133692.270.999998"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "260637.750.0.0.2",
+        "right": "260637.750.0.0.10"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "left": "157932.621.2",
+        "right": "157932.621.11"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "left": "442919.200.12",
+        "right": "442919.200.3"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "406899.861",
+        "right": "406899.861"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "150578.111",
+        "right": "150578.111.0"
+      },
+      "output": true
+    },
+    {
+      "input": {
+        "left": "689951.571.0",
+        "right": "689951.571"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "0466851.02",
+        "right": "466851.2"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "61427.942.999999",
+        "right": "61427.942.999998"
+      },
+      "output": false
+    },
+    {
+      "input": {
+        "left": "190159.964.0.0.2",
+        "right": "190159.964.0.0.10"
+      },
+      "output": true
+    }
+  ],
+  "seed": "cd6eb4d61be28c436be09b41e3e5eeeec5a1f4e6b6a7782ceac5402752fcd1c2",
+  "created_at": "2026-09-20T19:17:58.983251+00:00",
+  "categories": [
+    "shared_prefix_numeric",
+    "shared_prefix_reverse",
+    "irreflexive",
+    "shorter_prefix",
+    "longer_prefix",
+    "leading_zero_equivalence",
+    "large_components",
+    "deep_shared_prefix",
+    "shared_prefix_numeric",
+    "shared_prefix_reverse",
+    "irreflexive",
+    "shorter_prefix",
+    "longer_prefix",
+    "leading_zero_equivalence",
+    "large_components",
+    "deep_shared_prefix",
+    "shared_prefix_numeric",
+    "shared_prefix_reverse",
+    "irreflexive",
+    "shorter_prefix",
+    "longer_prefix",
+    "leading_zero_equivalence",
+    "large_components",
+    "deep_shared_prefix"
+  ],
+  "oracle": "independent Python integer tuple comparison and stable reference ordering",
+  "input_domain": "nonnegative decimal components 0..999999; 2..5 components; permutation length 8",
+  "frozen_artifact_sha256": "6fec6cf93ae3d59cdd7681268c8c4b7c14ef9284846a89e0608ba73af88623bf",
+  "candidate_code_read_for_evaluation": false,
+  "cases_generated_after_candidate_freeze": true
+}

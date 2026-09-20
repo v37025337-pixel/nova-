@@ -1,0 +1,154 @@
+{
+  "active_generation": 22,
+  "causal_lineage_verified": true,
+  "code_freeze": {
+    "identical_content": true,
+    "local_commit": "c13895560fbbc51803dc213b526c01fe8bd46be2",
+    "protocol": "experience/python-learning-v1/protocol.json",
+    "published_commit": "81d120152f7b18217d5d21db0a43c45f4941745c",
+    "tree": "0ca8ead88460b457b3d26304926e8c01ad728873"
+  },
+  "evaluator_independence": "separate process with post-freeze OS entropy; authored by the same maintainer, not a third-party audit",
+  "events": 69,
+  "gates": {
+    "10_restart_replay_rollback": "PASS: journal admission, separate-process replay, exact rollback on backups",
+    "11_transfer": "PASS_BOUNDED: next native goal applies G21 relation to retained permutation task after restart",
+    "12_three_autonomous_generations": "NOT_MET: bounded library-assisted admissions; unrestricted endogenous chain is unproven",
+    "1_native_deficit": "PARTIAL: analysis of a retained operator-originated failure",
+    "2_verifiable_goal": "PASS: native contract, inputs, utility and thresholds in journal",
+    "3_freeze": "PASS_FOR_RECORDED_RUN: source tree, runtime, goal, tool catalogue and candidate pinned before fresh labels; development used public training feedback",
+    "4_native_change_type": "PARTIAL: native choice within maintainer-written bounded routing",
+    "5_native_knowledge": "PARTIAL: native catalogue request and function selection; bridge and API semantics supplied by maintainer",
+    "6_generated_mechanism": "PASS_FOR_COMPOSITION: native IR and source, isolated execution; Python algorithms borrowed",
+    "7_fresh_blind": "PASS: 24 fresh cases per candidate, strict 100%, no candidate retry from answers",
+    "8_regression": "PASS: all active inherited skills and new capabilities",
+    "9_causal_ablation": "PASS: new primitive and inherited transitive dependencies removed individually"
+  },
+  "generated_composition_author": "native kernel",
+  "head": "aad52000975a368c5f00bbaeaefff6cde61d78a7e0a22483222fb4f90d415c1a",
+  "historical_prefix_preserved": true,
+  "library_algorithm_invention_claim": false,
+  "limits": [
+    "goal discovery covers two relation laws and one transfer rule, not unrestricted problem invention",
+    "original parent task was supplied by the operator; it is preserved as a historical failure",
+    "fresh test domain is bounded numeric dotted strings, not the whole PEP 440 version language",
+    "native search selected float conversion; precision is verified only in the recorded bounded domain",
+    "scientific packages are inventoried, not exposed as arbitrary executable imports"
+  ],
+  "new_admissions": 2,
+  "no_new_operator_task_events": true,
+  "parent_generation": 20,
+  "pre_freeze_development": "maintainer ran training-only composition smoke checks on public G20 feedback before release freeze; fresh labels did not yet exist",
+  "required_autonomous_generations": 3,
+  "runtime_and_goal_constructor_author": "maintainer",
+  "runtime_unchanged_after_freeze": true,
+  "runtime_version": "0.6.0",
+  "schema": "nova.python-learning-report.v1",
+  "stages": [
+    {
+      "ablation": {
+        "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946": {
+          "passed": 0,
+          "total": 24
+        }
+      },
+      "cold_replay": "PASS",
+      "freeze": "66c56dc2e4c48fa03b11ab64103b933450b1f0f801f5b3fb58894d49d48b2efc",
+      "fresh": {
+        "passed": 24,
+        "total": 24
+      },
+      "fresh_matches_journal": true,
+      "full_regression": {
+        "passed": 162,
+        "skills": 20,
+        "total": 162
+      },
+      "generation": 21,
+      "genome": "3829de856d2d96ade7dc7ea65b2f41167d5f6272e04595e06f4e41e2b30891b5",
+      "goal": "auto-1ec0944f5900db6acb62dcb6",
+      "goal_origin": "native_analysis_of_failed_permutations",
+      "isolation": "linux_seccomp_v1",
+      "native_search_attempts": 1530,
+      "original_holdout": {
+        "passed": 8,
+        "total": 8
+      },
+      "parent_genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+      "replayed_genome_matches": true,
+      "required_inherited_dependency": null,
+      "rollback": {
+        "generation": 20,
+        "genome": "741bf9b4a23144f0c33b1cfd645591a12e67f4bc51a73f8b44c0bbc73e26b173",
+        "status": "PASS"
+      },
+      "rollback_genome_matches": true,
+      "root_task": "290-numeric-version-order",
+      "tools_used": [
+        "builtins.float",
+        "operator.lt",
+        "str.split"
+      ],
+      "transfer_from": null
+    },
+    {
+      "ablation": {
+        "6f3a7d3f986dcd52403af7fbaa1614ebb2cc32e8b214c2b394d28484635622de": {
+          "passed": 0,
+          "total": 24
+        },
+        "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946": {
+          "passed": 0,
+          "total": 24
+        },
+        "b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393": {
+          "passed": 0,
+          "total": 24
+        }
+      },
+      "cold_replay": "PASS",
+      "freeze": "84e08c8e1fb25e267d3850856ca2e6afd8e90de49fe1cf6e662d4d376320768a",
+      "fresh": {
+        "passed": 24,
+        "total": 24
+      },
+      "fresh_matches_journal": true,
+      "full_regression": {
+        "passed": 192,
+        "skills": 21,
+        "total": 192
+      },
+      "generation": 22,
+      "genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "goal": "auto-859fa997bbbd259650f164c3",
+      "goal_origin": "native_transfer_to_unresolved_parent_failure",
+      "isolation": "linux_seccomp_v1",
+      "native_search_attempts": 1,
+      "original_holdout": {
+        "passed": 3,
+        "total": 3
+      },
+      "parent_genome": "3829de856d2d96ade7dc7ea65b2f41167d5f6272e04595e06f4e41e2b30891b5",
+      "replayed_genome_matches": true,
+      "required_inherited_dependency": "b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393",
+      "rollback": {
+        "generation": 21,
+        "genome": "3829de856d2d96ade7dc7ea65b2f41167d5f6272e04595e06f4e41e2b30891b5",
+        "status": "PASS"
+      },
+      "rollback_genome_matches": true,
+      "root_task": "290-numeric-version-order",
+      "tools_used": [
+        "builtins.sorted",
+        "functools.cmp_to_key"
+      ],
+      "transfer_from": "auto-1ec0944f5900db6acb62dcb6"
+    }
+  ],
+  "status": "PASS_FOR_LIBRARY_ASSISTED_RECOVERY",
+  "stopping_action": {
+    "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT",
+    "status": "IDLE"
+  },
+  "strict_autonomous_capability_evolution_proven": false
+}

@@ -1,0 +1,193 @@
+{
+  "catalogue": {
+    "boundary": "bounded JSON values; no imports, files, sockets or callbacks from inputs",
+    "combinators": [
+      "map_unary_tool",
+      "stable_sort_by_inherited_relation"
+    ],
+    "id": "5ea371b0b09683babcef5f9a1d0fc4af460c2916d5f3c54efacf4a8214713358",
+    "language": "nova.python-composition.v1",
+    "tools": [
+      {
+        "arity": 1,
+        "documentation": "https://docs.python.org/3/library/functions.html",
+        "implementation": "Python standard library",
+        "name": "builtins.abs"
+      },
+      {
+        "arity": 1,
+        "documentation": "https://docs.python.org/3/library/functions.html",
+        "implementation": "Python standard library",
+        "name": "builtins.float"
+      },
+      {
+        "arity": 1,
+        "documentation": "https://docs.python.org/3/library/functions.html",
+        "implementation": "Python standard library",
+        "name": "builtins.int"
+      },
+      {
+        "arity": 1,
+        "documentation": "https://docs.python.org/3/library/functions.html",
+        "implementation": "Python standard library",
+        "name": "builtins.len"
+      },
+      {
+        "arity": 1,
+        "documentation": "https://docs.python.org/3/library/functions.html",
+        "implementation": "Python standard library",
+        "name": "builtins.sorted"
+      },
+      {
+        "arity": 1,
+        "documentation": "https://docs.python.org/3/library/functions.html",
+        "implementation": "Python standard library",
+        "name": "builtins.sum"
+      },
+      {
+        "arity": 2,
+        "documentation": "https://docs.python.org/3/library/operator.html",
+        "implementation": "Python standard library",
+        "name": "operator.add"
+      },
+      {
+        "arity": 2,
+        "documentation": "https://docs.python.org/3/library/operator.html",
+        "implementation": "Python standard library",
+        "name": "operator.eq"
+      },
+      {
+        "arity": 2,
+        "documentation": "https://docs.python.org/3/library/operator.html",
+        "implementation": "Python standard library",
+        "name": "operator.lt"
+      },
+      {
+        "arity": 2,
+        "documentation": "https://docs.python.org/3/library/operator.html",
+        "implementation": "Python standard library",
+        "name": "operator.sub"
+      },
+      {
+        "arity": 1,
+        "documentation": "https://docs.python.org/3/library/stdtypes.html",
+        "implementation": "Python standard library",
+        "name": "str.lower"
+      },
+      {
+        "arity": 2,
+        "documentation": "https://docs.python.org/3/library/stdtypes.html",
+        "implementation": "Python standard library",
+        "name": "str.split"
+      },
+      {
+        "arity": 1,
+        "documentation": "https://docs.python.org/3/library/stdtypes.html",
+        "implementation": "Python standard library",
+        "name": "str.strip"
+      },
+      {
+        "arity": 1,
+        "documentation": "https://docs.python.org/3/library/stdtypes.html",
+        "implementation": "Python standard library",
+        "name": "str.upper"
+      }
+    ]
+  },
+  "environment": {
+    "executable_sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+    "installed_packages": {
+      "PyMuPDF": "1.26.6",
+      "PyYAML": "6.0.3",
+      "aiohappyeyeballs": "2.7.1",
+      "aiohttp": "3.13.5",
+      "aiosignal": "1.4.0",
+      "annotated-types": "0.8.0",
+      "artifact_tool_v2": "2.8.59",
+      "attrs": "26.1.0",
+      "cadquery": "2.7.0",
+      "cadquery-ocp": "7.8.1.1.post1",
+      "casadi": "3.7.2",
+      "cffi": "1.17.1",
+      "charset-normalizer": "3.4.4",
+      "contourpy": "1.3.3",
+      "cryptography": "46.0.0",
+      "cycler": "0.12.1",
+      "et_xmlfile": "2.0.0",
+      "ezdxf": "1.4.4",
+      "fonttools": "4.61.1",
+      "frozenlist": "1.8.0",
+      "idna": "3.19",
+      "joblib": "1.5.3",
+      "kiwisolver": "1.4.9",
+      "lxml": "6.1.1",
+      "matplotlib": "3.10.8",
+      "more-itertools": "11.1.0",
+      "msgpack": "1.2.1",
+      "multidict": "6.7.1",
+      "multimethod": "1.12",
+      "nlopt": "2.11.0",
+      "numpy": "2.3.5",
+      "openpyxl": "3.1.5",
+      "packaging": "26.3",
+      "pandas": "2.2.3",
+      "path": "17.1.1",
+      "pdf2image": "1.17.0",
+      "pdfminer.six": "20251107",
+      "pdfplumber": "0.11.8",
+      "pillow": "12.3.0",
+      "pip": "26.2.1",
+      "propcache": "0.5.2",
+      "pycparser": "2.23",
+      "pydantic": "2.13.5",
+      "pydantic_core": "2.46.5",
+      "pyhumps": "3.8.0",
+      "pyparsing": "3.3.2",
+      "pypdf": "6.10.0",
+      "pypdfium2": "5.3.0",
+      "python-dateutil": "2.9.0.post0",
+      "python-docx": "1.2.0",
+      "python-pptx": "1.0.2",
+      "pytz": "2026.3.post1",
+      "reportlab": "4.4.9",
+      "runtype": "0.5.3",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.0",
+      "seaborn": "0.13.2",
+      "setuptools": "84.0.0",
+      "six": "1.17.0",
+      "threadpoolctl": "3.6.0",
+      "trame": "3.13.2",
+      "trame-client": "3.13.6",
+      "trame-common": "1.2.7",
+      "trame-components": "2.5.0",
+      "trame-server": "3.14.0",
+      "trame-vtk": "2.11.16",
+      "trame-vuetify": "3.2.5",
+      "typing-inspection": "0.4.4",
+      "typing_extensions": "4.16.0",
+      "tzdata": "2026.3",
+      "uv": "0.12.15",
+      "vtk": "9.3.1",
+      "websockets": "16.0",
+      "wheel": "0.48.0",
+      "wslink": "2.5.7",
+      "xlrd": "2.0.1",
+      "xlsxwriter": "3.2.9",
+      "yarl": "1.24.5",
+      "zstandard": "0.25.0"
+    },
+    "package_access": "inventory only; executable bridge exposes the pinned pure stdlib catalogue",
+    "python": [
+      3,
+      12
+    ],
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "stdlib_sources": {
+      "functools": "de4a1d37c795e2a065124b5c49357893433bc6bb111b41277ccc9930ef08d4c9",
+      "operator": "b2af20f67667203c1730e686cc5d0427becc94db4c97f1d3efe3ed2158473f6a"
+    }
+  },
+  "kind": "PYTHON_CATALOGUE",
+  "request": "8f3c41899a7a531a863cb1f9f3340b73a23f32aa9bc6f9541e257c0de4d5ccbe"
+}
