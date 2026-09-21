@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "package": "nova-cognitive-kernel",
+  "successor": "0.1.0",
+  "wheel_sha256": "f3c1e64b872ba13bb0550f35d6e0464e0629338854538e3c2fd59476fbc202a0",
+  "installed_runtime_files": 36,
+  "installed_inherited_skills": 21,
+  "compiled_sandbox_outputs": [
+    3
+  ],
+  "execution_location": "outside repository, installed wheel"
+}

@@ -13,6 +13,10 @@ dependencies = []
 [project.scripts]
 nova = "nova_core.__main__:main"
 nova-read-code = "nova_tools.code_reader_bridge:main"
+nova-next = "nova_next.__main__:main"
 
 [tool.setuptools.packages.find]
-include = ["nova_core*", "nova_tools*"]
+include = ["nova_core*", "nova_tools*", "nova_next*"]
+
+[tool.setuptools.package-data]
+nova_next = ["inherited.json", "seed_blueprint.json"]

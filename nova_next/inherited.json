@@ -1,0 +1,4658 @@
+{
+  "bindings": {
+    "10-trim": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "100-deep-normalize": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "110-deep-record": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "120-deep-serialized": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "130-hash-record": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+    "20-normalize": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "200-distribution-bytes": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+    "210-distribution-summary": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+    "220-distribution-json": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+    "230-repository-counts": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+    "240-repository-record": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+    "250-online-hash-json": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+    "30-record": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "40-json-document": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "50-package-name": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "60-uppercase-name": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "70-package-record": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "80-serialized-record": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+    "90-sha256-deficit-control": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+    "auto-1ec0944f5900db6acb62dcb6": "b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393",
+    "auto-859fa997bbbd259650f164c3": "4892774c772b6db5f7607026ff35910bbcd15a401b1d4ef0c86a80b16e2807c3"
+  },
+  "generation": 22,
+  "genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+  "journal_head": "15bf5be8b55909bd6ded59bcef050d0756fe9d5bb60f39304a856c4030d496cf",
+  "programs": {
+    "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c": {
+      "id": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+      "ir": [
+        "call",
+        "json",
+        [
+          "ref",
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8"
+      ],
+      "source": "def solve(inputs, recall):\n    return primitive('json', recall('79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8', inputs))\n"
+    },
+    "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934": {
+      "id": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+      "ir": [
+        "object",
+        {
+          "length": [
+            "call",
+            "length",
+            [
+              "call",
+              "parse_json",
+              [
+                "ref",
+                "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186"
+              ]
+            ]
+          ],
+          "name": [
+            "call",
+            "parse_json",
+            [
+              "ref",
+              "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186"
+            ]
+          ]
+        }
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186"
+      ],
+      "source": "def solve(inputs, recall):\n    return {'length': primitive('length', primitive('parse_json', recall('9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186', inputs))), 'name': primitive('parse_json', recall('9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186', inputs))}\n"
+    },
+    "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f": {
+      "id": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+      "ir": [
+        "apply",
+        "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e",
+        [
+          "object",
+          {
+            "message": [
+              "ref",
+              "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+            ]
+          }
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+        "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e"
+      ],
+      "source": "def solve(inputs, recall):\n    return recall('75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e', {'message': recall('50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895', inputs)})\n"
+    },
+    "4892774c772b6db5f7607026ff35910bbcd15a401b1d4ef0c86a80b16e2807c3": {
+      "id": "4892774c772b6db5f7607026ff35910bbcd15a401b1d4ef0c86a80b16e2807c3",
+      "ir": [
+        "apply",
+        "6f3a7d3f986dcd52403af7fbaa1614ebb2cc32e8b214c2b394d28484635622de",
+        [
+          "object",
+          {
+            "versions": [
+              "input",
+              "versions"
+            ]
+          }
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "6f3a7d3f986dcd52403af7fbaa1614ebb2cc32e8b214c2b394d28484635622de"
+      ],
+      "source": "def solve(inputs, recall):\n    return recall('6f3a7d3f986dcd52403af7fbaa1614ebb2cc32e8b214c2b394d28484635622de', {'versions': inputs['versions']})\n"
+    },
+    "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895": {
+      "id": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+      "ir": [
+        "call",
+        "get",
+        [
+          "ref",
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00"
+        ],
+        [
+          "input",
+          "field"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00"
+      ],
+      "source": "def solve(inputs, recall):\n    return primitive('get', recall('84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00', inputs), inputs['field'])\n"
+    },
+    "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53": {
+      "id": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+      "ir": [
+        "call",
+        "json",
+        [
+          "ref",
+          "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011"
+      ],
+      "source": "def solve(inputs, recall):\n    return primitive('json', recall('a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011', inputs))\n"
+    },
+    "6f3a7d3f986dcd52403af7fbaa1614ebb2cc32e8b214c2b394d28484635622de": {
+      "author": "kernel_training_only_library_composition",
+      "catalogue": "5ea371b0b09683babcef5f9a1d0fc4af460c2916d5f3c54efacf4a8214713358",
+      "definition": {
+        "parameters": [
+          "versions"
+        ]
+      },
+      "id": "6f3a7d3f986dcd52403af7fbaa1614ebb2cc32e8b214c2b394d28484635622de",
+      "ir": [
+        "order",
+        "b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393",
+        [
+          "input",
+          "versions"
+        ]
+      ],
+      "language": "nova.python-composition.v1",
+      "parents": [
+        "b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393"
+      ],
+      "provenance": "95f83f7fafa13c58fff9cb8b6015a953c5665f0811f31c6c9debdf9e04b0840e",
+      "source": "def solve(inputs, recall):\n    return order('b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393', inputs['versions'], recall)\n",
+      "tools": [
+        "builtins.sorted",
+        "functools.cmp_to_key"
+      ]
+    },
+    "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e": {
+      "definition": {
+        "input_type": "utf8_text",
+        "max_bytes": 1024,
+        "parameters": [
+          "message"
+        ],
+        "width": 32
+      },
+      "derivation": {
+        "algorithm_document": "69b3eb8ec0395c0d72f35934f3072249535423e40a48f84413ff5c72b3e8939b",
+        "byte_order": "big",
+        "constant_counts": {
+          "K": 64
+        },
+        "encoding": "UTF-8",
+        "initial_counts": {
+          "H": 8
+        },
+        "output_indices": [
+          [
+            "H",
+            0
+          ],
+          [
+            "H",
+            1
+          ],
+          [
+            "H",
+            2
+          ],
+          [
+            "H",
+            3
+          ],
+          [
+            "H",
+            4
+          ],
+          [
+            "H",
+            5
+          ],
+          [
+            "H",
+            6
+          ],
+          [
+            "H",
+            7
+          ]
+        ],
+        "padding": {
+          "bit": 1,
+          "length_bits": 64,
+          "modulus": 512,
+          "target": 448
+        },
+        "reader": "typeset_block_recurrence_v1",
+        "scope": "specified_algorithm_compilation_not_algorithm_invention",
+        "steps": [
+          {
+            "kind": "piecewise_recurrence",
+            "ranges": [
+              [
+                0,
+                15
+              ],
+              [
+                16,
+                63
+              ]
+            ],
+            "step": 1
+          },
+          {
+            "count": 8,
+            "kind": "ordered_assignments",
+            "step": 2
+          },
+          {
+            "assignments": 10,
+            "kind": "bounded_iteration",
+            "range": [
+              0,
+              63
+            ],
+            "step": 3
+          },
+          {
+            "count": 8,
+            "kind": "ordered_assignments",
+            "step": 4
+          }
+        ]
+      },
+      "id": "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e",
+      "ir": {
+        "body": [
+          [
+            "set",
+            "novaBytes",
+            [
+              "utf8",
+              [
+                "input",
+                "message"
+              ]
+            ]
+          ],
+          [
+            "set",
+            "novaBlocks",
+            [
+              "chunks",
+              [
+                "pad",
+                [
+                  "var",
+                  "novaBytes"
+                ],
+                [
+                  "literal",
+                  1
+                ],
+                [
+                  "literal",
+                  448
+                ],
+                [
+                  "literal",
+                  512
+                ],
+                [
+                  "literal",
+                  64
+                ],
+                [
+                  "literal",
+                  "big"
+                ]
+              ],
+              [
+                "literal",
+                64
+              ]
+            ]
+          ],
+          [
+            "set",
+            "K",
+            [
+              "literal",
+              [
+                1116352408,
+                1899447441,
+                3049323471,
+                3921009573,
+                961987163,
+                1508970993,
+                2453635748,
+                2870763221,
+                3624381080,
+                310598401,
+                607225278,
+                1426881987,
+                1925078388,
+                2162078206,
+                2614888103,
+                3248222580,
+                3835390401,
+                4022224774,
+                264347078,
+                604807628,
+                770255983,
+                1249150122,
+                1555081692,
+                1996064986,
+                2554220882,
+                2821834349,
+                2952996808,
+                3210313671,
+                3336571891,
+                3584528711,
+                113926993,
+                338241895,
+                666307205,
+                773529912,
+                1294757372,
+                1396182291,
+                1695183700,
+                1986661051,
+                2177026350,
+                2456956037,
+                2730485921,
+                2820302411,
+                3259730800,
+                3345764771,
+                3516065817,
+                3600352804,
+                4094571909,
+                275423344,
+                430227734,
+                506948616,
+                659060556,
+                883997877,
+                958139571,
+                1322822218,
+                1537002063,
+                1747873779,
+                1955562222,
+                2024104815,
+                2227730452,
+                2361852424,
+                2428436474,
+                2756734187,
+                3204031479,
+                3329325298
+              ]
+            ]
+          ],
+          [
+            "set",
+            "H",
+            [
+              "literal",
+              [
+                1779033703,
+                3144134277,
+                1013904242,
+                2773480762,
+                1359893119,
+                2600822924,
+                528734635,
+                1541459225
+              ]
+            ]
+          ],
+          [
+            "for",
+            "i",
+            [
+              "literal",
+              1
+            ],
+            [
+              "size",
+              [
+                "var",
+                "novaBlocks"
+              ]
+            ],
+            [
+              [
+                "set",
+                "previous_H",
+                [
+                  "copy",
+                  [
+                    "var",
+                    "H"
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "M",
+                [
+                  "words",
+                  [
+                    "at",
+                    [
+                      "var",
+                      "novaBlocks"
+                    ],
+                    [
+                      "word",
+                      "sub",
+                      [
+                        "var",
+                        "i"
+                      ],
+                      [
+                        "literal",
+                        1
+                      ]
+                    ]
+                  ],
+                  [
+                    "literal",
+                    32
+                  ],
+                  [
+                    "literal",
+                    "big"
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "W",
+                [
+                  "zeros",
+                  [
+                    "literal",
+                    64
+                  ]
+                ]
+              ],
+              [
+                "for",
+                "t",
+                [
+                  "literal",
+                  0
+                ],
+                [
+                  "literal",
+                  15
+                ],
+                [
+                  [
+                    "put",
+                    "W",
+                    [
+                      "var",
+                      "t"
+                    ],
+                    [
+                      "at",
+                      [
+                        "var",
+                        "M"
+                      ],
+                      [
+                        "var",
+                        "t"
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "for",
+                "t",
+                [
+                  "literal",
+                  16
+                ],
+                [
+                  "literal",
+                  63
+                ],
+                [
+                  [
+                    "put",
+                    "W",
+                    [
+                      "var",
+                      "t"
+                    ],
+                    [
+                      "word",
+                      "add",
+                      [
+                        "word",
+                        "add",
+                        [
+                          "word",
+                          "add",
+                          [
+                            "call",
+                            "sigma_256_1",
+                            [
+                              "at",
+                              [
+                                "var",
+                                "W"
+                              ],
+                              [
+                                "word",
+                                "sub",
+                                [
+                                  "var",
+                                  "t"
+                                ],
+                                [
+                                  "literal",
+                                  2
+                                ]
+                              ]
+                            ]
+                          ],
+                          [
+                            "at",
+                            [
+                              "var",
+                              "W"
+                            ],
+                            [
+                              "word",
+                              "sub",
+                              [
+                                "var",
+                                "t"
+                              ],
+                              [
+                                "literal",
+                                7
+                              ]
+                            ]
+                          ]
+                        ],
+                        [
+                          "call",
+                          "sigma_256_0",
+                          [
+                            "at",
+                            [
+                              "var",
+                              "W"
+                            ],
+                            [
+                              "word",
+                              "sub",
+                              [
+                                "var",
+                                "t"
+                              ],
+                              [
+                                "literal",
+                                15
+                              ]
+                            ]
+                          ]
+                        ]
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "W"
+                        ],
+                        [
+                          "word",
+                          "sub",
+                          [
+                            "var",
+                            "t"
+                          ],
+                          [
+                            "literal",
+                            16
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "a",
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    0
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "b",
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    1
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "c",
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    2
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "d",
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    3
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "e",
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    4
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "f",
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    5
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "g",
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    6
+                  ]
+                ]
+              ],
+              [
+                "set",
+                "h",
+                [
+                  "at",
+                  [
+                    "var",
+                    "previous_H"
+                  ],
+                  [
+                    "literal",
+                    7
+                  ]
+                ]
+              ],
+              [
+                "for",
+                "t",
+                [
+                  "literal",
+                  0
+                ],
+                [
+                  "literal",
+                  63
+                ],
+                [
+                  [
+                    "set",
+                    "T1",
+                    [
+                      "word",
+                      "add",
+                      [
+                        "word",
+                        "add",
+                        [
+                          "word",
+                          "add",
+                          [
+                            "word",
+                            "add",
+                            [
+                              "var",
+                              "h"
+                            ],
+                            [
+                              "call",
+                              "Sigma_256_1",
+                              [
+                                "var",
+                                "e"
+                              ]
+                            ]
+                          ],
+                          [
+                            "call",
+                            "Ch",
+                            [
+                              "var",
+                              "e"
+                            ],
+                            [
+                              "var",
+                              "f"
+                            ],
+                            [
+                              "var",
+                              "g"
+                            ]
+                          ]
+                        ],
+                        [
+                          "at",
+                          [
+                            "var",
+                            "K"
+                          ],
+                          [
+                            "var",
+                            "t"
+                          ]
+                        ]
+                      ],
+                      [
+                        "at",
+                        [
+                          "var",
+                          "W"
+                        ],
+                        [
+                          "var",
+                          "t"
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "T2",
+                    [
+                      "word",
+                      "add",
+                      [
+                        "call",
+                        "Sigma_256_0",
+                        [
+                          "var",
+                          "a"
+                        ]
+                      ],
+                      [
+                        "call",
+                        "Maj",
+                        [
+                          "var",
+                          "a"
+                        ],
+                        [
+                          "var",
+                          "b"
+                        ],
+                        [
+                          "var",
+                          "c"
+                        ]
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "h",
+                    [
+                      "var",
+                      "g"
+                    ]
+                  ],
+                  [
+                    "set",
+                    "g",
+                    [
+                      "var",
+                      "f"
+                    ]
+                  ],
+                  [
+                    "set",
+                    "f",
+                    [
+                      "var",
+                      "e"
+                    ]
+                  ],
+                  [
+                    "set",
+                    "e",
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "d"
+                      ],
+                      [
+                        "var",
+                        "T1"
+                      ]
+                    ]
+                  ],
+                  [
+                    "set",
+                    "d",
+                    [
+                      "var",
+                      "c"
+                    ]
+                  ],
+                  [
+                    "set",
+                    "c",
+                    [
+                      "var",
+                      "b"
+                    ]
+                  ],
+                  [
+                    "set",
+                    "b",
+                    [
+                      "var",
+                      "a"
+                    ]
+                  ],
+                  [
+                    "set",
+                    "a",
+                    [
+                      "word",
+                      "add",
+                      [
+                        "var",
+                        "T1"
+                      ],
+                      [
+                        "var",
+                        "T2"
+                      ]
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "put",
+                "H",
+                [
+                  "literal",
+                  0
+                ],
+                [
+                  "word",
+                  "add",
+                  [
+                    "var",
+                    "a"
+                  ],
+                  [
+                    "at",
+                    [
+                      "var",
+                      "previous_H"
+                    ],
+                    [
+                      "literal",
+                      0
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "put",
+                "H",
+                [
+                  "literal",
+                  1
+                ],
+                [
+                  "word",
+                  "add",
+                  [
+                    "var",
+                    "b"
+                  ],
+                  [
+                    "at",
+                    [
+                      "var",
+                      "previous_H"
+                    ],
+                    [
+                      "literal",
+                      1
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "put",
+                "H",
+                [
+                  "literal",
+                  2
+                ],
+                [
+                  "word",
+                  "add",
+                  [
+                    "var",
+                    "c"
+                  ],
+                  [
+                    "at",
+                    [
+                      "var",
+                      "previous_H"
+                    ],
+                    [
+                      "literal",
+                      2
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "put",
+                "H",
+                [
+                  "literal",
+                  3
+                ],
+                [
+                  "word",
+                  "add",
+                  [
+                    "var",
+                    "d"
+                  ],
+                  [
+                    "at",
+                    [
+                      "var",
+                      "previous_H"
+                    ],
+                    [
+                      "literal",
+                      3
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "put",
+                "H",
+                [
+                  "literal",
+                  4
+                ],
+                [
+                  "word",
+                  "add",
+                  [
+                    "var",
+                    "e"
+                  ],
+                  [
+                    "at",
+                    [
+                      "var",
+                      "previous_H"
+                    ],
+                    [
+                      "literal",
+                      4
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "put",
+                "H",
+                [
+                  "literal",
+                  5
+                ],
+                [
+                  "word",
+                  "add",
+                  [
+                    "var",
+                    "f"
+                  ],
+                  [
+                    "at",
+                    [
+                      "var",
+                      "previous_H"
+                    ],
+                    [
+                      "literal",
+                      5
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "put",
+                "H",
+                [
+                  "literal",
+                  6
+                ],
+                [
+                  "word",
+                  "add",
+                  [
+                    "var",
+                    "g"
+                  ],
+                  [
+                    "at",
+                    [
+                      "var",
+                      "previous_H"
+                    ],
+                    [
+                      "literal",
+                      6
+                    ]
+                  ]
+                ]
+              ],
+              [
+                "put",
+                "H",
+                [
+                  "literal",
+                  7
+                ],
+                [
+                  "word",
+                  "add",
+                  [
+                    "var",
+                    "h"
+                  ],
+                  [
+                    "at",
+                    [
+                      "var",
+                      "previous_H"
+                    ],
+                    [
+                      "literal",
+                      7
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        "functions": {
+          "Ch": {
+            "expression": "( x & y) ^ (~x & z)",
+            "name": "Ch",
+            "parameters": [
+              "x",
+              "y",
+              "z"
+            ],
+            "width": 32
+          },
+          "Maj": {
+            "expression": "( x & y) ^ ( x & z ) ^ ( y & z )",
+            "name": "Maj",
+            "parameters": [
+              "x",
+              "y",
+              "z"
+            ],
+            "width": 32
+          },
+          "Sigma_256_0": {
+            "expression": "ROTR(x,2)         ^ ROTR(x,13) ^ ROTR(x,22)",
+            "name": "Sigma_256_0",
+            "parameters": [
+              "x"
+            ],
+            "width": 32
+          },
+          "Sigma_256_1": {
+            "expression": "ROTR(x,6)         ^ ROTR(x,11) ^ ROTR(x,25)",
+            "name": "Sigma_256_1",
+            "parameters": [
+              "x"
+            ],
+            "width": 32
+          },
+          "sigma_256_0": {
+            "expression": "ROTR(x,7) ^ ROTR(x,18) ^ SHR(x,3)",
+            "name": "sigma_256_0",
+            "parameters": [
+              "x"
+            ],
+            "width": 32
+          },
+          "sigma_256_1": {
+            "expression": "ROTR(x,17) ^ ROTR(x,19) ^ SHR(x,10)",
+            "name": "sigma_256_1",
+            "parameters": [
+              "x"
+            ],
+            "width": 32
+          }
+        },
+        "result": [
+          "hex",
+          [
+            "array",
+            [
+              "at",
+              [
+                "var",
+                "H"
+              ],
+              [
+                "literal",
+                0
+              ]
+            ],
+            [
+              "at",
+              [
+                "var",
+                "H"
+              ],
+              [
+                "literal",
+                1
+              ]
+            ],
+            [
+              "at",
+              [
+                "var",
+                "H"
+              ],
+              [
+                "literal",
+                2
+              ]
+            ],
+            [
+              "at",
+              [
+                "var",
+                "H"
+              ],
+              [
+                "literal",
+                3
+              ]
+            ],
+            [
+              "at",
+              [
+                "var",
+                "H"
+              ],
+              [
+                "literal",
+                4
+              ]
+            ],
+            [
+              "at",
+              [
+                "var",
+                "H"
+              ],
+              [
+                "literal",
+                5
+              ]
+            ],
+            [
+              "at",
+              [
+                "var",
+                "H"
+              ],
+              [
+                "literal",
+                6
+              ]
+            ],
+            [
+              "at",
+              [
+                "var",
+                "H"
+              ],
+              [
+                "literal",
+                7
+              ]
+            ]
+          ],
+          [
+            "literal",
+            32
+          ],
+          [
+            "literal",
+            "big"
+          ]
+        ]
+      },
+      "language": "nova.sequence.v1",
+      "parents": [],
+      "source": "def fn_Ch(v_x, v_y, v_z):\n    return word('xor', 32, word('and', 32, v_x, v_y), word('and', 32, word('not', 32, v_x), v_z))\n\ndef fn_Maj(v_x, v_y, v_z):\n    return word('xor', 32, word('xor', 32, word('and', 32, v_x, v_y), word('and', 32, v_x, v_z)), word('and', 32, v_y, v_z))\n\ndef fn_Sigma_256_0(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 2), word('rotr', 32, v_x, 13)), word('rotr', 32, v_x, 22))\n\ndef fn_Sigma_256_1(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 6), word('rotr', 32, v_x, 11)), word('rotr', 32, v_x, 25))\n\ndef fn_sigma_256_0(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 7), word('rotr', 32, v_x, 18)), word('shr', 32, v_x, 3))\n\ndef fn_sigma_256_1(v_x):\n    return word('xor', 32, word('xor', 32, word('rotr', 32, v_x, 17), word('rotr', 32, v_x, 19)), word('shr', 32, v_x, 10))\n\ndef solve(inputs):\n    budget = [20000]\n    v_novaBytes = s_utf8(inputs['message'])\n    v_novaBlocks = s_chunks(s_pad(v_novaBytes, 1, 448, 512, 64, 'big'), 64)\n    v_K = [1116352408, 1899447441, 3049323471, 3921009573, 961987163, 1508970993, 2453635748, 2870763221, 3624381080, 310598401, 607225278, 1426881987, 1925078388, 2162078206, 2614888103, 3248222580, 3835390401, 4022224774, 264347078, 604807628, 770255983, 1249150122, 1555081692, 1996064986, 2554220882, 2821834349, 2952996808, 3210313671, 3336571891, 3584528711, 113926993, 338241895, 666307205, 773529912, 1294757372, 1396182291, 1695183700, 1986661051, 2177026350, 2456956037, 2730485921, 2820302411, 3259730800, 3345764771, 3516065817, 3600352804, 4094571909, 275423344, 430227734, 506948616, 659060556, 883997877, 958139571, 1322822218, 1537002063, 1747873779, 1955562222, 2024104815, 2227730452, 2361852424, 2428436474, 2756734187, 3204031479, 3329325298]\n    v_H = [1779033703, 3144134277, 1013904242, 2773480762, 1359893119, 2600822924, 528734635, 1541459225]\n    for v_i in s_range(1, s_size(v_novaBlocks), budget):\n        v_previous_H = s_copy(v_H)\n        v_M = s_words(s_at(v_novaBlocks, word('sub', 32, v_i, 1)), 32, 'big')\n        v_W = s_zeros(64)\n        for v_t in s_range(0, 15, budget):\n            s_put(v_W, v_t, s_at(v_M, v_t))\n        for v_t in s_range(16, 63, budget):\n            s_put(v_W, v_t, word('add', 32, word('add', 32, word('add', 32, fn_sigma_256_1(s_at(v_W, word('sub', 32, v_t, 2))), s_at(v_W, word('sub', 32, v_t, 7))), fn_sigma_256_0(s_at(v_W, word('sub', 32, v_t, 15)))), s_at(v_W, word('sub', 32, v_t, 16))))\n        v_a = s_at(v_previous_H, 0)\n        v_b = s_at(v_previous_H, 1)\n        v_c = s_at(v_previous_H, 2)\n        v_d = s_at(v_previous_H, 3)\n        v_e = s_at(v_previous_H, 4)\n        v_f = s_at(v_previous_H, 5)\n        v_g = s_at(v_previous_H, 6)\n        v_h = s_at(v_previous_H, 7)\n        for v_t in s_range(0, 63, budget):\n            v_T1 = word('add', 32, word('add', 32, word('add', 32, word('add', 32, v_h, fn_Sigma_256_1(v_e)), fn_Ch(v_e, v_f, v_g)), s_at(v_K, v_t)), s_at(v_W, v_t))\n            v_T2 = word('add', 32, fn_Sigma_256_0(v_a), fn_Maj(v_a, v_b, v_c))\n            v_h = v_g\n            v_g = v_f\n            v_f = v_e\n            v_e = word('add', 32, v_d, v_T1)\n            v_d = v_c\n            v_c = v_b\n            v_b = v_a\n            v_a = word('add', 32, v_T1, v_T2)\n        s_put(v_H, 0, word('add', 32, v_a, s_at(v_previous_H, 0)))\n        s_put(v_H, 1, word('add', 32, v_b, s_at(v_previous_H, 1)))\n        s_put(v_H, 2, word('add', 32, v_c, s_at(v_previous_H, 2)))\n        s_put(v_H, 3, word('add', 32, v_d, s_at(v_previous_H, 3)))\n        s_put(v_H, 4, word('add', 32, v_e, s_at(v_previous_H, 4)))\n        s_put(v_H, 5, word('add', 32, v_f, s_at(v_previous_H, 5)))\n        s_put(v_H, 6, word('add', 32, v_g, s_at(v_previous_H, 6)))\n        s_put(v_H, 7, word('add', 32, v_h, s_at(v_previous_H, 7)))\n    return s_hex([s_at(v_H, 0), s_at(v_H, 1), s_at(v_H, 2), s_at(v_H, 3), s_at(v_H, 4), s_at(v_H, 5), s_at(v_H, 6), s_at(v_H, 7)], 32, 'big')\n",
+      "specifications": [
+        "12d75bff175933a84eebaae8fa19d6e5d195ed1638f069da479d9f9cfaca216b",
+        "2d257b400c53bcf091d0793ede40b5b292b6aa7b3443362e82e29717da9d335e",
+        "508291f84a9c93e9e37256a554456d5a00989a14bb31bc5c08fa0e2e96c974ff",
+        "69b3eb8ec0395c0d72f35934f3072249535423e40a48f84413ff5c72b3e8939b",
+        "7d456868a54fcce83e7f22beabd5cc27eb90f0c39da8ae5db309c94827c88c68"
+      ]
+    },
+    "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996": {
+      "id": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+      "ir": [
+        "call",
+        "upper",
+        [
+          "ref",
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+      ],
+      "source": "def solve(inputs, recall):\n    return primitive('upper', recall('50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895', inputs))\n"
+    },
+    "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8": {
+      "id": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+      "ir": [
+        "object",
+        {
+          "length": [
+            "call",
+            "length",
+            [
+              "ref",
+              "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+            ]
+          ],
+          "name": [
+            "ref",
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996"
+          ]
+        }
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+        "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996"
+      ],
+      "source": "def solve(inputs, recall):\n    return {'length': primitive('length', recall('50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895', inputs)), 'name': recall('779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996', inputs)}\n"
+    },
+    "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00": {
+      "id": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+      "ir": [
+        "call",
+        "parse_json",
+        [
+          "input",
+          "document"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [],
+      "source": "def solve(inputs, recall):\n    return primitive('parse_json', inputs['document'])\n"
+    },
+    "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946": {
+      "author": "kernel_training_only_library_composition",
+      "catalogue": "5ea371b0b09683babcef5f9a1d0fc4af460c2916d5f3c54efacf4a8214713358",
+      "definition": {
+        "parameters": [
+          "left",
+          "right"
+        ]
+      },
+      "id": "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946",
+      "ir": [
+        "call",
+        "operator.lt",
+        [
+          "map",
+          "builtins.float",
+          [
+            "call",
+            "str.split",
+            [
+              "input",
+              "left"
+            ],
+            [
+              "const",
+              "."
+            ]
+          ]
+        ],
+        [
+          "map",
+          "builtins.float",
+          [
+            "call",
+            "str.split",
+            [
+              "input",
+              "right"
+            ],
+            [
+              "const",
+              "."
+            ]
+          ]
+        ]
+      ],
+      "language": "nova.python-composition.v1",
+      "parents": [],
+      "provenance": "7461aa4871bf082110f8585453d69afc50fb797878ecece15c8159ccf0335f6f",
+      "source": "def solve(inputs, recall):\n    return invoke('operator.lt', lift('builtins.float', invoke('str.split', inputs['left'], '.')), lift('builtins.float', invoke('str.split', inputs['right'], '.')))\n",
+      "tools": [
+        "builtins.float",
+        "operator.lt",
+        "str.split"
+      ]
+    },
+    "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186": {
+      "id": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+      "ir": [
+        "call",
+        "json",
+        [
+          "call",
+          "strip",
+          [
+            "call",
+            "upper",
+            [
+              "call",
+              "parse_json",
+              [
+                "input",
+                "payload"
+              ]
+            ]
+          ]
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [],
+      "source": "def solve(inputs, recall):\n    return primitive('json', primitive('strip', primitive('upper', primitive('parse_json', inputs['payload']))))\n"
+    },
+    "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab": {
+      "id": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+      "ir": [
+        "object",
+        {
+          "combined": [
+            "ref",
+            "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8"
+          ],
+          "difference": [
+            "call",
+            "sub",
+            [
+              "input",
+              "stars"
+            ],
+            [
+              "input",
+              "forks"
+            ]
+          ]
+        }
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8"
+      ],
+      "source": "def solve(inputs, recall):\n    return {'combined': recall('c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8', inputs), 'difference': primitive('sub', inputs['stars'], inputs['forks'])}\n"
+    },
+    "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011": {
+      "id": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+      "ir": [
+        "object",
+        {
+          "digest": [
+            "ref",
+            "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f"
+          ],
+          "name": [
+            "ref",
+            "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996"
+          ]
+        }
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+        "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996"
+      ],
+      "source": "def solve(inputs, recall):\n    return {'digest': recall('40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f', inputs), 'name': recall('779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996', inputs)}\n"
+    },
+    "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00": {
+      "id": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+      "ir": [
+        "call",
+        "json",
+        [
+          "ref",
+          "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934"
+      ],
+      "source": "def solve(inputs, recall):\n    return primitive('json', recall('0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934', inputs))\n"
+    },
+    "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9": {
+      "id": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+      "ir": [
+        "object",
+        {
+          "bytes": [
+            "ref",
+            "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750"
+          ],
+          "files": [
+            "call",
+            "length",
+            [
+              "input",
+              "values"
+            ]
+          ],
+          "sizes": [
+            "call",
+            "sort",
+            [
+              "input",
+              "values"
+            ]
+          ]
+        }
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750"
+      ],
+      "source": "def solve(inputs, recall):\n    return {'bytes': recall('ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750', inputs), 'files': primitive('length', inputs['values']), 'sizes': primitive('sort', inputs['values'])}\n"
+    },
+    "b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393": {
+      "id": "b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393",
+      "ir": [
+        "apply",
+        "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946",
+        [
+          "object",
+          {
+            "left": [
+              "input",
+              "left"
+            ],
+            "right": [
+              "input",
+              "right"
+            ]
+          }
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946"
+      ],
+      "source": "def solve(inputs, recall):\n    return recall('955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946', {'left': inputs['left'], 'right': inputs['right']})\n"
+    },
+    "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe": {
+      "id": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+      "ir": [
+        "call",
+        "json",
+        [
+          "ref",
+          "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9"
+      ],
+      "source": "def solve(inputs, recall):\n    return primitive('json', recall('b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9', inputs))\n"
+    },
+    "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8": {
+      "id": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+      "ir": [
+        "call",
+        "add",
+        [
+          "input",
+          "forks"
+        ],
+        [
+          "input",
+          "stars"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [],
+      "source": "def solve(inputs, recall):\n    return primitive('add', inputs['forks'], inputs['stars'])\n"
+    },
+    "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87": {
+      "id": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+      "ir": [
+        "object",
+        {
+          "length": [
+            "call",
+            "length",
+            [
+              "ref",
+              "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+            ]
+          ],
+          "name": [
+            "ref",
+            "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+          ]
+        }
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+      ],
+      "source": "def solve(inputs, recall):\n    return {'length': primitive('length', recall('dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a', inputs)), 'name': recall('dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a', inputs)}\n"
+    },
+    "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a": {
+      "id": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+      "ir": [
+        "call",
+        "upper",
+        [
+          "ref",
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [
+        "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+      ],
+      "source": "def solve(inputs, recall):\n    return primitive('upper', recall('de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46', inputs))\n"
+    },
+    "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46": {
+      "id": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+      "ir": [
+        "call",
+        "strip",
+        [
+          "input",
+          "text"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [],
+      "source": "def solve(inputs, recall):\n    return primitive('strip', inputs['text'])\n"
+    },
+    "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750": {
+      "id": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+      "ir": [
+        "call",
+        "sum",
+        [
+          "input",
+          "values"
+        ]
+      ],
+      "language": "nova.expression.v1",
+      "parents": [],
+      "source": "def solve(inputs, recall):\n    return primitive('sum', inputs['values'])\n"
+    }
+  },
+  "schema": "nova.next.inheritance.v1",
+  "source_commit": "4540a512ca71bb9118168cd8677a28ff3ce98873",
+  "tasks": {
+    "10-trim": {
+      "holdout": [
+        {
+          "input": {
+            "text": "  Carol  "
+          },
+          "output": "Carol"
+        },
+        {
+          "input": {
+            "text": " dAVID "
+          },
+          "output": "dAVID"
+        },
+        {
+          "input": {
+            "text": "\téva \n"
+          },
+          "output": "éva"
+        }
+      ],
+      "id": "10-trim",
+      "source": "nova:public-maintainer-authored-curriculum-v1",
+      "train": [
+        {
+          "input": {
+            "text": "  Alice "
+          },
+          "output": "Alice"
+        },
+        {
+          "input": {
+            "text": " Bob  "
+          },
+          "output": "Bob"
+        },
+        {
+          "input": {
+            "text": "  Straße   "
+          },
+          "output": "Straße"
+        }
+      ]
+    },
+    "100-deep-normalize": {
+      "holdout": [
+        {
+          "input": {
+            "payload": "\"  Dália \""
+          },
+          "output": "\"DÁLIA\""
+        },
+        {
+          "input": {
+            "payload": "\"ÉDELWEISS  \""
+          },
+          "output": "\"ÉDELWEISS\""
+        },
+        {
+          "input": {
+            "payload": "\" ΙΡΙΔΑ \""
+          },
+          "output": "\"ΙΡΙΔΑ\""
+        }
+      ],
+      "id": "100-deep-normalize",
+      "source": "maintainer:synthetic-engine-cycle-v2; independently calculated Python string/JSON oracles",
+      "train": [
+        {
+          "input": {
+            "payload": "\"  Aster  \""
+          },
+          "output": "\"ASTER\""
+        },
+        {
+          "input": {
+            "payload": "\"\\tBegonia \""
+          },
+          "output": "\"BEGONIA\""
+        },
+        {
+          "input": {
+            "payload": "\" Crocus\\n\""
+          },
+          "output": "\"CROCUS\""
+        }
+      ]
+    },
+    "110-deep-record": {
+      "holdout": [
+        {
+          "input": {
+            "payload": "\"  Jasmin \""
+          },
+          "output": {
+            "length": 6,
+            "name": "JASMIN"
+          }
+        },
+        {
+          "input": {
+            "payload": "\"KÁLA  \""
+          },
+          "output": {
+            "length": 4,
+            "name": "KÁLA"
+          }
+        },
+        {
+          "input": {
+            "payload": "\" Лилия \""
+          },
+          "output": {
+            "length": 5,
+            "name": "ЛИЛИЯ"
+          }
+        }
+      ],
+      "id": "110-deep-record",
+      "source": "maintainer:synthetic-engine-cycle-v2; independently calculated Python string/JSON oracles",
+      "train": [
+        {
+          "input": {
+            "payload": "\"  Fern  \""
+          },
+          "output": {
+            "length": 4,
+            "name": "FERN"
+          }
+        },
+        {
+          "input": {
+            "payload": "\"\\tGardenia \""
+          },
+          "output": {
+            "length": 8,
+            "name": "GARDENIA"
+          }
+        },
+        {
+          "input": {
+            "payload": "\" Heather\\n\""
+          },
+          "output": {
+            "length": 7,
+            "name": "HEATHER"
+          }
+        }
+      ]
+    },
+    "120-deep-serialized": {
+      "holdout": [
+        {
+          "input": {
+            "payload": "\"  Pivoňka \""
+          },
+          "output": "{\"length\":7,\"name\":\"PIVOŇKA\"}"
+        },
+        {
+          "input": {
+            "payload": "\"QUINCE  \""
+          },
+          "output": "{\"length\":6,\"name\":\"QUINCE\"}"
+        },
+        {
+          "input": {
+            "payload": "\" Роза \""
+          },
+          "output": "{\"length\":4,\"name\":\"РОЗА\"}"
+        }
+      ],
+      "id": "120-deep-serialized",
+      "source": "maintainer:synthetic-engine-cycle-v2; independently calculated Python string/JSON oracles",
+      "train": [
+        {
+          "input": {
+            "payload": "\"  Magnolia  \""
+          },
+          "output": "{\"length\":8,\"name\":\"MAGNOLIA\"}"
+        },
+        {
+          "input": {
+            "payload": "\"\\tNarcissus \""
+          },
+          "output": "{\"length\":9,\"name\":\"NARCISSUS\"}"
+        },
+        {
+          "input": {
+            "payload": "\" Orchid\\n\""
+          },
+          "output": "{\"length\":6,\"name\":\"ORCHID\"}"
+        }
+      ]
+    },
+    "130-hash-record": {
+      "holdout": [
+        {
+          "input": {
+            "document": "{\"name\": \"consecutive-generation\"}",
+            "field": "name"
+          },
+          "output": {
+            "digest": "ded30a255670b4341c247df08d9a8bdc227370e180a0516ae77dc567fc0206fb",
+            "name": "CONSECUTIVE-GENERATION"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\": \"future-native-goal\"}",
+            "field": "name"
+          },
+          "output": {
+            "digest": "68e7ece3f27918d1f26a9c127cb13f2dbe6db0684de158da7b96a6346a94882d",
+            "name": "FUTURE-NATIVE-GOAL"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\": \"сложение-опыта\"}",
+            "field": "name"
+          },
+          "output": {
+            "digest": "e3a0f2981cbdc0b7b3655b4fd0018274b93a33cf35f7a48fad72d4a9a254ea7a",
+            "name": "СЛОЖЕНИЕ-ОПЫТА"
+          }
+        }
+      ],
+      "id": "130-hash-record",
+      "source": "operator:next-goal-fixture-before-capability-generation; independent SHA oracle in evaluator",
+      "train": [
+        {
+          "input": {
+            "document": "{\"name\": \"sequence-integration\"}",
+            "field": "name"
+          },
+          "output": {
+            "digest": "2e01e7550633329a8d86a2b5ff92fb8f65f112dc5fa3ce374c95890a13055dd2",
+            "name": "SEQUENCE-INTEGRATION"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\": \"byte-vector-learning\"}",
+            "field": "name"
+          },
+          "output": {
+            "digest": "7db4edd35a99941dde6aba6426b79d4633c0db2d36fe2ef1df448de2512def2a",
+            "name": "BYTE-VECTOR-LEARNING"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\": \"recurrence-runtime\"}",
+            "field": "name"
+          },
+          "output": {
+            "digest": "a50e4ddab1c0e0c75931fbb09318a722382807754b044844e4aaf8c8fc37f6eb",
+            "name": "RECURRENCE-RUNTIME"
+          }
+        }
+      ]
+    },
+    "20-normalize": {
+      "holdout": [
+        {
+          "input": {
+            "text": "  Carol  "
+          },
+          "output": "CAROL"
+        },
+        {
+          "input": {
+            "text": " dAVID "
+          },
+          "output": "DAVID"
+        },
+        {
+          "input": {
+            "text": "\téva \n"
+          },
+          "output": "ÉVA"
+        }
+      ],
+      "id": "20-normalize",
+      "source": "nova:public-maintainer-authored-curriculum-v1",
+      "train": [
+        {
+          "input": {
+            "text": "  Alice "
+          },
+          "output": "ALICE"
+        },
+        {
+          "input": {
+            "text": " Bob  "
+          },
+          "output": "BOB"
+        },
+        {
+          "input": {
+            "text": "  Straße   "
+          },
+          "output": "STRASSE"
+        }
+      ]
+    },
+    "200-distribution-bytes": {
+      "holdout": [
+        {
+          "input": {
+            "values": [
+              135717,
+              458972
+            ]
+          },
+          "output": 594689
+        },
+        {
+          "input": {
+            "values": [
+              183779,
+              184178,
+              211037,
+              218652,
+              205422,
+              205444,
+              218742,
+              221054,
+              213489,
+              220241,
+              174578,
+              185082,
+              183838,
+              184168,
+              211805,
+              218716,
+              205569,
+              204907,
+              217807,
+              221252,
+              214214,
+              219408,
+              174470,
+              185096,
+              179941,
+              184821,
+              184719,
+              214799,
+              222389,
+              210249,
+              208775,
+              221822
+            ]
+          },
+          "output": 6510463
+        },
+        {
+          "input": {
+            "values": [
+              11631,
+              12057,
+              22050,
+              20681,
+              20705,
+              21524,
+              20282,
+              20745,
+              14571,
+              15056,
+              13932,
+              11631,
+              12058,
+              24287,
+              22940,
+              21887,
+              23692,
+              21471,
+              22923,
+              14572,
+              15077,
+              13876,
+              11615,
+              12020,
+              24332,
+              22947,
+              21962,
+              23760,
+              21529,
+              23015,
+              14540,
+              15105
+            ]
+          },
+          "output": 588473
+        }
+      ],
+      "id": "200-distribution-bytes",
+      "source": "live-https:internet-tasks-v1:200-distribution-bytes; raw response hashes in sources.json",
+      "train": [
+        {
+          "input": {
+            "values": [
+              129956,
+              313412
+            ]
+          },
+          "output": 443368
+        },
+        {
+          "input": {
+            "values": [
+              4010153,
+              4723133,
+              4712478,
+              4730726,
+              5353524,
+              4746720,
+              4361866,
+              4730028,
+              5308405,
+              4746230,
+              4862596,
+              5014082,
+              3842826,
+              3973525,
+              4708817,
+              4697300,
+              4716039,
+              5332388,
+              4730293,
+              4346031,
+              4715344,
+              5287201,
+              4730023,
+              4847362,
+              4999247,
+              3825806,
+              4035307,
+              4751900,
+              4738357,
+              4758474,
+              5375862,
+              4772942
+            ]
+          },
+          "output": 150484985
+        },
+        {
+          "input": {
+            "values": [
+              184227,
+              174019,
+              740646,
+              840793,
+              770293,
+              732872,
+              758828,
+              142415,
+              158561,
+              185826,
+              175577,
+              775556,
+              882114,
+              806638,
+              767463,
+              794986,
+              142543,
+              158763,
+              182063,
+              173973,
+              775116,
+              844011,
+              807870,
+              761089,
+              790181,
+              137658,
+              154003,
+              140344,
+              181669,
+              173252,
+              767081,
+              841159
+            ]
+          },
+          "output": 15921589
+        }
+      ]
+    },
+    "210-distribution-summary": {
+      "holdout": [
+        {
+          "input": {
+            "values": [
+              135717,
+              458972
+            ]
+          },
+          "output": {
+            "bytes": 594689,
+            "files": 2,
+            "sizes": [
+              135717,
+              458972
+            ]
+          }
+        },
+        {
+          "input": {
+            "values": [
+              183779,
+              184178,
+              211037,
+              218652,
+              205422,
+              205444,
+              218742,
+              221054,
+              213489,
+              220241,
+              174578,
+              185082,
+              183838,
+              184168,
+              211805,
+              218716,
+              205569,
+              204907,
+              217807,
+              221252,
+              214214,
+              219408,
+              174470,
+              185096,
+              179941,
+              184821,
+              184719,
+              214799,
+              222389,
+              210249,
+              208775,
+              221822
+            ]
+          },
+          "output": {
+            "bytes": 6510463,
+            "files": 32,
+            "sizes": [
+              174470,
+              174578,
+              179941,
+              183779,
+              183838,
+              184168,
+              184178,
+              184719,
+              184821,
+              185082,
+              185096,
+              204907,
+              205422,
+              205444,
+              205569,
+              208775,
+              210249,
+              211037,
+              211805,
+              213489,
+              214214,
+              214799,
+              217807,
+              218652,
+              218716,
+              218742,
+              219408,
+              220241,
+              221054,
+              221252,
+              221822,
+              222389
+            ]
+          }
+        },
+        {
+          "input": {
+            "values": [
+              11631,
+              12057,
+              22050,
+              20681,
+              20705,
+              21524,
+              20282,
+              20745,
+              14571,
+              15056,
+              13932,
+              11631,
+              12058,
+              24287,
+              22940,
+              21887,
+              23692,
+              21471,
+              22923,
+              14572,
+              15077,
+              13876,
+              11615,
+              12020,
+              24332,
+              22947,
+              21962,
+              23760,
+              21529,
+              23015,
+              14540,
+              15105
+            ]
+          },
+          "output": {
+            "bytes": 588473,
+            "files": 32,
+            "sizes": [
+              11615,
+              11631,
+              11631,
+              12020,
+              12057,
+              12058,
+              13876,
+              13932,
+              14540,
+              14571,
+              14572,
+              15056,
+              15077,
+              15105,
+              20282,
+              20681,
+              20705,
+              20745,
+              21471,
+              21524,
+              21529,
+              21887,
+              21962,
+              22050,
+              22923,
+              22940,
+              22947,
+              23015,
+              23692,
+              23760,
+              24287,
+              24332
+            ]
+          }
+        }
+      ],
+      "id": "210-distribution-summary",
+      "source": "live-https:internet-tasks-v1:210-distribution-summary; raw response hashes in sources.json",
+      "train": [
+        {
+          "input": {
+            "values": [
+              129956,
+              313412
+            ]
+          },
+          "output": {
+            "bytes": 443368,
+            "files": 2,
+            "sizes": [
+              129956,
+              313412
+            ]
+          }
+        },
+        {
+          "input": {
+            "values": [
+              4010153,
+              4723133,
+              4712478,
+              4730726,
+              5353524,
+              4746720,
+              4361866,
+              4730028,
+              5308405,
+              4746230,
+              4862596,
+              5014082,
+              3842826,
+              3973525,
+              4708817,
+              4697300,
+              4716039,
+              5332388,
+              4730293,
+              4346031,
+              4715344,
+              5287201,
+              4730023,
+              4847362,
+              4999247,
+              3825806,
+              4035307,
+              4751900,
+              4738357,
+              4758474,
+              5375862,
+              4772942
+            ]
+          },
+          "output": {
+            "bytes": 150484985,
+            "files": 32,
+            "sizes": [
+              3825806,
+              3842826,
+              3973525,
+              4010153,
+              4035307,
+              4346031,
+              4361866,
+              4697300,
+              4708817,
+              4712478,
+              4715344,
+              4716039,
+              4723133,
+              4730023,
+              4730028,
+              4730293,
+              4730726,
+              4738357,
+              4746230,
+              4746720,
+              4751900,
+              4758474,
+              4772942,
+              4847362,
+              4862596,
+              4999247,
+              5014082,
+              5287201,
+              5308405,
+              5332388,
+              5353524,
+              5375862
+            ]
+          }
+        },
+        {
+          "input": {
+            "values": [
+              184227,
+              174019,
+              740646,
+              840793,
+              770293,
+              732872,
+              758828,
+              142415,
+              158561,
+              185826,
+              175577,
+              775556,
+              882114,
+              806638,
+              767463,
+              794986,
+              142543,
+              158763,
+              182063,
+              173973,
+              775116,
+              844011,
+              807870,
+              761089,
+              790181,
+              137658,
+              154003,
+              140344,
+              181669,
+              173252,
+              767081,
+              841159
+            ]
+          },
+          "output": {
+            "bytes": 15921589,
+            "files": 32,
+            "sizes": [
+              137658,
+              140344,
+              142415,
+              142543,
+              154003,
+              158561,
+              158763,
+              173252,
+              173973,
+              174019,
+              175577,
+              181669,
+              182063,
+              184227,
+              185826,
+              732872,
+              740646,
+              758828,
+              761089,
+              767081,
+              767463,
+              770293,
+              775116,
+              775556,
+              790181,
+              794986,
+              806638,
+              807870,
+              840793,
+              841159,
+              844011,
+              882114
+            ]
+          }
+        }
+      ]
+    },
+    "220-distribution-json": {
+      "holdout": [
+        {
+          "input": {
+            "values": [
+              135717,
+              458972
+            ]
+          },
+          "output": "{\"bytes\":594689,\"files\":2,\"sizes\":[135717,458972]}"
+        },
+        {
+          "input": {
+            "values": [
+              183779,
+              184178,
+              211037,
+              218652,
+              205422,
+              205444,
+              218742,
+              221054,
+              213489,
+              220241,
+              174578,
+              185082,
+              183838,
+              184168,
+              211805,
+              218716,
+              205569,
+              204907,
+              217807,
+              221252,
+              214214,
+              219408,
+              174470,
+              185096,
+              179941,
+              184821,
+              184719,
+              214799,
+              222389,
+              210249,
+              208775,
+              221822
+            ]
+          },
+          "output": "{\"bytes\":6510463,\"files\":32,\"sizes\":[174470,174578,179941,183779,183838,184168,184178,184719,184821,185082,185096,204907,205422,205444,205569,208775,210249,211037,211805,213489,214214,214799,217807,218652,218716,218742,219408,220241,221054,221252,221822,222389]}"
+        },
+        {
+          "input": {
+            "values": [
+              11631,
+              12057,
+              22050,
+              20681,
+              20705,
+              21524,
+              20282,
+              20745,
+              14571,
+              15056,
+              13932,
+              11631,
+              12058,
+              24287,
+              22940,
+              21887,
+              23692,
+              21471,
+              22923,
+              14572,
+              15077,
+              13876,
+              11615,
+              12020,
+              24332,
+              22947,
+              21962,
+              23760,
+              21529,
+              23015,
+              14540,
+              15105
+            ]
+          },
+          "output": "{\"bytes\":588473,\"files\":32,\"sizes\":[11615,11631,11631,12020,12057,12058,13876,13932,14540,14571,14572,15056,15077,15105,20282,20681,20705,20745,21471,21524,21529,21887,21962,22050,22923,22940,22947,23015,23692,23760,24287,24332]}"
+        }
+      ],
+      "id": "220-distribution-json",
+      "source": "live-https:internet-tasks-v1:220-distribution-json; raw response hashes in sources.json",
+      "train": [
+        {
+          "input": {
+            "values": [
+              129956,
+              313412
+            ]
+          },
+          "output": "{\"bytes\":443368,\"files\":2,\"sizes\":[129956,313412]}"
+        },
+        {
+          "input": {
+            "values": [
+              4010153,
+              4723133,
+              4712478,
+              4730726,
+              5353524,
+              4746720,
+              4361866,
+              4730028,
+              5308405,
+              4746230,
+              4862596,
+              5014082,
+              3842826,
+              3973525,
+              4708817,
+              4697300,
+              4716039,
+              5332388,
+              4730293,
+              4346031,
+              4715344,
+              5287201,
+              4730023,
+              4847362,
+              4999247,
+              3825806,
+              4035307,
+              4751900,
+              4738357,
+              4758474,
+              5375862,
+              4772942
+            ]
+          },
+          "output": "{\"bytes\":150484985,\"files\":32,\"sizes\":[3825806,3842826,3973525,4010153,4035307,4346031,4361866,4697300,4708817,4712478,4715344,4716039,4723133,4730023,4730028,4730293,4730726,4738357,4746230,4746720,4751900,4758474,4772942,4847362,4862596,4999247,5014082,5287201,5308405,5332388,5353524,5375862]}"
+        },
+        {
+          "input": {
+            "values": [
+              184227,
+              174019,
+              740646,
+              840793,
+              770293,
+              732872,
+              758828,
+              142415,
+              158561,
+              185826,
+              175577,
+              775556,
+              882114,
+              806638,
+              767463,
+              794986,
+              142543,
+              158763,
+              182063,
+              173973,
+              775116,
+              844011,
+              807870,
+              761089,
+              790181,
+              137658,
+              154003,
+              140344,
+              181669,
+              173252,
+              767081,
+              841159
+            ]
+          },
+          "output": "{\"bytes\":15921589,\"files\":32,\"sizes\":[137658,140344,142415,142543,154003,158561,158763,173252,173973,174019,175577,181669,182063,184227,185826,732872,740646,758828,761089,767081,767463,770293,775116,775556,790181,794986,806638,807870,840793,841159,844011,882114]}"
+        }
+      ]
+    },
+    "230-repository-counts": {
+      "holdout": [
+        {
+          "input": {
+            "forks": 2424,
+            "stars": 17732
+          },
+          "output": 20156
+        },
+        {
+          "input": {
+            "forks": 3390,
+            "stars": 14518
+          },
+          "output": 17908
+        },
+        {
+          "input": {
+            "forks": 36005,
+            "stars": 77229
+          },
+          "output": 113234
+        }
+      ],
+      "id": "230-repository-counts",
+      "source": "live-https:internet-tasks-v1:230-repository-counts; raw response hashes in sources.json",
+      "train": [
+        {
+          "input": {
+            "forks": 16989,
+            "stars": 74758
+          },
+          "output": 91747
+        },
+        {
+          "input": {
+            "forks": 10533,
+            "stars": 54330
+          },
+          "output": 64863
+        },
+        {
+          "input": {
+            "forks": 1710,
+            "stars": 15502
+          },
+          "output": 17212
+        }
+      ]
+    },
+    "240-repository-record": {
+      "holdout": [
+        {
+          "input": {
+            "forks": 2424,
+            "stars": 17732
+          },
+          "output": {
+            "combined": 20156,
+            "difference": 15308
+          }
+        },
+        {
+          "input": {
+            "forks": 3390,
+            "stars": 14518
+          },
+          "output": {
+            "combined": 17908,
+            "difference": 11128
+          }
+        },
+        {
+          "input": {
+            "forks": 36005,
+            "stars": 77229
+          },
+          "output": {
+            "combined": 113234,
+            "difference": 41224
+          }
+        }
+      ],
+      "id": "240-repository-record",
+      "source": "live-https:internet-tasks-v1:240-repository-record; raw response hashes in sources.json",
+      "train": [
+        {
+          "input": {
+            "forks": 16989,
+            "stars": 74758
+          },
+          "output": {
+            "combined": 91747,
+            "difference": 57769
+          }
+        },
+        {
+          "input": {
+            "forks": 10533,
+            "stars": 54330
+          },
+          "output": {
+            "combined": 64863,
+            "difference": 43797
+          }
+        },
+        {
+          "input": {
+            "forks": 1710,
+            "stars": 15502
+          },
+          "output": {
+            "combined": 17212,
+            "difference": 13792
+          }
+        }
+      ]
+    },
+    "250-online-hash-json": {
+      "holdout": [
+        {
+          "input": {
+            "document": "{\"name\": \"urllib3\", \"version\": \"2.8.0\"}",
+            "field": "name"
+          },
+          "output": "{\"digest\":\"4e08df8645a52a3fa9c5d9bea56d95d55b911db35f652cbbe6016517e761acb5\",\"name\":\"URLLIB3\"}"
+        },
+        {
+          "input": {
+            "document": "{\"name\": \"cffi\", \"version\": \"2.1.1\"}",
+            "field": "name"
+          },
+          "output": "{\"digest\":\"eb7a6b8bd65f9f6f4972f0cd6b9f1ac9d5c6c6049f82a2817612e9afdb157308\",\"name\":\"CFFI\"}"
+        },
+        {
+          "input": {
+            "document": "{\"name\": \"MarkupSafe\", \"version\": \"3.0.3\"}",
+            "field": "name"
+          },
+          "output": "{\"digest\":\"6d518e7db225a33c2e813c76c2ac32bc6f55f1e38c2ca362009d69b8a887b9de\",\"name\":\"MARKUPSAFE\"}"
+        }
+      ],
+      "id": "250-online-hash-json",
+      "source": "live-https:internet-tasks-v1:250-online-hash-json; raw response hashes in sources.json",
+      "train": [
+        {
+          "input": {
+            "document": "{\"name\": \"packaging\", \"version\": \"26.3\"}",
+            "field": "name"
+          },
+          "output": "{\"digest\":\"71669691cb0b0f1bf662939c0db0782fb1a71b103bba2564051bb58bf0e303e6\",\"name\":\"PACKAGING\"}"
+        },
+        {
+          "input": {
+            "document": "{\"name\": \"cryptography\", \"version\": \"50.0.1\"}",
+            "field": "name"
+          },
+          "output": "{\"digest\":\"e06554818e902b4ba339f066967c0000da3fcda4fd7eb4ef89c124fa78bda419\",\"name\":\"CRYPTOGRAPHY\"}"
+        },
+        {
+          "input": {
+            "document": "{\"name\": \"PyYAML\", \"version\": \"6.0.3\"}",
+            "field": "name"
+          },
+          "output": "{\"digest\":\"ad205bd03dcba1f17e6de3d053e5e1b000a78a53935a48f7a2e22c8e335a603c\",\"name\":\"PYYAML\"}"
+        }
+      ]
+    },
+    "30-record": {
+      "holdout": [
+        {
+          "input": {
+            "text": "  Carol  "
+          },
+          "output": {
+            "length": 5,
+            "name": "CAROL"
+          }
+        },
+        {
+          "input": {
+            "text": " dAVID "
+          },
+          "output": {
+            "length": 5,
+            "name": "DAVID"
+          }
+        },
+        {
+          "input": {
+            "text": "\téva \n"
+          },
+          "output": {
+            "length": 3,
+            "name": "ÉVA"
+          }
+        }
+      ],
+      "id": "30-record",
+      "source": "nova:public-maintainer-authored-curriculum-v1",
+      "train": [
+        {
+          "input": {
+            "text": "  Alice "
+          },
+          "output": {
+            "length": 5,
+            "name": "ALICE"
+          }
+        },
+        {
+          "input": {
+            "text": " Bob  "
+          },
+          "output": {
+            "length": 3,
+            "name": "BOB"
+          }
+        },
+        {
+          "input": {
+            "text": "  Straße   "
+          },
+          "output": {
+            "length": 7,
+            "name": "STRASSE"
+          }
+        }
+      ]
+    },
+    "40-json-document": {
+      "holdout": [
+        {
+          "input": {
+            "document": "{\"name\":\"babel\",\"repository\":\"babel/babel\",\"version\":\"8.0.6\"}",
+            "field": "name"
+          },
+          "output": {
+            "name": "babel",
+            "repository": "babel/babel",
+            "version": "8.0.6"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"chai\",\"repository\":\"chaijs/chai\",\"version\":\"0.0.0-development\"}",
+            "field": "name"
+          },
+          "output": {
+            "name": "chai",
+            "repository": "chaijs/chai",
+            "version": "0.0.0-development"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"chalk\",\"repository\":\"chalk/chalk\",\"version\":\"6.0.0\"}",
+            "field": "name"
+          },
+          "output": {
+            "name": "chalk",
+            "repository": "chalk/chalk",
+            "version": "6.0.0"
+          }
+        }
+      ],
+      "id": "40-json-document",
+      "source": "github-frozen-metadata:development-chain-v1:40-json-document",
+      "train": [
+        {
+          "input": {
+            "document": "{\"name\":\"ajv\",\"repository\":\"ajv-validator/ajv\",\"version\":\"8.20.0\"}",
+            "field": "name"
+          },
+          "output": {
+            "name": "ajv",
+            "repository": "ajv-validator/ajv",
+            "version": "8.20.0"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"angular-srcs\",\"repository\":\"angular/angular\",\"version\":\"22.3.0-next.0\"}",
+            "field": "name"
+          },
+          "output": {
+            "name": "angular-srcs",
+            "repository": "angular/angular",
+            "version": "22.3.0-next.0"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"axios\",\"repository\":\"axios/axios\",\"version\":\"1.20.0\"}",
+            "field": "name"
+          },
+          "output": {
+            "name": "axios",
+            "repository": "axios/axios",
+            "version": "1.20.0"
+          }
+        }
+      ]
+    },
+    "50-package-name": {
+      "holdout": [
+        {
+          "input": {
+            "document": "{\"name\":\"@date-fns/root\",\"repository\":\"date-fns/date-fns\",\"version\":\"0.0.0\"}",
+            "field": "name"
+          },
+          "output": "@date-fns/root"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"eslint\",\"repository\":\"eslint/eslint\",\"version\":\"10.11.0\"}",
+            "field": "name"
+          },
+          "output": "eslint"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"express\",\"repository\":\"expressjs/express\",\"version\":\"5.2.1\"}",
+            "field": "name"
+          },
+          "output": "express"
+        }
+      ],
+      "id": "50-package-name",
+      "source": "github-frozen-metadata:development-chain-v1:50-package-name",
+      "train": [
+        {
+          "input": {
+            "document": "{\"name\":\"chart.js\",\"repository\":\"chartjs/Chart.js\",\"version\":\"4.5.1\"}",
+            "field": "name"
+          },
+          "output": "chart.js"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"cheerio\",\"repository\":\"cheeriojs/cheerio\",\"version\":\"1.2.0\"}",
+            "field": "name"
+          },
+          "output": "cheerio"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"d3\",\"repository\":\"d3/d3\",\"version\":\"7.9.0\"}",
+            "field": "name"
+          },
+          "output": "d3"
+        }
+      ]
+    },
+    "60-uppercase-name": {
+      "holdout": [
+        {
+          "input": {
+            "document": "{\"name\":\"immer\",\"repository\":\"immerjs/immer\",\"version\":\"10.0.3-beta\"}",
+            "field": "name"
+          },
+          "output": "IMMER"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"@jest/monorepo\",\"repository\":\"jestjs/jest\",\"version\":\"0.0.0\"}",
+            "field": "name"
+          },
+          "output": "@JEST/MONOREPO"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"jquery\",\"repository\":\"jquery/jquery\",\"version\":\"4.0.0\"}",
+            "field": "name"
+          },
+          "output": "JQUERY"
+        }
+      ],
+      "id": "60-uppercase-name",
+      "source": "github-frozen-metadata:development-chain-v1:60-uppercase-name",
+      "train": [
+        {
+          "input": {
+            "document": "{\"name\":\"fastify\",\"repository\":\"fastify/fastify\",\"version\":\"6.0.0-alpha.4\"}",
+            "field": "name"
+          },
+          "output": "FASTIFY"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"hono\",\"repository\":\"honojs/hono\",\"version\":\"4.13.8\"}",
+            "field": "name"
+          },
+          "output": "HONO"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"dayjs\",\"repository\":\"iamkun/dayjs\",\"version\":\"0.0.0-development\"}",
+            "field": "name"
+          },
+          "output": "DAYJS"
+        }
+      ]
+    },
+    "70-package-record": {
+      "holdout": [
+        {
+          "input": {
+            "document": "{\"name\":\"@typescript/repo\",\"repository\":\"microsoft/TypeScript\",\"version\":\"0.0.0\"}",
+            "field": "name"
+          },
+          "output": {
+            "length": 16,
+            "name": "@TYPESCRIPT/REPO"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"mocha\",\"repository\":\"mochajs/mocha\",\"version\":\"12.0.2\"}",
+            "field": "name"
+          },
+          "output": {
+            "length": 5,
+            "name": "MOCHA"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"moment\",\"repository\":\"moment/moment\",\"version\":\"2.31.0\"}",
+            "field": "name"
+          },
+          "output": {
+            "length": 6,
+            "name": "MOMENT"
+          }
+        }
+      ],
+      "id": "70-package-record",
+      "source": "github-frozen-metadata:development-chain-v1:70-package-record",
+      "train": [
+        {
+          "input": {
+            "document": "{\"name\":\"koa\",\"repository\":\"koajs/koa\",\"version\":\"3.2.1\"}",
+            "field": "name"
+          },
+          "output": {
+            "length": 3,
+            "name": "KOA"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"lodash\",\"repository\":\"lodash/lodash\",\"version\":\"4.18.1\"}",
+            "field": "name"
+          },
+          "output": {
+            "length": 6,
+            "name": "LODASH"
+          }
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"mermaid-monorepo\",\"repository\":\"mermaid-js/mermaid\",\"version\":\"10.2.4\"}",
+            "field": "name"
+          },
+          "output": {
+            "length": 16,
+            "name": "MERMAID-MONOREPO"
+          }
+        }
+      ]
+    },
+    "80-serialized-record": {
+      "holdout": [
+        {
+          "input": {
+            "document": "{\"name\":\"ramda\",\"repository\":\"ramda/ramda\",\"version\":\"0.32.0\"}",
+            "field": "name"
+          },
+          "output": "{\"length\":5,\"name\":\"RAMDA\"}"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"redux\",\"repository\":\"reduxjs/redux\",\"version\":\"5.0.1\"}",
+            "field": "name"
+          },
+          "output": "{\"length\":5,\"name\":\"REDUX\"}"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"rollup\",\"repository\":\"rollup/rollup\",\"version\":\"4.63.4\"}",
+            "field": "name"
+          },
+          "output": "{\"length\":6,\"name\":\"ROLLUP\"}"
+        }
+      ],
+      "id": "80-serialized-record",
+      "source": "github-frozen-metadata:development-chain-v1:80-serialized-record",
+      "train": [
+        {
+          "input": {
+            "document": "{\"name\":\"nock\",\"repository\":\"nock/nock\",\"version\":\"0.0.0-development\"}",
+            "field": "name"
+          },
+          "output": "{\"length\":4,\"name\":\"NOCK\"}"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"zustand\",\"repository\":\"pmndrs/zustand\",\"version\":\"5.0.15\"}",
+            "field": "name"
+          },
+          "output": "{\"length\":7,\"name\":\"ZUSTAND\"}"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"prettier\",\"repository\":\"prettier/prettier\",\"version\":\"3.10.0-dev\"}",
+            "field": "name"
+          },
+          "output": "{\"length\":8,\"name\":\"PRETTIER\"}"
+        }
+      ]
+    },
+    "90-sha256-deficit-control": {
+      "holdout": [
+        {
+          "input": {
+            "document": "{\"name\":\"got\",\"repository\":\"sindresorhus/got\",\"version\":\"16.0.0\"}",
+            "field": "name"
+          },
+          "output": "0497db517ef058cb6d3672d5ffe8f062fddabc4bf56aa1d254b7f078e9a79e49"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"p-limit\",\"repository\":\"sindresorhus/p-limit\",\"version\":\"7.3.3\"}",
+            "field": "name"
+          },
+          "output": "ceab5be4dc4226ae870339a44fdd73d0e26050b7d6121837d561db4a693b3acf"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"sinon\",\"repository\":\"sinonjs/sinon\",\"version\":\"22.1.0\"}",
+            "field": "name"
+          },
+          "output": "0a9d2aed8af6f9201d14f7be3ff8f59f76fa0c6f98d86a2eff8b6bc56936a47b"
+        }
+      ],
+      "id": "90-sha256-deficit-control",
+      "source": "github-frozen-metadata:development-chain-v1:90-sha256-deficit-control",
+      "train": [
+        {
+          "input": {
+            "document": "{\"name\":\"@inquirer/root\",\"repository\":\"SBoudrias/Inquirer.js\",\"version\":null}",
+            "field": "name"
+          },
+          "output": "aa47ed8e4cd105b589a59fc0884384fa95b544ef3acc5498f2278300bc1cb696"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"shelljs\",\"repository\":\"shelljs/shelljs\",\"version\":\"0.10.0\"}",
+            "field": "name"
+          },
+          "output": "e2e2e5605677a01350c0b7c18bea792a1f10e87dc5d5a33ed6fd670c537898e3"
+        },
+        {
+          "input": {
+            "document": "{\"name\":\"execa\",\"repository\":\"sindresorhus/execa\",\"version\":\"10.0.1\"}",
+            "field": "name"
+          },
+          "output": "e1d4ca802d959027d79bc2eef0fbd107c4e121554eced8bd7452f324474d5ce5"
+        }
+      ]
+    },
+    "auto-1ec0944f5900db6acb62dcb6": {
+      "holdout": [
+        {
+          "input": {
+            "left": "1.26.8",
+            "right": "1.4"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "0.8.6",
+            "right": "1.5.1"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "1.26.14",
+            "right": "2.8.0"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "1.10.1",
+            "right": "2.2.1"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "2.1.1",
+            "right": "2.1.5"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "0.17",
+            "right": "0.9"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "1.13.0",
+            "right": "1.17.1"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "1.4.2",
+            "right": "1.14.6"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "169978.209.2",
+            "right": "169978.209.11"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "347136.218.12",
+            "right": "347136.218.3"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "484259.346",
+            "right": "484259.346"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "810093.381",
+            "right": "810093.381.0"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "93174.124.0",
+            "right": "93174.124"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "0157826.02",
+            "right": "157826.2"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "613881.202.999999",
+            "right": "613881.202.999998"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "558710.121.0.0.2",
+            "right": "558710.121.0.0.10"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "478147.679.2",
+            "right": "478147.679.11"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "329021.929.12",
+            "right": "329021.929.3"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "412366.704",
+            "right": "412366.704"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "291716.884",
+            "right": "291716.884.0"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "704457.68.0",
+            "right": "704457.68"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "0813059.02",
+            "right": "813059.2"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "133692.270.999999",
+            "right": "133692.270.999998"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "260637.750.0.0.2",
+            "right": "260637.750.0.0.10"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "157932.621.2",
+            "right": "157932.621.11"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "442919.200.12",
+            "right": "442919.200.3"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "406899.861",
+            "right": "406899.861"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "150578.111",
+            "right": "150578.111.0"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "689951.571.0",
+            "right": "689951.571"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "0466851.02",
+            "right": "466851.2"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "61427.942.999999",
+            "right": "61427.942.999998"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "190159.964.0.0.2",
+            "right": "190159.964.0.0.10"
+          },
+          "output": true
+        }
+      ],
+      "id": "auto-1ec0944f5900db6acb62dcb6",
+      "source": "kernel:autonomy:4db4735d8fc6969a5099cc366bfb4bf2271d27225a1c57575237a466f76bea30",
+      "train": [
+        {
+          "input": {
+            "left": "1.0.3",
+            "right": "1.14.6"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "1.25.2",
+            "right": "2.4.0"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "1.11.0",
+            "right": "1.9.1"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "1.26.8",
+            "right": "1.13"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "0.22",
+            "right": "0.19"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "1.0",
+            "right": "0.13"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "2.1.1",
+            "right": "2.1.2"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "1.18",
+            "right": "1.25.1"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "1.19.1",
+            "right": "1.25.2"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "1.12.1",
+            "right": "0.8.6"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "1.15.1",
+            "right": "1.26.10"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "2.6.1",
+            "right": "1.25.9"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "3.0.2",
+            "right": "2.1.1"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "1.26.2",
+            "right": "2.0.7"
+          },
+          "output": true
+        },
+        {
+          "input": {
+            "left": "1.10.1",
+            "right": "0.2"
+          },
+          "output": false
+        },
+        {
+          "input": {
+            "left": "2.1.0",
+            "right": "2.1.2"
+          },
+          "output": true
+        }
+      ]
+    },
+    "auto-859fa997bbbd259650f164c3": {
+      "holdout": [
+        {
+          "input": {
+            "versions": [
+              "0.2",
+              "0.4.0",
+              "1.0.1",
+              "1.10.1",
+              "1.10.4",
+              "1.13",
+              "1.15.1",
+              "1.18",
+              "1.19.1",
+              "1.20",
+              "1.22",
+              "1.24.1",
+              "1.25.1",
+              "1.25.2",
+              "1.25.5",
+              "1.25.9",
+              "1.26.10",
+              "1.26.14",
+              "1.26.17",
+              "1.26.2",
+              "1.26.5",
+              "1.26.8",
+              "1.4",
+              "1.7.1",
+              "1.8.3",
+              "2.0.0",
+              "2.0.4",
+              "2.0.7",
+              "2.2.1",
+              "2.4.0",
+              "2.6.1",
+              "2.8.0"
+            ]
+          },
+          "output": [
+            "0.2",
+            "0.4.0",
+            "1.0.1",
+            "1.4",
+            "1.7.1",
+            "1.8.3",
+            "1.10.1",
+            "1.10.4",
+            "1.13",
+            "1.15.1",
+            "1.18",
+            "1.19.1",
+            "1.20",
+            "1.22",
+            "1.24.1",
+            "1.25.1",
+            "1.25.2",
+            "1.25.5",
+            "1.25.9",
+            "1.26.2",
+            "1.26.5",
+            "1.26.8",
+            "1.26.10",
+            "1.26.14",
+            "1.26.17",
+            "2.0.0",
+            "2.0.4",
+            "2.0.7",
+            "2.2.1",
+            "2.4.0",
+            "2.6.1",
+            "2.8.0"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "0.1",
+              "0.2.1",
+              "0.4",
+              "0.5",
+              "0.7",
+              "0.7.2",
+              "0.8.2",
+              "0.8.4",
+              "0.8.6",
+              "0.9.2",
+              "1.0.1",
+              "1.0.3",
+              "1.1.2",
+              "1.11.0",
+              "1.11.2",
+              "1.11.5",
+              "1.12.1",
+              "1.13.0",
+              "1.13.2",
+              "1.14.1",
+              "1.14.4",
+              "1.14.6",
+              "1.15.1",
+              "1.17.1",
+              "1.2.1",
+              "1.3.1",
+              "1.4.2",
+              "1.5.1",
+              "1.6.0",
+              "1.8.3",
+              "1.9.1",
+              "2.1.1"
+            ]
+          },
+          "output": [
+            "0.1",
+            "0.2.1",
+            "0.4",
+            "0.5",
+            "0.7",
+            "0.7.2",
+            "0.8.2",
+            "0.8.4",
+            "0.8.6",
+            "0.9.2",
+            "1.0.1",
+            "1.0.3",
+            "1.1.2",
+            "1.2.1",
+            "1.3.1",
+            "1.4.2",
+            "1.5.1",
+            "1.6.0",
+            "1.8.3",
+            "1.9.1",
+            "1.11.0",
+            "1.11.2",
+            "1.11.5",
+            "1.12.1",
+            "1.13.0",
+            "1.13.2",
+            "1.14.1",
+            "1.14.4",
+            "1.14.6",
+            "1.15.1",
+            "1.17.1",
+            "2.1.1"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "0.11",
+              "0.12",
+              "0.13",
+              "0.14",
+              "0.15",
+              "0.16",
+              "0.17",
+              "0.18",
+              "0.19",
+              "0.20",
+              "0.21",
+              "0.22",
+              "0.23",
+              "0.9",
+              "0.9.1",
+              "0.9.2",
+              "0.9.3",
+              "1.0",
+              "1.1.0",
+              "1.1.1",
+              "2.0.0",
+              "2.0.1",
+              "2.1.0",
+              "2.1.1",
+              "2.1.2",
+              "2.1.3",
+              "2.1.4",
+              "2.1.5",
+              "3.0.0",
+              "3.0.1",
+              "3.0.2",
+              "3.0.3"
+            ]
+          },
+          "output": [
+            "0.9",
+            "0.9.1",
+            "0.9.2",
+            "0.9.3",
+            "0.11",
+            "0.12",
+            "0.13",
+            "0.14",
+            "0.15",
+            "0.16",
+            "0.17",
+            "0.18",
+            "0.19",
+            "0.20",
+            "0.21",
+            "0.22",
+            "0.23",
+            "1.0",
+            "1.1.0",
+            "1.1.1",
+            "2.0.0",
+            "2.0.1",
+            "2.1.0",
+            "2.1.1",
+            "2.1.2",
+            "2.1.3",
+            "2.1.4",
+            "2.1.5",
+            "3.0.0",
+            "3.0.1",
+            "3.0.2",
+            "3.0.3"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "50882.02",
+              "50882.1",
+              "50882.2",
+              "50882.20",
+              "50882.1.0",
+              "50882.2",
+              "50882.999999",
+              "50882.11"
+            ]
+          },
+          "output": [
+            "50882.1",
+            "50882.1.0",
+            "50882.02",
+            "50882.2",
+            "50882.2",
+            "50882.11",
+            "50882.20",
+            "50882.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "22809.02",
+              "22809.999999",
+              "22809.2",
+              "22809.2",
+              "22809.20",
+              "22809.1.0",
+              "22809.1",
+              "22809.11"
+            ]
+          },
+          "output": [
+            "22809.1",
+            "22809.1.0",
+            "22809.02",
+            "22809.2",
+            "22809.2",
+            "22809.11",
+            "22809.20",
+            "22809.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "875765.02",
+              "875765.20",
+              "875765.999999",
+              "875765.2",
+              "875765.11",
+              "875765.1",
+              "875765.2",
+              "875765.1.0"
+            ]
+          },
+          "output": [
+            "875765.1",
+            "875765.1.0",
+            "875765.02",
+            "875765.2",
+            "875765.2",
+            "875765.11",
+            "875765.20",
+            "875765.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "181297.2",
+              "181297.11",
+              "181297.999999",
+              "181297.02",
+              "181297.2",
+              "181297.1.0",
+              "181297.1",
+              "181297.20"
+            ]
+          },
+          "output": [
+            "181297.1",
+            "181297.1.0",
+            "181297.2",
+            "181297.02",
+            "181297.2",
+            "181297.11",
+            "181297.20",
+            "181297.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "180683.1.0",
+              "180683.2",
+              "180683.02",
+              "180683.1",
+              "180683.11",
+              "180683.2",
+              "180683.20",
+              "180683.999999"
+            ]
+          },
+          "output": [
+            "180683.1",
+            "180683.1.0",
+            "180683.2",
+            "180683.02",
+            "180683.2",
+            "180683.11",
+            "180683.20",
+            "180683.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "227665.11",
+              "227665.20",
+              "227665.02",
+              "227665.1.0",
+              "227665.1",
+              "227665.999999",
+              "227665.2",
+              "227665.2"
+            ]
+          },
+          "output": [
+            "227665.1",
+            "227665.1.0",
+            "227665.02",
+            "227665.2",
+            "227665.2",
+            "227665.11",
+            "227665.20",
+            "227665.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "579095.2",
+              "579095.1.0",
+              "579095.999999",
+              "579095.20",
+              "579095.1",
+              "579095.02",
+              "579095.2",
+              "579095.11"
+            ]
+          },
+          "output": [
+            "579095.1",
+            "579095.1.0",
+            "579095.2",
+            "579095.02",
+            "579095.2",
+            "579095.11",
+            "579095.20",
+            "579095.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "146424.1",
+              "146424.11",
+              "146424.999999",
+              "146424.02",
+              "146424.20",
+              "146424.1.0",
+              "146424.2",
+              "146424.2"
+            ]
+          },
+          "output": [
+            "146424.1",
+            "146424.1.0",
+            "146424.02",
+            "146424.2",
+            "146424.2",
+            "146424.11",
+            "146424.20",
+            "146424.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "110021.11",
+              "110021.2",
+              "110021.999999",
+              "110021.1",
+              "110021.20",
+              "110021.1.0",
+              "110021.2",
+              "110021.02"
+            ]
+          },
+          "output": [
+            "110021.1",
+            "110021.1.0",
+            "110021.2",
+            "110021.2",
+            "110021.02",
+            "110021.11",
+            "110021.20",
+            "110021.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "597432.1.0",
+              "597432.999999",
+              "597432.1",
+              "597432.2",
+              "597432.11",
+              "597432.02",
+              "597432.20",
+              "597432.2"
+            ]
+          },
+          "output": [
+            "597432.1",
+            "597432.1.0",
+            "597432.2",
+            "597432.02",
+            "597432.2",
+            "597432.11",
+            "597432.20",
+            "597432.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "845460.20",
+              "845460.2",
+              "845460.11",
+              "845460.02",
+              "845460.1.0",
+              "845460.2",
+              "845460.1",
+              "845460.999999"
+            ]
+          },
+          "output": [
+            "845460.1",
+            "845460.1.0",
+            "845460.2",
+            "845460.02",
+            "845460.2",
+            "845460.11",
+            "845460.20",
+            "845460.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "881874.20",
+              "881874.1",
+              "881874.2",
+              "881874.11",
+              "881874.02",
+              "881874.999999",
+              "881874.1.0",
+              "881874.2"
+            ]
+          },
+          "output": [
+            "881874.1",
+            "881874.1.0",
+            "881874.2",
+            "881874.02",
+            "881874.2",
+            "881874.11",
+            "881874.20",
+            "881874.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "875092.02",
+              "875092.999999",
+              "875092.20",
+              "875092.1",
+              "875092.1.0",
+              "875092.11",
+              "875092.2",
+              "875092.2"
+            ]
+          },
+          "output": [
+            "875092.1",
+            "875092.1.0",
+            "875092.02",
+            "875092.2",
+            "875092.2",
+            "875092.11",
+            "875092.20",
+            "875092.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "261848.999999",
+              "261848.11",
+              "261848.02",
+              "261848.1.0",
+              "261848.1",
+              "261848.2",
+              "261848.20",
+              "261848.2"
+            ]
+          },
+          "output": [
+            "261848.1",
+            "261848.1.0",
+            "261848.02",
+            "261848.2",
+            "261848.2",
+            "261848.11",
+            "261848.20",
+            "261848.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "409120.20",
+              "409120.02",
+              "409120.2",
+              "409120.999999",
+              "409120.2",
+              "409120.1.0",
+              "409120.1",
+              "409120.11"
+            ]
+          },
+          "output": [
+            "409120.1",
+            "409120.1.0",
+            "409120.02",
+            "409120.2",
+            "409120.2",
+            "409120.11",
+            "409120.20",
+            "409120.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "711264.02",
+              "711264.999999",
+              "711264.1",
+              "711264.2",
+              "711264.11",
+              "711264.1.0",
+              "711264.20",
+              "711264.2"
+            ]
+          },
+          "output": [
+            "711264.1",
+            "711264.1.0",
+            "711264.02",
+            "711264.2",
+            "711264.2",
+            "711264.11",
+            "711264.20",
+            "711264.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "795918.2",
+              "795918.2",
+              "795918.1",
+              "795918.11",
+              "795918.02",
+              "795918.1.0",
+              "795918.20",
+              "795918.999999"
+            ]
+          },
+          "output": [
+            "795918.1",
+            "795918.1.0",
+            "795918.2",
+            "795918.2",
+            "795918.02",
+            "795918.11",
+            "795918.20",
+            "795918.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "338006.2",
+              "338006.20",
+              "338006.02",
+              "338006.999999",
+              "338006.2",
+              "338006.1",
+              "338006.1.0",
+              "338006.11"
+            ]
+          },
+          "output": [
+            "338006.1",
+            "338006.1.0",
+            "338006.2",
+            "338006.02",
+            "338006.2",
+            "338006.11",
+            "338006.20",
+            "338006.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "539499.02",
+              "539499.1.0",
+              "539499.11",
+              "539499.999999",
+              "539499.2",
+              "539499.2",
+              "539499.1",
+              "539499.20"
+            ]
+          },
+          "output": [
+            "539499.1",
+            "539499.1.0",
+            "539499.02",
+            "539499.2",
+            "539499.2",
+            "539499.11",
+            "539499.20",
+            "539499.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "301865.02",
+              "301865.1.0",
+              "301865.999999",
+              "301865.1",
+              "301865.2",
+              "301865.2",
+              "301865.11",
+              "301865.20"
+            ]
+          },
+          "output": [
+            "301865.1",
+            "301865.1.0",
+            "301865.02",
+            "301865.2",
+            "301865.2",
+            "301865.11",
+            "301865.20",
+            "301865.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "684871.02",
+              "684871.1.0",
+              "684871.2",
+              "684871.2",
+              "684871.20",
+              "684871.11",
+              "684871.1",
+              "684871.999999"
+            ]
+          },
+          "output": [
+            "684871.1",
+            "684871.1.0",
+            "684871.02",
+            "684871.2",
+            "684871.2",
+            "684871.11",
+            "684871.20",
+            "684871.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "445746.999999",
+              "445746.20",
+              "445746.1.0",
+              "445746.02",
+              "445746.2",
+              "445746.2",
+              "445746.1",
+              "445746.11"
+            ]
+          },
+          "output": [
+            "445746.1",
+            "445746.1.0",
+            "445746.02",
+            "445746.2",
+            "445746.2",
+            "445746.11",
+            "445746.20",
+            "445746.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "267117.11",
+              "267117.1.0",
+              "267117.1",
+              "267117.02",
+              "267117.999999",
+              "267117.2",
+              "267117.2",
+              "267117.20"
+            ]
+          },
+          "output": [
+            "267117.1",
+            "267117.1.0",
+            "267117.02",
+            "267117.2",
+            "267117.2",
+            "267117.11",
+            "267117.20",
+            "267117.999999"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "238428.2",
+              "238428.1",
+              "238428.02",
+              "238428.999999",
+              "238428.2",
+              "238428.20",
+              "238428.1.0",
+              "238428.11"
+            ]
+          },
+          "output": [
+            "238428.1",
+            "238428.1.0",
+            "238428.2",
+            "238428.02",
+            "238428.2",
+            "238428.11",
+            "238428.20",
+            "238428.999999"
+          ]
+        }
+      ],
+      "id": "auto-859fa997bbbd259650f164c3",
+      "source": "kernel:autonomy:5bd63bcc301639a2f47d08a59f71ce01c4fce199df5841a1a8b035da08fea68f",
+      "train": [
+        {
+          "input": {
+            "versions": [
+              "14.0",
+              "14.1",
+              "14.3",
+              "14.4",
+              "15.0",
+              "15.2",
+              "15.3",
+              "16.1",
+              "16.2",
+              "16.4",
+              "16.6",
+              "16.7",
+              "17.0",
+              "17.1",
+              "19.0",
+              "19.2",
+              "20.0",
+              "20.2",
+              "20.4",
+              "20.5",
+              "20.7",
+              "20.8",
+              "21.0",
+              "21.2",
+              "21.3",
+              "23.0",
+              "23.1",
+              "24.0",
+              "24.2",
+              "25.0",
+              "26.1",
+              "26.3"
+            ]
+          },
+          "output": [
+            "14.0",
+            "14.1",
+            "14.3",
+            "14.4",
+            "15.0",
+            "15.2",
+            "15.3",
+            "16.1",
+            "16.2",
+            "16.4",
+            "16.6",
+            "16.7",
+            "17.0",
+            "17.1",
+            "19.0",
+            "19.2",
+            "20.0",
+            "20.2",
+            "20.4",
+            "20.5",
+            "20.7",
+            "20.8",
+            "21.0",
+            "21.2",
+            "21.3",
+            "23.0",
+            "23.1",
+            "24.0",
+            "24.2",
+            "25.0",
+            "26.1",
+            "26.3"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "0.1",
+              "0.4",
+              "0.5.4",
+              "0.7.2",
+              "0.9.1",
+              "1.0.2",
+              "1.2.1",
+              "1.3.2",
+              "1.5.1",
+              "1.7.1",
+              "1.9",
+              "2.1.1",
+              "2.2.1",
+              "2.4.1",
+              "2.7",
+              "3.0",
+              "3.3",
+              "3.4.2",
+              "3.4.7",
+              "36.0.2",
+              "37.0.4",
+              "39.0.0",
+              "40.0.2",
+              "41.0.4",
+              "42.0.1",
+              "42.0.6",
+              "43.0.3",
+              "45.0.0",
+              "45.0.5",
+              "46.0.2",
+              "46.0.7",
+              "50.0.1"
+            ]
+          },
+          "output": [
+            "0.1",
+            "0.4",
+            "0.5.4",
+            "0.7.2",
+            "0.9.1",
+            "1.0.2",
+            "1.2.1",
+            "1.3.2",
+            "1.5.1",
+            "1.7.1",
+            "1.9",
+            "2.1.1",
+            "2.2.1",
+            "2.4.1",
+            "2.7",
+            "3.0",
+            "3.3",
+            "3.4.2",
+            "3.4.7",
+            "36.0.2",
+            "37.0.4",
+            "39.0.0",
+            "40.0.2",
+            "41.0.4",
+            "42.0.1",
+            "42.0.6",
+            "43.0.3",
+            "45.0.0",
+            "45.0.5",
+            "46.0.2",
+            "46.0.7",
+            "50.0.1"
+          ]
+        },
+        {
+          "input": {
+            "versions": [
+              "3.01",
+              "3.02",
+              "3.03",
+              "3.04",
+              "3.05",
+              "3.06",
+              "3.07",
+              "3.08",
+              "3.09",
+              "3.10",
+              "3.11",
+              "3.12",
+              "3.13",
+              "5.1",
+              "5.1.1",
+              "5.1.2",
+              "5.2",
+              "5.3",
+              "5.3.1",
+              "5.4",
+              "5.4.1",
+              "6.0",
+              "6.0.1",
+              "6.0.2",
+              "6.0.3"
+            ]
+          },
+          "output": [
+            "3.01",
+            "3.02",
+            "3.03",
+            "3.04",
+            "3.05",
+            "3.06",
+            "3.07",
+            "3.08",
+            "3.09",
+            "3.10",
+            "3.11",
+            "3.12",
+            "3.13",
+            "5.1",
+            "5.1.1",
+            "5.1.2",
+            "5.2",
+            "5.3",
+            "5.3.1",
+            "5.4",
+            "5.4.1",
+            "6.0",
+            "6.0.1",
+            "6.0.2",
+            "6.0.3"
+          ]
+        }
+      ]
+    }
+  },
+  "verification": {
+    "full_semantic_replay": true,
+    "isolation": "linux_seccomp_v1",
+    "passed": 192,
+    "total": 192
+  }
+}

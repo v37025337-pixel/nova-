@@ -1,0 +1,384 @@
+{
+  "components": [
+    "deterministic-memory",
+    "hash-chained-journal",
+    "task-queue",
+    "safe-primitive-runtime",
+    "snapshot-restart",
+    "journal-replay",
+    "admission-ledger-metadata"
+  ],
+  "grammar_rules": [
+    {
+      "admitted": true,
+      "description": "bounded atomic safe-blueprint families",
+      "origin": "builtin",
+      "rule_id": "atomic.v1"
+    },
+    {
+      "admitted": true,
+      "description": "allow one bounded composition of two atomic unary blueprints",
+      "origin": "loaded-admitted-evolved-state",
+      "rule_id": "unary.compose2"
+    },
+    {
+      "admitted": true,
+      "description": "allow one bounded composition of three atomic unary blueprints",
+      "origin": "loaded-admitted-evolved-state",
+      "rule_id": "unary.compose3"
+    }
+  ],
+  "kernel_id": "ucr.kernel_d1b8083f9defbe6dc64f",
+  "mutation_strategy_routes": [
+    {
+      "action": "admit-atomic-primitive",
+      "admitted": true,
+      "origin": "loaded-admitted-evolved-state",
+      "primary_challenge": "rg-02",
+      "primary_gain": 0.933333,
+      "signature": "representation-gap|atomic-sufficient",
+      "transfer_challenge": "rg-04",
+      "transfer_gain": 0.933333
+    },
+    {
+      "action": "expand-grammar-unary-compose2",
+      "admitted": true,
+      "origin": "loaded-admitted-evolved-state",
+      "primary_challenge": "grammar-rg-01",
+      "primary_gain": 0.65,
+      "signature": "representation-gap|compose2-required",
+      "transfer_challenge": "grammar-rg-02",
+      "transfer_gain": 0.3
+    },
+    {
+      "action": "expand-grammar-unary-compose3",
+      "admitted": true,
+      "origin": "loaded-admitted-evolved-state",
+      "primary_challenge": "self-rg-81d79d7b8ac5",
+      "primary_gain": 0.071429,
+      "signature": "representation-gap|compose3-required",
+      "transfer_challenge": "self-rg-22f355393a24",
+      "transfer_gain": 0.142857
+    }
+  ],
+  "name": "UCR-Seed-1",
+  "parent_reader_version": "20.0",
+  "primitives": [
+    {
+      "blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary3",
+        "params": {
+          "first": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "second": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "third": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.mod_equal",
+            "params": {
+              "modulus": 4,
+              "residue": 2
+            }
+          }
+        }
+      },
+      "machine_id": "evolved.p_2108868b3e2b6937",
+      "provenance": {
+        "admitted_on": "self-rg-81d79d7b8ac5",
+        "causal_gain": 0.309524,
+        "fresh_score": 1.0,
+        "hidden_score": 1.0,
+        "train_score": 1.0,
+        "transfer_score": 1.0
+      },
+      "self_tests": [
+        {
+          "args": [
+            -17
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            -1
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "blueprint": {
+        "arity": 1,
+        "category": "arithmetic",
+        "family": "numeric.sign",
+        "params": {}
+      },
+      "machine_id": "evolved.p_2a2c425dbc512617",
+      "provenance": {
+        "admitted_on": "rg-03",
+        "causal_gain": 0.0,
+        "fresh_score": 1.0,
+        "hidden_score": 1.0,
+        "train_score": 1.0,
+        "transfer_score": 1.0
+      },
+      "self_tests": [
+        {
+          "args": [
+            -17
+          ],
+          "expected": -1
+        },
+        {
+          "args": [
+            -1
+          ],
+          "expected": -1
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary2",
+        "params": {
+          "inner": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "outer": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.mod_equal",
+            "params": {
+              "modulus": 3,
+              "residue": 1
+            }
+          }
+        }
+      },
+      "machine_id": "evolved.p_a15bdcd5e6452664",
+      "provenance": {
+        "admitted_on": "v17-independent-popcount-mod3eq1",
+        "causal_gain": 0.291667,
+        "fresh_score": 1.0,
+        "hidden_score": 1.0,
+        "train_score": 1.0,
+        "transfer_score": 1.0
+      },
+      "self_tests": [
+        {
+          "args": [
+            -17
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            -1
+          ],
+          "expected": true
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": true
+        }
+      ]
+    },
+    {
+      "blueprint": {
+        "arity": 1,
+        "category": "bitwise",
+        "family": "integer.bit_test",
+        "params": {
+          "bit": 0,
+          "expected": 0
+        }
+      },
+      "machine_id": "evolved.p_ab5d56de6934bd45",
+      "provenance": {
+        "admitted_on": "rg-01",
+        "causal_gain": 0.733333,
+        "fresh_score": 1.0,
+        "hidden_score": 1.0,
+        "train_score": 1.0,
+        "transfer_score": 1.0
+      },
+      "self_tests": [
+        {
+          "args": [
+            -17
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            -1
+          ],
+          "expected": false
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected": true
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": false
+        }
+      ]
+    },
+    {
+      "blueprint": {
+        "arity": 1,
+        "category": "bitwise",
+        "family": "integer.popcount_abs",
+        "params": {}
+      },
+      "machine_id": "evolved.p_d953b0d1d29bd881",
+      "provenance": {
+        "admitted_on": "rg-02",
+        "causal_gain": 1.0,
+        "fresh_score": 1.0,
+        "hidden_score": 1.0,
+        "train_score": 1.0,
+        "transfer_score": 1.0
+      },
+      "self_tests": [
+        {
+          "args": [
+            -17
+          ],
+          "expected": 2
+        },
+        {
+          "args": [
+            -1
+          ],
+          "expected": 1
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1
+        }
+      ]
+    },
+    {
+      "blueprint": {
+        "arity": 1,
+        "category": "arithmetic",
+        "family": "integer.digital_root_abs",
+        "params": {}
+      },
+      "machine_id": "evolved.p_fd32d6b7bb1cefc3",
+      "provenance": {
+        "admitted_on": "rg-04",
+        "causal_gain": 0.933333,
+        "fresh_score": 1.0,
+        "hidden_score": 1.0,
+        "train_score": 1.0,
+        "transfer_score": 1.0
+      },
+      "self_tests": [
+        {
+          "args": [
+            -17
+          ],
+          "expected": 8
+        },
+        {
+          "args": [
+            -1
+          ],
+          "expected": 1
+        },
+        {
+          "args": [
+            0
+          ],
+          "expected": 0
+        },
+        {
+          "args": [
+            1
+          ],
+          "expected": 1
+        }
+      ]
+    }
+  ],
+  "reasoning_policy": {
+    "accepted_rounds": 3,
+    "counterexample_rounds": 4,
+    "evidence_rows": 12,
+    "max_candidates": 12,
+    "max_depth": 3,
+    "max_generated": 12000
+  },
+  "safety": {
+    "arbitrary_python_generation": false,
+    "filesystem_write_scope": "host-selected-kernel-artifact-only",
+    "network_access": false,
+    "runtime_blueprint_language": "closed-safe-ucr-blueprint-grammar",
+    "subprocess_access": false,
+    "unknown_source_execution": false
+  },
+  "schema": "ucr.seed-kernel-blueprint/1"
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "repository": "psf/requests",
+    "source": "https://github.com/psf/requests/blob/main/LICENSE",
+    "license": "Apache-2.0",
+    "path": "psf--requests.txt",
+    "bytes": 10142
+  },
+  {
+    "repository": "urllib3/urllib3",
+    "source": "https://github.com/urllib3/urllib3/blob/main/LICENSE.txt",
+    "license": "MIT",
+    "path": "urllib3--urllib3.txt",
+    "bytes": 1093
+  },
+  {
+    "repository": "encode/httpx",
+    "source": "https://github.com/encode/httpx/blob/master/LICENSE.md",
+    "license": "BSD-3-Clause",
+    "path": "encode--httpx.txt",
+    "bytes": 1508
+  },
+  {
+    "repository": "pallets/werkzeug",
+    "source": "https://github.com/pallets/werkzeug/blob/main/LICENSE.txt",
+    "license": "BSD-3-Clause",
+    "path": "pallets--werkzeug.txt",
+    "bytes": 1475
+  },
+  {
+    "repository": "encode/starlette",
+    "source": "https://github.com/Kludex/starlette/blob/main/LICENSE.md",
+    "license": "BSD-3-Clause",
+    "path": "encode--starlette.txt",
+    "bytes": 1518
+  },
+  {
+    "repository": "aio-libs/aiohttp",
+    "source": "https://github.com/aio-libs/aiohttp/blob/master/LICENSE.txt",
+    "license": "Apache-2.0",
+    "path": "aio-libs--aiohttp.txt",
+    "bytes": 11313
+  },
+  {
+    "repository": "pallets/flask",
+    "source": "https://github.com/pallets/flask/blob/main/LICENSE.txt",
+    "license": "BSD-3-Clause",
+    "path": "pallets--flask.txt",
+    "bytes": 1475
+  },
+  {
+    "repository": "pallets/click",
+    "source": "https://github.com/pallets/click/blob/main/LICENSE.txt",
+    "license": "BSD-3-Clause",
+    "path": "pallets--click.txt",
+    "bytes": 1475
+  }
+]

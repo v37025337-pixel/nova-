@@ -1,0 +1,1 @@
+{"status": "PASS", "skills": 21, "seconds": 122.98996251899734, "bundle_digest": "fe29a0a48b09b13df5100b52ec000fa409a95b34f034249f5ff2fa1672b39e7f", "verification": {"full_semantic_replay": true, "isolation": "linux_seccomp_v1", "passed": 192, "total": 192}}

@@ -1,0 +1,610 @@
+{
+  "assessments": [
+    {
+      "best_without_candidate": 2,
+      "claim": "new composed graph program; finite search, supplied ontology, static source-derived views",
+      "dependency_ablation": {},
+      "diagnostic": {
+        "outputs": [
+          1,
+          2,
+          6,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        "passed": 8,
+        "total": 8
+      },
+      "fresh": {
+        "outputs": [
+          7,
+          2,
+          2,
+          3,
+          2,
+          6,
+          6,
+          1,
+          3,
+          3,
+          2,
+          3,
+          4,
+          2,
+          2,
+          1,
+          3,
+          3,
+          4,
+          0,
+          1,
+          1,
+          3,
+          4
+        ],
+        "passed": 24,
+        "total": 24
+      },
+      "independent_repositories": [
+        "github:encode/httpx",
+        "github:pallets/werkzeug"
+      ],
+      "isolation": "linux_seccomp_v1",
+      "legacy_regression": {
+        "isolation": "linux_seccomp_v1",
+        "passed": 192,
+        "skills": 21,
+        "total": 192
+      },
+      "new_skill_regression": {},
+      "oracle": "independent_bit_matrix_warshall_v1",
+      "reason": "VERIFIED_EXTERNAL_GRAPH_IMPROVEMENT",
+      "status": "ADMITTED"
+    },
+    {
+      "best_without_candidate": 24,
+      "claim": "new composed graph program; finite search, supplied ontology, static source-derived views",
+      "dependency_ablation": {},
+      "diagnostic": {
+        "outputs": [
+          1,
+          5,
+          33,
+          2,
+          1,
+          3,
+          2,
+          0,
+          9,
+          24,
+          91,
+          2,
+          3,
+          3,
+          10,
+          0
+        ],
+        "passed": 16,
+        "total": 16
+      },
+      "fresh": {
+        "outputs": [
+          16,
+          2,
+          1,
+          9,
+          7,
+          5,
+          15,
+          2,
+          7,
+          6,
+          2,
+          10,
+          4,
+          2,
+          0,
+          2,
+          3,
+          2,
+          2,
+          1,
+          0,
+          0,
+          1,
+          2
+        ],
+        "passed": 24,
+        "total": 24
+      },
+      "independent_repositories": [
+        "github:aio-libs/aiohttp",
+        "github:encode/starlette"
+      ],
+      "isolation": "linux_seccomp_v1",
+      "legacy_regression": {
+        "isolation": "linux_seccomp_v1",
+        "passed": 192,
+        "skills": 21,
+        "total": 192
+      },
+      "new_skill_regression": {
+        "173a46368cffe8ab51441e23da4f79afad9a494c9523a097b79a357dd9d01e22": {
+          "outputs": [
+            7,
+            2,
+            2,
+            3,
+            2,
+            6,
+            6,
+            1,
+            3,
+            3,
+            2,
+            3,
+            4,
+            2,
+            2,
+            1,
+            3,
+            3,
+            4,
+            0,
+            1,
+            1,
+            3,
+            4
+          ],
+          "passed": 24,
+          "total": 24
+        }
+      },
+      "oracle": "independent_bit_matrix_warshall_v1",
+      "reason": "NO_IMPROVEMENT_OVER_ACTIVE_PROGRAMS",
+      "status": "WITHHOLD"
+    },
+    {
+      "best_without_candidate": 7,
+      "claim": "new composed graph program; finite search, supplied ontology, static source-derived views",
+      "dependency_ablation": {},
+      "diagnostic": {
+        "outputs": [
+          1,
+          5,
+          33,
+          2,
+          1,
+          3,
+          2,
+          0,
+          9,
+          24,
+          91,
+          2,
+          3,
+          3,
+          10,
+          0,
+          2,
+          9,
+          5,
+          2,
+          2,
+          2,
+          2,
+          1
+        ],
+        "passed": 24,
+        "total": 24
+      },
+      "fresh": {
+        "outputs": [
+          77,
+          4,
+          13,
+          10,
+          21,
+          44,
+          70,
+          2,
+          5,
+          11,
+          7,
+          32,
+          32,
+          1,
+          5,
+          7,
+          10,
+          17,
+          11,
+          0,
+          0,
+          9,
+          9,
+          14
+        ],
+        "passed": 24,
+        "total": 24
+      },
+      "independent_repositories": [
+        "github:pallets/click",
+        "github:pallets/flask"
+      ],
+      "isolation": "linux_seccomp_v1",
+      "legacy_regression": {
+        "isolation": "linux_seccomp_v1",
+        "passed": 192,
+        "skills": 21,
+        "total": 192
+      },
+      "new_skill_regression": {
+        "173a46368cffe8ab51441e23da4f79afad9a494c9523a097b79a357dd9d01e22": {
+          "outputs": [
+            7,
+            2,
+            2,
+            3,
+            2,
+            6,
+            6,
+            1,
+            3,
+            3,
+            2,
+            3,
+            4,
+            2,
+            2,
+            1,
+            3,
+            3,
+            4,
+            0,
+            1,
+            1,
+            3,
+            4
+          ],
+          "passed": 24,
+          "total": 24
+        }
+      },
+      "oracle": "independent_bit_matrix_warshall_v1",
+      "reason": "VERIFIED_EXTERNAL_GRAPH_IMPROVEMENT",
+      "status": "ADMITTED"
+    }
+  ],
+  "candidates": [
+    {
+      "freeze": "d2a785fbede88223676615dd82149c8d9e58deeb7d1e286802e2b9dcd995094e",
+      "fresh_cases_seen": 0,
+      "goal": {
+        "deficit_id": "15b298b31d1a2020cddd557eec9e75b0ccd31df8d6efcf7ba0da5f3829cd0183",
+        "diagnostic_errors": 5,
+        "diagnostic_total": 8,
+        "instance_selector": "kernel",
+        "law": "maximum_impact",
+        "magnitude": 17,
+        "ontology_author": "maintainer",
+        "origin": "observed_graph_prediction_errors",
+        "utility": "How many other functions can the most influential function reach?"
+      },
+      "parent_generation": 0,
+      "search": {
+        "attempts": 34,
+        "program": {
+          "id": "173a46368cffe8ab51441e23da4f79afad9a494c9523a097b79a357dd9d01e22",
+          "schema": "nova.next.program.v1",
+          "source": "def solve(graph, genes):\n    edges = {(e['src'], e['dst']) for e in graph['edges']}\n    v2 = edges\n    for _ in range(len(graph['nodes']) + 1):\n        v4_index = {}\n        for x, y in v2:\n            v4_index.setdefault(x, set()).add(y)\n        v4 = {(x, z) for x, y in edges for z in v4_index.get(y, ())}\n        v3 = (v2 | v4)\n        if v3 == v2:\n            break\n        v2 = v3\n    else:\n        raise ValueError('fixed point budget')\n    v1 = max((sum(x == n['id'] and x != y for x, y in v2) for n in graph['nodes']), default=0)\n    return v1\n",
+          "tree": [
+            "max_out",
+            [
+              "fix",
+              [
+                "edges"
+              ],
+              [
+                "union",
+                [
+                  "state"
+                ],
+                [
+                  "compose",
+                  [
+                    "edges"
+                  ],
+                  [
+                    "state"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "freeze": "5c053e60e5b3c1a5e540ce129d747269556224a6601c78502dd2a5006a2037ab",
+      "fresh_cases_seen": 0,
+      "goal": {
+        "deficit_id": "07c03490a9d0d8c9c2b487010dde78ae750281bd81fd54135dad4ee79030069c",
+        "diagnostic_errors": 5,
+        "diagnostic_total": 16,
+        "instance_selector": "kernel",
+        "law": "reachable_pairs",
+        "magnitude": 94,
+        "ontology_author": "maintainer",
+        "origin": "observed_graph_prediction_errors",
+        "utility": "How many distinct downstream function pairs can be reached?"
+      },
+      "parent_generation": 1,
+      "search": {
+        "attempts": 31,
+        "program": {
+          "id": "8a6bfca3bf3c55e25f659dbb11fd2b25550311cffff6e29948121d70405c0aa2",
+          "schema": "nova.next.program.v1",
+          "source": "def solve(graph, genes):\n    edges = {(e['src'], e['dst']) for e in graph['edges']}\n    v2 = edges\n    for _ in range(len(graph['nodes']) + 1):\n        v4_index = {}\n        for x, y in v2:\n            v4_index.setdefault(x, set()).add(y)\n        v4 = {(x, z) for x, y in edges for z in v4_index.get(y, ())}\n        v3 = (v2 | v4)\n        if v3 == v2:\n            break\n        v2 = v3\n    else:\n        raise ValueError('fixed point budget')\n    v1 = sum(x != y for x, y in v2)\n    return v1\n",
+          "tree": [
+            "count",
+            [
+              "fix",
+              [
+                "edges"
+              ],
+              [
+                "union",
+                [
+                  "state"
+                ],
+                [
+                  "compose",
+                  [
+                    "edges"
+                  ],
+                  [
+                    "state"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "freeze": "ba8dd50ac1fcc604a1114609101f202cdd212c10f9116432adda7f2fe0f241be",
+      "fresh_cases_seen": 0,
+      "goal": {
+        "deficit_id": "aef0fa7fa85ef57c6126cce762b5cf533b2d7dff997e5475d8b92426c063654c",
+        "diagnostic_errors": 5,
+        "diagnostic_total": 24,
+        "instance_selector": "kernel",
+        "law": "reachable_pairs",
+        "magnitude": 94,
+        "ontology_author": "maintainer",
+        "origin": "observed_graph_prediction_errors",
+        "utility": "How many distinct downstream function pairs can be reached?"
+      },
+      "parent_generation": 1,
+      "search": {
+        "attempts": 31,
+        "program": {
+          "id": "8a6bfca3bf3c55e25f659dbb11fd2b25550311cffff6e29948121d70405c0aa2",
+          "schema": "nova.next.program.v1",
+          "source": "def solve(graph, genes):\n    edges = {(e['src'], e['dst']) for e in graph['edges']}\n    v2 = edges\n    for _ in range(len(graph['nodes']) + 1):\n        v4_index = {}\n        for x, y in v2:\n            v4_index.setdefault(x, set()).add(y)\n        v4 = {(x, z) for x, y in edges for z in v4_index.get(y, ())}\n        v3 = (v2 | v4)\n        if v3 == v2:\n            break\n        v2 = v3\n    else:\n        raise ValueError('fixed point budget')\n    v1 = sum(x != y for x, y in v2)\n    return v1\n",
+          "tree": [
+            "count",
+            [
+              "fix",
+              [
+                "edges"
+              ],
+              [
+                "union",
+                [
+                  "state"
+                ],
+                [
+                  "compose",
+                  [
+                    "edges"
+                  ],
+                  [
+                    "state"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "freeze": "c85aa53bacafa85512147bafae9958c9439399effbb1e98a98d929659ee18880",
+      "fresh_cases_seen": 0,
+      "goal": {
+        "deficit_id": "2d67f5e8984b24a957b99de9de8e7410253d3fad9636f2e2471ee9e39836f2f2",
+        "diagnostic_errors": 8,
+        "diagnostic_total": 32,
+        "instance_selector": "kernel",
+        "law": "indirect_pairs",
+        "magnitude": 130,
+        "ontology_author": "maintainer",
+        "origin": "observed_graph_prediction_errors",
+        "utility": "How many downstream pairs require more than a direct edge?"
+      },
+      "parent_generation": 2,
+      "search": {
+        "attempts": 165,
+        "program": {
+          "id": "ff4ee9461767f536a7ba8dad35ecec31c6f6818d6c8e20ee298342a85c041c80",
+          "schema": "nova.next.program.v1",
+          "source": "def solve(graph, genes):\n    edges = {(e['src'], e['dst']) for e in graph['edges']}\n    v2 = sum(x != y for x, y in edges)\n    v1 = (genes['8a6bfca3bf3c55e25f659dbb11fd2b25550311cffff6e29948121d70405c0aa2'](graph, genes) - v2)\n    return v1\n",
+          "tree": [
+            "sub",
+            [
+              "call",
+              "8a6bfca3bf3c55e25f659dbb11fd2b25550311cffff6e29948121d70405c0aa2"
+            ],
+            [
+              "count",
+              [
+                "edges"
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "error": null,
+  "kernel": {
+    "admissions_total": 2,
+    "claim": "bounded verified successor; not unrestricted autonomous intelligence",
+    "events": 26,
+    "fresh_documents": 0,
+    "generation": 2,
+    "genome": "2a3fae8064298291de40efc10afddded28f3d58fe19ccff397cbfe0d4fe4104d",
+    "head": "e9e52c3de59b084e02b7e30e0fcb2f6c7f0c8d65747a4fc7f46385952d94acc7",
+    "inherited_nova_skills": 21,
+    "name": "Nova Next",
+    "observed_documents": 8,
+    "phase": "AWAITING_FRESH",
+    "runtime": "9e5b5e7b9a4a8c652e4490e3e5918333a5fafc07ded735c4ab7181918f81f706",
+    "seed_primitives": 6,
+    "skills": [
+      {
+        "law": "maximum_impact",
+        "program": "173a46368cffe8ab51441e23da4f79afad9a494c9523a097b79a357dd9d01e22"
+      },
+      {
+        "law": "reachable_pairs",
+        "program": "8a6bfca3bf3c55e25f659dbb11fd2b25550311cffff6e29948121d70405c0aa2"
+      }
+    ],
+    "source_failures": 0,
+    "state_streams": 0,
+    "version": "0.1.0"
+  },
+  "limits": [
+    "three developer-supplied structural query specifications",
+    "finite grammar and 2048-program budget",
+    "static call candidates, not runtime causality",
+    "views are correlated within each repository",
+    "HTTPS provenance is a local capture, not third-party signed attestation"
+  ],
+  "protocol_sha256": "99d3fd762abb2d8918b7cbcc50af223bb9dda97e257cee8a8c202eedf6f5ec06",
+  "schema": "nova.next.experiment.result.v1",
+  "sources": [
+    {
+      "bytes": 34072,
+      "final_url": "https://raw.githubusercontent.com/psf/requests/main/src/requests/sessions.py",
+      "received_at": "2026-09-21T13:10:31.277305+00:00",
+      "sha256": "3d2089736ced93b2b405624a943f866d22652b17df06a85eb010f86272fc3e7d",
+      "status": 200,
+      "transport": "stdlib_https",
+      "url": "https://raw.githubusercontent.com/psf/requests/main/src/requests/sessions.py"
+    },
+    {
+      "bytes": 45250,
+      "final_url": "https://raw.githubusercontent.com/urllib3/urllib3/main/src/urllib3/connectionpool.py",
+      "received_at": "2026-09-21T13:10:39.872508+00:00",
+      "sha256": "6a147869216b94449a053e869d4311cba23294551c83ee20fe5d2f1eaff50a3e",
+      "status": 200,
+      "transport": "stdlib_https",
+      "url": "https://raw.githubusercontent.com/urllib3/urllib3/main/src/urllib3/connectionpool.py"
+    },
+    {
+      "bytes": 65713,
+      "final_url": "https://raw.githubusercontent.com/encode/httpx/master/httpx/_client.py",
+      "received_at": "2026-09-21T13:10:48.058817+00:00",
+      "sha256": "ed717b3ac00debb48d089daeb4dd7fbaf47cb5642ebc4a6e76f3a2fc6cfc0f70",
+      "status": 200,
+      "transport": "stdlib_https",
+      "url": "https://raw.githubusercontent.com/encode/httpx/master/httpx/_client.py"
+    },
+    {
+      "bytes": 38503,
+      "final_url": "https://raw.githubusercontent.com/pallets/werkzeug/main/src/werkzeug/routing/map.py",
+      "received_at": "2026-09-21T13:10:55.857892+00:00",
+      "sha256": "62415652d4ede777449e823fc00548c4bcc515d620f1b30c6b9be05797992207",
+      "status": 200,
+      "transport": "stdlib_https",
+      "url": "https://raw.githubusercontent.com/pallets/werkzeug/main/src/werkzeug/routing/map.py"
+    },
+    {
+      "bytes": 30472,
+      "final_url": "https://raw.githubusercontent.com/encode/starlette/main/starlette/routing.py",
+      "received_at": "2026-09-21T13:11:07.536260+00:00",
+      "sha256": "15215c88f4187c98cf498e757b188c0e06fbe80d95f78b7630c4e51f92611af4",
+      "status": 200,
+      "transport": "stdlib_https",
+      "url": "https://raw.githubusercontent.com/encode/starlette/main/starlette/routing.py"
+    },
+    {
+      "bytes": 56929,
+      "final_url": "https://raw.githubusercontent.com/aio-libs/aiohttp/master/aiohttp/client.py",
+      "received_at": "2026-09-21T13:11:15.520827+00:00",
+      "sha256": "ca23370e7b137c0e7a1350967803ef8f2a8056f60e3663005cfed1021c54dd82",
+      "status": 200,
+      "transport": "stdlib_https",
+      "url": "https://raw.githubusercontent.com/aio-libs/aiohttp/master/aiohttp/client.py"
+    },
+    {
+      "bytes": 65472,
+      "final_url": "https://raw.githubusercontent.com/pallets/flask/main/src/flask/app.py",
+      "received_at": "2026-09-21T13:11:31.060079+00:00",
+      "sha256": "975de70f74626460f7afd2f16e3a513cbc2fe65cbd961f95c2f92eec4f7ecff8",
+      "status": 200,
+      "transport": "stdlib_https",
+      "url": "https://raw.githubusercontent.com/pallets/flask/main/src/flask/app.py"
+    },
+    {
+      "bytes": 19052,
+      "final_url": "https://raw.githubusercontent.com/pallets/click/main/src/click/parser.py",
+      "received_at": "2026-09-21T13:11:39.373912+00:00",
+      "sha256": "a09f9f53fde6bf1ba022e36d1da0804d9e7a9601261d18208c9892a84818ae30",
+      "status": 200,
+      "transport": "stdlib_https",
+      "url": "https://raw.githubusercontent.com/pallets/click/main/src/click/parser.py"
+    }
+  ],
+  "status": "COMPLETED",
+  "withheld_searches": [
+    {
+      "attempts": 2048,
+      "goal": {
+        "deficit_id": "85daaac07db9bed6926e5f177a01eff318bbced6d0c12829ceefbbe9a5162dea",
+        "diagnostic_errors": 5,
+        "diagnostic_total": 16,
+        "instance_selector": "kernel",
+        "law": "indirect_pairs",
+        "magnitude": 94,
+        "ontology_author": "maintainer",
+        "origin": "observed_graph_prediction_errors",
+        "utility": "How many downstream pairs require more than a direct edge?"
+      },
+      "reason": "SEARCH_EXHAUSTED"
+    },
+    {
+      "attempts": 2048,
+      "goal": {
+        "deficit_id": "e2d9e1d78b1dc1cc2e0135ced528a8ce52b3a91efd4f7bb49c0066b338e760e1",
+        "diagnostic_errors": 5,
+        "diagnostic_total": 24,
+        "instance_selector": "kernel",
+        "law": "indirect_pairs",
+        "magnitude": 94,
+        "ontology_author": "maintainer",
+        "origin": "observed_graph_prediction_errors",
+        "utility": "How many downstream pairs require more than a direct edge?"
+      },
+      "reason": "SEARCH_EXHAUSTED"
+    }
+  ]
+}

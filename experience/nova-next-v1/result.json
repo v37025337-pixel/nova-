@@ -1,0 +1,36 @@
+{
+  "assessments": [],
+  "candidates": [],
+  "error": null,
+  "kernel": {
+    "admissions_total": 0,
+    "claim": "bounded verified successor; not unrestricted autonomous intelligence",
+    "events": 17,
+    "fresh_documents": 0,
+    "generation": 0,
+    "genome": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "head": "dc3040dcdd44f3c99a52edb9e4096d5fd0a74ba9bb8473cd1c5db283453743a9",
+    "inherited_nova_skills": 21,
+    "name": "Nova Next",
+    "observed_documents": 0,
+    "phase": "DISCOVER",
+    "runtime": "642ae2fbfb4b9e4c98a9324fa52a45539599fda62f1bcd55ca3a864b690d80f9",
+    "seed_primitives": 6,
+    "skills": [],
+    "source_failures": 8,
+    "state_streams": 0,
+    "version": "0.1.0"
+  },
+  "limits": [
+    "three developer-supplied structural query specifications",
+    "finite grammar and 2048-program budget",
+    "static call candidates, not runtime causality",
+    "views are correlated within each repository",
+    "HTTPS provenance is a local capture, not third-party signed attestation"
+  ],
+  "protocol_sha256": "83e9afb9cb8535d53f8aa7905856af30626e00ad8317581ae74a3d02e7a917aa",
+  "schema": "nova.next.experiment.result.v1",
+  "sources": [],
+  "status": "COMPLETED",
+  "withheld_searches": []
+}
