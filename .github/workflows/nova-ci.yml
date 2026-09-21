@@ -40,3 +40,8 @@ jobs:
       - name: Replay the G22 observation-originated goal and retained failed search
         if: matrix.python == '3.12'
         run: python scripts/run_development_chain.py --restore experience/observation-goals-v1/journal.json --state /tmp/nova-observation-goals-ci.sqlite
+      - name: Replay UCR 16 observations and the retained negative search
+        if: matrix.python == '3.12'
+        run: |
+          python -c 'import gzip,pathlib; pathlib.Path("/tmp/nova-ucr-journal.json").write_bytes(gzip.decompress(pathlib.Path("experience/ucr-v16-integration/journal.json.gz").read_bytes()))'
+          python scripts/run_development_chain.py --restore /tmp/nova-ucr-journal.json --state /tmp/nova-ucr-ci.sqlite

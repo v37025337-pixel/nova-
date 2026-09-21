@@ -1,0 +1,5234 @@
+[
+  {
+    "byte_preservation": true,
+    "ir_sha256": "a508ceb8d1ac7e605dc578dbab683dbfd72a7aa12ce3cf10ec29b1d251b23a30",
+    "nodes": 12,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 3,
+        "learned": 1,
+        "python": 7,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "08bda2768122b12d64e2990afa22cd11cb102b64b6e7a7b2e04214ef2ff83cf4",
+      "stateful_semantics": null,
+      "structural_digest": "ff3acfd5842bd334a68ef6458e93e738e44bbc863fde3792f6812777720e3452",
+      "top_node_kinds": [
+        [
+          "python.Constant",
+          2
+        ],
+        [
+          "canonical.statement",
+          2
+        ],
+        [
+          "python.Module",
+          1
+        ],
+        [
+          "python.Expr",
+          1
+        ],
+        [
+          "python.Assign",
+          1
+        ],
+        [
+          "python.Name",
+          1
+        ],
+        [
+          "python.Store",
+          1
+        ],
+        [
+          "canonical.assignment",
+          1
+        ],
+        [
+          "learned.operator_profile",
+          1
+        ],
+        [
+          "summary.surface",
+          1
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/__init__.py",
+    "sha256": "08bda2768122b12d64e2990afa22cd11cb102b64b6e7a7b2e04214ef2ff83cf4"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "87d9004080fe67f43a908b3bc2444edfcc3769816ca3ffc444e93e5b37a03cb2",
+    "nodes": 1606,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 374,
+        "learned": 24,
+        "python": 1176,
+        "structure": 31,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 121,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 38,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 86,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 18,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "1a65c967f8eb2fcf5b656932f22838f82ba0c4ae048e8cb5518234902e11947f",
+      "stateful_semantics": null,
+      "structural_digest": "81adf74bdd6344f4ef6b589074e3f6458750df04e83a64b7c291f651d7e8a1a0",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          305
+        ],
+        [
+          "python.Name",
+          224
+        ],
+        [
+          "canonical.statement",
+          123
+        ],
+        [
+          "python.Constant",
+          122
+        ],
+        [
+          "python.Attribute",
+          118
+        ],
+        [
+          "canonical.invocation",
+          107
+        ],
+        [
+          "python.Call",
+          103
+        ],
+        [
+          "canonical.assignment",
+          86
+        ],
+        [
+          "python.Store",
+          46
+        ],
+        [
+          "python.keyword",
+          43
+        ],
+        [
+          "python.Assign",
+          42
+        ],
+        [
+          "canonical.control",
+          38
+        ],
+        [
+          "python.Expr",
+          35
+        ],
+        [
+          "structure.indent_scope",
+          31
+        ],
+        [
+          "python.Compare",
+          27
+        ],
+        [
+          "python.If",
+          25
+        ],
+        [
+          "canonical.declaration",
+          20
+        ],
+        [
+          "python.Eq",
+          18
+        ],
+        [
+          "learned.grammar_rule",
+          18
+        ],
+        [
+          "python.alias",
+          10
+        ],
+        [
+          "learned.operator_profile",
+          6
+        ],
+        [
+          "python.Raise",
+          5
+        ],
+        [
+          "python.Tuple",
+          5
+        ],
+        [
+          "python.Import",
+          4
+        ],
+        [
+          "python.ImportFrom",
+          4
+        ],
+        [
+          "python.LtE",
+          4
+        ],
+        [
+          "python.Subscript",
+          4
+        ],
+        [
+          "python.In",
+          3
+        ],
+        [
+          "python.Dict",
+          3
+        ],
+        [
+          "python.BoolOp",
+          2
+        ],
+        [
+          "python.UnaryOp",
+          2
+        ],
+        [
+          "python.Not",
+          2
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/__main__.py",
+    "sha256": "1a65c967f8eb2fcf5b656932f22838f82ba0c4ae048e8cb5518234902e11947f"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "c1750993577ed29d349d90b605d0dc77c477887ab6520ed67e9523767cbad8dd",
+    "nodes": 1936,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 313,
+        "learned": 28,
+        "python": 1552,
+        "structure": 42,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 6,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "prefix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 21,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.991228,
+            "evidence_count": 114,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 40,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 7,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": ">="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796",
+      "stateful_semantics": null,
+      "structural_digest": "fc0449feff5bc7ea8f17f1e573ea6f50028b75111928cb2494941cbd8247a080",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          409
+        ],
+        [
+          "python.Name",
+          354
+        ],
+        [
+          "python.Constant",
+          216
+        ],
+        [
+          "python.Subscript",
+          104
+        ],
+        [
+          "canonical.statement",
+          101
+        ],
+        [
+          "canonical.invocation",
+          82
+        ],
+        [
+          "python.Call",
+          79
+        ],
+        [
+          "python.Store",
+          77
+        ],
+        [
+          "canonical.control",
+          72
+        ],
+        [
+          "structure.indent_scope",
+          42
+        ],
+        [
+          "canonical.assignment",
+          40
+        ],
+        [
+          "python.Assign",
+          38
+        ],
+        [
+          "python.Compare",
+          21
+        ],
+        [
+          "python.comprehension",
+          21
+        ],
+        [
+          "python.Dict",
+          19
+        ],
+        [
+          "canonical.declaration",
+          18
+        ],
+        [
+          "python.arg",
+          16
+        ],
+        [
+          "learned.grammar_rule",
+          16
+        ],
+        [
+          "python.alias",
+          15
+        ],
+        [
+          "python.Attribute",
+          15
+        ],
+        [
+          "python.If",
+          14
+        ],
+        [
+          "learned.operator_profile",
+          12
+        ],
+        [
+          "python.Expr",
+          10
+        ],
+        [
+          "python.arguments",
+          10
+        ],
+        [
+          "python.Tuple",
+          10
+        ],
+        [
+          "python.GeneratorExp",
+          10
+        ],
+        [
+          "python.FunctionDef",
+          8
+        ],
+        [
+          "python.Return",
+          8
+        ],
+        [
+          "python.ImportFrom",
+          7
+        ],
+        [
+          "python.Eq",
+          7
+        ],
+        [
+          "python.For",
+          7
+        ],
+        [
+          "python.BoolOp",
+          6
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/adaptation.py",
+    "sha256": "8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "7ed247ad36be4838027213d507549647879c68b079f92abd84c3806df63c03aa",
+    "nodes": 5657,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 951,
+        "learned": 46,
+        "python": 4531,
+        "structure": 128,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 26,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "&"
+        },
+        {
+          "role": {
+            "confidence": 0.533333,
+            "evidence_count": 15,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 17,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 6,
+            "role": "prefix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 75,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.984848,
+            "evidence_count": 264,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 177,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 34,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "|="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a",
+      "stateful_semantics": null,
+      "structural_digest": "eed248f89a7111dcf1ae9b015fe7e8403d0d5fb6513517641952f38be7e5d4d8",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          1173
+        ],
+        [
+          "python.Name",
+          902
+        ],
+        [
+          "python.Constant",
+          716
+        ],
+        [
+          "python.Subscript",
+          336
+        ],
+        [
+          "canonical.statement",
+          310
+        ],
+        [
+          "canonical.invocation",
+          213
+        ],
+        [
+          "canonical.control",
+          212
+        ],
+        [
+          "python.Call",
+          203
+        ],
+        [
+          "python.Store",
+          188
+        ],
+        [
+          "canonical.assignment",
+          177
+        ],
+        [
+          "structure.indent_scope",
+          128
+        ],
+        [
+          "python.Assign",
+          110
+        ],
+        [
+          "python.Compare",
+          96
+        ],
+        [
+          "python.If",
+          71
+        ],
+        [
+          "python.keyword",
+          67
+        ],
+        [
+          "python.Attribute",
+          65
+        ],
+        [
+          "python.Dict",
+          51
+        ],
+        [
+          "canonical.declaration",
+          39
+        ],
+        [
+          "python.Tuple",
+          36
+        ],
+        [
+          "python.Eq",
+          34
+        ],
+        [
+          "python.Return",
+          33
+        ],
+        [
+          "learned.grammar_rule",
+          32
+        ],
+        [
+          "python.arg",
+          30
+        ],
+        [
+          "python.comprehension",
+          29
+        ],
+        [
+          "python.BoolOp",
+          26
+        ],
+        [
+          "python.NotEq",
+          26
+        ],
+        [
+          "python.List",
+          22
+        ],
+        [
+          "python.alias",
+          20
+        ],
+        [
+          "python.Add",
+          19
+        ],
+        [
+          "python.Expr",
+          18
+        ],
+        [
+          "python.Or",
+          18
+        ],
+        [
+          "python.Raise",
+          18
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/autonomy.py",
+    "sha256": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "ac50a893634a4acb041980681dfbe6f018d549c4965acc7bdf16d9967d811e75",
+    "nodes": 2908,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 450,
+        "learned": 34,
+        "python": 2361,
+        "structure": 62,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 8,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 7,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 0.8,
+            "evidence_count": 5,
+            "role": "prefix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 37,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.986928,
+            "evidence_count": 153,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 79,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 9,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": ">="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "|="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "7c779e900c1f2774e660900128b431ee74b693198c589ecb4640de559afcaad1",
+      "stateful_semantics": null,
+      "structural_digest": "07d67b68d26dc4a63edefb71855b3cb1ccaf2b3e9f53dbb103f70b694a53f9c2",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          617
+        ],
+        [
+          "python.Name",
+          478
+        ],
+        [
+          "python.Constant",
+          388
+        ],
+        [
+          "python.Subscript",
+          204
+        ],
+        [
+          "canonical.statement",
+          165
+        ],
+        [
+          "python.Store",
+          128
+        ],
+        [
+          "canonical.control",
+          100
+        ],
+        [
+          "canonical.invocation",
+          83
+        ],
+        [
+          "canonical.assignment",
+          79
+        ],
+        [
+          "python.Assign",
+          77
+        ],
+        [
+          "python.Call",
+          74
+        ],
+        [
+          "structure.indent_scope",
+          62
+        ],
+        [
+          "python.Compare",
+          29
+        ],
+        [
+          "python.Attribute",
+          29
+        ],
+        [
+          "python.If",
+          27
+        ],
+        [
+          "python.Dict",
+          27
+        ],
+        [
+          "python.arg",
+          23
+        ],
+        [
+          "canonical.declaration",
+          23
+        ],
+        [
+          "learned.grammar_rule",
+          23
+        ],
+        [
+          "python.comprehension",
+          22
+        ],
+        [
+          "python.Tuple",
+          18
+        ],
+        [
+          "python.alias",
+          16
+        ],
+        [
+          "python.List",
+          16
+        ],
+        [
+          "python.Expr",
+          13
+        ],
+        [
+          "python.IfExp",
+          13
+        ],
+        [
+          "python.Add",
+          11
+        ],
+        [
+          "learned.operator_profile",
+          11
+        ],
+        [
+          "python.FunctionDef",
+          10
+        ],
+        [
+          "python.arguments",
+          10
+        ],
+        [
+          "python.UnaryOp",
+          9
+        ],
+        [
+          "python.For",
+          9
+        ],
+        [
+          "python.Eq",
+          9
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/capability.py",
+    "sha256": "7c779e900c1f2774e660900128b431ee74b693198c589ecb4640de559afcaad1"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "ea1eeed310291a1be0dc0eb997c446fc6638fa6f02594974ccd3b6f56d7d97c8",
+    "nodes": 687,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 88,
+        "learned": 10,
+        "python": 565,
+        "structure": 23,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.977273,
+            "evidence_count": 176,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 12,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "d89210b6a27bbb5104995a1927cad67581d57eea602fd736658dabb730e2d254",
+      "stateful_semantics": null,
+      "structural_digest": "cd3860b5a6fe75aa400d426c4d7a0caae70c92abb08b373cd46d5145c0e5a300",
+      "top_node_kinds": [
+        [
+          "python.Constant",
+          326
+        ],
+        [
+          "python.Load",
+          59
+        ],
+        [
+          "python.Name",
+          53
+        ],
+        [
+          "canonical.statement",
+          32
+        ],
+        [
+          "structure.indent_scope",
+          23
+        ],
+        [
+          "canonical.invocation",
+          22
+        ],
+        [
+          "python.Call",
+          21
+        ],
+        [
+          "python.Dict",
+          20
+        ],
+        [
+          "canonical.declaration",
+          14
+        ],
+        [
+          "python.Store",
+          13
+        ],
+        [
+          "python.Assign",
+          12
+        ],
+        [
+          "canonical.assignment",
+          12
+        ],
+        [
+          "python.Subscript",
+          11
+        ],
+        [
+          "canonical.control",
+          8
+        ],
+        [
+          "python.FunctionDef",
+          7
+        ],
+        [
+          "python.arguments",
+          7
+        ],
+        [
+          "python.Return",
+          7
+        ],
+        [
+          "python.alias",
+          5
+        ],
+        [
+          "learned.operator_profile",
+          5
+        ],
+        [
+          "learned.grammar_rule",
+          5
+        ],
+        [
+          "python.ImportFrom",
+          4
+        ],
+        [
+          "python.Attribute",
+          4
+        ],
+        [
+          "python.Slice",
+          4
+        ],
+        [
+          "python.List",
+          3
+        ],
+        [
+          "python.Module",
+          1
+        ],
+        [
+          "python.Expr",
+          1
+        ],
+        [
+          "python.Import",
+          1
+        ],
+        [
+          "python.arg",
+          1
+        ],
+        [
+          "python.GeneratorExp",
+          1
+        ],
+        [
+          "python.Compare",
+          1
+        ],
+        [
+          "python.Eq",
+          1
+        ],
+        [
+          "python.comprehension",
+          1
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/compatibility.py",
+    "sha256": "d89210b6a27bbb5104995a1927cad67581d57eea602fd736658dabb730e2d254"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "6df07e1acfeaf74cb14cecb9b43ec44cb86545848a4069740e063f5314e09432",
+    "nodes": 1128,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 268,
+        "learned": 18,
+        "python": 803,
+        "structure": 38,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 13,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 40,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 8,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 19,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe",
+      "stateful_semantics": null,
+      "structural_digest": "4ee142695bd382031cf42781318a03b4238899e5a73109140f2559394b763b64",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          191
+        ],
+        [
+          "python.Name",
+          180
+        ],
+        [
+          "canonical.statement",
+          83
+        ],
+        [
+          "canonical.invocation",
+          74
+        ],
+        [
+          "python.Call",
+          70
+        ],
+        [
+          "python.Constant",
+          66
+        ],
+        [
+          "canonical.control",
+          58
+        ],
+        [
+          "structure.indent_scope",
+          38
+        ],
+        [
+          "canonical.declaration",
+          34
+        ],
+        [
+          "python.Compare",
+          31
+        ],
+        [
+          "python.Store",
+          23
+        ],
+        [
+          "python.If",
+          20
+        ],
+        [
+          "canonical.assignment",
+          19
+        ],
+        [
+          "python.Raise",
+          15
+        ],
+        [
+          "python.Attribute",
+          13
+        ],
+        [
+          "python.Subscript",
+          13
+        ],
+        [
+          "python.arg",
+          12
+        ],
+        [
+          "python.Return",
+          12
+        ],
+        [
+          "python.BoolOp",
+          11
+        ],
+        [
+          "python.Assign",
+          11
+        ],
+        [
+          "python.arguments",
+          10
+        ],
+        [
+          "python.Or",
+          9
+        ],
+        [
+          "learned.operator_profile",
+          9
+        ],
+        [
+          "learned.grammar_rule",
+          9
+        ],
+        [
+          "python.FunctionDef",
+          8
+        ],
+        [
+          "python.LtE",
+          8
+        ],
+        [
+          "python.Tuple",
+          7
+        ],
+        [
+          "python.IsNot",
+          7
+        ],
+        [
+          "python.keyword",
+          7
+        ],
+        [
+          "python.Is",
+          6
+        ],
+        [
+          "python.Gt",
+          5
+        ],
+        [
+          "python.UnaryOp",
+          5
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/contracts.py",
+    "sha256": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "39aba0270c88f82d6612c51cc9a7c78ecc480be7a3bd82f164f082760243d3bc",
+    "nodes": 566,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 95,
+        "learned": 14,
+        "python": 442,
+        "structure": 14,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 10,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 30,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 15,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2",
+      "stateful_semantics": null,
+      "structural_digest": "6e9893258f707ac1b71e47d63afb257426cb3f048c084b481743cbf09785b529",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          119
+        ],
+        [
+          "python.Name",
+          103
+        ],
+        [
+          "python.Constant",
+          50
+        ],
+        [
+          "canonical.statement",
+          36
+        ],
+        [
+          "python.Subscript",
+          29
+        ],
+        [
+          "python.Store",
+          25
+        ],
+        [
+          "python.Call",
+          21
+        ],
+        [
+          "canonical.invocation",
+          21
+        ],
+        [
+          "canonical.control",
+          16
+        ],
+        [
+          "python.Assign",
+          15
+        ],
+        [
+          "canonical.assignment",
+          15
+        ],
+        [
+          "structure.indent_scope",
+          14
+        ],
+        [
+          "python.arg",
+          9
+        ],
+        [
+          "python.Dict",
+          8
+        ],
+        [
+          "learned.operator_profile",
+          8
+        ],
+        [
+          "python.Attribute",
+          7
+        ],
+        [
+          "canonical.declaration",
+          7
+        ],
+        [
+          "python.Compare",
+          6
+        ],
+        [
+          "learned.grammar_rule",
+          6
+        ],
+        [
+          "python.Expr",
+          4
+        ],
+        [
+          "python.alias",
+          4
+        ],
+        [
+          "python.comprehension",
+          4
+        ],
+        [
+          "python.NotEq",
+          4
+        ],
+        [
+          "python.If",
+          4
+        ],
+        [
+          "python.ImportFrom",
+          3
+        ],
+        [
+          "python.FunctionDef",
+          3
+        ],
+        [
+          "python.arguments",
+          3
+        ],
+        [
+          "python.List",
+          3
+        ],
+        [
+          "python.Return",
+          3
+        ],
+        [
+          "python.For",
+          2
+        ],
+        [
+          "python.GeneratorExp",
+          2
+        ],
+        [
+          "python.DictComp",
+          2
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/evaluation.py",
+    "sha256": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "32e3ea9b1ba169cfbc78efe7175accdee48764fdac75b760152d4a907278d740",
+    "nodes": 2966,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 561,
+        "learned": 44,
+        "python": 2286,
+        "structure": 74,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 7,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "&"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "*"
+        },
+        {
+          "role": {
+            "confidence": 0.75,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 8,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "-="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 103,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.980952,
+            "evidence_count": 105,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "<<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 10,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 64,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 21,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": ">="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": ">>"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "@"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "^"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "|"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "~"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "7b048dda1d3efcc510be6af1162ecd52fb7dddfa53ff01b106a003a74cf6ded2",
+      "stateful_semantics": null,
+      "structural_digest": "82cfe1dc4bc39288301a728afa99f2c8f47f24c16bacc19ef269f207852a7467",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          610
+        ],
+        [
+          "python.Name",
+          499
+        ],
+        [
+          "python.Constant",
+          217
+        ],
+        [
+          "canonical.statement",
+          172
+        ],
+        [
+          "canonical.invocation",
+          156
+        ],
+        [
+          "python.Call",
+          146
+        ],
+        [
+          "canonical.control",
+          112
+        ],
+        [
+          "python.Attribute",
+          100
+        ],
+        [
+          "python.Store",
+          82
+        ],
+        [
+          "structure.indent_scope",
+          74
+        ],
+        [
+          "canonical.assignment",
+          64
+        ],
+        [
+          "python.Compare",
+          62
+        ],
+        [
+          "canonical.declaration",
+          57
+        ],
+        [
+          "python.Subscript",
+          48
+        ],
+        [
+          "python.Assign",
+          47
+        ],
+        [
+          "python.If",
+          39
+        ],
+        [
+          "python.BinOp",
+          30
+        ],
+        [
+          "python.List",
+          29
+        ],
+        [
+          "python.arg",
+          24
+        ],
+        [
+          "python.Return",
+          22
+        ],
+        [
+          "learned.operator_profile",
+          22
+        ],
+        [
+          "learned.grammar_rule",
+          22
+        ],
+        [
+          "python.Eq",
+          21
+        ],
+        [
+          "python.BoolOp",
+          20
+        ],
+        [
+          "python.Tuple",
+          16
+        ],
+        [
+          "python.Expr",
+          15
+        ],
+        [
+          "python.keyword",
+          15
+        ],
+        [
+          "python.comprehension",
+          14
+        ],
+        [
+          "python.FunctionDef",
+          13
+        ],
+        [
+          "python.arguments",
+          13
+        ],
+        [
+          "python.Raise",
+          13
+        ],
+        [
+          "python.UnaryOp",
+          13
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/extensions.py",
+    "sha256": "7b048dda1d3efcc510be6af1162ecd52fb7dddfa53ff01b106a003a74cf6ded2"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "54f590ef23427335655c427a0594dfbbb1b19f6f3261f07179344ea106845c1d",
+    "nodes": 438,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 88,
+        "learned": 10,
+        "python": 329,
+        "structure": 10,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 12,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 19,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 12,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "|"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0",
+      "stateful_semantics": null,
+      "structural_digest": "88ff7c5fe41e48605d3b92c77cb7dd0bb7aceabf2d7478da73979456e2d007c0",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          88
+        ],
+        [
+          "python.Name",
+          70
+        ],
+        [
+          "python.Constant",
+          44
+        ],
+        [
+          "python.Call",
+          32
+        ],
+        [
+          "canonical.invocation",
+          32
+        ],
+        [
+          "canonical.statement",
+          25
+        ],
+        [
+          "canonical.control",
+          15
+        ],
+        [
+          "python.Subscript",
+          14
+        ],
+        [
+          "canonical.assignment",
+          12
+        ],
+        [
+          "structure.indent_scope",
+          10
+        ],
+        [
+          "python.Attribute",
+          9
+        ],
+        [
+          "python.arg",
+          8
+        ],
+        [
+          "learned.operator_profile",
+          7
+        ],
+        [
+          "python.Expr",
+          6
+        ],
+        [
+          "python.Store",
+          5
+        ],
+        [
+          "python.If",
+          5
+        ],
+        [
+          "python.keyword",
+          5
+        ],
+        [
+          "python.alias",
+          4
+        ],
+        [
+          "python.Assign",
+          4
+        ],
+        [
+          "python.Dict",
+          4
+        ],
+        [
+          "python.Compare",
+          4
+        ],
+        [
+          "canonical.declaration",
+          4
+        ],
+        [
+          "python.ImportFrom",
+          3
+        ],
+        [
+          "python.Raise",
+          3
+        ],
+        [
+          "learned.grammar_rule",
+          3
+        ],
+        [
+          "python.FunctionDef",
+          2
+        ],
+        [
+          "python.arguments",
+          2
+        ],
+        [
+          "python.BinOp",
+          2
+        ],
+        [
+          "python.Return",
+          2
+        ],
+        [
+          "python.NotEq",
+          2
+        ],
+        [
+          "python.IfExp",
+          2
+        ],
+        [
+          "python.Module",
+          1
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/genetics.py",
+    "sha256": "e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "eaffe0dd54cb9b71618153046dfcdd8a22c8378dedf16e04c8086a1942f925ea",
+    "nodes": 276,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 69,
+        "learned": 9,
+        "python": 187,
+        "structure": 10,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 11,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 11,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 10,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3",
+      "stateful_semantics": null,
+      "structural_digest": "b1b93f4d1140e0c01fd3a691f9ab1d8f21f1339ec08d5420ea521d7466074546",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          44
+        ],
+        [
+          "python.Name",
+          34
+        ],
+        [
+          "canonical.statement",
+          24
+        ],
+        [
+          "python.Constant",
+          22
+        ],
+        [
+          "canonical.invocation",
+          18
+        ],
+        [
+          "python.Call",
+          16
+        ],
+        [
+          "canonical.control",
+          13
+        ],
+        [
+          "python.Attribute",
+          10
+        ],
+        [
+          "canonical.assignment",
+          10
+        ],
+        [
+          "structure.indent_scope",
+          10
+        ],
+        [
+          "python.keyword",
+          7
+        ],
+        [
+          "python.alias",
+          6
+        ],
+        [
+          "python.Raise",
+          5
+        ],
+        [
+          "learned.operator_profile",
+          5
+        ],
+        [
+          "python.Compare",
+          4
+        ],
+        [
+          "canonical.declaration",
+          4
+        ],
+        [
+          "learned.grammar_rule",
+          4
+        ],
+        [
+          "python.Assign",
+          3
+        ],
+        [
+          "python.Store",
+          3
+        ],
+        [
+          "python.If",
+          3
+        ],
+        [
+          "python.Import",
+          2
+        ],
+        [
+          "python.ImportFrom",
+          2
+        ],
+        [
+          "python.arg",
+          2
+        ],
+        [
+          "python.Dict",
+          2
+        ],
+        [
+          "python.Gt",
+          2
+        ],
+        [
+          "python.Try",
+          2
+        ],
+        [
+          "python.ExceptHandler",
+          2
+        ],
+        [
+          "python.Tuple",
+          2
+        ],
+        [
+          "python.BoolOp",
+          2
+        ],
+        [
+          "python.Or",
+          2
+        ],
+        [
+          "python.NotEq",
+          2
+        ],
+        [
+          "python.Module",
+          1
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/isolation.py",
+    "sha256": "c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "968e17b8ff24e4244fc8426b0ee6454e0e9df19fea382ee5d8fdc1ed2797b10d",
+    "nodes": 7252,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 1280,
+        "learned": 46,
+        "python": 5754,
+        "structure": 171,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 24,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "&"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "*"
+        },
+        {
+          "role": {
+            "confidence": 0.833333,
+            "evidence_count": 6,
+            "role": "infix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 13,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 0.666667,
+            "evidence_count": 6,
+            "role": "prefix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 197,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "/"
+        },
+        {
+          "role": {
+            "confidence": 0.991848,
+            "evidence_count": 368,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 150,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 34,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": ">="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "ce3c9fee131fbbdf2934fa7f8fec495bc88290fd6355eec41df93e06dd772d6a",
+      "stateful_semantics": null,
+      "structural_digest": "887b2c980cd679159ae46dddce311e42af02bfc14b346525bca528fe4d0898a4",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          1525
+        ],
+        [
+          "python.Name",
+          1217
+        ],
+        [
+          "python.Constant",
+          732
+        ],
+        [
+          "canonical.statement",
+          439
+        ],
+        [
+          "canonical.invocation",
+          360
+        ],
+        [
+          "python.Call",
+          350
+        ],
+        [
+          "python.Subscript",
+          331
+        ],
+        [
+          "python.Store",
+          285
+        ],
+        [
+          "canonical.control",
+          250
+        ],
+        [
+          "python.Attribute",
+          187
+        ],
+        [
+          "structure.indent_scope",
+          171
+        ],
+        [
+          "canonical.assignment",
+          150
+        ],
+        [
+          "python.Assign",
+          138
+        ],
+        [
+          "python.Compare",
+          92
+        ],
+        [
+          "python.If",
+          82
+        ],
+        [
+          "canonical.declaration",
+          81
+        ],
+        [
+          "python.Dict",
+          72
+        ],
+        [
+          "python.arg",
+          65
+        ],
+        [
+          "python.Expr",
+          58
+        ],
+        [
+          "python.Tuple",
+          55
+        ],
+        [
+          "python.Return",
+          42
+        ],
+        [
+          "python.arguments",
+          39
+        ],
+        [
+          "python.Raise",
+          39
+        ],
+        [
+          "python.FunctionDef",
+          37
+        ],
+        [
+          "python.Eq",
+          34
+        ],
+        [
+          "learned.grammar_rule",
+          32
+        ],
+        [
+          "python.alias",
+          31
+        ],
+        [
+          "python.BoolOp",
+          27
+        ],
+        [
+          "python.comprehension",
+          24
+        ],
+        [
+          "python.UnaryOp",
+          24
+        ],
+        [
+          "python.NotEq",
+          24
+        ],
+        [
+          "python.List",
+          20
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/kernel.py",
+    "sha256": "ce3c9fee131fbbdf2934fa7f8fec495bc88290fd6355eec41df93e06dd772d6a"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "ebe364ea763dfbb8abe7e2f28b39aa554fd2a2d3385d2908a18acffe2d28db6d",
+    "nodes": 2385,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 461,
+        "learned": 33,
+        "python": 1834,
+        "structure": 56,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 0.75,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "*"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 8,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "-="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 44,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.945205,
+            "evidence_count": 73,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 44,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 34,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": ">="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "@"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "|"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "a541480da7093aaa401f82e1bf3aa7be5f4914ca57ac3222db0e7084af60e1a7",
+      "stateful_semantics": null,
+      "structural_digest": "c062b0a010e0ba30a6039fad1d12748ccf44bbbed030cdc88dd973be89dce3b2",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          498
+        ],
+        [
+          "python.Name",
+          403
+        ],
+        [
+          "python.Constant",
+          171
+        ],
+        [
+          "canonical.invocation",
+          137
+        ],
+        [
+          "canonical.statement",
+          135
+        ],
+        [
+          "python.Call",
+          133
+        ],
+        [
+          "canonical.control",
+          98
+        ],
+        [
+          "python.Compare",
+          71
+        ],
+        [
+          "python.Subscript",
+          69
+        ],
+        [
+          "structure.indent_scope",
+          56
+        ],
+        [
+          "canonical.declaration",
+          47
+        ],
+        [
+          "python.Store",
+          45
+        ],
+        [
+          "canonical.assignment",
+          44
+        ],
+        [
+          "python.Attribute",
+          42
+        ],
+        [
+          "python.If",
+          35
+        ],
+        [
+          "python.Eq",
+          34
+        ],
+        [
+          "python.Return",
+          30
+        ],
+        [
+          "python.Assign",
+          28
+        ],
+        [
+          "python.arg",
+          25
+        ],
+        [
+          "python.BoolOp",
+          18
+        ],
+        [
+          "python.List",
+          18
+        ],
+        [
+          "python.arguments",
+          17
+        ],
+        [
+          "learned.grammar_rule",
+          17
+        ],
+        [
+          "learned.operator_profile",
+          16
+        ],
+        [
+          "python.And",
+          14
+        ],
+        [
+          "python.Is",
+          14
+        ],
+        [
+          "python.keyword",
+          14
+        ],
+        [
+          "python.Expr",
+          12
+        ],
+        [
+          "python.FunctionDef",
+          12
+        ],
+        [
+          "python.BinOp",
+          11
+        ],
+        [
+          "python.In",
+          10
+        ],
+        [
+          "python.alias",
+          9
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/language.py",
+    "sha256": "a541480da7093aaa401f82e1bf3aa7be5f4914ca57ac3222db0e7084af60e1a7"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "f285eb78a0ce81f80dc81a38bff3d895eb4babcad404b3a97cd691a2cba225aa",
+    "nodes": 1687,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 267,
+        "learned": 19,
+        "python": 1357,
+        "structure": 43,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 11,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 19,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.987952,
+            "evidence_count": 83,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 58,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 7,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "db8b6f35af2a13cd84663cf03ba4ac8950593944f657011c8fa1ceeaf6d5074e",
+      "stateful_semantics": null,
+      "structural_digest": "60e4c33ac3ba1107e4c5c9d4b238919d16ec73341d430c86fc02a28be187d53a",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          353
+        ],
+        [
+          "python.Constant",
+          261
+        ],
+        [
+          "python.Name",
+          239
+        ],
+        [
+          "python.Subscript",
+          118
+        ],
+        [
+          "canonical.statement",
+          81
+        ],
+        [
+          "canonical.invocation",
+          63
+        ],
+        [
+          "canonical.assignment",
+          58
+        ],
+        [
+          "python.Call",
+          57
+        ],
+        [
+          "canonical.control",
+          44
+        ],
+        [
+          "structure.indent_scope",
+          43
+        ],
+        [
+          "python.Store",
+          37
+        ],
+        [
+          "python.keyword",
+          32
+        ],
+        [
+          "python.Compare",
+          30
+        ],
+        [
+          "python.Assign",
+          26
+        ],
+        [
+          "canonical.declaration",
+          21
+        ],
+        [
+          "python.If",
+          16
+        ],
+        [
+          "python.Return",
+          14
+        ],
+        [
+          "python.Attribute",
+          14
+        ],
+        [
+          "python.Dict",
+          13
+        ],
+        [
+          "python.arg",
+          11
+        ],
+        [
+          "python.NotEq",
+          11
+        ],
+        [
+          "python.List",
+          11
+        ],
+        [
+          "python.alias",
+          10
+        ],
+        [
+          "learned.grammar_rule",
+          10
+        ],
+        [
+          "learned.operator_profile",
+          9
+        ],
+        [
+          "python.Tuple",
+          8
+        ],
+        [
+          "python.BoolOp",
+          8
+        ],
+        [
+          "python.Eq",
+          7
+        ],
+        [
+          "python.ImportFrom",
+          6
+        ],
+        [
+          "python.FunctionDef",
+          6
+        ],
+        [
+          "python.arguments",
+          6
+        ],
+        [
+          "python.Or",
+          6
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/library_evolution.py",
+    "sha256": "db8b6f35af2a13cd84663cf03ba4ac8950593944f657011c8fa1ceeaf6d5074e"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "bc180352a7113a3b3afd329d421dedef0a96eb8ed59d88024d5621296645d5e9",
+    "nodes": 798,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 183,
+        "learned": 18,
+        "python": 574,
+        "structure": 22,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "*"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 51,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 22,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 25,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777",
+      "stateful_semantics": null,
+      "structural_digest": "d000568b4dfc5a6dee0d2b49be6598b769e86fbed3d1bdd131efe95e54c04bc9",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          153
+        ],
+        [
+          "python.Name",
+          114
+        ],
+        [
+          "canonical.statement",
+          70
+        ],
+        [
+          "python.Attribute",
+          50
+        ],
+        [
+          "canonical.invocation",
+          49
+        ],
+        [
+          "python.Call",
+          47
+        ],
+        [
+          "python.Constant",
+          36
+        ],
+        [
+          "canonical.control",
+          28
+        ],
+        [
+          "python.Store",
+          27
+        ],
+        [
+          "canonical.assignment",
+          25
+        ],
+        [
+          "structure.indent_scope",
+          22
+        ],
+        [
+          "python.Expr",
+          19
+        ],
+        [
+          "python.Assign",
+          14
+        ],
+        [
+          "python.Tuple",
+          11
+        ],
+        [
+          "canonical.declaration",
+          11
+        ],
+        [
+          "learned.grammar_rule",
+          11
+        ],
+        [
+          "python.alias",
+          10
+        ],
+        [
+          "python.arg",
+          10
+        ],
+        [
+          "python.keyword",
+          10
+        ],
+        [
+          "python.Raise",
+          8
+        ],
+        [
+          "learned.operator_profile",
+          7
+        ],
+        [
+          "python.Compare",
+          6
+        ],
+        [
+          "python.FunctionDef",
+          5
+        ],
+        [
+          "python.arguments",
+          5
+        ],
+        [
+          "python.If",
+          5
+        ],
+        [
+          "python.Try",
+          5
+        ],
+        [
+          "python.NotEq",
+          5
+        ],
+        [
+          "python.Import",
+          3
+        ],
+        [
+          "python.BinOp",
+          3
+        ],
+        [
+          "python.ExceptHandler",
+          3
+        ],
+        [
+          "python.List",
+          3
+        ],
+        [
+          "python.ImportFrom",
+          2
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/memory.py",
+    "sha256": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "37ee2cec650594fa16ea03fd57671964c732677c227471ed68f858a5cd2b2fee",
+    "nodes": 3117,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 542,
+        "learned": 39,
+        "python": 2455,
+        "structure": 80,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 8,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 0.5,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "*"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 12,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "prefix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 47,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.97006,
+            "evidence_count": 167,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 77,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 8,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": ">="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "aa41a8e88f055da75ddeb2263de0384f969a8b3390cbe57ce48376dc16b1a020",
+      "stateful_semantics": null,
+      "structural_digest": "600216c0df9ee61f6685fe3b9b605213d02df4092496b28c78baf6cc0ca933db",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          641
+        ],
+        [
+          "python.Name",
+          520
+        ],
+        [
+          "python.Constant",
+          336
+        ],
+        [
+          "canonical.statement",
+          181
+        ],
+        [
+          "python.Subscript",
+          145
+        ],
+        [
+          "canonical.invocation",
+          141
+        ],
+        [
+          "python.Call",
+          134
+        ],
+        [
+          "canonical.control",
+          110
+        ],
+        [
+          "python.Store",
+          104
+        ],
+        [
+          "structure.indent_scope",
+          80
+        ],
+        [
+          "canonical.assignment",
+          77
+        ],
+        [
+          "python.Assign",
+          53
+        ],
+        [
+          "python.Compare",
+          48
+        ],
+        [
+          "python.Attribute",
+          40
+        ],
+        [
+          "python.If",
+          34
+        ],
+        [
+          "canonical.declaration",
+          33
+        ],
+        [
+          "python.Tuple",
+          26
+        ],
+        [
+          "python.Dict",
+          25
+        ],
+        [
+          "learned.grammar_rule",
+          25
+        ],
+        [
+          "python.keyword",
+          23
+        ],
+        [
+          "python.arg",
+          20
+        ],
+        [
+          "python.alias",
+          18
+        ],
+        [
+          "python.Return",
+          15
+        ],
+        [
+          "python.comprehension",
+          15
+        ],
+        [
+          "learned.operator_profile",
+          14
+        ],
+        [
+          "python.arguments",
+          13
+        ],
+        [
+          "python.BoolOp",
+          13
+        ],
+        [
+          "python.UnaryOp",
+          13
+        ],
+        [
+          "python.Add",
+          13
+        ],
+        [
+          "python.Expr",
+          12
+        ],
+        [
+          "python.Or",
+          12
+        ],
+        [
+          "python.List",
+          12
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/observations.py",
+    "sha256": "aa41a8e88f055da75ddeb2263de0384f969a8b3390cbe57ce48376dc16b1a020"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "dd0d6120aefb5fdbdc60b828fa1c66510ae3c60174ef7db35b9c21c9874490db",
+    "nodes": 2239,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 420,
+        "learned": 34,
+        "python": 1729,
+        "structure": 55,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 6,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 0.5,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "*"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 23,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "-="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 20,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.972477,
+            "evidence_count": 109,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 33,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 14,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "@"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "6e4ddb19f4897b470b0e94c547c7947a0925308af98af4f9178ae6dd2047a2eb",
+      "stateful_semantics": null,
+      "structural_digest": "c463656b5ed3fe61f8a139137ea97e4357e3e99026bd38aa6a600cfc68f3a920",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          425
+        ],
+        [
+          "python.Name",
+          412
+        ],
+        [
+          "python.Constant",
+          204
+        ],
+        [
+          "canonical.statement",
+          133
+        ],
+        [
+          "python.Call",
+          108
+        ],
+        [
+          "canonical.invocation",
+          108
+        ],
+        [
+          "canonical.control",
+          103
+        ],
+        [
+          "python.Store",
+          71
+        ],
+        [
+          "structure.indent_scope",
+          55
+        ],
+        [
+          "python.Compare",
+          52
+        ],
+        [
+          "canonical.declaration",
+          43
+        ],
+        [
+          "python.Subscript",
+          42
+        ],
+        [
+          "canonical.assignment",
+          33
+        ],
+        [
+          "python.Assign",
+          29
+        ],
+        [
+          "python.BinOp",
+          25
+        ],
+        [
+          "python.Add",
+          25
+        ],
+        [
+          "python.arg",
+          24
+        ],
+        [
+          "python.Return",
+          21
+        ],
+        [
+          "python.If",
+          21
+        ],
+        [
+          "python.Attribute",
+          19
+        ],
+        [
+          "learned.grammar_rule",
+          19
+        ],
+        [
+          "python.Dict",
+          18
+        ],
+        [
+          "learned.operator_profile",
+          15
+        ],
+        [
+          "python.BoolOp",
+          14
+        ],
+        [
+          "python.Eq",
+          14
+        ],
+        [
+          "python.Expr",
+          12
+        ],
+        [
+          "python.Tuple",
+          12
+        ],
+        [
+          "python.FunctionDef",
+          12
+        ],
+        [
+          "python.arguments",
+          12
+        ],
+        [
+          "python.comprehension",
+          12
+        ],
+        [
+          "python.List",
+          10
+        ],
+        [
+          "python.For",
+          10
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/python_tools.py",
+    "sha256": "6e4ddb19f4897b470b0e94c547c7947a0925308af98af4f9178ae6dd2047a2eb"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "446193ea8cbfe525106ed094e5ccfc01f3e2682a036c805c0b183d525fcd5952",
+    "nodes": 878,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 154,
+        "learned": 21,
+        "python": 680,
+        "structure": 22,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 0.6,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": "*"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 39,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 19,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 18,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96",
+      "stateful_semantics": null,
+      "structural_digest": "ec1e1498453a75a951e47d84bfb01e3341c18cc89ab73792231e8d5fc0346be5",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          158
+        ],
+        [
+          "python.Constant",
+          151
+        ],
+        [
+          "python.Name",
+          104
+        ],
+        [
+          "canonical.statement",
+          59
+        ],
+        [
+          "canonical.invocation",
+          45
+        ],
+        [
+          "python.Call",
+          44
+        ],
+        [
+          "python.Attribute",
+          37
+        ],
+        [
+          "canonical.control",
+          23
+        ],
+        [
+          "structure.indent_scope",
+          22
+        ],
+        [
+          "python.Store",
+          19
+        ],
+        [
+          "python.Tuple",
+          19
+        ],
+        [
+          "canonical.assignment",
+          18
+        ],
+        [
+          "python.Assign",
+          14
+        ],
+        [
+          "python.Expr",
+          12
+        ],
+        [
+          "python.Compare",
+          12
+        ],
+        [
+          "learned.operator_profile",
+          11
+        ],
+        [
+          "python.alias",
+          10
+        ],
+        [
+          "learned.grammar_rule",
+          10
+        ],
+        [
+          "python.Subscript",
+          9
+        ],
+        [
+          "canonical.declaration",
+          9
+        ],
+        [
+          "python.If",
+          7
+        ],
+        [
+          "python.Import",
+          6
+        ],
+        [
+          "python.Raise",
+          6
+        ],
+        [
+          "python.List",
+          6
+        ],
+        [
+          "python.BinOp",
+          5
+        ],
+        [
+          "python.BoolOp",
+          4
+        ],
+        [
+          "python.Or",
+          4
+        ],
+        [
+          "python.NotEq",
+          4
+        ],
+        [
+          "python.keyword",
+          4
+        ],
+        [
+          "python.ImportFrom",
+          3
+        ],
+        [
+          "python.Eq",
+          3
+        ],
+        [
+          "python.Mult",
+          3
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/sandbox_worker.py",
+    "sha256": "11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "99521a0298f984323cfed244415cc2fa7e59b2cc6c7b426d18d9b5944511bf0b",
+    "nodes": 3701,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 668,
+        "learned": 42,
+        "python": 2900,
+        "structure": 90,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 9,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "%"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "*"
+        },
+        {
+          "role": {
+            "confidence": 0.833333,
+            "evidence_count": 6,
+            "role": "infix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 23,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 0.75,
+            "evidence_count": 4,
+            "role": "prefix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "-="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 62,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.930233,
+            "evidence_count": 129,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "<<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 12,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 34,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 27,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 9,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": ">="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "@"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "|"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "cd1ac5a145caeb9a4fa9c181aeb3bbbd021e4a59b37bbee5d2440b27081f06d2",
+      "stateful_semantics": null,
+      "structural_digest": "ac0f114c26dbfec3594e3fb2ebef493b5060a4f9ba1476cbc9c897823703aca6",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          748
+        ],
+        [
+          "python.Name",
+          607
+        ],
+        [
+          "python.Constant",
+          313
+        ],
+        [
+          "canonical.invocation",
+          234
+        ],
+        [
+          "python.Call",
+          222
+        ],
+        [
+          "canonical.statement",
+          164
+        ],
+        [
+          "canonical.control",
+          139
+        ],
+        [
+          "python.Compare",
+          101
+        ],
+        [
+          "canonical.declaration",
+          97
+        ],
+        [
+          "python.Subscript",
+          94
+        ],
+        [
+          "structure.indent_scope",
+          90
+        ],
+        [
+          "python.Attribute",
+          59
+        ],
+        [
+          "python.arg",
+          58
+        ],
+        [
+          "python.Store",
+          53
+        ],
+        [
+          "python.If",
+          46
+        ],
+        [
+          "python.BinOp",
+          45
+        ],
+        [
+          "python.Return",
+          36
+        ],
+        [
+          "python.BoolOp",
+          35
+        ],
+        [
+          "python.Expr",
+          34
+        ],
+        [
+          "canonical.assignment",
+          34
+        ],
+        [
+          "python.arguments",
+          28
+        ],
+        [
+          "python.List",
+          28
+        ],
+        [
+          "python.Eq",
+          27
+        ],
+        [
+          "python.FunctionDef",
+          25
+        ],
+        [
+          "python.Raise",
+          25
+        ],
+        [
+          "python.Add",
+          25
+        ],
+        [
+          "learned.grammar_rule",
+          23
+        ],
+        [
+          "python.Assign",
+          22
+        ],
+        [
+          "python.Or",
+          20
+        ],
+        [
+          "python.IsNot",
+          20
+        ],
+        [
+          "learned.operator_profile",
+          19
+        ],
+        [
+          "python.And",
+          15
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/sequence.py",
+    "sha256": "cd1ac5a145caeb9a4fa9c181aeb3bbbd021e4a59b37bbee5d2440b27081f06d2"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "ea81ca2ac847d578f56031aa4163eb6c9c1b03e4fc1fbf32ad38a916373c0d38",
+    "nodes": 3565,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 559,
+        "learned": 31,
+        "python": 2906,
+        "structure": 68,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 10,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "%"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "&"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 1,
+            "role": "infix-like"
+          },
+          "symbol": "**"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 41,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "prefix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 118,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.965217,
+            "evidence_count": 115,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 67,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": ">"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": ">="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "|"
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "3c34a078b8500dc1f9a13ea140c85fe9df7d4294986470989aafe128841b45c3",
+      "stateful_semantics": null,
+      "structural_digest": "8ba5427ddd273cafab1d168c8da7c9f1d6b380fbe8c4e021ca427e43aecabd9d",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          778
+        ],
+        [
+          "python.Name",
+          671
+        ],
+        [
+          "python.Constant",
+          292
+        ],
+        [
+          "canonical.invocation",
+          226
+        ],
+        [
+          "python.Call",
+          221
+        ],
+        [
+          "python.Store",
+          153
+        ],
+        [
+          "canonical.control",
+          118
+        ],
+        [
+          "python.Attribute",
+          115
+        ],
+        [
+          "canonical.statement",
+          112
+        ],
+        [
+          "structure.indent_scope",
+          68
+        ],
+        [
+          "canonical.assignment",
+          67
+        ],
+        [
+          "python.Subscript",
+          65
+        ],
+        [
+          "python.Assign",
+          64
+        ],
+        [
+          "python.BinOp",
+          50
+        ],
+        [
+          "python.List",
+          48
+        ],
+        [
+          "python.Add",
+          42
+        ],
+        [
+          "canonical.declaration",
+          36
+        ],
+        [
+          "python.Compare",
+          34
+        ],
+        [
+          "python.If",
+          33
+        ],
+        [
+          "python.Tuple",
+          32
+        ],
+        [
+          "python.Raise",
+          22
+        ],
+        [
+          "python.comprehension",
+          22
+        ],
+        [
+          "python.BoolOp",
+          21
+        ],
+        [
+          "python.Expr",
+          20
+        ],
+        [
+          "python.arg",
+          20
+        ],
+        [
+          "learned.grammar_rule",
+          16
+        ],
+        [
+          "learned.operator_profile",
+          15
+        ],
+        [
+          "python.Or",
+          14
+        ],
+        [
+          "python.UnaryOp",
+          14
+        ],
+        [
+          "python.Dict",
+          13
+        ],
+        [
+          "python.Return",
+          13
+        ],
+        [
+          "python.Not",
+          12
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/specifications.py",
+    "sha256": "3c34a078b8500dc1f9a13ea140c85fe9df7d4294986470989aafe128841b45c3"
+  },
+  {
+    "byte_preservation": true,
+    "ir_sha256": "1d4c8ddc1cc20a9849b648df2ba985453dc52a21c821476f8a9cd20271eb7bbf",
+    "nodes": 2212,
+    "parse_level": "ast",
+    "passport": {
+      "abi_profile": null,
+      "encoding": "utf-8",
+      "families": {
+        "canonical": 448,
+        "learned": 40,
+        "python": 1654,
+        "structure": 69,
+        "summary": 1
+      },
+      "function_model": null,
+      "isa_summary": {
+        "addressing_mode_count": null,
+        "instruction_count": null
+      },
+      "language": "python",
+      "operators": [
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 10,
+            "role": "infix-like"
+          },
+          "symbol": "!="
+        },
+        {
+          "role": {
+            "confidence": 0.6,
+            "evidence_count": 5,
+            "role": "infix-like"
+          },
+          "symbol": "*"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "+"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "+="
+        },
+        {
+          "role": {
+            "confidence": 0.75,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": "-"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 14,
+            "role": "infix-like"
+          },
+          "symbol": "."
+        },
+        {
+          "role": {
+            "confidence": 0.935065,
+            "evidence_count": 77,
+            "role": "infix-like"
+          },
+          "symbol": ":"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 2,
+            "role": "infix-like"
+          },
+          "symbol": "<"
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 3,
+            "role": "infix-like"
+          },
+          "symbol": "<="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 35,
+            "role": "infix-like"
+          },
+          "symbol": "="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 6,
+            "role": "infix-like"
+          },
+          "symbol": "=="
+        },
+        {
+          "role": {
+            "confidence": 1.0,
+            "evidence_count": 4,
+            "role": "infix-like"
+          },
+          "symbol": ">="
+        }
+      ],
+      "protocol_model": null,
+      "safe_mode": "read-only/no-execution",
+      "schema": "ucr.passport/4",
+      "semantic_hypotheses": [],
+      "sha256": "7e61fe88d70eaf5485a82be3b98aba1e00dd2384847d635b80b04f8dbe014e19",
+      "stateful_semantics": null,
+      "structural_digest": "47eb43c847228bdca5a1a3ff3f9a4cc5472d926b341f7b1a330088c559e48815",
+      "top_node_kinds": [
+        [
+          "python.Load",
+          413
+        ],
+        [
+          "python.Name",
+          409
+        ],
+        [
+          "canonical.statement",
+          154
+        ],
+        [
+          "python.Constant",
+          150
+        ],
+        [
+          "canonical.control",
+          123
+        ],
+        [
+          "canonical.invocation",
+          101
+        ],
+        [
+          "python.Call",
+          92
+        ],
+        [
+          "python.Store",
+          91
+        ],
+        [
+          "structure.indent_scope",
+          69
+        ],
+        [
+          "python.Compare",
+          58
+        ],
+        [
+          "python.Subscript",
+          47
+        ],
+        [
+          "python.If",
+          36
+        ],
+        [
+          "canonical.assignment",
+          35
+        ],
+        [
+          "canonical.declaration",
+          35
+        ],
+        [
+          "python.Assign",
+          29
+        ],
+        [
+          "learned.grammar_rule",
+          28
+        ],
+        [
+          "python.Return",
+          26
+        ],
+        [
+          "python.Tuple",
+          21
+        ],
+        [
+          "python.IsNot",
+          18
+        ],
+        [
+          "python.Expr",
+          17
+        ],
+        [
+          "python.For",
+          17
+        ],
+        [
+          "python.comprehension",
+          16
+        ],
+        [
+          "python.arg",
+          14
+        ],
+        [
+          "python.BoolOp",
+          14
+        ],
+        [
+          "python.List",
+          12
+        ],
+        [
+          "learned.operator_profile",
+          12
+        ],
+        [
+          "python.alias",
+          11
+        ],
+        [
+          "python.Attribute",
+          11
+        ],
+        [
+          "python.NotEq",
+          10
+        ],
+        [
+          "python.FunctionDef",
+          8
+        ],
+        [
+          "python.arguments",
+          8
+        ],
+        [
+          "python.And",
+          8
+        ]
+      ],
+      "vm_profile": null
+    },
+    "path": "nova_core/synthesis.py",
+    "sha256": "7e61fe88d70eaf5485a82be3b98aba1e00dd2384847d635b80b04f8dbe014e19"
+  }
+]

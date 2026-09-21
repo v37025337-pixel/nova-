@@ -1,0 +1,232 @@
+[
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 17,
+      "sha256": "55bc92c555e2393dca6d82225b15a8bd4e52d058354eaa3b9e2be7df3eb340c0",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/__init__.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 106,
+      "sha256": "446b58755b20e1a44beb29a66904582d917471900e5b3caf92b69d962ff06875",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/__main__.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 112,
+      "sha256": "38c44d97b02bddef4fde09e9eb43681f9ad73c0eeb28271fc55e7297cc51e4b1",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/adaptation.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 114,
+      "sha256": "2052c5c992c40b05753b2c0418ae31a1068b6b159ff0f9183072104d9a55d0a8",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/autonomy.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 111,
+      "sha256": "cb41542417e52d0e271e84914f71f452fbea5e6258f7933c594cc22105a72151",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/capability.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 105,
+      "sha256": "dccc227816f29154a6ab49d5483a4cfe85e064d255aaf2a4f7fc8c4a889ba1d4",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/compatibility.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 109,
+      "sha256": "0ea068d64ed50e9e3429420f2f27dd5b0e769aaeebc1df3bb48ca610c25285cd",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/contracts.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 108,
+      "sha256": "ea03a027c73cbc7062ff07d05eb6b45fa5006eece7adf33025a35af104244f39",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/evaluation.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 122,
+      "sha256": "f8daeb348700ad65a0c194a03d522d7f22f0d726f6622ce5f8e5ed52a7911472",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/extensions.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 107,
+      "sha256": "21b6bb58291731d30ad113b360e1e87373c997e3dc718d963c1ff02266985590",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/genetics.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 105,
+      "sha256": "0f00133f5fd57b224286938ea34cbc0f4b7f6413ce7299e0078b646da148171c",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/isolation.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 114,
+      "sha256": "d3f9311bdf073eb55ed0947bdc52658d287c694753d77d0b5f78accd7cb766d5",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/kernel.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 116,
+      "sha256": "1f4fe2a9f3a27bc23764bb360bc48254c4d1fa3e00bf6fdd0eb13e78f2223820",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/language.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 109,
+      "sha256": "00f5f545f14b4a8de078ef583f0766461c0b00f4c60b59f575f12913fb3a1f15",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/library_evolution.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 107,
+      "sha256": "05a7d701983fb350a90d18b915fc425f48fb7d5a0e01a192edbdc34ca1d1aa83",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/memory.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 114,
+      "sha256": "580cdf5e932cef2f9ed0dba662560d41b22440afbfee8fe86b8b92f3303cb1da",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/observations.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 115,
+      "sha256": "a7cfe52c0509bf7a120aee384b3e5716c0b6231d8d77a80eb6f0f69d2d33260e",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/python_tools.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 111,
+      "sha256": "2a1d58026ee9d4a6839e0fa05a3b543fbc3e06fe3c185305f3a1817affe797e9",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/sandbox_worker.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 119,
+      "sha256": "d814ab8d8c47732a6f4111d6fd90a3e83b4ff7cf88a540bf929bbe36cb2739ce",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/sequence.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 115,
+      "sha256": "8b91f4c11a1ccc3aa2f3ba3f58cb63f6147b532ea733341cd32d07ad1afd16e7",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/specifications.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 112,
+      "sha256": "53b9440db00ea1f1ca7b8a828f64a5f800d646be34292a13fa313eb0f7396ee4",
+      "status": "RECORDED"
+    },
+    "source": "nova_core/synthesis.py"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 102,
+      "sha256": "b2da6bfd927d03027631111d86c77c0f8664417e459e5a2bce201324cb2da87e",
+      "status": "RECORDED"
+    },
+    "source": "programs-0.json"
+  },
+  {
+    "receipt": {
+      "limited": false,
+      "parser": "complete_json_csv_scalar_records_v1",
+      "records": 79,
+      "sha256": "b73657cb9d525727348737969d94904a952b6cc629808c79bbdd985902cec71a",
+      "status": "RECORDED"
+    },
+    "source": "programs-1.json"
+  }
+]

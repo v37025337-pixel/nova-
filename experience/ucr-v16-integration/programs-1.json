@@ -1,0 +1,68 @@
+{
+  "origin": "historical_G22_programs_and_known_examples",
+  "parent_head": "9df783c1ee135072df71846ee2d35ea3e23151ca26998c6e67015d5ad024a89b",
+  "programs": [
+    {
+      "alias": "N019",
+      "argument_mapping": {
+        "arg0": "left",
+        "arg1": "right"
+      },
+      "program": {
+        "id": "b732ce8ee45f4590b006768a779c8c49683cd5f83b9c28e28e5fec442a250393",
+        "ir": [
+          "apply",
+          "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946",
+          [
+            "object",
+            {
+              "left": [
+                "input",
+                "left"
+              ],
+              "right": [
+                "input",
+                "right"
+              ]
+            }
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946"
+        ],
+        "source": "def solve(inputs, recall):\n    return recall('955f0edc8e79ceaad9c376fb89f05ae5dd6c8d477fec9a7e8f2dfc3a45e2e946', {'left': inputs['left'], 'right': inputs['right']})\n"
+      },
+      "task": "auto-1ec0944f5900db6acb62dcb6"
+    },
+    {
+      "alias": "N020",
+      "argument_mapping": {
+        "arg0": "versions"
+      },
+      "program": {
+        "id": "4892774c772b6db5f7607026ff35910bbcd15a401b1d4ef0c86a80b16e2807c3",
+        "ir": [
+          "apply",
+          "6f3a7d3f986dcd52403af7fbaa1614ebb2cc32e8b214c2b394d28484635622de",
+          [
+            "object",
+            {
+              "versions": [
+                "input",
+                "versions"
+              ]
+            }
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "6f3a7d3f986dcd52403af7fbaa1614ebb2cc32e8b214c2b394d28484635622de"
+        ],
+        "source": "def solve(inputs, recall):\n    return recall('6f3a7d3f986dcd52403af7fbaa1614ebb2cc32e8b214c2b394d28484635622de', {'versions': inputs['versions']})\n"
+      },
+      "task": "auto-859fa997bbbd259650f164c3"
+    }
+  ],
+  "source_commit": "5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5"
+}

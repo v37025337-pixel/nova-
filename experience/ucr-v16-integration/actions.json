@@ -1,0 +1,369 @@
+[
+  {
+    "event": 114,
+    "freeze": "f8f012123e8e12b4f4ac8134f15beaf716e85d52777618757690e91c4f313111",
+    "goal": {
+      "baseline_program": {
+        "id": "882b4624c427d9ca2fb1086ff9810788ee9f894bba4f7f1378acdeb61a5588ed",
+        "ir": [
+          "const",
+          "7ddf754f-d193-4cc9-b351-99906754a03b"
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return '7ddf754f-d193-4cc9-b351-99906754a03b'\n"
+      },
+      "cause_event": 81,
+      "claim_boundary": "maintainer-defined field-pair ontology; selected by measured errors; no causality or predictability proof",
+      "contract": {
+        "ablation_required": true,
+        "fresh_min": 16,
+        "input_fields": [
+          "key"
+        ],
+        "law": "observed_field_reconstruction",
+        "output": "str",
+        "properties": [
+          "exact_agreement_with_unseen_observed_field"
+        ],
+        "regression_threshold": 1,
+        "success_threshold": 1
+      },
+      "deficit_id": "a6a63069d3b572ef9424ee5f950b9d7a7550ff31627d81c3c9aeb5db5c403164",
+      "evidence_sources": [
+        "https://api.gbif.org/v1/species/search?q=Corvus&limit=8",
+        "https://api.gbif.org/v1/species/search?q=Panthera&limit=8"
+      ],
+      "id": "auto-a0408eeea3920924a1d1bd82",
+      "observation_contract": {
+        "host": "api.gbif.org",
+        "input_field": "key",
+        "input_type": "int",
+        "record_path": "/results/*",
+        "target_field": "datasetKey",
+        "target_type": "str"
+      },
+      "observed_failure": "REPEATED_FIELD_PREDICTION_ERROR",
+      "origin": "native_observation_prediction_error",
+      "original_holdout": [
+        {
+          "input": {
+            "key": 246754380
+          },
+          "output": "3b82fc70-e5a5-4af3-a4d6-ec14b215aef8"
+        },
+        {
+          "input": {
+            "key": 337550079
+          },
+          "output": "f6b35f74-08c3-43a2-a4b6-53b6fe1c0cf6"
+        },
+        {
+          "input": {
+            "key": 265499357
+          },
+          "output": "bd0a2b6d-69d1-4650-8bb1-829c8f92035f"
+        },
+        {
+          "input": {
+            "key": 337619381
+          },
+          "output": "16c3f9cb-4b19-4553-ac8e-ebb90003aa02"
+        },
+        {
+          "input": {
+            "key": 315213312
+          },
+          "output": "1aa7abbe-a019-43d0-959c-0cd6b32e25ff"
+        },
+        {
+          "input": {
+            "key": 315575234
+          },
+          "output": "1ec61203-14fa-4fbd-8ee5-a4a80257b45a"
+        },
+        {
+          "input": {
+            "key": 334897392
+          },
+          "output": "4b3e4a71-704a-485c-917c-20a89944ea37"
+        },
+        {
+          "input": {
+            "key": 335915453
+          },
+          "output": "8bc819e8-4358-416a-b75e-d4b6ed7e0352"
+        }
+      ],
+      "parent_generation": 22,
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "predictability_proven": false,
+      "prediction_evidence": {
+        "baseline_training": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            {
+              "ok": true,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            {
+              "ok": true,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            }
+          ],
+          "passed": 2,
+          "total": 8
+        },
+        "diagnostic_is_fresh_evaluation": false,
+        "errors": [
+          {
+            "event": 86,
+            "location": "/results/4",
+            "prediction": {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            "row": {
+              "input": {
+                "key": 246754380
+              },
+              "output": "3b82fc70-e5a5-4af3-a4d6-ec14b215aef8"
+            },
+            "sha256": "5cb2c93860fc81c24a4d5da26c46755f3620247587e3904008337fd02ad294d0",
+            "source": "https://api.gbif.org/v1/species/search?q=Corvus&limit=8"
+          },
+          {
+            "event": 81,
+            "location": "/results/4",
+            "prediction": {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            "row": {
+              "input": {
+                "key": 337550079
+              },
+              "output": "f6b35f74-08c3-43a2-a4b6-53b6fe1c0cf6"
+            },
+            "sha256": "15528c3c0c8b0dde46034623e5736a1fa254e6f30170fc79c8ad47eb0241d62c",
+            "source": "https://api.gbif.org/v1/species/search?q=Panthera&limit=8"
+          },
+          {
+            "event": 86,
+            "location": "/results/5",
+            "prediction": {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            "row": {
+              "input": {
+                "key": 265499357
+              },
+              "output": "bd0a2b6d-69d1-4650-8bb1-829c8f92035f"
+            },
+            "sha256": "5cb2c93860fc81c24a4d5da26c46755f3620247587e3904008337fd02ad294d0",
+            "source": "https://api.gbif.org/v1/species/search?q=Corvus&limit=8"
+          },
+          {
+            "event": 81,
+            "location": "/results/5",
+            "prediction": {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            "row": {
+              "input": {
+                "key": 337619381
+              },
+              "output": "16c3f9cb-4b19-4553-ac8e-ebb90003aa02"
+            },
+            "sha256": "15528c3c0c8b0dde46034623e5736a1fa254e6f30170fc79c8ad47eb0241d62c",
+            "source": "https://api.gbif.org/v1/species/search?q=Panthera&limit=8"
+          },
+          {
+            "event": 86,
+            "location": "/results/6",
+            "prediction": {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            "row": {
+              "input": {
+                "key": 315213312
+              },
+              "output": "1aa7abbe-a019-43d0-959c-0cd6b32e25ff"
+            },
+            "sha256": "5cb2c93860fc81c24a4d5da26c46755f3620247587e3904008337fd02ad294d0",
+            "source": "https://api.gbif.org/v1/species/search?q=Corvus&limit=8"
+          },
+          {
+            "event": 81,
+            "location": "/results/6",
+            "prediction": {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            "row": {
+              "input": {
+                "key": 315575234
+              },
+              "output": "1ec61203-14fa-4fbd-8ee5-a4a80257b45a"
+            },
+            "sha256": "15528c3c0c8b0dde46034623e5736a1fa254e6f30170fc79c8ad47eb0241d62c",
+            "source": "https://api.gbif.org/v1/species/search?q=Panthera&limit=8"
+          },
+          {
+            "event": 86,
+            "location": "/results/7",
+            "prediction": {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            "row": {
+              "input": {
+                "key": 334897392
+              },
+              "output": "4b3e4a71-704a-485c-917c-20a89944ea37"
+            },
+            "sha256": "5cb2c93860fc81c24a4d5da26c46755f3620247587e3904008337fd02ad294d0",
+            "source": "https://api.gbif.org/v1/species/search?q=Corvus&limit=8"
+          },
+          {
+            "event": 81,
+            "location": "/results/7",
+            "prediction": {
+              "ok": false,
+              "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+            },
+            "row": {
+              "input": {
+                "key": 335915453
+              },
+              "output": "8bc819e8-4358-416a-b75e-d4b6ed7e0352"
+            },
+            "sha256": "15528c3c0c8b0dde46034623e5736a1fa254e6f30170fc79c8ad47eb0241d62c",
+            "source": "https://api.gbif.org/v1/species/search?q=Panthera&limit=8"
+          }
+        ],
+        "failed": 8,
+        "predictor_selected_on": "training_only",
+        "total": 8
+      },
+      "root_dataset": "55565e7456cc15bc79238905d7f48d27ff0ebc4d75c18559761901c380b7552a",
+      "root_task": null,
+      "root_task_origin": "unlabelled_observation",
+      "runtime_digest": "73c4cd103f7ecaf459eaa8eada273bf161f2de944e5079dbfb04782aa7c07f08",
+      "selection": {
+        "eligible_pairs": 64,
+        "evaluated_pairs": 64,
+        "rule": "most_diagnostic_errors_then_oldest_event_then_goal_identity"
+      },
+      "training": [
+        {
+          "input": {
+            "key": 198013329
+          },
+          "output": "4a118496-6a5f-4607-b880-fe24d1fe9ae8"
+        },
+        {
+          "input": {
+            "key": 115143286
+          },
+          "output": "34a96ebe-e51c-4222-9d08-5c2043c39dec"
+        },
+        {
+          "input": {
+            "key": 273054776
+          },
+          "output": "e007cc4a-8704-449d-8829-bb209d26d6c8"
+        },
+        {
+          "input": {
+            "key": 337415134
+          },
+          "output": "c2a11b56-71fc-44ce-8bd8-844f7934b13e"
+        },
+        {
+          "input": {
+            "key": 298902013
+          },
+          "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+        },
+        {
+          "input": {
+            "key": 337353999
+          },
+          "output": "fe8a949e-ea81-4a58-8871-e50032e11415"
+        },
+        {
+          "input": {
+            "key": 298902016
+          },
+          "output": "7ddf754f-d193-4cc9-b351-99906754a03b"
+        },
+        {
+          "input": {
+            "key": 337547041
+          },
+          "output": "128fd844-b069-42a1-8f8c-9bb66a52f9d9"
+        }
+      ],
+      "utility": "test whether an observed field can be reconstructed from another field with a reusable program"
+    },
+    "kind": "autonomy_step",
+    "phase": "GOAL_FROZEN",
+    "reason": "NEW_OBSERVATION_DEFICIT",
+    "status": "GOAL_FROZEN"
+  },
+  {
+    "event": 115,
+    "freeze": "48c73c5e43d69078ceb76adefbce0ccd124c0c1f850624b1689c8cf2d3c412a1",
+    "frozen": {
+      "goal": "f8f012123e8e12b4f4ac8134f15beaf716e85d52777618757690e91c4f313111",
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "runtime": "73c4cd103f7ecaf459eaa8eada273bf161f2de944e5079dbfb04782aa7c07f08",
+      "training": "7e0286e39a007a2d08a04b0a4b16f1348cbea4314ca1cc6f6a259152dc62b01c"
+    },
+    "goal": "auto-a0408eeea3920924a1d1bd82",
+    "kind": "autonomy_step",
+    "phase": "SEARCH_FROZEN",
+    "reason": "OBSERVATION_INPUTS_AND_CRITERIA_FROZEN",
+    "status": "SEARCH_FROZEN"
+  },
+  {
+    "event": 116,
+    "goal": "auto-a0408eeea3920924a1d1bd82",
+    "kind": "autonomy_step",
+    "phase": "WITHHOLD",
+    "reason": "OBSERVATION_SEARCH_EXHAUSTED",
+    "report": {
+      "fresh_cases_seen": 0,
+      "native_search_attempts": 10763,
+      "predictability_proven": false
+    },
+    "status": "WITHHOLD"
+  }
+]

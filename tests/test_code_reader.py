@@ -46,7 +46,9 @@ class CodeReaderTests(unittest.TestCase):
         result = self.reader.read(b"\x00asm\x01\x00\x00\x00", "sample.wasm")
         self.assertEqual(result.language, "wasm")
         self.assertEqual(result.metadata["parse_level"], "bytes")
-        self.assertTrue(all(n.kind == "binary.chunk" for n in result.nodes))
+        # v16 adds a byte-level summary, without claiming WASM instructions.
+        self.assertTrue(any(n.kind == "binary.chunk" for n in result.nodes))
+        self.assertTrue(all(n.kind.startswith("binary.") or n.kind == "summary.binary" for n in result.nodes))
 
     def test_surrogates_and_nonfinite_python_literals_produce_portable_json(self):
         result = self.reader.read(b"x='\\ud800'\ny=1e999\n", "input.py")
@@ -64,7 +66,10 @@ class CodeReaderTests(unittest.TestCase):
         js = self.reader.read("const plus = (x) => x + 1;", "test.js")
         self.assertEqual(js.metadata["parse_level"], "tokens")
         graph = self.reader.read("A:\n  relation -> B\n", "test.aic")
-        self.assertIn("B", graph.metadata["unresolved_links"])
+        # v16 represents undeclared symbols as explicit implicit atoms.
+        self.assertIn("B", graph.metadata["implicit_symbols"])
+        self.assertEqual(graph.metadata["unresolved_links"], [])
+        self.assertTrue(any(n.kind == "ai.atom" and n.value == "B" and n.meta["implicit"] for n in graph.nodes))
 
     def test_derived_syntax_reaches_kernel_and_survives_restart(self):
         result = self.reader.read(b"def plus(x):\n    return x + 1\ntext='\\ud800'\n", "sample.py")

@@ -1,0 +1,1778 @@
+[
+  {
+    "code": "r = N000(arg0)",
+    "inputs": {
+      "arg0": "  Alice "
+    },
+    "output": "Alice",
+    "source_program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "source_task": "10-trim"
+  },
+  {
+    "code": "r = N000(arg0)",
+    "inputs": {
+      "arg0": " Bob  "
+    },
+    "output": "Bob",
+    "source_program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "source_task": "10-trim"
+  },
+  {
+    "code": "r = N000(arg0)",
+    "inputs": {
+      "arg0": "  Stra\u00dfe   "
+    },
+    "output": "Stra\u00dfe",
+    "source_program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "source_task": "10-trim"
+  },
+  {
+    "code": "r = N000(arg0)",
+    "inputs": {
+      "arg0": "  Carol  "
+    },
+    "output": "Carol",
+    "source_program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "source_task": "10-trim"
+  },
+  {
+    "code": "r = N000(arg0)",
+    "inputs": {
+      "arg0": " dAVID "
+    },
+    "output": "dAVID",
+    "source_program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "source_task": "10-trim"
+  },
+  {
+    "code": "r = N000(arg0)",
+    "inputs": {
+      "arg0": "\t\u00e9va \n"
+    },
+    "output": "\u00e9va",
+    "source_program": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+    "source_task": "10-trim"
+  },
+  {
+    "code": "r = N001(arg0)",
+    "inputs": {
+      "arg0": "\"  Aster  \""
+    },
+    "output": "\"ASTER\"",
+    "source_program": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "source_task": "100-deep-normalize"
+  },
+  {
+    "code": "r = N001(arg0)",
+    "inputs": {
+      "arg0": "\"\\tBegonia \""
+    },
+    "output": "\"BEGONIA\"",
+    "source_program": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "source_task": "100-deep-normalize"
+  },
+  {
+    "code": "r = N001(arg0)",
+    "inputs": {
+      "arg0": "\" Crocus\\n\""
+    },
+    "output": "\"CROCUS\"",
+    "source_program": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "source_task": "100-deep-normalize"
+  },
+  {
+    "code": "r = N001(arg0)",
+    "inputs": {
+      "arg0": "\"  D\u00e1lia \""
+    },
+    "output": "\"D\u00c1LIA\"",
+    "source_program": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "source_task": "100-deep-normalize"
+  },
+  {
+    "code": "r = N001(arg0)",
+    "inputs": {
+      "arg0": "\"\u00c9DELWEISS  \""
+    },
+    "output": "\"\u00c9DELWEISS\"",
+    "source_program": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "source_task": "100-deep-normalize"
+  },
+  {
+    "code": "r = N001(arg0)",
+    "inputs": {
+      "arg0": "\" \u0399\u03a1\u0399\u0394\u0391 \""
+    },
+    "output": "\"\u0399\u03a1\u0399\u0394\u0391\"",
+    "source_program": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+    "source_task": "100-deep-normalize"
+  },
+  {
+    "code": "r = N002(arg0)",
+    "inputs": {
+      "arg0": "\"  Fern  \""
+    },
+    "output": {
+      "length": 4,
+      "name": "FERN"
+    },
+    "source_program": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "source_task": "110-deep-record"
+  },
+  {
+    "code": "r = N002(arg0)",
+    "inputs": {
+      "arg0": "\"\\tGardenia \""
+    },
+    "output": {
+      "length": 8,
+      "name": "GARDENIA"
+    },
+    "source_program": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "source_task": "110-deep-record"
+  },
+  {
+    "code": "r = N002(arg0)",
+    "inputs": {
+      "arg0": "\" Heather\\n\""
+    },
+    "output": {
+      "length": 7,
+      "name": "HEATHER"
+    },
+    "source_program": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "source_task": "110-deep-record"
+  },
+  {
+    "code": "r = N002(arg0)",
+    "inputs": {
+      "arg0": "\"  Jasmin \""
+    },
+    "output": {
+      "length": 6,
+      "name": "JASMIN"
+    },
+    "source_program": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "source_task": "110-deep-record"
+  },
+  {
+    "code": "r = N002(arg0)",
+    "inputs": {
+      "arg0": "\"K\u00c1LA  \""
+    },
+    "output": {
+      "length": 4,
+      "name": "K\u00c1LA"
+    },
+    "source_program": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "source_task": "110-deep-record"
+  },
+  {
+    "code": "r = N002(arg0)",
+    "inputs": {
+      "arg0": "\" \u041b\u0438\u043b\u0438\u044f \""
+    },
+    "output": {
+      "length": 5,
+      "name": "\u041b\u0418\u041b\u0418\u042f"
+    },
+    "source_program": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+    "source_task": "110-deep-record"
+  },
+  {
+    "code": "r = N003(arg0)",
+    "inputs": {
+      "arg0": "\"  Magnolia  \""
+    },
+    "output": "{\"length\":8,\"name\":\"MAGNOLIA\"}",
+    "source_program": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "source_task": "120-deep-serialized"
+  },
+  {
+    "code": "r = N003(arg0)",
+    "inputs": {
+      "arg0": "\"\\tNarcissus \""
+    },
+    "output": "{\"length\":9,\"name\":\"NARCISSUS\"}",
+    "source_program": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "source_task": "120-deep-serialized"
+  },
+  {
+    "code": "r = N003(arg0)",
+    "inputs": {
+      "arg0": "\" Orchid\\n\""
+    },
+    "output": "{\"length\":6,\"name\":\"ORCHID\"}",
+    "source_program": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "source_task": "120-deep-serialized"
+  },
+  {
+    "code": "r = N003(arg0)",
+    "inputs": {
+      "arg0": "\"  Pivo\u0148ka \""
+    },
+    "output": "{\"length\":7,\"name\":\"PIVO\u0147KA\"}",
+    "source_program": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "source_task": "120-deep-serialized"
+  },
+  {
+    "code": "r = N003(arg0)",
+    "inputs": {
+      "arg0": "\"QUINCE  \""
+    },
+    "output": "{\"length\":6,\"name\":\"QUINCE\"}",
+    "source_program": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "source_task": "120-deep-serialized"
+  },
+  {
+    "code": "r = N003(arg0)",
+    "inputs": {
+      "arg0": "\" \u0420\u043e\u0437\u0430 \""
+    },
+    "output": "{\"length\":4,\"name\":\"\u0420\u041e\u0417\u0410\"}",
+    "source_program": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+    "source_task": "120-deep-serialized"
+  },
+  {
+    "code": "r = N004(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"sequence-integration\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "digest": "2e01e7550633329a8d86a2b5ff92fb8f65f112dc5fa3ce374c95890a13055dd2",
+      "name": "SEQUENCE-INTEGRATION"
+    },
+    "source_program": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+    "source_task": "130-hash-record"
+  },
+  {
+    "code": "r = N004(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"byte-vector-learning\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "digest": "7db4edd35a99941dde6aba6426b79d4633c0db2d36fe2ef1df448de2512def2a",
+      "name": "BYTE-VECTOR-LEARNING"
+    },
+    "source_program": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+    "source_task": "130-hash-record"
+  },
+  {
+    "code": "r = N004(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"recurrence-runtime\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "digest": "a50e4ddab1c0e0c75931fbb09318a722382807754b044844e4aaf8c8fc37f6eb",
+      "name": "RECURRENCE-RUNTIME"
+    },
+    "source_program": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+    "source_task": "130-hash-record"
+  },
+  {
+    "code": "r = N004(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"consecutive-generation\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "digest": "ded30a255670b4341c247df08d9a8bdc227370e180a0516ae77dc567fc0206fb",
+      "name": "CONSECUTIVE-GENERATION"
+    },
+    "source_program": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+    "source_task": "130-hash-record"
+  },
+  {
+    "code": "r = N004(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"future-native-goal\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "digest": "68e7ece3f27918d1f26a9c127cb13f2dbe6db0684de158da7b96a6346a94882d",
+      "name": "FUTURE-NATIVE-GOAL"
+    },
+    "source_program": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+    "source_task": "130-hash-record"
+  },
+  {
+    "code": "r = N004(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"\u0441\u043b\u043e\u0436\u0435\u043d\u0438\u0435-\u043e\u043f\u044b\u0442\u0430\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "digest": "e3a0f2981cbdc0b7b3655b4fd0018274b93a33cf35f7a48fad72d4a9a254ea7a",
+      "name": "\u0421\u041b\u041e\u0416\u0415\u041d\u0418\u0415-\u041e\u041f\u042b\u0422\u0410"
+    },
+    "source_program": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+    "source_task": "130-hash-record"
+  },
+  {
+    "code": "r = N005(arg0)",
+    "inputs": {
+      "arg0": "  Alice "
+    },
+    "output": "ALICE",
+    "source_program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "source_task": "20-normalize"
+  },
+  {
+    "code": "r = N005(arg0)",
+    "inputs": {
+      "arg0": " Bob  "
+    },
+    "output": "BOB",
+    "source_program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "source_task": "20-normalize"
+  },
+  {
+    "code": "r = N005(arg0)",
+    "inputs": {
+      "arg0": "  Stra\u00dfe   "
+    },
+    "output": "STRASSE",
+    "source_program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "source_task": "20-normalize"
+  },
+  {
+    "code": "r = N005(arg0)",
+    "inputs": {
+      "arg0": "  Carol  "
+    },
+    "output": "CAROL",
+    "source_program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "source_task": "20-normalize"
+  },
+  {
+    "code": "r = N005(arg0)",
+    "inputs": {
+      "arg0": " dAVID "
+    },
+    "output": "DAVID",
+    "source_program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "source_task": "20-normalize"
+  },
+  {
+    "code": "r = N005(arg0)",
+    "inputs": {
+      "arg0": "\t\u00e9va \n"
+    },
+    "output": "\u00c9VA",
+    "source_program": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+    "source_task": "20-normalize"
+  },
+  {
+    "code": "r = N006(arg0)",
+    "inputs": {
+      "arg0": [
+        129956,
+        313412
+      ]
+    },
+    "output": 443368,
+    "source_program": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+    "source_task": "200-distribution-bytes"
+  },
+  {
+    "code": "r = N006(arg0)",
+    "inputs": {
+      "arg0": [
+        4010153,
+        4723133,
+        4712478,
+        4730726,
+        5353524,
+        4746720,
+        4361866,
+        4730028,
+        5308405,
+        4746230,
+        4862596,
+        5014082,
+        3842826,
+        3973525,
+        4708817,
+        4697300,
+        4716039,
+        5332388,
+        4730293,
+        4346031,
+        4715344,
+        5287201,
+        4730023,
+        4847362,
+        4999247,
+        3825806,
+        4035307,
+        4751900,
+        4738357,
+        4758474,
+        5375862,
+        4772942
+      ]
+    },
+    "output": 150484985,
+    "source_program": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+    "source_task": "200-distribution-bytes"
+  },
+  {
+    "code": "r = N006(arg0)",
+    "inputs": {
+      "arg0": [
+        184227,
+        174019,
+        740646,
+        840793,
+        770293,
+        732872,
+        758828,
+        142415,
+        158561,
+        185826,
+        175577,
+        775556,
+        882114,
+        806638,
+        767463,
+        794986,
+        142543,
+        158763,
+        182063,
+        173973,
+        775116,
+        844011,
+        807870,
+        761089,
+        790181,
+        137658,
+        154003,
+        140344,
+        181669,
+        173252,
+        767081,
+        841159
+      ]
+    },
+    "output": 15921589,
+    "source_program": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+    "source_task": "200-distribution-bytes"
+  },
+  {
+    "code": "r = N006(arg0)",
+    "inputs": {
+      "arg0": [
+        135717,
+        458972
+      ]
+    },
+    "output": 594689,
+    "source_program": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+    "source_task": "200-distribution-bytes"
+  },
+  {
+    "code": "r = N006(arg0)",
+    "inputs": {
+      "arg0": [
+        183779,
+        184178,
+        211037,
+        218652,
+        205422,
+        205444,
+        218742,
+        221054,
+        213489,
+        220241,
+        174578,
+        185082,
+        183838,
+        184168,
+        211805,
+        218716,
+        205569,
+        204907,
+        217807,
+        221252,
+        214214,
+        219408,
+        174470,
+        185096,
+        179941,
+        184821,
+        184719,
+        214799,
+        222389,
+        210249,
+        208775,
+        221822
+      ]
+    },
+    "output": 6510463,
+    "source_program": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+    "source_task": "200-distribution-bytes"
+  },
+  {
+    "code": "r = N006(arg0)",
+    "inputs": {
+      "arg0": [
+        11631,
+        12057,
+        22050,
+        20681,
+        20705,
+        21524,
+        20282,
+        20745,
+        14571,
+        15056,
+        13932,
+        11631,
+        12058,
+        24287,
+        22940,
+        21887,
+        23692,
+        21471,
+        22923,
+        14572,
+        15077,
+        13876,
+        11615,
+        12020,
+        24332,
+        22947,
+        21962,
+        23760,
+        21529,
+        23015,
+        14540,
+        15105
+      ]
+    },
+    "output": 588473,
+    "source_program": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+    "source_task": "200-distribution-bytes"
+  },
+  {
+    "code": "r = N007(arg0)",
+    "inputs": {
+      "arg0": [
+        129956,
+        313412
+      ]
+    },
+    "output": {
+      "bytes": 443368,
+      "files": 2,
+      "sizes": [
+        129956,
+        313412
+      ]
+    },
+    "source_program": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+    "source_task": "210-distribution-summary"
+  },
+  {
+    "code": "r = N007(arg0)",
+    "inputs": {
+      "arg0": [
+        4010153,
+        4723133,
+        4712478,
+        4730726,
+        5353524,
+        4746720,
+        4361866,
+        4730028,
+        5308405,
+        4746230,
+        4862596,
+        5014082,
+        3842826,
+        3973525,
+        4708817,
+        4697300,
+        4716039,
+        5332388,
+        4730293,
+        4346031,
+        4715344,
+        5287201,
+        4730023,
+        4847362,
+        4999247,
+        3825806,
+        4035307,
+        4751900,
+        4738357,
+        4758474,
+        5375862,
+        4772942
+      ]
+    },
+    "output": {
+      "bytes": 150484985,
+      "files": 32,
+      "sizes": [
+        3825806,
+        3842826,
+        3973525,
+        4010153,
+        4035307,
+        4346031,
+        4361866,
+        4697300,
+        4708817,
+        4712478,
+        4715344,
+        4716039,
+        4723133,
+        4730023,
+        4730028,
+        4730293,
+        4730726,
+        4738357,
+        4746230,
+        4746720,
+        4751900,
+        4758474,
+        4772942,
+        4847362,
+        4862596,
+        4999247,
+        5014082,
+        5287201,
+        5308405,
+        5332388,
+        5353524,
+        5375862
+      ]
+    },
+    "source_program": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+    "source_task": "210-distribution-summary"
+  },
+  {
+    "code": "r = N007(arg0)",
+    "inputs": {
+      "arg0": [
+        184227,
+        174019,
+        740646,
+        840793,
+        770293,
+        732872,
+        758828,
+        142415,
+        158561,
+        185826,
+        175577,
+        775556,
+        882114,
+        806638,
+        767463,
+        794986,
+        142543,
+        158763,
+        182063,
+        173973,
+        775116,
+        844011,
+        807870,
+        761089,
+        790181,
+        137658,
+        154003,
+        140344,
+        181669,
+        173252,
+        767081,
+        841159
+      ]
+    },
+    "output": {
+      "bytes": 15921589,
+      "files": 32,
+      "sizes": [
+        137658,
+        140344,
+        142415,
+        142543,
+        154003,
+        158561,
+        158763,
+        173252,
+        173973,
+        174019,
+        175577,
+        181669,
+        182063,
+        184227,
+        185826,
+        732872,
+        740646,
+        758828,
+        761089,
+        767081,
+        767463,
+        770293,
+        775116,
+        775556,
+        790181,
+        794986,
+        806638,
+        807870,
+        840793,
+        841159,
+        844011,
+        882114
+      ]
+    },
+    "source_program": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+    "source_task": "210-distribution-summary"
+  },
+  {
+    "code": "r = N007(arg0)",
+    "inputs": {
+      "arg0": [
+        135717,
+        458972
+      ]
+    },
+    "output": {
+      "bytes": 594689,
+      "files": 2,
+      "sizes": [
+        135717,
+        458972
+      ]
+    },
+    "source_program": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+    "source_task": "210-distribution-summary"
+  },
+  {
+    "code": "r = N007(arg0)",
+    "inputs": {
+      "arg0": [
+        183779,
+        184178,
+        211037,
+        218652,
+        205422,
+        205444,
+        218742,
+        221054,
+        213489,
+        220241,
+        174578,
+        185082,
+        183838,
+        184168,
+        211805,
+        218716,
+        205569,
+        204907,
+        217807,
+        221252,
+        214214,
+        219408,
+        174470,
+        185096,
+        179941,
+        184821,
+        184719,
+        214799,
+        222389,
+        210249,
+        208775,
+        221822
+      ]
+    },
+    "output": {
+      "bytes": 6510463,
+      "files": 32,
+      "sizes": [
+        174470,
+        174578,
+        179941,
+        183779,
+        183838,
+        184168,
+        184178,
+        184719,
+        184821,
+        185082,
+        185096,
+        204907,
+        205422,
+        205444,
+        205569,
+        208775,
+        210249,
+        211037,
+        211805,
+        213489,
+        214214,
+        214799,
+        217807,
+        218652,
+        218716,
+        218742,
+        219408,
+        220241,
+        221054,
+        221252,
+        221822,
+        222389
+      ]
+    },
+    "source_program": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+    "source_task": "210-distribution-summary"
+  },
+  {
+    "code": "r = N007(arg0)",
+    "inputs": {
+      "arg0": [
+        11631,
+        12057,
+        22050,
+        20681,
+        20705,
+        21524,
+        20282,
+        20745,
+        14571,
+        15056,
+        13932,
+        11631,
+        12058,
+        24287,
+        22940,
+        21887,
+        23692,
+        21471,
+        22923,
+        14572,
+        15077,
+        13876,
+        11615,
+        12020,
+        24332,
+        22947,
+        21962,
+        23760,
+        21529,
+        23015,
+        14540,
+        15105
+      ]
+    },
+    "output": {
+      "bytes": 588473,
+      "files": 32,
+      "sizes": [
+        11615,
+        11631,
+        11631,
+        12020,
+        12057,
+        12058,
+        13876,
+        13932,
+        14540,
+        14571,
+        14572,
+        15056,
+        15077,
+        15105,
+        20282,
+        20681,
+        20705,
+        20745,
+        21471,
+        21524,
+        21529,
+        21887,
+        21962,
+        22050,
+        22923,
+        22940,
+        22947,
+        23015,
+        23692,
+        23760,
+        24287,
+        24332
+      ]
+    },
+    "source_program": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+    "source_task": "210-distribution-summary"
+  },
+  {
+    "code": "r = N008(arg0)",
+    "inputs": {
+      "arg0": [
+        129956,
+        313412
+      ]
+    },
+    "output": "{\"bytes\":443368,\"files\":2,\"sizes\":[129956,313412]}",
+    "source_program": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+    "source_task": "220-distribution-json"
+  },
+  {
+    "code": "r = N008(arg0)",
+    "inputs": {
+      "arg0": [
+        4010153,
+        4723133,
+        4712478,
+        4730726,
+        5353524,
+        4746720,
+        4361866,
+        4730028,
+        5308405,
+        4746230,
+        4862596,
+        5014082,
+        3842826,
+        3973525,
+        4708817,
+        4697300,
+        4716039,
+        5332388,
+        4730293,
+        4346031,
+        4715344,
+        5287201,
+        4730023,
+        4847362,
+        4999247,
+        3825806,
+        4035307,
+        4751900,
+        4738357,
+        4758474,
+        5375862,
+        4772942
+      ]
+    },
+    "output": "{\"bytes\":150484985,\"files\":32,\"sizes\":[3825806,3842826,3973525,4010153,4035307,4346031,4361866,4697300,4708817,4712478,4715344,4716039,4723133,4730023,4730028,4730293,4730726,4738357,4746230,4746720,4751900,4758474,4772942,4847362,4862596,4999247,5014082,5287201,5308405,5332388,5353524,5375862]}",
+    "source_program": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+    "source_task": "220-distribution-json"
+  },
+  {
+    "code": "r = N008(arg0)",
+    "inputs": {
+      "arg0": [
+        184227,
+        174019,
+        740646,
+        840793,
+        770293,
+        732872,
+        758828,
+        142415,
+        158561,
+        185826,
+        175577,
+        775556,
+        882114,
+        806638,
+        767463,
+        794986,
+        142543,
+        158763,
+        182063,
+        173973,
+        775116,
+        844011,
+        807870,
+        761089,
+        790181,
+        137658,
+        154003,
+        140344,
+        181669,
+        173252,
+        767081,
+        841159
+      ]
+    },
+    "output": "{\"bytes\":15921589,\"files\":32,\"sizes\":[137658,140344,142415,142543,154003,158561,158763,173252,173973,174019,175577,181669,182063,184227,185826,732872,740646,758828,761089,767081,767463,770293,775116,775556,790181,794986,806638,807870,840793,841159,844011,882114]}",
+    "source_program": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+    "source_task": "220-distribution-json"
+  },
+  {
+    "code": "r = N008(arg0)",
+    "inputs": {
+      "arg0": [
+        135717,
+        458972
+      ]
+    },
+    "output": "{\"bytes\":594689,\"files\":2,\"sizes\":[135717,458972]}",
+    "source_program": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+    "source_task": "220-distribution-json"
+  },
+  {
+    "code": "r = N008(arg0)",
+    "inputs": {
+      "arg0": [
+        183779,
+        184178,
+        211037,
+        218652,
+        205422,
+        205444,
+        218742,
+        221054,
+        213489,
+        220241,
+        174578,
+        185082,
+        183838,
+        184168,
+        211805,
+        218716,
+        205569,
+        204907,
+        217807,
+        221252,
+        214214,
+        219408,
+        174470,
+        185096,
+        179941,
+        184821,
+        184719,
+        214799,
+        222389,
+        210249,
+        208775,
+        221822
+      ]
+    },
+    "output": "{\"bytes\":6510463,\"files\":32,\"sizes\":[174470,174578,179941,183779,183838,184168,184178,184719,184821,185082,185096,204907,205422,205444,205569,208775,210249,211037,211805,213489,214214,214799,217807,218652,218716,218742,219408,220241,221054,221252,221822,222389]}",
+    "source_program": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+    "source_task": "220-distribution-json"
+  },
+  {
+    "code": "r = N008(arg0)",
+    "inputs": {
+      "arg0": [
+        11631,
+        12057,
+        22050,
+        20681,
+        20705,
+        21524,
+        20282,
+        20745,
+        14571,
+        15056,
+        13932,
+        11631,
+        12058,
+        24287,
+        22940,
+        21887,
+        23692,
+        21471,
+        22923,
+        14572,
+        15077,
+        13876,
+        11615,
+        12020,
+        24332,
+        22947,
+        21962,
+        23760,
+        21529,
+        23015,
+        14540,
+        15105
+      ]
+    },
+    "output": "{\"bytes\":588473,\"files\":32,\"sizes\":[11615,11631,11631,12020,12057,12058,13876,13932,14540,14571,14572,15056,15077,15105,20282,20681,20705,20745,21471,21524,21529,21887,21962,22050,22923,22940,22947,23015,23692,23760,24287,24332]}",
+    "source_program": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+    "source_task": "220-distribution-json"
+  },
+  {
+    "code": "r = N009(arg0,arg1)",
+    "inputs": {
+      "arg0": 16989,
+      "arg1": 74758
+    },
+    "output": 91747,
+    "source_program": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+    "source_task": "230-repository-counts"
+  },
+  {
+    "code": "r = N009(arg0,arg1)",
+    "inputs": {
+      "arg0": 10533,
+      "arg1": 54330
+    },
+    "output": 64863,
+    "source_program": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+    "source_task": "230-repository-counts"
+  },
+  {
+    "code": "r = N009(arg0,arg1)",
+    "inputs": {
+      "arg0": 1710,
+      "arg1": 15502
+    },
+    "output": 17212,
+    "source_program": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+    "source_task": "230-repository-counts"
+  },
+  {
+    "code": "r = N009(arg0,arg1)",
+    "inputs": {
+      "arg0": 2424,
+      "arg1": 17732
+    },
+    "output": 20156,
+    "source_program": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+    "source_task": "230-repository-counts"
+  },
+  {
+    "code": "r = N009(arg0,arg1)",
+    "inputs": {
+      "arg0": 3390,
+      "arg1": 14518
+    },
+    "output": 17908,
+    "source_program": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+    "source_task": "230-repository-counts"
+  },
+  {
+    "code": "r = N009(arg0,arg1)",
+    "inputs": {
+      "arg0": 36005,
+      "arg1": 77229
+    },
+    "output": 113234,
+    "source_program": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+    "source_task": "230-repository-counts"
+  },
+  {
+    "code": "r = N010(arg0,arg1)",
+    "inputs": {
+      "arg0": 16989,
+      "arg1": 74758
+    },
+    "output": {
+      "combined": 91747,
+      "difference": 57769
+    },
+    "source_program": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+    "source_task": "240-repository-record"
+  },
+  {
+    "code": "r = N010(arg0,arg1)",
+    "inputs": {
+      "arg0": 10533,
+      "arg1": 54330
+    },
+    "output": {
+      "combined": 64863,
+      "difference": 43797
+    },
+    "source_program": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+    "source_task": "240-repository-record"
+  },
+  {
+    "code": "r = N010(arg0,arg1)",
+    "inputs": {
+      "arg0": 1710,
+      "arg1": 15502
+    },
+    "output": {
+      "combined": 17212,
+      "difference": 13792
+    },
+    "source_program": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+    "source_task": "240-repository-record"
+  },
+  {
+    "code": "r = N010(arg0,arg1)",
+    "inputs": {
+      "arg0": 2424,
+      "arg1": 17732
+    },
+    "output": {
+      "combined": 20156,
+      "difference": 15308
+    },
+    "source_program": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+    "source_task": "240-repository-record"
+  },
+  {
+    "code": "r = N010(arg0,arg1)",
+    "inputs": {
+      "arg0": 3390,
+      "arg1": 14518
+    },
+    "output": {
+      "combined": 17908,
+      "difference": 11128
+    },
+    "source_program": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+    "source_task": "240-repository-record"
+  },
+  {
+    "code": "r = N010(arg0,arg1)",
+    "inputs": {
+      "arg0": 36005,
+      "arg1": 77229
+    },
+    "output": {
+      "combined": 113234,
+      "difference": 41224
+    },
+    "source_program": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+    "source_task": "240-repository-record"
+  },
+  {
+    "code": "r = N011(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"packaging\", \"version\": \"26.3\"}",
+      "arg1": "name"
+    },
+    "output": "{\"digest\":\"71669691cb0b0f1bf662939c0db0782fb1a71b103bba2564051bb58bf0e303e6\",\"name\":\"PACKAGING\"}",
+    "source_program": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+    "source_task": "250-online-hash-json"
+  },
+  {
+    "code": "r = N011(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"cryptography\", \"version\": \"50.0.1\"}",
+      "arg1": "name"
+    },
+    "output": "{\"digest\":\"e06554818e902b4ba339f066967c0000da3fcda4fd7eb4ef89c124fa78bda419\",\"name\":\"CRYPTOGRAPHY\"}",
+    "source_program": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+    "source_task": "250-online-hash-json"
+  },
+  {
+    "code": "r = N011(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"PyYAML\", \"version\": \"6.0.3\"}",
+      "arg1": "name"
+    },
+    "output": "{\"digest\":\"ad205bd03dcba1f17e6de3d053e5e1b000a78a53935a48f7a2e22c8e335a603c\",\"name\":\"PYYAML\"}",
+    "source_program": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+    "source_task": "250-online-hash-json"
+  },
+  {
+    "code": "r = N011(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"urllib3\", \"version\": \"2.8.0\"}",
+      "arg1": "name"
+    },
+    "output": "{\"digest\":\"4e08df8645a52a3fa9c5d9bea56d95d55b911db35f652cbbe6016517e761acb5\",\"name\":\"URLLIB3\"}",
+    "source_program": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+    "source_task": "250-online-hash-json"
+  },
+  {
+    "code": "r = N011(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"cffi\", \"version\": \"2.1.1\"}",
+      "arg1": "name"
+    },
+    "output": "{\"digest\":\"eb7a6b8bd65f9f6f4972f0cd6b9f1ac9d5c6c6049f82a2817612e9afdb157308\",\"name\":\"CFFI\"}",
+    "source_program": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+    "source_task": "250-online-hash-json"
+  },
+  {
+    "code": "r = N011(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\": \"MarkupSafe\", \"version\": \"3.0.3\"}",
+      "arg1": "name"
+    },
+    "output": "{\"digest\":\"6d518e7db225a33c2e813c76c2ac32bc6f55f1e38c2ca362009d69b8a887b9de\",\"name\":\"MARKUPSAFE\"}",
+    "source_program": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+    "source_task": "250-online-hash-json"
+  },
+  {
+    "code": "r = N012(arg0)",
+    "inputs": {
+      "arg0": "  Alice "
+    },
+    "output": {
+      "length": 5,
+      "name": "ALICE"
+    },
+    "source_program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "source_task": "30-record"
+  },
+  {
+    "code": "r = N012(arg0)",
+    "inputs": {
+      "arg0": " Bob  "
+    },
+    "output": {
+      "length": 3,
+      "name": "BOB"
+    },
+    "source_program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "source_task": "30-record"
+  },
+  {
+    "code": "r = N012(arg0)",
+    "inputs": {
+      "arg0": "  Stra\u00dfe   "
+    },
+    "output": {
+      "length": 7,
+      "name": "STRASSE"
+    },
+    "source_program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "source_task": "30-record"
+  },
+  {
+    "code": "r = N012(arg0)",
+    "inputs": {
+      "arg0": "  Carol  "
+    },
+    "output": {
+      "length": 5,
+      "name": "CAROL"
+    },
+    "source_program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "source_task": "30-record"
+  },
+  {
+    "code": "r = N012(arg0)",
+    "inputs": {
+      "arg0": " dAVID "
+    },
+    "output": {
+      "length": 5,
+      "name": "DAVID"
+    },
+    "source_program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "source_task": "30-record"
+  },
+  {
+    "code": "r = N012(arg0)",
+    "inputs": {
+      "arg0": "\t\u00e9va \n"
+    },
+    "output": {
+      "length": 3,
+      "name": "\u00c9VA"
+    },
+    "source_program": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+    "source_task": "30-record"
+  },
+  {
+    "code": "r = N013(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"ajv\",\"repository\":\"ajv-validator/ajv\",\"version\":\"8.20.0\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "name": "ajv",
+      "repository": "ajv-validator/ajv",
+      "version": "8.20.0"
+    },
+    "source_program": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "source_task": "40-json-document"
+  },
+  {
+    "code": "r = N013(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"angular-srcs\",\"repository\":\"angular/angular\",\"version\":\"22.3.0-next.0\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "name": "angular-srcs",
+      "repository": "angular/angular",
+      "version": "22.3.0-next.0"
+    },
+    "source_program": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "source_task": "40-json-document"
+  },
+  {
+    "code": "r = N013(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"axios\",\"repository\":\"axios/axios\",\"version\":\"1.20.0\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "name": "axios",
+      "repository": "axios/axios",
+      "version": "1.20.0"
+    },
+    "source_program": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "source_task": "40-json-document"
+  },
+  {
+    "code": "r = N013(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"babel\",\"repository\":\"babel/babel\",\"version\":\"8.0.6\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "name": "babel",
+      "repository": "babel/babel",
+      "version": "8.0.6"
+    },
+    "source_program": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "source_task": "40-json-document"
+  },
+  {
+    "code": "r = N013(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"chai\",\"repository\":\"chaijs/chai\",\"version\":\"0.0.0-development\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "name": "chai",
+      "repository": "chaijs/chai",
+      "version": "0.0.0-development"
+    },
+    "source_program": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "source_task": "40-json-document"
+  },
+  {
+    "code": "r = N013(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"chalk\",\"repository\":\"chalk/chalk\",\"version\":\"6.0.0\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "name": "chalk",
+      "repository": "chalk/chalk",
+      "version": "6.0.0"
+    },
+    "source_program": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+    "source_task": "40-json-document"
+  },
+  {
+    "code": "r = N014(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"chart.js\",\"repository\":\"chartjs/Chart.js\",\"version\":\"4.5.1\"}",
+      "arg1": "name"
+    },
+    "output": "chart.js",
+    "source_program": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "source_task": "50-package-name"
+  },
+  {
+    "code": "r = N014(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"cheerio\",\"repository\":\"cheeriojs/cheerio\",\"version\":\"1.2.0\"}",
+      "arg1": "name"
+    },
+    "output": "cheerio",
+    "source_program": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "source_task": "50-package-name"
+  },
+  {
+    "code": "r = N014(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"d3\",\"repository\":\"d3/d3\",\"version\":\"7.9.0\"}",
+      "arg1": "name"
+    },
+    "output": "d3",
+    "source_program": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "source_task": "50-package-name"
+  },
+  {
+    "code": "r = N014(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"@date-fns/root\",\"repository\":\"date-fns/date-fns\",\"version\":\"0.0.0\"}",
+      "arg1": "name"
+    },
+    "output": "@date-fns/root",
+    "source_program": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "source_task": "50-package-name"
+  },
+  {
+    "code": "r = N014(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"eslint\",\"repository\":\"eslint/eslint\",\"version\":\"10.11.0\"}",
+      "arg1": "name"
+    },
+    "output": "eslint",
+    "source_program": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "source_task": "50-package-name"
+  },
+  {
+    "code": "r = N014(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"express\",\"repository\":\"expressjs/express\",\"version\":\"5.2.1\"}",
+      "arg1": "name"
+    },
+    "output": "express",
+    "source_program": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+    "source_task": "50-package-name"
+  },
+  {
+    "code": "r = N015(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"fastify\",\"repository\":\"fastify/fastify\",\"version\":\"6.0.0-alpha.4\"}",
+      "arg1": "name"
+    },
+    "output": "FASTIFY",
+    "source_program": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "source_task": "60-uppercase-name"
+  },
+  {
+    "code": "r = N015(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"hono\",\"repository\":\"honojs/hono\",\"version\":\"4.13.8\"}",
+      "arg1": "name"
+    },
+    "output": "HONO",
+    "source_program": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "source_task": "60-uppercase-name"
+  },
+  {
+    "code": "r = N015(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"dayjs\",\"repository\":\"iamkun/dayjs\",\"version\":\"0.0.0-development\"}",
+      "arg1": "name"
+    },
+    "output": "DAYJS",
+    "source_program": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "source_task": "60-uppercase-name"
+  },
+  {
+    "code": "r = N015(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"immer\",\"repository\":\"immerjs/immer\",\"version\":\"10.0.3-beta\"}",
+      "arg1": "name"
+    },
+    "output": "IMMER",
+    "source_program": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "source_task": "60-uppercase-name"
+  },
+  {
+    "code": "r = N015(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"@jest/monorepo\",\"repository\":\"jestjs/jest\",\"version\":\"0.0.0\"}",
+      "arg1": "name"
+    },
+    "output": "@JEST/MONOREPO",
+    "source_program": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "source_task": "60-uppercase-name"
+  },
+  {
+    "code": "r = N015(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"jquery\",\"repository\":\"jquery/jquery\",\"version\":\"4.0.0\"}",
+      "arg1": "name"
+    },
+    "output": "JQUERY",
+    "source_program": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+    "source_task": "60-uppercase-name"
+  },
+  {
+    "code": "r = N016(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"koa\",\"repository\":\"koajs/koa\",\"version\":\"3.2.1\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "length": 3,
+      "name": "KOA"
+    },
+    "source_program": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "source_task": "70-package-record"
+  },
+  {
+    "code": "r = N016(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"lodash\",\"repository\":\"lodash/lodash\",\"version\":\"4.18.1\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "length": 6,
+      "name": "LODASH"
+    },
+    "source_program": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "source_task": "70-package-record"
+  },
+  {
+    "code": "r = N016(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"mermaid-monorepo\",\"repository\":\"mermaid-js/mermaid\",\"version\":\"10.2.4\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "length": 16,
+      "name": "MERMAID-MONOREPO"
+    },
+    "source_program": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "source_task": "70-package-record"
+  },
+  {
+    "code": "r = N016(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"@typescript/repo\",\"repository\":\"microsoft/TypeScript\",\"version\":\"0.0.0\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "length": 16,
+      "name": "@TYPESCRIPT/REPO"
+    },
+    "source_program": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "source_task": "70-package-record"
+  },
+  {
+    "code": "r = N016(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"mocha\",\"repository\":\"mochajs/mocha\",\"version\":\"12.0.2\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "length": 5,
+      "name": "MOCHA"
+    },
+    "source_program": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "source_task": "70-package-record"
+  },
+  {
+    "code": "r = N016(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"moment\",\"repository\":\"moment/moment\",\"version\":\"2.31.0\"}",
+      "arg1": "name"
+    },
+    "output": {
+      "length": 6,
+      "name": "MOMENT"
+    },
+    "source_program": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+    "source_task": "70-package-record"
+  },
+  {
+    "code": "r = N017(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"nock\",\"repository\":\"nock/nock\",\"version\":\"0.0.0-development\"}",
+      "arg1": "name"
+    },
+    "output": "{\"length\":4,\"name\":\"NOCK\"}",
+    "source_program": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+    "source_task": "80-serialized-record"
+  },
+  {
+    "code": "r = N017(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"zustand\",\"repository\":\"pmndrs/zustand\",\"version\":\"5.0.15\"}",
+      "arg1": "name"
+    },
+    "output": "{\"length\":7,\"name\":\"ZUSTAND\"}",
+    "source_program": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+    "source_task": "80-serialized-record"
+  },
+  {
+    "code": "r = N017(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"prettier\",\"repository\":\"prettier/prettier\",\"version\":\"3.10.0-dev\"}",
+      "arg1": "name"
+    },
+    "output": "{\"length\":8,\"name\":\"PRETTIER\"}",
+    "source_program": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+    "source_task": "80-serialized-record"
+  },
+  {
+    "code": "r = N017(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"ramda\",\"repository\":\"ramda/ramda\",\"version\":\"0.32.0\"}",
+      "arg1": "name"
+    },
+    "output": "{\"length\":5,\"name\":\"RAMDA\"}",
+    "source_program": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+    "source_task": "80-serialized-record"
+  },
+  {
+    "code": "r = N017(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"redux\",\"repository\":\"reduxjs/redux\",\"version\":\"5.0.1\"}",
+      "arg1": "name"
+    },
+    "output": "{\"length\":5,\"name\":\"REDUX\"}",
+    "source_program": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+    "source_task": "80-serialized-record"
+  },
+  {
+    "code": "r = N017(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"rollup\",\"repository\":\"rollup/rollup\",\"version\":\"4.63.4\"}",
+      "arg1": "name"
+    },
+    "output": "{\"length\":6,\"name\":\"ROLLUP\"}",
+    "source_program": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+    "source_task": "80-serialized-record"
+  },
+  {
+    "code": "r = N018(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"@inquirer/root\",\"repository\":\"SBoudrias/Inquirer.js\",\"version\":null}",
+      "arg1": "name"
+    },
+    "output": "aa47ed8e4cd105b589a59fc0884384fa95b544ef3acc5498f2278300bc1cb696",
+    "source_program": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+    "source_task": "90-sha256-deficit-control"
+  },
+  {
+    "code": "r = N018(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"shelljs\",\"repository\":\"shelljs/shelljs\",\"version\":\"0.10.0\"}",
+      "arg1": "name"
+    },
+    "output": "e2e2e5605677a01350c0b7c18bea792a1f10e87dc5d5a33ed6fd670c537898e3",
+    "source_program": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+    "source_task": "90-sha256-deficit-control"
+  },
+  {
+    "code": "r = N018(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"execa\",\"repository\":\"sindresorhus/execa\",\"version\":\"10.0.1\"}",
+      "arg1": "name"
+    },
+    "output": "e1d4ca802d959027d79bc2eef0fbd107c4e121554eced8bd7452f324474d5ce5",
+    "source_program": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+    "source_task": "90-sha256-deficit-control"
+  },
+  {
+    "code": "r = N018(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"got\",\"repository\":\"sindresorhus/got\",\"version\":\"16.0.0\"}",
+      "arg1": "name"
+    },
+    "output": "0497db517ef058cb6d3672d5ffe8f062fddabc4bf56aa1d254b7f078e9a79e49",
+    "source_program": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+    "source_task": "90-sha256-deficit-control"
+  },
+  {
+    "code": "r = N018(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"p-limit\",\"repository\":\"sindresorhus/p-limit\",\"version\":\"7.3.3\"}",
+      "arg1": "name"
+    },
+    "output": "ceab5be4dc4226ae870339a44fdd73d0e26050b7d6121837d561db4a693b3acf",
+    "source_program": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+    "source_task": "90-sha256-deficit-control"
+  },
+  {
+    "code": "r = N018(arg0,arg1)",
+    "inputs": {
+      "arg0": "{\"name\":\"sinon\",\"repository\":\"sinonjs/sinon\",\"version\":\"22.1.0\"}",
+      "arg1": "name"
+    },
+    "output": "0a9d2aed8af6f9201d14f7be3ff8f59f76fa0c6f98d86a2eff8b6bc56936a47b",
+    "source_program": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+    "source_task": "90-sha256-deficit-control"
+  }
+]
