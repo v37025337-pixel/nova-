@@ -1,0 +1,124 @@
+[
+  {
+    "id": "earthquakes-json",
+    "limited": true,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 13,
+    "sha256": "3a8c2b7228b9e0b7bc0dfa893bada50072da4d34ed7683562b71bc3781845e0e",
+    "status": "RECORDED"
+  },
+  {
+    "id": "space-weather-forecast",
+    "reason": "observation parser supports complete JSON and CSV only",
+    "status": "REJECTED"
+  },
+  {
+    "id": "plant-taxonomy",
+    "limited": true,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 17,
+    "sha256": "e3014fa93cecb23adf5a6247c8daa3c736ee83cb7947f087594f5defc3ea396d",
+    "status": "RECORDED"
+  },
+  {
+    "id": "population",
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 31,
+    "sha256": "c2f9037a1e79d63fcc322dadf3c2734882adbbed050aa601a5db53fe476385c1",
+    "status": "RECORDED"
+  },
+  {
+    "id": "molecular-properties",
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 5,
+    "sha256": "7f0dcb3bf005a8a0139a8a37126c3314d455f768733230d3549f568a23c24895",
+    "status": "RECORDED"
+  },
+  {
+    "id": "sqlite-repository",
+    "limited": true,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 3,
+    "sha256": "50205c3a53f7f7c28508084137394b18bbdd4083605dff5e5fb5d5e2c3af6435",
+    "status": "RECORDED"
+  },
+  {
+    "id": "earthquakes-csv",
+    "limited": true,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 12,
+    "sha256": "db297997dd62a0018f2204768a019d23ae5bd75043ca80614d7d5b9a8499ed80",
+    "status": "RECORDED"
+  },
+  {
+    "id": "solar-radio-flux",
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 123,
+    "sha256": "c6bf178ca4ccaa12c037e5dd7151fe0410d04585ae14ef546d6ffdb145ba2571",
+    "status": "RECORDED"
+  },
+  {
+    "id": "animal-taxonomy",
+    "limited": true,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 16,
+    "sha256": "15528c3c0c8b0dde46034623e5736a1fa254e6f30170fc79c8ad47eb0241d62c",
+    "status": "RECORDED"
+  },
+  {
+    "id": "gdp",
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 31,
+    "sha256": "52348539473f2a5ba5377cfd678b1de653870d8df14f685512a2a8b3352e0223",
+    "status": "RECORDED"
+  },
+  {
+    "id": "atmospheric-molecules",
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 5,
+    "sha256": "a23f4c44b933195c08dea93cb650f2514b37d061c25dd3aea516b038d33498a6",
+    "status": "RECORDED"
+  },
+  {
+    "id": "xarray-package",
+    "limited": true,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 128,
+    "sha256": "2f5d2b79790f854e22c878e10ad7b69e3a0def014ff9565a656145bde00cbde0",
+    "status": "RECORDED"
+  },
+  {
+    "id": "earthquakes-xml",
+    "reason": "observation parser supports complete JSON and CSV only",
+    "status": "REJECTED"
+  },
+  {
+    "id": "space-weather-scales",
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 17,
+    "sha256": "82091591e6c24b86e9ff5b69cd3a0eb2b059987cef6c9485d3cef5104bee2667",
+    "status": "RECORDED"
+  },
+  {
+    "id": "bird-taxonomy",
+    "limited": true,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 16,
+    "sha256": "5cb2c93860fc81c24a4d5da26c46755f3620247587e3904008337fd02ad294d0",
+    "status": "RECORDED"
+  },
+  {
+    "id": "numpy-repository",
+    "limited": true,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 4,
+    "sha256": "d98b504c49ca1df3f720e198dda5ac64428dc27555ef44960d790e39343bc8c4",
+    "status": "RECORDED"
+  }
+]

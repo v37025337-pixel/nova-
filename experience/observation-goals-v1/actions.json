@@ -1,0 +1,370 @@
+[
+  {
+    "event": 88,
+    "freeze": "0f2a708e84c08e34ff2edd6435d7f63147da37d35cfef85c624eae03201e07a5",
+    "goal": {
+      "baseline_program": {
+        "id": "351bb6a4b7d07755d0634f507d1c597b312390c6c1fdd81f37591b02c82516e9",
+        "ir": [
+          "const",
+          103832354
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return 103832354\n"
+      },
+      "cause_event": 75,
+      "claim_boundary": "maintainer-defined field-pair ontology; selected by measured errors; no causality or predictability proof",
+      "contract": {
+        "ablation_required": true,
+        "fresh_min": 16,
+        "input_fields": [
+          "datasetKey"
+        ],
+        "law": "observed_field_reconstruction",
+        "output": "int",
+        "properties": [
+          "exact_agreement_with_unseen_observed_field"
+        ],
+        "regression_threshold": 1,
+        "success_threshold": 1
+      },
+      "deficit_id": "12d684772d3e55c22582ef8211b65917fec2d8953330c61c27defa46a0ecfdc0",
+      "evidence_sources": [
+        "https://api.gbif.org/v1/species/search?q=Corvus&limit=8",
+        "https://api.gbif.org/v1/species/search?q=Panthera&limit=8",
+        "https://api.gbif.org/v1/species/search?q=Quercus&limit=8"
+      ],
+      "id": "auto-0c3fde76e9cad5463f27c533",
+      "observation_contract": {
+        "host": "api.gbif.org",
+        "input_field": "datasetKey",
+        "input_type": "str",
+        "record_path": "/results/*",
+        "target_field": "kingdomKey",
+        "target_type": "int"
+      },
+      "observed_failure": "REPEATED_FIELD_PREDICTION_ERROR",
+      "origin": "native_observation_prediction_error",
+      "original_holdout": [
+        {
+          "input": {
+            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+          },
+          "output": 1
+        },
+        {
+          "input": {
+            "datasetKey": "f6b35f74-08c3-43a2-a4b6-53b6fe1c0cf6"
+          },
+          "output": 337549956
+        },
+        {
+          "input": {
+            "datasetKey": "f95250e7-49f4-4d2e-a04e-35533dee3318"
+          },
+          "output": 257954924
+        },
+        {
+          "input": {
+            "datasetKey": "3b82fc70-e5a5-4af3-a4d6-ec14b215aef8"
+          },
+          "output": 246754049
+        },
+        {
+          "input": {
+            "datasetKey": "1ec61203-14fa-4fbd-8ee5-a4a80257b45a"
+          },
+          "output": 315560562
+        },
+        {
+          "input": {
+            "datasetKey": "dbaa27eb-29e7-4cbb-8eab-3f689cfce116"
+          },
+          "output": 180120333
+        },
+        {
+          "input": {
+            "datasetKey": "1aa7abbe-a019-43d0-959c-0cd6b32e25ff"
+          },
+          "output": 315213287
+        },
+        {
+          "input": {
+            "datasetKey": "0e61f8fe-7d25-4f81-ada7-d970bbb2c6d6"
+          },
+          "output": 134521164
+        }
+      ],
+      "parent_generation": 22,
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "predictability_proven": false,
+      "prediction_evidence": {
+        "baseline_training": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": 103832354
+            },
+            {
+              "ok": false,
+              "output": 103832354
+            },
+            {
+              "ok": false,
+              "output": 103832354
+            },
+            {
+              "ok": false,
+              "output": 103832354
+            },
+            {
+              "ok": false,
+              "output": 103832354
+            },
+            {
+              "ok": true,
+              "output": 103832354
+            },
+            {
+              "ok": false,
+              "output": 103832354
+            },
+            {
+              "ok": false,
+              "output": 103832354
+            }
+          ],
+          "passed": 1,
+          "total": 8
+        },
+        "diagnostic_is_fresh_evaluation": false,
+        "errors": [
+          {
+            "event": 75,
+            "location": "/results/2",
+            "prediction": {
+              "ok": false,
+              "output": 103832354
+            },
+            "row": {
+              "input": {
+                "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+              },
+              "output": 1
+            },
+            "sha256": "e3014fa93cecb23adf5a6247c8daa3c736ee83cb7947f087594f5defc3ea396d",
+            "source": "https://api.gbif.org/v1/species/search?q=Quercus&limit=8"
+          },
+          {
+            "event": 81,
+            "location": "/results/4",
+            "prediction": {
+              "ok": false,
+              "output": 103832354
+            },
+            "row": {
+              "input": {
+                "datasetKey": "f6b35f74-08c3-43a2-a4b6-53b6fe1c0cf6"
+              },
+              "output": 337549956
+            },
+            "sha256": "15528c3c0c8b0dde46034623e5736a1fa254e6f30170fc79c8ad47eb0241d62c",
+            "source": "https://api.gbif.org/v1/species/search?q=Panthera&limit=8"
+          },
+          {
+            "event": 75,
+            "location": "/results/3",
+            "prediction": {
+              "ok": false,
+              "output": 103832354
+            },
+            "row": {
+              "input": {
+                "datasetKey": "f95250e7-49f4-4d2e-a04e-35533dee3318"
+              },
+              "output": 257954924
+            },
+            "sha256": "e3014fa93cecb23adf5a6247c8daa3c736ee83cb7947f087594f5defc3ea396d",
+            "source": "https://api.gbif.org/v1/species/search?q=Quercus&limit=8"
+          },
+          {
+            "event": 86,
+            "location": "/results/4",
+            "prediction": {
+              "ok": false,
+              "output": 103832354
+            },
+            "row": {
+              "input": {
+                "datasetKey": "3b82fc70-e5a5-4af3-a4d6-ec14b215aef8"
+              },
+              "output": 246754049
+            },
+            "sha256": "5cb2c93860fc81c24a4d5da26c46755f3620247587e3904008337fd02ad294d0",
+            "source": "https://api.gbif.org/v1/species/search?q=Corvus&limit=8"
+          },
+          {
+            "event": 81,
+            "location": "/results/6",
+            "prediction": {
+              "ok": false,
+              "output": 103832354
+            },
+            "row": {
+              "input": {
+                "datasetKey": "1ec61203-14fa-4fbd-8ee5-a4a80257b45a"
+              },
+              "output": 315560562
+            },
+            "sha256": "15528c3c0c8b0dde46034623e5736a1fa254e6f30170fc79c8ad47eb0241d62c",
+            "source": "https://api.gbif.org/v1/species/search?q=Panthera&limit=8"
+          },
+          {
+            "event": 75,
+            "location": "/results/4",
+            "prediction": {
+              "ok": false,
+              "output": 103832354
+            },
+            "row": {
+              "input": {
+                "datasetKey": "dbaa27eb-29e7-4cbb-8eab-3f689cfce116"
+              },
+              "output": 180120333
+            },
+            "sha256": "e3014fa93cecb23adf5a6247c8daa3c736ee83cb7947f087594f5defc3ea396d",
+            "source": "https://api.gbif.org/v1/species/search?q=Quercus&limit=8"
+          },
+          {
+            "event": 86,
+            "location": "/results/6",
+            "prediction": {
+              "ok": false,
+              "output": 103832354
+            },
+            "row": {
+              "input": {
+                "datasetKey": "1aa7abbe-a019-43d0-959c-0cd6b32e25ff"
+              },
+              "output": 315213287
+            },
+            "sha256": "5cb2c93860fc81c24a4d5da26c46755f3620247587e3904008337fd02ad294d0",
+            "source": "https://api.gbif.org/v1/species/search?q=Corvus&limit=8"
+          },
+          {
+            "event": 75,
+            "location": "/results/5",
+            "prediction": {
+              "ok": false,
+              "output": 103832354
+            },
+            "row": {
+              "input": {
+                "datasetKey": "0e61f8fe-7d25-4f81-ada7-d970bbb2c6d6"
+              },
+              "output": 134521164
+            },
+            "sha256": "e3014fa93cecb23adf5a6247c8daa3c736ee83cb7947f087594f5defc3ea396d",
+            "source": "https://api.gbif.org/v1/species/search?q=Quercus&limit=8"
+          }
+        ],
+        "failed": 8,
+        "predictor_selected_on": "training_only",
+        "total": 8
+      },
+      "root_dataset": "0d603e82a8cc9b366b957c57511afe086c9af2dd4625386f2a0f40d7d0b7503f",
+      "root_task": null,
+      "root_task_origin": "unlabelled_observation",
+      "runtime_digest": "73c4cd103f7ecaf459eaa8eada273bf161f2de944e5079dbfb04782aa7c07f08",
+      "selection": {
+        "eligible_pairs": 43,
+        "evaluated_pairs": 43,
+        "rule": "most_diagnostic_errors_then_oldest_event_then_goal_identity"
+      },
+      "training": [
+        {
+          "input": {
+            "datasetKey": "4a118496-6a5f-4607-b880-fe24d1fe9ae8"
+          },
+          "output": 336755280
+        },
+        {
+          "input": {
+            "datasetKey": "c2a11b56-71fc-44ce-8bd8-844f7934b13e"
+          },
+          "output": 337414902
+        },
+        {
+          "input": {
+            "datasetKey": "8bc819e8-4358-416a-b75e-d4b6ed7e0352"
+          },
+          "output": 333531756
+        },
+        {
+          "input": {
+            "datasetKey": "e007cc4a-8704-449d-8829-bb209d26d6c8"
+          },
+          "output": 270195436
+        },
+        {
+          "input": {
+            "datasetKey": "fe8a949e-ea81-4a58-8871-e50032e11415"
+          },
+          "output": 337353137
+        },
+        {
+          "input": {
+            "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52"
+          },
+          "output": 103832354
+        },
+        {
+          "input": {
+            "datasetKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
+          },
+          "output": 296374190
+        },
+        {
+          "input": {
+            "datasetKey": "128fd844-b069-42a1-8f8c-9bb66a52f9d9"
+          },
+          "output": 337546890
+        }
+      ],
+      "utility": "test whether an observed field can be reconstructed from another field with a reusable program"
+    },
+    "kind": "autonomy_step",
+    "phase": "GOAL_FROZEN",
+    "reason": "NEW_OBSERVATION_DEFICIT",
+    "status": "GOAL_FROZEN"
+  },
+  {
+    "event": 89,
+    "freeze": "569685c5cd96154cdd58cc2b6cf18ac0ad29a76d88764e495660285036511c06",
+    "frozen": {
+      "goal": "0f2a708e84c08e34ff2edd6435d7f63147da37d35cfef85c624eae03201e07a5",
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "runtime": "73c4cd103f7ecaf459eaa8eada273bf161f2de944e5079dbfb04782aa7c07f08",
+      "training": "3a58f55156c8f0a0287a12d5bf18e68a9cfbbd1549b47657368b7cb8057a2bd0"
+    },
+    "goal": "auto-0c3fde76e9cad5463f27c533",
+    "kind": "autonomy_step",
+    "phase": "SEARCH_FROZEN",
+    "reason": "OBSERVATION_INPUTS_AND_CRITERIA_FROZEN",
+    "status": "SEARCH_FROZEN"
+  },
+  {
+    "event": 90,
+    "goal": "auto-0c3fde76e9cad5463f27c533",
+    "kind": "autonomy_step",
+    "phase": "WITHHOLD",
+    "reason": "OBSERVATION_SEARCH_EXHAUSTED",
+    "report": {
+      "fresh_cases_seen": 0,
+      "native_search_attempts": 11014,
+      "predictability_proven": false
+    },
+    "status": "WITHHOLD"
+  }
+]

@@ -1,0 +1,37 @@
+{"stage": "fetch", "source": "plant-taxonomy", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "space-weather-forecast", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "earthquakes-json", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "population", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "molecular-properties", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "sqlite-repository", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "earthquakes-csv", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "solar-radio-flux", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "animal-taxonomy", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "gdp", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "atmospheric-molecules", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "xarray-package", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "earthquakes-xml", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "bird-taxonomy", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "space-weather-scales", "status": "FETCHED", "http": 200}
+{"stage": "fetch", "source": "numpy-repository", "status": "FETCHED", "http": 200}
+{"stage": "parent_verified", "generation": 22}
+{"stage": "ingress", "id": "earthquakes-json", "status": "RECORDED", "records": 13, "limited": true, "parser": "complete_json_csv_scalar_records_v1", "sha256": "3a8c2b7228b9e0b7bc0dfa893bada50072da4d34ed7683562b71bc3781845e0e"}
+{"stage": "ingress", "id": "space-weather-forecast", "status": "REJECTED", "reason": "observation parser supports complete JSON and CSV only"}
+{"stage": "ingress", "id": "plant-taxonomy", "status": "RECORDED", "records": 17, "limited": true, "parser": "complete_json_csv_scalar_records_v1", "sha256": "e3014fa93cecb23adf5a6247c8daa3c736ee83cb7947f087594f5defc3ea396d"}
+{"stage": "ingress", "id": "population", "status": "RECORDED", "records": 31, "limited": false, "parser": "complete_json_csv_scalar_records_v1", "sha256": "c2f9037a1e79d63fcc322dadf3c2734882adbbed050aa601a5db53fe476385c1"}
+{"stage": "ingress", "id": "molecular-properties", "status": "RECORDED", "records": 5, "limited": false, "parser": "complete_json_csv_scalar_records_v1", "sha256": "7f0dcb3bf005a8a0139a8a37126c3314d455f768733230d3549f568a23c24895"}
+{"stage": "ingress", "id": "sqlite-repository", "status": "RECORDED", "records": 3, "limited": true, "parser": "complete_json_csv_scalar_records_v1", "sha256": "50205c3a53f7f7c28508084137394b18bbdd4083605dff5e5fb5d5e2c3af6435"}
+{"stage": "ingress", "id": "earthquakes-csv", "status": "RECORDED", "records": 12, "limited": true, "parser": "complete_json_csv_scalar_records_v1", "sha256": "db297997dd62a0018f2204768a019d23ae5bd75043ca80614d7d5b9a8499ed80"}
+{"stage": "ingress", "id": "solar-radio-flux", "status": "RECORDED", "records": 123, "limited": false, "parser": "complete_json_csv_scalar_records_v1", "sha256": "c6bf178ca4ccaa12c037e5dd7151fe0410d04585ae14ef546d6ffdb145ba2571"}
+{"stage": "ingress", "id": "animal-taxonomy", "status": "RECORDED", "records": 16, "limited": true, "parser": "complete_json_csv_scalar_records_v1", "sha256": "15528c3c0c8b0dde46034623e5736a1fa254e6f30170fc79c8ad47eb0241d62c"}
+{"stage": "ingress", "id": "gdp", "status": "RECORDED", "records": 31, "limited": false, "parser": "complete_json_csv_scalar_records_v1", "sha256": "52348539473f2a5ba5377cfd678b1de653870d8df14f685512a2a8b3352e0223"}
+{"stage": "ingress", "id": "atmospheric-molecules", "status": "RECORDED", "records": 5, "limited": false, "parser": "complete_json_csv_scalar_records_v1", "sha256": "a23f4c44b933195c08dea93cb650f2514b37d061c25dd3aea516b038d33498a6"}
+{"stage": "ingress", "id": "xarray-package", "status": "RECORDED", "records": 128, "limited": true, "parser": "complete_json_csv_scalar_records_v1", "sha256": "2f5d2b79790f854e22c878e10ad7b69e3a0def014ff9565a656145bde00cbde0"}
+{"stage": "ingress", "id": "earthquakes-xml", "status": "REJECTED", "reason": "observation parser supports complete JSON and CSV only"}
+{"stage": "ingress", "id": "space-weather-scales", "status": "RECORDED", "records": 17, "limited": false, "parser": "complete_json_csv_scalar_records_v1", "sha256": "82091591e6c24b86e9ff5b69cd3a0eb2b059987cef6c9485d3cef5104bee2667"}
+{"stage": "ingress", "id": "bird-taxonomy", "status": "RECORDED", "records": 16, "limited": true, "parser": "complete_json_csv_scalar_records_v1", "sha256": "5cb2c93860fc81c24a4d5da26c46755f3620247587e3904008337fd02ad294d0"}
+{"stage": "ingress", "id": "numpy-repository", "status": "RECORDED", "records": 4, "limited": true, "parser": "complete_json_csv_scalar_records_v1", "sha256": "d98b504c49ca1df3f720e198dda5ac64428dc27555ef44960d790e39343bc8c4"}
+{"stage": "native_step", "status": "GOAL_FROZEN", "reason": "NEW_OBSERVATION_DEFICIT"}
+{"stage": "native_step", "status": "SEARCH_FROZEN", "reason": "OBSERVATION_INPUTS_AND_CRITERIA_FROZEN"}
+{"stage": "native_step", "status": "WITHHOLD", "reason": "OBSERVATION_SEARCH_EXHAUSTED"}
+{"stage": "result", "completed_at": "2026-09-21T05:44:24.268564+00:00", "parent_head": "6712e7e724d61b232fddb908e5eade82d959391a889c530655d59a1a4e45552a", "head": "9df783c1ee135072df71846ee2d35ea3e23151ca26998c6e67015d5ad024a89b", "runtime_version": "0.7.0", "active_generation": 22, "goal_found": true, "goal_id": "auto-0c3fde76e9cad5463f27c533", "observation_contract": {"host": "api.gbif.org", "record_path": "/results/*", "input_field": "datasetKey", "target_field": "kingdomKey", "input_type": "str", "target_type": "int"}, "last_outcome": "WITHHOLD", "last_reason": "OBSERVATION_SEARCH_EXHAUSTED", "operator_task_events": 0, "operator_answer_labels": 0, "fresh_evaluation_performed": false, "capability_improvement_proven": false, "unrestricted_autonomy_proven": false, "regression": {"passed": 192, "total": 192, "skills": 21}, "observations": {"documents_seen": 14, "window_documents": 14, "window_records": 421}, "boundary": "maintainer-added observation/goal ontology; native goal selection and synthesis; retrieval may repeat historical source records"}
