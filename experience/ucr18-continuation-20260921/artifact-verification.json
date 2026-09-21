@@ -1,0 +1,17 @@
+{
+  "events": 127,
+  "hash_chain_valid": true,
+  "head": "ce9ab36241e801e7c16fe2004b1f0fc91a4d4aa74146e684b44a8d554b0fab3a",
+  "journal_file_sha256": "512b6cd77d0607adfd37afab722417dab0c51c1a3fa49a3effff21f06c0ef83e",
+  "parent_events": 124,
+  "parent_head": "c4cd50dd09dabe29c90ba4b8a77eb08d17a2a634e800d45edd5d44d9ceef7c4a",
+  "parent_prefix_unchanged": true,
+  "runtime_sha256": "cfec6501969d0fd62dedd1a0c7c48709fe027ce60c39155aad07eccb45c4f797",
+  "schema": "nova.run-artifact-integrity.v1",
+  "semantic_replay_report": "replay-attempt.json",
+  "source_commit": "b1eaf9cfb9181506e6786be99832914bff1285c6",
+  "source_tree": "95ffa0bdc9dea3c73e1919c8b281f679978f46bb",
+  "sqlite_matches_export": true,
+  "status": "PASS",
+  "tracked_files_changed": false
+}

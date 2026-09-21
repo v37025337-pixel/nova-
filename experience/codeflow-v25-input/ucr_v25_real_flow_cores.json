@@ -1,0 +1,1429 @@
+{
+  "requests": {
+    "schema": "ucr.external-static-codeflow/1",
+    "project": "requests",
+    "version": "2.32.5",
+    "nodes": [
+      {
+        "id": "requests._internal_utils:to_native_string",
+        "module": "requests._internal_utils",
+        "name": "to_native_string",
+        "kind": "function"
+      },
+      {
+        "id": "requests._internal_utils:unicode_is_ascii",
+        "module": "requests._internal_utils",
+        "name": "unicode_is_ascii",
+        "kind": "function"
+      },
+      {
+        "id": "requests.adapters:HTTPAdapter.build_response",
+        "module": "requests.adapters",
+        "name": "HTTPAdapter.build_response",
+        "kind": "method"
+      },
+      {
+        "id": "requests.adapters:HTTPAdapter.cert_verify",
+        "module": "requests.adapters",
+        "name": "HTTPAdapter.cert_verify",
+        "kind": "method"
+      },
+      {
+        "id": "requests.adapters:HTTPAdapter.get_connection",
+        "module": "requests.adapters",
+        "name": "HTTPAdapter.get_connection",
+        "kind": "method"
+      },
+      {
+        "id": "requests.adapters:HTTPAdapter.get_connection_with_tls_context",
+        "module": "requests.adapters",
+        "name": "HTTPAdapter.get_connection_with_tls_context",
+        "kind": "method"
+      },
+      {
+        "id": "requests.adapters:HTTPAdapter.proxy_headers",
+        "module": "requests.adapters",
+        "name": "HTTPAdapter.proxy_headers",
+        "kind": "method"
+      },
+      {
+        "id": "requests.adapters:HTTPAdapter.proxy_manager_for",
+        "module": "requests.adapters",
+        "name": "HTTPAdapter.proxy_manager_for",
+        "kind": "method"
+      },
+      {
+        "id": "requests.adapters:HTTPAdapter.request_url",
+        "module": "requests.adapters",
+        "name": "HTTPAdapter.request_url",
+        "kind": "method"
+      },
+      {
+        "id": "requests.auth:HTTPDigestAuth.handle_401",
+        "module": "requests.auth",
+        "name": "HTTPDigestAuth.handle_401",
+        "kind": "method"
+      },
+      {
+        "id": "requests.auth:_basic_auth_str",
+        "module": "requests.auth",
+        "name": "_basic_auth_str",
+        "kind": "function"
+      },
+      {
+        "id": "requests.cookies:MockRequest.get_full_url",
+        "module": "requests.cookies",
+        "name": "MockRequest.get_full_url",
+        "kind": "method"
+      },
+      {
+        "id": "requests.cookies:_copy_cookie_jar",
+        "module": "requests.cookies",
+        "name": "_copy_cookie_jar",
+        "kind": "function"
+      },
+      {
+        "id": "requests.cookies:cookiejar_from_dict",
+        "module": "requests.cookies",
+        "name": "cookiejar_from_dict",
+        "kind": "function"
+      },
+      {
+        "id": "requests.cookies:extract_cookies_to_jar",
+        "module": "requests.cookies",
+        "name": "extract_cookies_to_jar",
+        "kind": "function"
+      },
+      {
+        "id": "requests.cookies:get_cookie_header",
+        "module": "requests.cookies",
+        "name": "get_cookie_header",
+        "kind": "function"
+      },
+      {
+        "id": "requests.cookies:merge_cookies",
+        "module": "requests.cookies",
+        "name": "merge_cookies",
+        "kind": "function"
+      },
+      {
+        "id": "requests.hooks:default_hooks",
+        "module": "requests.hooks",
+        "name": "default_hooks",
+        "kind": "function"
+      },
+      {
+        "id": "requests.hooks:dispatch_hook",
+        "module": "requests.hooks",
+        "name": "dispatch_hook",
+        "kind": "function"
+      },
+      {
+        "id": "requests.models:PreparedRequest.__init__",
+        "module": "requests.models",
+        "name": "PreparedRequest.__init__",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:PreparedRequest.copy",
+        "module": "requests.models",
+        "name": "PreparedRequest.copy",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:PreparedRequest.prepare_auth",
+        "module": "requests.models",
+        "name": "PreparedRequest.prepare_auth",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:PreparedRequest.prepare_body",
+        "module": "requests.models",
+        "name": "PreparedRequest.prepare_body",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:PreparedRequest.prepare_content_length",
+        "module": "requests.models",
+        "name": "PreparedRequest.prepare_content_length",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:PreparedRequest.prepare_cookies",
+        "module": "requests.models",
+        "name": "PreparedRequest.prepare_cookies",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:PreparedRequest.prepare_headers",
+        "module": "requests.models",
+        "name": "PreparedRequest.prepare_headers",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:PreparedRequest.prepare_method",
+        "module": "requests.models",
+        "name": "PreparedRequest.prepare_method",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:PreparedRequest.prepare_url",
+        "module": "requests.models",
+        "name": "PreparedRequest.prepare_url",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:Request.__init__",
+        "module": "requests.models",
+        "name": "Request.__init__",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:RequestEncodingMixin._encode_files",
+        "module": "requests.models",
+        "name": "RequestEncodingMixin._encode_files",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:RequestEncodingMixin._encode_params",
+        "module": "requests.models",
+        "name": "RequestEncodingMixin._encode_params",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:Response.__init__",
+        "module": "requests.models",
+        "name": "Response.__init__",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:Response.iter_content",
+        "module": "requests.models",
+        "name": "Response.iter_content",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:Response.json",
+        "module": "requests.models",
+        "name": "Response.json",
+        "kind": "method"
+      },
+      {
+        "id": "requests.models:Response.links",
+        "module": "requests.models",
+        "name": "Response.links",
+        "kind": "method"
+      },
+      {
+        "id": "requests.sessions:Session.__init__",
+        "module": "requests.sessions",
+        "name": "Session.__init__",
+        "kind": "method"
+      },
+      {
+        "id": "requests.sessions:Session.merge_environment_settings",
+        "module": "requests.sessions",
+        "name": "Session.merge_environment_settings",
+        "kind": "method"
+      },
+      {
+        "id": "requests.sessions:Session.prepare_request",
+        "module": "requests.sessions",
+        "name": "Session.prepare_request",
+        "kind": "method"
+      },
+      {
+        "id": "requests.sessions:Session.send",
+        "module": "requests.sessions",
+        "name": "Session.send",
+        "kind": "method"
+      },
+      {
+        "id": "requests.sessions:SessionRedirectMixin.get_redirect_target",
+        "module": "requests.sessions",
+        "name": "SessionRedirectMixin.get_redirect_target",
+        "kind": "method"
+      },
+      {
+        "id": "requests.sessions:SessionRedirectMixin.rebuild_auth",
+        "module": "requests.sessions",
+        "name": "SessionRedirectMixin.rebuild_auth",
+        "kind": "method"
+      },
+      {
+        "id": "requests.sessions:SessionRedirectMixin.rebuild_proxies",
+        "module": "requests.sessions",
+        "name": "SessionRedirectMixin.rebuild_proxies",
+        "kind": "method"
+      },
+      {
+        "id": "requests.sessions:SessionRedirectMixin.resolve_redirects",
+        "module": "requests.sessions",
+        "name": "SessionRedirectMixin.resolve_redirects",
+        "kind": "method"
+      },
+      {
+        "id": "requests.sessions:merge_setting",
+        "module": "requests.sessions",
+        "name": "merge_setting",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:add_dict_to_cookiejar",
+        "module": "requests.utils",
+        "name": "add_dict_to_cookiejar",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:check_header_validity",
+        "module": "requests.utils",
+        "name": "check_header_validity",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:default_headers",
+        "module": "requests.utils",
+        "name": "default_headers",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:extract_zipped_paths",
+        "module": "requests.utils",
+        "name": "extract_zipped_paths",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:get_auth_from_url",
+        "module": "requests.utils",
+        "name": "get_auth_from_url",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:get_encoding_from_headers",
+        "module": "requests.utils",
+        "name": "get_encoding_from_headers",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:get_environ_proxies",
+        "module": "requests.utils",
+        "name": "get_environ_proxies",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:get_netrc_auth",
+        "module": "requests.utils",
+        "name": "get_netrc_auth",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:guess_filename",
+        "module": "requests.utils",
+        "name": "guess_filename",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:guess_json_utf",
+        "module": "requests.utils",
+        "name": "guess_json_utf",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:iter_slices",
+        "module": "requests.utils",
+        "name": "iter_slices",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:parse_dict_header",
+        "module": "requests.utils",
+        "name": "parse_dict_header",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:parse_header_links",
+        "module": "requests.utils",
+        "name": "parse_header_links",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:prepend_scheme_if_needed",
+        "module": "requests.utils",
+        "name": "prepend_scheme_if_needed",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:requote_uri",
+        "module": "requests.utils",
+        "name": "requote_uri",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:resolve_proxies",
+        "module": "requests.utils",
+        "name": "resolve_proxies",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:rewind_body",
+        "module": "requests.utils",
+        "name": "rewind_body",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:select_proxy",
+        "module": "requests.utils",
+        "name": "select_proxy",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:stream_decode_response_unicode",
+        "module": "requests.utils",
+        "name": "stream_decode_response_unicode",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:super_len",
+        "module": "requests.utils",
+        "name": "super_len",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:to_key_val_list",
+        "module": "requests.utils",
+        "name": "to_key_val_list",
+        "kind": "function"
+      },
+      {
+        "id": "requests.utils:urldefragauth",
+        "module": "requests.utils",
+        "name": "urldefragauth",
+        "kind": "function"
+      }
+    ],
+    "edges": [
+      {
+        "src": "requests.adapters:HTTPAdapter.build_response",
+        "dst": "requests.utils:get_encoding_from_headers",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.cert_verify",
+        "dst": "requests.utils:extract_zipped_paths",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.get_connection",
+        "dst": "requests.adapters:HTTPAdapter.proxy_manager_for",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.get_connection",
+        "dst": "requests.utils:prepend_scheme_if_needed",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.get_connection",
+        "dst": "requests.utils:select_proxy",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.get_connection_with_tls_context",
+        "dst": "requests.adapters:HTTPAdapter.proxy_manager_for",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.get_connection_with_tls_context",
+        "dst": "requests.utils:prepend_scheme_if_needed",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.get_connection_with_tls_context",
+        "dst": "requests.utils:select_proxy",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.proxy_headers",
+        "dst": "requests.auth:_basic_auth_str",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.proxy_headers",
+        "dst": "requests.utils:get_auth_from_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.proxy_manager_for",
+        "dst": "requests.adapters:HTTPAdapter.proxy_headers",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.proxy_manager_for",
+        "dst": "requests.utils:get_auth_from_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.request_url",
+        "dst": "requests.utils:select_proxy",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.request_url",
+        "dst": "requests.utils:urldefragauth",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.auth:HTTPDigestAuth.handle_401",
+        "dst": "requests.utils:parse_dict_header",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.auth:_basic_auth_str",
+        "dst": "requests._internal_utils:to_native_string",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.cookies:MockRequest.get_full_url",
+        "dst": "requests._internal_utils:to_native_string",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.cookies:merge_cookies",
+        "dst": "requests.cookies:cookiejar_from_dict",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.__init__",
+        "dst": "requests.hooks:default_hooks",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.copy",
+        "dst": "requests.cookies:_copy_cookie_jar",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_auth",
+        "dst": "requests.utils:get_auth_from_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_body",
+        "dst": "requests.utils:super_len",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_content_length",
+        "dst": "requests.utils:super_len",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_cookies",
+        "dst": "requests.cookies:cookiejar_from_dict",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_cookies",
+        "dst": "requests.cookies:get_cookie_header",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_method",
+        "dst": "requests._internal_utils:to_native_string",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_url",
+        "dst": "requests._internal_utils:to_native_string",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_url",
+        "dst": "requests.utils:requote_uri",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:Request.__init__",
+        "dst": "requests.hooks:default_hooks",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:RequestEncodingMixin._encode_files",
+        "dst": "requests.utils:guess_filename",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:RequestEncodingMixin._encode_files",
+        "dst": "requests.utils:to_key_val_list",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:Response.__init__",
+        "dst": "requests.cookies:cookiejar_from_dict",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:Response.iter_content",
+        "dst": "requests.utils:iter_slices",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:Response.iter_content",
+        "dst": "requests.utils:stream_decode_response_unicode",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:Response.json",
+        "dst": "requests.utils:guess_json_utf",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.models:Response.links",
+        "dst": "requests.utils:parse_header_links",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.__init__",
+        "dst": "requests.cookies:cookiejar_from_dict",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.__init__",
+        "dst": "requests.hooks:default_hooks",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.__init__",
+        "dst": "requests.utils:default_headers",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.merge_environment_settings",
+        "dst": "requests.sessions:merge_setting",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.merge_environment_settings",
+        "dst": "requests.utils:get_environ_proxies",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.prepare_request",
+        "dst": "requests.cookies:cookiejar_from_dict",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.prepare_request",
+        "dst": "requests.cookies:merge_cookies",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.prepare_request",
+        "dst": "requests.utils:get_netrc_auth",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.send",
+        "dst": "requests.hooks:dispatch_hook",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:Session.send",
+        "dst": "requests.utils:resolve_proxies",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.rebuild_auth",
+        "dst": "requests.utils:get_netrc_auth",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.rebuild_proxies",
+        "dst": "requests.auth:_basic_auth_str",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.rebuild_proxies",
+        "dst": "requests.utils:get_auth_from_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.rebuild_proxies",
+        "dst": "requests.utils:resolve_proxies",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.resolve_redirects",
+        "dst": "requests._internal_utils:to_native_string",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.resolve_redirects",
+        "dst": "requests.sessions:SessionRedirectMixin.get_redirect_target",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.resolve_redirects",
+        "dst": "requests.sessions:SessionRedirectMixin.rebuild_proxies",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.resolve_redirects",
+        "dst": "requests.utils:requote_uri",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.sessions:merge_setting",
+        "dst": "requests.utils:to_key_val_list",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.utils:resolve_proxies",
+        "dst": "requests.utils:get_environ_proxies",
+        "kind": "assign_call"
+      },
+      {
+        "src": "requests.adapters:HTTPAdapter.build_response",
+        "dst": "requests.cookies:extract_cookies_to_jar",
+        "kind": "call"
+      },
+      {
+        "src": "requests.auth:HTTPDigestAuth.handle_401",
+        "dst": "requests.cookies:extract_cookies_to_jar",
+        "kind": "call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_auth",
+        "dst": "requests.models:PreparedRequest.prepare_content_length",
+        "kind": "call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_body",
+        "dst": "requests.models:PreparedRequest.prepare_content_length",
+        "kind": "call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_headers",
+        "dst": "requests._internal_utils:to_native_string",
+        "kind": "call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_headers",
+        "dst": "requests.utils:check_header_validity",
+        "kind": "call"
+      },
+      {
+        "src": "requests.models:PreparedRequest.prepare_url",
+        "dst": "requests._internal_utils:unicode_is_ascii",
+        "kind": "call"
+      },
+      {
+        "src": "requests.models:RequestEncodingMixin._encode_params",
+        "dst": "requests.utils:to_key_val_list",
+        "kind": "call"
+      },
+      {
+        "src": "requests.sessions:Session.prepare_request",
+        "dst": "requests.sessions:merge_setting",
+        "kind": "call"
+      },
+      {
+        "src": "requests.sessions:Session.send",
+        "dst": "requests.cookies:extract_cookies_to_jar",
+        "kind": "call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.resolve_redirects",
+        "dst": "requests.cookies:extract_cookies_to_jar",
+        "kind": "call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.resolve_redirects",
+        "dst": "requests.cookies:merge_cookies",
+        "kind": "call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.resolve_redirects",
+        "dst": "requests.sessions:SessionRedirectMixin.rebuild_auth",
+        "kind": "call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.resolve_redirects",
+        "dst": "requests.utils:rewind_body",
+        "kind": "call"
+      },
+      {
+        "src": "requests.sessions:merge_setting",
+        "dst": "requests.utils:to_key_val_list",
+        "kind": "call"
+      },
+      {
+        "src": "requests.sessions:SessionRedirectMixin.get_redirect_target",
+        "dst": "requests._internal_utils:to_native_string",
+        "kind": "return_call"
+      },
+      {
+        "src": "requests.utils:add_dict_to_cookiejar",
+        "dst": "requests.cookies:cookiejar_from_dict",
+        "kind": "return_call"
+      }
+    ],
+    "projection": "intermodule-causal-core"
+  },
+  "urllib3": {
+    "schema": "ucr.external-static-codeflow/1",
+    "project": "urllib3",
+    "version": "2.7.0",
+    "nodes": [
+      {
+        "id": "urllib3._request_methods:RequestMethods.request_encode_body",
+        "module": "urllib3._request_methods",
+        "name": "RequestMethods.request_encode_body",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connection:HTTPConnection.getresponse",
+        "module": "urllib3.connection",
+        "name": "HTTPConnection.getresponse",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connection:HTTPConnection.is_connected",
+        "module": "urllib3.connection",
+        "name": "HTTPConnection.is_connected",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connection:HTTPConnection.putheader",
+        "module": "urllib3.connection",
+        "name": "HTTPConnection.putheader",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connection:HTTPConnection.request",
+        "module": "urllib3.connection",
+        "name": "HTTPConnection.request",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connection:HTTPSConnection.__init__",
+        "module": "urllib3.connection",
+        "name": "HTTPSConnection.__init__",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connection:HTTPSConnection.set_cert",
+        "module": "urllib3.connection",
+        "name": "HTTPSConnection.set_cert",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connection:_get_default_user_agent",
+        "module": "urllib3.connection",
+        "name": "_get_default_user_agent",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.connection:_match_hostname",
+        "module": "urllib3.connection",
+        "name": "_match_hostname",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.connection:_ssl_wrap_socket_and_match_hostname",
+        "module": "urllib3.connection",
+        "name": "_ssl_wrap_socket_and_match_hostname",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.connection:_wrap_proxy_error",
+        "module": "urllib3.connection",
+        "name": "_wrap_proxy_error",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.connectionpool:ConnectionPool.__init__",
+        "module": "urllib3.connectionpool",
+        "name": "ConnectionPool.__init__",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connectionpool:HTTPConnectionPool._get_conn",
+        "module": "urllib3.connectionpool",
+        "name": "HTTPConnectionPool._get_conn",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connectionpool:HTTPConnectionPool._make_request",
+        "module": "urllib3.connectionpool",
+        "name": "HTTPConnectionPool._make_request",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connectionpool:HTTPConnectionPool.is_same_host",
+        "module": "urllib3.connectionpool",
+        "name": "HTTPConnectionPool.is_same_host",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "module": "urllib3.connectionpool",
+        "name": "HTTPConnectionPool.urlopen",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.connectionpool:_normalize_host",
+        "module": "urllib3.connectionpool",
+        "name": "_normalize_host",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.connectionpool:connection_from_url",
+        "module": "urllib3.connectionpool",
+        "name": "connection_from_url",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.contrib.emscripten.connection:EmscriptenHTTPConnection.request",
+        "module": "urllib3.contrib.emscripten.connection",
+        "name": "EmscriptenHTTPConnection.request",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.contrib.emscripten.fetch:send_request",
+        "module": "urllib3.contrib.emscripten.fetch",
+        "name": "send_request",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.contrib.emscripten.fetch:send_streaming_request",
+        "module": "urllib3.contrib.emscripten.fetch",
+        "name": "send_streaming_request",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.contrib.socks:SOCKSProxyManager.__init__",
+        "module": "urllib3.contrib.socks",
+        "name": "SOCKSProxyManager.__init__",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.filepost:encode_multipart_formdata",
+        "module": "urllib3.filepost",
+        "name": "encode_multipart_formdata",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.http2.connection:HTTP2Connection.request",
+        "module": "urllib3.http2.connection",
+        "name": "HTTP2Connection.request",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.poolmanager:PoolManager._proxy_requires_url_absolute_form",
+        "module": "urllib3.poolmanager",
+        "name": "PoolManager._proxy_requires_url_absolute_form",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.poolmanager:PoolManager.connection_from_url",
+        "module": "urllib3.poolmanager",
+        "name": "PoolManager.connection_from_url",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.poolmanager:PoolManager.urlopen",
+        "module": "urllib3.poolmanager",
+        "name": "PoolManager.urlopen",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.poolmanager:ProxyManager.__init__",
+        "module": "urllib3.poolmanager",
+        "name": "ProxyManager.__init__",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.poolmanager:ProxyManager._set_proxy_headers",
+        "module": "urllib3.poolmanager",
+        "name": "ProxyManager._set_proxy_headers",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.poolmanager:ProxyManager.urlopen",
+        "module": "urllib3.poolmanager",
+        "name": "ProxyManager.urlopen",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.response:HTTPResponse.isclosed",
+        "module": "urllib3.response",
+        "name": "HTTPResponse.isclosed",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.response:HTTPResponse.read_chunked",
+        "module": "urllib3.response",
+        "name": "HTTPResponse.read_chunked",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.response:HTTPResponse.stream",
+        "module": "urllib3.response",
+        "name": "HTTPResponse.stream",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.util.connection:is_connection_dropped",
+        "module": "urllib3.util.connection",
+        "name": "is_connection_dropped",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.proxy:connection_requires_http_tunnel",
+        "module": "urllib3.util.proxy",
+        "name": "connection_requires_http_tunnel",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.request:body_to_chunks",
+        "module": "urllib3.util.request",
+        "name": "body_to_chunks",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.request:set_file_position",
+        "module": "urllib3.util.request",
+        "name": "set_file_position",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.response:assert_header_parsing",
+        "module": "urllib3.util.response",
+        "name": "assert_header_parsing",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.response:is_fp_closed",
+        "module": "urllib3.util.response",
+        "name": "is_fp_closed",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.response:is_response_to_head",
+        "module": "urllib3.util.response",
+        "name": "is_response_to_head",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.retry:Retry.increment",
+        "module": "urllib3.util.retry",
+        "name": "Retry.increment",
+        "kind": "method"
+      },
+      {
+        "id": "urllib3.util.ssl_:assert_fingerprint",
+        "module": "urllib3.util.ssl_",
+        "name": "assert_fingerprint",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.ssl_:create_urllib3_context",
+        "module": "urllib3.util.ssl_",
+        "name": "create_urllib3_context",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.ssl_:is_ipaddress",
+        "module": "urllib3.util.ssl_",
+        "name": "is_ipaddress",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.ssl_:resolve_cert_reqs",
+        "module": "urllib3.util.ssl_",
+        "name": "resolve_cert_reqs",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.ssl_:resolve_ssl_version",
+        "module": "urllib3.util.ssl_",
+        "name": "resolve_ssl_version",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.ssl_:ssl_wrap_socket",
+        "module": "urllib3.util.ssl_",
+        "name": "ssl_wrap_socket",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.ssl_match_hostname:match_hostname",
+        "module": "urllib3.util.ssl_match_hostname",
+        "name": "match_hostname",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.url:_encode_invalid_chars",
+        "module": "urllib3.util.url",
+        "name": "_encode_invalid_chars",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.url:_encode_target",
+        "module": "urllib3.util.url",
+        "name": "_encode_target",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.url:_normalize_host",
+        "module": "urllib3.util.url",
+        "name": "_normalize_host",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.url:parse_url",
+        "module": "urllib3.util.url",
+        "name": "parse_url",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.util:reraise",
+        "module": "urllib3.util.util",
+        "name": "reraise",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.util:to_bytes",
+        "module": "urllib3.util.util",
+        "name": "to_bytes",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.util:to_str",
+        "module": "urllib3.util.util",
+        "name": "to_str",
+        "kind": "function"
+      },
+      {
+        "id": "urllib3.util.wait:wait_for_read",
+        "module": "urllib3.util.wait",
+        "name": "wait_for_read",
+        "kind": "function"
+      }
+    ],
+    "edges": [
+      {
+        "src": "urllib3._request_methods:RequestMethods.request_encode_body",
+        "dst": "urllib3.filepost:encode_multipart_formdata",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connection:HTTPConnection.request",
+        "dst": "urllib3.util.request:body_to_chunks",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connection:HTTPConnection.request",
+        "dst": "urllib3.util.util:to_str",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connection:HTTPSConnection.__init__",
+        "dst": "urllib3.util.ssl_:resolve_cert_reqs",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connection:HTTPSConnection.set_cert",
+        "dst": "urllib3.util.ssl_:resolve_cert_reqs",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connection:_ssl_wrap_socket_and_match_hostname",
+        "dst": "urllib3.util.ssl_:create_urllib3_context",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connection:_ssl_wrap_socket_and_match_hostname",
+        "dst": "urllib3.util.ssl_:resolve_cert_reqs",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connection:_ssl_wrap_socket_and_match_hostname",
+        "dst": "urllib3.util.ssl_:resolve_ssl_version",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connection:_ssl_wrap_socket_and_match_hostname",
+        "dst": "urllib3.util.ssl_:ssl_wrap_socket",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:ConnectionPool.__init__",
+        "dst": "urllib3.connectionpool:_normalize_host",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:ConnectionPool.__init__",
+        "dst": "urllib3.util.url:_normalize_host",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool._make_request",
+        "dst": "urllib3.connection:_wrap_proxy_error",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.is_same_host",
+        "dst": "urllib3.connectionpool:_normalize_host",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.is_same_host",
+        "dst": "urllib3.util.url:parse_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "dst": "urllib3.connection:_wrap_proxy_error",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "dst": "urllib3.connectionpool:HTTPConnectionPool._get_conn",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "dst": "urllib3.connectionpool:HTTPConnectionPool._make_request",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "dst": "urllib3.util.proxy:connection_requires_http_tunnel",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "dst": "urllib3.util.request:set_file_position",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "dst": "urllib3.util.url:_encode_target",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "dst": "urllib3.util.url:parse_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "dst": "urllib3.util.util:to_str",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:_normalize_host",
+        "dst": "urllib3.util.url:_normalize_host",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connectionpool:connection_from_url",
+        "dst": "urllib3.util.url:parse_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.contrib.emscripten.connection:EmscriptenHTTPConnection.request",
+        "dst": "urllib3.contrib.emscripten.fetch:send_request",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.contrib.emscripten.connection:EmscriptenHTTPConnection.request",
+        "dst": "urllib3.contrib.emscripten.fetch:send_streaming_request",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.contrib.socks:SOCKSProxyManager.__init__",
+        "dst": "urllib3.util.url:parse_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.poolmanager:PoolManager.connection_from_url",
+        "dst": "urllib3.util.url:parse_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.poolmanager:PoolManager.urlopen",
+        "dst": "urllib3.util.url:parse_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.poolmanager:ProxyManager.__init__",
+        "dst": "urllib3.util.url:parse_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.poolmanager:ProxyManager._set_proxy_headers",
+        "dst": "urllib3.util.url:parse_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.poolmanager:ProxyManager.urlopen",
+        "dst": "urllib3.poolmanager:ProxyManager._set_proxy_headers",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.poolmanager:ProxyManager.urlopen",
+        "dst": "urllib3.util.url:parse_url",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.util.request:body_to_chunks",
+        "dst": "urllib3.util.util:to_bytes",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.util.ssl_:ssl_wrap_socket",
+        "dst": "urllib3.util.ssl_:create_urllib3_context",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.util.url:_encode_invalid_chars",
+        "dst": "urllib3.util.util:to_str",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.util.url:_encode_target",
+        "dst": "urllib3.util.url:_encode_invalid_chars",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.util.url:_normalize_host",
+        "dst": "urllib3.util.url:_encode_invalid_chars",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.util.url:parse_url",
+        "dst": "urllib3.util.url:_encode_invalid_chars",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.util.url:parse_url",
+        "dst": "urllib3.util.url:_normalize_host",
+        "kind": "assign_call"
+      },
+      {
+        "src": "urllib3.connection:HTTPConnection.getresponse",
+        "dst": "urllib3.util.response:assert_header_parsing",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connection:HTTPConnection.putheader",
+        "dst": "urllib3.util.util:to_str",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connection:HTTPConnection.request",
+        "dst": "urllib3.connection:HTTPConnection.putheader",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connection:HTTPConnection.request",
+        "dst": "urllib3.connection:_get_default_user_agent",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connection:_match_hostname",
+        "dst": "urllib3.util.ssl_:is_ipaddress",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connection:_match_hostname",
+        "dst": "urllib3.util.ssl_match_hostname:match_hostname",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connection:_ssl_wrap_socket_and_match_hostname",
+        "dst": "urllib3.connection:_match_hostname",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connection:_ssl_wrap_socket_and_match_hostname",
+        "dst": "urllib3.util.ssl_:assert_fingerprint",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connection:_ssl_wrap_socket_and_match_hostname",
+        "dst": "urllib3.util.ssl_:is_ipaddress",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool._get_conn",
+        "dst": "urllib3.util.connection:is_connection_dropped",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connectionpool:HTTPConnectionPool.urlopen",
+        "dst": "urllib3.connectionpool:HTTPConnectionPool.is_same_host",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.http2.connection:HTTP2Connection.request",
+        "dst": "urllib3.connection:_get_default_user_agent",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.poolmanager:PoolManager.urlopen",
+        "dst": "urllib3.poolmanager:PoolManager._proxy_requires_url_absolute_form",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.poolmanager:ProxyManager.urlopen",
+        "dst": "urllib3.util.proxy:connection_requires_http_tunnel",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.response:HTTPResponse.read_chunked",
+        "dst": "urllib3.util.response:is_response_to_head",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.response:HTTPResponse.stream",
+        "dst": "urllib3.response:HTTPResponse.read_chunked",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.response:HTTPResponse.stream",
+        "dst": "urllib3.util.response:is_fp_closed",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.util.retry:Retry.increment",
+        "dst": "urllib3.util.util:reraise",
+        "kind": "call"
+      },
+      {
+        "src": "urllib3.connection:HTTPConnection.is_connected",
+        "dst": "urllib3.util.wait:wait_for_read",
+        "kind": "return_call"
+      },
+      {
+        "src": "urllib3.poolmanager:PoolManager._proxy_requires_url_absolute_form",
+        "dst": "urllib3.util.proxy:connection_requires_http_tunnel",
+        "kind": "return_call"
+      },
+      {
+        "src": "urllib3.response:HTTPResponse.isclosed",
+        "dst": "urllib3.util.response:is_fp_closed",
+        "kind": "return_call"
+      },
+      {
+        "src": "urllib3.util.url:_normalize_host",
+        "dst": "urllib3.util.util:to_str",
+        "kind": "return_call"
+      }
+    ],
+    "projection": "intermodule-causal-core"
+  }
+}

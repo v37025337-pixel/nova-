@@ -55,3 +55,8 @@ jobs:
         run: |
           python -c 'import gzip,pathlib; pathlib.Path("/tmp/nova-ucr18-journal.json").write_bytes(gzip.decompress(pathlib.Path("experience/ucr18-integration/journal.json.gz").read_bytes()))'
           python scripts/run_development_chain.py --restore /tmp/nova-ucr18-journal.json --state /tmp/nova-ucr18-ci.sqlite
+      - name: Replay the retained G22 continuation and supplied UCR v25 graph import
+        if: matrix.python == '3.12'
+        run: |
+          python -c 'import gzip,pathlib; pathlib.Path("/tmp/nova-codeflow-journal.json").write_bytes(gzip.decompress(pathlib.Path("experience/codeflow-v25-integration/journal.json.gz").read_bytes()))'
+          python scripts/run_development_chain.py --restore /tmp/nova-codeflow-journal.json --state /tmp/nova-codeflow-ci.sqlite

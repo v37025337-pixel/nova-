@@ -1,0 +1,28 @@
+{
+  "command": [
+    "python",
+    "scripts/run_ucr_development.py",
+    "--parent",
+    "experience/ucr18-integration/journal.json.gz",
+    "--output",
+    "experience/ucr18-continuation-20260921"
+  ],
+  "cycle_completed": true,
+  "error": "subprocess.TimeoutExpired",
+  "exit_code": 1,
+  "failure_phase": "separate_process_replay",
+  "regression_completed": true,
+  "replay_command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-m",
+    "nova_core",
+    "--state",
+    "/workspace/scratch/ee6aa25fa8ae/nova/experience/ucr18-continuation-20260921/state.sqlite",
+    "verify",
+    "--expected-head",
+    "ce9ab36241e801e7c16fe2004b1f0fc91a4d4aa74146e684b44a8d554b0fab3a"
+  ],
+  "schema": "nova.execution-attempt.v1",
+  "summary_written_by_driver": false,
+  "timeout_seconds": 180
+}

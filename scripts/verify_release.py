@@ -23,8 +23,18 @@ def main():
         if actual_tools != expected_tools:
             raise SystemExit("FAIL: code-reader manifest does not match source files")
         tool_count = len(actual_tools)
+    codeflow_count = 0
+    codeflow_manifest = ROOT / "canonical/static-codeflow.json"
+    if codeflow_manifest.exists():
+        expected_codeflow = json.loads(codeflow_manifest.read_text())["file_sha256"]
+        actual_codeflow = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
+                           for name in expected_codeflow}
+        if actual_codeflow != expected_codeflow:
+            raise SystemExit("FAIL: static-codeflow manifest does not match its files")
+        codeflow_count = len(actual_codeflow)
     print(json.dumps({"status": "PASS", "source_files": len(actual),
-                      "tool_files": tool_count, "version": manifest["version"]}, sort_keys=True))
+                      "tool_files": tool_count, "static_codeflow_files": codeflow_count,
+                      "version": manifest["version"]}, sort_keys=True))
 
 
 if __name__ == "__main__":

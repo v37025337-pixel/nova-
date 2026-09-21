@@ -12,7 +12,7 @@
 давали одинаковые наборы испытаний. Собственное учебное развитие UCR
 проверяется отдельно от допуска навыков Nova.
 
-128 тестов проходят. Проверяемый прогон текущей версии:
+135 тестов проходят. Проверяемый прогон текущей версии:
 
 ```bash
 python scripts/run_ucr_development.py --parent experience/ucr-development-v1/journal.json.gz --output /tmp/nova-ucr18
@@ -20,6 +20,20 @@ python scripts/run_ucr_development.py --parent experience/ucr-development-v1/jou
 
 Результаты: [Nova с UCR 18](experience/ucr18-integration/README-RU.md),
 [отдельная проверка функций UCR](experience/ucr18-feature-probe/README-RU.md).
+
+Добавлен импорт присланных статических графов UCR v25: 122 узла и 135 связей
+requests и urllib3. Все записи проходят в память наблюдений без усечения;
+части одного файла сохраняют общую идентичность источника. Версии библиотек
+и связи обозначены как пользовательские данные, не проверенные по upstream.
+Это обновление данных и импортёра; исполняемый reader остаётся UCR 18.0.
+Подробности: [импорт графов](docs/static-codeflow.md).
+
+Графы загружены в G22: [результаты импорта](experience/codeflow-v25-integration/README-RU.md).
+Полный журнал на 131 событие — `experience/codeflow-v25-integration/journal.json.gz`;
+его хеш и состояние закреплены в `canonical/static-codeflow.json`.
+
+Последний завершённый поиск G22 и его тайм-аут проверки сохранены в
+[отчёте продолжения](experience/ucr18-continuation-20260921/README-RU.md).
 
 ## Поиск программ, добавленный в 0.8
 

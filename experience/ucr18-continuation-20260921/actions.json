@@ -1,0 +1,404 @@
+[
+  {
+    "event": 125,
+    "freeze": "b90eda7505916c68656a89a07b01b61b358d54b6cfecacbd5563e4d1e6b45bfa",
+    "goal": {
+      "baseline_program": {
+        "id": "5ba3cebba5b05069e877e1771fa8360f1a5471787a6c63ba8deae35b5c885e30",
+        "ir": [
+          "const",
+          "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return '0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a'\n"
+      },
+      "cause_event": 98,
+      "claim_boundary": "maintainer-defined field-pair ontology; selected by measured errors; no causality or predictability proof",
+      "contract": {
+        "ablation_required": true,
+        "fresh_min": 16,
+        "input_fields": [
+          "nodes_total"
+        ],
+        "law": "observed_field_reconstruction",
+        "output": "str",
+        "properties": [
+          "exact_agreement_with_unseen_observed_field"
+        ],
+        "regression_threshold": 1,
+        "success_threshold": 1
+      },
+      "deficit_id": "8c00546ee66c011f4b2ecde89e496eddc36dfd93c216eddea75f057a4eccdced",
+      "evidence_sources": [
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/evaluation.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/extensions.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/genetics.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/isolation.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/kernel.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/language.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/library_evolution.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/memory.py"
+      ],
+      "id": "auto-0ac9f276886e28d9476f6ec1",
+      "observation_contract": {
+        "host": "github.com",
+        "input_field": "nodes_total",
+        "input_type": "int",
+        "record_path": "",
+        "target_field": "source_sha256",
+        "target_type": "str"
+      },
+      "observed_failure": "REPEATED_FIELD_PREDICTION_ERROR",
+      "origin": "native_observation_prediction_error",
+      "original_holdout": [
+        {
+          "input": {
+            "nodes_total": 566
+          },
+          "output": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2"
+        },
+        {
+          "input": {
+            "nodes_total": 2966
+          },
+          "output": "7b048dda1d3efcc510be6af1162ecd52fb7dddfa53ff01b106a003a74cf6ded2"
+        },
+        {
+          "input": {
+            "nodes_total": 438
+          },
+          "output": "e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0"
+        },
+        {
+          "input": {
+            "nodes_total": 276
+          },
+          "output": "c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3"
+        },
+        {
+          "input": {
+            "nodes_total": 7252
+          },
+          "output": "ce3c9fee131fbbdf2934fa7f8fec495bc88290fd6355eec41df93e06dd772d6a"
+        },
+        {
+          "input": {
+            "nodes_total": 2385
+          },
+          "output": "a541480da7093aaa401f82e1bf3aa7be5f4914ca57ac3222db0e7084af60e1a7"
+        },
+        {
+          "input": {
+            "nodes_total": 1687
+          },
+          "output": "db8b6f35af2a13cd84663cf03ba4ac8950593944f657011c8fa1ceeaf6d5074e"
+        },
+        {
+          "input": {
+            "nodes_total": 798
+          },
+          "output": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777"
+        }
+      ],
+      "parent_generation": 22,
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "predictability_proven": false,
+      "prediction_evidence": {
+        "baseline_training": {
+          "outcomes": [
+            {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            {
+              "ok": true,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            }
+          ],
+          "passed": 1,
+          "total": 8
+        },
+        "diagnostic_is_fresh_evaluation": false,
+        "errors": [
+          {
+            "event": 98,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            "row": {
+              "input": {
+                "nodes_total": 566
+              },
+              "output": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2"
+            },
+            "sha256": "ea03a027c73cbc7062ff07d05eb6b45fa5006eece7adf33025a35af104244f39",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/evaluation.py"
+          },
+          {
+            "event": 99,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            "row": {
+              "input": {
+                "nodes_total": 2966
+              },
+              "output": "7b048dda1d3efcc510be6af1162ecd52fb7dddfa53ff01b106a003a74cf6ded2"
+            },
+            "sha256": "f8daeb348700ad65a0c194a03d522d7f22f0d726f6622ce5f8e5ed52a7911472",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/extensions.py"
+          },
+          {
+            "event": 100,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            "row": {
+              "input": {
+                "nodes_total": 438
+              },
+              "output": "e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0"
+            },
+            "sha256": "21b6bb58291731d30ad113b360e1e87373c997e3dc718d963c1ff02266985590",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/genetics.py"
+          },
+          {
+            "event": 101,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            "row": {
+              "input": {
+                "nodes_total": 276
+              },
+              "output": "c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3"
+            },
+            "sha256": "0f00133f5fd57b224286938ea34cbc0f4b7f6413ce7299e0078b646da148171c",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/isolation.py"
+          },
+          {
+            "event": 102,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            "row": {
+              "input": {
+                "nodes_total": 7252
+              },
+              "output": "ce3c9fee131fbbdf2934fa7f8fec495bc88290fd6355eec41df93e06dd772d6a"
+            },
+            "sha256": "d3f9311bdf073eb55ed0947bdc52658d287c694753d77d0b5f78accd7cb766d5",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/kernel.py"
+          },
+          {
+            "event": 103,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            "row": {
+              "input": {
+                "nodes_total": 2385
+              },
+              "output": "a541480da7093aaa401f82e1bf3aa7be5f4914ca57ac3222db0e7084af60e1a7"
+            },
+            "sha256": "1f4fe2a9f3a27bc23764bb360bc48254c4d1fa3e00bf6fdd0eb13e78f2223820",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/language.py"
+          },
+          {
+            "event": 104,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            "row": {
+              "input": {
+                "nodes_total": 1687
+              },
+              "output": "db8b6f35af2a13cd84663cf03ba4ac8950593944f657011c8fa1ceeaf6d5074e"
+            },
+            "sha256": "00f5f545f14b4a8de078ef583f0766461c0b00f4c60b59f575f12913fb3a1f15",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/library_evolution.py"
+          },
+          {
+            "event": 105,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+            },
+            "row": {
+              "input": {
+                "nodes_total": 798
+              },
+              "output": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777"
+            },
+            "sha256": "05a7d701983fb350a90d18b915fc425f48fb7d5a0e01a192edbdc34ca1d1aa83",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/memory.py"
+          }
+        ],
+        "failed": 8,
+        "predictor_selected_on": "training_only",
+        "total": 8
+      },
+      "root_dataset": "69e9b084cf9d0cd5ee992d3e196cd70b998fb7aee640b24ce1982abe15b4a573",
+      "root_task": null,
+      "root_task_origin": "unlabelled_observation",
+      "runtime_digest": "cfec6501969d0fd62dedd1a0c7c48709fe027ce60c39155aad07eccb45c4f797",
+      "selection": {
+        "eligible_pairs": 64,
+        "evaluated_pairs": 64,
+        "rule": "most_diagnostic_errors_then_oldest_event_then_goal_identity"
+      },
+      "training": [
+        {
+          "input": {
+            "nodes_total": 564
+          },
+          "output": "fcd61dc4d22176b3f0d2c8dab9fbff9eb191e9c3312e008159c2635eab2f20d7"
+        },
+        {
+          "input": {
+            "nodes_total": 12
+          },
+          "output": "08bda2768122b12d64e2990afa22cd11cb102b64b6e7a7b2e04214ef2ff83cf4"
+        },
+        {
+          "input": {
+            "nodes_total": 1606
+          },
+          "output": "1a65c967f8eb2fcf5b656932f22838f82ba0c4ae048e8cb5518234902e11947f"
+        },
+        {
+          "input": {
+            "nodes_total": 1936
+          },
+          "output": "8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796"
+        },
+        {
+          "input": {
+            "nodes_total": 5657
+          },
+          "output": "0826a9dcbfaeae4374961f052d194c65d8da0774679e228e3cd55c51496e007a"
+        },
+        {
+          "input": {
+            "nodes_total": 2908
+          },
+          "output": "7c779e900c1f2774e660900128b431ee74b693198c589ecb4640de559afcaad1"
+        },
+        {
+          "input": {
+            "nodes_total": 687
+          },
+          "output": "d89210b6a27bbb5104995a1927cad67581d57eea602fd736658dabb730e2d254"
+        },
+        {
+          "input": {
+            "nodes_total": 1128
+          },
+          "output": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe"
+        }
+      ],
+      "utility": "test whether an observed field can be reconstructed from another field with a reusable program"
+    },
+    "kind": "autonomy_step",
+    "phase": "GOAL_FROZEN",
+    "reason": "NEW_OBSERVATION_DEFICIT",
+    "status": "GOAL_FROZEN"
+  },
+  {
+    "event": 126,
+    "freeze": "6f7bae90df717784f6626179d14fe790077c35864cd70d95a9cc7fadac65544e",
+    "frozen": {
+      "goal": "b90eda7505916c68656a89a07b01b61b358d54b6cfecacbd5563e4d1e6b45bfa",
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "runtime": "cfec6501969d0fd62dedd1a0c7c48709fe027ce60c39155aad07eccb45c4f797",
+      "training": "b6363cfe1bc18991835d4ebebfda0bf443bf679ed289907a10d85a9e5fb20ed7"
+    },
+    "goal": "auto-0ac9f276886e28d9476f6ec1",
+    "kind": "autonomy_step",
+    "phase": "SEARCH_FROZEN",
+    "reason": "OBSERVATION_INPUTS_AND_CRITERIA_FROZEN",
+    "status": "SEARCH_FROZEN"
+  },
+  {
+    "event": 127,
+    "goal": "auto-0ac9f276886e28d9476f6ec1",
+    "kind": "autonomy_step",
+    "phase": "WITHHOLD",
+    "reason": "OBSERVATION_SEARCH_EXHAUSTED",
+    "report": {
+      "fresh_cases_seen": 0,
+      "native_search_attempts": 10654,
+      "predictability_proven": false,
+      "ucr": {
+        "fresh_cases_seen": 0,
+        "internal_split": "training_partition_used_for_ranking_not_independent_validation",
+        "mechanism": "ucr_training_only_native_expression_proposals_v1",
+        "reader_version": "18.0",
+        "rounds": [
+          {
+            "depth": 1,
+            "exact_training_fits": 0,
+            "generated": 24,
+            "translated": 0
+          },
+          {
+            "depth": 2,
+            "exact_training_fits": 0,
+            "generated": 336,
+            "translated": 0
+          },
+          {
+            "depth": 3,
+            "exact_training_fits": 0,
+            "generated": 2048,
+            "translated": 0
+          }
+        ],
+        "status": "NO_EXACT_TRAINING_FIT",
+        "training_rows": 8,
+        "training_sha256": "b6363cfe1bc18991835d4ebebfda0bf443bf679ed289907a10d85a9e5fb20ed7"
+      }
+    },
+    "status": "WITHHOLD"
+  }
+]
