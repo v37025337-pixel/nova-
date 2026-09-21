@@ -32,8 +32,18 @@ def main():
         if actual_codeflow != expected_codeflow:
             raise SystemExit("FAIL: static-codeflow manifest does not match its files")
         codeflow_count = len(actual_codeflow)
+    probe_count = 0
+    probe_manifest = ROOT / "canonical/codeflow-goal-probe.json"
+    if probe_manifest.exists():
+        expected_probe = json.loads(probe_manifest.read_text())["file_sha256"]
+        actual_probe = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
+                        for name in expected_probe}
+        if actual_probe != expected_probe:
+            raise SystemExit("FAIL: codeflow goal probe manifest does not match its files")
+        probe_count = len(actual_probe)
     print(json.dumps({"status": "PASS", "source_files": len(actual),
                       "tool_files": tool_count, "static_codeflow_files": codeflow_count,
+                      "codeflow_goal_probe_files": probe_count,
                       "version": manifest["version"]}, sort_keys=True))
 
 

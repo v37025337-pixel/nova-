@@ -1,0 +1,45 @@
+{
+  "cold_replay": {
+    "active_generation": 22,
+    "autonomy_completed": 9,
+    "autonomy_phase": "DISCOVER",
+    "events": 134,
+    "genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+    "head": "15bf5be8b55909bd6ded59bcef050d0756fe9d5bb60f39304a856c4030d496cf",
+    "seconds": 135.71348407099867,
+    "status": "PASS",
+    "verification": "independent_process_full_deterministic_semantic_replay_and_restart"
+  },
+  "evidence_consistency": "PASS",
+  "experiment_command": "python scripts/run_codeflow_goal_probe.py --output experience/codeflow-goal-probe-v1",
+  "experiment_exit_code": 0,
+  "experiment_verdict": "WITHHOLD",
+  "focused_tests": {
+    "command": "python -m unittest tests.test_static_codeflow tests.test_observation_goals -v",
+    "log": "tests.txt",
+    "status": "PASS",
+    "tests": 16
+  },
+  "g23": "NOT_REACHED",
+  "not_run": [
+    "fresh_blind",
+    "mechanism_ablation",
+    "admission"
+  ],
+  "not_run_reason": "No candidate was produced; graph-originated goal was not selected.",
+  "restart_process_exit_code": 0,
+  "runner_matches_pre_execution_sha256": true,
+  "runtime_and_reader_manifest_before_run": {
+    "source_files": 22,
+    "static_codeflow_files": 3,
+    "status": "PASS",
+    "tool_files": 3,
+    "version": "0.9.0"
+  },
+  "runtime_regression": {
+    "passed": 192,
+    "skills": 21,
+    "total": 192
+  },
+  "schema": "nova.codeflow-goal-probe-verification.v1"
+}

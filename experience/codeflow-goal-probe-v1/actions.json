@@ -1,0 +1,404 @@
+[
+  {
+    "event": 132,
+    "freeze": "76c9dd97b4740e705f09bbbd0810140200fc86302e44ef23dd1b1d7a06c48256",
+    "goal": {
+      "baseline_program": {
+        "id": "1dae0d80daca29bb086a9fd561e6195b63d9ab44a82a7862f4f1e4402ba22732",
+        "ir": [
+          "const",
+          "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return 'https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json'\n"
+      },
+      "cause_event": 98,
+      "claim_boundary": "maintainer-defined field-pair ontology; selected by measured errors; no causality or predictability proof",
+      "contract": {
+        "ablation_required": true,
+        "fresh_min": 16,
+        "input_fields": [
+          "full_ir_sha256"
+        ],
+        "law": "observed_field_reconstruction",
+        "output": "str",
+        "properties": [
+          "exact_agreement_with_unseen_observed_field"
+        ],
+        "regression_threshold": 1,
+        "success_threshold": 1
+      },
+      "deficit_id": "f8440b3d6a790ac4d88a980e7750b3c78b9bc83653a2905209c0641ddbedf595",
+      "evidence_sources": [
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/evaluation.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/extensions.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/genetics.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/isolation.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/kernel.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/language.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/library_evolution.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/memory.py"
+      ],
+      "id": "auto-0b3209f730c41d65bdc629c6",
+      "observation_contract": {
+        "host": "github.com",
+        "input_field": "full_ir_sha256",
+        "input_type": "str",
+        "record_path": "",
+        "target_field": "source_url",
+        "target_type": "str"
+      },
+      "observed_failure": "REPEATED_FIELD_PREDICTION_ERROR",
+      "origin": "native_observation_prediction_error",
+      "original_holdout": [
+        {
+          "input": {
+            "full_ir_sha256": "39aba0270c88f82d6612c51cc9a7c78ecc480be7a3bd82f164f082760243d3bc"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/evaluation.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "32e3ea9b1ba169cfbc78efe7175accdee48764fdac75b760152d4a907278d740"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/extensions.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "54f590ef23427335655c427a0594dfbbb1b19f6f3261f07179344ea106845c1d"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/genetics.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "eaffe0dd54cb9b71618153046dfcdd8a22c8378dedf16e04c8086a1942f925ea"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/isolation.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "968e17b8ff24e4244fc8426b0ee6454e0e9df19fea382ee5d8fdc1ed2797b10d"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/kernel.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "ebe364ea763dfbb8abe7e2f28b39aa554fd2a2d3385d2908a18acffe2d28db6d"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/language.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "f285eb78a0ce81f80dc81a38bff3d895eb4babcad404b3a97cd691a2cba225aa"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/library_evolution.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "bc180352a7113a3b3afd329d421dedef0a96eb8ed59d88024d5621296645d5e9"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/memory.py"
+        }
+      ],
+      "parent_generation": 22,
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "predictability_proven": false,
+      "prediction_evidence": {
+        "baseline_training": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            }
+          ],
+          "passed": 1,
+          "total": 8
+        },
+        "diagnostic_is_fresh_evaluation": false,
+        "errors": [
+          {
+            "event": 98,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            "row": {
+              "input": {
+                "full_ir_sha256": "39aba0270c88f82d6612c51cc9a7c78ecc480be7a3bd82f164f082760243d3bc"
+              },
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/evaluation.py"
+            },
+            "sha256": "ea03a027c73cbc7062ff07d05eb6b45fa5006eece7adf33025a35af104244f39",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/evaluation.py"
+          },
+          {
+            "event": 99,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            "row": {
+              "input": {
+                "full_ir_sha256": "32e3ea9b1ba169cfbc78efe7175accdee48764fdac75b760152d4a907278d740"
+              },
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/extensions.py"
+            },
+            "sha256": "f8daeb348700ad65a0c194a03d522d7f22f0d726f6622ce5f8e5ed52a7911472",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/extensions.py"
+          },
+          {
+            "event": 100,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            "row": {
+              "input": {
+                "full_ir_sha256": "54f590ef23427335655c427a0594dfbbb1b19f6f3261f07179344ea106845c1d"
+              },
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/genetics.py"
+            },
+            "sha256": "21b6bb58291731d30ad113b360e1e87373c997e3dc718d963c1ff02266985590",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/genetics.py"
+          },
+          {
+            "event": 101,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            "row": {
+              "input": {
+                "full_ir_sha256": "eaffe0dd54cb9b71618153046dfcdd8a22c8378dedf16e04c8086a1942f925ea"
+              },
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/isolation.py"
+            },
+            "sha256": "0f00133f5fd57b224286938ea34cbc0f4b7f6413ce7299e0078b646da148171c",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/isolation.py"
+          },
+          {
+            "event": 102,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            "row": {
+              "input": {
+                "full_ir_sha256": "968e17b8ff24e4244fc8426b0ee6454e0e9df19fea382ee5d8fdc1ed2797b10d"
+              },
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/kernel.py"
+            },
+            "sha256": "d3f9311bdf073eb55ed0947bdc52658d287c694753d77d0b5f78accd7cb766d5",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/kernel.py"
+          },
+          {
+            "event": 103,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            "row": {
+              "input": {
+                "full_ir_sha256": "ebe364ea763dfbb8abe7e2f28b39aa554fd2a2d3385d2908a18acffe2d28db6d"
+              },
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/language.py"
+            },
+            "sha256": "1f4fe2a9f3a27bc23764bb360bc48254c4d1fa3e00bf6fdd0eb13e78f2223820",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/language.py"
+          },
+          {
+            "event": 104,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            "row": {
+              "input": {
+                "full_ir_sha256": "f285eb78a0ce81f80dc81a38bff3d895eb4babcad404b3a97cd691a2cba225aa"
+              },
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/library_evolution.py"
+            },
+            "sha256": "00f5f545f14b4a8de078ef583f0766461c0b00f4c60b59f575f12913fb3a1f15",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/library_evolution.py"
+          },
+          {
+            "event": 105,
+            "location": "",
+            "prediction": {
+              "ok": false,
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+            },
+            "row": {
+              "input": {
+                "full_ir_sha256": "bc180352a7113a3b3afd329d421dedef0a96eb8ed59d88024d5621296645d5e9"
+              },
+              "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/memory.py"
+            },
+            "sha256": "05a7d701983fb350a90d18b915fc425f48fb7d5a0e01a192edbdc34ca1d1aa83",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/memory.py"
+          }
+        ],
+        "failed": 8,
+        "predictor_selected_on": "training_only",
+        "total": 8
+      },
+      "root_dataset": "85ed50a62567154ff579a5ba6b1e37146f95bb95ac8191c072220361d43a79af",
+      "root_task": null,
+      "root_task_origin": "unlabelled_observation",
+      "runtime_digest": "cfec6501969d0fd62dedd1a0c7c48709fe027ce60c39155aad07eccb45c4f797",
+      "selection": {
+        "eligible_pairs": 59,
+        "evaluated_pairs": 59,
+        "rule": "most_diagnostic_errors_then_oldest_event_then_goal_identity"
+      },
+      "training": [
+        {
+          "input": {
+            "full_ir_sha256": "d35f90572abe26967a0c333a7d4fb933392597f93bf4cac862b94609a10c5c1c"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/experience/observation-goals-v1/journal.json"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "a508ceb8d1ac7e605dc578dbab683dbfd72a7aa12ce3cf10ec29b1d251b23a30"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/__init__.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "87d9004080fe67f43a908b3bc2444edfcc3769816ca3ffc444e93e5b37a03cb2"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/__main__.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "c1750993577ed29d349d90b605d0dc77c477887ab6520ed67e9523767cbad8dd"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/adaptation.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "7ed247ad36be4838027213d507549647879c68b079f92abd84c3806df63c03aa"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/autonomy.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "ac50a893634a4acb041980681dfbe6f018d549c4965acc7bdf16d9967d811e75"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/capability.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "ea1eeed310291a1be0dc0eb997c446fc6638fa6f02594974ccd3b6f56d7d97c8"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/compatibility.py"
+        },
+        {
+          "input": {
+            "full_ir_sha256": "6df07e1acfeaf74cb14cecb9b43ec44cb86545848a4069740e063f5314e09432"
+          },
+          "output": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/contracts.py"
+        }
+      ],
+      "utility": "test whether an observed field can be reconstructed from another field with a reusable program"
+    },
+    "kind": "autonomy_step",
+    "phase": "GOAL_FROZEN",
+    "reason": "NEW_OBSERVATION_DEFICIT",
+    "status": "GOAL_FROZEN"
+  },
+  {
+    "event": 133,
+    "freeze": "a1bb9103f9a4381e87ef9e98970696e4142969937a0e692615eb3ff70a9770b2",
+    "frozen": {
+      "goal": "76c9dd97b4740e705f09bbbd0810140200fc86302e44ef23dd1b1d7a06c48256",
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "runtime": "cfec6501969d0fd62dedd1a0c7c48709fe027ce60c39155aad07eccb45c4f797",
+      "training": "2abbcedbd8a92b79bd26599040708e4721d7101ef10b1edd616d68478b9d09c8"
+    },
+    "goal": "auto-0b3209f730c41d65bdc629c6",
+    "kind": "autonomy_step",
+    "phase": "SEARCH_FROZEN",
+    "reason": "OBSERVATION_INPUTS_AND_CRITERIA_FROZEN",
+    "status": "SEARCH_FROZEN"
+  },
+  {
+    "event": 134,
+    "goal": "auto-0b3209f730c41d65bdc629c6",
+    "kind": "autonomy_step",
+    "phase": "WITHHOLD",
+    "reason": "OBSERVATION_SEARCH_EXHAUSTED",
+    "report": {
+      "fresh_cases_seen": 0,
+      "native_search_attempts": 10645,
+      "predictability_proven": false,
+      "ucr": {
+        "fresh_cases_seen": 0,
+        "internal_split": "training_partition_used_for_ranking_not_independent_validation",
+        "mechanism": "ucr_training_only_native_expression_proposals_v1",
+        "reader_version": "18.0",
+        "rounds": [
+          {
+            "depth": 1,
+            "exact_training_fits": 0,
+            "generated": 24,
+            "translated": 0
+          },
+          {
+            "depth": 2,
+            "exact_training_fits": 0,
+            "generated": 362,
+            "translated": 0
+          },
+          {
+            "depth": 3,
+            "exact_training_fits": 0,
+            "generated": 2048,
+            "translated": 0
+          }
+        ],
+        "status": "NO_EXACT_TRAINING_FIT",
+        "training_rows": 8,
+        "training_sha256": "2abbcedbd8a92b79bd26599040708e4721d7101ef10b1edd616d68478b9d09c8"
+      }
+    },
+    "status": "WITHHOLD"
+  }
+]

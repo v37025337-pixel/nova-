@@ -1,0 +1,1434 @@
+{
+  "eligible_pairs": {
+    "all_observations": [
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "nodes_included",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "nodes_total",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "nodes_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "parse_level",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "source_bytes",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "source_filename",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "source_sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "source_url",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "full_ir_sha256",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "language",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "nodes_included",
+          "int",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "nodes_truncated",
+          "int",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "parse_level",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "source_bytes",
+          "int",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "source_filename",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "source_sha256",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "source_url",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "full_ir_sha256",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "language",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "nodes_included",
+          "int",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "nodes_total",
+          "int",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "nodes_truncated",
+          "int",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "parse_level",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "source_filename",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "source_sha256",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "source_url",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "full_ir_sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "nodes_included",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "nodes_total",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "nodes_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "parse_level",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "source_bytes",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "source_sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "source_url",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "full_ir_sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "nodes_included",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "nodes_total",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "nodes_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "parse_level",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "source_bytes",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "source_filename",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "source_url",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_url",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 22,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_url",
+          "parse_level",
+          "str",
+          "str"
+        ],
+        "rows": 22,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/nodes/*",
+          "id",
+          "best_expression",
+          "str",
+          "str"
+        ],
+        "rows": 1589,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/nodes/*",
+          "id",
+          "value_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 1589,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/nodes/*",
+          "value",
+          "value_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 447,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport",
+          "sha256",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport",
+          "sha256",
+          "structural_digest",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport",
+          "structural_digest",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport",
+          "structural_digest",
+          "sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/families",
+          "canonical",
+          "learned",
+          "int",
+          "int"
+        ],
+        "rows": 21,
+        "source_count": 21
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/families",
+          "python",
+          "canonical",
+          "int",
+          "int"
+        ],
+        "rows": 21,
+        "source_count": 21
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/families",
+          "python",
+          "learned",
+          "int",
+          "int"
+        ],
+        "rows": 21,
+        "source_count": 21
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/families",
+          "python",
+          "structure",
+          "int",
+          "int"
+        ],
+        "rows": 20,
+        "source_count": 20
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/operators/*/role",
+          "confidence",
+          "evidence_count",
+          "float",
+          "int"
+        ],
+        "rows": 20,
+        "source_count": 14
+      }
+    ],
+    "graph_observations_only": [],
+    "without_graph_observations": [
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "nodes_included",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "nodes_total",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "nodes_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "parse_level",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "source_bytes",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "source_filename",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "source_sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "full_ir_sha256",
+          "source_url",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "full_ir_sha256",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "language",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "nodes_included",
+          "int",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "nodes_truncated",
+          "int",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "parse_level",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "source_bytes",
+          "int",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "source_filename",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "source_sha256",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "nodes_total",
+          "source_url",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "full_ir_sha256",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "language",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "nodes_included",
+          "int",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "nodes_total",
+          "int",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "nodes_truncated",
+          "int",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "parse_level",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "source_filename",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "source_sha256",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_bytes",
+          "source_url",
+          "int",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "full_ir_sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "nodes_included",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "nodes_total",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "nodes_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "parse_level",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "source_bytes",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "source_sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_filename",
+          "source_url",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "full_ir_sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "nodes_included",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "nodes_total",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "nodes_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "parse_level",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "source_bytes",
+          "str",
+          "int"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "source_filename",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_sha256",
+          "source_url",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_url",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 22,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "",
+          "source_url",
+          "parse_level",
+          "str",
+          "str"
+        ],
+        "rows": 22,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/nodes/*",
+          "id",
+          "best_expression",
+          "str",
+          "str"
+        ],
+        "rows": 1589,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/nodes/*",
+          "id",
+          "value_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 1589,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/nodes/*",
+          "value",
+          "value_truncated",
+          "str",
+          "bool"
+        ],
+        "rows": 447,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport",
+          "sha256",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport",
+          "sha256",
+          "structural_digest",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport",
+          "structural_digest",
+          "language",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport",
+          "structural_digest",
+          "sha256",
+          "str",
+          "str"
+        ],
+        "rows": 23,
+        "source_count": 22
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/families",
+          "canonical",
+          "learned",
+          "int",
+          "int"
+        ],
+        "rows": 21,
+        "source_count": 21
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/families",
+          "python",
+          "canonical",
+          "int",
+          "int"
+        ],
+        "rows": 21,
+        "source_count": 21
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/families",
+          "python",
+          "learned",
+          "int",
+          "int"
+        ],
+        "rows": 21,
+        "source_count": 21
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/families",
+          "python",
+          "structure",
+          "int",
+          "int"
+        ],
+        "rows": 20,
+        "source_count": 20
+      },
+      {
+        "key": [
+          "github.com",
+          "/reader/passport/operators/*/role",
+          "confidence",
+          "evidence_count",
+          "float",
+          "int"
+        ],
+        "rows": 20,
+        "source_count": 14
+      }
+    ]
+  },
+  "graph_documents": 4,
+  "graph_records_by_path": {
+    "/edges/*": 135,
+    "/metadata": 4,
+    "/nodes/*": 122
+  },
+  "graph_source_identities": 1,
+  "meaning": "eligibility diagnostics; not a mechanism ablation or evidence of improvement",
+  "minimum_error_sources": 2
+}

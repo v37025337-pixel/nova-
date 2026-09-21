@@ -1,0 +1,7 @@
+{
+  "events": 131,
+  "head": "513aa3bf5284ea4ca43543d204f077e09e2b0b1abde83780093a31420387c973",
+  "seconds": 117.55520483900182,
+  "status": "PASS",
+  "verification": "Kernel constructor full deterministic semantic replay"
+}

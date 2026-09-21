@@ -1,0 +1,31 @@
+{
+  "admission_requirements": [
+    "native goal with evidence from supplied graphs",
+    "kernel-produced frozen candidate",
+    "16..24 genuinely unseen independently labelled examples after candidate freeze",
+    "full inherited regression",
+    "causal improvement over inherited programs",
+    "native admission event",
+    "cold replay and restart"
+  ],
+  "checkpoint_manifest_sha256": "aa47dbcf944c7583dbcd4dbd9f2436ac047af4a4630727ded996455177fe82cc",
+  "diagnostics": "read-only observation subsets, never journal events or new evidence",
+  "frozen_at": "2026-09-21T12:26:38.348359+00:00",
+  "graph_provenance": "one supplied file; upstream source and dynamic execution unverified",
+  "inputs": "the already imported exact graph observations plus inherited G22 memory",
+  "max_native_steps": 8,
+  "operator_solution": null,
+  "operator_task": null,
+  "parent_head": "513aa3bf5284ea4ca43543d204f077e09e2b0b1abde83780093a31420387c973",
+  "runner_sha256": "8cd2757a0b4d8e640933d2c9cf3e03f96e1fb7e8323b3e610636b55df1be0799",
+  "runtime_sha256": "cfec6501969d0fd62dedd1a0c7c48709fe027ce60c39155aad07eccb45c4f797",
+  "schema": "nova.codeflow-goal-probe.v1",
+  "source_commit": "7f0f1e1da0d95036d04c6a90143c6fb86ed2e20e",
+  "stop_on": [
+    "IDLE",
+    "WAITING",
+    "WITHHOLD",
+    "FROZEN",
+    "REQUESTED"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "base_commit": "7f0f1e1da0d95036d04c6a90143c6fb86ed2e20e",
+  "checkpoint": {
+    "active_generation": 22,
+    "events": 134,
+    "genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+    "head": "15bf5be8b55909bd6ded59bcef050d0756fe9d5bb60f39304a856c4030d496cf",
+    "journal": "experience/codeflow-goal-probe-v1/journal.json.gz",
+    "parent_head": "513aa3bf5284ea4ca43543d204f077e09e2b0b1abde83780093a31420387c973"
+  },
+  "file_sha256": {
+    "experience/codeflow-goal-probe-v1/README-RU.md": "21fa5a1313d4288dead52a1de1c4584901b10d8212d5188b0c13917c22ef7bdf",
+    "experience/codeflow-goal-probe-v1/actions.json": "0b5270aa49428764306e68830c102b6d6a4b2f90c01946803e777ddb6306c98d",
+    "experience/codeflow-goal-probe-v1/after.json": "bce7b44afa4229ef96c0a8c7112dda3d8c6560a46cbbab420de02a58d218a465",
+    "experience/codeflow-goal-probe-v1/before.json": "1684e621475a246eb2d9abc82562f25e7b547de2bee49ae85f1f17f0546ca0e6",
+    "experience/codeflow-goal-probe-v1/diagnostics.json": "99aac87766b759537b18f58d99ef8fc9eb0d6a3edd7d4bdc47407555ca29e3bc",
+    "experience/codeflow-goal-probe-v1/journal.json.gz": "7ac15cf3c9fbdf2c360f1fd5d4650618532dcfcaa61a684547f7c45f82e347f9",
+    "experience/codeflow-goal-probe-v1/protocol.json": "67e30ee0a9c1da64697debe51cad68ec847b8aee5281f4ccb464136745c26632",
+    "experience/codeflow-goal-probe-v1/regression.json": "b2497c592c67b66048c62d73d24d0a0215b52d3f9c5e2f1cf131e55d1ba590aa",
+    "experience/codeflow-goal-probe-v1/replay.json": "179e0f3b9bd5a712df89d8f221f391554172af4429dcd23e92c364df4a50c6c5",
+    "experience/codeflow-goal-probe-v1/restart.json": "cc5ae27927a07dc24824126eaabac3c0a3cee562feaff5ded36fa0d3132556b2",
+    "experience/codeflow-goal-probe-v1/run.txt": "169f463bb65029b98af81fe77106a1b80ee433a8718c37471b6b8e251974ce60",
+    "experience/codeflow-goal-probe-v1/summary.json": "40f67d4f1f22f8128d77db6f48036d54a6af677c20f19062e2b9869b642c1998",
+    "experience/codeflow-goal-probe-v1/tests.txt": "d436f87d9c0d93c51d60749a2b8c7601a3e92a79f168db029f1772b415fc88b6",
+    "experience/codeflow-goal-probe-v1/verification.json": "54869ae624c991871065e098ed6087b49e02678163403deea5945d038d594b41",
+    "scripts/run_codeflow_goal_probe.py": "8cd2757a0b4d8e640933d2c9cf3e03f96e1fb7e8323b3e610636b55df1be0799",
+    "scripts/verify_release.py": "283f93a339c4eb37a0f657c8643bd68844db0b0771616bb784f2b9d43248f4b1"
+  },
+  "outcome": {
+    "candidate_frozen": false,
+    "fresh_rows": 0,
+    "g23": "NOT_REACHED",
+    "goal_uses_graph_source": false,
+    "native_goal_found": true,
+    "new_admissions": 0,
+    "status": "WITHHOLD"
+  },
+  "role": "retained_negative_experience_without_capability_admission",
+  "schema": "nova.codeflow-goal-probe-checkpoint.v1"
+}

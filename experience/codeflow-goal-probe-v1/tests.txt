@@ -1,0 +1,21 @@
+test_actual_attachment_keeps_every_node_and_edge (tests.test_static_codeflow.StaticCodeflowTests.test_actual_attachment_keeps_every_node_and_edge) ... ok
+test_chunks_below_parser_limit_do_not_claim_independent_sources (tests.test_static_codeflow.StaticCodeflowTests.test_chunks_below_parser_limit_do_not_claim_independent_sources) ... ok
+test_pinned_source_rejects_changed_file_before_projection (tests.test_static_codeflow.StaticCodeflowTests.test_pinned_source_rejects_changed_file_before_projection) ... ok
+test_provenance_uses_the_existing_kernel_url_contract (tests.test_static_codeflow.StaticCodeflowTests.test_provenance_uses_the_existing_kernel_url_contract) ... ok
+test_rejects_broken_topology_and_wrong_identity (tests.test_static_codeflow.StaticCodeflowTests.test_rejects_broken_topology_and_wrong_identity) ... ok
+test_rejects_noncanonical_or_nonportable_input (tests.test_static_codeflow.StaticCodeflowTests.test_rejects_noncanonical_or_nonportable_input) ... ok
+test_static_recursion_is_data_and_unknown_fields_are_rejected (tests.test_static_codeflow.StaticCodeflowTests.test_static_recursion_is_data_and_unknown_fields_are_rejected) ... ok
+test_csv_width_duplicate_headers_and_nested_path_identity (tests.test_observation_goals.ObservationGoalTests.test_csv_width_duplicate_headers_and_nested_path_identity) ... ok
+test_duplicate_payloads_do_not_become_independent_evidence (tests.test_observation_goals.ObservationGoalTests.test_duplicate_payloads_do_not_become_independent_evidence) ... ok
+test_empty_or_already_predictable_stream_does_not_invent_a_deficit (tests.test_observation_goals.ObservationGoalTests.test_empty_or_already_predictable_stream_does_not_invent_a_deficit) ... ok
+test_fresh_gate_restart_and_rollback (tests.test_observation_goals.ObservationGoalTests.test_fresh_gate_restart_and_rollback) ... ok
+test_malformed_or_changed_payload_is_rejected_without_mutation (tests.test_observation_goals.ObservationGoalTests.test_malformed_or_changed_payload_is_rejected_without_mutation) ... ok
+test_observed_inputs_and_failed_assessments_cannot_be_reused_as_fresh (tests.test_observation_goals.ObservationGoalTests.test_observed_inputs_and_failed_assessments_cannot_be_reused_as_fresh) ... ok
+test_rehashed_fabricated_prediction_evidence_fails_semantic_replay (tests.test_observation_goals.ObservationGoalTests.test_rehashed_fabricated_prediction_evidence_fails_semantic_replay) ... ok
+test_rolling_window_preserves_old_input_and_duplicate_exclusions (tests.test_observation_goals.ObservationGoalTests.test_rolling_window_preserves_old_input_and_duplicate_exclusions) ... ok
+test_unlabelled_records_produce_a_measured_goal_without_registered_tasks (tests.test_observation_goals.ObservationGoalTests.test_unlabelled_records_produce_a_measured_goal_without_registered_tasks) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.328s
+
+OK
