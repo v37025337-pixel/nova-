@@ -1,0 +1,96 @@
+{
+  "author": "maintainer",
+  "control": "native_search_on_the_same_frozen_training_and_parent_memory",
+  "fresh_rows": 0,
+  "max_steps": 3,
+  "new_observations": 0,
+  "new_registered_tasks": 0,
+  "parent_file_sha256": "cf7e2bb77dc478a8154de0bb810294ea9e1649200bc81e5a0ab9cf0315964f59",
+  "parent_head": "d1db00260fae36429fcf38abf30d1c5a19504cb88e29c103037cd0512a0e6cb9",
+  "parent_path": "experience/ucr-v16-integration/journal.json.gz",
+  "runtime_manifest": {
+    "autonomy": "bounded_failure_conditioned_relational_subgoals_with_external_io",
+    "capability_author": "kernel_specification_conditioned_document_compiler",
+    "capability_dialect": "bounded_word_equations_and_typeset_block_recurrences",
+    "engine_author": "maintainer",
+    "engine_policy_author": "kernel_bounded_experience_conditioned_mutation",
+    "faculties": {
+      "CODE": "native_expression_synthesis_and_ast_execution",
+      "INTELLIGENCE": "experience_conditioned_verified_gene_selection",
+      "LOGIC": "contracts_deficits_and_admission_evidence",
+      "THINKING": "causal_goal_selection_and_continuation"
+    },
+    "observations": {
+      "author": "maintainer",
+      "config": {
+        "diagnostic_rows": 8,
+        "document_bytes": 262144,
+        "fields_per_record": 16,
+        "minimum_error_sources": 2,
+        "minimum_errors": 3,
+        "pairs_per_decision": 64,
+        "records_per_document": 128,
+        "training_rows": 8,
+        "tree_nodes": 8192,
+        "window_documents": 32
+      },
+      "mechanism": "measured_scalar_field_prediction_errors_v1"
+    },
+    "program_author": "kernel_training_only",
+    "python": [
+      3,
+      12
+    ],
+    "python_tools": "pure_stdlib_composition_and_inherited_relation_transfer",
+    "runtime": "single_state_single_queue_single_journal",
+    "schema": "nova.kernel.v8",
+    "search": {
+      "attempts": 12000,
+      "depth": 3
+    },
+    "sources": {
+      "__init__.py": "4bba29bdb13279dc9d619cb9c3c2ff4bcb452195d96b72c4dfd7176ba383ca9d",
+      "__main__.py": "1a65c967f8eb2fcf5b656932f22838f82ba0c4ae048e8cb5518234902e11947f",
+      "adaptation.py": "8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796",
+      "autonomy.py": "dc81e32746716dc3ab9b6d65b43ea75f48cb6589d9684ae3b6cf755ca9c57f80",
+      "capability.py": "eb8e8c51e1234b4121c10e1d6d53f1717d58aee0821861b1dd180878eec48f8f",
+      "compatibility.py": "0321d7fcf6a453164049670fb40f5ade6397ea5b1a50b57fcbbde035b71cc446",
+      "contracts.py": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe",
+      "evaluation.py": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2",
+      "extensions.py": "7b048dda1d3efcc510be6af1162ecd52fb7dddfa53ff01b106a003a74cf6ded2",
+      "genetics.py": "e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0",
+      "isolation.py": "c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3",
+      "kernel.py": "a1c4f93429796c2cb4047056fbdc57a99f21cd519951f73c674eb87eb6c0b111",
+      "language.py": "a541480da7093aaa401f82e1bf3aa7be5f4914ca57ac3222db0e7084af60e1a7",
+      "library_evolution.py": "03974e74f665368e35fd7be26f49ba9ba3b82b187764b787c21a043eaef2fb27",
+      "memory.py": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777",
+      "observations.py": "cb2c17166ab93ca1dcdcda3bc36abbf332b677afba1cfa94e460a90087d38fad",
+      "python_tools.py": "6e4ddb19f4897b470b0e94c547c7947a0925308af98af4f9178ae6dd2047a2eb",
+      "sandbox_worker.py": "11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96",
+      "sequence.py": "cd1ac5a145caeb9a4fa9c181aeb3bbbd021e4a59b37bbee5d2440b27081f06d2",
+      "specifications.py": "3c34a078b8500dc1f9a13ea140c85fe9df7d4294986470989aafe128841b45c3",
+      "synthesis.py": "7e61fe88d70eaf5485a82be3b98aba1e00dd2384847d635b80b04f8dbe014e19",
+      "ucr_development.py": "00e1f84914097adf66aa20af418ed2ab58963c8028afdd87f147ed6eb93b7912"
+    },
+    "ucr_development": {
+      "author": "maintainer",
+      "config": {
+        "candidates_per_round": 12,
+        "generated_per_round": 2048,
+        "input_fields": 1,
+        "max_depth": 3,
+        "native_fallback": true,
+        "training_rows": 8
+      },
+      "mechanism": "ucr_training_only_native_expression_proposals_v1",
+      "reader_version": "16.0",
+      "sources": {
+        "nova_tools/__init__.py": "e981bab21ded1efd6adeecb57930c3d639797507bb9e2ae4dfc605e727abdd17",
+        "nova_tools/universal_code_reader.py": "19b6406ce896e20d7066cbcf52830c990c990640503068d43b4ccfcc17e30b36"
+      }
+    }
+  },
+  "runtime_sha256": "08bcf066c2027e549d7ffc4911db416a624d089d6df0a1c3095fe68ec8e97037",
+  "schema": "nova.ucr-development-protocol.v1",
+  "stop": "first completed or frozen search; never supply invented fresh evaluations"
+}

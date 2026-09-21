@@ -1,0 +1,30 @@
+{
+  "base_commit": "bf975f7104828e84b624594e58009f3fd31043de",
+  "cold_replay": {
+    "events": 120,
+    "exit_code": 0,
+    "head": "0946c1a6e45060fedcf2b020cbb51aa2e44a55ff240d307d67862b77bf291fa8",
+    "status": "PASS"
+  },
+  "native_control_found_program": false,
+  "new_admissions": 0,
+  "parent_prefix_unchanged": true,
+  "regression": {
+    "passed": 192,
+    "skills": 21,
+    "total": 192
+  },
+  "release": {
+    "runtime_files": 22,
+    "status": "PASS",
+    "tool_files": 3,
+    "version": "0.8.0"
+  },
+  "schema": "nova.ucr-development-verification.v1",
+  "ucr_used_by_kernel": true,
+  "unit_tests": {
+    "exit_code": 0,
+    "passed": 123,
+    "total": 123
+  }
+}

@@ -1,10 +1,11 @@
 {
-  "claim": "source/trace analysis and observation bridge; UCR hypotheses are not admitted Nova capabilities",
+  "claim": "source/trace analysis plus training-only native expression proposals; only the Nova fresh-data gate admits capabilities",
+  "kernel_integration": "nova_core/ucr_development.py (runtime 0.8.0)",
   "origin": "user-supplied universal_code_reader-17.py with Nova byte, graph and strict JSON compatibility fixes",
   "original_sha256": "3ee3e64dae0a0e30bc74a53259969cf399b839bad75a607d3c4b44f35b1c1801",
   "previous_original_sha256": "c0ecb583f015912b2fb56529c2aa2f35875897bb79a32afd88252e6eaf195226",
   "reader_version": "16.0",
-  "runtime_sources_changed": false,
+  "runtime_sources_changed": true,
   "schema": "nova.code-reader-tools.v2",
   "source_sha256": {
     "nova_tools/__init__.py": "e981bab21ded1efd6adeecb57930c3d639797507bb9e2ae4dfc605e727abdd17",

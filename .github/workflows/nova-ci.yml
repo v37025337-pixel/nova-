@@ -45,3 +45,8 @@ jobs:
         run: |
           python -c 'import gzip,pathlib; pathlib.Path("/tmp/nova-ucr-journal.json").write_bytes(gzip.decompress(pathlib.Path("experience/ucr-v16-integration/journal.json.gz").read_bytes()))'
           python scripts/run_development_chain.py --restore /tmp/nova-ucr-journal.json --state /tmp/nova-ucr-ci.sqlite
+      - name: Replay the v8 upgrade and active UCR development search
+        if: matrix.python == '3.12'
+        run: |
+          python -c 'import gzip,pathlib; pathlib.Path("/tmp/nova-ucr-development-journal.json").write_bytes(gzip.decompress(pathlib.Path("experience/ucr-development-v1/journal.json.gz").read_bytes()))'
+          python scripts/run_development_chain.py --restore /tmp/nova-ucr-development-journal.json --state /tmp/nova-ucr-development-ci.sqlite
