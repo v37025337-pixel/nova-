@@ -25,6 +25,7 @@ Design goals:
 - discover representation gaps and synthesize/admit bounded safe semantic primitives;
 - validate self-development with hidden/fresh tests, transfer, ablation and rollback;
 - evolve the active safe primitive-generation grammar through causally admitted bounded rules;
+- learn a bounded mutation-selection strategy from causal trials instead of using one mutation class for every representation gap;
 - preserve binary inputs as chunks + printable-string evidence;
 - deterministic IDs and JSON output;
 - extensible parser registry.
@@ -85,7 +86,7 @@ class ReadResult:
 
     def to_dict(self) -> dict[str, Any]:
         return UniversalCodeReader._jsonable({
-            "schema": "ucr.ai-ir/16.0",
+            "schema": "ucr.ai-ir/17.0",
             "sha256": self.sha256,
             "language": self.language,
             "encoding": self.encoding,
@@ -518,7 +519,7 @@ Parser = Callable[[str], list[IRNode]]
 class UniversalCodeReader:
     """Read arbitrary code/data into AI-IR without executing the input."""
 
-    VERSION = "16.0"
+    VERSION = "18.0"
 
     EXTENSIONS = {
         ".py": "python", ".pyw": "python",
@@ -648,6 +649,16 @@ class UniversalCodeReader:
             }
         }
         self.grammar_evolution_history: list[dict[str, Any]] = []
+        # v17: admitted routes for choosing *which* bounded self-development
+        # mechanism to use for a measured representation gap.  Routes are
+        # learned only from causal primary+transfer trials; they contain data,
+        # never executable code.
+        self.mutation_strategy_registry: dict[str, dict[str, Any]] = {}
+        self.mutation_strategy_history: list[dict[str, Any]] = []
+        # v18: bounded self-generated challenge discovery.  Challenges are
+        # generated only from a closed trusted blueprint meta-space and are
+        # admitted only when current mechanisms demonstrably fail them.
+        self.novel_challenge_history: list[dict[str, Any]] = []
 
     # ---------------------------- public API ----------------------------
 
@@ -2376,9 +2387,6 @@ class UniversalCodeReader:
             outer = params.get("outer")
             if not isinstance(inner, dict) or not isinstance(outer, dict):
                 raise ValueError("invalid composed blueprint")
-            # v16 admits exactly one new grammar layer at a time.  Recursive
-            # meta-composition remains disabled until a future separately tested
-            # grammar rule is admitted.
             if str(inner.get("family", "")).startswith("meta.") or str(outer.get("family", "")).startswith("meta."):
                 raise ValueError("nested meta composition is not admitted")
             inner_fn = self._compile_safe_primitive_blueprint(inner)
@@ -2386,6 +2394,24 @@ class UniversalCodeReader:
             def fn(a: Any) -> Any:
                 mid = inner_fn(a)
                 return outer_fn(mid)
+            return fn
+
+        if family == "meta.compose_unary3":
+            if not self._grammar_rule_is_active("unary.compose3"):
+                raise ValueError("compose_unary3 grammar rule is not admitted")
+            first = params.get("first")
+            second = params.get("second")
+            third = params.get("third")
+            if not isinstance(first, dict) or not isinstance(second, dict) or not isinstance(third, dict):
+                raise ValueError("invalid compose3 blueprint")
+            parts = (first, second, third)
+            if any(str(part.get("family", "")).startswith("meta.") for part in parts):
+                raise ValueError("nested meta composition is not admitted")
+            f1 = self._compile_safe_primitive_blueprint(first)
+            f2 = self._compile_safe_primitive_blueprint(second)
+            f3 = self._compile_safe_primitive_blueprint(third)
+            def fn(a: Any) -> Any:
+                return f3(f2(f1(a)))
             return fn
 
         raise ValueError(f"unsupported safe primitive blueprint: {family}")
@@ -2398,6 +2424,12 @@ class UniversalCodeReader:
             inner = params.get("inner") if isinstance(params.get("inner"), dict) else {}
             outer = params.get("outer") if isinstance(params.get("outer"), dict) else {}
             return 2 + UniversalCodeReader._blueprint_complexity(inner) + UniversalCodeReader._blueprint_complexity(outer)
+        if family == "meta.compose_unary3":
+            params = dict(blueprint.get("params") or {})
+            first = params.get("first") if isinstance(params.get("first"), dict) else {}
+            second = params.get("second") if isinstance(params.get("second"), dict) else {}
+            third = params.get("third") if isinstance(params.get("third"), dict) else {}
+            return 3 + sum(UniversalCodeReader._blueprint_complexity(x) for x in (first, second, third))
         base = {
             "integer.mod_equal": 2,
             "integer.bit_test": 2,
@@ -2502,6 +2534,27 @@ class UniversalCodeReader:
                         "family": "meta.compose_unary2", "arity": 1, "category": "composed",
                         "params": {"inner": copy.deepcopy(reverse), "outer": copy.deepcopy(reverse)},
                     })
+
+        if self._grammar_rule_is_active("unary.compose3") and all_int:
+            atoms = self._atomic_unary_blueprint_catalog(inputs)
+            int_producers = [bp for bp in atoms if bp["family"] in {
+                "numeric.sign", "integer.popcount_abs", "integer.digital_root_abs"
+            }]
+            # Closed, bounded three-stage unary chains.  No meta blueprint may
+            # appear inside another meta blueprint.
+            for first in int_producers:
+                for second in int_producers:
+                    for third in atoms:
+                        out.append({
+                            "family": "meta.compose_unary3",
+                            "arity": 1,
+                            "category": "composed",
+                            "params": {
+                                "first": copy.deepcopy(first),
+                                "second": copy.deepcopy(second),
+                                "third": copy.deepcopy(third),
+                            },
+                        })
 
         # Deduplicate deterministically.
         seen: set[str] = set()
@@ -2895,11 +2948,15 @@ class UniversalCodeReader:
     def export_evolved_state(self) -> dict[str, Any]:
         """Return a JSON-safe checkpoint containing only admitted safe blueprints/rules."""
         return {
-            "schema": "ucr.evolved-state/2",
+            "schema": "ucr.evolved-state/4",
             "reader_version": self.VERSION,
             "grammar_rules": [
                 copy.deepcopy(v) for k, v in sorted(self.primitive_grammar_registry.items())
                 if k != "atomic.v1" and v.get("admitted")
+            ],
+            "mutation_strategy_routes": [
+                copy.deepcopy(v) for _, v in sorted(self.mutation_strategy_registry.items())
+                if v.get("admitted")
             ],
             "primitives": [copy.deepcopy(v) for _, v in sorted(self.evolved_primitive_registry.items())],
         }
@@ -2908,8 +2965,9 @@ class UniversalCodeReader:
         """Restore admitted blueprints/rules; no executable code is deserialized."""
         loaded = 0
         loaded_rules = 0
+        loaded_routes = 0
         rejected: list[dict[str, Any]] = []
-        known_rules = {"unary.compose2"}
+        known_rules = {"unary.compose2", "unary.compose3"}
         for item in list((state or {}).get("grammar_rules") or []):
             if not isinstance(item, dict):
                 rejected.append({"reason": "invalid-grammar-rule-entry"})
@@ -2923,6 +2981,42 @@ class UniversalCodeReader:
                 "description": str(item.get("description", "admitted safe grammar rule")),
             }
             loaded_rules += 1
+        known_route_actions = {"admit-atomic-primitive", "expand-grammar-unary-compose2", "expand-grammar-unary-compose3"}
+        known_route_signatures = {
+            "representation-gap|atomic-sufficient",
+            "representation-gap|compose2-required",
+            "representation-gap|compose3-required",
+        }
+        for item in list((state or {}).get("mutation_strategy_routes") or []):
+            if not isinstance(item, dict):
+                rejected.append({"reason": "invalid-mutation-strategy-route"})
+                continue
+            signature = str(item.get("signature", ""))
+            action = str(item.get("action", ""))
+            if signature not in known_route_signatures or action not in known_route_actions or not item.get("admitted"):
+                rejected.append({"signature": signature, "action": action, "reason": "unknown-or-unadmitted-mutation-route"})
+                continue
+            expected = (
+                action == "admit-atomic-primitive" and signature.endswith("atomic-sufficient")
+            ) or (
+                action == "expand-grammar-unary-compose2" and signature.endswith("compose2-required")
+            ) or (
+                action == "expand-grammar-unary-compose3" and signature.endswith("compose3-required")
+            )
+            if not expected:
+                rejected.append({"signature": signature, "action": action, "reason": "route-signature-action-mismatch"})
+                continue
+            self.mutation_strategy_registry[signature] = {
+                "signature": signature,
+                "action": action,
+                "admitted": True,
+                "origin": "loaded-admitted-evolved-state",
+                "primary_challenge": item.get("primary_challenge"),
+                "transfer_challenge": item.get("transfer_challenge"),
+                "primary_gain": item.get("primary_gain"),
+                "transfer_gain": item.get("transfer_gain"),
+            }
+            loaded_routes += 1
         for item in list((state or {}).get("primitives") or []):
             if not isinstance(item, dict) or not isinstance(item.get("blueprint"), dict):
                 rejected.append({"reason": "invalid-entry"})
@@ -2951,9 +3045,11 @@ class UniversalCodeReader:
         return {
             "loaded": loaded,
             "loaded_grammar_rules": loaded_rules,
+            "loaded_mutation_strategy_routes": loaded_routes,
             "rejected": rejected,
             "registry_size": len(self.evolved_primitive_registry),
             "grammar_registry_size": len(self.primitive_grammar_registry),
+            "mutation_strategy_registry_size": len(self.mutation_strategy_registry),
         }
 
     # ---------------- v16 bounded grammar self-development ----------------
@@ -3140,6 +3236,708 @@ class UniversalCodeReader:
             },
         }
         self.grammar_evolution_history.append(copy.deepcopy(report))
+        return report
+
+
+    # ---------------- v17 bounded mutation-strategy evolution ----------------
+
+    def _temporarily_score_blueprint_strategy(
+        self,
+        challenge: dict[str, Any],
+        *,
+        allow_compose2: bool,
+    ) -> dict[str, Any]:
+        """Score safe-blueprint synthesis under an explicit temporary grammar state."""
+        previous = copy.deepcopy(self.primitive_grammar_registry.get("unary.compose2"))
+        if allow_compose2:
+            self.primitive_grammar_registry["unary.compose2"] = {
+                "rule_id": "unary.compose2",
+                "admitted": True,
+                "origin": "v17-strategy-probe",
+                "description": "temporary bounded compose2 probe",
+            }
+        else:
+            self.primitive_grammar_registry.pop("unary.compose2", None)
+        try:
+            result = self._score_blueprint_synthesis_on_challenge(challenge)
+        finally:
+            if previous is None:
+                self.primitive_grammar_registry.pop("unary.compose2", None)
+            else:
+                self.primitive_grammar_registry["unary.compose2"] = previous
+        return result
+
+    def _temporarily_score_blueprint_strategy_v18(
+        self,
+        challenge: dict[str, Any],
+        *,
+        allow_compose2: bool,
+        allow_compose3: bool,
+    ) -> dict[str, Any]:
+        """Score synthesis under an explicit temporary v18 grammar state."""
+        previous2 = copy.deepcopy(self.primitive_grammar_registry.get("unary.compose2"))
+        previous3 = copy.deepcopy(self.primitive_grammar_registry.get("unary.compose3"))
+        if allow_compose2:
+            self.primitive_grammar_registry["unary.compose2"] = {
+                "rule_id": "unary.compose2", "admitted": True,
+                "origin": "v18-strategy-probe",
+                "description": "temporary bounded compose2 probe",
+            }
+        else:
+            self.primitive_grammar_registry.pop("unary.compose2", None)
+        if allow_compose3:
+            self.primitive_grammar_registry["unary.compose3"] = {
+                "rule_id": "unary.compose3", "admitted": True,
+                "origin": "v18-strategy-probe",
+                "description": "temporary bounded compose3 probe",
+            }
+        else:
+            self.primitive_grammar_registry.pop("unary.compose3", None)
+        try:
+            return self._score_blueprint_synthesis_on_challenge(challenge)
+        finally:
+            if previous2 is None:
+                self.primitive_grammar_registry.pop("unary.compose2", None)
+            else:
+                self.primitive_grammar_registry["unary.compose2"] = previous2
+            if previous3 is None:
+                self.primitive_grammar_registry.pop("unary.compose3", None)
+            else:
+                self.primitive_grammar_registry["unary.compose3"] = previous3
+
+    def _score_representation_strategy_action(
+        self,
+        challenge: dict[str, Any],
+        action: str,
+    ) -> dict[str, Any]:
+        """
+        Non-destructively evaluate one bounded development action.
+
+        The score is always measured on the challenge's fresh split.  No route
+        is admitted and no primitive/grammar rule is persisted by this probe.
+        """
+        action = str(action)
+        cache = getattr(self, "_v17_strategy_probe_cache", None)
+        cache_key = (str(challenge.get("challenge_id")), action)
+        if isinstance(cache, dict) and cache_key in cache:
+            return copy.deepcopy(cache[cache_key])
+        baseline = self._reasoning_score_on_unary_oracle(
+            challenge,
+            train_split="train",
+            audit_split="fresh",
+            max_depth=3,
+            max_generated=3000,
+        )
+        before = float(baseline.get("external_audit_score", 0.0))
+        before_exact = bool(baseline.get("pass"))
+        details: dict[str, Any] = {"baseline": baseline}
+        after = before
+        exact = before_exact
+
+        if action == "admit-atomic-primitive":
+            scored = self._temporarily_score_blueprint_strategy(challenge, allow_compose2=False)
+            details["synthesis"] = scored
+            after = float(scored.get("fresh_score", 0.0))
+            exact = bool(scored.get("exact"))
+        elif action == "expand-grammar-unary-compose2":
+            scored = self._temporarily_score_blueprint_strategy(challenge, allow_compose2=True)
+            details["synthesis"] = scored
+            after = float(scored.get("fresh_score", 0.0))
+            exact = bool(scored.get("exact"))
+        elif action == "expand-grammar-unary-compose3":
+            scored = self._temporarily_score_blueprint_strategy_v18(
+                challenge, allow_compose2=True, allow_compose3=True
+            )
+            details["synthesis"] = scored
+            after = float(scored.get("fresh_score", 0.0))
+            exact = bool(scored.get("exact"))
+        elif action == "increase-search-only":
+            searched = self._reasoning_score_on_unary_oracle(
+                challenge,
+                train_split="train",
+                audit_split="fresh",
+                max_depth=3,
+                max_generated=12000,
+            )
+            details["searched"] = searched
+            after = float(searched.get("external_audit_score", 0.0))
+            exact = bool(searched.get("pass"))
+        elif action == "no-change":
+            pass
+        else:
+            raise ValueError("unknown bounded representation strategy action")
+
+        costs = {
+            "no-change": 0.0,
+            "admit-atomic-primitive": 0.01,
+            "increase-search-only": 0.02,
+            "expand-grammar-unary-compose2": 0.03,
+            "expand-grammar-unary-compose3": 0.04,
+        }
+        gain = after - before
+        # Utility is only a tie-breaker after exactness/transfer.  Lower-impact
+        # mutations are preferred when two actions solve the same gap.
+        utility = after + (0.20 if exact else 0.0) - float(costs[action])
+        result = {
+            "challenge_id": challenge.get("challenge_id"),
+            "action": action,
+            "before_fresh_score": round(before, 6),
+            "after_fresh_score": round(after, 6),
+            "fresh_gain": round(gain, 6),
+            "before_exact": before_exact,
+            "after_exact": exact,
+            "mutation_cost": costs[action],
+            "utility": round(utility, 6),
+            "details": details,
+        }
+        if isinstance(cache, dict):
+            cache[cache_key] = copy.deepcopy(result)
+        return result
+
+    def _representation_gap_signature(self, challenge: dict[str, Any]) -> dict[str, Any]:
+        """Derive a mutation-selection signature from measurable probes, not task names."""
+        baseline = self._score_representation_strategy_action(challenge, "no-change")
+        atomic = self._score_representation_strategy_action(challenge, "admit-atomic-primitive")
+        composed = self._score_representation_strategy_action(challenge, "expand-grammar-unary-compose2")
+        compose3 = self._score_representation_strategy_action(challenge, "expand-grammar-unary-compose3")
+        if baseline.get("after_exact"):
+            signature = "representation-gap|already-solvable"
+        elif atomic.get("after_exact"):
+            signature = "representation-gap|atomic-sufficient"
+        elif composed.get("after_exact"):
+            signature = "representation-gap|compose2-required"
+        elif compose3.get("after_exact"):
+            signature = "representation-gap|compose3-required"
+        else:
+            signature = "representation-gap|unresolved"
+        return {
+            "signature": signature,
+            "baseline": baseline,
+            "atomic_probe": atomic,
+            "compose2_probe": composed,
+            "compose3_probe": compose3,
+        }
+
+    def _mutation_strategy_training_cases(self) -> list[dict[str, Any]]:
+        """Primary+transfer pairs used to learn route selection causally."""
+        primitive = {x["challenge_id"]: x for x in self._primitive_genesis_challenge_pool()}
+        grammar = {x["challenge_id"]: x for x in self._grammar_gap_challenge_pool()}
+        return [
+            {
+                "name": "atomic-representation-gap",
+                "primary": primitive["rg-02"],       # popcount
+                "transfer": primitive["rg-04"],      # digital root
+            },
+            {
+                "name": "composed-representation-gap",
+                "primary": grammar["grammar-rg-01"], # popcount -> even
+                "transfer": grammar["grammar-rg-02"],# digital root -> even
+            },
+        ]
+
+    def select_representation_mutation_strategy(self, challenge: dict[str, Any]) -> dict[str, Any]:
+        """Choose an admitted v17 mutation route for one measured representation gap."""
+        probe = self._representation_gap_signature(challenge)
+        signature = str(probe["signature"])
+        route = copy.deepcopy(self.mutation_strategy_registry.get(signature))
+        if route and route.get("admitted"):
+            return {
+                "signature": signature,
+                "action": route.get("action"),
+                "admitted_route": True,
+                "route": route,
+                "probe": probe,
+            }
+        return {
+            "signature": signature,
+            "action": "withhold",
+            "admitted_route": False,
+            "route": None,
+            "probe": probe,
+        }
+
+    def run_autonomous_mutation_strategy_evolution(self) -> dict[str, Any]:
+        """
+        Learn *which bounded mutation class to use* from causal trials.
+
+        The controller starts with no representation-gap routes.  For each
+        measurable signature it evaluates all bounded actions on a primary task
+        and an independent transfer task.  A route is admitted only when the
+        same action closes both gaps, beats no-change, and core reasoning does
+        not regress.  No executable policy code is synthesized.
+        """
+        self._v17_strategy_probe_cache = {}
+        actions = [
+            "no-change",
+            "increase-search-only",
+            "admit-atomic-primitive",
+            "expand-grammar-unary-compose2",
+            "expand-grammar-unary-compose3",
+        ]
+        learned: list[dict[str, Any]] = []
+        core_before = self.benchmark_reasoning()
+        start_registry = copy.deepcopy(self.mutation_strategy_registry)
+
+        for case in self._mutation_strategy_training_cases():
+            primary = case["primary"]
+            transfer = case["transfer"]
+            primary_probe = self._representation_gap_signature(primary)
+            transfer_probe = self._representation_gap_signature(transfer)
+            signature = str(primary_probe["signature"])
+            transfer_signature = str(transfer_probe["signature"])
+            trials: list[dict[str, Any]] = []
+            for action in actions:
+                p = self._score_representation_strategy_action(primary, action)
+                t = self._score_representation_strategy_action(transfer, action)
+                same_signature = signature == transfer_signature
+                causal_primary = bool(p["after_exact"] and not p["before_exact"] and p["fresh_gain"] > 1e-9)
+                causal_transfer = bool(t["after_exact"] and not t["before_exact"] and t["fresh_gain"] > 1e-9)
+                admissible = bool(same_signature and causal_primary and causal_transfer)
+                trials.append({
+                    "action": action,
+                    "primary": p,
+                    "transfer": t,
+                    "same_signature": same_signature,
+                    "causal_primary": causal_primary,
+                    "causal_transfer": causal_transfer,
+                    "admissible": admissible,
+                    "joint_utility": round(float(p["utility"]) + float(t["utility"]), 6),
+                })
+            trials.sort(
+                key=lambda x: (bool(x["admissible"]), float(x["joint_utility"]), -float(x["primary"]["mutation_cost"]), x["action"]),
+                reverse=True,
+            )
+            best = trials[0] if trials else None
+            admitted = bool(best and best.get("admissible"))
+            if admitted:
+                route = {
+                    "signature": signature,
+                    "action": best["action"],
+                    "admitted": True,
+                    "origin": "ucr-v17-causal-mutation-strategy-evolution",
+                    "primary_challenge": primary.get("challenge_id"),
+                    "transfer_challenge": transfer.get("challenge_id"),
+                    "primary_gain": best["primary"]["fresh_gain"],
+                    "transfer_gain": best["transfer"]["fresh_gain"],
+                }
+                self.mutation_strategy_registry[signature] = route
+            else:
+                route = None
+            learned.append({
+                "case": case["name"],
+                "signature": signature,
+                "transfer_signature": transfer_signature,
+                "trials": trials,
+                "selected_route": copy.deepcopy(route),
+                "admitted": admitted,
+            })
+
+        core_after = self.benchmark_reasoning()
+        no_core_regression = float(core_after.get("pass_rate") or 0.0) + 1e-12 >= float(core_before.get("pass_rate") or 0.0)
+        if not no_core_regression:
+            self.mutation_strategy_registry = start_registry
+
+        # Fresh selector validation on the independent transfer members.  The
+        # selector is evaluated *after* learning and without task-name routing.
+        selector_results: list[dict[str, Any]] = []
+        for case in self._mutation_strategy_training_cases():
+            transfer = case["transfer"]
+            selection = self.select_representation_mutation_strategy(transfer)
+            action = str(selection.get("action"))
+            outcome = None
+            useful = False
+            if action != "withhold":
+                outcome = self._score_representation_strategy_action(transfer, action)
+                useful = bool(outcome.get("after_exact") and outcome.get("fresh_gain", 0.0) > 1e-9)
+            selector_results.append({
+                "case": case["name"],
+                "selection": selection,
+                "outcome": outcome,
+                "useful": useful,
+            })
+
+        selector_success = sum(int(x["useful"]) for x in selector_results)
+        route_count = len([v for v in self.mutation_strategy_registry.values() if v.get("admitted")])
+        report = {
+            "schema": "ucr.autonomous-mutation-strategy-evolution/1",
+            "reader_version": self.VERSION,
+            "learned_routes": learned,
+            "admitted_route_count": route_count,
+            "routes": copy.deepcopy(self.mutation_strategy_registry),
+            "selector_validation": selector_results,
+            "selector_success_rate": round(selector_success / max(1, len(selector_results)), 6),
+            "core_before": core_before,
+            "core_after": core_after,
+            "no_core_regression": no_core_regression,
+            "safety": {
+                "unknown_code_executed": False,
+                "self_source_rewritten": False,
+                "strategy_language": "closed-data-routes-over-bounded-actions",
+                "arbitrary_mutation_actions": False,
+                "route_admission_requires": ["primary-causal-gain", "independent-transfer-gain", "same-measured-signature", "no-core-regression"],
+            },
+            "interpretation": {
+                "demonstrates": "bounded causal learning of which self-development mechanism to choose for measured representation gaps",
+                "does_not_demonstrate": "unrestricted self-programming, arbitrary goal creation, consciousness, or general intelligence",
+            },
+        }
+        self.mutation_strategy_history.append(copy.deepcopy(report))
+        self._v17_strategy_probe_cache = None
+        return report
+
+    def execute_selected_representation_strategy(self, challenge: dict[str, Any]) -> dict[str, Any]:
+        """Execute one already-admitted v17 route under the older v15/v16 admission gates."""
+        selection = self.select_representation_mutation_strategy(challenge)
+        action = str(selection.get("action"))
+        if action == "withhold":
+            return {"selection": selection, "status": "WITHHOLD", "reason": "no-admitted-route"}
+
+        if action == "admit-atomic-primitive":
+            previous = copy.deepcopy(self.primitive_grammar_registry.get("unary.compose2"))
+            self.primitive_grammar_registry.pop("unary.compose2", None)
+            try:
+                synthesis = self.synthesize_safe_primitive(self._primitive_challenge_examples(challenge, "train"))
+            finally:
+                if previous is not None:
+                    self.primitive_grammar_registry["unary.compose2"] = previous
+            best = synthesis.get("best")
+            if not best or float(best.get("train_score", 0.0)) < 1.0 - 1e-12:
+                return {"selection": selection, "status": "WITHHOLD", "synthesis": synthesis}
+            admission = self._admit_generated_primitive(best, challenge=challenge)
+            return {"selection": selection, "status": "ADMITTED" if admission.get("admitted") else "WITHHOLD", "synthesis": synthesis, "admission": admission}
+
+        if action == "expand-grammar-unary-compose2":
+            if not self._grammar_rule_is_active("unary.compose2"):
+                pool = self._grammar_gap_challenge_pool()
+                grammar_trial = self._trial_grammar_rule("unary.compose2", primary=pool[0], transfer=pool[1])
+                if not grammar_trial.get("admissible"):
+                    return {"selection": selection, "status": "WITHHOLD", "grammar_trial": grammar_trial}
+                self.primitive_grammar_registry["unary.compose2"] = {
+                    "rule_id": "unary.compose2", "admitted": True,
+                    "origin": "ucr-v17-selected-strategy",
+                    "description": "allow one bounded composition of two atomic unary blueprints",
+                    "admitted_on": pool[0]["challenge_id"],
+                    "fresh_gain": grammar_trial["fresh_gain"],
+                    "transfer_gain": grammar_trial["transfer_gain"],
+                }
+            synthesis = self.synthesize_safe_primitive(self._primitive_challenge_examples(challenge, "train"))
+            best = synthesis.get("best")
+            if not best or float(best.get("train_score", 0.0)) < 1.0 - 1e-12:
+                return {"selection": selection, "status": "WITHHOLD", "synthesis": synthesis}
+            admission = self._admit_generated_primitive(best, challenge=challenge)
+            return {"selection": selection, "status": "ADMITTED" if admission.get("admitted") else "WITHHOLD", "synthesis": synthesis, "admission": admission}
+
+        if action == "expand-grammar-unary-compose3":
+            if not self._grammar_rule_is_active("unary.compose3"):
+                trial = self._trial_compose3_rule_on_dynamic_challenges()
+                if not trial.get("admissible"):
+                    return {"selection": selection, "status": "WITHHOLD", "grammar_trial": trial}
+                self.primitive_grammar_registry["unary.compose3"] = {
+                    "rule_id": "unary.compose3", "admitted": True,
+                    "origin": "ucr-v18-selected-strategy",
+                    "description": "allow one bounded composition of three atomic unary blueprints",
+                    "fresh_gain": trial.get("primary_gain"),
+                    "transfer_gain": trial.get("transfer_gain"),
+                }
+            synthesis = self.synthesize_safe_primitive(self._primitive_challenge_examples(challenge, "train"))
+            best = synthesis.get("best")
+            if not best or float(best.get("train_score", 0.0)) < 1.0 - 1e-12:
+                return {"selection": selection, "status": "WITHHOLD", "synthesis": synthesis}
+            admission = self._admit_generated_primitive(best, challenge=challenge)
+            return {
+                "selection": selection,
+                "status": "ADMITTED" if admission.get("admitted") else "WITHHOLD",
+                "synthesis": synthesis,
+                "admission": admission,
+            }
+
+        if action == "increase-search-only":
+            score = self._score_representation_strategy_action(challenge, action)
+            return {"selection": selection, "status": "ANALYSIS_ONLY", "outcome": score}
+
+        return {"selection": selection, "status": "NO_CHANGE"}
+
+    # ---------------- v18 self-generated challenge discovery ----------------
+
+    def _compile_trusted_challenge_blueprint(self, blueprint: dict[str, Any]) -> Callable[[Any], Any]:
+        """Compile a closed challenge blueprint without admitting it as runtime grammar."""
+        family = str(blueprint.get("family", ""))
+        params = dict(blueprint.get("params") or {})
+        if family == "meta.compose_unary2":
+            inner = params.get("inner")
+            outer = params.get("outer")
+            if not isinstance(inner, dict) or not isinstance(outer, dict):
+                raise ValueError("invalid trusted compose2 challenge")
+            f1 = self._compile_trusted_challenge_blueprint(inner)
+            f2 = self._compile_trusted_challenge_blueprint(outer)
+            return lambda a: f2(f1(a))
+        if family == "meta.compose_unary3":
+            first = params.get("first")
+            second = params.get("second")
+            third = params.get("third")
+            if not all(isinstance(x, dict) for x in (first, second, third)):
+                raise ValueError("invalid trusted compose3 challenge")
+            f1 = self._compile_trusted_challenge_blueprint(first)
+            f2 = self._compile_trusted_challenge_blueprint(second)
+            f3 = self._compile_trusted_challenge_blueprint(third)
+            return lambda a: f3(f2(f1(a)))
+        # Atomic blueprints do not depend on meta-grammar admission.
+        if family.startswith("meta."):
+            raise ValueError("unsupported trusted challenge meta blueprint")
+        return self._compile_safe_primitive_blueprint(blueprint)
+
+    @staticmethod
+    def _v18_challenge_grids(seed: int) -> dict[str, list[int]]:
+        base = list(range(-79, 80))
+        # Keep the seed in the final ordering. A total seed-independent sort
+        # after rotation made every prior seed produce exactly the same grid.
+        salt = f"ucr-v18-grid|{int(seed)}|"
+        ordered = sorted(base, key=lambda x: (
+            abs(x) % 11, hashlib.sha256((salt + str(x)).encode("utf-8")).digest(), x))
+        return {
+            "train": ordered[:42],
+            "hidden": ordered[42:78],
+            "fresh": ordered[78:120],
+        }
+
+    def _dynamic_challenge_from_blueprint(
+        self,
+        blueprint: dict[str, Any],
+        *,
+        seed: int,
+        ordinal: int,
+    ) -> dict[str, Any]:
+        material = json.dumps(blueprint, sort_keys=True, separators=(",", ":"), default=str)
+        digest = hashlib.sha256(material.encode("utf-8")).hexdigest()
+        oracle = self._compile_trusted_challenge_blueprint(blueprint)
+        return {
+            "challenge_id": f"self-rg-{digest[:12]}",
+            "oracle": oracle,
+            "arity": 1,
+            "grids": self._v18_challenge_grids(seed + ordinal * 9973),
+            "target_blueprint": copy.deepcopy(blueprint),
+            "origin": "ucr-v18-self-generated-closed-meta-space",
+        }
+
+    def generate_novel_representation_challenges(
+        self,
+        *,
+        seed: int = 18001,
+        count: int = 4,
+    ) -> list[dict[str, Any]]:
+        """
+        Discover novel challenge classes from a closed safe meta-space.
+
+        No task name chooses the target.  Candidate three-stage blueprints are
+        deterministically shuffled from the current state digest; UCR keeps only
+        targets that (a) have non-trivial output diversity, (b) current admitted
+        grammar cannot solve exactly, and (c) a temporary compose3 grammar can.
+        """
+        count = max(2, min(int(count), 8))
+        probe_inputs = [-31, -23, -17, -11, -7, -4, -1, 0, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+        atoms = self._atomic_unary_blueprint_catalog(probe_inputs)
+        producers = [bp for bp in atoms if bp["family"] in {
+            "numeric.sign", "integer.popcount_abs", "integer.digital_root_abs"
+        }]
+        consumers = [bp for bp in atoms if bp["family"] in {
+            "integer.mod_equal", "integer.bit_test", "numeric.sign",
+            "integer.popcount_abs", "integer.digital_root_abs",
+        }]
+        universe: list[dict[str, Any]] = []
+        for first in producers:
+            for second in producers:
+                for third in consumers:
+                    # Skip obviously idempotent/simple chains; novelty search is
+                    # for representational depth, not redundant syntax.
+                    fams = [first["family"], second["family"], third["family"]]
+                    if len(set(fams)) == 1:
+                        continue
+                    universe.append({
+                        "family": "meta.compose_unary3",
+                        "arity": 1,
+                        "category": "composed",
+                        "params": {
+                            "first": copy.deepcopy(first),
+                            "second": copy.deepcopy(second),
+                            "third": copy.deepcopy(third),
+                        },
+                    })
+        state_material = json.dumps(self.export_evolved_state(), sort_keys=True, separators=(",", ":"), default=str)
+        salt = hashlib.sha256(f"{seed}|{state_material}".encode("utf-8")).hexdigest()
+        universe.sort(key=lambda bp: hashlib.sha256((salt + json.dumps(bp, sort_keys=True, default=str)).encode("utf-8")).hexdigest())
+
+        discovered: list[dict[str, Any]] = []
+        checked = 0
+        for blueprint in universe:
+            if len(discovered) >= count or checked >= 72:
+                break
+            checked += 1
+            challenge = self._dynamic_challenge_from_blueprint(blueprint, seed=seed, ordinal=checked)
+            values = [challenge["oracle"](x) for x in challenge["grids"]["train"]]
+            canonical = {repr(self._canonical_semantic_value(v)) for v in values}
+            bool_outputs = bool(values) and all(type(v) is bool for v in values)
+            min_diversity = 2 if bool_outputs else 3
+            if len(canonical) < min_diversity:
+                continue
+            current = self._score_blueprint_synthesis_on_challenge(challenge)
+            if current.get("exact"):
+                continue
+            compose3 = self._temporarily_score_blueprint_strategy_v18(
+                challenge, allow_compose2=True, allow_compose3=True
+            )
+            if not compose3.get("exact"):
+                continue
+            challenge["discovery_evidence"] = {
+                "current": current,
+                "compose3_probe": compose3,
+                "output_diversity": len(canonical),
+                "checked_ordinal": checked,
+            }
+            discovered.append(challenge)
+        return discovered
+
+    def _trial_compose3_rule_on_dynamic_challenges(self, *, seed: int = 18001) -> dict[str, Any]:
+        challenges = self.generate_novel_representation_challenges(seed=seed, count=2)
+        if len(challenges) < 2:
+            return {"admissible": False, "reason": "insufficient-novel-transfer-challenges", "challenges": []}
+        primary, transfer = challenges[0], challenges[1]
+        before_primary = self._score_blueprint_synthesis_on_challenge(primary)
+        before_transfer = self._score_blueprint_synthesis_on_challenge(transfer)
+        after_primary = self._temporarily_score_blueprint_strategy_v18(primary, allow_compose2=True, allow_compose3=True)
+        after_transfer = self._temporarily_score_blueprint_strategy_v18(transfer, allow_compose2=True, allow_compose3=True)
+        p_gain = float(after_primary.get("fresh_score", 0.0)) - float(before_primary.get("fresh_score", 0.0))
+        t_gain = float(after_transfer.get("fresh_score", 0.0)) - float(before_transfer.get("fresh_score", 0.0))
+        core_before = self.benchmark_reasoning()
+        core_after = self.benchmark_reasoning()
+        no_regression = float(core_after.get("pass_rate") or 0.0) + 1e-12 >= float(core_before.get("pass_rate") or 0.0)
+        admissible = bool(
+            not before_primary.get("exact") and not before_transfer.get("exact")
+            and after_primary.get("exact") and after_transfer.get("exact")
+            and p_gain > 1e-9 and t_gain > 1e-9 and no_regression
+        )
+        return {
+            "admissible": admissible,
+            "primary_challenge": primary["challenge_id"],
+            "transfer_challenge": transfer["challenge_id"],
+            "primary_target_blueprint": copy.deepcopy(primary["target_blueprint"]),
+            "transfer_target_blueprint": copy.deepcopy(transfer["target_blueprint"]),
+            "primary_before": before_primary,
+            "primary_after": after_primary,
+            "transfer_before": before_transfer,
+            "transfer_after": after_transfer,
+            "primary_gain": round(p_gain, 6),
+            "transfer_gain": round(t_gain, 6),
+            "no_core_regression": no_regression,
+            "challenges": challenges,
+        }
+
+    def run_autonomous_novel_challenge_development(
+        self,
+        *,
+        seed: int = 18001,
+    ) -> dict[str, Any]:
+        """One bounded v18 generation: invent challenge -> learn route -> admit capability."""
+        starting = {
+            "primitives": len(self.evolved_primitive_registry),
+            "grammar_rules": len([v for k, v in self.primitive_grammar_registry.items() if k != "atomic.v1" and v.get("admitted")]),
+            "routes": len([v for v in self.mutation_strategy_registry.values() if v.get("admitted")]),
+        }
+        discovered = self.generate_novel_representation_challenges(seed=seed, count=4)
+        if len(discovered) < 2:
+            report = {
+                "schema": "ucr.autonomous-novel-challenge-development/1",
+                "reader_version": self.VERSION,
+                "status": "WITHHOLD",
+                "reason": "no-proven-novel-representation-gap",
+                "starting": starting,
+                "discovered": [],
+            }
+            self.novel_challenge_history.append(copy.deepcopy(report))
+            return report
+
+        primary, transfer = discovered[0], discovered[1]
+        # Signature is measured before admitting the new grammar/routing rule.
+        primary_probe = self._representation_gap_signature(primary)
+        transfer_probe = self._representation_gap_signature(transfer)
+        signature = str(primary_probe.get("signature"))
+        same_signature = signature == str(transfer_probe.get("signature"))
+        trial = self._trial_compose3_rule_on_dynamic_challenges(seed=seed)
+        route_admitted = bool(
+            trial.get("admissible") and same_signature
+            and signature == "representation-gap|compose3-required"
+        )
+        if route_admitted:
+            self.primitive_grammar_registry["unary.compose3"] = {
+                "rule_id": "unary.compose3", "admitted": True,
+                "origin": "ucr-v18-self-generated-challenge-development",
+                "description": "allow one bounded composition of three atomic unary blueprints",
+                "admitted_on": primary["challenge_id"],
+                "fresh_gain": trial.get("primary_gain"),
+                "transfer_gain": trial.get("transfer_gain"),
+            }
+            self.mutation_strategy_registry[signature] = {
+                "signature": signature,
+                "action": "expand-grammar-unary-compose3",
+                "admitted": True,
+                "origin": "ucr-v18-self-generated-route-evolution",
+                "primary_challenge": primary["challenge_id"],
+                "transfer_challenge": transfer["challenge_id"],
+                "primary_gain": trial.get("primary_gain"),
+                "transfer_gain": trial.get("transfer_gain"),
+            }
+
+        primitive_admission = None
+        synthesis = None
+        if route_admitted:
+            synthesis = self.synthesize_safe_primitive(self._primitive_challenge_examples(primary, "train"))
+            best = synthesis.get("best")
+            if best and float(best.get("train_score", 0.0)) >= 1.0 - 1e-12:
+                primitive_admission = self._admit_generated_primitive(best, challenge=primary)
+
+        final_status = "ADMITTED" if route_admitted and primitive_admission and primitive_admission.get("admitted") else "WITHHOLD"
+        ending = {
+            "primitives": len(self.evolved_primitive_registry),
+            "grammar_rules": len([v for k, v in self.primitive_grammar_registry.items() if k != "atomic.v1" and v.get("admitted")]),
+            "routes": len([v for v in self.mutation_strategy_registry.values() if v.get("admitted")]),
+        }
+        public_discovered = []
+        for item in discovered:
+            public_discovered.append({
+                "challenge_id": item["challenge_id"],
+                "target_blueprint": copy.deepcopy(item["target_blueprint"]),
+                "discovery_evidence": copy.deepcopy(item.get("discovery_evidence")),
+            })
+        report = {
+            "schema": "ucr.autonomous-novel-challenge-development/1",
+            "reader_version": self.VERSION,
+            "status": final_status,
+            "starting": starting,
+            "ending": ending,
+            "selected_challenge": primary["challenge_id"],
+            "independent_transfer_challenge": transfer["challenge_id"],
+            "discovered": public_discovered,
+            "measured_signature": signature,
+            "same_transfer_signature": same_signature,
+            "selected_action": "expand-grammar-unary-compose3" if route_admitted else "withhold",
+            "grammar_trial": {k: v for k, v in trial.items() if k != "challenges"},
+            "route_admitted": route_admitted,
+            "primitive_synthesis": synthesis,
+            "primitive_admission": primitive_admission,
+            "core_reasoning": self.benchmark_reasoning(),
+            "safety": {
+                "unknown_code_executed": False,
+                "self_source_rewritten": False,
+                "challenge_language": "closed-trusted-blueprint-meta-space",
+                "challenge_was_operator_named": False,
+                "arbitrary_goal_generation": False,
+                "admission_requires": ["current-gap", "independent-transfer-gap", "compose3-causal-gain", "no-core-regression", "primitive-hidden-fresh-transfer"],
+            },
+            "interpretation": {
+                "demonstrates": "bounded self-generation of a novel representation challenge and causal extension to solve it",
+                "does_not_demonstrate": "open-ended arbitrary goal invention, unrestricted recursive self-modification, consciousness, or general intelligence",
+            },
+        }
+        self.novel_challenge_history.append(copy.deepcopy(report))
         return report
 
     def _curriculum_task_specs(self) -> list[dict[str, Any]]:

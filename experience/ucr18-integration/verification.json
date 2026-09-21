@@ -1,0 +1,44 @@
+{
+  "base_commit": "1ec16e83224c1ae118e1a9f391a629575c73012b",
+  "cold_replay": {
+    "events": 124,
+    "exit_code": 0,
+    "head": "c4cd50dd09dabe29c90ba4b8a77eb08d17a2a634e800d45edd5d44d9ceef7c4a",
+    "status": "PASS"
+  },
+  "new_admissions": 0,
+  "reader_version": "18.0",
+  "regression": {
+    "passed": 192,
+    "skills": 21,
+    "total": 192
+  },
+  "release": {
+    "runtime_files": 22,
+    "status": "PASS",
+    "tool_files": 3,
+    "version": "0.9.0"
+  },
+  "schema": "nova.ucr18-verification.v1",
+  "standalone_ucr_probe": {
+    "grammar_rules": 2,
+    "mutation_routes": 1,
+    "new_challenges": 4,
+    "nova_admissions": 0,
+    "novel_status_reported_by_ucr": "ADMITTED",
+    "primitives": 2,
+    "reader_version": "18.0",
+    "roundtrip_checks": 16,
+    "roundtrip_passed": true,
+    "schema": "nova.ucr18-feature-probe-result.v1",
+    "validation_boundary": "discovery and strategy selection inspect internal evaluation splits; these are diagnostic, not independent Nova holdouts"
+  },
+  "ucr_used_by_kernel": true,
+  "unit_tests": {
+    "exit_code": 0,
+    "passed": 128,
+    "total": 128
+  },
+  "uploaded_source_sha256": "9dfba15fed84f04af77558da9dfd5e0d5279af169b0bc90bef073f55d33b39d4",
+  "v8_unchanged_inference_methods": 22
+}

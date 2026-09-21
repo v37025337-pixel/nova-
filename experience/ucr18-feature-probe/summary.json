@@ -1,0 +1,13 @@
+{
+  "grammar_rules": 2,
+  "mutation_routes": 1,
+  "new_challenges": 4,
+  "nova_admissions": 0,
+  "novel_status_reported_by_ucr": "ADMITTED",
+  "primitives": 2,
+  "reader_version": "18.0",
+  "roundtrip_checks": 16,
+  "roundtrip_passed": true,
+  "schema": "nova.ucr18-feature-probe-result.v1",
+  "validation_boundary": "discovery and strategy selection inspect internal evaluation splits; these are diagnostic, not independent Nova holdouts"
+}

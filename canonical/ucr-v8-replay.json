@@ -1,0 +1,30 @@
+{
+  "base_commit": "1ec16e83224c1ae118e1a9f391a629575c73012b",
+  "method_source_sha256": {
+    "_apply_semantic_primitive": "20dc0c9066f5fc4d1c48879cf8435e0b4730ef0e91e08661b476cf61b1f89ac4",
+    "_canonical_semantic_value": "32f6914fa4b54196b9392c7ea1eb6ccae068f60cbb0b917e89d5f87316597efa",
+    "_decode_lossless": "6ef507a36a73479e054d4519f09f01834bf36565ef7dcc21fa0f4327f4b58b3c",
+    "_evaluate_reasoning_tree": "afce8f7943ff9a608cf8f74fd43c60524b0754c5e171e32fd5e6a7e6924b1f94",
+    "_expected_for_semantic_form": "770ecce65d7742b6ee7c00a668945d8ba46eaa1b9dffe644d11380f9cd5dcd68",
+    "_extract_semantic_forms": "ac2ffa29ea6c91cf956d726e2288f8e36ce24d4fd5adcc19f9155af98795a642",
+    "_is_safe_semantic_value": "4fed0cf658873caadb9e3076a1941e3e6704d820da0d5fcd30c060c94cb5f1bb",
+    "_looks_binary_text": "5eb3bf5bf80cab143deb0cf76dd8ec5d4dca93310fed2ed959479c116a897649",
+    "_magic_language": "50710b6464eb855d25607aa5d8a3c7e52da8c393c990546f3c108cd055c754e3",
+    "_reasoning_behavioral_digest": "ed09b30bfda81c58e65911aa8813f68673cd0c45dcf7a4921f1363bcda23dd28",
+    "_reasoning_profile": "d44eb4139437b541af5774cf078a97a76470f3ff6c2cd31a28e615ba75c05782",
+    "_reasoning_tree_complexity": "3980b1f8c1d5b87f8a1e31b73cda2122a182bd6bacda698a3941f11409e58035",
+    "_reasoning_tree_text": "346d55cf176686e6338334b4ce42cae2a80f53251f9a9729ab29fa615a313b6f",
+    "_resolve_semantic_operand": "94aca6c394d575198df8434af8a91c1173a0ffc7c6f7afd29bde03cf4357af5f",
+    "_score_reasoning_tree": "00de717809a0003d809c1fedffaeaa4fe895eb5ce7570e25e3d9cb3c084215b4",
+    "_semantic_equal": "1d00c54c2d8863a15c7b0691b56e1064bab2850be2fc55895914ef96daae3df9",
+    "_split_simple_arguments": "8002031af8bfa0a5c22a612711fa136ebfcf95faba9acd5ffe2a0009e5827340",
+    "_suggest_compositional_probes": "a5f5fdfc5332166e893989eb50e26f5e70d12cbe20b47a470478d791c416d12e",
+    "_synthesize_reasoning_trees": "87404a5cc72ffb4302cef9968afc182dd1b81c6e2ff173cfa182fb00a180d011",
+    "_tokenize": "55b877655d0ab8562bf9fd4dd467e23703e1cf2e073d51fa5213ccd1c8466c20",
+    "infer_compositional_reasoning": "3a232f195400569ed37f093e94fdd39d10575861a434d82c3be2a868b92fd0ab",
+    "register_semantic_primitive": "fa65c0b61aa3fe3492900e42dbad87653a6693d1f6fab0fcadd392d7e015c4f1"
+  },
+  "reader_source_sha256": "19b6406ce896e20d7066cbcf52830c990c990640503068d43b4ccfcc17e30b36",
+  "schema": "nova.ucr-v8-replay-source.v1",
+  "scope": "v8 native-registered primitive induction; historical receipt version stays 16.0; v9 uses actual current reader version"
+}
