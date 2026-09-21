@@ -1,0 +1,106 @@
+{
+  "grammar_rules": [
+    {
+      "admitted": true,
+      "admitted_on": "grammar-rg-02",
+      "description": "allow one bounded composition of two atomic unary blueprints",
+      "fresh_gain": 0.4,
+      "origin": "ucr-v16-autonomous-grammar-evolution",
+      "rule_id": "unary.compose2",
+      "transfer_gain": 0.3
+    },
+    {
+      "admitted": true,
+      "admitted_on": "self-rg-0adb6afe55a8",
+      "description": "allow one bounded composition of three atomic unary blueprints",
+      "fresh_gain": 0.357143,
+      "origin": "ucr-v18-self-generated-challenge-development",
+      "rule_id": "unary.compose3",
+      "transfer_gain": 0.095238
+    }
+  ],
+  "mutation_strategy_routes": [
+    {
+      "action": "expand-grammar-unary-compose3",
+      "admitted": true,
+      "origin": "ucr-v18-self-generated-route-evolution",
+      "primary_challenge": "self-rg-0adb6afe55a8",
+      "primary_gain": 0.357143,
+      "signature": "representation-gap|compose3-required",
+      "transfer_challenge": "self-rg-80d8b5688a70",
+      "transfer_gain": 0.095238
+    }
+  ],
+  "primitives": [
+    {
+      "admitted_on": "self-rg-0adb6afe55a8",
+      "blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary3",
+        "params": {
+          "first": {
+            "arity": 1,
+            "category": "arithmetic",
+            "family": "integer.digital_root_abs",
+            "params": {}
+          },
+          "second": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "third": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.bit_test",
+            "params": {
+              "bit": 1,
+              "expected": 1
+            }
+          }
+        }
+      },
+      "causal_gain": 0.261905,
+      "fresh_score": 1.0,
+      "hidden_score": 1.0,
+      "machine_id": "evolved.p_0adb6afe55a80302",
+      "train_score": 1.0,
+      "transfer_score": 1.0
+    },
+    {
+      "admitted_on": "grammar-rg-02",
+      "blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary2",
+        "params": {
+          "inner": {
+            "arity": 1,
+            "category": "arithmetic",
+            "family": "integer.digital_root_abs",
+            "params": {}
+          },
+          "outer": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.bit_test",
+            "params": {
+              "bit": 0,
+              "expected": 0
+            }
+          }
+        }
+      },
+      "causal_gain": 0.3,
+      "fresh_score": 1.0,
+      "hidden_score": 1.0,
+      "machine_id": "evolved.p_9b88b7bdc51e1288",
+      "train_score": 1.0,
+      "transfer_score": 1.0
+    }
+  ],
+  "reader_version": "18.0",
+  "schema": "ucr.evolved-state/4"
+}

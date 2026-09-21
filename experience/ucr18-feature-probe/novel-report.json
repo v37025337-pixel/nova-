@@ -1,0 +1,1472 @@
+{
+  "core_reasoning": {
+    "interpretation": {
+      "does_not_measure": "general intelligence, consciousness, human IQ, unrestricted reasoning",
+      "measures": "bounded compositional induction, holdout generalization, ambiguity handling"
+    },
+    "pass_rate": 1.0,
+    "passed": 4,
+    "profile": {
+      "active_learning_probe_fraction": 0.25,
+      "ambiguity_rate": 0.0,
+      "bounded_reasoning_index": 0.9625,
+      "claim": "not a measure of general intelligence or IQ",
+      "compositional_success_fraction": 0.75,
+      "generalization": 1.0,
+      "holdout_supported_fraction": 1.0,
+      "mean_confidence": 1.0,
+      "status": "bounded-evidence-profile"
+    },
+    "reader_version": "18.0",
+    "results": [
+      {
+        "confidence": 1.0,
+        "depth": 1,
+        "holdout_score": 1.0,
+        "pass": true,
+        "recovered_expression": "numeric.add(a, b)",
+        "status": "holdout-supported",
+        "task": "direct_addition",
+        "train_score": 1.0
+      },
+      {
+        "confidence": 1.0,
+        "depth": 2,
+        "holdout_score": 1.0,
+        "pass": true,
+        "recovered_expression": "numeric.add(numeric.multiply(a, b), c)",
+        "status": "holdout-supported",
+        "task": "multiply_then_add",
+        "train_score": 1.0
+      },
+      {
+        "confidence": 1.0,
+        "depth": 2,
+        "holdout_score": 1.0,
+        "pass": true,
+        "recovered_expression": "numeric.multiply(numeric.add(a, b), c)",
+        "status": "holdout-supported",
+        "task": "add_then_multiply",
+        "train_score": 1.0
+      },
+      {
+        "confidence": 1.0,
+        "depth": 2,
+        "holdout_score": 1.0,
+        "pass": true,
+        "recovered_expression": "boolean.and(relation.greater(b, a), relation.greater(c, b))",
+        "status": "holdout-supported",
+        "task": "relational_chain",
+        "train_score": 1.0
+      }
+    ],
+    "schema": "ucr.reasoning-benchmark/1",
+    "task_count": 4
+  },
+  "discovered": [
+    {
+      "challenge_id": "self-rg-0adb6afe55a8",
+      "discovery_evidence": {
+        "checked_ordinal": 5,
+        "compose3_probe": {
+          "best": {
+            "behavioral_digest": "a1ada5ced8c45597956d18e346a288e4798dac8af15baf8ed867a7d46992c0a7",
+            "blueprint": {
+              "arity": 1,
+              "category": "composed",
+              "family": "meta.compose_unary3",
+              "params": {
+                "first": {
+                  "arity": 1,
+                  "category": "arithmetic",
+                  "family": "integer.digital_root_abs",
+                  "params": {}
+                },
+                "second": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.popcount_abs",
+                  "params": {}
+                },
+                "third": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.bit_test",
+                  "params": {
+                    "bit": 1,
+                    "expected": 1
+                  }
+                }
+              }
+            },
+            "complexity": 16,
+            "machine_id": "evolved.p_0adb6afe55a80302",
+            "train_matched": 42,
+            "train_score": 1.0,
+            "train_total": 42
+          },
+          "challenge_id": "self-rg-0adb6afe55a8",
+          "exact": true,
+          "fresh_score": 1.0,
+          "hidden_score": 1.0,
+          "train_score": 1.0
+        },
+        "current": {
+          "best": {
+            "behavioral_digest": "d34b833108898686e8baed13b5a0fb8855b813827033175503924240027eea5e",
+            "blueprint": {
+              "arity": 1,
+              "category": "composed",
+              "family": "meta.compose_unary2",
+              "params": {
+                "inner": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.popcount_abs",
+                  "params": {}
+                },
+                "outer": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.mod_equal",
+                  "params": {
+                    "modulus": 2,
+                    "residue": 0
+                  }
+                }
+              }
+            },
+            "complexity": 10,
+            "machine_id": "evolved.p_1664cf7ce892185e",
+            "train_matched": 39,
+            "train_score": 0.928571,
+            "train_total": 42
+          },
+          "challenge_id": "self-rg-0adb6afe55a8",
+          "exact": false,
+          "fresh_score": 0.642857,
+          "hidden_score": 0.583333,
+          "train_score": 0.928571
+        },
+        "output_diversity": 2
+      },
+      "target_blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary3",
+        "params": {
+          "first": {
+            "arity": 1,
+            "category": "arithmetic",
+            "family": "integer.digital_root_abs",
+            "params": {}
+          },
+          "second": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "third": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.bit_test",
+            "params": {
+              "bit": 1,
+              "expected": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "challenge_id": "self-rg-80d8b5688a70",
+      "discovery_evidence": {
+        "checked_ordinal": 8,
+        "compose3_probe": {
+          "best": {
+            "behavioral_digest": "105937119044001481e872e6f537fc9fd23a960ea2125c5962b97a8b1a43e67e",
+            "blueprint": {
+              "arity": 1,
+              "category": "composed",
+              "family": "meta.compose_unary3",
+              "params": {
+                "first": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.popcount_abs",
+                  "params": {}
+                },
+                "second": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.popcount_abs",
+                  "params": {}
+                },
+                "third": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.mod_equal",
+                  "params": {
+                    "modulus": 2,
+                    "residue": 0
+                  }
+                }
+              }
+            },
+            "complexity": 15,
+            "machine_id": "evolved.p_5ae41a47cb7a7e9c",
+            "train_matched": 42,
+            "train_score": 1.0,
+            "train_total": 42
+          },
+          "challenge_id": "self-rg-80d8b5688a70",
+          "exact": true,
+          "fresh_score": 1.0,
+          "hidden_score": 1.0,
+          "train_score": 1.0
+        },
+        "current": {
+          "best": {
+            "behavioral_digest": "85baf4baa2049fb778f4f4afb3e13d5d98a65985a1655e9d35024413ee26bae5",
+            "blueprint": {
+              "arity": 1,
+              "category": "composed",
+              "family": "meta.compose_unary2",
+              "params": {
+                "inner": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.popcount_abs",
+                  "params": {}
+                },
+                "outer": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.mod_equal",
+                  "params": {
+                    "modulus": 3,
+                    "residue": 0
+                  }
+                }
+              }
+            },
+            "complexity": 10,
+            "machine_id": "evolved.p_fefebfac4e594dc5",
+            "train_matched": 39,
+            "train_score": 0.928571,
+            "train_total": 42
+          },
+          "challenge_id": "self-rg-80d8b5688a70",
+          "exact": false,
+          "fresh_score": 0.904762,
+          "hidden_score": 0.861111,
+          "train_score": 0.928571
+        },
+        "output_diversity": 2
+      },
+      "target_blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary3",
+        "params": {
+          "first": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "second": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "third": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.bit_test",
+            "params": {
+              "bit": 0,
+              "expected": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "challenge_id": "self-rg-d2555a96d825",
+      "discovery_evidence": {
+        "checked_ordinal": 13,
+        "compose3_probe": {
+          "best": {
+            "behavioral_digest": "3db2a7dc9719f817b635b130bde12b69cd3a53fd2c650f2c7a402f4c494126e8",
+            "blueprint": {
+              "arity": 1,
+              "category": "composed",
+              "family": "meta.compose_unary3",
+              "params": {
+                "first": {
+                  "arity": 1,
+                  "category": "arithmetic",
+                  "family": "integer.digital_root_abs",
+                  "params": {}
+                },
+                "second": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.popcount_abs",
+                  "params": {}
+                },
+                "third": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.mod_equal",
+                  "params": {
+                    "modulus": 3,
+                    "residue": 1
+                  }
+                }
+              }
+            },
+            "complexity": 16,
+            "machine_id": "evolved.p_31a68848c1b1c8bc",
+            "train_matched": 42,
+            "train_score": 1.0,
+            "train_total": 42
+          },
+          "challenge_id": "self-rg-d2555a96d825",
+          "exact": true,
+          "fresh_score": 1.0,
+          "hidden_score": 1.0,
+          "train_score": 1.0
+        },
+        "current": {
+          "best": {
+            "behavioral_digest": "be905b42358032eb53dc5fdcb88052d0d2fdd71b07b12d42f14e47183c8afdc8",
+            "blueprint": {
+              "arity": 1,
+              "category": "composed",
+              "family": "meta.compose_unary2",
+              "params": {
+                "inner": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.popcount_abs",
+                  "params": {}
+                },
+                "outer": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.bit_test",
+                  "params": {
+                    "bit": 0,
+                    "expected": 1
+                  }
+                }
+              }
+            },
+            "complexity": 10,
+            "machine_id": "evolved.p_d049ff42b091326c",
+            "train_matched": 40,
+            "train_score": 0.952381,
+            "train_total": 42
+          },
+          "challenge_id": "self-rg-d2555a96d825",
+          "exact": false,
+          "fresh_score": 0.619048,
+          "hidden_score": 0.583333,
+          "train_score": 0.952381
+        },
+        "output_diversity": 2
+      },
+      "target_blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary3",
+        "params": {
+          "first": {
+            "arity": 1,
+            "category": "arithmetic",
+            "family": "integer.digital_root_abs",
+            "params": {}
+          },
+          "second": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "third": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.mod_equal",
+            "params": {
+              "modulus": 4,
+              "residue": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "challenge_id": "self-rg-3e9c258199e1",
+      "discovery_evidence": {
+        "checked_ordinal": 23,
+        "compose3_probe": {
+          "best": {
+            "behavioral_digest": "282eaa41fad3f0028bd5fef35328337898e63764954bd07533a64ad4d67a6af5",
+            "blueprint": {
+              "arity": 1,
+              "category": "composed",
+              "family": "meta.compose_unary3",
+              "params": {
+                "first": {
+                  "arity": 1,
+                  "category": "arithmetic",
+                  "family": "integer.digital_root_abs",
+                  "params": {}
+                },
+                "second": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.popcount_abs",
+                  "params": {}
+                },
+                "third": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.mod_equal",
+                  "params": {
+                    "modulus": 3,
+                    "residue": 0
+                  }
+                }
+              }
+            },
+            "complexity": 16,
+            "machine_id": "evolved.p_3e9c258199e119b7",
+            "train_matched": 42,
+            "train_score": 1.0,
+            "train_total": 42
+          },
+          "challenge_id": "self-rg-3e9c258199e1",
+          "exact": true,
+          "fresh_score": 1.0,
+          "hidden_score": 1.0,
+          "train_score": 1.0
+        },
+        "current": {
+          "best": {
+            "behavioral_digest": "e1804f09bd25b74ff2468199862478872e31929eb4fb3a3899f5951a9301adef",
+            "blueprint": {
+              "arity": 1,
+              "category": "composed",
+              "family": "meta.compose_unary2",
+              "params": {
+                "inner": {
+                  "arity": 1,
+                  "category": "arithmetic",
+                  "family": "numeric.sign",
+                  "params": {}
+                },
+                "outer": {
+                  "arity": 1,
+                  "category": "bitwise",
+                  "family": "integer.mod_equal",
+                  "params": {
+                    "modulus": 5,
+                    "residue": 0
+                  }
+                }
+              }
+            },
+            "complexity": 9,
+            "machine_id": "evolved.p_04d896371322572e",
+            "train_matched": 39,
+            "train_score": 0.928571,
+            "train_total": 42
+          },
+          "challenge_id": "self-rg-3e9c258199e1",
+          "exact": false,
+          "fresh_score": 0.857143,
+          "hidden_score": 0.833333,
+          "train_score": 0.928571
+        },
+        "output_diversity": 2
+      },
+      "target_blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary3",
+        "params": {
+          "first": {
+            "arity": 1,
+            "category": "arithmetic",
+            "family": "integer.digital_root_abs",
+            "params": {}
+          },
+          "second": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "third": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.mod_equal",
+            "params": {
+              "modulus": 3,
+              "residue": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "ending": {
+    "grammar_rules": 2,
+    "primitives": 2,
+    "routes": 1
+  },
+  "grammar_trial": {
+    "admissible": true,
+    "no_core_regression": true,
+    "primary_after": {
+      "best": {
+        "behavioral_digest": "a1ada5ced8c45597956d18e346a288e4798dac8af15baf8ed867a7d46992c0a7",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.bit_test",
+              "params": {
+                "bit": 1,
+                "expected": 1
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_0adb6afe55a80302",
+        "train_matched": 42,
+        "train_score": 1.0,
+        "train_total": 42
+      },
+      "challenge_id": "self-rg-0adb6afe55a8",
+      "exact": true,
+      "fresh_score": 1.0,
+      "hidden_score": 1.0,
+      "train_score": 1.0
+    },
+    "primary_before": {
+      "best": {
+        "behavioral_digest": "d34b833108898686e8baed13b5a0fb8855b813827033175503924240027eea5e",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary2",
+          "params": {
+            "inner": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "outer": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 2,
+                "residue": 0
+              }
+            }
+          }
+        },
+        "complexity": 10,
+        "machine_id": "evolved.p_1664cf7ce892185e",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      "challenge_id": "self-rg-0adb6afe55a8",
+      "exact": false,
+      "fresh_score": 0.642857,
+      "hidden_score": 0.583333,
+      "train_score": 0.928571
+    },
+    "primary_challenge": "self-rg-0adb6afe55a8",
+    "primary_gain": 0.357143,
+    "primary_target_blueprint": {
+      "arity": 1,
+      "category": "composed",
+      "family": "meta.compose_unary3",
+      "params": {
+        "first": {
+          "arity": 1,
+          "category": "arithmetic",
+          "family": "integer.digital_root_abs",
+          "params": {}
+        },
+        "second": {
+          "arity": 1,
+          "category": "bitwise",
+          "family": "integer.popcount_abs",
+          "params": {}
+        },
+        "third": {
+          "arity": 1,
+          "category": "bitwise",
+          "family": "integer.bit_test",
+          "params": {
+            "bit": 1,
+            "expected": 1
+          }
+        }
+      }
+    },
+    "transfer_after": {
+      "best": {
+        "behavioral_digest": "105937119044001481e872e6f537fc9fd23a960ea2125c5962b97a8b1a43e67e",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 2,
+                "residue": 0
+              }
+            }
+          }
+        },
+        "complexity": 15,
+        "machine_id": "evolved.p_5ae41a47cb7a7e9c",
+        "train_matched": 42,
+        "train_score": 1.0,
+        "train_total": 42
+      },
+      "challenge_id": "self-rg-80d8b5688a70",
+      "exact": true,
+      "fresh_score": 1.0,
+      "hidden_score": 1.0,
+      "train_score": 1.0
+    },
+    "transfer_before": {
+      "best": {
+        "behavioral_digest": "85baf4baa2049fb778f4f4afb3e13d5d98a65985a1655e9d35024413ee26bae5",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary2",
+          "params": {
+            "inner": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "outer": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 3,
+                "residue": 0
+              }
+            }
+          }
+        },
+        "complexity": 10,
+        "machine_id": "evolved.p_fefebfac4e594dc5",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      "challenge_id": "self-rg-80d8b5688a70",
+      "exact": false,
+      "fresh_score": 0.904762,
+      "hidden_score": 0.861111,
+      "train_score": 0.928571
+    },
+    "transfer_challenge": "self-rg-80d8b5688a70",
+    "transfer_gain": 0.095238,
+    "transfer_target_blueprint": {
+      "arity": 1,
+      "category": "composed",
+      "family": "meta.compose_unary3",
+      "params": {
+        "first": {
+          "arity": 1,
+          "category": "bitwise",
+          "family": "integer.popcount_abs",
+          "params": {}
+        },
+        "second": {
+          "arity": 1,
+          "category": "bitwise",
+          "family": "integer.popcount_abs",
+          "params": {}
+        },
+        "third": {
+          "arity": 1,
+          "category": "bitwise",
+          "family": "integer.bit_test",
+          "params": {
+            "bit": 0,
+            "expected": 0
+          }
+        }
+      }
+    }
+  },
+  "independent_transfer_challenge": "self-rg-80d8b5688a70",
+  "interpretation": {
+    "demonstrates": "bounded self-generation of a novel representation challenge and causal extension to solve it",
+    "does_not_demonstrate": "open-ended arbitrary goal invention, unrestricted recursive self-modification, consciousness, or general intelligence"
+  },
+  "measured_signature": "representation-gap|compose3-required",
+  "primitive_admission": {
+    "admitted": true,
+    "admitted_reasoning": {
+      "best_expression": "evolved.p_0adb6afe55a80302(a)",
+      "challenge_id": "self-rg-0adb6afe55a8",
+      "external_audit_score": 1.0,
+      "internal_holdout_score": 1.0,
+      "pass": true,
+      "status": "holdout-supported",
+      "train_score": 1.0
+    },
+    "baseline_reasoning": {
+      "best_expression": "evolved.p_9b88b7bdc51e1288(numeric.decrement(a))",
+      "challenge_id": "self-rg-0adb6afe55a8",
+      "external_audit_score": 0.738095,
+      "internal_holdout_score": 0.7,
+      "pass": false,
+      "status": "weak-hypothesis",
+      "train_score": 0.78125
+    },
+    "blueprint": {
+      "arity": 1,
+      "category": "composed",
+      "family": "meta.compose_unary3",
+      "params": {
+        "first": {
+          "arity": 1,
+          "category": "arithmetic",
+          "family": "integer.digital_root_abs",
+          "params": {}
+        },
+        "second": {
+          "arity": 1,
+          "category": "bitwise",
+          "family": "integer.popcount_abs",
+          "params": {}
+        },
+        "third": {
+          "arity": 1,
+          "category": "bitwise",
+          "family": "integer.bit_test",
+          "params": {
+            "bit": 1,
+            "expected": 1
+          }
+        }
+      }
+    },
+    "candidate_train_score": 1.0,
+    "causal_gain": 0.261905,
+    "causal_improvement": true,
+    "causal_pass_gain": true,
+    "core_after": {
+      "bounded_reasoning_index": null,
+      "pass_rate": 1.0
+    },
+    "core_before": {
+      "bounded_reasoning_index": null,
+      "pass_rate": 1.0
+    },
+    "fresh_score": 1.0,
+    "hidden_score": 1.0,
+    "machine_id": "evolved.p_0adb6afe55a80302",
+    "no_core_regression": true,
+    "rollback": false,
+    "transfer": {
+      "best_expression": "boolean.not(evolved.p_0adb6afe55a80302(a))",
+      "pass": true,
+      "score": 1.0
+    }
+  },
+  "primitive_synthesis": {
+    "best": {
+      "behavioral_digest": "a1ada5ced8c45597956d18e346a288e4798dac8af15baf8ed867a7d46992c0a7",
+      "blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary3",
+        "params": {
+          "first": {
+            "arity": 1,
+            "category": "arithmetic",
+            "family": "integer.digital_root_abs",
+            "params": {}
+          },
+          "second": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.popcount_abs",
+            "params": {}
+          },
+          "third": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.bit_test",
+            "params": {
+              "bit": 1,
+              "expected": 1
+            }
+          }
+        }
+      },
+      "complexity": 16,
+      "machine_id": "evolved.p_0adb6afe55a80302",
+      "train_matched": 42,
+      "train_score": 1.0,
+      "train_total": 42
+    },
+    "candidate_count": 400,
+    "candidates": [
+      {
+        "behavioral_digest": "a1ada5ced8c45597956d18e346a288e4798dac8af15baf8ed867a7d46992c0a7",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.bit_test",
+              "params": {
+                "bit": 1,
+                "expected": 1
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_0adb6afe55a80302",
+        "train_matched": 42,
+        "train_score": 1.0,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "d34b833108898686e8baed13b5a0fb8855b813827033175503924240027eea5e",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary2",
+          "params": {
+            "inner": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "outer": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 2,
+                "residue": 0
+              }
+            }
+          }
+        },
+        "complexity": 10,
+        "machine_id": "evolved.p_1664cf7ce892185e",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "d34b833108898686e8baed13b5a0fb8855b813827033175503924240027eea5e",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary2",
+          "params": {
+            "inner": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "outer": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.bit_test",
+              "params": {
+                "bit": 0,
+                "expected": 0
+              }
+            }
+          }
+        },
+        "complexity": 10,
+        "machine_id": "evolved.p_fa531e23b99a35fc",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "4fde8032341253523309527b5cd9f5a05abbe8111a046ac31a8ec6de84f5f8b1",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 6,
+                "residue": 2
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_05576220665afac5",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "d34b833108898686e8baed13b5a0fb8855b813827033175503924240027eea5e",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.bit_test",
+              "params": {
+                "bit": 0,
+                "expected": 0
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_1bc5444c8adc6f98",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "d34b833108898686e8baed13b5a0fb8855b813827033175503924240027eea5e",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 2,
+                "residue": 0
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_2abacc7f2773b961",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "4fde8032341253523309527b5cd9f5a05abbe8111a046ac31a8ec6de84f5f8b1",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 5,
+                "residue": 2
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_353ce5adc052518c",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "4fde8032341253523309527b5cd9f5a05abbe8111a046ac31a8ec6de84f5f8b1",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 4,
+                "residue": 2
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_3d454d34281c229a",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "4fde8032341253523309527b5cd9f5a05abbe8111a046ac31a8ec6de84f5f8b1",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 3,
+                "residue": 2
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_4c69db3fdc7f4469",
+        "train_matched": 39,
+        "train_score": 0.928571,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "828fe0c36a2c7424f11d5f2ce8cf36439ed2d898c2f1e1b7b1a9d6611dad3384",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.bit_test",
+              "params": {
+                "bit": 0,
+                "expected": 0
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_66e6739c12080008",
+        "train_matched": 38,
+        "train_score": 0.904762,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "828fe0c36a2c7424f11d5f2ce8cf36439ed2d898c2f1e1b7b1a9d6611dad3384",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "arithmetic",
+              "family": "integer.digital_root_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 2,
+                "residue": 0
+              }
+            }
+          }
+        },
+        "complexity": 16,
+        "machine_id": "evolved.p_dacbd7533297f40e",
+        "train_matched": 38,
+        "train_score": 0.904762,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "039ff5c66bc0c5c267fad16a2e8450422b6256d3ef37cd9b75d86436135c3d8d",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 4,
+                "residue": 1
+              }
+            }
+          }
+        },
+        "complexity": 15,
+        "machine_id": "evolved.p_2093bf61ed4af27c",
+        "train_matched": 37,
+        "train_score": 0.880952,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "039ff5c66bc0c5c267fad16a2e8450422b6256d3ef37cd9b75d86436135c3d8d",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 3,
+                "residue": 1
+              }
+            }
+          }
+        },
+        "complexity": 15,
+        "machine_id": "evolved.p_32c6beffa4281b84",
+        "train_matched": 37,
+        "train_score": 0.880952,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "039ff5c66bc0c5c267fad16a2e8450422b6256d3ef37cd9b75d86436135c3d8d",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 2,
+                "residue": 1
+              }
+            }
+          }
+        },
+        "complexity": 15,
+        "machine_id": "evolved.p_5ea57b09352436f4",
+        "train_matched": 37,
+        "train_score": 0.880952,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "039ff5c66bc0c5c267fad16a2e8450422b6256d3ef37cd9b75d86436135c3d8d",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.mod_equal",
+              "params": {
+                "modulus": 6,
+                "residue": 1
+              }
+            }
+          }
+        },
+        "complexity": 15,
+        "machine_id": "evolved.p_6c41e22697a360bc",
+        "train_matched": 37,
+        "train_score": 0.880952,
+        "train_total": 42
+      },
+      {
+        "behavioral_digest": "039ff5c66bc0c5c267fad16a2e8450422b6256d3ef37cd9b75d86436135c3d8d",
+        "blueprint": {
+          "arity": 1,
+          "category": "composed",
+          "family": "meta.compose_unary3",
+          "params": {
+            "first": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "second": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.popcount_abs",
+              "params": {}
+            },
+            "third": {
+              "arity": 1,
+              "category": "bitwise",
+              "family": "integer.bit_test",
+              "params": {
+                "bit": 0,
+                "expected": 1
+              }
+            }
+          }
+        },
+        "complexity": 15,
+        "machine_id": "evolved.p_910b78ec6708bf0b",
+        "train_matched": 37,
+        "train_score": 0.880952,
+        "train_total": 42
+      }
+    ],
+    "reader_version": "18.0",
+    "safety": {
+      "arbitrary_source_compilation": false,
+      "candidate_language": "closed-safe-blueprint-grammar",
+      "unknown_code_executed": false
+    },
+    "schema": "ucr.safe-primitive-synthesis/1"
+  },
+  "reader_version": "18.0",
+  "route_admitted": true,
+  "safety": {
+    "admission_requires": [
+      "current-gap",
+      "independent-transfer-gap",
+      "compose3-causal-gain",
+      "no-core-regression",
+      "primitive-hidden-fresh-transfer"
+    ],
+    "arbitrary_goal_generation": false,
+    "challenge_language": "closed-trusted-blueprint-meta-space",
+    "challenge_was_operator_named": false,
+    "self_source_rewritten": false,
+    "unknown_code_executed": false
+  },
+  "same_transfer_signature": true,
+  "schema": "ucr.autonomous-novel-challenge-development/1",
+  "selected_action": "expand-grammar-unary-compose3",
+  "selected_challenge": "self-rg-0adb6afe55a8",
+  "starting": {
+    "grammar_rules": 1,
+    "primitives": 1,
+    "routes": 0
+  },
+  "status": "ADMITTED"
+}

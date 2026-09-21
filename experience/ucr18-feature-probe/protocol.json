@@ -1,0 +1,14 @@
+{
+  "data": "UCR builtin closed synthetic blueprint curriculum",
+  "nova_generation_changed": false,
+  "reader_sha256": "4f7bd6781727504f89f3407f559db5689a1a0896480b9f4a046ac8a85552be5f",
+  "reader_version": "18.0",
+  "schema": "nova.ucr18-feature-probe.v1",
+  "seed": 18001,
+  "steps": [
+    "grammar_evolution_once",
+    "novel_challenge_development_once",
+    "state_roundtrip"
+  ],
+  "validation_boundary": "discovery and strategy selection inspect internal evaluation splits; these are diagnostic, not independent Nova holdouts"
+}

@@ -1,0 +1,49 @@
+{
+  "grammar_rules": [
+    {
+      "admitted": true,
+      "admitted_on": "grammar-rg-02",
+      "description": "allow one bounded composition of two atomic unary blueprints",
+      "fresh_gain": 0.4,
+      "origin": "ucr-v16-autonomous-grammar-evolution",
+      "rule_id": "unary.compose2",
+      "transfer_gain": 0.3
+    }
+  ],
+  "mutation_strategy_routes": [],
+  "primitives": [
+    {
+      "admitted_on": "grammar-rg-02",
+      "blueprint": {
+        "arity": 1,
+        "category": "composed",
+        "family": "meta.compose_unary2",
+        "params": {
+          "inner": {
+            "arity": 1,
+            "category": "arithmetic",
+            "family": "integer.digital_root_abs",
+            "params": {}
+          },
+          "outer": {
+            "arity": 1,
+            "category": "bitwise",
+            "family": "integer.bit_test",
+            "params": {
+              "bit": 0,
+              "expected": 0
+            }
+          }
+        }
+      },
+      "causal_gain": 0.3,
+      "fresh_score": 1.0,
+      "hidden_score": 1.0,
+      "machine_id": "evolved.p_9b88b7bdc51e1288",
+      "train_score": 1.0,
+      "transfer_score": 1.0
+    }
+  ],
+  "reader_version": "18.0",
+  "schema": "ucr.evolved-state/4"
+}

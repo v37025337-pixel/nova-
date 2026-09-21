@@ -1,0 +1,125 @@
+{
+  "checks": [
+    {
+      "equal": true,
+      "input": -1023,
+      "original": true,
+      "primitive": "evolved.p_0adb6afe55a80302",
+      "restored": true
+    },
+    {
+      "equal": true,
+      "input": -255,
+      "original": true,
+      "primitive": "evolved.p_0adb6afe55a80302",
+      "restored": true
+    },
+    {
+      "equal": true,
+      "input": -81,
+      "original": true,
+      "primitive": "evolved.p_0adb6afe55a80302",
+      "restored": true
+    },
+    {
+      "equal": true,
+      "input": 0,
+      "original": false,
+      "primitive": "evolved.p_0adb6afe55a80302",
+      "restored": false
+    },
+    {
+      "equal": true,
+      "input": 17,
+      "original": false,
+      "primitive": "evolved.p_0adb6afe55a80302",
+      "restored": false
+    },
+    {
+      "equal": true,
+      "input": 128,
+      "original": false,
+      "primitive": "evolved.p_0adb6afe55a80302",
+      "restored": false
+    },
+    {
+      "equal": true,
+      "input": 511,
+      "original": true,
+      "primitive": "evolved.p_0adb6afe55a80302",
+      "restored": true
+    },
+    {
+      "equal": true,
+      "input": 1024,
+      "original": true,
+      "primitive": "evolved.p_0adb6afe55a80302",
+      "restored": true
+    },
+    {
+      "equal": true,
+      "input": -1023,
+      "original": true,
+      "primitive": "evolved.p_9b88b7bdc51e1288",
+      "restored": true
+    },
+    {
+      "equal": true,
+      "input": -255,
+      "original": false,
+      "primitive": "evolved.p_9b88b7bdc51e1288",
+      "restored": false
+    },
+    {
+      "equal": true,
+      "input": -81,
+      "original": false,
+      "primitive": "evolved.p_9b88b7bdc51e1288",
+      "restored": false
+    },
+    {
+      "equal": true,
+      "input": 0,
+      "original": true,
+      "primitive": "evolved.p_9b88b7bdc51e1288",
+      "restored": true
+    },
+    {
+      "equal": true,
+      "input": 17,
+      "original": true,
+      "primitive": "evolved.p_9b88b7bdc51e1288",
+      "restored": true
+    },
+    {
+      "equal": true,
+      "input": 128,
+      "original": true,
+      "primitive": "evolved.p_9b88b7bdc51e1288",
+      "restored": true
+    },
+    {
+      "equal": true,
+      "input": 511,
+      "original": false,
+      "primitive": "evolved.p_9b88b7bdc51e1288",
+      "restored": false
+    },
+    {
+      "equal": true,
+      "input": 1024,
+      "original": false,
+      "primitive": "evolved.p_9b88b7bdc51e1288",
+      "restored": false
+    }
+  ],
+  "load": {
+    "grammar_registry_size": 3,
+    "loaded": 2,
+    "loaded_grammar_rules": 2,
+    "loaded_mutation_strategy_routes": 1,
+    "mutation_strategy_registry_size": 1,
+    "registry_size": 2,
+    "rejected": []
+  }
+}

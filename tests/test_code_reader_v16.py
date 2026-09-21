@@ -55,7 +55,7 @@ class ReaderV16Tests(unittest.TestCase):
         self.assertEqual(grammar.metadata["semantic_status"], "surface-grammar-only")
         result = reader.read("x = Ω(a,b)\n", "a.aic")
         self.assertEqual(result.passport()["sha256"], result.sha256)
-        self.assertEqual(result.metadata["reader_version"], "16.0")
+        self.assertEqual(result.metadata["reader_version"], UniversalCodeReader.VERSION)
 
     def test_unary_calls_and_vectors_accept_single_input_nova_traces(self):
         rows = [{"inputs": {"text": text}, "output": len(text)}

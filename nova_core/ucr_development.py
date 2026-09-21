@@ -76,8 +76,22 @@ def _reader():
 
 def synthesize(training, memory, policy=None):
     """Accept only training data. A fresh reader prevents ambient learned state."""
+    return _synthesize(training, memory, policy, UniversalCodeReader.VERSION)
+
+
+def synthesize_v8(training, memory, policy=None):
+    """Replay the original v8 receipt with the unchanged induction algorithm.
+
+    canonical/ucr-v8-replay.json pins the transitive inference method sources.
+    This historical version tag is used only when replaying runtime v8 events;
+    active v9 events always identify the installed reader's actual version.
+    """
+    return _synthesize(training, memory, policy, "16.0")
+
+
+def _synthesize(training, memory, policy, receipt_version):
     receipt = {"mechanism": "ucr_training_only_native_expression_proposals_v1",
-               "reader_version": UniversalCodeReader.VERSION, "training_sha256": digest(training),
+               "reader_version": receipt_version, "training_sha256": digest(training),
                "training_rows": len(training), "fresh_cases_seen": 0,
                "internal_split": "training_partition_used_for_ranking_not_independent_validation",
                "rounds": [], "status": "NO_EXACT_TRAINING_FIT"}

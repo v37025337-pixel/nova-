@@ -13,7 +13,7 @@ from .language import candidate
 
 
 def enabled(state):
-    return state["runtime_manifest"]["schema"] in ("nova.kernel.v6", "nova.kernel.v7", "nova.kernel.v8")
+    return state["runtime_manifest"]["schema"] in ("nova.kernel.v6", "nova.kernel.v7", "nova.kernel.v8", "nova.kernel.v9")
 
 
 def retryable(record, state):

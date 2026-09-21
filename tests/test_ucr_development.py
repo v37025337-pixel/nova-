@@ -87,7 +87,7 @@ class UCRDevelopmentTests(unittest.TestCase):
 
     def test_runtime_pins_the_external_reader_dependency(self):
         manifest = runtime_manifest()
-        self.assertEqual(manifest["schema"], "nova.kernel.v8")
+        self.assertEqual(manifest["schema"], "nova.kernel.v9")
         self.assertIn("nova_tools/universal_code_reader.py", manifest["ucr_development"]["sources"])
         self.assertIn("nova_tools/__init__.py", manifest["ucr_development"]["sources"])
 

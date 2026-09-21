@@ -1,0 +1,204 @@
+[
+  {
+    "expected": {
+      "attempts": 412,
+      "native_attempts": 0,
+      "program": {
+        "id": "5bc5782be2028d150ec63a3cf84962456f06748716e6b9c60e59e79c036fe2b2",
+        "ir": [
+          "call",
+          "strip",
+          [
+            "call",
+            "lower",
+            [
+              "input",
+              "text"
+            ]
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return primitive('strip', primitive('lower', inputs['text']))\n"
+      },
+      "selection": "training_only",
+      "ucr": {
+        "fresh_cases_seen": 0,
+        "internal_split": "training_partition_used_for_ranking_not_independent_validation",
+        "mechanism": "ucr_training_only_native_expression_proposals_v1",
+        "reader_version": "16.0",
+        "rounds": [
+          {
+            "depth": 1,
+            "exact_training_fits": 0,
+            "generated": 24,
+            "translated": 0
+          },
+          {
+            "depth": 2,
+            "exact_training_fits": 1,
+            "generated": 388,
+            "translated": 1
+          }
+        ],
+        "selected_expression": "nova.strip(nova.lower(arg0))",
+        "selected_program": "5bc5782be2028d150ec63a3cf84962456f06748716e6b9c60e59e79c036fe2b2",
+        "status": "TRAINING_FIT",
+        "training_rows": 8,
+        "training_sha256": "205fb3e5b125f2ba9f78c30af6585634dd16dfc9c452e1bb881ae444b33b2400"
+      }
+    },
+    "name": "strip_lower",
+    "training": [
+      {
+        "input": {
+          "text": "  MiXeD-0  "
+        },
+        "output": "mixed-0"
+      },
+      {
+        "input": {
+          "text": "  MiXeD-1  "
+        },
+        "output": "mixed-1"
+      },
+      {
+        "input": {
+          "text": "  MiXeD-2  "
+        },
+        "output": "mixed-2"
+      },
+      {
+        "input": {
+          "text": "  MiXeD-3  "
+        },
+        "output": "mixed-3"
+      },
+      {
+        "input": {
+          "text": "  MiXeD-4  "
+        },
+        "output": "mixed-4"
+      },
+      {
+        "input": {
+          "text": "  MiXeD-5  "
+        },
+        "output": "mixed-5"
+      },
+      {
+        "input": {
+          "text": "  MiXeD-6  "
+        },
+        "output": "mixed-6"
+      },
+      {
+        "input": {
+          "text": "  MiXeD-7  "
+        },
+        "output": "mixed-7"
+      }
+    ]
+  },
+  {
+    "expected": {
+      "attempts": 360,
+      "native_attempts": 0,
+      "program": {
+        "id": "0c08c15563c39d080c84d165571d75803e02416921d7c6da7329d8e469b08a81",
+        "ir": [
+          "call",
+          "sub",
+          [
+            "input",
+            "a"
+          ],
+          [
+            "const",
+            -1
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return primitive('sub', inputs['a'], -1)\n"
+      },
+      "selection": "training_only",
+      "ucr": {
+        "fresh_cases_seen": 0,
+        "internal_split": "training_partition_used_for_ranking_not_independent_validation",
+        "mechanism": "ucr_training_only_native_expression_proposals_v1",
+        "reader_version": "16.0",
+        "rounds": [
+          {
+            "depth": 1,
+            "exact_training_fits": 0,
+            "generated": 24,
+            "translated": 0
+          },
+          {
+            "depth": 2,
+            "exact_training_fits": 1,
+            "generated": 336,
+            "translated": 1
+          }
+        ],
+        "selected_expression": "nova.sub(arg0, nova.constant.0(arg0))",
+        "selected_program": "0c08c15563c39d080c84d165571d75803e02416921d7c6da7329d8e469b08a81",
+        "status": "TRAINING_FIT",
+        "training_rows": 8,
+        "training_sha256": "7c0514ceb4c11cfacfcaef70f8610501e4b8b0e3a2faeac9fce46317195c79ce"
+      }
+    },
+    "name": "increment",
+    "training": [
+      {
+        "input": {
+          "a": 10
+        },
+        "output": 11
+      },
+      {
+        "input": {
+          "a": 11
+        },
+        "output": 12
+      },
+      {
+        "input": {
+          "a": 12
+        },
+        "output": 13
+      },
+      {
+        "input": {
+          "a": 13
+        },
+        "output": 14
+      },
+      {
+        "input": {
+          "a": 14
+        },
+        "output": 15
+      },
+      {
+        "input": {
+          "a": 15
+        },
+        "output": 16
+      },
+      {
+        "input": {
+          "a": 16
+        },
+        "output": 17
+      },
+      {
+        "input": {
+          "a": 17
+        },
+        "output": 18
+      }
+    ]
+  }
+]

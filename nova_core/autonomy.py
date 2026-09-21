@@ -32,7 +32,7 @@ def initial():
 
 
 def enabled(state):
-    return state["runtime_manifest"]["schema"] in ("nova.kernel.v5", "nova.kernel.v6", "nova.kernel.v7", "nova.kernel.v8")
+    return state["runtime_manifest"]["schema"] in ("nova.kernel.v5", "nova.kernel.v6", "nova.kernel.v7", "nova.kernel.v8", "nova.kernel.v9")
 
 
 def source_url(value):

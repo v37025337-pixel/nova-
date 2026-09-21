@@ -1,15 +1,17 @@
 {
   "claim": "source/trace analysis plus training-only native expression proposals; only the Nova fresh-data gate admits capabilities",
-  "kernel_integration": "nova_core/ucr_development.py (runtime 0.8.0)",
-  "origin": "user-supplied universal_code_reader-17.py with Nova byte, graph and strict JSON compatibility fixes",
-  "original_sha256": "3ee3e64dae0a0e30bc74a53259969cf399b839bad75a607d3c4b44f35b1c1801",
-  "previous_original_sha256": "c0ecb583f015912b2fb56529c2aa2f35875897bb79a32afd88252e6eaf195226",
-  "reader_version": "16.0",
+  "evolved_state_schema": "ucr.evolved-state/4",
+  "ir_schema": "ucr.ai-ir/17.0",
+  "kernel_integration": "nova_core/ucr_development.py (runtime 0.9.0)",
+  "origin": "user-supplied universal_code_reader-19.py with retained Nova compatibility and seeded challenge grid fix",
+  "original_sha256": "9dfba15fed84f04af77558da9dfd5e0d5279af169b0bc90bef073f55d33b39d4",
+  "previous_original_sha256": "3ee3e64dae0a0e30bc74a53259969cf399b839bad75a607d3c4b44f35b1c1801",
+  "reader_version": "18.0",
   "runtime_sources_changed": true,
   "schema": "nova.code-reader-tools.v2",
   "source_sha256": {
     "nova_tools/__init__.py": "e981bab21ded1efd6adeecb57930c3d639797507bb9e2ae4dfc605e727abdd17",
     "nova_tools/code_reader_bridge.py": "c66e494210350123b23e3d6f7f99a211b7415341544296ebfff7d4f40c666e1b",
-    "nova_tools/universal_code_reader.py": "19b6406ce896e20d7066cbcf52830c990c990640503068d43b4ccfcc17e30b36"
+    "nova_tools/universal_code_reader.py": "4f7bd6781727504f89f3407f559db5689a1a0896480b9f4a046ac8a85552be5f"
   }
 }

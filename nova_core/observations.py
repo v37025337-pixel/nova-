@@ -28,7 +28,7 @@ CONFIG = {"document_bytes": 262144, "window_documents": 32, "records_per_documen
 
 
 def enabled(state):
-    return state["runtime_manifest"]["schema"] in ("nova.kernel.v7", "nova.kernel.v8")
+    return state["runtime_manifest"]["schema"] in ("nova.kernel.v7", "nova.kernel.v8", "nova.kernel.v9")
 
 
 def extract(raw):
@@ -232,6 +232,8 @@ def propose(state, memory):
         return None
     searcher = synthesize
     if state["runtime_manifest"]["schema"] == "nova.kernel.v8":
+        from .ucr_development import synthesize_v8 as searcher
+    elif state["runtime_manifest"]["schema"] == "nova.kernel.v9":
         from .ucr_development import synthesize as searcher
     search = searcher(goal["training"], memory, state["genomes"][state["current"]].get("engine"))
     details = {"ucr": search["ucr"], "native_search_attempts": search["native_attempts"]} if "ucr" in search else {}
