@@ -1,0 +1,104 @@
+{
+  "changed_payloads": 10,
+  "checks": [
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "earthquakes-json",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "space-weather-forecast",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": false,
+      "id": "plant-taxonomy",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": false,
+      "id": "population",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": false,
+      "id": "molecular-properties",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "sqlite-repository",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "earthquakes-csv",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "solar-radio-flux",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "animal-taxonomy",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": false,
+      "id": "gdp",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": false,
+      "id": "atmospheric-molecules",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": false,
+      "id": "xarray-package",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "earthquakes-xml",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "space-weather-scales",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "bird-taxonomy",
+      "sha256_match": true
+    },
+    {
+      "bytes_match": true,
+      "changed_since_previous_fetch": true,
+      "id": "numpy-repository",
+      "sha256_match": true
+    }
+  ],
+  "responses": 16,
+  "status": "PASS",
+  "unchanged_payloads": 6
+}

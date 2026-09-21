@@ -1,0 +1,35 @@
+{
+  "active_generation": 22,
+  "boundary": "maintainer-added observation/goal ontology; native goal selection and synthesis; retrieval may repeat historical source records",
+  "capability_improvement_proven": false,
+  "completed_at": "2026-09-21T05:44:24.268564+00:00",
+  "fresh_evaluation_performed": false,
+  "goal_found": true,
+  "goal_id": "auto-0c3fde76e9cad5463f27c533",
+  "head": "9df783c1ee135072df71846ee2d35ea3e23151ca26998c6e67015d5ad024a89b",
+  "last_outcome": "WITHHOLD",
+  "last_reason": "OBSERVATION_SEARCH_EXHAUSTED",
+  "observation_contract": {
+    "host": "api.gbif.org",
+    "input_field": "datasetKey",
+    "input_type": "str",
+    "record_path": "/results/*",
+    "target_field": "kingdomKey",
+    "target_type": "int"
+  },
+  "observations": {
+    "documents_seen": 14,
+    "window_documents": 14,
+    "window_records": 421
+  },
+  "operator_answer_labels": 0,
+  "operator_task_events": 0,
+  "parent_head": "6712e7e724d61b232fddb908e5eade82d959391a889c530655d59a1a4e45552a",
+  "regression": {
+    "passed": 192,
+    "skills": 21,
+    "total": 192
+  },
+  "runtime_version": "0.7.0",
+  "unrestricted_autonomy_proven": false
+}

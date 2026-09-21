@@ -1,0 +1,32 @@
+{
+  "active_regression": {
+    "passed": 192,
+    "skills": 21,
+    "total": 192
+  },
+  "cold_replay": {
+    "events": 90,
+    "exit_code": 0,
+    "head": "9df783c1ee135072df71846ee2d35ea3e23151ca26998c6e67015d5ad024a89b",
+    "separate_process": true,
+    "status": "PASS"
+  },
+  "main_base": "7218a570f66ef9a5fe694d556814bd1311dff43e",
+  "new_capability_proven": false,
+  "new_generation": false,
+  "publication": "BLOCKED_AUTO_REVIEW_EXPLICIT_PUBLICATION_PERMISSION_REQUIRED",
+  "release": {
+    "source_files": 21,
+    "status": "PASS",
+    "version": "0.7.0"
+  },
+  "runtime_commit": "202bd6d1420346d1970e0c5f7af74fbc7d4e28b9",
+  "status": "PASS_VERIFICATION_WITH_NEGATIVE_CAPABILITY_RESULT",
+  "unit_tests": {
+    "exit_code": 0,
+    "passed": 98,
+    "python": "3.12.14",
+    "total": 98
+  },
+  "useful_predictable_deficit_proven": false
+}

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nova-cognitive-kernel"
-version = "0.6.0"
+version = "0.7.0"
 description = "Persistent, bounded native program-learning kernel informed by YADO"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
@@ -12,6 +12,7 @@ dependencies = []
 
 [project.scripts]
 nova = "nova_core.__main__:main"
+nova-read-code = "nova_tools.code_reader_bridge:main"
 
 [tool.setuptools.packages.find]
-include = ["nova_core*"]
+include = ["nova_core*", "nova_tools*"]

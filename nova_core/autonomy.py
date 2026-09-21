@@ -17,7 +17,7 @@ from .genetics import vary
 from .isolation import evaluate
 from .language import candidate
 from .synthesis import synthesize
-from . import library_evolution
+from . import library_evolution, observations
 
 ALLOWED_HOSTS = ("peps.python.org", "docs.python.org", "packaging.python.org",
                  "www.rfc-editor.org", "csrc.nist.gov", "nvlpubs.nist.gov")
@@ -32,7 +32,7 @@ def initial():
 
 
 def enabled(state):
-    return state["runtime_manifest"]["schema"] in ("nova.kernel.v5", "nova.kernel.v6")
+    return state["runtime_manifest"]["schema"] in ("nova.kernel.v5", "nova.kernel.v6", "nova.kernel.v7")
 
 
 def source_url(value):
@@ -143,15 +143,20 @@ def propose(state, memory):
     if a["current"] is None:
         goal = library_evolution.transfer_goal(state, memory) if library_evolution.enabled(state) else None
         goal = goal or relation_goal(state, memory)
+        goal = goal or observations.discover(state, memory)
         if goal is None:
             return {"status": "IDLE", "reason": "NO_SUPPORTED_ENDOGENOUS_DEFICIT"}
-        return event(state, "GOAL_FROZEN", status="GOAL_FROZEN", reason="NEW_RELATIONAL_SUBGOAL",
+        reason = "NEW_OBSERVATION_DEFICIT" if goal["origin"] == "native_observation_prediction_error" else "NEW_RELATIONAL_SUBGOAL"
+        return event(state, "GOAL_FROZEN", status="GOAL_FROZEN", reason=reason,
                      goal=goal, freeze=digest(goal))
     goal = a["current"]
     if library_evolution.enabled(state) and goal["runtime_digest"] != digest(state["runtime_manifest"]):
         return event(state, "WITHHOLD", status="WITHHOLD", reason="AUTONOMOUS_RUNTIME_STALE", goal=goal["id"])
     if goal["parent_genome"] != state["genomes"][state["current"]]["id"]:
         return event(state, "WITHHOLD", status="WITHHOLD", reason="AUTONOMOUS_GOAL_STALE", goal=goal["id"])
+    proposal = observations.propose(state, memory)
+    if proposal is not None:
+        return proposal
     if library_evolution.enabled(state):
         proposal = library_evolution.propose(state, memory)
         if proposal is not None:
@@ -295,6 +300,8 @@ def assess(state, frozen_id, rows, memory):
     seen = {digest(r["input"]) for old in state["tasks"].values() for split in ("train", "holdout") for r in old[split]}
     seen |= {digest(r["input"]) for r in goal["training"] + goal["original_holdout"]}
     seen |= set(a["consumed_inputs"])
+    if observations.enabled(state):
+        seen |= state["observation_inputs"]
     if any(digest(r["input"]) in seen for r in rows):
         raise ContractError("fresh autonomous evaluation overlaps known inputs")
     program, primitive = frozen["program"], frozen["primitive"]
@@ -305,6 +312,10 @@ def assess(state, frozen_id, rows, memory):
         old = state["tasks"][old_tid]
         regression[old_tid] = evaluate([{"program": memory[pid], "rows": old["train"] + old["holdout"]}], extended)["results"][0]
     parent_best = max((score(p, rows, memory)["passed"] for p in memory.values()), default=0)
+    observation_baseline = None
+    if observations.enabled(state) and goal["contract"]["law"] == observations.LAW:
+        observation_baseline = score(goal["baseline_program"], rows, memory)
+        parent_best = max(parent_best, observation_baseline["passed"])
     dependencies = (library_evolution.dependency_closure(program, extended)
                     if library_evolution.enabled(state) else program["parents"])
     ablation = {pid: evaluate([{"program": program, "rows": rows}], {k: v for k, v in extended.items() if k != pid})["results"][0]
@@ -333,7 +344,8 @@ def assess(state, frozen_id, rows, memory):
             "mutation": mutation, "status": "ADMITTED" if reason == "VERIFIED_AUTONOMOUS_SUBGOAL" else "WITHHOLD",
             "reason": reason, "generation": state["admissions"] + 1 if reason == "VERIFIED_AUTONOMOUS_SUBGOAL" else state["current"],
             "report": {"isolation": result["isolation"], "fresh": result["results"][0], "original_holdout": result["results"][1],
-                       "regression": regression, "ablation": ablation, "best_inherited_passed": parent_best}}
+                       "regression": regression, "ablation": ablation, "best_inherited_passed": parent_best,
+                       **({"observation_baseline": observation_baseline} if observation_baseline else {})}}
 
 
 def apply(state, body):

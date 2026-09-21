@@ -1,0 +1,12 @@
+{
+  "claim": "optional syntax observation tool, not learned semantics or a new generation",
+  "origin": "user-supplied universal_code_reader.py, adapted for graph integrity and exact byte preservation",
+  "original_sha256": "c0ecb583f015912b2fb56529c2aa2f35875897bb79a32afd88252e6eaf195226",
+  "runtime_sources_changed": false,
+  "schema": "nova.code-reader-tools.v1",
+  "source_sha256": {
+    "nova_tools/__init__.py": "e981bab21ded1efd6adeecb57930c3d639797507bb9e2ae4dfc605e727abdd17",
+    "nova_tools/code_reader_bridge.py": "fa3dc20a60c59d82fc167d20fb26dd321c5f50d7a0319e932d5e42f44ad33b49",
+    "nova_tools/universal_code_reader.py": "3f87ce06da15e7d6df3c3914a94be18b5c68b98485d64ba81f19c751a8cbc3eb"
+  }
+}

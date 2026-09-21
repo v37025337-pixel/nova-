@@ -37,3 +37,6 @@ jobs:
       - name: Restore G20 history and replay Python composition and transfer through G22
         if: matrix.python == '3.12'
         run: python scripts/run_development_chain.py --restore experience/python-learning-v1/journal.json --state /tmp/nova-python-learning-ci.sqlite
+      - name: Replay the G22 observation-originated goal and retained failed search
+        if: matrix.python == '3.12'
+        run: python scripts/run_development_chain.py --restore experience/observation-goals-v1/journal.json --state /tmp/nova-observation-goals-ci.sqlite

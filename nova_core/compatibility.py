@@ -28,7 +28,7 @@ def legacy_manifest():
 
 
 def recognized_legacy(manifest):
-    return any(encode(manifest) == encode(m) for m in (legacy_manifest(), v2_manifest(), v3_manifest(), v4_manifest(), v5_manifest()))
+    return any(encode(manifest) == encode(m) for m in (legacy_manifest(), v2_manifest(), v3_manifest(), v4_manifest(), v5_manifest(), v6_manifest()))
 
 
 # Exact 0.2.0 release (872d8cda); G12 embeds this manifest after the v1 upgrade.
@@ -151,5 +151,50 @@ V5_MANIFEST = {'autonomy': 'bounded_failure_conditioned_relational_subgoals_with
 def v5_manifest():
     from copy import deepcopy
     manifest = deepcopy(V5_MANIFEST)
+    manifest["python"] = list(sys.version_info[:2])
+    return manifest
+
+
+# Exact 0.6.0 runtime at main 7218a570; preserves all G22 decisions.
+V6_MANIFEST = {'autonomy': 'bounded_failure_conditioned_relational_subgoals_with_external_io',
+ 'capability_author': 'kernel_specification_conditioned_document_compiler',
+ 'capability_dialect': 'bounded_word_equations_and_typeset_block_recurrences',
+ 'engine_author': 'maintainer',
+ 'engine_policy_author': 'kernel_bounded_experience_conditioned_mutation',
+ 'faculties': {'CODE': 'native_expression_synthesis_and_ast_execution',
+               'INTELLIGENCE': 'experience_conditioned_verified_gene_selection',
+               'LOGIC': 'contracts_deficits_and_admission_evidence',
+               'THINKING': 'causal_goal_selection_and_continuation'},
+ 'program_author': 'kernel_training_only',
+ 'python': [3, 12],
+ 'python_tools': 'pure_stdlib_composition_and_inherited_relation_transfer',
+ 'runtime': 'single_state_single_queue_single_journal',
+ 'schema': 'nova.kernel.v6',
+ 'search': {'attempts': 12000, 'depth': 3},
+ 'sources': {'__init__.py': '670a5872dcbc0058f7ea7318801f2300caec127c44cb6c4eff3be1a132c0180b',
+             '__main__.py': '552e86184da846843b150a3d48628cd1026ea9990c863111dd6570d8560c86cb',
+             'adaptation.py': '8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796',
+             'autonomy.py': '404737b667260a8c809b9a2e36413b7c05539012bea31528825a849dcd59a751',
+             'capability.py': '367bc9041c83f57fc66bbe7b0f8c3cff50667aebedc9d70cb067a0eb42d170ce',
+             'compatibility.py': 'd506270aaaaa98288b3da5a4978cf65061c2c60920288429ac33237548b12a1e',
+             'contracts.py': '54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe',
+             'evaluation.py': '06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2',
+             'extensions.py': '7b048dda1d3efcc510be6af1162ecd52fb7dddfa53ff01b106a003a74cf6ded2',
+             'genetics.py': 'e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0',
+             'isolation.py': 'c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3',
+             'kernel.py': '7bbe393a5370fd35e7df971f5154efb32d2a1b8446463937c4eb8c8963770466',
+             'language.py': 'a541480da7093aaa401f82e1bf3aa7be5f4914ca57ac3222db0e7084af60e1a7',
+             'library_evolution.py': '7328f2245389bfd7120ec2dbf70a0800a1397fefcadca4f254acb8e14370700a',
+             'memory.py': '3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777',
+             'python_tools.py': '6e4ddb19f4897b470b0e94c547c7947a0925308af98af4f9178ae6dd2047a2eb',
+             'sandbox_worker.py': '11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96',
+             'sequence.py': 'cd1ac5a145caeb9a4fa9c181aeb3bbbd021e4a59b37bbee5d2440b27081f06d2',
+             'specifications.py': '3c34a078b8500dc1f9a13ea140c85fe9df7d4294986470989aafe128841b45c3',
+             'synthesis.py': '7e61fe88d70eaf5485a82be3b98aba1e00dd2384847d635b80b04f8dbe014e19'}}
+
+
+def v6_manifest():
+    from copy import deepcopy
+    manifest = deepcopy(V6_MANIFEST)
     manifest["python"] = list(sys.version_info[:2])
     return manifest

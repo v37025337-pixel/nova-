@@ -1,0 +1,114 @@
+[
+  {
+    "domain": "geophysics",
+    "format": "json",
+    "id": "earthquakes-json",
+    "packet": 1,
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=6&orderby=time"
+  },
+  {
+    "domain": "space_weather",
+    "format": "text",
+    "id": "space-weather-forecast",
+    "packet": 1,
+    "url": "https://services.swpc.noaa.gov/text/3-day-forecast.txt"
+  },
+  {
+    "domain": "biodiversity",
+    "format": "json",
+    "id": "plant-taxonomy",
+    "packet": 1,
+    "url": "https://api.gbif.org/v1/species/search?q=Quercus&limit=8"
+  },
+  {
+    "domain": "economics",
+    "format": "json",
+    "id": "population",
+    "packet": 1,
+    "url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=10&MRV=1"
+  },
+  {
+    "domain": "chemistry",
+    "format": "json",
+    "id": "molecular-properties",
+    "packet": 2,
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/962,702,5793,2519,280/property/MolecularFormula,MolecularWeight,IUPACName/JSON"
+  },
+  {
+    "domain": "software",
+    "format": "json",
+    "id": "sqlite-repository",
+    "packet": 2,
+    "url": "https://api.github.com/repos/sqlite/sqlite"
+  },
+  {
+    "domain": "geophysics",
+    "format": "csv",
+    "id": "earthquakes-csv",
+    "packet": 2,
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&limit=12&offset=7&orderby=time"
+  },
+  {
+    "domain": "space_weather",
+    "format": "json",
+    "id": "solar-radio-flux",
+    "packet": 2,
+    "url": "https://services.swpc.noaa.gov/json/f107_cm_flux.json"
+  },
+  {
+    "domain": "biodiversity",
+    "format": "json",
+    "id": "animal-taxonomy",
+    "packet": 3,
+    "url": "https://api.gbif.org/v1/species/search?q=Panthera&limit=8"
+  },
+  {
+    "domain": "economics",
+    "format": "json",
+    "id": "gdp",
+    "packet": 3,
+    "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.CD?format=json&per_page=10&MRV=1"
+  },
+  {
+    "domain": "chemistry",
+    "format": "csv",
+    "id": "atmospheric-molecules",
+    "packet": 3,
+    "url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/947,977,280,783,962/property/MolecularFormula,MolecularWeight/CSV"
+  },
+  {
+    "domain": "software",
+    "format": "json",
+    "id": "xarray-package",
+    "packet": 3,
+    "url": "https://pypi.org/pypi/xarray/json"
+  },
+  {
+    "domain": "geophysics",
+    "format": "xml",
+    "id": "earthquakes-xml",
+    "packet": 4,
+    "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=xml&limit=2&offset=19&orderby=time"
+  },
+  {
+    "domain": "space_weather",
+    "format": "json",
+    "id": "space-weather-scales",
+    "packet": 4,
+    "url": "https://services.swpc.noaa.gov/products/noaa-scales.json"
+  },
+  {
+    "domain": "biodiversity",
+    "format": "json",
+    "id": "bird-taxonomy",
+    "packet": 4,
+    "url": "https://api.gbif.org/v1/species/search?q=Corvus&limit=8"
+  },
+  {
+    "domain": "software",
+    "format": "json",
+    "id": "numpy-repository",
+    "packet": 4,
+    "url": "https://api.github.com/repos/numpy/numpy"
+  }
+]
