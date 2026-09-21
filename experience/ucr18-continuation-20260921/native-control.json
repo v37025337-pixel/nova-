@@ -1,0 +1,8 @@
+{
+  "attempts": 10654,
+  "considered": 39030,
+  "engine": "9ded282d977b7132d97e112f2781f63e24025d28e1b7bd1e9e10cd6c608aab27",
+  "program": null,
+  "selection": "training_only",
+  "type_pruned": 28376
+}

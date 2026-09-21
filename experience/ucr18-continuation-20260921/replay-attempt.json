@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "-m",
+    "nova_core",
+    "--state",
+    "/workspace/scratch/ee6aa25fa8ae/nova/experience/ucr18-continuation-20260921/state.sqlite",
+    "verify",
+    "--expected-head",
+    "ce9ab36241e801e7c16fe2004b1f0fc91a4d4aa74146e684b44a8d554b0fab3a"
+  ],
+  "elapsed_seconds": 219.9942361579997,
+  "error": null,
+  "exit_code": 0,
+  "expected_head": "ce9ab36241e801e7c16fe2004b1f0fc91a4d4aa74146e684b44a8d554b0fab3a",
+  "finished_at_utc": "2026-09-21T11:11:28.494473+00:00",
+  "original_driver_exit_code": 1,
+  "original_timeout_seconds": 180,
+  "schema": "nova.execution-attempt.v1",
+  "started_at_utc": "2026-09-21T11:07:48.500281+00:00",
+  "timeout_seconds": 600,
+  "verification_semantics_changed": false
+}
