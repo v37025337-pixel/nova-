@@ -21,6 +21,11 @@ def main(argv=None):
         q.add_argument("--steps", type=int, default=16 if name == "run" else 1)
     q = commands.add_parser("connect")
     q.add_argument("feeds", type=Path)
+    q = commands.add_parser("sense", help="observe opaque URLs without a task or reader")
+    q.add_argument("urls", type=Path, help="JSON list of public HTTPS URLs")
+    q = commands.add_parser("recall", help="restore exact observed bytes from active memory")
+    q.add_argument("index", type=int)
+    q.add_argument("--output", type=Path, required=True)
     q = commands.add_parser("invoke")
     q.add_argument("capability")
     q.add_argument("--input", required=True, help="JSON argument object")
@@ -66,6 +71,12 @@ def main(argv=None):
                 result = {"actions": [{k: v for k, v in a.items() if k in ("status", "action")} for a in actions], "state": kernel.status()}
             elif command == "connect":
                 result = kernel.connect(decode(args.feeds.read_text()))
+            elif command == "sense":
+                result = kernel.sense(decode(args.urls.read_text()))
+            elif command == "recall":
+                with args.output.open("xb") as output:
+                    output.write(kernel.recall(args.index))
+                result = {"status": "RECALLED", "index": args.index, "output": str(args.output)}
             elif command == "invoke":
                 result = kernel.invoke(args.capability, decode(args.input))
             elif command == "goal":

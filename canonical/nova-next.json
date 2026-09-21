@@ -29,8 +29,8 @@
   },
   "evidence": "experience/nova-next-v2/verification.json",
   "file_sha256": {
-    ".github/workflows/nova-ci.yml": "78f777cc1275c9b85b3928d50f1da60c980273988229669250971fe76b95ca21",
-    "README.md": "780bcbb71f3957e2eb1d667ebd0824b8f1bd5c6eb759369748b7d60123b44912",
+    ".github/workflows/nova-ci.yml": "dc024a3b532463e8d50ca2d1b687e82495430682cd126c21db991c5c5ca5073f",
+    "README.md": "7ad08a980c8fe26ad5549e46ae527a4b9d235a87f00844663782d2a8fcf0533e",
     "experience/nova-next-v1/README.md": "2c1dbf129f50bd5ae81d0f55307aaa5682ed3202a3026a12df92ba14893a7675",
     "experience/nova-next-v1/actions.json.gz": "218bd788e3035dd036deef2902ca33d91fe1f2654d040ab8c6e257ab66a37fda",
     "experience/nova-next-v1/frozen-runtime.tar.gz": "ccd795c8384e757e8039a52ff6a82d4f37161ff5603b45eb78592d773c0dee75",
@@ -75,7 +75,7 @@
     "nova_next/seed_ucr.py": "359d1b49e57c84e565fc903bbcdd71c0f58d88b2e86d359887ca534e85ff47a7",
     "nova_next/snapshot.py": "a4b8e21801c7aba0d07ad727370044dd0a18f2d847f497b3106ae60f5ca4170b",
     "nova_next/worker.py": "a96cdc46c671f171cdb982bc4b853d5ec118a42da7d059c79ac101af5cdd17b7",
-    "pyproject.toml": "3054d5934311590bf5f1d8ab7c5a6da41bb68220c954b55c8148f02f64537dd9",
+    "pyproject.toml": "847f4cd2b5c02eb3c4d910b3f4568b32aa3c62341ea478ef1d43af67aa1af77a",
     "scripts/run_nova_next.py": "c5ddcd90b96c54bee703e53e9c9bd37a63fb549bad11f319319312ce4908c90a",
     "scripts/verify_nova_next.py": "bbedd01669b8cdabd01f5c8b33360cad878386cd9d1f510c48bb756d228d3d20",
     "tests/test_nova_next.py": "994bca76e097eabdfed070603281a218993179ed89d042522719b5a4ac739f41"

@@ -1,0 +1,23 @@
+{
+  "acceptance": {
+    "charge_full_program": true,
+    "exact_reconstruction": true,
+    "fresh_origins": 2,
+    "minimum_net_gain_basis_points": 100,
+    "preserve_all_active_skills": true
+  },
+  "baseline": {
+    "bytes": 169271,
+    "id": "literal"
+  },
+  "conditional_bound_bytes": 75624,
+  "deficit_bytes": 93647,
+  "id": "8fad12a45ff6ac11e7af98079d9be77211269489632f5d212b0c56dc0ee7081d",
+  "objective": "retain exact observations in a shorter reusable description",
+  "observations": [
+    "c3e77e49259d4cbdb9ee6024539e87d8906d1f70c20b1bd095c4404f5b5e5964",
+    "4998d7e252eb513be85b298e287048b4fb283882e9ba7df905f572f07200f3f3"
+  ],
+  "origin": "self: measured byte-transition redundancy against active memory cost",
+  "provided_preference": "lossless retention with minimum description length"
+}

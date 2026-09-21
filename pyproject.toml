@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nova-cognitive-kernel"
-version = "1.0.0"
+version = "1.1.0"
 description = "Unified NOVA runtime with shared memory, logic, planning and verified program learning"
 readme = "README.md"
 requires-python = ">=3.11,<3.14"
@@ -21,4 +21,4 @@ include = ["nova_core*", "nova_tools*", "nova_next*"]
 
 [tool.setuptools.package-data]
 nova_next = ["inherited.json", "seed_blueprint.json"]
-"nova_core.cognition" = ["bootstrap.json.gz", "upstream_licenses/*.txt", "upstream_licenses/sources.json"]
+"nova_core.cognition" = ["bootstrap*.json.gz", "upstream_licenses/*.txt", "upstream_licenses/sources.json"]

@@ -12,10 +12,10 @@ from nova_core.contracts import ContractError, IntegrityError, digest, encode, t
 from nova_core.isolation import evaluate
 from nova_core.memory import Journal, ZERO
 from nova_next import kernel as graph_engine, learning, evaluation, network, data
-from . import capabilities, checkpoint, planning
+from . import capabilities, checkpoint, planning, raw_cycle, raw_network
 
 ROOT = Path(__file__).resolve().parents[2]
-BOOTSTRAP = Path(__file__).with_name("bootstrap.json.gz")
+BOOTSTRAP = Path(__file__).with_name("bootstrap-v2.json.gz")
 
 
 def same(left, right):
@@ -25,7 +25,7 @@ def same(left, right):
 def manifest():
     paths = [p for folder in ("nova_core", "nova_next", "nova_tools") for p in (ROOT / folder).rglob("*.py")]
     paths += [BOOTSTRAP, ROOT / "nova_next/inherited.json", ROOT / "nova_next/seed_blueprint.json"]
-    return {"schema": "nova.unified.runtime.v1", "version": "1.0.0", "python": list(sys.version_info[:2]),
+    return {"schema": "nova.unified.runtime.v1", "version": "1.1.0", "python": list(sys.version_info[:2]),
             "source_sha256": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(paths)},
             "state": "one journal, scheduler, capability catalog, active genome and cognitive workspace",
             "faculties": {"logic": "bounded four-valued Horn inference with evidence",
@@ -35,21 +35,32 @@ def manifest():
 
 def genome(state):
     legacy = state["legacy"]
-    return digest({"legacy": legacy["genomes"][legacy["current"]]["id"], "graph": state["graph"]["genes"]})
+    body = {"legacy": legacy["genomes"][legacy["current"]]["id"], "graph": state["graph"]["genes"]}
+    if state.get("raw", {}).get("active"):
+        body["raw"] = state["raw"]["active"]
+    return digest(body)
 
 
 def active_snapshot(state):
     return {"legacy_generation": state["legacy"]["current"],
             "graph_generation": state["graph"]["generation"],
-            "graph_genes": deepcopy(state["graph"]["genes"]), "graph_admitted": deepcopy(state["graph"]["admitted"])}
+            "graph_genes": deepcopy(state["graph"]["genes"]), "graph_admitted": deepcopy(state["graph"]["admitted"]),
+            "raw_active": list(state.get("raw", {}).get("active", []))}
 
 
 def initial(bootstrap):
+    if bootstrap["schema"] == "nova.unified.bootstrap.v2" and bootstrap["proof"]["status"] == "PASS":
+        state = checkpoint.unpack(bootstrap["state"])
+        state["raw"] = raw_cycle.initial()
+        for snapshot in state["snapshots"].values():
+            snapshot["raw_active"] = []
+        return state
     if bootstrap["schema"] != "nova.unified.bootstrap.v1" or bootstrap["proof"]["status"] != "PASS":
         raise IntegrityError("unsupported unified bootstrap")
     state = {"legacy": checkpoint.unpack(bootstrap["legacy"]), "graph": checkpoint.unpack(bootstrap["graph"]),
              "generation": 0, "admissions": 0, "parents": {0: None}, "snapshots": {},
-             "goals": {}, "experience": {}, "captures": [], "idle": set(), "workspace": None, "executions": 0}
+             "goals": {}, "experience": {}, "captures": [], "idle": set(), "workspace": None, "executions": 0,
+             "raw": raw_cycle.initial()}
     state["snapshots"][0] = active_snapshot(state)
     return state
 
@@ -60,7 +71,8 @@ def context(state):
                    "documents": [d["receipt"]["sha256"] for d in state["graph"]["documents"]],
                    "graph_attempts": sorted(state["graph"]["attempted"]),
                    "goals": {k: {"status": v["status"], "values": digest(v["values"])} for k, v in state["goals"].items()},
-                   "experience": state["experience"], "legacy_attempts": state["legacy"]["attempts"]})
+                   "experience": state["experience"], "legacy_attempts": state["legacy"]["attempts"],
+                   "raw": digest(state["raw"])})
 
 
 def legacy_proposal(state):
@@ -72,6 +84,12 @@ def legacy_proposal(state):
 
 def think(state):
     shared = context(state)
+    raw = raw_cycle.choice(state["raw"])
+    if raw is not None:
+        waiting = raw["kind"] == "raw.wait"
+        return {"context": shared, "choice": None if waiting else raw, "alternatives": [],
+                "blocked": [raw] if waiting else [],
+                "policy": "raw observations, measured deficit, induced program, reserved transfer, global regression"}
     graph, options, blocked = state["graph"], [], []
     if graph["candidate"]:
         if len({d["feed"]["origin"] for d in graph["fresh"]}) >= 2:
@@ -113,8 +131,9 @@ def regression(state):
     legacy = {"passed": sum(x["passed"] for x in tested), "total": sum(x["total"] for x in tested), "skills": len(jobs)}
     graph = {a["goal"]["law"]: evaluation.score(a["program"], a["rows"], state["graph"]["genes"])
              for a in state["graph"]["admitted"]}
-    return {"status": "PASS" if legacy["passed"] == legacy["total"] and all(v["passed"] == v["total"] for v in graph.values()) else "FAIL",
-            "legacy": legacy, "graph": graph, "isolation": "linux_seccomp_v1"}
+    raw = raw_cycle.regression(state["raw"])
+    return {"status": "PASS" if legacy["passed"] == legacy["total"] and all(v["passed"] == v["total"] for v in [*graph.values(), *raw.values()]) else "FAIL",
+            "legacy": legacy, "graph": graph, "raw": raw, "isolation": "linux_seccomp_v1"}
 
 
 def outcome(state, identity, inputs, captured=None):
@@ -210,7 +229,11 @@ class Kernel:
         if type(event) is not dict or set(event) != {"kind", "body"}:
             raise IntegrityError("unified event envelope differs")
         kind, body = event["kind"], event["body"]
-        if kind == "feeds":
+        if kind == "raw.feeds":
+            if set(body) != {"urls"}:
+                raise ContractError("raw feed fields differ")
+            raw_cycle.connect(state["raw"], body["urls"])
+        elif kind == "feeds":
             if set(body) != {"feeds"}:
                 raise ContractError("feed event fields differ")
             added = graph_engine.initial(body["feeds"])["feeds"]
@@ -267,7 +290,11 @@ class Kernel:
                 raise IntegrityError("shared thinking/intelligence replay differs")
             choice, result = decision["choice"], body["result"]
             action = choice["kind"]
-            if action == "graph.fetch":
+            if action.startswith("raw."):
+                raw_cycle.apply(state["raw"], choice, result, capabilities.captures(state))
+                if result["status"] == "ADMITTED":
+                    self._promote(state, body["regression"])
+            elif action == "graph.fetch":
                 request = graph_engine.next_request(state["graph"])
                 if not same(body["request"], request):
                     raise IntegrityError("shared source selection differs")
@@ -348,13 +375,15 @@ class Kernel:
                 ancestors.add(parent)
                 parent = state["parents"][parent]
             if (type(target) is not int or target not in ancestors or state["graph"]["candidate"]
-                    or state["graph"]["pending"] or state["legacy"]["capability_pending"]):
+                    or state["graph"]["pending"] or state["legacy"]["capability_pending"] or state["raw"]["candidate"]):
                 raise ContractError("rollback requires an idle strict active ancestor")
             snapshot = state["snapshots"][target]
             state["legacy"]["current"] = snapshot["legacy_generation"]
             state["graph"].update(generation=snapshot["graph_generation"], genes=deepcopy(snapshot["graph_genes"]),
                                    admitted=deepcopy(snapshot["graph_admitted"]))
             state["generation"] = target
+            state["raw"]["active"] = list(snapshot["raw_active"])
+            raw_cycle.materialize(state["raw"], state["raw"]["active"][-1] if state["raw"]["active"] else None)
             # Source exposure, execution experience and consumed fresh inputs remain remembered.
         else:
             raise IntegrityError("unknown unified event")
@@ -378,6 +407,13 @@ class Kernel:
     def connect(self, feeds):
         return self._append("feeds", {"feeds": feeds})
 
+    def sense(self, urls):
+        """Attach opaque observations only; no task, reader or objective argument."""
+        return self._append("raw.feeds", {"urls": urls})
+
+    def recall(self, index):
+        return raw_cycle.read(self._load()[0]["raw"], index)
+
     def goal(self, target, inputs):
         state, _, _ = self._load()
         body = self._goal(state, target, inputs)
@@ -399,7 +435,25 @@ class Kernel:
             return {"status": "WAITING" if decision["blocked"] else "IDLE", "decision": decision}
         kind = choice["kind"]
         body = {"decision": decision}
-        if kind == "graph.fetch":
+        if kind == "raw.fetch":
+            try:
+                receipt = raw_network.fetch(choice["url"])
+                staged = deepcopy(state["raw"])
+                raw_cycle.observe(staged, choice, receipt, capabilities.captures(state))
+                result = {"status": "OBSERVED", "receipt": receipt}
+            except (ValueError, OSError, TimeoutError, UnicodeError) as exc:
+                result = {"status": "FETCH_FAILED", "error": type(exc).__name__ + ": " + str(exc)}
+        elif kind == "raw.discover":
+            result = raw_cycle.discover(state["raw"])
+        elif kind == "raw.synthesize":
+            result = raw_cycle.synthesize(state["raw"], capabilities.captures(state))
+        elif kind == "raw.assess":
+            result = raw_cycle.assess(state["raw"])
+            if result["status"] == "ADMITTED":
+                staged = deepcopy(state)
+                raw_cycle.apply(staged["raw"], choice, result, capabilities.captures(staged))
+                body["regression"] = regression(staged)
+        elif kind == "graph.fetch":
             request = graph_engine.next_request(state["graph"])
             body["request"] = request
             try:
@@ -482,15 +536,15 @@ class Kernel:
     def status(self):
         state, head, count = self._load()
         active, _, _ = expression.context(state["legacy"])
-        return {"name": "NOVA Unified", "version": "1.0.0", "head": head, "events": count,
+        return {"name": "NOVA Unified", "version": "1.1.0", "head": head, "events": count,
                 "generation": state["generation"], "genome": genome(state), "admissions_total": state["admissions"],
-                "active_learned_skills": len(active) + len(state["graph"]["admitted"]),
+                "active_learned_skills": len(active) + len(state["graph"]["admitted"]) + len(state["raw"]["active"]),
                 "legacy_skills": len(active), "graph_skills": [a["goal"]["law"] for a in state["graph"]["admitted"]],
                 "catalog_entries": len(capabilities.catalog(state)), "executions": state["executions"],
                 "goals": {k: v["status"] for k, v in state["goals"].items()},
                 "pending_graph_candidate": state["graph"]["candidate"]["freeze"] if state["graph"]["candidate"] else None,
                 "known_sources": len(capabilities.captures(state)), "source_failures": len(state["graph"]["failures"]),
-                "workspace": state["workspace"], "parent_lineages": self.bootstrap["proof"]["parents"],
+                "workspace": state["workspace"], "raw": raw_cycle.summary(state["raw"]), "parent_lineages": self.bootstrap["proof"]["parents"],
                 "runtime": digest(self.manifest), "claim": "integrated bounded cognition; digital consciousness is unproven"}
 
     def memory(self):
@@ -499,7 +553,7 @@ class Kernel:
                 "goals": state["goals"], "workspace": state["workspace"],
                 "sources": [{k: r[k] for k in ("url", "sha256", "bytes")} for r in capabilities.captures(state)],
                 "legacy_knowledge": sorted(state["legacy"]["knowledge"]),
-                "consumed_fresh_views": len(state["graph"]["seen_inputs"])}
+                "consumed_fresh_views": len(state["graph"]["seen_inputs"]), "raw": raw_cycle.summary(state["raw"])}
 
     def think(self):
         return think(self._load()[0])
@@ -511,7 +565,7 @@ class Kernel:
     def audit(self):
         state, _, _ = self._load(force=True)
         proof = regression(state)
-        return {"status": proof["status"], "verification": "full unified semantic replay and both-domain regression",
+        return {"status": proof["status"], "verification": "full unified semantic replay and all-domain regression",
                 "regression": proof, "state": self.status()}
 
     def rollback(self, generation):

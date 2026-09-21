@@ -1,0 +1,15 @@
+test_urls_alone_start_observation_without_a_supplied_goal (test_raw_cycle.RawCycleTests.test_urls_alone_start_observation_without_a_supplied_goal) ... ERROR
+
+======================================================================
+ERROR: test_urls_alone_start_observation_without_a_supplied_goal (test_raw_cycle.RawCycleTests.test_urls_alone_start_observation_without_a_supplied_goal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/bb92d4a8c1fb/nova/tests/test_raw_cycle.py", line 13, in test_urls_alone_start_observation_without_a_supplied_goal
+    kernel.sense(["https://first.example/opaque", "https://second.example/opaque"])
+    ^^^^^^^^^^^^
+AttributeError: 'Kernel' object has no attribute 'sense'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.259s
+
+FAILED (errors=1)

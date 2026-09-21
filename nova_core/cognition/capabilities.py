@@ -31,6 +31,10 @@ def catalog(state):
         law = acquired["goal"]["law"]
         add("graph:" + law, {"graph": "code.graph"}, "graph." + law,
             {"kind": "admitted_graph_program", "program": acquired["program"]["id"]}, 2)
+    for identity in state.get("raw", {}).get("active", []):
+        origin = {"kind": "admitted_byte_program", "program": identity}
+        add("raw.pack:" + identity, {"hex": "raw.hex"}, "raw.frame." + identity, origin, 2)
+        add("raw.unpack:" + identity, {"hex": "raw.frame." + identity}, "raw.hex", origin, 1)
     for item in seed_ucr.KERNEL_BLUEPRINT["primitives"]:
         add("seed:" + item["machine_id"], {"args": "seed.args"}, "seed." + item["machine_id"],
             {"kind": "provided_UCR_primitive", "independent_new_admission": False})
@@ -76,6 +80,19 @@ def invoke(state, identity, inputs, captured=None):
     item = catalog(state).get(identity)
     if item is None or type(inputs) is not dict or set(inputs) != set(item["inputs"]):
         raise ContractError("capability or argument contract differs")
+    if identity.startswith(("raw.pack:", "raw.unpack:")):
+        from . import rawcodec, raw_verifier
+        key = identity.split(":", 1)[1]
+        model = state["raw"]["models"][key]
+        value = inputs["hex"]
+        if type(value) is not str or len(value) > 2 * (rawcodec.MAX_BYTES + 1):
+            raise ContractError("raw capability byte budget")
+        value = bytes.fromhex(value)
+        if identity.startswith("raw.pack:"):
+            if len(value) > rawcodec.MAX_BYTES:
+                raise ContractError("raw capability byte budget")
+            return rawcodec.isolated(model, [value])[0].hex()
+        return raw_verifier.restore(model, value).hex()
     if identity.startswith(("skill:", "primitive:")):
         bindings, memory, _ = context(state["legacy"])
         if identity.startswith("skill:"):
@@ -100,6 +117,8 @@ def invoke(state, identity, inputs, captured=None):
     if identity == "source.fetch":
         url = inputs["url"]
         previous = next((r for r in captures(state) if r["url"] == url), None)
+        if previous is None and state.get("raw", {}).get("phase") not in (None, "OFF", "DONE"):
+            raise ContractError("raw discovery/transfer reserves unseen sources")
         if previous is not None:
             if captured is not None and captured != previous:
                 raise ContractError("cached source differs from known receipt")

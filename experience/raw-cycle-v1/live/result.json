@@ -1,0 +1,543 @@
+{
+  "actions": [
+    {
+      "action": "raw.fetch",
+      "status": "OBSERVED"
+    },
+    {
+      "action": "raw.fetch",
+      "status": "OBSERVED"
+    },
+    {
+      "action": "raw.discover",
+      "status": "GOAL_FORMED"
+    },
+    {
+      "action": "raw.synthesize",
+      "status": "FROZEN"
+    },
+    {
+      "action": "raw.fetch",
+      "status": "OBSERVED"
+    },
+    {
+      "action": "raw.fetch",
+      "status": "OBSERVED"
+    },
+    {
+      "action": "raw.assess",
+      "status": "ADMITTED"
+    }
+  ],
+  "after": {
+    "active_learned_skills": 25,
+    "admissions_total": 2,
+    "catalog_entries": 43,
+    "claim": "integrated bounded cognition; digital consciousness is unproven",
+    "events": 9,
+    "executions": 10,
+    "generation": 2,
+    "genome": "fdebfee7787de479c18e0fa1accb6d773a171eeaa1c98a581504cf3822faeabb",
+    "goals": {
+      "6698f74fc1306ddfb7556afc7e3293ef51e97c4936d79bad19405c29dc461397": "COMPLETED"
+    },
+    "graph_skills": [
+      "maximum_impact",
+      "reachable_pairs",
+      "indirect_pairs"
+    ],
+    "head": "05f6e127586863fec4643b132cde4b33e4f8e6eed2ef7739c3f5e96fddd5d518",
+    "known_sources": 10,
+    "legacy_skills": 21,
+    "name": "NOVA Unified",
+    "parent_lineages": {
+      "unified_v1": {
+        "genome": "891a3d2124b987da0145768d8fc9f2b6151259f78c59ff3e87cd054d869fecfb",
+        "head": "5d9e461baab5db26255dcd3a4085a54200d9650c9bf2cf7ab7a08fa319d32cb0",
+        "runtime": "3e101420324d3c61296b9b4034f25d49f4abefb8b48a6cfdfef7ee4715704c06"
+      }
+    },
+    "pending_graph_candidate": null,
+    "raw": {
+      "active": [
+        "e150d61cc1f631b5141db1ce04978dc670b31597cc29d6c76ebb7336086248b9"
+      ],
+      "consumed": [
+        "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+        "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c"
+      ],
+      "description_bytes": 207337,
+      "exposed_hashes": [
+        "c3e77e49259d4cbdb9ee6024539e87d8906d1f70c20b1bd095c4404f5b5e5964",
+        "4998d7e252eb513be85b298e287048b4fb283882e9ba7df905f572f07200f3f3",
+        "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+        "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c"
+      ],
+      "failures": [],
+      "freeze": null,
+      "goal": {
+        "acceptance": {
+          "charge_full_program": true,
+          "exact_reconstruction": true,
+          "fresh_origins": 2,
+          "minimum_net_gain_basis_points": 100,
+          "preserve_all_active_skills": true
+        },
+        "baseline": {
+          "bytes": 169271,
+          "id": "literal"
+        },
+        "conditional_bound_bytes": 75624,
+        "deficit_bytes": 93647,
+        "id": "8fad12a45ff6ac11e7af98079d9be77211269489632f5d212b0c56dc0ee7081d",
+        "objective": "retain exact observations in a shorter reusable description",
+        "observations": [
+          "c3e77e49259d4cbdb9ee6024539e87d8906d1f70c20b1bd095c4404f5b5e5964",
+          "4998d7e252eb513be85b298e287048b4fb283882e9ba7df905f572f07200f3f3"
+        ],
+        "origin": "self: measured byte-transition redundancy against active memory cost",
+        "provided_preference": "lossless retention with minimum description length"
+      },
+      "history": [
+        {
+          "goal": "8fad12a45ff6ac11e7af98079d9be77211269489632f5d212b0c56dc0ee7081d",
+          "result": {
+            "ablation": {
+              "description_bytes": 154442,
+              "isolation": "linux_seccomp_v1",
+              "literal_bytes": 154238,
+              "model_bytes": 204,
+              "net_saved_bytes": -204,
+              "oracle": "original external bytes, independent DAG expansion and bit decoder",
+              "passed": 2,
+              "rows": [
+                {
+                  "exact": true,
+                  "raw_bytes": 65260,
+                  "sha256": "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+                  "stored_bytes": 65261,
+                  "wire_sha256": "eb5fbff2526750724674011229f5fe97342f42f2da0d6918ea2f7b381d9c252f"
+                },
+                {
+                  "exact": true,
+                  "raw_bytes": 88976,
+                  "sha256": "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c",
+                  "stored_bytes": 88977,
+                  "wire_sha256": "d4b2e2d10dcc2186853eab497054cb745727e53bdf3d90bea4f6ed2eeea40b5b"
+                }
+              ],
+              "total": 2,
+              "zlib_reference_bytes": 34794
+            },
+            "baseline": {
+              "bytes": 154238,
+              "id": "literal"
+            },
+            "freeze": "ed0e756f46a47cbb324cd0b035f990d5bfa1d4a58a53dd9e4af1c99c073fd2b5",
+            "fresh_indices": [
+              2,
+              3
+            ],
+            "net_gain_bytes": 36866,
+            "origins": [
+              "github:google/gson",
+              "github:pydantic/pydantic"
+            ],
+            "program": "e150d61cc1f631b5141db1ce04978dc670b31597cc29d6c76ebb7336086248b9",
+            "reason": "TRANSFERRED_DESCRIPTION_GAIN",
+            "status": "ADMITTED",
+            "transfer": {
+              "description_bytes": 117372,
+              "isolation": "linux_seccomp_v1",
+              "literal_bytes": 154238,
+              "model_bytes": 17335,
+              "net_saved_bytes": 36866,
+              "oracle": "original external bytes, independent DAG expansion and bit decoder",
+              "passed": 2,
+              "rows": [
+                {
+                  "exact": true,
+                  "raw_bytes": 65260,
+                  "sha256": "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+                  "stored_bytes": 43224,
+                  "wire_sha256": "ad0b80a38afbf1175b77d12d31ec6dda7a4ccdd08349717d34ab83099c95016c"
+                },
+                {
+                  "exact": true,
+                  "raw_bytes": 88976,
+                  "sha256": "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c",
+                  "stored_bytes": 56813,
+                  "wire_sha256": "103bd2c34497cda2c8610e759bba3349ea9ebc692ad605557bc6aea5d95a8ef0"
+                }
+              ],
+              "total": 2,
+              "zlib_reference_bytes": 34794
+            }
+          }
+        }
+      ],
+      "model_bytes": 17335,
+      "observations": 4,
+      "phase": "DONE",
+      "raw_bytes": 323505,
+      "stored_bytes": 190002
+    },
+    "runtime": "609a15ea7a82d04089aa59baae0391b8a2b3f6866e4ab6194f67d838148ca2a2",
+    "source_failures": 0,
+    "version": "1.1.0",
+    "workspace": {
+      "context": "a8cafb9d40c716fc6239b421afc62a1c581be6773b78e2a7f77c440058f39fd6",
+      "intelligence": {
+        "cost": 4,
+        "policy": "raw observations, measured deficit, induced program, reserved transfer, global regression"
+      },
+      "logic": {
+        "evidence": "76ecf6d52d6d3c8968eb41dca5036657d39dd5c9126dc4f88050e7e148d3f610",
+        "reason": "TRANSFERRED_DESCRIPTION_GAIN",
+        "status": "ADMITTED"
+      },
+      "thinking": {
+        "cause": "ed0e756f46a47cbb324cd0b035f990d5bfa1d4a58a53dd9e4af1c99c073fd2b5",
+        "cost": 4,
+        "kind": "raw.assess",
+        "priority": 130
+      }
+    }
+  },
+  "assessment": {
+    "ablation": {
+      "description_bytes": 154442,
+      "isolation": "linux_seccomp_v1",
+      "literal_bytes": 154238,
+      "model_bytes": 204,
+      "net_saved_bytes": -204,
+      "oracle": "original external bytes, independent DAG expansion and bit decoder",
+      "passed": 2,
+      "rows": [
+        {
+          "exact": true,
+          "raw_bytes": 65260,
+          "sha256": "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+          "stored_bytes": 65261,
+          "wire_sha256": "eb5fbff2526750724674011229f5fe97342f42f2da0d6918ea2f7b381d9c252f"
+        },
+        {
+          "exact": true,
+          "raw_bytes": 88976,
+          "sha256": "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c",
+          "stored_bytes": 88977,
+          "wire_sha256": "d4b2e2d10dcc2186853eab497054cb745727e53bdf3d90bea4f6ed2eeea40b5b"
+        }
+      ],
+      "total": 2,
+      "zlib_reference_bytes": 34794
+    },
+    "baseline": {
+      "bytes": 154238,
+      "id": "literal"
+    },
+    "freeze": "ed0e756f46a47cbb324cd0b035f990d5bfa1d4a58a53dd9e4af1c99c073fd2b5",
+    "fresh_indices": [
+      2,
+      3
+    ],
+    "net_gain_bytes": 36866,
+    "origins": [
+      "github:google/gson",
+      "github:pydantic/pydantic"
+    ],
+    "program": "e150d61cc1f631b5141db1ce04978dc670b31597cc29d6c76ebb7336086248b9",
+    "reason": "TRANSFERRED_DESCRIPTION_GAIN",
+    "status": "ADMITTED",
+    "transfer": {
+      "description_bytes": 117372,
+      "isolation": "linux_seccomp_v1",
+      "literal_bytes": 154238,
+      "model_bytes": 17335,
+      "net_saved_bytes": 36866,
+      "oracle": "original external bytes, independent DAG expansion and bit decoder",
+      "passed": 2,
+      "rows": [
+        {
+          "exact": true,
+          "raw_bytes": 65260,
+          "sha256": "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+          "stored_bytes": 43224,
+          "wire_sha256": "ad0b80a38afbf1175b77d12d31ec6dda7a4ccdd08349717d34ab83099c95016c"
+        },
+        {
+          "exact": true,
+          "raw_bytes": 88976,
+          "sha256": "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c",
+          "stored_bytes": 56813,
+          "wire_sha256": "103bd2c34497cda2c8610e759bba3349ea9ebc692ad605557bc6aea5d95a8ef0"
+        }
+      ],
+      "total": 2,
+      "zlib_reference_bytes": 34794
+    }
+  },
+  "before": {
+    "active_learned_skills": 24,
+    "admissions_total": 1,
+    "catalog_entries": 41,
+    "claim": "integrated bounded cognition; digital consciousness is unproven",
+    "events": 1,
+    "executions": 10,
+    "generation": 1,
+    "genome": "891a3d2124b987da0145768d8fc9f2b6151259f78c59ff3e87cd054d869fecfb",
+    "goals": {
+      "6698f74fc1306ddfb7556afc7e3293ef51e97c4936d79bad19405c29dc461397": "COMPLETED"
+    },
+    "graph_skills": [
+      "maximum_impact",
+      "reachable_pairs",
+      "indirect_pairs"
+    ],
+    "head": "194eb1bd67597ceab5aa0dbaa1a33316b337af4b1c4be052ce69912367be4c17",
+    "known_sources": 10,
+    "legacy_skills": 21,
+    "name": "NOVA Unified",
+    "parent_lineages": {
+      "unified_v1": {
+        "genome": "891a3d2124b987da0145768d8fc9f2b6151259f78c59ff3e87cd054d869fecfb",
+        "head": "5d9e461baab5db26255dcd3a4085a54200d9650c9bf2cf7ab7a08fa319d32cb0",
+        "runtime": "3e101420324d3c61296b9b4034f25d49f4abefb8b48a6cfdfef7ee4715704c06"
+      }
+    },
+    "pending_graph_candidate": null,
+    "raw": {
+      "active": [],
+      "consumed": [],
+      "description_bytes": 0,
+      "exposed_hashes": [],
+      "failures": [],
+      "freeze": null,
+      "goal": null,
+      "history": [],
+      "model_bytes": 0,
+      "observations": 0,
+      "phase": "OFF",
+      "raw_bytes": 0,
+      "stored_bytes": 0
+    },
+    "runtime": "609a15ea7a82d04089aa59baae0391b8a2b3f6866e4ab6194f67d838148ca2a2",
+    "source_failures": 0,
+    "version": "1.1.0",
+    "workspace": {
+      "context": "77d644bd03f2de2ea2c8105147905f11914e3cd0459b956e91ff4c80037ac93f",
+      "intelligence": {
+        "cost": 2.0,
+        "policy": "frozen evaluation first, requested plans, measured deficits, inherited learning"
+      },
+      "logic": {
+        "evidence": "8c4168c24085a616f72864016b458d48ac9a8cce19361cf67c5452f4aa46ded5",
+        "reason": null,
+        "status": "SUCCEEDED"
+      },
+      "thinking": {
+        "cause": "operator goal; mechanism and plan selected by kernel",
+        "cost": 2.0,
+        "goal": "6698f74fc1306ddfb7556afc7e3293ef51e97c4936d79bad19405c29dc461397",
+        "kind": "goal.execute",
+        "plan": {
+          "actions": [
+            "report.code"
+          ],
+          "cost": 2.0,
+          "expanded": 2,
+          "goal": "code.report",
+          "id": "aa0e564704f6db62e7c8a73f05b3ee1878e834d603050c7b6f1db455d3688a52",
+          "initial_types": [
+            "code.graph",
+            "code.support",
+            "graph.indirect_pairs",
+            "graph.maximum_impact",
+            "graph.reachable_pairs",
+            "input.text",
+            "skill.30-record",
+            "source.capture",
+            "source.ir",
+            "source.url"
+          ],
+          "status": "PLANNED"
+        },
+        "priority": 80
+      }
+    }
+  },
+  "catalog_and_readers_called_during_cycle": 0,
+  "error": null,
+  "limits": [
+    "maintainer-supplied MDL preference and grammar induction",
+    "bounded learned rewrite programs",
+    "transfer is across repository origins, not cryptographic proof of independence",
+    "zlib reference is reported separately; no claim of a new compression algorithm"
+  ],
+  "protocol_digest": "eed48e09344a9587525ad39e209e755279b4672d88898d3a35ee7dffd7528ee8",
+  "recall": [
+    {
+      "bytes": 82429,
+      "sha256": "c3e77e49259d4cbdb9ee6024539e87d8906d1f70c20b1bd095c4404f5b5e5964"
+    },
+    {
+      "bytes": 86840,
+      "sha256": "4998d7e252eb513be85b298e287048b4fb283882e9ba7df905f572f07200f3f3"
+    },
+    {
+      "bytes": 65260,
+      "sha256": "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589"
+    },
+    {
+      "bytes": 88976,
+      "sha256": "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c"
+    }
+  ],
+  "regression": {
+    "graph": {
+      "indirect_pairs": {
+        "outputs": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          2,
+          5,
+          0,
+          0,
+          1,
+          1,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passed": 24,
+        "total": 24
+      },
+      "maximum_impact": {
+        "outputs": [
+          7,
+          2,
+          2,
+          3,
+          2,
+          6,
+          6,
+          1,
+          3,
+          3,
+          2,
+          3,
+          4,
+          2,
+          2,
+          1,
+          3,
+          3,
+          4,
+          0,
+          1,
+          1,
+          3,
+          4
+        ],
+        "passed": 24,
+        "total": 24
+      },
+      "reachable_pairs": {
+        "outputs": [
+          77,
+          4,
+          13,
+          10,
+          21,
+          44,
+          70,
+          2,
+          5,
+          11,
+          7,
+          32,
+          32,
+          1,
+          5,
+          7,
+          10,
+          17,
+          11,
+          0,
+          0,
+          9,
+          9,
+          14
+        ],
+        "passed": 24,
+        "total": 24
+      }
+    },
+    "isolation": "linux_seccomp_v1",
+    "legacy": {
+      "passed": 192,
+      "skills": 21,
+      "total": 192
+    },
+    "raw": {
+      "e150d61cc1f631b5141db1ce04978dc670b31597cc29d6c76ebb7336086248b9": {
+        "description_bytes": 207337,
+        "isolation": "linux_seccomp_v1",
+        "literal_bytes": 323509,
+        "model_bytes": 17335,
+        "net_saved_bytes": 116172,
+        "oracle": "original external bytes, independent DAG expansion and bit decoder",
+        "passed": 4,
+        "rows": [
+          {
+            "exact": true,
+            "raw_bytes": 82429,
+            "sha256": "c3e77e49259d4cbdb9ee6024539e87d8906d1f70c20b1bd095c4404f5b5e5964",
+            "stored_bytes": 47641,
+            "wire_sha256": "b14401fc4b579d9b0e7bab5fd73fccc525ab4fd1ab8f7c5966088695351ff1a8"
+          },
+          {
+            "exact": true,
+            "raw_bytes": 86840,
+            "sha256": "4998d7e252eb513be85b298e287048b4fb283882e9ba7df905f572f07200f3f3",
+            "stored_bytes": 42324,
+            "wire_sha256": "e7b38d08596bc0e41e1ce486142e7bbebe2d5e7760518b6a254f436427a6f319"
+          },
+          {
+            "exact": true,
+            "raw_bytes": 65260,
+            "sha256": "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+            "stored_bytes": 43224,
+            "wire_sha256": "ad0b80a38afbf1175b77d12d31ec6dda7a4ccdd08349717d34ab83099c95016c"
+          },
+          {
+            "exact": true,
+            "raw_bytes": 88976,
+            "sha256": "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c",
+            "stored_bytes": 56813,
+            "wire_sha256": "103bd2c34497cda2c8610e759bba3349ea9ebc692ad605557bc6aea5d95a8ef0"
+          }
+        ],
+        "total": 4,
+        "zlib_reference_bytes": 70731
+      }
+    },
+    "status": "PASS"
+  },
+  "schema": "nova.raw-cycle.result.v1",
+  "status": "ADMITTED",
+  "storage_scope": "active raw observation payload plus full model; journal audit copies retained"
+}

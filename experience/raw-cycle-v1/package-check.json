@@ -1,0 +1,11 @@
+{
+  "compiled_acquired_program_execution": true,
+  "entrypoint": "nova",
+  "inherited_execution": true,
+  "initial_skills": 24,
+  "installed_manifest_matches_frozen_experiment": true,
+  "runtime": "609a15ea7a82d04089aa59baae0391b8a2b3f6866e4ab6194f67d838148ca2a2",
+  "scope": "installed wheel outside repository; same frozen source bytes",
+  "status": "PASS",
+  "wheel_sha256": "227c1f3ca80d76504bf9511acfccf9d091e646d32593660c3c130fa3e3fc1d3e"
+}

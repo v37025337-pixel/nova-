@@ -1,0 +1,14 @@
+test_closed_cycle_without_catalog_or_reader_and_offline_recovery (test_raw_cycle.RawCycleTests.test_closed_cycle_without_catalog_or_reader_and_offline_recovery) ... ok
+test_corrupt_frame_and_exponential_expansion_are_rejected (test_raw_cycle.RawCycleTests.test_corrupt_frame_and_exponential_expansion_are_rejected) ... ok
+test_failed_global_regression_cannot_commit_a_positive_transfer (test_raw_cycle.RawCycleTests.test_failed_global_regression_cannot_commit_a_positive_transfer) ... ok
+test_fresh_blind_data_cannot_be_reused_or_acquired_by_other_faculties (test_raw_cycle.RawCycleTests.test_fresh_blind_data_cannot_be_reused_or_acquired_by_other_faculties) ... ok
+test_generated_source_and_grammar_cannot_disagree (test_raw_cycle.RawCycleTests.test_generated_source_and_grammar_cannot_disagree) ... ok
+test_noise_does_not_receive_a_fabricated_objective (test_raw_cycle.RawCycleTests.test_noise_does_not_receive_a_fabricated_objective) ... ok
+test_nontransferring_mechanism_is_withheld_and_holdout_consumed (test_raw_cycle.RawCycleTests.test_nontransferring_mechanism_is_withheld_and_holdout_consumed) ... ok
+test_task_metadata_is_not_an_observation_interface (test_raw_cycle.RawCycleTests.test_task_metadata_is_not_an_observation_interface) ... ok
+test_urls_alone_start_observation_without_a_supplied_goal (test_raw_cycle.RawCycleTests.test_urls_alone_start_observation_without_a_supplied_goal) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 35.289s
+
+OK

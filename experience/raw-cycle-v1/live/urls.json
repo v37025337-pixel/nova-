@@ -1,0 +1,6 @@
+[
+  "https://raw.githubusercontent.com/curl/curl/master/lib/url.c",
+  "https://raw.githubusercontent.com/serde-rs/json/master/src/de.rs",
+  "https://raw.githubusercontent.com/google/gson/main/gson/src/main/java/com/google/gson/stream/JsonReader.java",
+  "https://raw.githubusercontent.com/pydantic/pydantic/main/pydantic/main.py"
+]

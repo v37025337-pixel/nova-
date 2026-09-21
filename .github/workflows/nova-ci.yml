@@ -26,6 +26,9 @@ jobs:
       - name: Replay unified cognition, inherited candidate and combined plan
         if: matrix.python == '3.12'
         run: python scripts/verify_unified.py
+      - name: Replay raw observation, self-goal, induced mechanism and transfer
+        if: matrix.python == '3.12'
+        run: python scripts/verify_raw_cycle.py
       - run: python -m nova_core --state /tmp/nova-ci.sqlite learn examples/three_generations.json --steps 3
       - run: python -m nova_core --state /tmp/nova-ci.sqlite verify
       - name: Restore and replay trained generation 8

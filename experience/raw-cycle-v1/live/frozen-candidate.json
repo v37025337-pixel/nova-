@@ -1,0 +1,1798 @@
+{
+  "exposure": {
+    "hashes": [
+      "15215c88f4187c98cf498e757b188c0e06fbe80d95f78b7630c4e51f92611af4",
+      "3d2089736ced93b2b405624a943f866d22652b17df06a85eb010f86272fc3e7d",
+      "4998d7e252eb513be85b298e287048b4fb283882e9ba7df905f572f07200f3f3",
+      "62415652d4ede777449e823fc00548c4bcc515d620f1b30c6b9be05797992207",
+      "6a147869216b94449a053e869d4311cba23294551c83ee20fe5d2f1eaff50a3e",
+      "94b0d4690fcfdc3f62c14d256ae365eae4a9ed55e856690faa94637bf0fb2289",
+      "975de70f74626460f7afd2f16e3a513cbc2fe65cbd961f95c2f92eec4f7ecff8",
+      "a09f9f53fde6bf1ba022e36d1da0804d9e7a9601261d18208c9892a84818ae30",
+      "c3e77e49259d4cbdb9ee6024539e87d8906d1f70c20b1bd095c4404f5b5e5964",
+      "ca23370e7b137c0e7a1350967803ef8f2a8056f60e3663005cfed1021c54dd82",
+      "db45ee55718c469037bbeb8efc0e4fff6470f3111ed4ee9bf93355fa3cfb9eca",
+      "ed717b3ac00debb48d089daeb4dd7fbaf47cb5642ebc4a6e76f3a2fc6cfc0f70"
+    ],
+    "origins": [
+      "github:aio-libs/aiohttp",
+      "github:curl/curl",
+      "github:encode/httpx",
+      "github:encode/starlette",
+      "github:jd/tenacity",
+      "github:pallets/click",
+      "github:pallets/flask",
+      "github:pallets/werkzeug",
+      "github:psf/requests",
+      "github:serde-rs/json",
+      "github:tornadoweb/tornado",
+      "github:urllib3/urllib3"
+    ]
+  },
+  "freeze": "ed0e756f46a47cbb324cd0b035f990d5bfa1d4a58a53dd9e4af1c99c073fd2b5",
+  "goal": "8fad12a45ff6ac11e7af98079d9be77211269489632f5d212b0c56dc0ee7081d",
+  "method": "data-induced adjacent-symbol grammar, charged executable MDL",
+  "program": {
+    "id": "e150d61cc1f631b5141db1ce04978dc670b31597cc29d6c76ebb7336086248b9",
+    "rules": [
+      [
+        32,
+        32
+      ],
+      [
+        256,
+        256
+      ],
+      [
+        257,
+        257
+      ],
+      [
+        115,
+        101
+      ],
+      [
+        10,
+        258
+      ],
+      [
+        97,
+        116
+      ],
+      [
+        10,
+        257
+      ],
+      [
+        114,
+        101
+      ],
+      [
+        111,
+        110
+      ],
+      [
+        44,
+        32
+      ],
+      [
+        42,
+        42
+      ],
+      [
+        100,
+        101
+      ],
+      [
+        47,
+        47
+      ],
+      [
+        105,
+        110
+      ],
+      [
+        116,
+        32
+      ],
+      [
+        45,
+        62
+      ],
+      [
+        101,
+        114
+      ],
+      [
+        101,
+        32
+      ],
+      [
+        111,
+        114
+      ],
+      [
+        117,
+        114
+      ],
+      [
+        97,
+        108
+      ],
+      [
+        115,
+        116
+      ],
+      [
+        10,
+        256
+      ],
+      [
+        99,
+        264
+      ],
+      [
+        32,
+        61
+      ],
+      [
+        260,
+        258
+      ],
+      [
+        41,
+        59
+      ],
+      [
+        99,
+        104
+      ],
+      [
+        105,
+        102
+      ],
+      [
+        110,
+        101
+      ],
+      [
+        32,
+        123
+      ],
+      [
+        32,
+        116
+      ],
+      [
+        108,
+        101
+      ],
+      [
+        108,
+        102
+      ],
+      [
+        105,
+        116
+      ],
+      [
+        32,
+        42
+      ],
+      [
+        266,
+        266
+      ],
+      [
+        259,
+        289
+      ],
+      [
+        100,
+        261
+      ],
+      [
+        294,
+        97
+      ],
+      [
+        275,
+        108
+      ],
+      [
+        97,
+        114
+      ],
+      [
+        97,
+        110
+      ],
+      [
+        115,
+        32
+      ],
+      [
+        260,
+        257
+      ],
+      [
+        58,
+        58
+      ],
+      [
+        101,
+        100
+      ],
+      [
+        114,
+        105
+      ],
+      [
+        117,
+        108
+      ],
+      [
+        293,
+        46
+      ],
+      [
+        296,
+        95
+      ],
+      [
+        110,
+        32
+      ],
+      [
+        112,
+        101
+      ],
+      [
+        268,
+        47
+      ],
+      [
+        279,
+        110
+      ],
+      [
+        41,
+        41
+      ],
+      [
+        280,
+        32
+      ],
+      [
+        99,
+        116
+      ],
+      [
+        109,
+        101
+      ],
+      [
+        105,
+        264
+      ],
+      [
+        114,
+        111
+      ],
+      [
+        125,
+        10
+      ],
+      [
+        82,
+        76
+      ],
+      [
+        114,
+        114
+      ],
+      [
+        85,
+        318
+      ],
+      [
+        287,
+        104
+      ],
+      [
+        69,
+        319
+      ],
+      [
+        49,
+        101
+      ],
+      [
+        269,
+        103
+      ],
+      [
+        276,
+        105
+      ],
+      [
+        261,
+        283
+      ],
+      [
+        58,
+        32
+      ],
+      [
+        277,
+        114
+      ],
+      [
+        105,
+        115
+      ],
+      [
+        67,
+        320
+      ],
+      [
+        280,
+        62
+      ],
+      [
+        101,
+        110
+      ],
+      [
+        265,
+        323
+      ],
+      [
+        67,
+        306
+      ],
+      [
+        109,
+        326
+      ],
+      [
+        292,
+        292
+      ],
+      [
+        61,
+        32
+      ],
+      [
+        101,
+        115
+      ],
+      [
+        105,
+        103
+      ],
+      [
+        325,
+        122
+      ],
+      [
+        59,
+        10
+      ],
+      [
+        284,
+        40
+      ],
+      [
+        263,
+        116
+      ],
+      [
+        259,
+        303
+      ],
+      [
+        344,
+        340
+      ],
+      [
+        304,
+        116
+      ],
+      [
+        295,
+        271
+      ],
+      [
+        41,
+        32
+      ],
+      [
+        262,
+        256
+      ],
+      [
+        111,
+        32
+      ],
+      [
+        47,
+        42
+      ],
+      [
+        343,
+        275
+      ],
+      [
+        99,
+        111
+      ],
+      [
+        108,
+        111
+      ],
+      [
+        352,
+        307
+      ],
+      [
+        40,
+        305
+      ],
+      [
+        10,
+        35
+      ],
+      [
+        309,
+        32
+      ],
+      [
+        98,
+        39
+      ],
+      [
+        117,
+        99
+      ],
+      [
+        259,
+        116
+      ],
+      [
+        351,
+        32
+      ],
+      [
+        105,
+        99
+      ],
+      [
+        286,
+        281
+      ],
+      [
+        321,
+        273
+      ],
+      [
+        276,
+        117
+      ],
+      [
+        279,
+        285
+      ],
+      [
+        291,
+        47
+      ],
+      [
+        329,
+        290
+      ],
+      [
+        101,
+        95
+      ],
+      [
+        116,
+        104
+      ],
+      [
+        117,
+        259
+      ],
+      [
+        277,
+        261
+      ],
+      [
+        100,
+        32
+      ],
+      [
+        367,
+        313
+      ],
+      [
+        267,
+        301
+      ],
+      [
+        272,
+        114
+      ],
+      [
+        310,
+        271
+      ],
+      [
+        99,
+        263
+      ],
+      [
+        110,
+        111
+      ],
+      [
+        112,
+        316
+      ],
+      [
+        111,
+        102
+      ],
+      [
+        331,
+        32
+      ],
+      [
+        97,
+        115
+      ],
+      [
+        44,
+        281
+      ],
+      [
+        117,
+        270
+      ],
+      [
+        101,
+        120
+      ],
+      [
+        83,
+        69
+      ],
+      [
+        105,
+        299
+      ],
+      [
+        263,
+        115
+      ],
+      [
+        112,
+        297
+      ],
+      [
+        101,
+        107
+      ],
+      [
+        59,
+        278
+      ],
+      [
+        308,
+        392
+      ],
+      [
+        40,
+        38
+      ],
+      [
+        119,
+        104
+      ],
+      [
+        267,
+        345
+      ],
+      [
+        322,
+        274
+      ],
+      [
+        328,
+        360
+      ],
+      [
+        399,
+        270
+      ],
+      [
+        84,
+        82
+      ],
+      [
+        97,
+        32
+      ],
+      [
+        116,
+        114
+      ],
+      [
+        117,
+        109
+      ],
+      [
+        118,
+        369
+      ],
+      [
+        366,
+        101
+      ],
+      [
+        97,
+        100
+      ],
+      [
+        100,
+        115
+      ],
+      [
+        117,
+        110
+      ],
+      [
+        112,
+        111
+      ],
+      [
+        285,
+        302
+      ],
+      [
+        291,
+        32
+      ],
+      [
+        288,
+        270
+      ],
+      [
+        101,
+        46
+      ],
+      [
+        121,
+        32
+      ],
+      [
+        267,
+        32
+      ],
+      [
+        379,
+        408
+      ],
+      [
+        60,
+        39
+      ],
+      [
+        267,
+        102
+      ],
+      [
+        330,
+        95
+      ],
+      [
+        101,
+        261
+      ],
+      [
+        69,
+        95
+      ],
+      [
+        283,
+        297
+      ],
+      [
+        282,
+        278
+      ],
+      [
+        116,
+        111
+      ],
+      [
+        295,
+        265
+      ],
+      [
+        303,
+        33
+      ],
+      [
+        32,
+        102
+      ],
+      [
+        109,
+        97
+      ],
+      [
+        270,
+        337
+      ],
+      [
+        282,
+        262
+      ],
+      [
+        105,
+        108
+      ],
+      [
+        286,
+        262
+      ],
+      [
+        282,
+        281
+      ],
+      [
+        332,
+        100
+      ],
+      [
+        411,
+        288
+      ],
+      [
+        391,
+        259
+      ],
+      [
+        109,
+        386
+      ],
+      [
+        117,
+        112
+      ],
+      [
+        271,
+        32
+      ],
+      [
+        348,
+        440
+      ],
+      [
+        377,
+        274
+      ],
+      [
+        397,
+        370
+      ],
+      [
+        101,
+        263
+      ]
+    ],
+    "schema": "nova.byte-grammar.v1",
+    "source": "def encode_tokens(s):\n    s = s.replace('  ', '\\u0100')\n    s = s.replace('\\u0100\\u0100', '\\u0101')\n    s = s.replace('\\u0101\\u0101', '\\u0102')\n    s = s.replace('se', '\\u0103')\n    s = s.replace('\\n\\u0102', '\\u0104')\n    s = s.replace('at', '\\u0105')\n    s = s.replace('\\n\\u0101', '\\u0106')\n    s = s.replace('re', '\\u0107')\n    s = s.replace('on', '\\u0108')\n    s = s.replace(', ', '\\u0109')\n    s = s.replace('**', '\\u010a')\n    s = s.replace('de', '\\u010b')\n    s = s.replace('//', '\\u010c')\n    s = s.replace('in', '\\u010d')\n    s = s.replace('t ', '\\u010e')\n    s = s.replace('->', '\\u010f')\n    s = s.replace('er', '\\u0110')\n    s = s.replace('e ', '\\u0111')\n    s = s.replace('or', '\\u0112')\n    s = s.replace('ur', '\\u0113')\n    s = s.replace('al', '\\u0114')\n    s = s.replace('st', '\\u0115')\n    s = s.replace('\\n\\u0100', '\\u0116')\n    s = s.replace('c\\u0108', '\\u0117')\n    s = s.replace(' =', '\\u0118')\n    s = s.replace('\\u0104\\u0102', '\\u0119')\n    s = s.replace(');', '\\u011a')\n    s = s.replace('ch', '\\u011b')\n    s = s.replace('if', '\\u011c')\n    s = s.replace('ne', '\\u011d')\n    s = s.replace(' {', '\\u011e')\n    s = s.replace(' t', '\\u011f')\n    s = s.replace('le', '\\u0120')\n    s = s.replace('lf', '\\u0121')\n    s = s.replace('it', '\\u0122')\n    s = s.replace(' *', '\\u0123')\n    s = s.replace('\\u010a\\u010a', '\\u0124')\n    s = s.replace('\\u0103\\u0121', '\\u0125')\n    s = s.replace('d\\u0105', '\\u0126')\n    s = s.replace('\\u0126a', '\\u0127')\n    s = s.replace('\\u0113l', '\\u0128')\n    s = s.replace('ar', '\\u0129')\n    s = s.replace('an', '\\u012a')\n    s = s.replace('s ', '\\u012b')\n    s = s.replace('\\u0104\\u0101', '\\u012c')\n    s = s.replace('::', '\\u012d')\n    s = s.replace('ed', '\\u012e')\n    s = s.replace('ri', '\\u012f')\n    s = s.replace('ul', '\\u0130')\n    s = s.replace('\\u0125.', '\\u0131')\n    s = s.replace('\\u0128_', '\\u0132')\n    s = s.replace('n ', '\\u0133')\n    s = s.replace('pe', '\\u0134')\n    s = s.replace('\\u010c/', '\\u0135')\n    s = s.replace('\\u0117n', '\\u0136')\n    s = s.replace('))', '\\u0137')\n    s = s.replace('\\u0118 ', '\\u0138')\n    s = s.replace('ct', '\\u0139')\n    s = s.replace('me', '\\u013a')\n    s = s.replace('i\\u0108', '\\u013b')\n    s = s.replace('ro', '\\u013c')\n    s = s.replace('}\\n', '\\u013d')\n    s = s.replace('RL', '\\u013e')\n    s = s.replace('rr', '\\u013f')\n    s = s.replace('U\\u013e', '\\u0140')\n    s = s.replace('\\u011fh', '\\u0141')\n    s = s.replace('E\\u013f', '\\u0142')\n    s = s.replace('1e', '\\u0143')\n    s = s.replace('\\u010dg', '\\u0144')\n    s = s.replace('\\u0114i', '\\u0145')\n    s = s.replace('\\u0105\\u011b', '\\u0146')\n    s = s.replace(': ', '\\u0147')\n    s = s.replace('\\u0115r', '\\u0148')\n    s = s.replace('is', '\\u0149')\n    s = s.replace('C\\u0140', '\\u014a')\n    s = s.replace('\\u0118>', '\\u014b')\n    s = s.replace('en', '\\u014c')\n    s = s.replace('\\u0109\\u0143', '\\u014d')\n    s = s.replace('C\\u0132', '\\u014e')\n    s = s.replace('m\\u0146', '\\u014f')\n    s = s.replace('\\u0124\\u0124', '\\u0150')\n    s = s.replace('= ', '\\u0151')\n    s = s.replace('es', '\\u0152')\n    s = s.replace('ig', '\\u0153')\n    s = s.replace('\\u0145z', '\\u0154')\n    s = s.replace(';\\n', '\\u0155')\n    s = s.replace('\\u011c(', '\\u0156')\n    s = s.replace('\\u0107t', '\\u0157')\n    s = s.replace('\\u0103\\u012f', '\\u0158')\n    s = s.replace('\\u0158\\u0154', '\\u0159')\n    s = s.replace('\\u0130t', '\\u015a')\n    s = s.replace('\\u0127\\u010f', '\\u015b')\n    s = s.replace(') ', '\\u015c')\n    s = s.replace('\\u0106\\u0100', '\\u015d')\n    s = s.replace('o ', '\\u015e')\n    s = s.replace('/*', '\\u015f')\n    s = s.replace('\\u0157\\u0113', '\\u0160')\n    s = s.replace('co', '\\u0161')\n    s = s.replace('lo', '\\u0162')\n    s = s.replace('\\u0160\\u0133', '\\u0163')\n    s = s.replace('(\\u0131', '\\u0164')\n    s = s.replace('\\n#', '\\u0165')\n    s = s.replace('\\u0135 ', '\\u0166')\n    s = s.replace(\"b'\", '\\u0167')\n    s = s.replace('uc', '\\u0168')\n    s = s.replace('\\u0103t', '\\u0169')\n    s = s.replace('\\u015f ', '\\u016a')\n    s = s.replace('ic', '\\u016b')\n    s = s.replace('\\u011e\\u0119', '\\u016c')\n    s = s.replace('\\u0141\\u0111', '\\u016d')\n    s = s.replace('\\u0114u', '\\u016e')\n    s = s.replace('\\u0117\\u011d', '\\u016f')\n    s = s.replace('\\u0123/', '\\u0170')\n    s = s.replace('\\u0149\\u0122', '\\u0171')\n    s = s.replace('e_', '\\u0172')\n    s = s.replace('th', '\\u0173')\n    s = s.replace('u\\u0103', '\\u0174')\n    s = s.replace('\\u0115\\u0105', '\\u0175')\n    s = s.replace('d ', '\\u0176')\n    s = s.replace('\\u016f\\u0139', '\\u0177')\n    s = s.replace('\\u010b\\u012d', '\\u0178')\n    s = s.replace('\\u0110r', '\\u0179')\n    s = s.replace('\\u0136\\u010f', '\\u017a')\n    s = s.replace('c\\u0107', '\\u017b')\n    s = s.replace('no', '\\u017c')\n    s = s.replace('p\\u013c', '\\u017d')\n    s = s.replace('of', '\\u017e')\n    s = s.replace('\\u014b ', '\\u017f')\n    s = s.replace('as', '\\u0180')\n    s = s.replace(',\\u0119', '\\u0181')\n    s = s.replace('u\\u010e', '\\u0182')\n    s = s.replace('ex', '\\u0183')\n    s = s.replace('SE', '\\u0184')\n    s = s.replace('i\\u012b', '\\u0185')\n    s = s.replace('\\u0107s', '\\u0186')\n    s = s.replace('p\\u0129', '\\u0187')\n    s = s.replace('ek', '\\u0188')\n    s = s.replace(';\\u0116', '\\u0189')\n    s = s.replace('\\u0134\\u0188', '\\u018a')\n    s = s.replace('(&', '\\u018b')\n    s = s.replace('wh', '\\u018c')\n    s = s.replace('\\u010b\\u0159', '\\u018d')\n    s = s.replace('\\u0142\\u0112', '\\u018e')\n    s = s.replace('\\u0148\\u0168', '\\u018f')\n    s = s.replace('\\u018f\\u010e', '\\u0190')\n    s = s.replace('TR', '\\u0191')\n    s = s.replace('a ', '\\u0192')\n    s = s.replace('tr', '\\u0193')\n    s = s.replace('um', '\\u0194')\n    s = s.replace('v\\u0171', '\\u0195')\n    s = s.replace('\\u016ee', '\\u0196')\n    s = s.replace('ad', '\\u0197')\n    s = s.replace('ds', '\\u0198')\n    s = s.replace('un', '\\u0199')\n    s = s.replace('po', '\\u019a')\n    s = s.replace('\\u011d\\u012e', '\\u019b')\n    s = s.replace('\\u0123 ', '\\u019c')\n    s = s.replace('\\u0120\\u010e', '\\u019d')\n    s = s.replace('e.', '\\u019e')\n    s = s.replace('y ', '\\u019f')\n    s = s.replace('\\u010b ', '\\u01a0')\n    s = s.replace('\\u017b\\u0198', '\\u01a1')\n    s = s.replace(\"<'\", '\\u01a2')\n    s = s.replace('\\u010bf', '\\u01a3')\n    s = s.replace('\\u014a_', '\\u01a4')\n    s = s.replace('e\\u0105', '\\u01a5')\n    s = s.replace('E_', '\\u01a6')\n    s = s.replace('\\u011b\\u0129', '\\u01a7')\n    s = s.replace('\\u011a\\u0116', '\\u01a8')\n    s = s.replace('to', '\\u01a9')\n    s = s.replace('\\u0127\\u0109', '\\u01aa')\n    s = s.replace('\\u012f!', '\\u01ab')\n    s = s.replace(' f', '\\u01ac')\n    s = s.replace('ma', '\\u01ad')\n    s = s.replace('\\u010e\\u0151', '\\u01ae')\n    s = s.replace('\\u011a\\u0106', '\\u01af')\n    s = s.replace('il', '\\u01b0')\n    s = s.replace('\\u011e\\u0106', '\\u01b1')\n    s = s.replace('\\u011a\\u0119', '\\u01b2')\n    s = s.replace('\\u014cd', '\\u01b3')\n    s = s.replace('\\u019b\\u0120', '\\u01b4')\n    s = s.replace('\\u0187\\u0103', '\\u01b5')\n    s = s.replace('m\\u0182', '\\u01b6')\n    s = s.replace('up', '\\u01b7')\n    s = s.replace('\\u010f ', '\\u01b8')\n    s = s.replace('\\u015c\\u01b8', '\\u01b9')\n    s = s.replace('\\u0179\\u0112', '\\u01ba')\n    s = s.replace('\\u018d\\u0172', '\\u01bb')\n    s = s.replace('e\\u0107', '\\u01bc')\n    return s\n\ndef decode_tokens(s):\n    s = s.replace('\\u01bc', 'e\\u0107')\n    s = s.replace('\\u01bb', '\\u018d\\u0172')\n    s = s.replace('\\u01ba', '\\u0179\\u0112')\n    s = s.replace('\\u01b9', '\\u015c\\u01b8')\n    s = s.replace('\\u01b8', '\\u010f ')\n    s = s.replace('\\u01b7', 'up')\n    s = s.replace('\\u01b6', 'm\\u0182')\n    s = s.replace('\\u01b5', '\\u0187\\u0103')\n    s = s.replace('\\u01b4', '\\u019b\\u0120')\n    s = s.replace('\\u01b3', '\\u014cd')\n    s = s.replace('\\u01b2', '\\u011a\\u0119')\n    s = s.replace('\\u01b1', '\\u011e\\u0106')\n    s = s.replace('\\u01b0', 'il')\n    s = s.replace('\\u01af', '\\u011a\\u0106')\n    s = s.replace('\\u01ae', '\\u010e\\u0151')\n    s = s.replace('\\u01ad', 'ma')\n    s = s.replace('\\u01ac', ' f')\n    s = s.replace('\\u01ab', '\\u012f!')\n    s = s.replace('\\u01aa', '\\u0127\\u0109')\n    s = s.replace('\\u01a9', 'to')\n    s = s.replace('\\u01a8', '\\u011a\\u0116')\n    s = s.replace('\\u01a7', '\\u011b\\u0129')\n    s = s.replace('\\u01a6', 'E_')\n    s = s.replace('\\u01a5', 'e\\u0105')\n    s = s.replace('\\u01a4', '\\u014a_')\n    s = s.replace('\\u01a3', '\\u010bf')\n    s = s.replace('\\u01a2', \"<'\")\n    s = s.replace('\\u01a1', '\\u017b\\u0198')\n    s = s.replace('\\u01a0', '\\u010b ')\n    s = s.replace('\\u019f', 'y ')\n    s = s.replace('\\u019e', 'e.')\n    s = s.replace('\\u019d', '\\u0120\\u010e')\n    s = s.replace('\\u019c', '\\u0123 ')\n    s = s.replace('\\u019b', '\\u011d\\u012e')\n    s = s.replace('\\u019a', 'po')\n    s = s.replace('\\u0199', 'un')\n    s = s.replace('\\u0198', 'ds')\n    s = s.replace('\\u0197', 'ad')\n    s = s.replace('\\u0196', '\\u016ee')\n    s = s.replace('\\u0195', 'v\\u0171')\n    s = s.replace('\\u0194', 'um')\n    s = s.replace('\\u0193', 'tr')\n    s = s.replace('\\u0192', 'a ')\n    s = s.replace('\\u0191', 'TR')\n    s = s.replace('\\u0190', '\\u018f\\u010e')\n    s = s.replace('\\u018f', '\\u0148\\u0168')\n    s = s.replace('\\u018e', '\\u0142\\u0112')\n    s = s.replace('\\u018d', '\\u010b\\u0159')\n    s = s.replace('\\u018c', 'wh')\n    s = s.replace('\\u018b', '(&')\n    s = s.replace('\\u018a', '\\u0134\\u0188')\n    s = s.replace('\\u0189', ';\\u0116')\n    s = s.replace('\\u0188', 'ek')\n    s = s.replace('\\u0187', 'p\\u0129')\n    s = s.replace('\\u0186', '\\u0107s')\n    s = s.replace('\\u0185', 'i\\u012b')\n    s = s.replace('\\u0184', 'SE')\n    s = s.replace('\\u0183', 'ex')\n    s = s.replace('\\u0182', 'u\\u010e')\n    s = s.replace('\\u0181', ',\\u0119')\n    s = s.replace('\\u0180', 'as')\n    s = s.replace('\\u017f', '\\u014b ')\n    s = s.replace('\\u017e', 'of')\n    s = s.replace('\\u017d', 'p\\u013c')\n    s = s.replace('\\u017c', 'no')\n    s = s.replace('\\u017b', 'c\\u0107')\n    s = s.replace('\\u017a', '\\u0136\\u010f')\n    s = s.replace('\\u0179', '\\u0110r')\n    s = s.replace('\\u0178', '\\u010b\\u012d')\n    s = s.replace('\\u0177', '\\u016f\\u0139')\n    s = s.replace('\\u0176', 'd ')\n    s = s.replace('\\u0175', '\\u0115\\u0105')\n    s = s.replace('\\u0174', 'u\\u0103')\n    s = s.replace('\\u0173', 'th')\n    s = s.replace('\\u0172', 'e_')\n    s = s.replace('\\u0171', '\\u0149\\u0122')\n    s = s.replace('\\u0170', '\\u0123/')\n    s = s.replace('\\u016f', '\\u0117\\u011d')\n    s = s.replace('\\u016e', '\\u0114u')\n    s = s.replace('\\u016d', '\\u0141\\u0111')\n    s = s.replace('\\u016c', '\\u011e\\u0119')\n    s = s.replace('\\u016b', 'ic')\n    s = s.replace('\\u016a', '\\u015f ')\n    s = s.replace('\\u0169', '\\u0103t')\n    s = s.replace('\\u0168', 'uc')\n    s = s.replace('\\u0167', \"b'\")\n    s = s.replace('\\u0166', '\\u0135 ')\n    s = s.replace('\\u0165', '\\n#')\n    s = s.replace('\\u0164', '(\\u0131')\n    s = s.replace('\\u0163', '\\u0160\\u0133')\n    s = s.replace('\\u0162', 'lo')\n    s = s.replace('\\u0161', 'co')\n    s = s.replace('\\u0160', '\\u0157\\u0113')\n    s = s.replace('\\u015f', '/*')\n    s = s.replace('\\u015e', 'o ')\n    s = s.replace('\\u015d', '\\u0106\\u0100')\n    s = s.replace('\\u015c', ') ')\n    s = s.replace('\\u015b', '\\u0127\\u010f')\n    s = s.replace('\\u015a', '\\u0130t')\n    s = s.replace('\\u0159', '\\u0158\\u0154')\n    s = s.replace('\\u0158', '\\u0103\\u012f')\n    s = s.replace('\\u0157', '\\u0107t')\n    s = s.replace('\\u0156', '\\u011c(')\n    s = s.replace('\\u0155', ';\\n')\n    s = s.replace('\\u0154', '\\u0145z')\n    s = s.replace('\\u0153', 'ig')\n    s = s.replace('\\u0152', 'es')\n    s = s.replace('\\u0151', '= ')\n    s = s.replace('\\u0150', '\\u0124\\u0124')\n    s = s.replace('\\u014f', 'm\\u0146')\n    s = s.replace('\\u014e', 'C\\u0132')\n    s = s.replace('\\u014d', '\\u0109\\u0143')\n    s = s.replace('\\u014c', 'en')\n    s = s.replace('\\u014b', '\\u0118>')\n    s = s.replace('\\u014a', 'C\\u0140')\n    s = s.replace('\\u0149', 'is')\n    s = s.replace('\\u0148', '\\u0115r')\n    s = s.replace('\\u0147', ': ')\n    s = s.replace('\\u0146', '\\u0105\\u011b')\n    s = s.replace('\\u0145', '\\u0114i')\n    s = s.replace('\\u0144', '\\u010dg')\n    s = s.replace('\\u0143', '1e')\n    s = s.replace('\\u0142', 'E\\u013f')\n    s = s.replace('\\u0141', '\\u011fh')\n    s = s.replace('\\u0140', 'U\\u013e')\n    s = s.replace('\\u013f', 'rr')\n    s = s.replace('\\u013e', 'RL')\n    s = s.replace('\\u013d', '}\\n')\n    s = s.replace('\\u013c', 'ro')\n    s = s.replace('\\u013b', 'i\\u0108')\n    s = s.replace('\\u013a', 'me')\n    s = s.replace('\\u0139', 'ct')\n    s = s.replace('\\u0138', '\\u0118 ')\n    s = s.replace('\\u0137', '))')\n    s = s.replace('\\u0136', '\\u0117n')\n    s = s.replace('\\u0135', '\\u010c/')\n    s = s.replace('\\u0134', 'pe')\n    s = s.replace('\\u0133', 'n ')\n    s = s.replace('\\u0132', '\\u0128_')\n    s = s.replace('\\u0131', '\\u0125.')\n    s = s.replace('\\u0130', 'ul')\n    s = s.replace('\\u012f', 'ri')\n    s = s.replace('\\u012e', 'ed')\n    s = s.replace('\\u012d', '::')\n    s = s.replace('\\u012c', '\\u0104\\u0101')\n    s = s.replace('\\u012b', 's ')\n    s = s.replace('\\u012a', 'an')\n    s = s.replace('\\u0129', 'ar')\n    s = s.replace('\\u0128', '\\u0113l')\n    s = s.replace('\\u0127', '\\u0126a')\n    s = s.replace('\\u0126', 'd\\u0105')\n    s = s.replace('\\u0125', '\\u0103\\u0121')\n    s = s.replace('\\u0124', '\\u010a\\u010a')\n    s = s.replace('\\u0123', ' *')\n    s = s.replace('\\u0122', 'it')\n    s = s.replace('\\u0121', 'lf')\n    s = s.replace('\\u0120', 'le')\n    s = s.replace('\\u011f', ' t')\n    s = s.replace('\\u011e', ' {')\n    s = s.replace('\\u011d', 'ne')\n    s = s.replace('\\u011c', 'if')\n    s = s.replace('\\u011b', 'ch')\n    s = s.replace('\\u011a', ');')\n    s = s.replace('\\u0119', '\\u0104\\u0102')\n    s = s.replace('\\u0118', ' =')\n    s = s.replace('\\u0117', 'c\\u0108')\n    s = s.replace('\\u0116', '\\n\\u0100')\n    s = s.replace('\\u0115', 'st')\n    s = s.replace('\\u0114', 'al')\n    s = s.replace('\\u0113', 'ur')\n    s = s.replace('\\u0112', 'or')\n    s = s.replace('\\u0111', 'e ')\n    s = s.replace('\\u0110', 'er')\n    s = s.replace('\\u010f', '->')\n    s = s.replace('\\u010e', 't ')\n    s = s.replace('\\u010d', 'in')\n    s = s.replace('\\u010c', '//')\n    s = s.replace('\\u010b', 'de')\n    s = s.replace('\\u010a', '**')\n    s = s.replace('\\u0109', ', ')\n    s = s.replace('\\u0108', 'on')\n    s = s.replace('\\u0107', 're')\n    s = s.replace('\\u0106', '\\n\\u0101')\n    s = s.replace('\\u0105', 'at')\n    s = s.replace('\\u0104', '\\n\\u0102')\n    s = s.replace('\\u0103', 'se')\n    s = s.replace('\\u0102', '\\u0101\\u0101')\n    s = s.replace('\\u0101', '\\u0100\\u0100')\n    s = s.replace('\\u0100', '  ')\n    return s\n"
+  },
+  "search": [
+    {
+      "description_bytes": 168258,
+      "pair_occurrences": 27863,
+      "rules": 1
+    },
+    {
+      "description_bytes": 162289,
+      "pair_occurrences": 11770,
+      "rules": 2
+    },
+    {
+      "description_bytes": 160121,
+      "pair_occurrences": 4129,
+      "rules": 3
+    },
+    {
+      "description_bytes": 158883,
+      "pair_occurrences": 1701,
+      "rules": 4
+    },
+    {
+      "description_bytes": 157362,
+      "pair_occurrences": 1674,
+      "rules": 5
+    },
+    {
+      "description_bytes": 156902,
+      "pair_occurrences": 1462,
+      "rules": 6
+    },
+    {
+      "description_bytes": 155431,
+      "pair_occurrences": 1414,
+      "rules": 7
+    },
+    {
+      "description_bytes": 154006,
+      "pair_occurrences": 1339,
+      "rules": 8
+    },
+    {
+      "description_bytes": 152595,
+      "pair_occurrences": 1328,
+      "rules": 9
+    },
+    {
+      "description_bytes": 151382,
+      "pair_occurrences": 1149,
+      "rules": 10
+    },
+    {
+      "description_bytes": 150816,
+      "pair_occurrences": 1138,
+      "rules": 11
+    },
+    {
+      "description_bytes": 149650,
+      "pair_occurrences": 1110,
+      "rules": 12
+    },
+    {
+      "description_bytes": 149053,
+      "pair_occurrences": 1100,
+      "rules": 13
+    },
+    {
+      "description_bytes": 147927,
+      "pair_occurrences": 1073,
+      "rules": 14
+    },
+    {
+      "description_bytes": 146841,
+      "pair_occurrences": 1038,
+      "rules": 15
+    },
+    {
+      "description_bytes": 145838,
+      "pair_occurrences": 963,
+      "rules": 16
+    },
+    {
+      "description_bytes": 144945,
+      "pair_occurrences": 866,
+      "rules": 17
+    },
+    {
+      "description_bytes": 144093,
+      "pair_occurrences": 829,
+      "rules": 18
+    },
+    {
+      "description_bytes": 143253,
+      "pair_occurrences": 820,
+      "rules": 19
+    },
+    {
+      "description_bytes": 142425,
+      "pair_occurrences": 809,
+      "rules": 20
+    },
+    {
+      "description_bytes": 141596,
+      "pair_occurrences": 808,
+      "rules": 21
+    },
+    {
+      "description_bytes": 140784,
+      "pair_occurrences": 796,
+      "rules": 22
+    },
+    {
+      "description_bytes": 140017,
+      "pair_occurrences": 768,
+      "rules": 23
+    },
+    {
+      "description_bytes": 139334,
+      "pair_occurrences": 689,
+      "rules": 24
+    },
+    {
+      "description_bytes": 138651,
+      "pair_occurrences": 678,
+      "rules": 25
+    },
+    {
+      "description_bytes": 138048,
+      "pair_occurrences": 630,
+      "rules": 26
+    },
+    {
+      "description_bytes": 137438,
+      "pair_occurrences": 614,
+      "rules": 27
+    },
+    {
+      "description_bytes": 136828,
+      "pair_occurrences": 614,
+      "rules": 28
+    },
+    {
+      "description_bytes": 136238,
+      "pair_occurrences": 598,
+      "rules": 29
+    },
+    {
+      "description_bytes": 135657,
+      "pair_occurrences": 589,
+      "rules": 30
+    },
+    {
+      "description_bytes": 135077,
+      "pair_occurrences": 587,
+      "rules": 31
+    },
+    {
+      "description_bytes": 134500,
+      "pair_occurrences": 585,
+      "rules": 32
+    },
+    {
+      "description_bytes": 133938,
+      "pair_occurrences": 573,
+      "rules": 33
+    },
+    {
+      "description_bytes": 133383,
+      "pair_occurrences": 566,
+      "rules": 34
+    },
+    {
+      "description_bytes": 132834,
+      "pair_occurrences": 561,
+      "rules": 35
+    },
+    {
+      "description_bytes": 132298,
+      "pair_occurrences": 548,
+      "rules": 36
+    },
+    {
+      "description_bytes": 132089,
+      "pair_occurrences": 546,
+      "rules": 37
+    },
+    {
+      "description_bytes": 131583,
+      "pair_occurrences": 544,
+      "rules": 38
+    },
+    {
+      "description_bytes": 131071,
+      "pair_occurrences": 538,
+      "rules": 39
+    },
+    {
+      "description_bytes": 130567,
+      "pair_occurrences": 531,
+      "rules": 40
+    },
+    {
+      "description_bytes": 130077,
+      "pair_occurrences": 519,
+      "rules": 41
+    },
+    {
+      "description_bytes": 129599,
+      "pair_occurrences": 497,
+      "rules": 42
+    },
+    {
+      "description_bytes": 129122,
+      "pair_occurrences": 496,
+      "rules": 43
+    },
+    {
+      "description_bytes": 128670,
+      "pair_occurrences": 473,
+      "rules": 44
+    },
+    {
+      "description_bytes": 128260,
+      "pair_occurrences": 459,
+      "rules": 45
+    },
+    {
+      "description_bytes": 127841,
+      "pair_occurrences": 443,
+      "rules": 46
+    },
+    {
+      "description_bytes": 127442,
+      "pair_occurrences": 428,
+      "rules": 47
+    },
+    {
+      "description_bytes": 127046,
+      "pair_occurrences": 425,
+      "rules": 48
+    },
+    {
+      "description_bytes": 126653,
+      "pair_occurrences": 423,
+      "rules": 49
+    },
+    {
+      "description_bytes": 126271,
+      "pair_occurrences": 422,
+      "rules": 50
+    },
+    {
+      "description_bytes": 125890,
+      "pair_occurrences": 421,
+      "rules": 51
+    },
+    {
+      "description_bytes": 125510,
+      "pair_occurrences": 410,
+      "rules": 52
+    },
+    {
+      "description_bytes": 125132,
+      "pair_occurrences": 409,
+      "rules": 53
+    },
+    {
+      "description_bytes": 124793,
+      "pair_occurrences": 384,
+      "rules": 54
+    },
+    {
+      "description_bytes": 124458,
+      "pair_occurrences": 381,
+      "rules": 55
+    },
+    {
+      "description_bytes": 124164,
+      "pair_occurrences": 356,
+      "rules": 56
+    },
+    {
+      "description_bytes": 123858,
+      "pair_occurrences": 354,
+      "rules": 57
+    },
+    {
+      "description_bytes": 123554,
+      "pair_occurrences": 342,
+      "rules": 58
+    },
+    {
+      "description_bytes": 123256,
+      "pair_occurrences": 338,
+      "rules": 59
+    },
+    {
+      "description_bytes": 122978,
+      "pair_occurrences": 331,
+      "rules": 60
+    },
+    {
+      "description_bytes": 122689,
+      "pair_occurrences": 329,
+      "rules": 61
+    },
+    {
+      "description_bytes": 122411,
+      "pair_occurrences": 323,
+      "rules": 62
+    },
+    {
+      "description_bytes": 122129,
+      "pair_occurrences": 322,
+      "rules": 63
+    },
+    {
+      "description_bytes": 121851,
+      "pair_occurrences": 320,
+      "rules": 64
+    },
+    {
+      "description_bytes": 121588,
+      "pair_occurrences": 316,
+      "rules": 65
+    },
+    {
+      "description_bytes": 121331,
+      "pair_occurrences": 313,
+      "rules": 66
+    },
+    {
+      "description_bytes": 121072,
+      "pair_occurrences": 312,
+      "rules": 67
+    },
+    {
+      "description_bytes": 120804,
+      "pair_occurrences": 310,
+      "rules": 68
+    },
+    {
+      "description_bytes": 120550,
+      "pair_occurrences": 309,
+      "rules": 69
+    },
+    {
+      "description_bytes": 120300,
+      "pair_occurrences": 306,
+      "rules": 70
+    },
+    {
+      "description_bytes": 120064,
+      "pair_occurrences": 305,
+      "rules": 71
+    },
+    {
+      "description_bytes": 119804,
+      "pair_occurrences": 302,
+      "rules": 72
+    },
+    {
+      "description_bytes": 119565,
+      "pair_occurrences": 296,
+      "rules": 73
+    },
+    {
+      "description_bytes": 119317,
+      "pair_occurrences": 293,
+      "rules": 74
+    },
+    {
+      "description_bytes": 119084,
+      "pair_occurrences": 290,
+      "rules": 75
+    },
+    {
+      "description_bytes": 118860,
+      "pair_occurrences": 282,
+      "rules": 76
+    },
+    {
+      "description_bytes": 118626,
+      "pair_occurrences": 280,
+      "rules": 77
+    },
+    {
+      "description_bytes": 118419,
+      "pair_occurrences": 278,
+      "rules": 78
+    },
+    {
+      "description_bytes": 118202,
+      "pair_occurrences": 276,
+      "rules": 79
+    },
+    {
+      "description_bytes": 117993,
+      "pair_occurrences": 269,
+      "rules": 80
+    },
+    {
+      "description_bytes": 117951,
+      "pair_occurrences": 262,
+      "rules": 81
+    },
+    {
+      "description_bytes": 117738,
+      "pair_occurrences": 261,
+      "rules": 82
+    },
+    {
+      "description_bytes": 117528,
+      "pair_occurrences": 259,
+      "rules": 83
+    },
+    {
+      "description_bytes": 117319,
+      "pair_occurrences": 259,
+      "rules": 84
+    },
+    {
+      "description_bytes": 117128,
+      "pair_occurrences": 253,
+      "rules": 85
+    },
+    {
+      "description_bytes": 116928,
+      "pair_occurrences": 252,
+      "rules": 86
+    },
+    {
+      "description_bytes": 116742,
+      "pair_occurrences": 248,
+      "rules": 87
+    },
+    {
+      "description_bytes": 116560,
+      "pair_occurrences": 246,
+      "rules": 88
+    },
+    {
+      "description_bytes": 116391,
+      "pair_occurrences": 245,
+      "rules": 89
+    },
+    {
+      "description_bytes": 116222,
+      "pair_occurrences": 244,
+      "rules": 90
+    },
+    {
+      "description_bytes": 116042,
+      "pair_occurrences": 243,
+      "rules": 91
+    },
+    {
+      "description_bytes": 115876,
+      "pair_occurrences": 242,
+      "rules": 92
+    },
+    {
+      "description_bytes": 115686,
+      "pair_occurrences": 240,
+      "rules": 93
+    },
+    {
+      "description_bytes": 115522,
+      "pair_occurrences": 240,
+      "rules": 94
+    },
+    {
+      "description_bytes": 115343,
+      "pair_occurrences": 231,
+      "rules": 95
+    },
+    {
+      "description_bytes": 115169,
+      "pair_occurrences": 226,
+      "rules": 96
+    },
+    {
+      "description_bytes": 115024,
+      "pair_occurrences": 223,
+      "rules": 97
+    },
+    {
+      "description_bytes": 114855,
+      "pair_occurrences": 222,
+      "rules": 98
+    },
+    {
+      "description_bytes": 114688,
+      "pair_occurrences": 222,
+      "rules": 99
+    },
+    {
+      "description_bytes": 114551,
+      "pair_occurrences": 216,
+      "rules": 100
+    },
+    {
+      "description_bytes": 114402,
+      "pair_occurrences": 215,
+      "rules": 101
+    },
+    {
+      "description_bytes": 114246,
+      "pair_occurrences": 214,
+      "rules": 102
+    },
+    {
+      "description_bytes": 114099,
+      "pair_occurrences": 213,
+      "rules": 103
+    },
+    {
+      "description_bytes": 113948,
+      "pair_occurrences": 209,
+      "rules": 104
+    },
+    {
+      "description_bytes": 113794,
+      "pair_occurrences": 209,
+      "rules": 105
+    },
+    {
+      "description_bytes": 113652,
+      "pair_occurrences": 209,
+      "rules": 106
+    },
+    {
+      "description_bytes": 113517,
+      "pair_occurrences": 202,
+      "rules": 107
+    },
+    {
+      "description_bytes": 113375,
+      "pair_occurrences": 199,
+      "rules": 108
+    },
+    {
+      "description_bytes": 113257,
+      "pair_occurrences": 199,
+      "rules": 109
+    },
+    {
+      "description_bytes": 113145,
+      "pair_occurrences": 194,
+      "rules": 110
+    },
+    {
+      "description_bytes": 113024,
+      "pair_occurrences": 191,
+      "rules": 111
+    },
+    {
+      "description_bytes": 112915,
+      "pair_occurrences": 191,
+      "rules": 112
+    },
+    {
+      "description_bytes": 112793,
+      "pair_occurrences": 191,
+      "rules": 113
+    },
+    {
+      "description_bytes": 112688,
+      "pair_occurrences": 188,
+      "rules": 114
+    },
+    {
+      "description_bytes": 112560,
+      "pair_occurrences": 186,
+      "rules": 115
+    },
+    {
+      "description_bytes": 112432,
+      "pair_occurrences": 186,
+      "rules": 116
+    },
+    {
+      "description_bytes": 112317,
+      "pair_occurrences": 186,
+      "rules": 117
+    },
+    {
+      "description_bytes": 112216,
+      "pair_occurrences": 184,
+      "rules": 118
+    },
+    {
+      "description_bytes": 112091,
+      "pair_occurrences": 183,
+      "rules": 119
+    },
+    {
+      "description_bytes": 111991,
+      "pair_occurrences": 183,
+      "rules": 120
+    },
+    {
+      "description_bytes": 111892,
+      "pair_occurrences": 182,
+      "rules": 121
+    },
+    {
+      "description_bytes": 111785,
+      "pair_occurrences": 179,
+      "rules": 122
+    },
+    {
+      "description_bytes": 111691,
+      "pair_occurrences": 178,
+      "rules": 123
+    },
+    {
+      "description_bytes": 111585,
+      "pair_occurrences": 177,
+      "rules": 124
+    },
+    {
+      "description_bytes": 111470,
+      "pair_occurrences": 175,
+      "rules": 125
+    },
+    {
+      "description_bytes": 111368,
+      "pair_occurrences": 174,
+      "rules": 126
+    },
+    {
+      "description_bytes": 111256,
+      "pair_occurrences": 172,
+      "rules": 127
+    },
+    {
+      "description_bytes": 111157,
+      "pair_occurrences": 171,
+      "rules": 128
+    },
+    {
+      "description_bytes": 111050,
+      "pair_occurrences": 168,
+      "rules": 129
+    },
+    {
+      "description_bytes": 110955,
+      "pair_occurrences": 167,
+      "rules": 130
+    },
+    {
+      "description_bytes": 110862,
+      "pair_occurrences": 166,
+      "rules": 131
+    },
+    {
+      "description_bytes": 110758,
+      "pair_occurrences": 165,
+      "rules": 132
+    },
+    {
+      "description_bytes": 110653,
+      "pair_occurrences": 164,
+      "rules": 133
+    },
+    {
+      "description_bytes": 110564,
+      "pair_occurrences": 163,
+      "rules": 134
+    },
+    {
+      "description_bytes": 110475,
+      "pair_occurrences": 163,
+      "rules": 135
+    },
+    {
+      "description_bytes": 110388,
+      "pair_occurrences": 161,
+      "rules": 136
+    },
+    {
+      "description_bytes": 110290,
+      "pair_occurrences": 160,
+      "rules": 137
+    },
+    {
+      "description_bytes": 110204,
+      "pair_occurrences": 159,
+      "rules": 138
+    },
+    {
+      "description_bytes": 110131,
+      "pair_occurrences": 159,
+      "rules": 139
+    },
+    {
+      "description_bytes": 110035,
+      "pair_occurrences": 156,
+      "rules": 140
+    },
+    {
+      "description_bytes": 109942,
+      "pair_occurrences": 156,
+      "rules": 141
+    },
+    {
+      "description_bytes": 109872,
+      "pair_occurrences": 156,
+      "rules": 142
+    },
+    {
+      "description_bytes": 109807,
+      "pair_occurrences": 152,
+      "rules": 143
+    },
+    {
+      "description_bytes": 109744,
+      "pair_occurrences": 151,
+      "rules": 144
+    },
+    {
+      "description_bytes": 109679,
+      "pair_occurrences": 151,
+      "rules": 145
+    },
+    {
+      "description_bytes": 109591,
+      "pair_occurrences": 150,
+      "rules": 146
+    },
+    {
+      "description_bytes": 109502,
+      "pair_occurrences": 150,
+      "rules": 147
+    },
+    {
+      "description_bytes": 109415,
+      "pair_occurrences": 150,
+      "rules": 148
+    },
+    {
+      "description_bytes": 109330,
+      "pair_occurrences": 149,
+      "rules": 149
+    },
+    {
+      "description_bytes": 109256,
+      "pair_occurrences": 149,
+      "rules": 150
+    },
+    {
+      "description_bytes": 109185,
+      "pair_occurrences": 147,
+      "rules": 151
+    },
+    {
+      "description_bytes": 109101,
+      "pair_occurrences": 146,
+      "rules": 152
+    },
+    {
+      "description_bytes": 109020,
+      "pair_occurrences": 146,
+      "rules": 153
+    },
+    {
+      "description_bytes": 108937,
+      "pair_occurrences": 146,
+      "rules": 154
+    },
+    {
+      "description_bytes": 108858,
+      "pair_occurrences": 143,
+      "rules": 155
+    },
+    {
+      "description_bytes": 108803,
+      "pair_occurrences": 143,
+      "rules": 156
+    },
+    {
+      "description_bytes": 108735,
+      "pair_occurrences": 143,
+      "rules": 157
+    },
+    {
+      "description_bytes": 108682,
+      "pair_occurrences": 142,
+      "rules": 158
+    },
+    {
+      "description_bytes": 108608,
+      "pair_occurrences": 137,
+      "rules": 159
+    },
+    {
+      "description_bytes": 108535,
+      "pair_occurrences": 137,
+      "rules": 160
+    },
+    {
+      "description_bytes": 108476,
+      "pair_occurrences": 136,
+      "rules": 161
+    },
+    {
+      "description_bytes": 108430,
+      "pair_occurrences": 135,
+      "rules": 162
+    },
+    {
+      "description_bytes": 108363,
+      "pair_occurrences": 134,
+      "rules": 163
+    },
+    {
+      "description_bytes": 108306,
+      "pair_occurrences": 134,
+      "rules": 164
+    },
+    {
+      "description_bytes": 108249,
+      "pair_occurrences": 133,
+      "rules": 165
+    },
+    {
+      "description_bytes": 108195,
+      "pair_occurrences": 132,
+      "rules": 166
+    },
+    {
+      "description_bytes": 108128,
+      "pair_occurrences": 131,
+      "rules": 167
+    },
+    {
+      "description_bytes": 108086,
+      "pair_occurrences": 131,
+      "rules": 168
+    },
+    {
+      "description_bytes": 108046,
+      "pair_occurrences": 130,
+      "rules": 169
+    },
+    {
+      "description_bytes": 107986,
+      "pair_occurrences": 126,
+      "rules": 170
+    },
+    {
+      "description_bytes": 107950,
+      "pair_occurrences": 126,
+      "rules": 171
+    },
+    {
+      "description_bytes": 107902,
+      "pair_occurrences": 126,
+      "rules": 172
+    },
+    {
+      "description_bytes": 107842,
+      "pair_occurrences": 125,
+      "rules": 173
+    },
+    {
+      "description_bytes": 107785,
+      "pair_occurrences": 123,
+      "rules": 174
+    },
+    {
+      "description_bytes": 107752,
+      "pair_occurrences": 123,
+      "rules": 175
+    },
+    {
+      "description_bytes": 107720,
+      "pair_occurrences": 123,
+      "rules": 176
+    },
+    {
+      "description_bytes": 107668,
+      "pair_occurrences": 119,
+      "rules": 177
+    },
+    {
+      "description_bytes": 107640,
+      "pair_occurrences": 119,
+      "rules": 178
+    },
+    {
+      "description_bytes": 107613,
+      "pair_occurrences": 118,
+      "rules": 179
+    },
+    {
+      "description_bytes": 107575,
+      "pair_occurrences": 118,
+      "rules": 180
+    },
+    {
+      "description_bytes": 107548,
+      "pair_occurrences": 118,
+      "rules": 181
+    },
+    {
+      "description_bytes": 107524,
+      "pair_occurrences": 116,
+      "rules": 182
+    },
+    {
+      "description_bytes": 107488,
+      "pair_occurrences": 115,
+      "rules": 183
+    },
+    {
+      "description_bytes": 107440,
+      "pair_occurrences": 115,
+      "rules": 184
+    },
+    {
+      "description_bytes": 107404,
+      "pair_occurrences": 115,
+      "rules": 185
+    },
+    {
+      "description_bytes": 107381,
+      "pair_occurrences": 115,
+      "rules": 186
+    },
+    {
+      "description_bytes": 107358,
+      "pair_occurrences": 115,
+      "rules": 187
+    },
+    {
+      "description_bytes": 107334,
+      "pair_occurrences": 115,
+      "rules": 188
+    },
+    {
+      "description_bytes": 107300,
+      "pair_occurrences": 114,
+      "rules": 189
+    },
+    {
+      "description_bytes": 107342,
+      "pair_occurrences": 114,
+      "rules": 190
+    },
+    {
+      "description_bytes": 107383,
+      "pair_occurrences": 114,
+      "rules": 191
+    },
+    {
+      "description_bytes": 107360,
+      "pair_occurrences": 114,
+      "rules": 192
+    }
+  ],
+  "training": {
+    "description_bytes": 107300,
+    "isolation": "linux_seccomp_v1",
+    "literal_bytes": 169271,
+    "model_bytes": 17335,
+    "net_saved_bytes": 61971,
+    "oracle": "original external bytes, independent DAG expansion and bit decoder",
+    "passed": 2,
+    "rows": [
+      {
+        "exact": true,
+        "raw_bytes": 82429,
+        "sha256": "c3e77e49259d4cbdb9ee6024539e87d8906d1f70c20b1bd095c4404f5b5e5964",
+        "stored_bytes": 47641,
+        "wire_sha256": "b14401fc4b579d9b0e7bab5fd73fccc525ab4fd1ab8f7c5966088695351ff1a8"
+      },
+      {
+        "exact": true,
+        "raw_bytes": 86840,
+        "sha256": "4998d7e252eb513be85b298e287048b4fb283882e9ba7df905f572f07200f3f3",
+        "stored_bytes": 42324,
+        "wire_sha256": "e7b38d08596bc0e41e1ce486142e7bbebe2d5e7760518b6a254f436427a6f319"
+      }
+    ],
+    "total": 2,
+    "zlib_reference_bytes": 35937
+  },
+  "training_indices": [
+    0,
+    1
+  ],
+  "transfer_policy": {
+    "charge_full_program": true,
+    "exact_reconstruction": true,
+    "fresh_origins": 2,
+    "minimum_net_gain_basis_points": 100,
+    "preserve_all_active_skills": true
+  }
+}

@@ -1,0 +1,1 @@
+PASS: full U1 replay reproduces the 1.1 bootstrap and all 24 retained skills

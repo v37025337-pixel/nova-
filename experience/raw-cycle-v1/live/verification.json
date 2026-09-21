@@ -1,0 +1,232 @@
+{
+  "exact_recall": 4,
+  "freeze": "ed0e756f46a47cbb324cd0b035f990d5bfa1d4a58a53dd9e4af1c99c073fd2b5",
+  "generation": 2,
+  "genome": "fdebfee7787de479c18e0fa1accb6d773a171eeaa1c98a581504cf3822faeabb",
+  "goal": "8fad12a45ff6ac11e7af98079d9be77211269489632f5d212b0c56dc0ee7081d",
+  "head": "05f6e127586863fec4643b132cde4b33e4f8e6eed2ef7739c3f5e96fddd5d518",
+  "learned_mechanism_executes": true,
+  "learned_rules": 189,
+  "network_requests_during_replay": 0,
+  "program": "e150d61cc1f631b5141db1ce04978dc670b31597cc29d6c76ebb7336086248b9",
+  "regression": {
+    "graph": {
+      "indirect_pairs": {
+        "outputs": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          2,
+          5,
+          0,
+          0,
+          1,
+          1,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passed": 24,
+        "total": 24
+      },
+      "maximum_impact": {
+        "outputs": [
+          7,
+          2,
+          2,
+          3,
+          2,
+          6,
+          6,
+          1,
+          3,
+          3,
+          2,
+          3,
+          4,
+          2,
+          2,
+          1,
+          3,
+          3,
+          4,
+          0,
+          1,
+          1,
+          3,
+          4
+        ],
+        "passed": 24,
+        "total": 24
+      },
+      "reachable_pairs": {
+        "outputs": [
+          77,
+          4,
+          13,
+          10,
+          21,
+          44,
+          70,
+          2,
+          5,
+          11,
+          7,
+          32,
+          32,
+          1,
+          5,
+          7,
+          10,
+          17,
+          11,
+          0,
+          0,
+          9,
+          9,
+          14
+        ],
+        "passed": 24,
+        "total": 24
+      }
+    },
+    "isolation": "linux_seccomp_v1",
+    "legacy": {
+      "passed": 192,
+      "skills": 21,
+      "total": 192
+    },
+    "raw": {
+      "e150d61cc1f631b5141db1ce04978dc670b31597cc29d6c76ebb7336086248b9": {
+        "description_bytes": 207337,
+        "isolation": "linux_seccomp_v1",
+        "literal_bytes": 323509,
+        "model_bytes": 17335,
+        "net_saved_bytes": 116172,
+        "oracle": "original external bytes, independent DAG expansion and bit decoder",
+        "passed": 4,
+        "rows": [
+          {
+            "exact": true,
+            "raw_bytes": 82429,
+            "sha256": "c3e77e49259d4cbdb9ee6024539e87d8906d1f70c20b1bd095c4404f5b5e5964",
+            "stored_bytes": 47641,
+            "wire_sha256": "b14401fc4b579d9b0e7bab5fd73fccc525ab4fd1ab8f7c5966088695351ff1a8"
+          },
+          {
+            "exact": true,
+            "raw_bytes": 86840,
+            "sha256": "4998d7e252eb513be85b298e287048b4fb283882e9ba7df905f572f07200f3f3",
+            "stored_bytes": 42324,
+            "wire_sha256": "e7b38d08596bc0e41e1ce486142e7bbebe2d5e7760518b6a254f436427a6f319"
+          },
+          {
+            "exact": true,
+            "raw_bytes": 65260,
+            "sha256": "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+            "stored_bytes": 43224,
+            "wire_sha256": "ad0b80a38afbf1175b77d12d31ec6dda7a4ccdd08349717d34ab83099c95016c"
+          },
+          {
+            "exact": true,
+            "raw_bytes": 88976,
+            "sha256": "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c",
+            "stored_bytes": 56813,
+            "wire_sha256": "103bd2c34497cda2c8610e759bba3349ea9ebc692ad605557bc6aea5d95a8ef0"
+          }
+        ],
+        "total": 4,
+        "zlib_reference_bytes": 70731
+      }
+    },
+    "status": "PASS"
+  },
+  "retained_skills_after_rollback": 24,
+  "rollback_preserves_freshness_and_bytes": true,
+  "status": "PASS",
+  "transfer": {
+    "ablation": {
+      "description_bytes": 154442,
+      "isolation": "linux_seccomp_v1",
+      "literal_bytes": 154238,
+      "model_bytes": 204,
+      "net_saved_bytes": -204,
+      "oracle": "original external bytes, independent DAG expansion and bit decoder",
+      "passed": 2,
+      "rows": [
+        {
+          "exact": true,
+          "raw_bytes": 65260,
+          "sha256": "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+          "stored_bytes": 65261,
+          "wire_sha256": "eb5fbff2526750724674011229f5fe97342f42f2da0d6918ea2f7b381d9c252f"
+        },
+        {
+          "exact": true,
+          "raw_bytes": 88976,
+          "sha256": "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c",
+          "stored_bytes": 88977,
+          "wire_sha256": "d4b2e2d10dcc2186853eab497054cb745727e53bdf3d90bea4f6ed2eeea40b5b"
+        }
+      ],
+      "total": 2,
+      "zlib_reference_bytes": 34794
+    },
+    "baseline": {
+      "bytes": 154238,
+      "id": "literal"
+    },
+    "freeze": "ed0e756f46a47cbb324cd0b035f990d5bfa1d4a58a53dd9e4af1c99c073fd2b5",
+    "fresh_indices": [
+      2,
+      3
+    ],
+    "net_gain_bytes": 36866,
+    "origins": [
+      "github:google/gson",
+      "github:pydantic/pydantic"
+    ],
+    "program": "e150d61cc1f631b5141db1ce04978dc670b31597cc29d6c76ebb7336086248b9",
+    "reason": "TRANSFERRED_DESCRIPTION_GAIN",
+    "status": "ADMITTED",
+    "transfer": {
+      "description_bytes": 117372,
+      "isolation": "linux_seccomp_v1",
+      "literal_bytes": 154238,
+      "model_bytes": 17335,
+      "net_saved_bytes": 36866,
+      "oracle": "original external bytes, independent DAG expansion and bit decoder",
+      "passed": 2,
+      "rows": [
+        {
+          "exact": true,
+          "raw_bytes": 65260,
+          "sha256": "46321d93477d0ca372aea8d8f62431ea44b7ca8947afea2f474bdebc2ff1e589",
+          "stored_bytes": 43224,
+          "wire_sha256": "ad0b80a38afbf1175b77d12d31ec6dda7a4ccdd08349717d34ab83099c95016c"
+        },
+        {
+          "exact": true,
+          "raw_bytes": 88976,
+          "sha256": "0061d7f1f0a05dacf8a52da44dbed558c9b65fdb7c85a4bcd3a6cb96ab32e01c",
+          "stored_bytes": 56813,
+          "wire_sha256": "103bd2c34497cda2c8610e759bba3349ea9ebc692ad605557bc6aea5d95a8ef0"
+        }
+      ],
+      "total": 2,
+      "zlib_reference_bytes": 34794
+    }
+  }
+}

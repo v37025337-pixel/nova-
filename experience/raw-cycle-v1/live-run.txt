@@ -1,0 +1,8 @@
+{"step": 1, "action": "raw.fetch", "status": "OBSERVED"}
+{"step": 2, "action": "raw.fetch", "status": "OBSERVED"}
+{"step": 3, "action": "raw.discover", "status": "GOAL_FORMED"}
+{"step": 4, "action": "raw.synthesize", "status": "FROZEN"}
+{"step": 5, "action": "raw.fetch", "status": "OBSERVED"}
+{"step": 6, "action": "raw.fetch", "status": "OBSERVED"}
+{"step": 7, "action": "raw.assess", "status": "ADMITTED"}
+{"status": "ADMITTED", "error": null, "generation": 2, "raw_bytes": 323505, "description_bytes": 207337}

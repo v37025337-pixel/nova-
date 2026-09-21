@@ -1,0 +1,46 @@
+[
+  {
+    "bytes": 1088,
+    "dns_policy": "configured_proxy",
+    "final_url": "https://raw.githubusercontent.com/curl/curl/master/COPYING",
+    "name": "curl--curl",
+    "received_at": "2026-09-21T14:53:34.171638+00:00",
+    "sha256": "82f2f4427d6545ee5aaac4f0b80428da6cc8ba41c2cf5da3a03680ec327b9681",
+    "status": 200,
+    "transport": "stdlib_https",
+    "url": "https://raw.githubusercontent.com/curl/curl/master/COPYING"
+  },
+  {
+    "bytes": 1023,
+    "dns_policy": "configured_proxy",
+    "final_url": "https://raw.githubusercontent.com/serde-rs/json/master/LICENSE-MIT",
+    "name": "serde-rs--json",
+    "received_at": "2026-09-21T14:53:34.126678+00:00",
+    "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+    "status": 200,
+    "transport": "stdlib_https",
+    "url": "https://raw.githubusercontent.com/serde-rs/json/master/LICENSE-MIT"
+  },
+  {
+    "bytes": 11358,
+    "dns_policy": "configured_proxy",
+    "final_url": "https://raw.githubusercontent.com/google/gson/main/LICENSE",
+    "name": "google--gson",
+    "received_at": "2026-09-21T14:53:34.156077+00:00",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "status": 200,
+    "transport": "stdlib_https",
+    "url": "https://raw.githubusercontent.com/google/gson/main/LICENSE"
+  },
+  {
+    "bytes": 1129,
+    "dns_policy": "configured_proxy",
+    "final_url": "https://raw.githubusercontent.com/pydantic/pydantic/main/LICENSE",
+    "name": "pydantic--pydantic",
+    "received_at": "2026-09-21T14:53:34.184748+00:00",
+    "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3",
+    "status": 200,
+    "transport": "stdlib_https",
+    "url": "https://raw.githubusercontent.com/pydantic/pydantic/main/LICENSE"
+  }
+]

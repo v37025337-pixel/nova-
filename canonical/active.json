@@ -1,12 +1,16 @@
 {
   "schema": "nova.active-runtime.v1",
   "name": "NOVA Unified",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "entrypoint": "nova_core.cognition.__main__:main",
   "command": "nova",
-  "manifest": "canonical/unified.json",
-  "trained_journal": "experience/unified-v1/live/journal.json.gz",
-  "historical_runtimes": ["nova_core.kernel", "nova_next.kernel"],
+  "manifest": "canonical/raw-cycle.json",
+  "trained_journal": "experience/raw-cycle-v1/live/journal.json.gz",
+  "historical_runtimes": [
+    "nova_core.kernel",
+    "nova_next.kernel",
+    "experience/unified-v1/frozen-runtime.tar.gz"
+  ],
   "state_owners": 1,
   "scheduler_owners": 1
 }

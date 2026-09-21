@@ -57,6 +57,14 @@ class ReasoningTests(unittest.TestCase):
 
 
 class UnifiedTests(unittest.TestCase):
+    def setUp(self):
+        # Preserve the original U0 scenarios, including its pending graph candidate.
+        # Normal v1.1 init instead retains the fully trained U1 checkpoint.
+        original = Path(__file__).resolve().parents[1] / "nova_core/cognition/bootstrap.json.gz"
+        switch = patch("nova_core.cognition.kernel.BOOTSTRAP", original)
+        switch.start()
+        self.addCleanup(switch.stop)
+
     def test_one_registry_retains_both_generations_and_legacy_execution(self):
         with tempfile.TemporaryDirectory() as directory, Kernel(Path(directory) / "state.sqlite", create=True) as kernel:
             self.assertEqual(kernel.status()["active_learned_skills"], 23)
