@@ -1,0 +1,45 @@
+name: NOVA internet autonomy cycle v1
+
+on:
+  push:
+    branches:
+      - nova-internet-cycle-v1
+    paths:
+      - "scripts/run_internet_cycle.py"
+      - "experience/internet-cycle-v1/**"
+      - ".github/workflows/internet-cycle-v1.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "scripts/run_internet_cycle.py"
+      - "experience/internet-cycle-v1/**"
+      - ".github/workflows/internet-cycle-v1.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  internet-cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Verify existing kernel
+        run: |
+          python -m unittest discover -s tests -v
+          python scripts/verify_release.py
+      - name: Let NOVA select and solve live-data tasks
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          rm -rf /tmp/nova-internet-cycle-v1
+          mkdir -p /tmp/nova-internet-cycle-v1
+          python scripts/run_internet_cycle.py \
+            --state /tmp/nova-internet-cycle-v1/state.sqlite \
+            --output /tmp/nova-internet-cycle-v1/result
+          cat /tmp/nova-internet-cycle-v1/result/run-summary.json

@@ -1,0 +1,12 @@
+{
+  "schema": "nova.active-runtime.v1",
+  "name": "NOVA Unified",
+  "version": "1.0.0",
+  "entrypoint": "nova_core.cognition.__main__:main",
+  "command": "nova",
+  "manifest": "canonical/unified.json",
+  "trained_journal": "experience/unified-v1/live/journal.json.gz",
+  "historical_runtimes": ["nova_core.kernel", "nova_next.kernel"],
+  "state_owners": 1,
+  "scheduler_owners": 1
+}

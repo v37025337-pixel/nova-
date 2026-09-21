@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "method": "full semantic replay of both original parent journals",
+  "parents": {
+    "nova": {
+      "head": "15bf5be8b55909bd6ded59bcef050d0756fe9d5bb60f39304a856c4030d496cf",
+      "events": 134,
+      "generation": 22
+    },
+    "graph": {
+      "head": "e9e52c3de59b084e02b7e30e0fcb2f6c7f0c8d65747a4fc7f46385952d94acc7",
+      "events": 26,
+      "generation": 2
+    }
+  },
+  "legacy_regression": {
+    "passed": 192,
+    "total": 192,
+    "skills": 21,
+    "isolation": "linux_seccomp_v1"
+  },
+  "parent_archive_sha256": {
+    "experience/codeflow-goal-probe-v1/journal.json.gz": "7ac15cf3c9fbdf2c360f1fd5d4650618532dcfcaa61a684547f7c45f82e347f9",
+    "experience/nova-next-v2/journal.json.gz": "0fe4b6f435365985bb3c09d2ed64d7fd8d56952c4c1ca975e6f4b16161def24e"
+  },
+  "bootstrap_digest": "a3f6133d3c862658a1bf775d6e3584409db2c7c40c120efa44d8ec477345a144",
+  "bootstrap_sha256": "8b22055d2d1dc34812354cb0412a3138bf608d2f86d0f5849d8ecab71b395160",
+  "seconds": 153.2286882260014
+}

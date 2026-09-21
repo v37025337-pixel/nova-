@@ -1,0 +1,655 @@
+{
+  "actions": [
+    {
+      "action": "graph.fetch",
+      "reason": null,
+      "status": "OBSERVED"
+    },
+    {
+      "action": "graph.fetch",
+      "reason": null,
+      "status": "OBSERVED"
+    },
+    {
+      "action": "graph.assess",
+      "reason": "VERIFIED_EXTERNAL_GRAPH_IMPROVEMENT",
+      "status": "ADMITTED"
+    },
+    {
+      "action": "goal.execute",
+      "reason": null,
+      "status": "SUCCEEDED"
+    },
+    {
+      "action": "goal.execute",
+      "reason": null,
+      "status": "SUCCEEDED"
+    },
+    {
+      "action": "goal.execute",
+      "reason": null,
+      "status": "SUCCEEDED"
+    },
+    {
+      "action": "goal.execute",
+      "reason": null,
+      "status": "SUCCEEDED"
+    },
+    {
+      "action": "goal.execute",
+      "reason": null,
+      "status": "SUCCEEDED"
+    },
+    {
+      "action": "goal.execute",
+      "reason": null,
+      "status": "SUCCEEDED"
+    },
+    {
+      "action": "goal.execute",
+      "reason": null,
+      "status": "SUCCEEDED"
+    },
+    {
+      "action": "goal.execute",
+      "reason": null,
+      "status": "SUCCEEDED"
+    },
+    {
+      "action": "goal.execute",
+      "reason": null,
+      "status": "SUCCEEDED"
+    }
+  ],
+  "admissions": [
+    {
+      "best_without_candidate": 18,
+      "claim": "new composed graph program; finite search, supplied ontology, static source-derived views",
+      "dependency_ablation": {
+        "8a6bfca3bf3c55e25f659dbb11fd2b25550311cffff6e29948121d70405c0aa2": {
+          "outputs": [
+            -11,
+            -2,
+            0,
+            -2,
+            -4,
+            -7,
+            -9,
+            0,
+            -2,
+            -2,
+            -5,
+            -7,
+            -3,
+            0,
+            0,
+            0,
+            -2,
+            -2,
+            -2,
+            -1,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "passed": 8,
+          "total": 24
+        }
+      },
+      "diagnostic": {
+        "outputs": [
+          0,
+          0,
+          17,
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          8,
+          64,
+          0,
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          26,
+          0,
+          0,
+          2,
+          8,
+          0
+        ],
+        "passed": 32,
+        "total": 32
+      },
+      "fresh": {
+        "outputs": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          2,
+          5,
+          0,
+          0,
+          1,
+          1,
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "passed": 24,
+        "total": 24
+      },
+      "independent_repositories": [
+        "github:jd/tenacity",
+        "github:tornadoweb/tornado"
+      ],
+      "isolation": "linux_seccomp_v1",
+      "legacy_regression": {
+        "isolation": "linux_seccomp_v1",
+        "passed": 192,
+        "skills": 21,
+        "total": 192
+      },
+      "new_skill_regression": {
+        "173a46368cffe8ab51441e23da4f79afad9a494c9523a097b79a357dd9d01e22": {
+          "outputs": [
+            7,
+            2,
+            2,
+            3,
+            2,
+            6,
+            6,
+            1,
+            3,
+            3,
+            2,
+            3,
+            4,
+            2,
+            2,
+            1,
+            3,
+            3,
+            4,
+            0,
+            1,
+            1,
+            3,
+            4
+          ],
+          "passed": 24,
+          "total": 24
+        },
+        "8a6bfca3bf3c55e25f659dbb11fd2b25550311cffff6e29948121d70405c0aa2": {
+          "outputs": [
+            77,
+            4,
+            13,
+            10,
+            21,
+            44,
+            70,
+            2,
+            5,
+            11,
+            7,
+            32,
+            32,
+            1,
+            5,
+            7,
+            10,
+            17,
+            11,
+            0,
+            0,
+            9,
+            9,
+            14
+          ],
+          "passed": 24,
+          "total": 24
+        }
+      },
+      "oracle": "independent_bit_matrix_warshall_v1",
+      "reason": "VERIFIED_EXTERNAL_GRAPH_IMPROVEMENT",
+      "status": "ADMITTED"
+    }
+  ],
+  "after": {
+    "active_learned_skills": 24,
+    "admissions_total": 1,
+    "catalog_entries": 41,
+    "claim": "integrated bounded cognition; digital consciousness is unproven",
+    "events": 16,
+    "executions": 10,
+    "generation": 1,
+    "genome": "891a3d2124b987da0145768d8fc9f2b6151259f78c59ff3e87cd054d869fecfb",
+    "goals": {
+      "6698f74fc1306ddfb7556afc7e3293ef51e97c4936d79bad19405c29dc461397": "COMPLETED"
+    },
+    "graph_skills": [
+      "maximum_impact",
+      "reachable_pairs",
+      "indirect_pairs"
+    ],
+    "head": "5d9e461baab5db26255dcd3a4085a54200d9650c9bf2cf7ab7a08fa319d32cb0",
+    "known_sources": 10,
+    "legacy_skills": 21,
+    "name": "NOVA Unified",
+    "parent_lineages": {
+      "graph": {
+        "events": 26,
+        "generation": 2,
+        "head": "e9e52c3de59b084e02b7e30e0fcb2f6c7f0c8d65747a4fc7f46385952d94acc7"
+      },
+      "nova": {
+        "events": 134,
+        "generation": 22,
+        "head": "15bf5be8b55909bd6ded59bcef050d0756fe9d5bb60f39304a856c4030d496cf"
+      }
+    },
+    "pending_graph_candidate": null,
+    "runtime": "3e101420324d3c61296b9b4034f25d49f4abefb8b48a6cfdfef7ee4715704c06",
+    "source_failures": 0,
+    "version": "1.0.0",
+    "workspace": {
+      "context": "77d644bd03f2de2ea2c8105147905f11914e3cd0459b956e91ff4c80037ac93f",
+      "intelligence": {
+        "cost": 2.0,
+        "policy": "frozen evaluation first, requested plans, measured deficits, inherited learning"
+      },
+      "logic": {
+        "evidence": "8c4168c24085a616f72864016b458d48ac9a8cce19361cf67c5452f4aa46ded5",
+        "reason": null,
+        "status": "SUCCEEDED"
+      },
+      "thinking": {
+        "cause": "operator goal; mechanism and plan selected by kernel",
+        "cost": 2.0,
+        "goal": "6698f74fc1306ddfb7556afc7e3293ef51e97c4936d79bad19405c29dc461397",
+        "kind": "goal.execute",
+        "plan": {
+          "actions": [
+            "report.code"
+          ],
+          "cost": 2.0,
+          "expanded": 2,
+          "goal": "code.report",
+          "id": "aa0e564704f6db62e7c8a73f05b3ee1878e834d603050c7b6f1db455d3688a52",
+          "initial_types": [
+            "code.graph",
+            "code.support",
+            "graph.indirect_pairs",
+            "graph.maximum_impact",
+            "graph.reachable_pairs",
+            "input.text",
+            "skill.30-record",
+            "source.capture",
+            "source.ir",
+            "source.url"
+          ],
+          "status": "PLANNED"
+        },
+        "priority": 80
+      }
+    }
+  },
+  "before": {
+    "active_learned_skills": 23,
+    "admissions_total": 0,
+    "catalog_entries": 40,
+    "claim": "integrated bounded cognition; digital consciousness is unproven",
+    "events": 1,
+    "executions": 0,
+    "generation": 0,
+    "genome": "89ff736e4d241fbe78f0829645eec816976fbdb1d0d0dadfb63134950b255cc8",
+    "goals": {},
+    "graph_skills": [
+      "maximum_impact",
+      "reachable_pairs"
+    ],
+    "head": "c26eb4b4b095654011cff6042b6d92708409926a4f91e53deecb40c9b4ce3a35",
+    "known_sources": 8,
+    "legacy_skills": 21,
+    "name": "NOVA Unified",
+    "parent_lineages": {
+      "graph": {
+        "events": 26,
+        "generation": 2,
+        "head": "e9e52c3de59b084e02b7e30e0fcb2f6c7f0c8d65747a4fc7f46385952d94acc7"
+      },
+      "nova": {
+        "events": 134,
+        "generation": 22,
+        "head": "15bf5be8b55909bd6ded59bcef050d0756fe9d5bb60f39304a856c4030d496cf"
+      }
+    },
+    "pending_graph_candidate": "c85aa53bacafa85512147bafae9958c9439399effbb1e98a98d929659ee18880",
+    "runtime": "3e101420324d3c61296b9b4034f25d49f4abefb8b48a6cfdfef7ee4715704c06",
+    "source_failures": 0,
+    "version": "1.0.0",
+    "workspace": null
+  },
+  "catalog_entries": 41,
+  "error": null,
+  "experience": {
+    "graph:indirect_pairs": {
+      "failure": 0,
+      "success": 1
+    },
+    "graph:maximum_impact": {
+      "failure": 0,
+      "success": 1
+    },
+    "graph:reachable_pairs": {
+      "failure": 0,
+      "success": 1
+    },
+    "logic.code_evidence": {
+      "failure": 0,
+      "success": 1
+    },
+    "logic.reason": {
+      "failure": 0,
+      "success": 1
+    },
+    "reader.read": {
+      "failure": 0,
+      "success": 1
+    },
+    "report.code": {
+      "failure": 0,
+      "success": 1
+    },
+    "skill:30-record": {
+      "failure": 0,
+      "success": 1
+    },
+    "source.fetch": {
+      "failure": 0,
+      "success": 1
+    },
+    "source.graph": {
+      "failure": 0,
+      "success": 1
+    }
+  },
+  "limits": [
+    "maintainer-written cognitive algorithms",
+    "bounded typed planning and Horn logic",
+    "finite graph query ontology",
+    "local HTTPS capture, not signed source attestation",
+    "no claim of digital consciousness or general intelligence"
+  ],
+  "protocol_digest": "1b4c121db945843b4b75cedee7fe0cf775a122299de5dea8fe6fecaf869a8573",
+  "report": {
+    "output": {
+      "claim": "inherited and acquired mechanisms jointly applied to captured source; not runtime causality",
+      "functions": 52,
+      "label": {
+        "length": 15,
+        "name": "TENACITY SOURCE"
+      },
+      "language": "python",
+      "logic": {
+        "budget_exhausted": false,
+        "complete": true,
+        "counter_support": null,
+        "matching_steps": 54,
+        "proofs": [
+          {
+            "atom": [
+              "bounds",
+              "valid"
+            ],
+            "id": "1623cf9badf4f460fa59cc28f5d73bfae9d0382111448a384a84afaf5d74c659",
+            "index": 2,
+            "kind": "observation"
+          },
+          {
+            "atom": [
+              "evidence",
+              "grounded"
+            ],
+            "id": "2470794739f8e347a681799099653459f8044f5e13f896ee2587f43ebeca4ba2",
+            "kind": "inference",
+            "premises": [
+              "76375ed6e0fd03b116b351912b2dafc1930c3ca59919ad7a67554b8b2db1e3e3",
+              "44dc601a722fd1d72f85aaf29b1639aa51507760ccee04f0d5faa2a761072648"
+            ],
+            "rule": "source-preserved"
+          },
+          {
+            "atom": [
+              "report",
+              "supported"
+            ],
+            "id": "b2affcfef9076b036c25d7acfa9f8961a82d41ac1436b4f5b4ca36e6eae3c45f",
+            "kind": "inference",
+            "premises": [
+              "2470794739f8e347a681799099653459f8044f5e13f896ee2587f43ebeca4ba2",
+              "1623cf9badf4f460fa59cc28f5d73bfae9d0382111448a384a84afaf5d74c659"
+            ],
+            "rule": "report-bounds"
+          },
+          {
+            "atom": [
+              "roundtrip",
+              "preserved"
+            ],
+            "id": "44dc601a722fd1d72f85aaf29b1639aa51507760ccee04f0d5faa2a761072648",
+            "index": 1,
+            "kind": "observation"
+          },
+          {
+            "atom": [
+              "source",
+              "captured"
+            ],
+            "id": "76375ed6e0fd03b116b351912b2dafc1930c3ca59919ad7a67554b8b2db1e3e3",
+            "index": 0,
+            "kind": "observation"
+          }
+        ],
+        "query": [
+          "report",
+          "supported"
+        ],
+        "semantics": "four-valued bounded Horn inference with explicit negation",
+        "support": {
+          "id": "b2affcfef9076b036c25d7acfa9f8961a82d41ac1436b4f5b4ca36e6eae3c45f",
+          "kind": "inference",
+          "premises": [
+            "2470794739f8e347a681799099653459f8044f5e13f896ee2587f43ebeca4ba2",
+            "1623cf9badf4f460fa59cc28f5d73bfae9d0382111448a384a84afaf5d74c659"
+          ],
+          "rule": "report-bounds"
+        },
+        "verdict": "TRUE"
+      },
+      "metrics": {
+        "indirect_pairs": 5,
+        "maximum_impact": 4,
+        "reachable_pairs": 16
+      },
+      "source": "https://raw.githubusercontent.com/jd/tenacity/main/tenacity/__init__.py",
+      "source_sha256": "94b0d4690fcfdc3f62c14d256ae365eae4a9ed55e856690faa94637bf0fb2289",
+      "static_call_edges": 11
+    },
+    "status": "COMPLETED",
+    "trace": [
+      {
+        "capability": "skill:30-record",
+        "context": "10ed526cc7a71e1e52cc29d17b069783aeebfb7f3ca56f315e3a8eb8dfc35415",
+        "result": "a0308344164e2ce0f3fff670b88e429e608f0c5a55bae8023f38ec35220dd2ad",
+        "status": "SUCCEEDED"
+      },
+      {
+        "capability": "source.fetch",
+        "context": "484cf41ed6d29a55c0b81e1be40824717cf609b8bc3dafc4473c2ae90b3859b4",
+        "result": "a9bbddcc8a2262ff732e19ff5694b87c0f413b5e6a2ece795140759dc6f02e95",
+        "status": "SUCCEEDED"
+      },
+      {
+        "capability": "reader.read",
+        "context": "d6ccd1c37b6cf094a5d07ec8bb58ab44a718f5ed6c62d3db6b774f1db24ed211",
+        "result": "6b4911aa72e0204aa9c814edf65adba17293f85bb03da920dd2de85b46a9d158",
+        "status": "SUCCEEDED"
+      },
+      {
+        "capability": "source.graph",
+        "context": "1d33f1f4cf7cf7cb6f2165038811cbaa186764d79fc3e9dd0b3fc05cbeaca140",
+        "result": "a9abdac9cc7502832a324128f189bce59a9e8be63d0874f5d60f5ede147f5453",
+        "status": "SUCCEEDED"
+      },
+      {
+        "capability": "graph:indirect_pairs",
+        "context": "22a2f6df6f129481faa9f4bb08638e750a4cc650612ae9b370af7654b50f4160",
+        "result": "5be7153f692e498d9d789a28a5776c79927c5f9d0b00982bbfbc297cbc6b32e7",
+        "status": "SUCCEEDED"
+      },
+      {
+        "capability": "graph:maximum_impact",
+        "context": "9b52aead1e5744e395e0efc567acaa45562083bec9655c9b19ec343fd7a3c28f",
+        "result": "aa6f42f6694580b6be0b3342bea522cf15b66f6e764dff4477969f93c0612a56",
+        "status": "SUCCEEDED"
+      },
+      {
+        "capability": "graph:reachable_pairs",
+        "context": "30763f772edffa51be16e1579da447104541aaf251e19f78bda70fd1d68244d3",
+        "result": "b15de5a0018d184f029e626c820f8eaa581744400eff41907396bb0681655aec",
+        "status": "SUCCEEDED"
+      },
+      {
+        "capability": "logic.code_evidence",
+        "context": "60cce45d6c4fda38820661f37e365b040d99d8088d4c42b982bf8cd45aadfe5f",
+        "result": "55048483b16accf5fde0b8d027ddcb3923bf16da4ece22676ac35a0ea37a1571",
+        "status": "SUCCEEDED"
+      },
+      {
+        "capability": "report.code",
+        "context": "77d644bd03f2de2ea2c8105147905f11914e3cd0459b956e91ff4c80037ac93f",
+        "result": "8c4168c24085a616f72864016b458d48ac9a8cce19361cf67c5452f4aa46ded5",
+        "status": "SUCCEEDED"
+      }
+    ]
+  },
+  "report_goal": "6698f74fc1306ddfb7556afc7e3293ef51e97c4936d79bad19405c29dc461397",
+  "schema": "nova.unified.experiment.result.v1",
+  "source_reasoning": {
+    "output": {
+      "budget_exhausted": false,
+      "complete": true,
+      "counter_support": null,
+      "matching_steps": 39,
+      "proofs": [
+        {
+          "atom": [
+            "calls",
+            "tenacity:BaseRetrying.__iter__",
+            "tenacity:BaseRetrying.iter"
+          ],
+          "id": "dd329b7419154ee16a0d7aff02aacae7380d7fd8046676c39c27954de8db3257",
+          "index": 0,
+          "kind": "observation"
+        },
+        {
+          "atom": [
+            "calls",
+            "tenacity:BaseRetrying.iter",
+            "tenacity:BaseRetrying._begin_iter"
+          ],
+          "id": "5f7950951c379922aa19e5adf0fe0791d71a660022efae4d6efe84e043681ddb",
+          "index": 1,
+          "kind": "observation"
+        },
+        {
+          "atom": [
+            "may-reach",
+            "tenacity:BaseRetrying.__iter__",
+            "tenacity:BaseRetrying._begin_iter"
+          ],
+          "id": "a800f4f6656213cf9341fb22dda8d16a2a11b215aea1e378afe61c5dde4aee15",
+          "kind": "inference",
+          "premises": [
+            "e36a92b5808109aacbdcd7d2fc9c8fac3e90ee6cca05549c4fb074d48e1a497c",
+            "5f7950951c379922aa19e5adf0fe0791d71a660022efae4d6efe84e043681ddb"
+          ],
+          "rule": "compose-call"
+        },
+        {
+          "atom": [
+            "may-reach",
+            "tenacity:BaseRetrying.__iter__",
+            "tenacity:BaseRetrying.iter"
+          ],
+          "id": "e36a92b5808109aacbdcd7d2fc9c8fac3e90ee6cca05549c4fb074d48e1a497c",
+          "kind": "inference",
+          "premises": [
+            "dd329b7419154ee16a0d7aff02aacae7380d7fd8046676c39c27954de8db3257"
+          ],
+          "rule": "direct-call"
+        },
+        {
+          "atom": [
+            "may-reach",
+            "tenacity:BaseRetrying.iter",
+            "tenacity:BaseRetrying._begin_iter"
+          ],
+          "id": "9ac4836899e475d9a8c2d7c6eae22f2046f74321e579b4200d470b81d325308e",
+          "kind": "inference",
+          "premises": [
+            "5f7950951c379922aa19e5adf0fe0791d71a660022efae4d6efe84e043681ddb"
+          ],
+          "rule": "direct-call"
+        }
+      ],
+      "query": [
+        "may-reach",
+        "tenacity:BaseRetrying.__iter__",
+        "tenacity:BaseRetrying._begin_iter"
+      ],
+      "semantics": "four-valued bounded Horn inference with explicit negation",
+      "support": {
+        "id": "a800f4f6656213cf9341fb22dda8d16a2a11b215aea1e378afe61c5dde4aee15",
+        "kind": "inference",
+        "premises": [
+          "e36a92b5808109aacbdcd7d2fc9c8fac3e90ee6cca05549c4fb074d48e1a497c",
+          "5f7950951c379922aa19e5adf0fe0791d71a660022efae4d6efe84e043681ddb"
+        ],
+        "rule": "compose-call"
+      },
+      "verdict": "TRUE"
+    },
+    "status": "SUCCEEDED"
+  },
+  "status": "COMPLETED"
+}

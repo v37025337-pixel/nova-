@@ -1,4 +1,29 @@
-# NOVA 0.9.0 — Universal Code Reader 18
+# NOVA 1.0 — единое когнитивное ядро
+
+Активное ядро теперь находится в `nova_core/cognition`, команда запуска — `nova`.
+У него один журнал, общая память, один планировщик и единый каталог способностей.
+Логика, планирование, учёт опыта, навыки Nova, UCR и графовые программы участвуют
+в одном исполняемом цикле. Исторические движки сохранены как библиотеки и средства
+проверки прежних журналов.
+
+В [проверенном состоянии](experience/unified-v1/live/result.json) — **24 приобретённых
+навыка** и 41 запись общего каталога, включая предоставленные примитивы и инструменты.
+Кандидат, ожидавший в Nova Next, прошёл fresh-blind 24/24 на Tenacity и Tornado.
+Один совместный план выполнил девять действий. Полная регрессия: 192/192 прежних
+ответов и 72/72 сохранённых графовых проверок; replay и rollback проверены.
+
+```bash
+python -m pip install .
+nova --state /tmp/nova-unified.sqlite restore experience/unified-v1/live/journal.json.gz
+nova --state /tmp/nova-unified.sqlite status
+nova --state /tmp/nova-unified.sqlite inspect https://raw.githubusercontent.com/jd/tenacity/main/tenacity/__init__.py --label "Tenacity source"
+```
+
+[Архитектура, запуск и границы возможностей](nova_core/cognition/README-RU.md).
+Цифровой разум — цель проекта; эти результаты подтверждают интеграцию ограниченных
+когнитивных механизмов, но не сознание или общий интеллект.
+
+## Историческая основа: Nova 0.9 и Nova Next
 
 Собран отдельный преемник **[Nova Next 0.1](nova_next/README-RU.md)** на основе
 опыта Nova G22 и присланного UCR29: реальный HTTPS, единый конвейер, независимый

@@ -1,0 +1,82 @@
+{
+  "created_at": "2026-09-21T13:54:47.029081+00:00",
+  "feeds": [
+    {
+      "module": "tenacity",
+      "url": "https://raw.githubusercontent.com/jd/tenacity/main/tenacity/__init__.py"
+    },
+    {
+      "module": "tornado.httpclient",
+      "url": "https://raw.githubusercontent.com/tornadoweb/tornado/master/tornado/httpclient.py"
+    }
+  ],
+  "integration_goal": "report on captured source using inherited naming, UCR, acquired graph programs and proof rules",
+  "integration_goal_author": "maintainer; action plan selected by the kernel",
+  "max_steps": 28,
+  "native_evolution": "continue the inherited frozen candidate; no supplied mechanism or goal override",
+  "runner_sha256": "6c5328d750d3d7a94880d2d89cf5abcd1ad702c22738d1f710f2b16629fcc53f",
+  "runtime": {
+    "faculties": {
+      "intelligence": "experience-conditioned action cost and goal selection",
+      "logic": "bounded four-valued Horn inference with evidence",
+      "thinking": "typed action planning and dependency resolution"
+    },
+    "python": [
+      3,
+      12
+    ],
+    "schema": "nova.unified.runtime.v1",
+    "source_sha256": {
+      "nova_core/__init__.py": "313851ef35a64297d494590b7f63e3ee35b0590e86350cf62916fc642a1a6dbd",
+      "nova_core/__main__.py": "1a65c967f8eb2fcf5b656932f22838f82ba0c4ae048e8cb5518234902e11947f",
+      "nova_core/adaptation.py": "8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796",
+      "nova_core/autonomy.py": "b60236f1fb7324c3cd956009645615ee9891465c3a3f27a24f1faa0fd2904661",
+      "nova_core/capability.py": "dea251596603a33d5b1b486dda63f50c2e3a2aeb45d3fc8d24553e29b3c4c5de",
+      "nova_core/cognition/__init__.py": "b3ab0dad7e5402ecfd740a161fabaaf3294f4da6d6a865695cde37a47ffa300f",
+      "nova_core/cognition/__main__.py": "031e1e9975b62f84a2b875b1081660ff73095df6bbd2f40beba020c22363d4ca",
+      "nova_core/cognition/bootstrap.json.gz": "8b22055d2d1dc34812354cb0412a3138bf608d2f86d0f5849d8ecab71b395160",
+      "nova_core/cognition/capabilities.py": "6b350e0540e586475a0b64393f7f7b363794aaceea310ca905a7c4dbb2504101",
+      "nova_core/cognition/checkpoint.py": "b1dee03b6ff06a6d8b85c0f45c9726764814154129145bcdb3f838a0d7044ad4",
+      "nova_core/cognition/kernel.py": "ab481272a85039716caab74eab69f721cc49a85b0de11c9bf2c77ff224cc0d9d",
+      "nova_core/cognition/logic.py": "950ce935814b1945319d01b61e565054af808633ceaa563931b25e8ded8cf8b3",
+      "nova_core/cognition/planning.py": "bc17347fbc59c334dcaac665cf36ef3e61aa1441abaa2390f1a4850232b6388a",
+      "nova_core/compatibility.py": "547417793d870c014c4ef604920c8c5b5c05235da4a83fcc4ba084ffdcf36e89",
+      "nova_core/contracts.py": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe",
+      "nova_core/evaluation.py": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2",
+      "nova_core/extensions.py": "7b048dda1d3efcc510be6af1162ecd52fb7dddfa53ff01b106a003a74cf6ded2",
+      "nova_core/genetics.py": "e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0",
+      "nova_core/isolation.py": "c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3",
+      "nova_core/kernel.py": "9bba92a690fb8d414896f7728ead90d9ff58c0c4cc8e2a34d3354071a567262f",
+      "nova_core/language.py": "a541480da7093aaa401f82e1bf3aa7be5f4914ca57ac3222db0e7084af60e1a7",
+      "nova_core/library_evolution.py": "a95a361a62b697df309f6941f4b5e4daa3c74ad2cfb174e0c4b3b0f48e0c4c03",
+      "nova_core/memory.py": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777",
+      "nova_core/observations.py": "62b04c50e9a6afd191a95a758f5b2ff4ff5d370fb865f3b319ab72e63cbd7a8c",
+      "nova_core/python_tools.py": "6e4ddb19f4897b470b0e94c547c7947a0925308af98af4f9178ae6dd2047a2eb",
+      "nova_core/sandbox_worker.py": "11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96",
+      "nova_core/sequence.py": "cd1ac5a145caeb9a4fa9c181aeb3bbbd021e4a59b37bbee5d2440b27081f06d2",
+      "nova_core/specifications.py": "3c34a078b8500dc1f9a13ea140c85fe9df7d4294986470989aafe128841b45c3",
+      "nova_core/synthesis.py": "7e61fe88d70eaf5485a82be3b98aba1e00dd2384847d635b80b04f8dbe014e19",
+      "nova_core/ucr_development.py": "8fc53eea8eb0a5d0f10d4f44e25ca0e2a5fcb4c859c51161234e1e9bd2a8660f",
+      "nova_next/__init__.py": "eafa0b6f9a0dee95dd701227e4a538835269ccf580631a8fad7410358320cd57",
+      "nova_next/__main__.py": "309433adbbc89f9327354593ce39af32552346e589aea799969f7d5d6f0601e5",
+      "nova_next/data.py": "0373c1362e625fb6545e690d676cdd582a1b5ece397b4f5e98ec49af691ee52a",
+      "nova_next/evaluation.py": "946234a5296af625d041ef809b64d318c01f4d7ce0803b6540c704cec2da5275",
+      "nova_next/inherited.json": "c7c08c695293b22dee9caf0748947b8cd1dcd139c65f20bc3a3d3743dfaa3da2",
+      "nova_next/kernel.py": "5f5012b873a847b7c3e80978258ca92e403f59a179c3d8cca3e618f91e4d52df",
+      "nova_next/learning.py": "b6e2147f9337c27437765f2ba3984a14bf88cc34d5db4cbf0a97fd1109494f5b",
+      "nova_next/network.py": "29d8d06e141a3780f54e614466f6ed051aa939e548778fe2654d13eb2c532190",
+      "nova_next/oracle.py": "8571f462b044c1c06600a7dd53c1f439edada46c85dcae9aea79750aa0e52aa1",
+      "nova_next/programs.py": "cf872e7498d743279f9ab3de7234ab10f25bd2b97a5a38a5f93b63fe1035ca6f",
+      "nova_next/seed_blueprint.json": "20b1621fe5134f4dbc651bf66e3057b8c5551f9825c228e6de792a33340d3479",
+      "nova_next/seed_ucr.py": "359d1b49e57c84e565fc903bbcdd71c0f58d88b2e86d359887ca534e85ff47a7",
+      "nova_next/snapshot.py": "a4b8e21801c7aba0d07ad727370044dd0a18f2d847f497b3106ae60f5ca4170b",
+      "nova_next/worker.py": "a96cdc46c671f171cdb982bc4b853d5ec118a42da7d059c79ac101af5cdd17b7",
+      "nova_tools/__init__.py": "e981bab21ded1efd6adeecb57930c3d639797507bb9e2ae4dfc605e727abdd17",
+      "nova_tools/code_reader_bridge.py": "c66e494210350123b23e3d6f7f99a211b7415341544296ebfff7d4f40c666e1b",
+      "nova_tools/universal_code_reader.py": "4f7bd6781727504f89f3407f559db5689a1a0896480b9f4a046ac8a85552be5f"
+    },
+    "state": "one journal, scheduler, capability catalog, active genome and cognitive workspace",
+    "version": "1.0.0"
+  },
+  "schema": "nova.unified.experiment.v1"
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "repository": "jd/tenacity",
+    "source": "https://github.com/jd/tenacity/blob/main/LICENSE",
+    "license": "Apache-2.0",
+    "path": "jd--tenacity.txt",
+    "bytes": 11357
+  },
+  {
+    "repository": "tornadoweb/tornado",
+    "source": "https://github.com/tornadoweb/tornado/blob/master/LICENSE",
+    "license": "Apache-2.0",
+    "path": "tornadoweb--tornado.txt",
+    "bytes": 11358
+  }
+]

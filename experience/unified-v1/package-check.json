@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "distribution_version": "1.0.0",
+  "entrypoint": "nova_core.cognition.__main__:main",
+  "installed_runtime_matches_frozen": true,
+  "initial_learned_skills": 23,
+  "installed_execution": [
+    "legacy skill",
+    "compiled graph program"
+  ],
+  "bootstrap_and_license_files_packaged": true,
+  "wheel_sha256": "81f4ff87552388e181d78e328b4f2b3b6917aa860ca1f13eab53cfb879bd4451"
+}

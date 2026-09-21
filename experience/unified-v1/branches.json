@@ -1,0 +1,65 @@
+{
+  "schema": "nova.branch-integration.v1",
+  "merge_parents": [
+    "e6aa823ca0c375bf7a88962f881518ff988543a8",
+    "77bb4478cacb8c18861b9aab4153097399f3839e"
+  ],
+  "all_branches_covered": true,
+  "branches": [
+    {
+      "branch": "origin/nova-autonomous-cycle-20260920",
+      "head": "5d73a9e3b4393a11af9fa88ee79f72d373cce87f",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    },
+    {
+      "branch": "origin/nova-codeflow-v25-20260921",
+      "head": "dcee35d7dc5f7a38c0350c9440f25207d0c001f7",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    },
+    {
+      "branch": "origin/nova-internet-cycle-v1",
+      "head": "77bb4478cacb8c18861b9aab4153097399f3839e",
+      "included_through_parent": "77bb4478cacb8c18861b9aab4153097399f3839e"
+    },
+    {
+      "branch": "origin/nova-internet-tasks-20260920",
+      "head": "a0ec861e0d3b4cbbb031dd4e5f067bcc1daf584a",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    },
+    {
+      "branch": "origin/nova-observation-goals-20260921",
+      "head": "834619b45857734ad9bbbf91e300eee579787328",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    },
+    {
+      "branch": "origin/nova-python-learning-20260920",
+      "head": "b1b59c02bee3ae040c409a150462cf6aa801a47b",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    },
+    {
+      "branch": "origin/nova-run-g22-20260921",
+      "head": "d528b9d98fc51c524353565765e89df5ca4846ef",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    },
+    {
+      "branch": "origin/nova-ucr-development-v8",
+      "head": "647804a4e461da5019aa369ce36549be3bcdcb77",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    },
+    {
+      "branch": "origin/nova-ucr-v16-20260921",
+      "head": "fe0c198bbe873e266193722959b57a6184211c8d",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    },
+    {
+      "branch": "origin/nova-ucr18-20260921",
+      "head": "f7beecc8fba7d508f9a09c1569d6bffeb9001580",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    },
+    {
+      "branch": "origin/nova-unlabelled-stream-20260920",
+      "head": "3bed9dd3eb407450a376e3c44b09b54f9fad64eb",
+      "included_through_parent": "e6aa823ca0c375bf7a88962f881518ff988543a8"
+    }
+  ]
+}
