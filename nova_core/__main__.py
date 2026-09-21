@@ -30,6 +30,8 @@ def main(argv=None):
     study = commands.add_parser("study")
     study.add_argument("specification", type=Path)
     study.add_argument("--steps", type=int, default=1)
+    observe = commands.add_parser("observe")
+    observe.add_argument("document", type=Path)
     assess = commands.add_parser("assess")
     assess.add_argument("evaluation", type=Path)
     evolve = commands.add_parser("evolve")
@@ -98,6 +100,8 @@ def main(argv=None):
                 elif args.command == "study":
                     kernel.study(decode(args.specification.read_text(encoding="utf-8")))
                     result = kernel.develop(args.steps)
+                elif args.command == "observe":
+                    result = kernel.observe(decode(args.document.read_text(encoding="utf-8")))
                 elif args.command == "assess":
                     evaluation = decode(args.evaluation.read_text(encoding="utf-8"))
                     if set(evaluation) != {"freeze", "rows"}:

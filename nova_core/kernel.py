@@ -6,7 +6,7 @@ from copy import deepcopy
 from pathlib import Path
 
 from .adaptation import engine_proposal, input_tokens, trial_dataset, trial_spec
-from . import capability, autonomy
+from . import capability, autonomy, observations
 from .compatibility import recognized_legacy
 from .contracts import ContractError, IntegrityError, dataset_id, digest, encode, task_spec
 from .evaluation import baseline, gate, score
@@ -16,7 +16,7 @@ from .extensions import is_extension
 from .memory import Journal, ZERO
 from .synthesis import ERRORS, MAX_ATTEMPTS, MAX_DEPTH, synthesize
 
-SCHEMA = "nova.kernel.v6"
+SCHEMA = "nova.kernel.v7"
 
 
 def runtime_manifest():
@@ -33,7 +33,9 @@ def runtime_manifest():
             "capability_author": "kernel_specification_conditioned_document_compiler",
             "capability_dialect": "bounded_word_equations_and_typeset_block_recurrences",
             "autonomy": "bounded_failure_conditioned_relational_subgoals_with_external_io",
-            "python_tools": "pure_stdlib_composition_and_inherited_relation_transfer"}
+            "python_tools": "pure_stdlib_composition_and_inherited_relation_transfer",
+            "observations": {"mechanism": "measured_scalar_field_prediction_errors_v1", "author": "maintainer",
+                             "config": observations.CONFIG}}
 
 
 def initial_state():
@@ -44,7 +46,7 @@ def initial_state():
             "consumed": set(), "admissions": 0, "attempts": 0, "engine_trials": {},
             "knowledge": {}, "capability_attempted": set(), "capability_pending": {},
             "capability_experience": {}, "capability_evaluated_inputs": set(),
-            "autonomy": autonomy.initial()}
+            "autonomy": autonomy.initial(), "observations": [], "observation_hashes": set(), "observation_inputs": set()}
 
 
 def context(state):
@@ -234,7 +236,7 @@ def validate_trial(state, trial):
 
 def upgrade_proposal(state, target, previous_head):
     source = state["runtime_manifest"]
-    if (not recognized_legacy(source) or target["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6") or
+    if (not recognized_legacy(source) or target["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6", "nova.kernel.v7") or
             source["schema"] >= target["schema"] or
             target["schema"] != SCHEMA and not recognized_legacy(target)):
         raise ContractError("unsupported runtime transition")
@@ -304,7 +306,7 @@ class Kernel:
                         raise IntegrityError("step replay/evidence mismatch")
                     apply_step(state, body)
                 elif body.get("kind") == "engine_trial" and set(body) == {"kind", "trial"}:
-                    if state["runtime_manifest"]["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6"):
+                    if state["runtime_manifest"]["schema"] not in ("nova.kernel.v2", "nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6", "nova.kernel.v7"):
                         raise ContractError("engine policy requires runtime upgrade")
                     trial = trial_spec(body["trial"])
                     if encode(trial) != encode(body["trial"]):
@@ -324,6 +326,11 @@ class Kernel:
                     self._require_capability_runtime(state)
                     spec = capability.validate_knowledge(state, body["specification"])
                     state["knowledge"][spec["id"]] = spec
+                elif body.get("kind") == "observation":
+                    expected, extracted = observations.ingest(state, body["document"])
+                    if encode(body) != encode(expected):
+                        raise IntegrityError("observation parse/provenance replay mismatch")
+                    observations.apply(state, body, extracted)
                 elif body.get("kind") == "capability_freeze":
                     self._require_capability_runtime(state)
                     if encode(propose(state)) != encode(body):
@@ -428,6 +435,18 @@ class Kernel:
         self.journal.append({"kind": "knowledge", "specification": spec}, head)
         return {"registered": spec["id"], "digest": digest(spec)}
 
+    def observe(self, raw):
+        state, head, _ = self._load()
+        self._require_current(state)
+        if not observations.enabled(state):
+            raise ContractError("structured observations require runtime v7")
+        extracted = observations.extract(raw)
+        if raw["sha256"] in state["observation_hashes"]:
+            return {"status": "DUPLICATE", "sha256": raw["sha256"]}
+        body = {"kind": "observation", "document": deepcopy(raw), "receipt": extracted["receipt"]}
+        self.journal.append(body, head)
+        return {"status": "RECORDED", **extracted["receipt"]}
+
     def assess(self, freeze_id, rows):
         state, head, _ = self._load()
         self._require_current(state)
@@ -531,7 +550,11 @@ class Kernel:
                                "search_attempts_total": sum(h["search_attempts"] for history in state["experience"].values() for h in history)},
                 "capabilities_active": state["genomes"][state["current"]].get("capabilities", []),
                 "claim": "bounded_program_policy_and_specification_conditioned_grammar_learning",
-                **({"autonomy": autonomy.status(state)} if autonomy.enabled(state) else {})}
+                **({"autonomy": autonomy.status(state)} if autonomy.enabled(state) else {}),
+                **({"observations": {"documents_seen": len(state["observation_hashes"]),
+                    "window_documents": len(state["observations"]),
+                    "window_records": sum(len(d["records"]) for d in state["observations"])}}
+                   if observations.enabled(state) else {})}
 
     def audit(self, expected_head=None):
         self._load(force=True)

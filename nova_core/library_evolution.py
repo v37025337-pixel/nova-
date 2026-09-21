@@ -13,7 +13,7 @@ from .language import candidate
 
 
 def enabled(state):
-    return state["runtime_manifest"]["schema"] == "nova.kernel.v6"
+    return state["runtime_manifest"]["schema"] in ("nova.kernel.v6", "nova.kernel.v7")
 
 
 def retryable(record, state):
@@ -71,7 +71,7 @@ def transfer_goal(state, memory):
 def propose(state, memory):
     from .autonomy import event, request
     a, goal = state["autonomy"], state["autonomy"]["current"]
-    if not goal or goal["contract"]["law"] == "numeric_less":
+    if not goal or goal["contract"]["law"] in ("numeric_less", "observed_field_reconstruction"):
         return None
     if a["phase"] == "GOAL_FROZEN":
         return event(state, "ROUTE_SELECTED", status="PLANNED", reason="NATIVE_PYTHON_TOOL_COMPOSITION",

@@ -15,7 +15,7 @@ from . import sequence, specifications
 
 
 def enabled(state):
-    return state["runtime_manifest"]["schema"] in ("nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6")
+    return state["runtime_manifest"]["schema"] in ("nova.kernel.v3", "nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6", "nova.kernel.v7")
 
 
 def queue(state, rows):
@@ -30,7 +30,7 @@ def queue(state, rows):
         if not history or history[-1]["reason"] != "SEARCH_EXHAUSTED":
             continue
         token = digest([tid, state["genomes"][state["current"]]["id"], state["knowledge"]])
-        if state["runtime_manifest"]["schema"] in ("nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6"):
+        if state["runtime_manifest"]["schema"] in ("nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6", "nova.kernel.v7"):
             token = digest([token, "typeset_block_recurrence_v1"])
         pending = state["capability_pending"].get(tid)
         status = "PENDING"
@@ -76,7 +76,7 @@ def freeze(state, selection, memory):
     parent = state["genomes"][state["current"]]
     diagnosed, documents = diagnosis(training, state["experience"][tid], state["knowledge"])
     algorithm = None
-    if state["runtime_manifest"]["schema"] in ("nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6"):
+    if state["runtime_manifest"]["schema"] in ("nova.kernel.v4", "nova.kernel.v5", "nova.kernel.v6", "nova.kernel.v7"):
         algorithm = specifications.learn(state["knowledge"])
         diagnosed["algorithm_compiler"] = {k: v for k, v in algorithm.items() if k != "genes"}
         if algorithm["genes"]:
