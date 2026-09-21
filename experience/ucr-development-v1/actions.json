@@ -1,0 +1,404 @@
+[
+  {
+    "event": 118,
+    "freeze": "1700c55087b888bc3cc0461cddb6b282949ddeff5dd1e89907e8a1606232cfb6",
+    "goal": {
+      "baseline_program": {
+        "id": "c8224ff33404e8ac677412b545a41159034c0c225f3308580c81f1a5637f7448",
+        "ir": [
+          "const",
+          114
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return 114\n"
+      },
+      "cause_event": 94,
+      "claim_boundary": "maintainer-defined field-pair ontology; selected by measured errors; no causality or predictability proof",
+      "contract": {
+        "ablation_required": true,
+        "fresh_min": 16,
+        "input_fields": [
+          "confidence"
+        ],
+        "law": "observed_field_reconstruction",
+        "output": "int",
+        "properties": [
+          "exact_agreement_with_unseen_observed_field"
+        ],
+        "regression_threshold": 1,
+        "success_threshold": 1
+      },
+      "deficit_id": "2aba1d1865d8b147063cf1e86562694a996da0bf26dec0179eab7668a720350c",
+      "evidence_sources": [
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/autonomy.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/capability.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/extensions.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/kernel.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/language.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/observations.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/sandbox_worker.py",
+        "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/specifications.py"
+      ],
+      "id": "auto-226161a5f16842f51620325a",
+      "observation_contract": {
+        "host": "github.com",
+        "input_field": "confidence",
+        "input_type": "float",
+        "record_path": "/reader/passport/operators/*/role",
+        "target_field": "evidence_count",
+        "target_type": "int"
+      },
+      "observed_failure": "REPEATED_FIELD_PREDICTION_ERROR",
+      "origin": "native_observation_prediction_error",
+      "original_holdout": [
+        {
+          "input": {
+            "confidence": 0.6
+          },
+          "output": 5
+        },
+        {
+          "input": {
+            "confidence": 0.965217
+          },
+          "output": 115
+        },
+        {
+          "input": {
+            "confidence": 0.984848
+          },
+          "output": 264
+        },
+        {
+          "input": {
+            "confidence": 0.986928
+          },
+          "output": 153
+        },
+        {
+          "input": {
+            "confidence": 0.980952
+          },
+          "output": 105
+        },
+        {
+          "input": {
+            "confidence": 0.666667
+          },
+          "output": 6
+        },
+        {
+          "input": {
+            "confidence": 0.945205
+          },
+          "output": 73
+        },
+        {
+          "input": {
+            "confidence": 0.97006
+          },
+          "output": 167
+        }
+      ],
+      "parent_generation": 22,
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "predictability_proven": false,
+      "prediction_evidence": {
+        "baseline_training": {
+          "outcomes": [
+            {
+              "ok": true,
+              "output": 114
+            },
+            {
+              "ok": false,
+              "output": 114
+            },
+            {
+              "ok": false,
+              "output": 114
+            },
+            {
+              "ok": false,
+              "output": 114
+            },
+            {
+              "ok": false,
+              "output": 114
+            },
+            {
+              "ok": false,
+              "output": 114
+            },
+            {
+              "ok": false,
+              "output": 114
+            },
+            {
+              "ok": false,
+              "output": 114
+            }
+          ],
+          "passed": 1,
+          "total": 8
+        },
+        "diagnostic_is_fresh_evaluation": false,
+        "errors": [
+          {
+            "event": 108,
+            "location": "/reader/passport/operators/1/role",
+            "prediction": {
+              "ok": false,
+              "output": 114
+            },
+            "row": {
+              "input": {
+                "confidence": 0.6
+              },
+              "output": 5
+            },
+            "sha256": "2a1d58026ee9d4a6839e0fa05a3b543fbc3e06fe3c185305f3a1817affe797e9",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/sandbox_worker.py"
+          },
+          {
+            "event": 110,
+            "location": "/reader/passport/operators/7/role",
+            "prediction": {
+              "ok": false,
+              "output": 114
+            },
+            "row": {
+              "input": {
+                "confidence": 0.965217
+              },
+              "output": 115
+            },
+            "sha256": "8b91f4c11a1ccc3aa2f3ba3f58cb63f6147b532ea733341cd32d07ad1afd16e7",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/specifications.py"
+          },
+          {
+            "event": 94,
+            "location": "/reader/passport/operators/7/role",
+            "prediction": {
+              "ok": false,
+              "output": 114
+            },
+            "row": {
+              "input": {
+                "confidence": 0.984848
+              },
+              "output": 264
+            },
+            "sha256": "2052c5c992c40b05753b2c0418ae31a1068b6b159ff0f9183072104d9a55d0a8",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/autonomy.py"
+          },
+          {
+            "event": 95,
+            "location": "/reader/passport/operators/6/role",
+            "prediction": {
+              "ok": false,
+              "output": 114
+            },
+            "row": {
+              "input": {
+                "confidence": 0.986928
+              },
+              "output": 153
+            },
+            "sha256": "cb41542417e52d0e271e84914f71f452fbea5e6258f7933c594cc22105a72151",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/capability.py"
+          },
+          {
+            "event": 99,
+            "location": "/reader/passport/operators/9/role",
+            "prediction": {
+              "ok": false,
+              "output": 114
+            },
+            "row": {
+              "input": {
+                "confidence": 0.980952
+              },
+              "output": 105
+            },
+            "sha256": "f8daeb348700ad65a0c194a03d522d7f22f0d726f6622ce5f8e5ed52a7911472",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/extensions.py"
+          },
+          {
+            "event": 102,
+            "location": "/reader/passport/operators/6/role",
+            "prediction": {
+              "ok": false,
+              "output": 114
+            },
+            "row": {
+              "input": {
+                "confidence": 0.666667
+              },
+              "output": 6
+            },
+            "sha256": "d3f9311bdf073eb55ed0947bdc52658d287c694753d77d0b5f78accd7cb766d5",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/kernel.py"
+          },
+          {
+            "event": 103,
+            "location": "/reader/passport/operators/7/role",
+            "prediction": {
+              "ok": false,
+              "output": 114
+            },
+            "row": {
+              "input": {
+                "confidence": 0.945205
+              },
+              "output": 73
+            },
+            "sha256": "1f4fe2a9f3a27bc23764bb360bc48254c4d1fa3e00bf6fdd0eb13e78f2223820",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/language.py"
+          },
+          {
+            "event": 106,
+            "location": "/reader/passport/operators/7/role",
+            "prediction": {
+              "ok": false,
+              "output": 114
+            },
+            "row": {
+              "input": {
+                "confidence": 0.97006
+              },
+              "output": 167
+            },
+            "sha256": "580cdf5e932cef2f9ed0dba662560d41b22440afbfee8fe86b8b92f3303cb1da",
+            "source": "https://github.com/v37025337-pixel/nova-/blob/5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5/nova_core/observations.py"
+          }
+        ],
+        "failed": 8,
+        "predictor_selected_on": "training_only",
+        "total": 8
+      },
+      "root_dataset": "b26cfee76097b095cb5a0ef5f7c8b75faca5bed485f5c7c8ab3916f1c6f361ed",
+      "root_task": null,
+      "root_task_origin": "unlabelled_observation",
+      "runtime_digest": "08bcf066c2027e549d7ffc4911db416a624d089d6df0a1c3095fe68ec8e97037",
+      "selection": {
+        "eligible_pairs": 64,
+        "evaluated_pairs": 64,
+        "rule": "most_diagnostic_errors_then_oldest_event_then_goal_identity"
+      },
+      "training": [
+        {
+          "input": {
+            "confidence": 0.991228
+          },
+          "output": 114
+        },
+        {
+          "input": {
+            "confidence": 0.533333
+          },
+          "output": 15
+        },
+        {
+          "input": {
+            "confidence": 0.8
+          },
+          "output": 5
+        },
+        {
+          "input": {
+            "confidence": 0.977273
+          },
+          "output": 176
+        },
+        {
+          "input": {
+            "confidence": 0.75
+          },
+          "output": 4
+        },
+        {
+          "input": {
+            "confidence": 0.833333
+          },
+          "output": 6
+        },
+        {
+          "input": {
+            "confidence": 0.987952
+          },
+          "output": 83
+        },
+        {
+          "input": {
+            "confidence": 0.5
+          },
+          "output": 2
+        }
+      ],
+      "utility": "test whether an observed field can be reconstructed from another field with a reusable program"
+    },
+    "kind": "autonomy_step",
+    "phase": "GOAL_FROZEN",
+    "reason": "NEW_OBSERVATION_DEFICIT",
+    "status": "GOAL_FROZEN"
+  },
+  {
+    "event": 119,
+    "freeze": "66a63959370c97fa778bd4fdbb4021e008afa44a92d2bbdbe029e140e3a63c61",
+    "frozen": {
+      "goal": "1700c55087b888bc3cc0461cddb6b282949ddeff5dd1e89907e8a1606232cfb6",
+      "parent_genome": "81721cc4fe5cd51b96114598b3c19b72f52f18f075065f7e0ee371381e81947d",
+      "runtime": "08bcf066c2027e549d7ffc4911db416a624d089d6df0a1c3095fe68ec8e97037",
+      "training": "5f07745753943067a4b9090b51ae02780dca446e85a12f4378986ca31c4a1a6a"
+    },
+    "goal": "auto-226161a5f16842f51620325a",
+    "kind": "autonomy_step",
+    "phase": "SEARCH_FROZEN",
+    "reason": "OBSERVATION_INPUTS_AND_CRITERIA_FROZEN",
+    "status": "SEARCH_FROZEN"
+  },
+  {
+    "event": 120,
+    "goal": "auto-226161a5f16842f51620325a",
+    "kind": "autonomy_step",
+    "phase": "WITHHOLD",
+    "reason": "OBSERVATION_SEARCH_EXHAUSTED",
+    "report": {
+      "fresh_cases_seen": 0,
+      "native_search_attempts": 10634,
+      "predictability_proven": false,
+      "ucr": {
+        "fresh_cases_seen": 0,
+        "internal_split": "training_partition_used_for_ranking_not_independent_validation",
+        "mechanism": "ucr_training_only_native_expression_proposals_v1",
+        "reader_version": "16.0",
+        "rounds": [
+          {
+            "depth": 1,
+            "exact_training_fits": 0,
+            "generated": 24,
+            "translated": 0
+          },
+          {
+            "depth": 2,
+            "exact_training_fits": 0,
+            "generated": 336,
+            "translated": 1
+          },
+          {
+            "depth": 3,
+            "exact_training_fits": 0,
+            "generated": 2048,
+            "translated": 4
+          }
+        ],
+        "status": "NO_EXACT_TRAINING_FIT",
+        "training_rows": 8,
+        "training_sha256": "5f07745753943067a4b9090b51ae02780dca446e85a12f4378986ca31c4a1a6a"
+      }
+    },
+    "status": "WITHHOLD"
+  }
+]

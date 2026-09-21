@@ -28,7 +28,7 @@ CONFIG = {"document_bytes": 262144, "window_documents": 32, "records_per_documen
 
 
 def enabled(state):
-    return state["runtime_manifest"]["schema"] == "nova.kernel.v7"
+    return state["runtime_manifest"]["schema"] in ("nova.kernel.v7", "nova.kernel.v8")
 
 
 def extract(raw):
@@ -230,17 +230,21 @@ def propose(state, memory):
                      goal=goal["id"], frozen=frozen, freeze=digest(frozen))
     if a["phase"] != "SEARCH_FROZEN":
         return None
-    search = synthesize(goal["training"], memory, state["genomes"][state["current"]].get("engine"))
+    searcher = synthesize
+    if state["runtime_manifest"]["schema"] == "nova.kernel.v8":
+        from .ucr_development import synthesize as searcher
+    search = searcher(goal["training"], memory, state["genomes"][state["current"]].get("engine"))
+    details = {"ucr": search["ucr"], "native_search_attempts": search["native_attempts"]} if "ucr" in search else {}
     program = search["program"]
     if program is None:
         return event(state, "WITHHOLD", status="WITHHOLD", reason="OBSERVATION_SEARCH_EXHAUSTED",
                      goal=goal["id"], report={"native_search_attempts": search["attempts"], "fresh_cases_seen": 0,
-                     "predictability_proven": False})
+                     "predictability_proven": False, **details})
     isolated = evaluate([{"program": program, "rows": goal["training"]}], memory)
     if isolated["results"][0]["passed"] != len(goal["training"]):
         return event(state, "WITHHOLD", status="WITHHOLD", reason="OBSERVATION_TRAIN_FAILED", goal=goal["id"])
     body = event(state, "CANDIDATE_FROZEN", status="FROZEN", reason="AWAITING_FRESH_INDEPENDENT_EVALUATION",
                  goal=goal["id"], parent_genome=goal["parent_genome"], program=program, primitive=None,
                  report={"search_attempts": search["attempts"], "isolated_train": isolated,
-                         "fresh_cases_seen": 0, "author": "kernel_training_only"})
+                         "fresh_cases_seen": 0, "author": "kernel_training_only", **details})
     return {**body, "freeze": digest(body)}
