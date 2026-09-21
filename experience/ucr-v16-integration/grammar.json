@@ -1,0 +1,3930 @@
+{
+  "language": "python",
+  "metadata": {
+    "detected_languages": {
+      "python": 21
+    },
+    "reader_version": "16.0",
+    "semantic_status": "surface-grammar-only",
+    "statement_count": 2601
+  },
+  "operator_profiles": {
+    "!=": {
+      "count": 148,
+      "mean_relative_position": 0.51643,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 148,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 48,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 32,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 20,
+          "left": "P:]",
+          "right": "STR"
+        },
+        {
+          "count": 15,
+          "left": "P:)",
+          "right": "P:{"
+        },
+        {
+          "count": 12,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 8,
+          "left": "P:)",
+          "right": "NUM"
+        },
+        {
+          "count": 6,
+          "left": "ID",
+          "right": "STR"
+        },
+        {
+          "count": 2,
+          "left": "P:)",
+          "right": "STR"
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "P:{"
+        },
+        {
+          "count": 1,
+          "left": "P:)",
+          "right": "P:("
+        },
+        {
+          "count": 1,
+          "left": "P:)",
+          "right": "OP:-"
+        },
+        {
+          "count": 1,
+          "left": "P:]",
+          "right": "NUM"
+        }
+      ]
+    },
+    "%": {
+      "count": 3,
+      "mean_relative_position": 0.66568,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 3,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "NUM"
+        },
+        {
+          "count": 1,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "ID"
+        }
+      ]
+    },
+    "&": {
+      "count": 7,
+      "mean_relative_position": 0.466844,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 7,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 4,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 3,
+          "left": "ID",
+          "right": "ID"
+        }
+      ]
+    },
+    "*": {
+      "count": 26,
+      "mean_relative_position": 0.455823,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 26,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 8,
+          "left": "P:,",
+          "right": "ID"
+        },
+        {
+          "count": 4,
+          "left": "P:(",
+          "right": "ID"
+        },
+        {
+          "count": 3,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 3,
+          "left": "P:(",
+          "right": "P:("
+        },
+        {
+          "count": 2,
+          "left": "STR",
+          "right": "NUM"
+        },
+        {
+          "count": 2,
+          "left": "NUM",
+          "right": "NUM"
+        },
+        {
+          "count": 2,
+          "left": "P:)",
+          "right": "NUM"
+        },
+        {
+          "count": 1,
+          "left": "P:,",
+          "right": "P:("
+        },
+        {
+          "count": 1,
+          "left": "P:]",
+          "right": "ID"
+        }
+      ]
+    },
+    "**": {
+      "count": 54,
+      "mean_relative_position": 0.532109,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 54,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 30,
+          "left": "P:{",
+          "right": "ID"
+        },
+        {
+          "count": 6,
+          "left": "P:,",
+          "right": "ID"
+        },
+        {
+          "count": 6,
+          "left": "P:,",
+          "right": "P:("
+        },
+        {
+          "count": 6,
+          "left": "NUM",
+          "right": "NUM"
+        },
+        {
+          "count": 6,
+          "left": "NUM",
+          "right": "ID"
+        }
+      ]
+    },
+    "+": {
+      "count": 170,
+      "mean_relative_position": 0.45945,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 170,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 52,
+          "left": "STR",
+          "right": "ID"
+        },
+        {
+          "count": 37,
+          "left": "ID",
+          "right": "NUM"
+        },
+        {
+          "count": 17,
+          "left": "P:]",
+          "right": "NUM"
+        },
+        {
+          "count": 12,
+          "left": "P:)",
+          "right": "STR"
+        },
+        {
+          "count": 10,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 10,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 7,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 6,
+          "left": "P:]",
+          "right": "P:["
+        },
+        {
+          "count": 5,
+          "left": "ID",
+          "right": "STR"
+        },
+        {
+          "count": 4,
+          "left": "P:)",
+          "right": "P:["
+        },
+        {
+          "count": 3,
+          "left": "P:]",
+          "right": "STR"
+        },
+        {
+          "count": 2,
+          "left": "P:)",
+          "right": "NUM"
+        }
+      ]
+    },
+    "+=": {
+      "count": 18,
+      "mean_relative_position": 0.57124,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 18,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 7,
+          "left": "P:]",
+          "right": "NUM"
+        },
+        {
+          "count": 7,
+          "left": "ID",
+          "right": "NUM"
+        },
+        {
+          "count": 2,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 2,
+          "left": "ID",
+          "right": "P:["
+        }
+      ]
+    },
+    "-": {
+      "count": 46,
+      "mean_relative_position": 0.434613,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 46,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 20,
+          "left": "P:[",
+          "right": "NUM"
+        },
+        {
+          "count": 7,
+          "left": "ID",
+          "right": "NUM"
+        },
+        {
+          "count": 6,
+          "left": "P:(",
+          "right": "ID"
+        },
+        {
+          "count": 4,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 2,
+          "left": "P:)",
+          "right": "NUM"
+        },
+        {
+          "count": 2,
+          "left": "ID",
+          "right": "P:{"
+        },
+        {
+          "count": 1,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "NUM",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "P:[",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "OP:!=",
+          "right": "NUM"
+        }
+      ]
+    },
+    "-=": {
+      "count": 7,
+      "mean_relative_position": 0.412558,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 7,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 7,
+          "left": "P:]",
+          "right": "NUM"
+        }
+      ]
+    },
+    ".": {
+      "count": 1019,
+      "mean_relative_position": 0.465836,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 1019,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 905,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 72,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 36,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 6,
+          "left": "STR",
+          "right": "ID"
+        }
+      ]
+    },
+    "/": {
+      "count": 1,
+      "mean_relative_position": 0.195161,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 1,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 1,
+          "left": "P:]",
+          "right": "ID"
+        }
+      ]
+    },
+    ":": {
+      "count": 2112,
+      "mean_relative_position": 0.516281,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 2112,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 718,
+          "left": "STR",
+          "right": "ID"
+        },
+        {
+          "count": 391,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 306,
+          "left": "STR",
+          "right": "STR"
+        },
+        {
+          "count": 292,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 79,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 68,
+          "left": "STR",
+          "right": "P:{"
+        },
+        {
+          "count": 62,
+          "left": "NUM",
+          "right": "ID"
+        },
+        {
+          "count": 56,
+          "left": "STR",
+          "right": "NUM"
+        },
+        {
+          "count": 36,
+          "left": "STR",
+          "right": "P:["
+        },
+        {
+          "count": 20,
+          "left": "NUM",
+          "right": "P:]"
+        },
+        {
+          "count": 19,
+          "left": "P:[",
+          "right": "NUM"
+        },
+        {
+          "count": 13,
+          "left": "P:}",
+          "right": "ID"
+        }
+      ]
+    },
+    "<": {
+      "count": 31,
+      "mean_relative_position": 0.491965,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 31,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 7,
+          "left": "P:]",
+          "right": "NUM"
+        },
+        {
+          "count": 7,
+          "left": "ID",
+          "right": "NUM"
+        },
+        {
+          "count": 5,
+          "left": "P:)",
+          "right": "NUM"
+        },
+        {
+          "count": 5,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 4,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 2,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "NUM",
+          "right": "ID"
+        }
+      ]
+    },
+    "<<": {
+      "count": 5,
+      "mean_relative_position": 0.439019,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 5,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 2,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "NUM",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "P:("
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "NUM"
+        }
+      ]
+    },
+    "<=": {
+      "count": 59,
+      "mean_relative_position": 0.516993,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 59,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 27,
+          "left": "NUM",
+          "right": "ID"
+        },
+        {
+          "count": 19,
+          "left": "P:)",
+          "right": "NUM"
+        },
+        {
+          "count": 5,
+          "left": "ID",
+          "right": "NUM"
+        },
+        {
+          "count": 3,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 2,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 2,
+          "left": "P:]",
+          "right": "NUM"
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "ID"
+        }
+      ]
+    },
+    "=": {
+      "count": 1056,
+      "mean_relative_position": 0.499198,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 1056,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 603,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 116,
+          "left": "ID",
+          "right": "STR"
+        },
+        {
+          "count": 104,
+          "left": "ID",
+          "right": "P:{"
+        },
+        {
+          "count": 103,
+          "left": "ID",
+          "right": "P:["
+        },
+        {
+          "count": 53,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 40,
+          "left": "ID",
+          "right": "NUM"
+        },
+        {
+          "count": 23,
+          "left": "ID",
+          "right": "P:("
+        },
+        {
+          "count": 6,
+          "left": "P:]",
+          "right": "STR"
+        },
+        {
+          "count": 4,
+          "left": "P:]",
+          "right": "P:{"
+        },
+        {
+          "count": 3,
+          "left": "P:]",
+          "right": "P:["
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "OP:~"
+        }
+      ]
+    },
+    "==": {
+      "count": 226,
+      "mean_relative_position": 0.478625,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 226,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 89,
+          "left": "ID",
+          "right": "STR"
+        },
+        {
+          "count": 53,
+          "left": "P:]",
+          "right": "STR"
+        },
+        {
+          "count": 22,
+          "left": "P:)",
+          "right": "STR"
+        },
+        {
+          "count": 19,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 17,
+          "left": "P:)",
+          "right": "NUM"
+        },
+        {
+          "count": 12,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 7,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 4,
+          "left": "P:)",
+          "right": "P:{"
+        },
+        {
+          "count": 1,
+          "left": "P:)",
+          "right": "P:("
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "NUM"
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "P:["
+        }
+      ]
+    },
+    ">": {
+      "count": 43,
+      "mean_relative_position": 0.361654,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 43,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 26,
+          "left": "P:)",
+          "right": "NUM"
+        },
+        {
+          "count": 9,
+          "left": "ID",
+          "right": "NUM"
+        },
+        {
+          "count": 6,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 2,
+          "left": "ID",
+          "right": "ID"
+        }
+      ]
+    },
+    ">=": {
+      "count": 28,
+      "mean_relative_position": 0.549562,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 28,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 8,
+          "left": "P:)",
+          "right": "NUM"
+        },
+        {
+          "count": 7,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 6,
+          "left": "P:]",
+          "right": "ID"
+        },
+        {
+          "count": 5,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "NUM",
+          "right": "NUM"
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "NUM"
+        }
+      ]
+    },
+    ">>": {
+      "count": 3,
+      "mean_relative_position": 0.362656,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 3,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 2,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "P:("
+        }
+      ]
+    },
+    "@": {
+      "count": 4,
+      "mean_relative_position": 0.743953,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 4,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 3,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "COMMENT",
+          "right": "ID"
+        }
+      ]
+    },
+    "^": {
+      "count": 1,
+      "mean_relative_position": 0.323154,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 1,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "ID"
+        }
+      ]
+    },
+    "|": {
+      "count": 8,
+      "mean_relative_position": 0.425627,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 8,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 2,
+          "left": "P:)",
+          "right": "P:("
+        },
+        {
+          "count": 2,
+          "left": "P:)",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "P:}",
+          "right": "ID"
+        },
+        {
+          "count": 1,
+          "left": "ID",
+          "right": "P:{"
+        },
+        {
+          "count": 1,
+          "left": "P:)",
+          "right": "P:{"
+        }
+      ]
+    },
+    "|=": {
+      "count": 5,
+      "mean_relative_position": 0.671153,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 5,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 3,
+          "left": "ID",
+          "right": "ID"
+        },
+        {
+          "count": 2,
+          "left": "ID",
+          "right": "P:{"
+        }
+      ]
+    },
+    "~": {
+      "count": 1,
+      "mean_relative_position": 0.318596,
+      "role_hypothesis": {
+        "confidence": 1.0,
+        "evidence_count": 1,
+        "role": "infix-like"
+      },
+      "top_contexts": [
+        {
+          "count": 1,
+          "left": "OP:=",
+          "right": "ID"
+        }
+      ]
+    }
+  },
+  "rules": [
+    {
+      "count": 164,
+      "examples": [
+        "raise ContractError ( \"steps must be in 1..100\" )",
+        "raise ContractError ( \"corpus must contain 1..64 tasks\" )",
+        "raise ContractError ( \"evaluation requires frozen identity and fresh rows\" )",
+        "raise ContractError ( \"evaluation requires frozen identity and fresh rows\" )"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "STR",
+        "P:)"
+      ],
+      "probability": 0.06305267204921185
+    },
+    {
+      "count": 91,
+      "examples": [
+        "import argparse",
+        "import json",
+        "import sqlite3",
+        "import sys"
+      ],
+      "pattern": [
+        "ID",
+        "ID"
+      ],
+      "probability": 0.03498654363706267
+    },
+    {
+      "count": 88,
+      "examples": [
+        "continue",
+        "continue",
+        "continue",
+        "continue"
+      ],
+      "pattern": [
+        "ID"
+      ],
+      "probability": 0.03383314109957709
+    },
+    {
+      "count": 68,
+      "examples": [
+        "def trial_spec ( raw ) :",
+        "def trial_dataset ( trial ) :",
+        "def input_tokens ( tasks ) :",
+        "def walk ( node ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.026143790849673203
+    },
+    {
+      "count": 49,
+      "examples": [
+        "def compatible ( memory , rows ) :",
+        "def relation_goal ( state , memory ) :",
+        "def rank_sources ( goal , results ) :",
+        "def propose ( state , memory ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.018838908112264515
+    },
+    {
+      "count": 48,
+      "examples": [
+        "try :",
+        "else :",
+        "else :",
+        "try :"
+      ],
+      "pattern": [
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.01845444059976932
+    },
+    {
+      "count": 45,
+      "examples": [
+        "for row in rows :",
+        "if deficit_id in previous :",
+        "for row in results :",
+        "if goal is None :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.01730103806228374
+    },
+    {
+      "count": 40,
+      "examples": [
+        "if __name__ == \"__main__\" :",
+        "if law == \"lexicographic_integer_components\" :",
+        "if kind == \"autonomy_start\" :",
+        "if kind == \"autonomy_response\" :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:==",
+        "STR",
+        "OP::"
+      ],
+      "probability": 0.015378700499807767
+    },
+    {
+      "count": 40,
+      "examples": [
+        "except ERRORS :",
+        "if improved :",
+        "if program :",
+        "if program :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.015378700499807767
+    },
+    {
+      "count": 37,
+      "examples": [
+        "__version__ = \"0.7.0\"",
+        "reason = \"VERIFIED_ENGINE_IMPROVEMENT\"",
+        "reason = \"NO_ENGINE_TRAINING_IMPROVEMENT\"",
+        "reason = \"ENGINE_VALIDATION_FAILED\""
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "STR"
+      ],
+      "probability": 0.014225297962322183
+    },
+    {
+      "count": 33,
+      "examples": [
+        "from . contracts import task_spec",
+        "from . evaluation import score",
+        "from . genetics import genome",
+        "from . extensions import is_extension"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "ID",
+        "ID"
+      ],
+      "probability": 0.012687427912341407
+    },
+    {
+      "count": 33,
+      "examples": [
+        "kernel . register ( corpus )",
+        "options . append ( body )",
+        "seen . add ( token )",
+        "python_tools . check ( g )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.012687427912341407
+    },
+    {
+      "count": 31,
+      "examples": [
+        "\"\"\"NOVA: persistent, bounded program-learning kernel.\"\"\"",
+        "\"\"\"Run with python -m nova_core; all work stops at the requested step budget.\"\"\"",
+        "\"\"\"Pure engine-policy genetics and evidence, reduced by the one kernel loop.\"\"\"",
+        "\"\"\"Native mutation rule. No validation task or holdout is an argument.\"\"\""
+      ],
+      "pattern": [
+        "STR"
+      ],
+      "probability": 0.011918492887351018
+    },
+    {
+      "count": 31,
+      "examples": [
+        "ordered = row [ \"output\" ]",
+        "a = state [ \"autonomy\" ]",
+        "goal = a [ \"current\" ]",
+        "training = goal [ \"training\" ]"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]"
+      ],
+      "probability": 0.011918492887351018
+    },
+    {
+      "count": 30,
+      "examples": [
+        "parsed = urlsplit ( value )",
+        "learned = learn ( spec )",
+        "spec = specification ( raw )",
+        "manifest = deepcopy ( V4_MANIFEST )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.011534025374855825
+    },
+    {
+      "count": 24,
+      "examples": [
+        "rows = [ ]",
+        "validation = [ ]",
+        "options = [ ]",
+        "examples = [ ]"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "P:[",
+        "P:]"
+      ],
+      "probability": 0.00922722029988466
+    },
+    {
+      "count": 21,
+      "examples": [
+        "def successful ( result , rows , memory ) :",
+        "def engine_proposal ( state , selection , memory ) :",
+        "def diagnosis ( training , history , knowledge ) :",
+        "def freeze ( state , selection , memory ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.008073817762399077
+    },
+    {
+      "count": 21,
+      "examples": [
+        "if a [ \"phase\" ] == \"GOAL_FROZEN\" :",
+        "if a [ \"phase\" ] == \"ROUTE_SELECTED\" :",
+        "if a [ \"phase\" ] == \"SEARCH_RECEIVED\" :",
+        "if a [ \"phase\" ] == \"DOCUMENT_RECEIVED\" :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP:==",
+        "STR",
+        "OP::"
+      ],
+      "probability": 0.008073817762399077
+    },
+    {
+      "count": 17,
+      "examples": [
+        "from pathlib import Path",
+        "from collections import Counter",
+        "from copy import deepcopy",
+        "from copy import deepcopy"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "ID"
+      ],
+      "probability": 0.006535947712418301
+    },
+    {
+      "count": 17,
+      "examples": [
+        "if args . command == \"manifest\" :",
+        "if args . command == \"learn\" :",
+        "elif args . command == \"queue\" :",
+        "elif args . command == \"memory\" :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "OP:==",
+        "STR",
+        "OP::"
+      ],
+      "probability": 0.006535947712418301
+    },
+    {
+      "count": 17,
+      "examples": [
+        "name , args , expression = match . groups ( )",
+        "state , head , _ = self . _load ( )",
+        "state , head , _ = self . _load ( )",
+        "state , head , _ = self . _load ( )"
+      ],
+      "pattern": [
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)"
+      ],
+      "probability": 0.006535947712418301
+    },
+    {
+      "count": 16,
+      "examples": [
+        "autonomous = commands . add_parser ( \"autonomous\" )",
+        "response = commands . add_parser ( \"respond\" )",
+        "auto_assess = commands . add_parser ( \"assess-autonomous\" )",
+        "study = commands . add_parser ( \"study\" )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "STR",
+        "P:)"
+      ],
+      "probability": 0.006151480199923107
+    },
+    {
+      "count": 15,
+      "examples": [
+        "for task in trial [ \"tasks\" ] :",
+        "for row in task [ \"holdout\" ] :",
+        "for response in a [ \"responses\" ] :",
+        "for gene in learned [ \"genes\" ] :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP::"
+      ],
+      "probability": 0.0057670126874279125
+    },
+    {
+      "count": 14,
+      "examples": [
+        "commands . add_parser ( \"init\" )",
+        "commands . add_parser ( \"status\" )",
+        "commands . add_parser ( \"manifest\" )",
+        "commands . add_parser ( \"queue\" )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "STR",
+        "P:)"
+      ],
+      "probability": 0.005382545174932718
+    },
+    {
+      "count": 14,
+      "examples": [
+        "if item . get ( \"kind\" ) == \"CAPABILITY\" :",
+        "if item . get ( \"kind\" ) == \"ENGINE\" :",
+        "if selection . get ( \"kind\" ) == \"CAPABILITY\" :",
+        "if selection . get ( \"kind\" ) == \"ENGINE\" :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "STR",
+        "P:)",
+        "OP:==",
+        "STR",
+        "OP::"
+      ],
+      "probability": 0.005382545174932718
+    },
+    {
+      "count": 13,
+      "examples": [
+        "result = runtime_manifest ( )",
+        "counts = Counter ( )",
+        "seen = set ( )",
+        "missing = set ( )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "P:)"
+      ],
+      "probability": 0.004998077662437524
+    },
+    {
+      "count": 13,
+      "examples": [
+        "if corpus is not None :",
+        "if proposal is not None :",
+        "if proposal is not None :",
+        "if primitive is not None :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.004998077662437524
+    },
+    {
+      "count": 13,
+      "examples": [
+        "def initial ( ) :",
+        "def legacy_manifest ( ) :",
+        "def v2_manifest ( ) :",
+        "def v3_manifest ( ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.004998077662437524
+    },
+    {
+      "count": 12,
+      "examples": [
+        "corpus = None",
+        "observation_baseline = None",
+        "algorithm = None",
+        "child = None"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID"
+      ],
+      "probability": 0.00461361014994233
+    },
+    {
+      "count": 12,
+      "examples": [
+        "if node [ 0 ] == \"call\" :",
+        "elif node [ 0 ] == \"object\" :",
+        "elif node [ 0 ] == \"apply\" :",
+        "if node [ 0 ] == \"arg\" :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:[",
+        "NUM",
+        "P:]",
+        "OP:==",
+        "STR",
+        "OP::"
+      ],
+      "probability": 0.00461361014994233
+    },
+    {
+      "count": 12,
+      "examples": [
+        "walk ( child )",
+        "walk ( child )",
+        "normalized ( raw )",
+        "visit ( sub )"
+      ],
+      "pattern": [
+        "ID",
+        "P:(",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.00461361014994233
+    },
+    {
+      "count": 11,
+      "examples": [
+        "return { ** body , \"id\" : digest ( body ) }",
+        "return { ** body , \"freeze\" : digest ( body ) }",
+        "return { ** body , \"freeze\" : digest ( body ) }",
+        "return { ** body , \"id\" : digest ( body ) }"
+      ],
+      "pattern": [
+        "ID",
+        "P:{",
+        "OP:**",
+        "ID",
+        "P:,",
+        "STR",
+        "OP::",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "P:}"
+      ],
+      "probability": 0.004229142637447136
+    },
+    {
+      "count": 11,
+      "examples": [
+        "selected = remaining [ 0 ]",
+        "a = values [ 0 ]",
+        "a = args [ 0 ]",
+        "tag = node [ 0 ]"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "NUM",
+        "P:]"
+      ],
+      "probability": 0.004229142637447136
+    },
+    {
+      "count": 10,
+      "examples": [
+        "from . contracts import ContractError , decode",
+        "from . kernel import Kernel , runtime_manifest",
+        "from . extensions import applications , learn",
+        "from . language import candidate , execute"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "ID",
+        "ID",
+        "P:,",
+        "ID"
+      ],
+      "probability": 0.0038446751249519417
+    },
+    {
+      "count": 10,
+      "examples": [
+        "result = kernel . status ( )",
+        "result = kernel . queue ( )",
+        "result = kernel . causal_memory ( )",
+        "result = kernel . genome ( )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)"
+      ],
+      "probability": 0.0038446751249519417
+    },
+    {
+      "count": 10,
+      "examples": [
+        "parent = state [ \"genomes\" ] [ state [ \"current\" ] ]",
+        "active = state [ \"generations\" ] [ state [ \"current\" ] ]",
+        "trial = state [ \"engine_trials\" ] [ selection [ \"task\" ] ]",
+        "parent = state [ \"genomes\" ] [ state [ \"current\" ] ]"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:[",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:]"
+      ],
+      "probability": 0.0038446751249519417
+    },
+    {
+      "count": 10,
+      "examples": [
+        "finish ( state , body )",
+        "finish ( state , body )",
+        "check ( program , memory )",
+        "apply_step ( state , body )"
+      ],
+      "pattern": [
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0038446751249519417
+    },
+    {
+      "count": 10,
+      "examples": [
+        "active , memory , _ = context ( state )",
+        "_ , memory , _ = context ( state )",
+        "active , memory , _ = context ( state )",
+        "active , memory , _ = context ( state )"
+      ],
+      "pattern": [
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0038446751249519417
+    },
+    {
+      "count": 9,
+      "examples": [
+        "response . add_argument ( \"response\" , type = Path )",
+        "auto_assess . add_argument ( \"evaluation\" , type = Path )",
+        "study . add_argument ( \"specification\" , type = Path )",
+        "observe . add_argument ( \"document\" , type = Path )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0034602076124567475
+    },
+    {
+      "count": 9,
+      "examples": [
+        "task = state [ \"tasks\" ] [ tid ]",
+        "task = state [ \"tasks\" ] [ tid ]",
+        "old = state [ \"tasks\" ] [ old_tid ]",
+        "task = state [ \"tasks\" ] [ tid ]"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:[",
+        "ID",
+        "P:]"
+      ],
+      "probability": 0.0034602076124567475
+    },
+    {
+      "count": 9,
+      "examples": [
+        "if not improved :",
+        "if not ranking :",
+        "if not match :",
+        "if not options :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.0034602076124567475
+    },
+    {
+      "count": 9,
+      "examples": [
+        "tested = 0",
+        "start = 1",
+        "architecture = 0xC000003E",
+        "architecture = 0xC00000B7"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "NUM"
+      ],
+      "probability": 0.0034602076124567475
+    },
+    {
+      "count": 9,
+      "examples": [
+        "tid = body [ \"selection\" ] [ \"target\" ]",
+        "tid = frozen [ \"selection\" ] [ \"target\" ]",
+        "tid = frozen [ \"selection\" ] [ \"target\" ]",
+        "params = g [ \"definition\" ] [ \"parameters\" ]"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:[",
+        "STR",
+        "P:]"
+      ],
+      "probability": 0.0034602076124567475
+    },
+    {
+      "count": 8,
+      "examples": [
+        "from . contracts import ContractError , dataset_id , digest , task_spec",
+        "from . synthesis import ERRORS , MAX_ATTEMPTS , MAX_DEPTH , synthesize",
+        "from . adaptation import engine_proposal , input_tokens , trial_dataset , trial_spec",
+        "from . synthesis import ERRORS , MAX_ATTEMPTS , MAX_DEPTH , synthesize"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "ID",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID"
+      ],
+      "probability": 0.0030757400999615533
+    },
+    {
+      "count": 8,
+      "examples": [
+        "a [ \"request\" ] = None",
+        "state [ \"current\" ] = generation",
+        "a [ \"candidate\" ] = body",
+        "report [ \"algorithm_learning\" ] = algorithm"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP:=",
+        "ID"
+      ],
+      "probability": 0.0030757400999615533
+    },
+    {
+      "count": 7,
+      "examples": [
+        "kernel . start_autonomy ( )",
+        "kernel . audit ( )",
+        "self . _load ( )",
+        "self . close ( )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)"
+      ],
+      "probability": 0.002691272587466359
+    },
+    {
+      "count": 7,
+      "examples": [
+        "for child in node [ 2 : ] :",
+        "for sub in node [ 1 : ] :",
+        "for child in node [ 2 : ] :",
+        "for sub in node [ 1 : ] :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "P:[",
+        "NUM",
+        "OP::",
+        "P:]",
+        "OP::"
+      ],
+      "probability": 0.002691272587466359
+    },
+    {
+      "count": 7,
+      "examples": [
+        "usable = { }",
+        "regression = { }",
+        "regression = { }",
+        "result = { }"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "P:{",
+        "P:}"
+      ],
+      "probability": 0.002691272587466359
+    },
+    {
+      "count": 7,
+      "examples": [
+        "tested += 1",
+        "nodes += 1",
+        "attempts += 1",
+        "attempts += 1"
+      ],
+      "pattern": [
+        "ID",
+        "OP:+=",
+        "NUM"
+      ],
+      "probability": 0.002691272587466359
+    },
+    {
+      "count": 7,
+      "examples": [
+        "return dict ( raw )",
+        "return task_queue ( state )",
+        "return normalized ( out )",
+        "return sorted ( found )"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.002691272587466359
+    },
+    {
+      "count": 7,
+      "examples": [
+        "capability . apply_freeze ( state , body )",
+        "capability . apply_evaluation ( state , body )",
+        "autonomy . apply ( state , body )",
+        "autonomy . apply ( state , body )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.002691272587466359
+    },
+    {
+      "count": 7,
+      "examples": [
+        "self . journal . append ( body , head )",
+        "self . journal . append ( body , head )",
+        "self . journal . append ( body , head )",
+        "self . journal . append ( body , head )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.002691272587466359
+    },
+    {
+      "count": 6,
+      "examples": [
+        "autonomous . add_argument ( \"--steps\" , type = int , default = 3 )",
+        "study . add_argument ( \"--steps\" , type = int , default = 1 )",
+        "evolve . add_argument ( \"--steps\" , type = int , default = 1 )",
+        "learn . add_argument ( \"--steps\" , type = int , default = 3 )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "NUM",
+        "P:)"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "result = kernel . develop ( args . steps )",
+        "result = kernel . develop ( args . steps )",
+        "result = kernel . develop ( args . steps )",
+        "result = kernel . develop ( args . steps )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "usable [ pid ] = program",
+        "usable [ pid ] = program",
+        "result [ key ] = value",
+        "usable [ pid ] = program"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "ID",
+        "P:]",
+        "OP:=",
+        "ID"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "def assess ( state , frozen_id , rows , memory ) :",
+        "def evaluate_frozen ( state , frozen , rows , memory ) :",
+        "def vary ( parent , task_id , program , memory ) :",
+        "def gene ( ir , width , specifications , derivation ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "state [ \"attempts\" ] += 1",
+        "state [ \"admissions\" ] += 1",
+        "state [ \"attempts\" ] += 1",
+        "state [ \"admissions\" ] += 1"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP:+=",
+        "NUM"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "state [ \"programs\" ] [ program [ \"id\" ] ] = program",
+        "state [ \"programs\" ] [ p [ \"id\" ] ] = p",
+        "state [ \"programs\" ] [ program [ \"id\" ] ] = program",
+        "state [ \"tasks\" ] [ task [ \"id\" ] ] = task"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:[",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:]",
+        "OP:=",
+        "ID"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "def normalized ( value , depth = 0 ) :",
+        "def visit ( node , depth = 0 ) :",
+        "def develop ( self , steps = 3 ) :",
+        "def source ( node , depth = 0 ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "NUM",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "budget [ 0 ] -= 1",
+        "budget [ 0 ] -= 1",
+        "budget [ 0 ] -= 1",
+        "budget [ 0 ] -= 1"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "NUM",
+        "P:]",
+        "OP:-=",
+        "NUM"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "def execute ( g , inputs , recall = None ) :",
+        "def __init__ ( self , path , create = False ) :",
+        "def __init__ ( self , path , create = False ) :",
+        "def execute ( program , inputs , recall = None ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "text = re . sub ( r \"[\uf0e5\u03a3]\\s*\\{(\\d+)\\}\\s*(\\d+)\\s*\" , r \"Sigma_\\1_\\2\" , text )",
+        "text = re . sub ( r \"[\uf073\u03c3]\\s*(\\d+)\\{(\\d+)\\}\\s*\" , r \"sigma_\\2_\\1\" , text )",
+        "text = re . sub ( r \"\\b(ROTR|ROTL|SHR)\\s*(\\d+)\\s*\\(([^()]*)\\)\" , r \"\\1(\\3,\\2)\" , text )",
+        "text = re . sub ( r \"[\uf0e5\u03a3]\\s*\\{(\\d+)\\}\\s*(\\d+)\\s*\" , r \"Sigma_\\1_\\2\" , text )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "STR",
+        "P:,",
+        "ID",
+        "STR",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "for item in task_queue ( state ) :",
+        "for _ in range ( steps ) :",
+        "for key in sorted ( value ) :",
+        "for inp in sorted ( fields ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "self . db . execute ( \"PRAGMA journal_mode=WAL\" )",
+        "self . db . execute ( \"PRAGMA synchronous=FULL\" )",
+        "self . db . execute ( \"CREATE TABLE IF NOT EXISTS events (seq INTEGER PRIMARY KEY, prev TEXT NOT NULL, body TEXT NOT NULL, hash TEXT NOT NULL)\" )",
+        "self . db . execute ( \"BEGIN IMMEDIATE\" )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "STR",
+        "P:)"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 6,
+      "examples": [
+        "for child , child_path , child_location in children :",
+        "for a , av , _ in features :",
+        "for b , bv , _ in features :",
+        "for ir , values , level in features :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "ID",
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.002306805074971165
+    },
+    {
+      "count": 5,
+      "examples": [
+        "def derive_policy ( programs , previous = None ) :",
+        "def _load ( self , force = False ) :",
+        "def audit ( self , expected_head = None ) :",
+        "def var ( key , ctx = None ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "if not is_extension ( program ) :",
+        "if not enabled ( state ) :",
+        "if not enabled ( state ) :",
+        "if not enabled ( state ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "observed = score ( result [ \"program\" ] , rows , memory )",
+        "after = synthesize ( task [ \"train\" ] , earlier , candidate )",
+        "result = synthesize ( task [ \"train\" ] , inherited , candidate )",
+        "observation_baseline = score ( goal [ \"baseline_program\" ] , rows , memory )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "elif any ( r [ \"passed\" ] != r [ \"total\" ] for r in regression . values ( ) ) :",
+        "elif any ( r [ \"passed\" ] != r [ \"total\" ] for r in regression . values ( ) ) :",
+        "elif any ( r [ \"passed\" ] != r [ \"total\" ] for r in regression . values ( ) ) :",
+        "elif any ( r [ \"passed\" ] != r [ \"total\" ] for r in regressions . values ( ) ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP:!=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "terms = set ( goal [ \"search_terms\" ] )",
+        "trial = trial_spec ( body [ \"trial\" ] )",
+        "known = dict ( state [ \"tasks\" ] )",
+        "source = urlsplit ( raw [ \"source\" ] )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:)"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "ranking = rank_sources ( goal , search_results )",
+        "proposed = candidate ( ir , extended )",
+        "proposed = candidate ( ir , extended )",
+        "out = equal ( a , b )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "state [ \"tasks\" ] [ tid ] = body [ \"task\" ]",
+        "state [ \"task_events\" ] [ tid ] = a [ \"goal_event\" ]",
+        "state [ \"parents\" ] [ generation ] = state [ \"current\" ]",
+        "state [ \"parents\" ] [ generation ] = state [ \"current\" ]"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:[",
+        "ID",
+        "P:]",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "a [ \"phase\" ] = body [ \"phase\" ]",
+        "a [ \"request\" ] = body [ \"request\" ]",
+        "diagnosed [ \"resolved_by_sequence_compiler\" ] = diagnosed [ \"unsupported_specification_constructs\" ]",
+        "state [ \"current\" ] = body [ \"generation\" ]"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "missing . add ( node [ 0 ] )",
+        "used . add ( node [ 1 ] )",
+        "used . add ( node [ 1 ] )",
+        "parents . add ( node [ 1 ] )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "NUM",
+        "P:]",
+        "P:)"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "if type ( value ) is str :",
+        "with Kernel ( destination ) as restored :",
+        "if type ( value ) is dict :",
+        "elif type ( value ) is list :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "ID",
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "raise ContractError ( \"duplicate JSON key: \" + key )",
+        "raise ContractError ( \"task has no active verified program: \" + task_id )",
+        "raise ContractError ( \"operation/input type mismatch: \" + op )",
+        "raise ContractError ( \"SPECIFICATION_MISSING:\" + label )"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "STR",
+        "OP:+",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "raise ContractError ( \"unsupported mathematical expression\" ) from exc",
+        "raise SandboxError ( \"sandbox unavailable or time budget exceeded\" ) from exc",
+        "raise SandboxError ( \"invalid sandbox receipt\" ) from exc",
+        "raise ContractError ( \"observation is not complete valid JSON\" ) from exc"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "STR",
+        "P:)",
+        "ID",
+        "ID"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "if g . get ( \"language\" ) == python_tools . LANGUAGE :",
+        "if g . get ( \"language\" ) == sequence . LANGUAGE :",
+        "if g . get ( \"language\" ) == python_tools . LANGUAGE :",
+        "if g . get ( \"language\" ) == sequence . LANGUAGE :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "STR",
+        "P:)",
+        "OP:==",
+        "ID",
+        "OP:.",
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 5,
+      "examples": [
+        "expr ( row [ 2 ] , known )",
+        "expr ( row [ 2 ] , known )",
+        "expr ( row [ 3 ] , known )",
+        "expr ( row [ 2 ] , known )"
+      ],
+      "pattern": [
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "NUM",
+        "P:]",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0019223375624759708
+    },
+    {
+      "count": 4,
+      "examples": [
+        "if type ( corpus ) is not list or not 1 <= len ( corpus ) <= 64 :",
+        "if type ( rows ) is not list or not 2 <= len ( rows ) <= 32 :",
+        "if type ( inputs ) is not dict or not 1 <= len ( inputs ) <= 8 :",
+        "if type ( specs ) is not list or not 1 <= len ( specs ) <= 64 :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "NUM",
+        "OP:<=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "OP:<=",
+        "NUM",
+        "OP::"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "from . language import BINARY , UNARY , execute",
+        "from . contracts import ContractError , digest , normalized",
+        "from . contracts import ContractError , decode , encode",
+        "from . evaluation import baseline , gate , score"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "ID",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "for program in programs . values ( ) :",
+        "for line in text . splitlines ( ) :",
+        "for line in text . splitlines ( ) :",
+        "for p in memory . values ( ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "if result [ \"program\" ] is None :",
+        "if a [ \"current\" ] is None :",
+        "if task [ \"id\" ] in known :",
+        "if definition [ \"name\" ] in functions :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "ID",
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "from . contracts import ContractError , dataset_id , digest , encode , normalized , task_spec",
+        "from . contracts import ContractError , IntegrityError , dataset_id , digest , encode , task_spec",
+        "from . contracts import ContractError , decode , digest , encode , equal , normalized",
+        "from . contracts import ContractError , IntegrityError , StaleState , decode , digest , encode"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "ID",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "for field , values in row [ \"input\" ] . items ( ) :",
+        "for tid , task in state [ \"tasks\" ] . items ( ) :",
+        "for tid , trial in state [ \"engine_trials\" ] . items ( ) :",
+        "for key , definition in ir [ \"functions\" ] . items ( ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:,",
+        "ID",
+        "ID",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "return event ( state , \"WITHHOLD\" , status = \"WITHHOLD\" , reason = \"AUTONOMOUS_RUNTIME_STALE\" , goal = goal [ \"id\" ] )",
+        "return event ( state , \"WITHHOLD\" , status = \"WITHHOLD\" , reason = \"AUTONOMOUS_GOAL_STALE\" , goal = goal [ \"id\" ] )",
+        "return event ( state , \"WITHHOLD\" , status = \"WITHHOLD\" , reason = \"NO_ELIGIBLE_KNOWLEDGE_SOURCE\" , goal = goal [ \"id\" ] )",
+        "return event ( state , \"WITHHOLD\" , status = \"WITHHOLD\" , reason = \"OBSERVATION_TRAIN_FAILED\" , goal = goal [ \"id\" ] )"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:=",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:=",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:)"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "proposal = observations . propose ( state , memory )",
+        "proposal = library_evolution . propose ( state , memory )",
+        "body = autonomy . validate_response ( state , response )",
+        "spec = capability . validate_knowledge ( state , raw )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "if library_evolution . enabled ( state ) :",
+        "if observations . enabled ( state ) :",
+        "if extensions . is_extension ( program ) :",
+        "if extensions . is_extension ( p ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "a , goal = state [ \"autonomy\" ] , state [ \"autonomy\" ] [ \"current\" ]",
+        "a , goal = state [ \"autonomy\" ] , state [ \"autonomy\" ] [ \"current\" ]",
+        "a , goal = state [ \"autonomy\" ] , state [ \"autonomy\" ] [ \"current\" ]",
+        "a , goal = state [ \"autonomy\" ] , state [ \"autonomy\" ] [ \"current\" ]"
+      ],
+      "pattern": [
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:,",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:[",
+        "STR",
+        "P:]"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "extended = { ** memory , gene [ \"id\" ] : gene }",
+        "extended = { ** memory , g [ \"id\" ] : g }",
+        "extended = { ** memory , program [ \"id\" ] : program }",
+        "extended = { ** memory , primitive [ \"id\" ] : primitive }"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "P:{",
+        "OP:**",
+        "ID",
+        "P:,",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP::",
+        "ID",
+        "P:}"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "output = execute ( program , row [ \"input\" ] , memory )",
+        "training = score ( program , task [ \"train\" ] , extended )",
+        "heldout = score ( program , task [ \"holdout\" ] , extended )",
+        "observed = score ( program , task [ \"holdout\" ] , reduced )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "except ( SyntaxError , RecursionError ) as exc :",
+        "except ( ValueError , ContractError ) as exc :",
+        "except ( ValueError , RecursionError ) as exc :",
+        "except ( SyntaxError , RecursionError ) as exc :"
+      ],
+      "pattern": [
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)",
+        "ID",
+        "ID",
+        "OP::"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "return [ \"arg\" , node . id ]",
+        "return [ \"literal\" , node . value ]",
+        "return [ \"literal\" , node . value ]",
+        "return [ \"var\" , node . id ]"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:]"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "def __exit__ ( self , * _ ) :",
+        "def primitive ( op , * args ) :",
+        "def invoke ( name , * args ) :",
+        "def accepts ( op , * values ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "OP:*",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "return { \"gene\" : result , \"attempts\" : attempts }",
+        "return { \"gene\" : result , \"attempts\" : attempts }",
+        "return { \"gene\" : result , \"attempts\" : attempts }",
+        "return { \"gene\" : None , \"attempts\" : attempts }"
+      ],
+      "pattern": [
+        "ID",
+        "P:{",
+        "STR",
+        "OP::",
+        "ID",
+        "P:,",
+        "STR",
+        "OP::",
+        "ID",
+        "P:}"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "resource . setrlimit ( resource . RLIMIT_CPU , ( 3 , 3 ) )",
+        "resource . setrlimit ( resource . RLIMIT_FSIZE , ( 0 , 0 ) )",
+        "resource . setrlimit ( resource . RLIMIT_NOFILE , ( 32 , 32 ) )",
+        "resource . setrlimit ( resource . RLIMIT_CORE , ( 0 , 0 ) )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:,",
+        "P:(",
+        "NUM",
+        "P:,",
+        "NUM",
+        "P:)",
+        "P:)"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 4,
+      "examples": [
+        "expr ( sub , known , depth + 1 )",
+        "expr ( sub , known , depth + 1 )",
+        "expr ( sub , known , depth + 1 )",
+        "expr ( sub , known , depth + 1 )"
+      ],
+      "pattern": [
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "OP:+",
+        "NUM",
+        "P:)"
+      ],
+      "probability": 0.0015378700499807767
+    },
+    {
+      "count": 3,
+      "examples": [
+        "args = parser . parse_args ( argv )",
+        "extracted = observations . extract ( raw )",
+        "connection = sqlite3 . connect ( temporary )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "corpus = decode ( args . corpus . read_text ( encoding = \"utf-8\" ) )",
+        "evaluation = decode ( args . evaluation . read_text ( encoding = \"utf-8\" ) )",
+        "evaluation = decode ( args . evaluation . read_text ( encoding = \"utf-8\" ) )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "OP:.",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "OP:=",
+        "STR",
+        "P:)",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "events , head = kernel . journal . read ( )",
+        "events , head = self . journal . read ( )",
+        "events , head = self . journal . read ( )"
+      ],
+      "pattern": [
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "OP:.",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "if type ( raw [ \"tasks\" ] ) is not list or not 1 <= len ( raw [ \"tasks\" ] ) <= 8 :",
+        "if type ( raw [ \"results\" ] ) is not list or not 1 <= len ( raw [ \"results\" ] ) <= 12 :",
+        "if type ( raw [ \"source\" ] ) is not str or not 1 <= len ( raw [ \"source\" ] ) <= 1024 :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:)",
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "NUM",
+        "OP:<=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:)",
+        "OP:<=",
+        "NUM",
+        "OP::"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "walk ( program [ \"ir\" ] )",
+        "source_url ( item [ \"url\" ] )",
+        "visit ( g [ \"ir\" ] )"
+      ],
+      "pattern": [
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "for pid , program in memory . items ( ) :",
+        "for pid , program in memory . items ( ) :",
+        "for pid , p in memory . items ( ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:,",
+        "ID",
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "earlier = compatible ( earlier , task [ \"train\" ] )",
+        "inherited = compatible ( memory , task [ \"train\" ] )",
+        "parent_best = max ( parent_best , observation_baseline [ \"passed\" ] )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "from urllib . parse import urlsplit",
+        "from urllib . parse import urlsplit",
+        "from nova_core . evaluation import score"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "ID",
+        "ID"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "from . import library_evolution , observations",
+        "from . import sequence , specifications",
+        "from . import sequence , python_tools"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "ID",
+        "P:,",
+        "ID"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "if type ( value ) is not str or len ( value ) > 1024 :",
+        "if type ( expression ) is not str or len ( expression ) > 2048 :",
+        "if type ( key ) is not str or len ( key ) > 128 :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "OP:>",
+        "NUM",
+        "OP::"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "body [ \"id\" ] = \"auto-\" + digest ( body ) [ : 24 ]",
+        "body [ \"id\" ] = \"auto-\" + digest ( body ) [ : 24 ]",
+        "body [ \"id\" ] = \"auto-\" + digest ( body ) [ : 24 ]"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP:=",
+        "STR",
+        "OP:+",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "P:[",
+        "OP::",
+        "NUM",
+        "P:]"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "return event ( state , \"SEARCH_FROZEN\" , status = \"SEARCH_FROZEN\" , reason = \"INPUTS_AND_CRITERIA_FROZEN\" , goal = goal [ \"id\" ] , frozen = freeze , freeze = digest ( freeze ) )",
+        "return event ( state , \"SEARCH_FROZEN\" , status = \"SEARCH_FROZEN\" , reason = \"TOOLS_INPUTS_AND_CRITERIA_FROZEN\" , goal = goal [ \"id\" ] , frozen = frozen , freeze = digest ( frozen ) )",
+        "return event ( state , \"SEARCH_FROZEN\" , status = \"SEARCH_FROZEN\" , reason = \"OBSERVATION_INPUTS_AND_CRITERIA_FROZEN\" , goal = goal [ \"id\" ] , frozen = frozen , freeze = digest ( frozen ) )"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:=",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:=",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:)",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "for ir in applications ( gene , training , memory ) :",
+        "for ir in applications ( g , training , memory ) :",
+        "for node in applications ( p , training , memory ) :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)",
+        "OP::"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "return library_evolution . validate_response ( state , raw )",
+        "return sequence . execute ( g , inputs )",
+        "return autonomy . propose ( state , memory )"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "seen . add ( item [ \"url\" ] )",
+        "active . add ( p [ \"id\" ] )",
+        "active . remove ( p [ \"id\" ] )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "program , primitive = frozen [ \"program\" ] , frozen [ \"primitive\" ]",
+        "program , g = frozen [ \"program\" ] , frozen [ \"primitive\" ]",
+        "prior , outcome = record [ \"goal\" ] , record [ \"outcome\" ]"
+      ],
+      "pattern": [
+        "ID",
+        "P:,",
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:,",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "from . contracts import ContractError , dataset_id , digest , encode , task_spec",
+        "from . contracts import ContractError , decode , digest , encode , normalized",
+        "from . language import BINARY , UNARY , candidate , interpret , primitive"
+      ],
+      "pattern": [
+        "ID",
+        "OP:.",
+        "ID",
+        "ID",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "history = state [ \"experience\" ] . get ( tid , [ ] )",
+        "history = state [ \"experience\" ] . get ( tid , [ ] )",
+        "history = state [ \"experience\" ] . get ( tid , [ ] )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "P:[",
+        "P:]",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "return explanation , documents",
+        "return events , previous",
+        "nonlocal nodes , limited"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:,",
+        "ID"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "observed = score ( proposed , training , extended )",
+        "plan = intelligence ( state , tid , memory )",
+        "result = score ( predictor , rows , memory )"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "ID",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "state [ \"capability_pending\" ] [ tid ] = body",
+        "state [ \"engine_trials\" ] [ tid ] = trial",
+        "state [ \"task_events\" ] [ tid ] = seq"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "P:[",
+        "ID",
+        "P:]",
+        "OP:=",
+        "ID"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "manifest [ \"python\" ] = list ( sys . version_info [ : 2 ] )",
+        "manifest [ \"python\" ] = list ( sys . version_info [ : 2 ] )",
+        "manifest [ \"python\" ] = list ( sys . version_info [ : 2 ] )"
+      ],
+      "pattern": [
+        "ID",
+        "P:[",
+        "STR",
+        "P:]",
+        "OP:=",
+        "ID",
+        "P:(",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:[",
+        "OP::",
+        "NUM",
+        "P:]",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "if depth > 16 :",
+        "if attempts > 12000 :",
+        "if depth > 12 :"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:>",
+        "NUM",
+        "OP::"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "rows = raw [ split ]",
+        "out = a [ b ]",
+        "item = value [ key ]"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "ID",
+        "P:[",
+        "ID",
+        "P:]"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "from itertools import islice , product",
+        "from collections import Counter , defaultdict",
+        "from functools import cmp_to_key , lru_cache"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "ID",
+        "ID",
+        "P:,",
+        "ID"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "budget = [ 128 ]",
+        "budget = [ 4096 ]",
+        "budget = [ 2000 ]"
+      ],
+      "pattern": [
+        "ID",
+        "OP:=",
+        "P:[",
+        "NUM",
+        "P:]"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "return ast . Subscript ( ast . Name ( \"inputs\" , ast . Load ( ) ) , ast . Constant ( node [ 1 ] ) , ast . Load ( ) )",
+        "return ast . Subscript ( ast . Name ( \"inputs\" , ast . Load ( ) ) , ast . Constant ( node [ 1 ] ) , ast . Load ( ) )",
+        "return ast . Subscript ( ast . Name ( \"inputs\" , ast . Load ( ) ) , ast . Constant ( node [ 1 ] ) , ast . Load ( ) )"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "STR",
+        "P:,",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)",
+        "P:)",
+        "P:,",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "NUM",
+        "P:]",
+        "P:)",
+        "P:,",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "P:)",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "return ast . Constant ( node [ 1 ] )",
+        "return ast . Constant ( node [ 1 ] )",
+        "return ast . Constant ( node [ 1 ] )"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "OP:.",
+        "ID",
+        "P:(",
+        "ID",
+        "P:[",
+        "NUM",
+        "P:]",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "@ lru_cache ( maxsize = 256 )",
+        "@ lru_cache ( maxsize = 512 )",
+        "@ lru_cache ( maxsize = 256 )"
+      ],
+      "pattern": [
+        "OP:@",
+        "ID",
+        "P:(",
+        "ID",
+        "OP:=",
+        "NUM",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "exec ( compile ( source , \"<nova-word-gene>\" , \"exec\" ) , namespace )",
+        "exec ( compile ( generated_source , \"<nova-generated>\" , \"exec\" ) , namespace )",
+        "exec ( compile ( source , \"<nova-python-composition>\" , \"exec\" ) , namespace )"
+      ],
+      "pattern": [
+        "ID",
+        "P:(",
+        "ID",
+        "P:(",
+        "ID",
+        "P:,",
+        "STR",
+        "P:,",
+        "STR",
+        "P:)",
+        "P:,",
+        "ID",
+        "P:)"
+      ],
+      "probability": 0.0011534025374855825
+    },
+    {
+      "count": 3,
+      "examples": [
+        "return namespace [ \"solve\" ]",
+        "return namespace [ \"solve\" ]",
+        "return namespace [ \"solve\" ]"
+      ],
+      "pattern": [
+        "ID",
+        "ID",
+        "P:[",
+        "STR",
+        "P:]"
+      ],
+      "probability": 0.0011534025374855825
+    }
+  ],
+  "sample_count": 21,
+  "token_count": 35657,
+  "vocabulary": {
+    "BINARY": 16,
+    "CONFIG": 31,
+    "Constant": 21,
+    "ContractError": 197,
+    "ERRORS": 14,
+    "False": 27,
+    "IntegrityError": 19,
+    "LANGUAGE": 21,
+    "Load": 17,
+    "MAX_ATTEMPTS": 12,
+    "Name": 17,
+    "None": 129,
+    "Path": 21,
+    "RecursionError": 8,
+    "True": 33,
+    "TypeError": 8,
+    "UNARY": 8,
+    "ValueError": 11,
+    "_": 49,
+    "_load": 19,
+    "_require_current": 11,
+    "a": 153,
+    "active": 25,
+    "add": 32,
+    "add_argument": 19,
+    "add_parser": 22,
+    "admitted": 8,
+    "algorithm": 10,
+    "all": 18,
+    "and": 136,
+    "any": 29,
+    "append": 72,
+    "args": 66,
+    "arrays": 12,
+    "as": 17,
+    "ast": 121,
+    "attempts": 19,
+    "autonomy": 24,
+    "b": 32,
+    "before": 8,
+    "body": 237,
+    "bool": 9,
+    "break": 14,
+    "budget": 26,
+    "candidate": 27,
+    "capability": 10,
+    "cases": 10,
+    "check": 14,
+    "child": 21,
+    "chosen": 8,
+    "close": 9,
+    "command": 20,
+    "commands": 23,
+    "context": 11,
+    "continue": 40,
+    "contracts": 20,
+    "corpus": 9,
+    "count": 10,
+    "counts": 11,
+    "ctypes": 12,
+    "d": 17,
+    "data": 28,
+    "dataset_id": 10,
+    "db": 13,
+    "decode": 21,
+    "deepcopy": 16,
+    "def": 191,
+    "default": 10,
+    "definition": 20,
+    "depth": 60,
+    "desired": 9,
+    "diagnosed": 10,
+    "dict": 41,
+    "digest": 102,
+    "doc": 21,
+    "documents": 16,
+    "e": 12,
+    "earlier": 8,
+    "elif": 77,
+    "eligible": 10,
+    "else": 100,
+    "enabled": 28,
+    "encode": 82,
+    "entries": 19,
+    "evaluate": 15,
+    "evaluation": 16,
+    "event": 24,
+    "events": 19,
+    "exc": 27,
+    "except": 26,
+    "execute": 27,
+    "expr": 22,
+    "expression": 12,
+    "extended": 23,
+    "extensions": 20,
+    "extracted": 11,
+    "fields": 29,
+    "float": 9,
+    "for": 326,
+    "found": 16,
+    "freeze": 9,
+    "from": 104,
+    "frozen": 40,
+    "fullmatch": 12,
+    "functions": 17,
+    "g": 65,
+    "gene": 20,
+    "generation": 14,
+    "genome": 13,
+    "get": 70,
+    "goal": 103,
+    "h": 13,
+    "hashlib": 8,
+    "head": 33,
+    "heldout": 9,
+    "history": 24,
+    "i": 18,
+    "id": 11,
+    "if": 552,
+    "import": 131,
+    "in": 442,
+    "index": 10,
+    "initial": 13,
+    "input_tokens": 8,
+    "inputs": 42,
+    "int": 60,
+    "ir": 39,
+    "is": 163,
+    "is_extension": 13,
+    "isinstance": 16,
+    "isolated": 9,
+    "item": 46,
+    "items": 39,
+    "iteration": 12,
+    "journal": 18,
+    "json": 8,
+    "k": 61,
+    "kernel": 25,
+    "key": 87,
+    "kind": 8,
+    "known": 26,
+    "lambda": 23,
+    "language": 10,
+    "learn": 11,
+    "left": 20,
+    "len": 165,
+    "length_bits": 9,
+    "library_evolution": 13,
+    "list": 54,
+    "lit": 21,
+    "loop": 9,
+    "manifest": 20,
+    "memory": 136,
+    "min": 9,
+    "modulus": 9,
+    "mutation": 9,
+    "n": 32,
+    "name": 33,
+    "namespace": 12,
+    "node": 236,
+    "normalized": 29,
+    "not": 234,
+    "observations": 13,
+    "observed": 11,
+    "old": 8,
+    "op": 72,
+    "options": 12,
+    "or": 232,
+    "order": 14,
+    "ordered": 8,
+    "out": 23,
+    "outcome": 12,
+    "p": 48,
+    "parameters": 14,
+    "params": 17,
+    "parent": 46,
+    "parsed": 17,
+    "path": 13,
+    "pid": 57,
+    "plan": 17,
+    "policy": 45,
+    "previous": 19,
+    "primitive": 35,
+    "prior": 11,
+    "program": 124,
+    "propose": 11,
+    "proposed": 9,
+    "provenance": 9,
+    "python_tools": 12,
+    "r": 119,
+    "raise": 197,
+    "range": 9,
+    "ranking": 10,
+    "raw": 103,
+    "re": 51,
+    "reason": 62,
+    "recall": 11,
+    "receipt": 10,
+    "record": 12,
+    "regression": 14,
+    "report": 22,
+    "req": 13,
+    "request": 15,
+    "required": 9,
+    "resource": 11,
+    "result": 91,
+    "return": 296,
+    "right": 22,
+    "root": 15,
+    "row": 99,
+    "rows": 71,
+    "score": 28,
+    "search": 18,
+    "seen": 21,
+    "selection": 23,
+    "self": 119,
+    "seq": 13,
+    "sequence": 12,
+    "set": 72,
+    "sorted": 72,
+    "source": 23,
+    "spec": 20,
+    "split": 25,
+    "start": 11,
+    "state": 464,
+    "status": 42,
+    "step": 10,
+    "steps": 16,
+    "str": 58,
+    "sub": 22,
+    "sum": 11,
+    "synthesize": 13,
+    "sys": 15,
+    "t": 17,
+    "tag": 25,
+    "target": 35,
+    "targets": 9,
+    "task": 77,
+    "task_spec": 13,
+    "tasks": 13,
+    "text": 49,
+    "tid": 87,
+    "token": 21,
+    "training": 45,
+    "trial": 27,
+    "try": 29,
+    "type": 159,
+    "update": 9,
+    "usable": 10,
+    "v": 54,
+    "value": 71,
+    "values": 86,
+    "var": 14,
+    "visit": 19,
+    "width": 48,
+    "x": 73
+  }
+}

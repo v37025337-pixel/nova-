@@ -1,0 +1,542 @@
+{
+  "origin": "historical_G22_programs_and_known_examples",
+  "parent_head": "9df783c1ee135072df71846ee2d35ea3e23151ca26998c6e67015d5ad024a89b",
+  "programs": [
+    {
+      "alias": "N000",
+      "argument_mapping": {
+        "arg0": "text"
+      },
+      "program": {
+        "id": "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46",
+        "ir": [
+          "call",
+          "strip",
+          [
+            "input",
+            "text"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return primitive('strip', inputs['text'])\n"
+      },
+      "task": "10-trim"
+    },
+    {
+      "alias": "N001",
+      "argument_mapping": {
+        "arg0": "payload"
+      },
+      "program": {
+        "id": "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186",
+        "ir": [
+          "call",
+          "json",
+          [
+            "call",
+            "strip",
+            [
+              "call",
+              "upper",
+              [
+                "call",
+                "parse_json",
+                [
+                  "input",
+                  "payload"
+                ]
+              ]
+            ]
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return primitive('json', primitive('strip', primitive('upper', primitive('parse_json', inputs['payload']))))\n"
+      },
+      "task": "100-deep-normalize"
+    },
+    {
+      "alias": "N002",
+      "argument_mapping": {
+        "arg0": "payload"
+      },
+      "program": {
+        "id": "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934",
+        "ir": [
+          "object",
+          {
+            "length": [
+              "call",
+              "length",
+              [
+                "call",
+                "parse_json",
+                [
+                  "ref",
+                  "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186"
+                ]
+              ]
+            ],
+            "name": [
+              "call",
+              "parse_json",
+              [
+                "ref",
+                "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186"
+              ]
+            ]
+          }
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186"
+        ],
+        "source": "def solve(inputs, recall):\n    return {'length': primitive('length', primitive('parse_json', recall('9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186', inputs))), 'name': primitive('parse_json', recall('9adb1b050aa099e14e9dcba9fee8107b725a3c5d5b6785963e841a70c3143186', inputs))}\n"
+      },
+      "task": "110-deep-record"
+    },
+    {
+      "alias": "N003",
+      "argument_mapping": {
+        "arg0": "payload"
+      },
+      "program": {
+        "id": "b61cf45fba82ed72d76338a7ae2bf121975fe1ae1a2812f403d06c864febbb00",
+        "ir": [
+          "call",
+          "json",
+          [
+            "ref",
+            "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934"
+        ],
+        "source": "def solve(inputs, recall):\n    return primitive('json', recall('0abad56e6d587241cb6eb25e88fb3ea3ee98f6b858b1e48b15b5555a46fdb934', inputs))\n"
+      },
+      "task": "120-deep-serialized"
+    },
+    {
+      "alias": "N004",
+      "argument_mapping": {
+        "arg0": "document",
+        "arg1": "field"
+      },
+      "program": {
+        "id": "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011",
+        "ir": [
+          "object",
+          {
+            "digest": [
+              "ref",
+              "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f"
+            ],
+            "name": [
+              "ref",
+              "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996"
+            ]
+          }
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996"
+        ],
+        "source": "def solve(inputs, recall):\n    return {'digest': recall('40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f', inputs), 'name': recall('779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996', inputs)}\n"
+      },
+      "task": "130-hash-record"
+    },
+    {
+      "alias": "N005",
+      "argument_mapping": {
+        "arg0": "text"
+      },
+      "program": {
+        "id": "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a",
+        "ir": [
+          "call",
+          "upper",
+          [
+            "ref",
+            "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46"
+        ],
+        "source": "def solve(inputs, recall):\n    return primitive('upper', recall('de07e92a208a612e6afcb9f843345f8be6eab504bf32b4431564a2d896d46f46', inputs))\n"
+      },
+      "task": "20-normalize"
+    },
+    {
+      "alias": "N006",
+      "argument_mapping": {
+        "arg0": "values"
+      },
+      "program": {
+        "id": "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750",
+        "ir": [
+          "call",
+          "sum",
+          [
+            "input",
+            "values"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return primitive('sum', inputs['values'])\n"
+      },
+      "task": "200-distribution-bytes"
+    },
+    {
+      "alias": "N007",
+      "argument_mapping": {
+        "arg0": "values"
+      },
+      "program": {
+        "id": "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9",
+        "ir": [
+          "object",
+          {
+            "bytes": [
+              "ref",
+              "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750"
+            ],
+            "files": [
+              "call",
+              "length",
+              [
+                "input",
+                "values"
+              ]
+            ],
+            "sizes": [
+              "call",
+              "sort",
+              [
+                "input",
+                "values"
+              ]
+            ]
+          }
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750"
+        ],
+        "source": "def solve(inputs, recall):\n    return {'bytes': recall('ef0c699e5813737c0db6bdebdda7e7ebcc996a19c166bb08ec6e43b4b20d0750', inputs), 'files': primitive('length', inputs['values']), 'sizes': primitive('sort', inputs['values'])}\n"
+      },
+      "task": "210-distribution-summary"
+    },
+    {
+      "alias": "N008",
+      "argument_mapping": {
+        "arg0": "values"
+      },
+      "program": {
+        "id": "bb31ebad00e76ead99afafcf5b78881605c2afb7ed924e3e66d0a4d0388cfbbe",
+        "ir": [
+          "call",
+          "json",
+          [
+            "ref",
+            "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9"
+        ],
+        "source": "def solve(inputs, recall):\n    return primitive('json', recall('b66f8795b8eea805bd16b0c8dc88d7b5d22c152c4023a5bc1580fb1d3a7601e9', inputs))\n"
+      },
+      "task": "220-distribution-json"
+    },
+    {
+      "alias": "N009",
+      "argument_mapping": {
+        "arg0": "forks",
+        "arg1": "stars"
+      },
+      "program": {
+        "id": "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8",
+        "ir": [
+          "call",
+          "add",
+          [
+            "input",
+            "forks"
+          ],
+          [
+            "input",
+            "stars"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return primitive('add', inputs['forks'], inputs['stars'])\n"
+      },
+      "task": "230-repository-counts"
+    },
+    {
+      "alias": "N010",
+      "argument_mapping": {
+        "arg0": "forks",
+        "arg1": "stars"
+      },
+      "program": {
+        "id": "9ca6ed815139a4381aef287cc3b6b9054f83b1a7e992cceedbbb1ca2196ef0ab",
+        "ir": [
+          "object",
+          {
+            "combined": [
+              "ref",
+              "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8"
+            ],
+            "difference": [
+              "call",
+              "sub",
+              [
+                "input",
+                "stars"
+              ],
+              [
+                "input",
+                "forks"
+              ]
+            ]
+          }
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8"
+        ],
+        "source": "def solve(inputs, recall):\n    return {'combined': recall('c11614a9f3d25083bfad86ec6628fac2328012097c15d536e4a7bee80f82f8a8', inputs), 'difference': primitive('sub', inputs['stars'], inputs['forks'])}\n"
+      },
+      "task": "240-repository-record"
+    },
+    {
+      "alias": "N011",
+      "argument_mapping": {
+        "arg0": "document",
+        "arg1": "field"
+      },
+      "program": {
+        "id": "515361c46aa08cb1e8e6bb34e4792b6119e871d30ffe08e6ab7ff6b300dbdf53",
+        "ir": [
+          "call",
+          "json",
+          [
+            "ref",
+            "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011"
+        ],
+        "source": "def solve(inputs, recall):\n    return primitive('json', recall('a3737667693ec60c1f8614a41ac2ecdc2136212f1bfab69a8cc982835a4fc011', inputs))\n"
+      },
+      "task": "250-online-hash-json"
+    },
+    {
+      "alias": "N012",
+      "argument_mapping": {
+        "arg0": "text"
+      },
+      "program": {
+        "id": "c4624f89c560c0aee5e5b2fd1cf6d89166941a383231fba9cece2f0f8d966c87",
+        "ir": [
+          "object",
+          {
+            "length": [
+              "call",
+              "length",
+              [
+                "ref",
+                "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+              ]
+            ],
+            "name": [
+              "ref",
+              "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+            ]
+          }
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a"
+        ],
+        "source": "def solve(inputs, recall):\n    return {'length': primitive('length', recall('dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a', inputs)), 'name': recall('dc5d4cb50b398a02ef6c906e9fa30ef388786a55d668bf10f3d86fb5e3bfe99a', inputs)}\n"
+      },
+      "task": "30-record"
+    },
+    {
+      "alias": "N013",
+      "argument_mapping": {
+        "arg0": "document",
+        "arg1": "field"
+      },
+      "program": {
+        "id": "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00",
+        "ir": [
+          "call",
+          "parse_json",
+          [
+            "input",
+            "document"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [],
+        "source": "def solve(inputs, recall):\n    return primitive('parse_json', inputs['document'])\n"
+      },
+      "task": "40-json-document"
+    },
+    {
+      "alias": "N014",
+      "argument_mapping": {
+        "arg0": "document",
+        "arg1": "field"
+      },
+      "program": {
+        "id": "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+        "ir": [
+          "call",
+          "get",
+          [
+            "ref",
+            "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00"
+          ],
+          [
+            "input",
+            "field"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00"
+        ],
+        "source": "def solve(inputs, recall):\n    return primitive('get', recall('84c90520494b8ccc60225e45bb60377f1c88eea7f4ebf7853af3d819efb9ab00', inputs), inputs['field'])\n"
+      },
+      "task": "50-package-name"
+    },
+    {
+      "alias": "N015",
+      "argument_mapping": {
+        "arg0": "document",
+        "arg1": "field"
+      },
+      "program": {
+        "id": "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996",
+        "ir": [
+          "call",
+          "upper",
+          [
+            "ref",
+            "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+        ],
+        "source": "def solve(inputs, recall):\n    return primitive('upper', recall('50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895', inputs))\n"
+      },
+      "task": "60-uppercase-name"
+    },
+    {
+      "alias": "N016",
+      "argument_mapping": {
+        "arg0": "document",
+        "arg1": "field"
+      },
+      "program": {
+        "id": "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8",
+        "ir": [
+          "object",
+          {
+            "length": [
+              "call",
+              "length",
+              [
+                "ref",
+                "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+              ]
+            ],
+            "name": [
+              "ref",
+              "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996"
+            ]
+          }
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996"
+        ],
+        "source": "def solve(inputs, recall):\n    return {'length': primitive('length', recall('50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895', inputs)), 'name': recall('779e4f5b775937d73e25e47ab6d5c4324d2a0329ff27957cd7d4d3405eac2996', inputs)}\n"
+      },
+      "task": "70-package-record"
+    },
+    {
+      "alias": "N017",
+      "argument_mapping": {
+        "arg0": "document",
+        "arg1": "field"
+      },
+      "program": {
+        "id": "068ac83acd993efb46d414ad50499127623e23809427f45890781d5c6ec58c8c",
+        "ir": [
+          "call",
+          "json",
+          [
+            "ref",
+            "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8"
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8"
+        ],
+        "source": "def solve(inputs, recall):\n    return primitive('json', recall('79a1e0dc1c8c236513bcca1d15e104a3652e2abf7d3ed6cf2ef33f740b48a4f8', inputs))\n"
+      },
+      "task": "80-serialized-record"
+    },
+    {
+      "alias": "N018",
+      "argument_mapping": {
+        "arg0": "document",
+        "arg1": "field"
+      },
+      "program": {
+        "id": "40e5bda8750eacfb0c7a8c840c8e540caabd45b503642a2039826dd0d29e9e0f",
+        "ir": [
+          "apply",
+          "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e",
+          [
+            "object",
+            {
+              "message": [
+                "ref",
+                "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895"
+              ]
+            }
+          ]
+        ],
+        "language": "nova.expression.v1",
+        "parents": [
+          "50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895",
+          "75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e"
+        ],
+        "source": "def solve(inputs, recall):\n    return recall('75aa6ca113e56641cbb02d62dd159d96542796059e9e97a16962a47ec0398d2e', {'message': recall('50bf7265d322609675fa879d56976670fa517cd2c690932029b1b983e5011895', inputs)})\n"
+      },
+      "task": "90-sha256-deficit-control"
+    }
+  ],
+  "source_commit": "5c47fe7a0425f579cb4c75bc2fe76df2c8b565d5"
+}
