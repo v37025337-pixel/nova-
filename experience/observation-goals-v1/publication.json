@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "base_commit": "7218a570f66ef9a5fe694d556814bd1311dff43e",
+  "publication_date": "2026-09-21",
+  "publication_scope": "Published after the user's explicit approval. The code/protocol freeze was local before the recorded network experiment; public preregistration is not claimed.",
+  "transport": "Authenticated GitHub Git Data API; commit metadata changed, but each complete Git tree was checked against the corresponding local tree.",
+  "mappings": [
+    {
+      "stage": "code_and_protocol_freeze",
+      "local_commit": "202bd6d1420346d1970e0c5f7af74fbc7d4e28b9",
+      "published_commit": "9bed5b6bf57e7662caf8543c73004f2a1302bf15",
+      "identical_tree": "4fc0b55186861ad6f23009e6a1b2b3b4ed398c19"
+    },
+    {
+      "stage": "experiment_evidence",
+      "local_commit": "2df71785f216c4b3e53e26a5bd8f43cfdc1c5882",
+      "published_commit": "e50f860cf01fa977c16e17098f30f35a65fd1ec9",
+      "identical_tree": "c051adf89391023ee1586620b7b5cfc8d61e743a"
+    },
+    {
+      "stage": "code_reader_integration",
+      "local_commit": "0026456c74f2260d86303b717ed5176827375b4d",
+      "published_commit": "9b80923fcb5de427f7186932bc3e746f6ef50aab",
+      "identical_tree": "71ba2f3824757a40763de45050e4a8409b40924b"
+    }
+  ]
+}
