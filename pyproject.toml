@@ -12,6 +12,7 @@ dependencies = []
 
 [project.scripts]
 nova = "nova_core.__main__:main"
+nova-read-code = "nova_tools.code_reader_bridge:main"
 
 [tool.setuptools.packages.find]
-include = ["nova_core*"]
+include = ["nova_core*", "nova_tools*"]
