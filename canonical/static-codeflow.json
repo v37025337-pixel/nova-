@@ -1,0 +1,25 @@
+{
+  "dynamic_execution_verified": false,
+  "file_sha256": {
+    "experience/codeflow-v25-input/ucr_v25_real_flow_cores.json": "ecf01e81c7cd39b851e1da30bb86304a9610a9d384651fab89793927e3c73c36",
+    "scripts/import_static_codeflow.py": "99511f091b95311a636ee4f39e1a2c2d563d6a649e28350ba428d1873633e4be"
+  },
+  "input_schema": "ucr.external-static-codeflow/1",
+  "origin": "user_supplied_ucr_v25_real_flow_cores.json",
+  "projects": {
+    "requests": {
+      "claimed_version": "2.32.5",
+      "edges": 73,
+      "nodes": 66
+    },
+    "urllib3": {
+      "claimed_version": "2.7.0",
+      "edges": 62,
+      "nodes": 56
+    }
+  },
+  "reader_version": "18.0",
+  "role": "structured_static_graph_observations",
+  "schema": "nova.static-codeflow-files.v1",
+  "upstream_source_verified": false
+}
