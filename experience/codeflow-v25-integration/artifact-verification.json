@@ -1,0 +1,32 @@
+{
+  "documents": 4,
+  "events": 131,
+  "graph_records": {
+    "edges": 135,
+    "nodes": 122
+  },
+  "hash_chain_valid": true,
+  "head": "513aa3bf5284ea4ca43543d204f077e09e2b0b1abde83780093a31420387c973",
+  "journal_file_sha256": "64d82c3b3c6dd3718ed446ef57758279cf9ea8a8bab5603e058c2fd2f3e47b1d",
+  "new_event_kinds": [
+    "observation",
+    "observation",
+    "observation",
+    "observation"
+  ],
+  "original_attachment_unchanged": true,
+  "parent_events": 127,
+  "parent_head": "ce9ab36241e801e7c16fe2004b1f0fc91a4d4aa74146e684b44a8d554b0fab3a",
+  "parent_prefix_unchanged": true,
+  "pinned_files": [
+    "experience/codeflow-v25-input/ucr_v25_real_flow_cores.json",
+    "scripts/import_static_codeflow.py"
+  ],
+  "runtime_sha256": "cfec6501969d0fd62dedd1a0c7c48709fe027ce60c39155aad07eccb45c4f797",
+  "schema": "nova.static-codeflow-artifact-check.v1",
+  "source_commit": "8814b83cf830935c119ac789a5fc262d6bd4e7d8",
+  "source_files_match_pinned_commit": true,
+  "source_identities": 1,
+  "sqlite_matches_export": true,
+  "status": "PASS"
+}

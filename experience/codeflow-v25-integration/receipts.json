@@ -1,0 +1,30 @@
+[
+  {
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 67,
+    "sha256": "3bf8628abf974df7e2cececde03d95d651a4e4e4ed2f1e4a5be0c8b3bd129878",
+    "status": "RECORDED"
+  },
+  {
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 74,
+    "sha256": "e711b3c627b4dbca882e1c8c05c40ed4c90824e9d832eb596d3bfb64cb41800d",
+    "status": "RECORDED"
+  },
+  {
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 57,
+    "sha256": "02d057cf3f0778aac29c0df431faa26d3a1d0a33e5babea8d1f546ad53bdf3b6",
+    "status": "RECORDED"
+  },
+  {
+    "limited": false,
+    "parser": "complete_json_csv_scalar_records_v1",
+    "records": 63,
+    "sha256": "b3ec6b591d6e8228aa96064aac0e68d8fbf4d45798febcd67adcab38ecdffe31",
+    "status": "RECORDED"
+  }
+]

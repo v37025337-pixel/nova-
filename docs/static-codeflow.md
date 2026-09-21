@@ -26,11 +26,11 @@
 Запуск из репозитория:
 
 ```bash
-python scripts/import_static_codeflow.py experience/codeflow-v25-input/ucr_v25_real_flow_cores.json --parent experience/ucr18-continuation-20260921/journal.json.gz --source-commit COMMIT_WITH_THE_INPUT --output /tmp/nova-codeflow-import
+python scripts/import_static_codeflow.py experience/codeflow-v25-input/ucr_v25_real_flow_cores.json --parent experience/ucr18-continuation-20260921/journal.json.gz --source-commit 8814b83cf830935c119ac789a5fc262d6bd4e7d8 --output /tmp/nova-codeflow-import
 ```
 
-Замените `COMMIT_WITH_THE_INPUT` полным SHA commit, содержащего точный входной
-файл. Необязательный `--checkpoint` принимает SQLite-копию того же родительского
+Указанный commit содержит точный входной файл. Необязательный `--checkpoint`
+принимает SQLite-копию того же родительского
 журнала: перед записью новых событий ядро полностью воспроизводит её и проверяет
 равенство закреплённому родителю. Это сокращает перенос состояния; проверка
 истории сохраняется. После импорта отдельный процесс проверяет полный журнал.

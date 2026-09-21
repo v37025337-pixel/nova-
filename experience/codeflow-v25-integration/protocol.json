@@ -1,0 +1,99 @@
+{
+  "author": "maintainer",
+  "checkpoint_used": true,
+  "development_steps": 0,
+  "fresh_rows": 0,
+  "importer_sha256": "99511f091b95311a636ee4f39e1a2c2d563d6a649e28350ba428d1873633e4be",
+  "new_tasks": 0,
+  "parent_file_sha256": "512b6cd77d0607adfd37afab722417dab0c51c1a3fa49a3effff21f06c0ef83e",
+  "parent_head": "ce9ab36241e801e7c16fe2004b1f0fc91a4d4aa74146e684b44a8d554b0fab3a",
+  "parent_path": "experience/ucr18-continuation-20260921/journal.json.gz",
+  "replay_timeout_seconds": 600,
+  "runtime_manifest": {
+    "autonomy": "bounded_failure_conditioned_relational_subgoals_with_external_io",
+    "capability_author": "kernel_specification_conditioned_document_compiler",
+    "capability_dialect": "bounded_word_equations_and_typeset_block_recurrences",
+    "engine_author": "maintainer",
+    "engine_policy_author": "kernel_bounded_experience_conditioned_mutation",
+    "faculties": {
+      "CODE": "native_expression_synthesis_and_ast_execution",
+      "INTELLIGENCE": "experience_conditioned_verified_gene_selection",
+      "LOGIC": "contracts_deficits_and_admission_evidence",
+      "THINKING": "causal_goal_selection_and_continuation"
+    },
+    "observations": {
+      "author": "maintainer",
+      "config": {
+        "diagnostic_rows": 8,
+        "document_bytes": 262144,
+        "fields_per_record": 16,
+        "minimum_error_sources": 2,
+        "minimum_errors": 3,
+        "pairs_per_decision": 64,
+        "records_per_document": 128,
+        "training_rows": 8,
+        "tree_nodes": 8192,
+        "window_documents": 32
+      },
+      "mechanism": "measured_scalar_field_prediction_errors_v1"
+    },
+    "program_author": "kernel_training_only",
+    "python": [
+      3,
+      12
+    ],
+    "python_tools": "pure_stdlib_composition_and_inherited_relation_transfer",
+    "runtime": "single_state_single_queue_single_journal",
+    "schema": "nova.kernel.v9",
+    "search": {
+      "attempts": 12000,
+      "depth": 3
+    },
+    "sources": {
+      "__init__.py": "313851ef35a64297d494590b7f63e3ee35b0590e86350cf62916fc642a1a6dbd",
+      "__main__.py": "1a65c967f8eb2fcf5b656932f22838f82ba0c4ae048e8cb5518234902e11947f",
+      "adaptation.py": "8da801804b347568ee64ca9549c0bd6708a90a2f8b7a39f8f11bdc0edfd5c796",
+      "autonomy.py": "b60236f1fb7324c3cd956009645615ee9891465c3a3f27a24f1faa0fd2904661",
+      "capability.py": "dea251596603a33d5b1b486dda63f50c2e3a2aeb45d3fc8d24553e29b3c4c5de",
+      "compatibility.py": "547417793d870c014c4ef604920c8c5b5c05235da4a83fcc4ba084ffdcf36e89",
+      "contracts.py": "54068e5bd79c3a896fb904aae0d5ff5544e1a7c921b7774da36d9c73f05212fe",
+      "evaluation.py": "06ca272237362407ea65a559ae222acf41a99fceb574b3f945e34e8726279cf2",
+      "extensions.py": "7b048dda1d3efcc510be6af1162ecd52fb7dddfa53ff01b106a003a74cf6ded2",
+      "genetics.py": "e3711266beea5cf000107fd839c3d804b946f8eefba0fef69e6fc6af5e0365a0",
+      "isolation.py": "c42b8a1a390f3c667a6a925b3118e882218664da234ca22c7886a4fd732fe3e3",
+      "kernel.py": "9bba92a690fb8d414896f7728ead90d9ff58c0c4cc8e2a34d3354071a567262f",
+      "language.py": "a541480da7093aaa401f82e1bf3aa7be5f4914ca57ac3222db0e7084af60e1a7",
+      "library_evolution.py": "a95a361a62b697df309f6941f4b5e4daa3c74ad2cfb174e0c4b3b0f48e0c4c03",
+      "memory.py": "3e8397ac08f8e303e313cac519498d49f010045975453508ab14decd8047a777",
+      "observations.py": "62b04c50e9a6afd191a95a758f5b2ff4ff5d370fb865f3b319ab72e63cbd7a8c",
+      "python_tools.py": "6e4ddb19f4897b470b0e94c547c7947a0925308af98af4f9178ae6dd2047a2eb",
+      "sandbox_worker.py": "11482d41f951d639396b2a1e1412e2cb2f2afbab538db243a2f5e9889af59e96",
+      "sequence.py": "cd1ac5a145caeb9a4fa9c181aeb3bbbd021e4a59b37bbee5d2440b27081f06d2",
+      "specifications.py": "3c34a078b8500dc1f9a13ea140c85fe9df7d4294986470989aafe128841b45c3",
+      "synthesis.py": "7e61fe88d70eaf5485a82be3b98aba1e00dd2384847d635b80b04f8dbe014e19",
+      "ucr_development.py": "8fc53eea8eb0a5d0f10d4f44e25ca0e2a5fcb4c859c51161234e1e9bd2a8660f"
+    },
+    "ucr_development": {
+      "author": "maintainer",
+      "config": {
+        "candidates_per_round": 12,
+        "generated_per_round": 2048,
+        "input_fields": 1,
+        "max_depth": 3,
+        "native_fallback": true,
+        "training_rows": 8
+      },
+      "mechanism": "ucr_training_only_native_expression_proposals_v1",
+      "reader_version": "18.0",
+      "sources": {
+        "nova_tools/__init__.py": "e981bab21ded1efd6adeecb57930c3d639797507bb9e2ae4dfc605e727abdd17",
+        "nova_tools/universal_code_reader.py": "4f7bd6781727504f89f3407f559db5689a1a0896480b9f4a046ac8a85552be5f"
+      }
+    }
+  },
+  "schema": "nova.static-codeflow-import.v1",
+  "source_commit": "8814b83cf830935c119ac789a5fc262d6bd4e7d8",
+  "source_identities": 1,
+  "source_sha256": "ecf01e81c7cd39b851e1da30bb86304a9610a9d384651fab89793927e3c73c36",
+  "source_url": "https://github.com/v37025337-pixel/nova-/blob/8814b83cf830935c119ac789a5fc262d6bd4e7d8/experience/codeflow-v25-input/ucr_v25_real_flow_cores.json"
+}
