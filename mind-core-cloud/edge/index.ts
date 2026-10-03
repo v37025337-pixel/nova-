@@ -30,6 +30,7 @@ const GH_HEADERS = {
 };
 const INTERNET_MECHANISM = "M0001:real-internet-read";
 const CURIOSITY_MECHANISM = "M0002:curiosity-pressure";
+const DOMAIN_BIRTH_MECHANISM = "M0003:domain-birth";
 
 function nowIso() { return new Date().toISOString(); }
 
@@ -425,7 +426,229 @@ async function answerIssueComments(goal:Goal, cycleId:number) {
   return observed;
 }
 
+
+function evidenceText(o:Json) {
+  const parts:any[] = [
+    o.title, o.body_excerpt, o.text_excerpt, o.generated_question,
+    Array.isArray(o.labels) ? o.labels.join(" ") : "",
+    Array.isArray(o.comments) ? o.comments.map((c:any)=>c?.body??"").join("\n") : "",
+  ];
+  return parts.map(x=>String(x??"")).join("\n");
+}
+
+function inferExternalDomain(o:Json, parentTopic:string|null) {
+  const text=evidenceText(o);
+  const parent=String(parentTopic??"").toLowerCase();
+
+  const candidates = [
+    {
+      domain_key:"tcl-tk-runtime",
+      name:"Tcl/Tk Runtime Ecosystem",
+      detect:/\b(?:tcl\/tk|tk\/tcl|tcl9|tk9|tcl90|tcl9tk|tkinter)\b/i,
+      parent_block:/\btcl(?:\/tk)?\b/i,
+      seed_url:"https://www.tcl-lang.org/",
+      verification_terms:["Tcl Developer Xchange","Tcl/Tk"],
+      research_url:"https://www.tcl-lang.org/software/tcltk/download.html",
+      research_question:"What are the current Tcl/Tk release lines, and what compatibility constraints matter when another runtime embeds Tcl/Tk?",
+    },
+  ];
+
+  for(const c of candidates) {
+    if(c.detect.test(text) && !c.parent_block.test(parent)) {
+      return c;
+    }
+  }
+  return null;
+}
+
+async function domainBirthFromEvidence(sourceEvidenceId:number, cycleId:number, admitMechanism=false) {
+  const mechanism=await getMechanismByKey(DOMAIN_BIRTH_MECHANISM);
+  if(!["probation","admitted"].includes(mechanism.status)) throw new Error("domain birth mechanism inactive");
+
+  const {data:evidence,error:eerr}=await db.from("mind_core_evidence")
+    .select("id,cycle_id,source_kind,source_title,source_url,observed,fetched_at")
+    .eq("id",sourceEvidenceId).single();
+  if(eerr) throw eerr;
+
+  const {data:stateRow}=await db.from("mind_core_state").select("state").eq("id","main").single();
+  const parentTopic=String(stateRow?.state?.topic??"");
+  const candidate=inferExternalDomain((evidence?.observed??{}) as Json,parentTopic);
+  if(!candidate) throw new Error("no external domain candidate found in evidence");
+
+  const text=evidenceText((evidence?.observed??{}) as Json);
+  const mentionCount=(text.match(/\b(?:tcl|tk|tkinter)\b/gi)??[]).length;
+  const dependencySignals=(text.match(/\b(?:version|package|dll|runtime|library|installer|upgrade|dependency|embed)\w*\b/gi)??[]).length;
+
+  const externality=1.0;
+  const recurrence=Math.min(1,mentionCount/5);
+  const causalRelevance=Math.min(1,0.45+dependencySignals*0.07);
+  const novelty=1.0;
+  const pressure=Math.max(0,Math.min(1,
+    0.30*externality + 0.25*recurrence + 0.30*causalRelevance + 0.15*novelty
+  ));
+
+  const {data:existing}=await db.from("mind_core_domains")
+    .select("*").eq("domain_key",candidate.domain_key).maybeSingle();
+
+  let domain:any=existing;
+  if(!domain) {
+    const {data:drow,error:derr}=await db.from("mind_core_domains").insert({
+      domain_key:candidate.domain_key,
+      name:candidate.name,
+      parent_domain_key:parentTopic || null,
+      source_evidence_id:sourceEvidenceId,
+      mechanism_id:mechanism.id,
+      status:"candidate",
+      birth_pressure:{
+        externality,recurrence,causal_relevance:causalRelevance,novelty,
+        score:pressure,mention_count:mentionCount,dependency_signals:dependencySignals
+      },
+      seed:{
+        url:candidate.seed_url,
+        research_url:candidate.research_url,
+        verification_terms:candidate.verification_terms,
+        research_question:candidate.research_question
+      },
+    }).select("*").single();
+    if(derr) throw derr;
+    domain=drow;
+  }
+
+  const {text:html,finalUrl,status}=await internetGet(
+    cycleId,candidate.seed_url,
+    `verify external domain candidate ${candidate.domain_key}`
+  );
+  const plain=stripHtml(html);
+  const matched=candidate.verification_terms.filter((term:string)=>plain.toLowerCase().includes(term.toLowerCase()));
+  const verified=matched.length>=2 && status===200;
+  const verification={
+    url:candidate.seed_url,final_url:finalUrl,http_status:status,bytes:html.length,
+    required_terms:candidate.verification_terms,matched_terms:matched,
+    independent_host:new URL(finalUrl).hostname,
+    parent_topic:parentTopic,
+    verified,checked_at:nowIso(),
+  };
+
+  const {error:du}=await db.from("mind_core_domains").update({
+    status:verified?"admitted":"rejected",
+    verification,
+    admitted_at:verified?nowIso():null,
+    updated_at:nowIso(),
+  }).eq("id",domain.id);
+  if(du) throw du;
+  if(!verified) throw new Error("external domain verification failed");
+
+  const goalKey=`domain-seed:${candidate.domain_key}`;
+  const {data:g,error:gerr}=await db.from("mind_core_goals").upsert({
+    goal_key:goalKey,
+    kind:"inspect_domain_seed",
+    target:{
+      domain_id:domain.id,
+      domain_key:candidate.domain_key,
+      url:candidate.research_url,
+      question:candidate.research_question,
+    },
+    rationale:`Born by M0003 from evidence #${sourceEvidenceId}; independently verified on ${new URL(finalUrl).hostname}.`,
+    priority:Math.max(0.60,Math.min(0.90,pressure)),
+    status:"pending",
+    recurrence_minutes:null,
+    not_before:nowIso(),
+    created_from_cycle:cycleId,
+    updated_at:nowIso(),
+  },{onConflict:"goal_key"}).select("id").single();
+  if(gerr) throw gerr;
+
+  const result={
+    source_evidence_id:sourceEvidenceId,
+    domain_id:domain.id,
+    domain_key:candidate.domain_key,
+    name:candidate.name,
+    parent_domain_key:parentTopic,
+    birth_pressure:{
+      externality,recurrence,causal_relevance:causalRelevance,novelty,score:pressure,
+      mention_count:mentionCount,dependency_signals:dependencySignals,
+    },
+    verification,
+    derived_goal_id:g.id,
+    derived_goal_key:goalKey,
+    born_at:nowIso(),
+  };
+
+  await logMechanismEvent(
+    mechanism.id,cycleId,"domain_birth",
+    {source_evidence_id:sourceEvidenceId,parent_topic:parentTopic},
+    result,true
+  );
+
+  if(admitMechanism && !existing) {
+    const mevidence={
+      ...(mechanism.evidence??{}),
+      independent_self_test:result,
+      admitted_reason:"Detected an external domain from genuine evidence, verified it against an independent official public source via M0001, and emitted a cross-domain research goal.",
+    };
+    const {error:mu}=await db.from("mind_core_mechanisms").update({
+      status:"admitted",evidence:mevidence,admitted_at:nowIso(),updated_at:nowIso()
+    }).eq("mechanism_key",DOMAIN_BIRTH_MECHANISM);
+    if(mu) throw mu;
+  }
+
+  return result;
+}
+
+async function inspectDomainSeed(goal:Goal, cycleId:number) {
+  const url=String(goal.target?.url??"");
+  const domainId=Number(goal.target?.domain_id);
+  if(!url || !Number.isFinite(domainId)) throw new Error("invalid domain seed goal");
+
+  const {text,finalUrl}=await internetGet(
+    cycleId,url,
+    `research admitted domain ${String(goal.target?.domain_key??"unknown")}`
+  );
+  const plain=stripHtml(text);
+  const observed={
+    domain_id:domainId,
+    domain_key:String(goal.target?.domain_key??""),
+    question:String(goal.target?.question??""),
+    url,final_url:finalUrl,title:pageTitle(text),
+    text_excerpt:plain.slice(0,10000),
+    content_length:text.length,checked_at:nowIso(),
+  };
+  const evidenceId=await recordEvidence(
+    cycleId,url,"domain_seed_official",observed.title,observed
+  );
+
+  const {error:du}=await db.from("mind_core_domains").update({
+    updated_at:nowIso()
+  }).eq("id",domainId);
+  if(du) console.log("domain touch skipped",du.message);
+
+  try {
+    const cm=await getMechanismByKey(CURIOSITY_MECHANISM);
+    if(cm?.status==="admitted") await curiosityFromEvidence(evidenceId,cycleId,false);
+  } catch(e) {
+    console.log("curiosity on new domain skipped", e instanceof Error ? e.message : String(e));
+  }
+
+  return observed;
+}
+
 async function executeGoal(goal:Goal, cycleId:number) {
+  if (goal.kind === "domain_birth_self_test") {
+    const evidenceId=Number(goal.target?.evidence_id);
+    if(!Number.isFinite(evidenceId)) throw new Error("invalid domain birth evidence id");
+    return await domainBirthFromEvidence(evidenceId,cycleId,true);
+  }
+
+  if (goal.kind === "domain_birth_evaluate") {
+    const evidenceId=Number(goal.target?.evidence_id);
+    if(!Number.isFinite(evidenceId)) throw new Error("invalid domain birth evidence id");
+    return await domainBirthFromEvidence(evidenceId,cycleId,false);
+  }
+
+  if (goal.kind === "inspect_domain_seed") {
+    return await inspectDomainSeed(goal,cycleId);
+  }
+
   if (goal.kind === "curiosity_evaluate") {
     const evidenceId=Number(goal.target?.evidence_id);
     if(!Number.isFinite(evidenceId)) throw new Error("invalid curiosity evidence id");
@@ -626,7 +849,7 @@ Deno.serve(async(req:Request)=>{
     const state=(stateRow?.state??{}) as CoreState;
     const fSize=await frontierSize();
     const nextState:CoreState={
-      ...state,version:"0.4.2-cloud-autonomous-curiosity-loop",last_cycle_at:nowIso(),
+      ...state,version:"0.5-cloud-domain-birth",last_cycle_at:nowIso(),
       last_focus:goal.kind,last_observation:result,
       current_goal:{id:goal.id,key:goal.goal_key,kind:goal.kind,rationale:goal.rationale,priority:goal.priority},
       frontier_size:fSize
