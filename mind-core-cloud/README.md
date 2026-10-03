@@ -138,3 +138,26 @@ Verified chain:
 
 This demonstrates a real loop:
 `evidence -> interest -> question -> internet -> answer -> new evidence`.
+
+
+## Mechanism #3 — Domain Birth
+
+`M0003:domain-birth` lets the research frontier leave its current subject.
+
+Admission path:
+
+1. start from a real evidence row;
+2. detect a repeatedly causal external technology/entity;
+3. create a candidate domain;
+4. verify that the entity has an independent official public source through M0001;
+5. admit the domain only after verification;
+6. emit a research goal inside the new domain.
+
+Verified birth:
+
+`python/cpython -> Tcl/Tk Runtime Ecosystem`
+
+Source evidence #9 repeatedly contained Tcl/Tk runtime/install/version signals.
+M0003 independently verified the domain at `www.tcl-lang.org` and then
+researched the Tcl/Tk download page. The cloud runtime observed current release
+lines including Tcl/Tk 9.1.0, 9.0.4, and 8.6.18.
