@@ -39,3 +39,54 @@ Every successful or failed network read is recorded in
 Research modules must not perform raw outbound fetches themselves. They call
 M0001. Future mechanisms should follow the same registry -> probation -> real
 test -> admission path.
+
+
+## M0002 — Curiosity Pressure
+
+**Key:** `M0002:curiosity-pressure`  
+**Ordinal:** 2  
+**Kind:** goal_genesis  
+**Status:** admitted
+
+Purpose: turn unresolved structure in real evidence into an explicit question
+and an executable research goal.
+
+Pressure vector:
+
+```
+P = (
+  uncertainty,
+  impact,
+  causal_gap,
+  novelty,
+  temporal
+)
+```
+
+Current interest score:
+
+```
+I = 0.30*uncertainty
+  + 0.25*impact
+  + 0.20*causal_gap
+  + 0.15*novelty
+  + 0.10*temporal
+```
+
+Admission evidence:
+- source: genuine autonomous evidence #6
+- generated question key:
+  `mismatch:python/cpython#158629:9.0.4->9.0.3`
+- interest: 1.000
+- created executable goal: `inspect_issue_comments`
+- result: question was answered through M0001
+
+Chain test:
+- answer evidence #8 referenced prior issue #150836
+- M0002 generated:
+  `causal-link:python/cpython#158629->150836`
+- interest: 0.7425
+- generated goal fetched real issue #150836
+- second question status: answered
+
+Constraint: no question without source evidence.
