@@ -123,3 +123,39 @@ Derived cross-domain goal:
 
 Current limitation: v0.1 domain inference uses a small external-entity resolver.
 It is real domain birth, but not yet arbitrary open-world ontology induction.
+
+
+## M0004 — Concept Birth
+
+**Key:** `M0004:concept-birth`  
+**Ordinal:** 4  
+**Kind:** abstraction_genesis  
+**Status:** admitted
+
+Purpose: create a reusable abstract concept and explicit relations from multiple
+real observations.
+
+Admission result:
+
+- source evidence: #14 and #12
+- concept:
+  `versioned-runtime-interface-contract:tcl-tk-runtime`
+- name: Versioned Runtime Interface Contract
+- source release lines: 9.1, 9.0, 8.6
+- observed mismatch: have 9.0.4, need 9.0.3
+- independent verification:
+  `https://www.tcl-lang.org/man/tcl9.1/TclLib/InitStubs.html`
+- verification checks passed:
+  Tcl_InitStubs, version requirement, exact flag, newer versions,
+  major-version boundary, dynamic binding
+- status: admitted
+
+Relations born:
+1. `python/cpython --depends_on_versioned_interface_of--> tcl-tk-runtime`
+2. `tcl-tk-runtime --exhibits--> Versioned Runtime Interface Contract`
+
+Application test:
+- source: `https://www.tcl-lang.org/about/stubs.html`
+- cross-version support: confirmed
+- function-table mechanism: confirmed
+- major-version caveat: confirmed
