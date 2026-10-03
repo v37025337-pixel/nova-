@@ -29,6 +29,7 @@ const GH_HEADERS = {
   "X-GitHub-Api-Version": "2022-11-28",
 };
 const INTERNET_MECHANISM = "M0001:real-internet-read";
+const CURIOSITY_MECHANISM = "M0002:curiosity-pressure";
 
 function nowIso() { return new Date().toISOString(); }
 
@@ -160,10 +161,11 @@ function pageTitle(html: string) {
   return m ? stripHtml(m[1]).slice(0,300) : null;
 }
 async function recordEvidence(cycleId:number, url:string, kind:string, title:string|null, observed:Json) {
-  const { error } = await db.from("mind_core_evidence").insert({
+  const { data, error } = await db.from("mind_core_evidence").insert({
     cycle_id:cycleId, source_url:url, source_kind:kind, source_title:title, observed
-  });
+  }).select("id").single();
   if (error) throw error;
+  return Number(data.id);
 }
 async function spawnGoal(args:{
   goal_key:string; kind:string; target?:Json; rationale:string; priority:number;
@@ -215,7 +217,231 @@ async function generateGoalsFromIssue(cycleId:number, repo:string, issue:Json) {
   }
 }
 
+
+async function getMechanismByKey(key:string) {
+  const {data,error}=await db.from("mind_core_mechanisms").select("*").eq("mechanism_key",key).single();
+  if(error) throw error;
+  return data;
+}
+
+function recencyPressure(ts:any) {
+  const t=Date.parse(String(ts??""));
+  if(!Number.isFinite(t)) return 0.45;
+  const hours=Math.max(0,(Date.now()-t)/3600000);
+  if(hours<=24) return 1.0;
+  if(hours<=72) return 0.8;
+  if(hours<=168) return 0.6;
+  return 0.4;
+}
+
+async function curiosityFromEvidence(sourceEvidenceId:number, cycleId:number, admitOnSuccess=false) {
+  const mechanism=await getMechanismByKey(CURIOSITY_MECHANISM);
+  if(!["probation","admitted"].includes(mechanism.status)) throw new Error("curiosity mechanism inactive");
+
+  const {data:evidence,error:evidenceError}=await db
+    .from("mind_core_evidence")
+    .select("id,cycle_id,source_kind,source_title,source_url,observed,fetched_at")
+    .eq("id",sourceEvidenceId)
+    .single();
+  if(evidenceError) throw evidenceError;
+
+  const o=(evidence?.observed??{}) as Json;
+  const labels=Array.isArray(o.labels)?o.labels.map((x:any)=>String(x).toLowerCase()):[];
+  const critical=labels.some((x:string)=>["release-blocker","critical","security","blocker"].includes(x));
+  const unresolved=String(o.state??"").toLowerCase()==="open" || (o.state===undefined && o.closed_at===null);
+  const comments=Number(o.comments??0);
+  const commentText=Array.isArray(o.comments)
+    ? o.comments.map((c:any)=>String(c?.body??"")).join("\n")
+    : "";
+  const body=String(o.body_excerpt??o.text_excerpt??commentText??"");
+  const mismatch=body.match(/have\s+([0-9]+(?:\.[0-9]+){1,3})\s*,\s*need(?:\s+exactly)?\s+([0-9]+(?:\.[0-9]+){1,3})/i);
+
+  let question="";
+  let questionKey="";
+  let derivedKind="";
+  let target:Json={};
+  let causalGap=0.35;
+
+  const relatedIssueMatch=body.match(/https:\/\/github\.com\/python\/cpython\/issues\/(\d+)/i);
+
+  if(relatedIssueMatch && Number.isFinite(Number(o.number)) && Number(relatedIssueMatch[1]) !== Number(o.number)) {
+    const repo=String(o.repo??"python/cpython");
+    const number=Number(o.number);
+    const related=Number(relatedIssueMatch[1]);
+    question=`How does prior ${repo} issue #${related} explain the workaround or state referenced from issue #${number}, and what causal connection does it have to the current failure?`;
+    questionKey=`causal-link:${repo}#${number}->${related}`;
+    derivedKind="inspect_github_issue";
+    target={repo,number:related,question,origin_issue:number};
+    causalGap=0.95;
+  } else if(mismatch && Number.isFinite(Number(o.number))) {
+    const repo=String(o.repo??"python/cpython");
+    const number=Number(o.number);
+    question=`What caused the observed dependency mismatch in ${repo} issue #${number} (have ${mismatch[1]}, need ${mismatch[2]}), and do the latest discussion comments identify a fix or resolution path?`;
+    questionKey=`mismatch:${repo}#${number}:${mismatch[1]}->${mismatch[2]}`;
+    derivedKind="inspect_issue_comments";
+    target={repo,number,question};
+    causalGap=1.0;
+  } else if(unresolved && comments>0 && Number.isFinite(Number(o.number))) {
+    const repo=String(o.repo??"python/cpython");
+    const number=Number(o.number);
+    question=`What do the latest discussion comments on ${repo} issue #${number} reveal about its cause, proposed fix, and current resolution path?`;
+    questionKey=`discussion-gap:${repo}#${number}`;
+    derivedKind="inspect_issue_comments";
+    target={repo,number,question};
+    causalGap=0.85;
+  } else if(critical && Number.isFinite(Number(o.number))) {
+    const repo=String(o.repo??"python/cpython");
+    const number=Number(o.number);
+    question=`What evidence currently explains why ${repo} issue #${number} remains a critical blocker, and what concrete change would resolve it?`;
+    questionKey=`critical-gap:${repo}#${number}`;
+    derivedKind="inspect_issue_comments";
+    target={repo,number,question};
+    causalGap=0.75;
+  } else {
+    throw new Error("evidence contains no sufficiently strong unresolved curiosity pressure");
+  }
+
+  const uncertainty=unresolved?1.0:0.55;
+  const impact=critical?1.0:0.55;
+  const temporal=recencyPressure(o.updated_at??evidence.fetched_at);
+  const novelty=1.0;
+  const score=Math.max(0,Math.min(1,
+    0.30*uncertainty + 0.25*impact + 0.20*causalGap + 0.15*novelty + 0.10*temporal
+  ));
+
+  const {data:existing}=await db.from("mind_core_questions")
+    .select("id,derived_goal_id,status").eq("question_key",questionKey).maybeSingle();
+
+  let questionId:number;
+  let goalId:number|null=existing?.derived_goal_id??null;
+
+  if(existing?.id) {
+    questionId=existing.id;
+  } else {
+    const {data:qrow,error:qerr}=await db.from("mind_core_questions").insert({
+      question_key:questionKey,
+      question,
+      source_evidence_id:sourceEvidenceId,
+      mechanism_id:mechanism.id,
+      pressure:{uncertainty,impact,causal_gap:causalGap,novelty,temporal},
+      interest_score:score,
+      status:"pending",
+    }).select("id").single();
+    if(qerr) throw qerr;
+    questionId=qrow.id;
+
+    const goalKey=`question:${questionId}`;
+    const {data:g,error:gerr}=await db.from("mind_core_goals").insert({
+      goal_key:goalKey,
+      kind:derivedKind,
+      target:{...target,question_id:questionId},
+      rationale:`Generated by M0002 from evidence #${sourceEvidenceId}: interest=${score.toFixed(3)}`,
+      priority:score,
+      status:"pending",
+      recurrence_minutes:null,
+      not_before:nowIso(),
+      created_from_cycle:cycleId,
+      updated_at:nowIso(),
+    }).select("id").single();
+    if(gerr) throw gerr;
+    goalId=g.id;
+
+    const {error:uq}=await db.from("mind_core_questions").update({
+      derived_goal_id:goalId,updated_at:nowIso()
+    }).eq("id",questionId);
+    if(uq) throw uq;
+  }
+
+  const observed={
+    source_evidence_id:sourceEvidenceId,
+    question_id:questionId,
+    question_key:questionKey,
+    question,
+    interest_score:score,
+    pressure:{uncertainty,impact,causal_gap:causalGap,novelty,temporal},
+    derived_goal_id:goalId,
+    derived_goal_kind:derivedKind,
+    generated_at:nowIso(),
+  };
+
+  await logMechanismEvent(
+    mechanism.id,cycleId,"question_genesis",
+    {source_evidence_id:sourceEvidenceId},
+    observed,true
+  );
+
+  if(admitOnSuccess && !existing?.id) {
+    const ev={
+      ...(mechanism.evidence??{}),
+      independent_self_test:observed,
+      admitted_reason:"Generated a novel, source-grounded question and executable research goal from genuine autonomous internet evidence.",
+    };
+    const {error:me}=await db.from("mind_core_mechanisms").update({
+      status:"admitted",evidence:ev,admitted_at:nowIso(),updated_at:nowIso()
+    }).eq("mechanism_key",CURIOSITY_MECHANISM);
+    if(me) throw me;
+  }
+
+  return observed;
+}
+
+async function answerIssueComments(goal:Goal, cycleId:number) {
+  const repo=String(goal.target?.repo??"python/cpython");
+  const number=Number(goal.target?.number);
+  const questionId=Number(goal.target?.question_id);
+  if(!Number.isFinite(number)) throw new Error("invalid issue number");
+  const url=`https://api.github.com/repos/${repo}/issues/${number}/comments?per_page=100`;
+  const {text}=await internetGet(cycleId,url,`answer generated curiosity question for issue #${number}`,GH_HEADERS);
+  const json=JSON.parse(text);
+  const comments=Array.isArray(json)?json.map((c:any)=>({
+    user:c.user?.login??null,
+    created_at:c.created_at,
+    updated_at:c.updated_at,
+    body:String(c.body??"").slice(0,5000),
+    html_url:c.html_url,
+  })):[];
+  const observed={
+    repo,number,
+    generated_question:String(goal.target?.question??""),
+    comment_count:comments.length,
+    comments,
+    checked_at:nowIso(),
+  };
+  const evidenceId=await recordEvidence(cycleId,url,"github_issue_comments",`Comments for issue #${number}`,observed);
+
+  if(Number.isFinite(questionId)) {
+    const {error}=await db.from("mind_core_questions").update({
+      status:"answered",answer_cycle_id:cycleId,answer:observed,updated_at:nowIso()
+    }).eq("id",questionId);
+    if(error) throw error;
+  }
+
+  try {
+    const cm=await getMechanismByKey(CURIOSITY_MECHANISM);
+    if(cm?.status==="admitted") await curiosityFromEvidence(evidenceId,cycleId,false);
+  } catch(e) {
+    console.log("curiosity follow-up skipped", e instanceof Error ? e.message : String(e));
+  }
+  return observed;
+}
+
 async function executeGoal(goal:Goal, cycleId:number) {
+  if (goal.kind === "curiosity_evaluate") {
+    const evidenceId=Number(goal.target?.evidence_id);
+    if(!Number.isFinite(evidenceId)) throw new Error("invalid curiosity evidence id");
+    return await curiosityFromEvidence(evidenceId,cycleId,false);
+  }
+
+  if (goal.kind === "curiosity_self_test") {
+    const evidenceId=Number(goal.target?.evidence_id);
+    if(!Number.isFinite(evidenceId)) throw new Error("invalid curiosity self-test evidence id");
+    return await curiosityFromEvidence(evidenceId,cycleId,true);
+  }
+
+  if (goal.kind === "inspect_issue_comments") {
+    return await answerIssueComments(goal,cycleId);
+  }
+
   if (goal.kind === "mechanism_self_test") {
     const url = String(goal.target?.url ?? "");
     const expected = String(goal.target?.expected_contains ?? "");
@@ -288,8 +514,23 @@ async function executeGoal(goal:Goal, cycleId:number) {
       closed_at:issue.closed_at,html_url:issue.html_url,body_excerpt:String(issue.body??"").slice(0,6000),
       checked_at:nowIso(),
     };
-    await recordEvidence(cycleId,url,"github_api",`CPython issue #${number}`,observed);
+    const evidenceId=await recordEvidence(cycleId,url,"github_api",`CPython issue #${number}`,observed);
     await generateGoalsFromIssue(cycleId,repo,{...issue,labels});
+
+    const questionId=Number(goal.target?.question_id);
+    if(Number.isFinite(questionId)) {
+      const {error:qerr}=await db.from("mind_core_questions").update({
+        status:"answered",answer_cycle_id:cycleId,answer:observed,updated_at:nowIso()
+      }).eq("id",questionId);
+      if(qerr) throw qerr;
+    }
+
+    try {
+      const cm=await getMechanismByKey(CURIOSITY_MECHANISM);
+      if(cm?.status==="admitted") await curiosityFromEvidence(evidenceId,cycleId,false);
+    } catch(e) {
+      console.log("curiosity follow-up skipped", e instanceof Error ? e.message : String(e));
+    }
     return observed;
   }
 
@@ -385,7 +626,7 @@ Deno.serve(async(req:Request)=>{
     const state=(stateRow?.state??{}) as CoreState;
     const fSize=await frontierSize();
     const nextState:CoreState={
-      ...state,version:"0.3-cloud-mechanism-registry",last_cycle_at:nowIso(),
+      ...state,version:"0.4.2-cloud-autonomous-curiosity-loop",last_cycle_at:nowIso(),
       last_focus:goal.kind,last_observation:result,
       current_goal:{id:goal.id,key:goal.goal_key,kind:goal.kind,rationale:goal.rationale,priority:goal.priority},
       frontier_size:fSize
