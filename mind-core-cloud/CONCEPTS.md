@@ -55,3 +55,17 @@ tcl-tk-runtime
   --exhibits-->
 Versioned Runtime Interface Contract
 ```
+
+
+## Transfer: Node.js Node-API
+
+The Versioned Runtime Interface Contract was transferred to Node.js Node-API.
+
+Observed structural match:
+- ABI-stable interface across Node.js versions
+- native addons may run on later major versions without recompilation
+- explicit Node-API version selection through `NAPI_VERSION`
+- Node-API version matrix defines supported interface/runtime combinations
+- the interface insulates addons from the underlying JavaScript runtime
+
+Transfer score: **1.000**.
