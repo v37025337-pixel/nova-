@@ -159,3 +159,29 @@ Application test:
 - cross-version support: confirmed
 - function-table mechanism: confirmed
 - major-version caveat: confirmed
+
+
+## M0005 — Concept Transfer
+
+**Key:** `M0005:concept-transfer`  
+**Ordinal:** 5  
+**Kind:** cross_domain_generalization  
+**Status:** admitted
+
+Admission test:
+- source concept: Versioned Runtime Interface Contract
+- target: Node.js Node-API
+- official source: `https://nodejs.org/api/n-api.html`
+- structural checks passed: 7 / 7
+- transfer score: 1.000
+- source-technology lexical contamination: none
+
+Born relation:
+
+```
+nodejs-node-api
+  --exhibits_analogue_of-->
+Versioned Runtime Interface Contract
+```
+
+This demonstrates reuse of an abstraction outside Tcl/Tk and Python.
