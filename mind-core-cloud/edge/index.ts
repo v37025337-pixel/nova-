@@ -32,6 +32,7 @@ const INTERNET_MECHANISM = "M0001:real-internet-read";
 const CURIOSITY_MECHANISM = "M0002:curiosity-pressure";
 const DOMAIN_BIRTH_MECHANISM = "M0003:domain-birth";
 const CONCEPT_BIRTH_MECHANISM = "M0004:concept-birth";
+const CONCEPT_TRANSFER_MECHANISM = "M0005:concept-transfer";
 
 function nowIso() { return new Date().toISOString(); }
 
@@ -890,7 +891,333 @@ async function inspectConceptApplication(goal:Goal, cycleId:number) {
   return observed;
 }
 
+
+async function conceptTransferSelfTest(conceptId:number, cycleId:number, admitMechanism=false) {
+  const mechanism=await getMechanismByKey(CONCEPT_TRANSFER_MECHANISM);
+  if(!["probation","admitted"].includes(mechanism.status)) throw new Error("concept transfer mechanism inactive");
+
+  const {data:concept,error:cerr}=await db.from("mind_core_concepts")
+    .select("*").eq("id",conceptId).single();
+  if(cerr) throw cerr;
+  if(concept.status!=="admitted") throw new Error("source concept is not admitted");
+
+  const targetUrl="https://nodejs.org/api/n-api.html";
+  const {text:html,finalUrl,status}=await internetGet(
+    cycleId,targetUrl,
+    `transfer concept ${concept.concept_key} to foreign technology`
+  );
+  const plain=stripHtml(html);
+
+  const contamination={
+    tcl:/\bTcl\b|\bTkinter\b|\bTcl\/Tk\b/i.test(plain),
+    source_python:/python\/cpython/i.test(plain),
+  };
+
+  const checks=[
+    {key:"foreign_runtime_api",ok:/Node-API|N-API/i.test(plain)},
+    {key:"abi_stability",ok:/ABI stable|ABI stability/i.test(plain)},
+    {key:"cross_version",ok:/across versions of Node\.js|later major versions/i.test(plain)},
+    {key:"without_recompile",ok:/without recompilation/i.test(plain)},
+    {key:"explicit_api_version",ok:/NAPI_VERSION|Node-API version/i.test(plain)},
+    {key:"version_matrix",ok:/version matrix/i.test(plain)},
+    {key:"underlying_runtime_insulation",ok:/independent from the underlying JavaScript runtime|insulate addons from changes/i.test(plain)},
+  ];
+  const matched=checks.filter(x=>x.ok).map(x=>x.key);
+  const clean=!contamination.tcl && !contamination.source_python;
+  const score=(matched.length/checks.length) * (clean?1:0.5);
+  const verified=status===200 && clean && matched.length>=6;
+
+  const observed={
+    source_concept_id:concept.id,
+    source_concept_key:concept.concept_key,
+    target_key:"nodejs-node-api",
+    target_name:"Node.js Node-API",
+    target_url:targetUrl,
+    final_url:finalUrl,
+    http_status:status,
+    bytes:html.length,
+    contamination,
+    matched_checks:matched,
+    check_count:checks.length,
+    transfer_score:score,
+    verified,
+    checked_at:nowIso(),
+  };
+
+  const evidenceId=await recordEvidence(
+    cycleId,targetUrl,"concept_transfer_official","Node-API concept transfer",observed
+  );
+
+  const transferKey=`${concept.concept_key}->nodejs-node-api`;
+  const {data:transfer,error:terr}=await db.from("mind_core_concept_transfers").upsert({
+    transfer_key:transferKey,
+    concept_id:concept.id,
+    source_domain_key:concept.domain_key,
+    target_key:"nodejs-node-api",
+    target_name:"Node.js Node-API",
+    target_url:targetUrl,
+    status:verified?"admitted":"rejected",
+    match:{matched_checks:matched,transfer_score:score,contamination},
+    verification:observed,
+    evidence_id:evidenceId,
+    admitted_at:verified?nowIso():null,
+    updated_at:nowIso(),
+  },{onConflict:"transfer_key"}).select("*").single();
+  if(terr) throw terr;
+  if(!verified) throw new Error("concept transfer verification failed");
+
+  const {data:rex,error:rerr}=await db.from("mind_core_concept_relations")
+    .select("id")
+    .eq("concept_id",concept.id)
+    .eq("subject_kind","technology")
+    .eq("subject_key","nodejs-node-api")
+    .eq("predicate","exhibits_analogue_of")
+    .eq("object_kind","concept")
+    .eq("object_key",concept.concept_key)
+    .maybeSingle();
+  if(rerr) throw rerr;
+  if(!rex) {
+    const {error:ri}=await db.from("mind_core_concept_relations").insert({
+      concept_id:concept.id,
+      subject_kind:"technology",
+      subject_key:"nodejs-node-api",
+      predicate:"exhibits_analogue_of",
+      object_kind:"concept",
+      object_key:concept.concept_key,
+      evidence_ids:[evidenceId],
+      status:"admitted",
+    });
+    if(ri) throw ri;
+  }
+
+  const result={...observed,transfer_id:transfer.id,evidence_id:evidenceId};
+
+  await logMechanismEvent(
+    mechanism.id,cycleId,"concept_transfer",
+    {concept_id:concept.id,target:"nodejs-node-api"},
+    result,true
+  );
+
+  if(admitMechanism) {
+    const mevidence={
+      ...(mechanism.evidence??{}),
+      independent_self_test:result,
+      admitted_reason:"Transferred an admitted concept to Node-API, a foreign technology without Tcl/Tk or CPython dependence, using official Node.js evidence and structural rather than lexical matching.",
+    };
+    const {error:mu}=await db.from("mind_core_mechanisms").update({
+      status:"admitted",evidence:mevidence,admitted_at:nowIso(),updated_at:nowIso()
+    }).eq("mechanism_key",CONCEPT_TRANSFER_MECHANISM);
+    if(mu) throw mu;
+  }
+
+  return result;
+}
+
+function extractHrefCandidates(baseUrl:string, html:string) {
+  const out=new Map<string,{url:string,text:string}>();
+  for(const m of html.matchAll(/<a\b[^>]*href=["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi)) {
+    try {
+      const u=assertSafePublicHttps(new URL(m[1],baseUrl).toString());
+      const key=u.toString();
+      if(!out.has(key)) out.set(key,{url:key,text:stripHtml(m[2]).slice(0,160)});
+    } catch {}
+  }
+  return [...out.values()].slice(0,200);
+}
+
+
+async function selfDevelopmentAudit(cycleId:number) {
+  const [mechsRes,domainsRes,conceptsRes,questionsRes,cyclesRes]=await Promise.all([
+    db.from("mind_core_mechanisms").select("mechanism_key,status,capabilities"),
+    db.from("mind_core_domains").select("id,status"),
+    db.from("mind_core_concepts").select("id,status"),
+    db.from("mind_core_questions").select("id,status"),
+    db.from("mind_core_cycles").select("id,status").order("id",{ascending:false}).limit(50),
+  ]);
+
+  for(const r of [mechsRes,domainsRes,conceptsRes,questionsRes,cyclesRes]) {
+    if(r.error) throw r.error;
+  }
+
+  const admitted=(mechsRes.data??[]).filter((m:any)=>m.status==="admitted");
+  const m1=admitted.find((m:any)=>m.mechanism_key===INTERNET_MECHANISM);
+  const caps=Array.isArray(m1?.capabilities)?m1.capabilities:[];
+  const hasDiscovery=caps.some((x:any)=>["link_discovery","web_search","url_frontier"].includes(String(x)));
+
+  const metrics={
+    admitted_mechanisms:admitted.length,
+    admitted_domains:(domainsRes.data??[]).filter((x:any)=>x.status==="admitted").length,
+    admitted_concepts:(conceptsRes.data??[]).filter((x:any)=>x.status==="admitted").length,
+    answered_questions:(questionsRes.data??[]).filter((x:any)=>x.status==="answered").length,
+    recent_failed_cycles:(cyclesRes.data??[]).filter((x:any)=>x.status==="failed").length,
+    internet_capabilities:caps,
+    safe_link_discovery_present:hasDiscovery,
+  };
+
+  let candidate:any=null;
+  if(!hasDiscovery) {
+    candidate={
+      candidate_key:"D0001:safe-link-frontier-discovery",
+      title:"Safe Link Frontier Discovery",
+      deficit:"The live internet mechanism can fetch known URLs but has no admitted generic capability for discovering a safe next frontier of URLs from a public page.",
+      hypothesis:"A read-only same-origin/public-HTTPS link extractor can expand the research frontier without requiring a search-engine API or remote mutation.",
+      candidate_kind:"mechanism_candidate",
+      proposed_change:{
+        suggested_mechanism_key:"M0006:safe-link-frontier",
+        input:"trusted public HTML evidence",
+        output:"ranked public HTTPS link candidates",
+        safety:["reuse M0001 public-HTTPS validation","no forms","no POST","no private/local targets","shadow-only before admission"],
+      },
+    };
+  } else {
+    candidate={
+      candidate_key:"D0002:generic-pattern-mining",
+      title:"Generic Relational Pattern Mining",
+      deficit:"Concept birth currently has narrow structural recognizers and needs broader pattern induction across heterogeneous evidence.",
+      hypothesis:"A shadow pattern miner can propose relation schemas from repeated evidence structures and admit only externally verified abstractions.",
+      candidate_kind:"mechanism_candidate",
+      proposed_change:{
+        suggested_mechanism_key:"M0006:generic-pattern-miner",
+        safety:["shadow-only","no production mutation","external verification required"],
+      },
+    };
+  }
+
+  const specUrl="https://html.spec.whatwg.org/multipage/links.html";
+  const {text:specHtml,finalUrl:specFinal,status:specStatus}=await internetGet(
+    cycleId,specUrl,
+    `online development research for ${candidate.candidate_key}`
+  );
+  const specText=stripHtml(specHtml);
+  const specEvidence={
+    url:specUrl,
+    final_url:specFinal,
+    http_status:specStatus,
+    bytes:specHtml.length,
+    mentions_hyperlink:/hyperlink/i.test(specText),
+    mentions_href:/href/i.test(specText),
+    checked_at:nowIso(),
+  };
+
+  const {data:existing,error:existingErr}=await db.from("mind_core_development_candidates")
+    .select("*").eq("candidate_key",candidate.candidate_key).maybeSingle();
+  if(existingErr) throw existingErr;
+
+  const provisionalStatus=existing?.status==="admitted" ? "admitted" : "shadow";
+  const {data:row,error:upErr}=await db.from("mind_core_development_candidates").upsert({
+    candidate_key:candidate.candidate_key,
+    title:candidate.title,
+    deficit:candidate.deficit,
+    hypothesis:candidate.hypothesis,
+    candidate_kind:candidate.candidate_kind,
+    proposed_change:candidate.proposed_change,
+    source_metrics:metrics,
+    internet_evidence:specEvidence,
+    status:provisionalStatus,
+    shadow_result:existing?.shadow_result??{},
+    created_from_cycle:existing?.created_from_cycle??cycleId,
+    updated_at:nowIso(),
+  },{onConflict:"candidate_key"}).select("*").single();
+  if(upErr) throw upErr;
+
+  const {data:trials,error:trialErr}=await db.from("mind_core_development_trials")
+    .select("*").eq("candidate_id",row.id).order("id",{ascending:true});
+  if(trialErr) throw trialErr;
+
+  const tested=new Set((trials??[]).map((x:any)=>String(x.test_url)));
+  const testPool=[
+    "https://www.tcl-lang.org/",
+    "https://nodejs.org/api/n-api.html",
+    "https://www.iana.org/domains/reserved",
+  ];
+  const testUrl=testPool.find(u=>!tested.has(u)) ?? testPool[(trials??[]).length % testPool.length];
+
+  let shadow:any={};
+  if(candidate.candidate_key==="D0001:safe-link-frontier-discovery") {
+    const {text:testHtml,finalUrl:testFinal,status:testStatus}=await internetGet(
+      cycleId,testUrl,
+      "shadow test safe link frontier candidate"
+    );
+    const links=extractHrefCandidates(testFinal,testHtml);
+    const host=new URL(testFinal).hostname;
+    const sameHost=links.filter(x=>new URL(x.url).hostname===host);
+    shadow={
+      test_url:testUrl,
+      final_url:testFinal,
+      http_status:testStatus,
+      total_safe_links:links.length,
+      same_host_links:sameHost.length,
+      sample:sameHost.slice(0,12),
+      pass:testStatus===200 && sameHost.length>=3,
+      executed_at:nowIso(),
+    };
+  }
+
+  const {error:trialInsertErr}=await db.from("mind_core_development_trials").insert({
+    candidate_id:row.id,
+    cycle_id:cycleId,
+    test_url:testUrl,
+    result:shadow,
+    passed:shadow.pass===true,
+  });
+  if(trialInsertErr) throw trialInsertErr;
+
+  const allTrials=[...(trials??[]),{test_url:testUrl,passed:shadow.pass===true,result:shadow}];
+  const distinctPassed=new Set(
+    allTrials.filter((t:any)=>t.passed===true).map((t:any)=>String(t.test_url))
+  );
+  const enoughIndependentEvidence=distinctPassed.size>=3;
+  const finalStatus=shadow.pass===false ? "rejected" : (enoughIndependentEvidence ? "admitted" : "shadow");
+
+  const accumulated={
+    distinct_passed_urls:[...distinctPassed],
+    passed_count:distinctPassed.size,
+    required_passed_urls:3,
+    latest:shadow,
+  };
+
+  const {error:finalUpdateErr}=await db.from("mind_core_development_candidates").update({
+    status:finalStatus,
+    shadow_result:accumulated,
+    source_metrics:metrics,
+    internet_evidence:specEvidence,
+    updated_at:nowIso(),
+  }).eq("id",row.id);
+  if(finalUpdateErr) throw finalUpdateErr;
+
+  return {
+    development_mode:"bounded_shadow",
+    production_auto_deploy:false,
+    metrics,
+    candidate:{
+      id:row.id,
+      key:row.candidate_key,
+      title:row.title,
+      status:finalStatus,
+      deficit:row.deficit,
+      hypothesis:row.hypothesis,
+    },
+    internet_evidence:specEvidence,
+    shadow_result:accumulated,
+    next_step:finalStatus==="admitted"
+      ? "Candidate design is admitted by independent shadow evidence and is ready for an explicit implementation/admission cycle; production remains unchanged."
+      : finalStatus==="shadow"
+        ? "Accumulate independent shadow evidence on additional public pages before candidate admission."
+        : "Reject or redesign candidate.",
+  };
+}
+
 async function executeGoal(goal:Goal, cycleId:number) {
+  if (goal.kind === "concept_transfer_self_test") {
+    const conceptId=Number(goal.target?.concept_id);
+    if(!Number.isFinite(conceptId)) throw new Error("invalid concept transfer concept id");
+    return await conceptTransferSelfTest(conceptId,cycleId,true);
+  }
+
+  if (goal.kind === "self_development_audit") {
+    return await selfDevelopmentAudit(cycleId);
+  }
+
   if (goal.kind === "concept_birth_self_test") {
     const evidenceId=Number(goal.target?.evidence_id);
     if(!Number.isFinite(evidenceId)) throw new Error("invalid concept birth evidence id");
@@ -1123,7 +1450,7 @@ Deno.serve(async(req:Request)=>{
     const state=(stateRow?.state??{}) as CoreState;
     const fSize=await frontierSize();
     const nextState:CoreState={
-      ...state,version:"0.6-cloud-concept-birth",last_cycle_at:nowIso(),
+      ...state,version:"0.7-cloud-transfer-online-development",last_cycle_at:nowIso(),
       last_focus:goal.kind,last_observation:result,
       current_goal:{id:goal.id,key:goal.goal_key,kind:goal.kind,rationale:goal.rationale,priority:goal.priority},
       frontier_size:fSize
