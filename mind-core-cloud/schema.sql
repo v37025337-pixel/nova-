@@ -34,3 +34,5 @@ revoke all on table public.mind_core_cycles from anon, authenticated;
 revoke all on table public.mind_core_evidence from anon, authenticated;
 revoke all on sequence public.mind_core_cycles_id_seq from anon, authenticated;
 revoke all on sequence public.mind_core_evidence_id_seq from anon, authenticated;
+
+create index if not exists mind_core_evidence_cycle_id_idx on public.mind_core_evidence(cycle_id);
