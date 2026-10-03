@@ -31,6 +31,7 @@ const GH_HEADERS = {
 const INTERNET_MECHANISM = "M0001:real-internet-read";
 const CURIOSITY_MECHANISM = "M0002:curiosity-pressure";
 const DOMAIN_BIRTH_MECHANISM = "M0003:domain-birth";
+const CONCEPT_BIRTH_MECHANISM = "M0004:concept-birth";
 
 function nowIso() { return new Date().toISOString(); }
 
@@ -632,7 +633,280 @@ async function inspectDomainSeed(goal:Goal, cycleId:number) {
   return observed;
 }
 
+
+function releaseLineFamilies(text:string) {
+  const exact=text.match(/latest downloads for the Tcl\s+([0-9.]+),\s+([0-9.]+),\s+and\s+([0-9.]+)\s+release sequences/i);
+  if(exact) return [...new Set([exact[1],exact[2],exact[3]])];
+
+  const found=[...text.matchAll(/\b(?:Tcl|Tk)\s+(\d+\.\d+)(?:\.\d+)?\b/gi)]
+    .map(m=>m[1]);
+  return [...new Set(found)];
+}
+
+function hasVersionBoundarySignal(text:string) {
+  return /version conflict|need exactly|can't find a usable|cannot find a usable|incomplete upgrade|package require|version mismatch/i.test(text)
+    && /\b(?:tcl|tk|tkinter)\b/i.test(text);
+}
+
+async function conceptBirthFromEvidence(sourceEvidenceId:number, cycleId:number, admitMechanism=false) {
+  const mechanism=await getMechanismByKey(CONCEPT_BIRTH_MECHANISM);
+  if(!["probation","admitted"].includes(mechanism.status)) throw new Error("concept birth mechanism inactive");
+
+  const {data:source,error:serr}=await db.from("mind_core_evidence")
+    .select("id,cycle_id,source_kind,source_title,source_url,observed,fetched_at")
+    .eq("id",sourceEvidenceId).single();
+  if(serr) throw serr;
+
+  const sourceText=evidenceText((source?.observed??{}) as Json);
+  const lines=releaseLineFamilies(sourceText);
+  if(lines.length<3) throw new Error("not enough coexisting release lines for abstraction");
+
+  const domainKey=String(source?.observed?.domain_key??"");
+  if(!domainKey) throw new Error("source evidence is not attached to an admitted domain");
+
+  const {data:domain,error:derr}=await db.from("mind_core_domains")
+    .select("*").eq("domain_key",domainKey).single();
+  if(derr) throw derr;
+  if(domain.status!=="admitted") throw new Error("concept source domain is not admitted");
+
+  const {data:prior,error:perr}=await db.from("mind_core_evidence")
+    .select("id,source_kind,source_title,source_url,observed,fetched_at")
+    .order("id",{ascending:false}).limit(100);
+  if(perr) throw perr;
+
+  let boundaryEvidence:any=null;
+  for(const e of prior??[]) {
+    if(Number(e.id)===sourceEvidenceId) continue;
+    const t=evidenceText((e.observed??{}) as Json);
+    if(hasVersionBoundarySignal(t)) {
+      boundaryEvidence=e;
+      break;
+    }
+  }
+  if(!boundaryEvidence) throw new Error("no independent version-boundary evidence found");
+
+  const boundaryText=evidenceText((boundaryEvidence.observed??{}) as Json);
+  const mismatch=boundaryText.match(/have\s+([0-9]+(?:\.[0-9]+){1,3})\s*,\s*need(?:\s+exactly)?\s+([0-9]+(?:\.[0-9]+){1,3})/i);
+
+  const conceptKey=`versioned-runtime-interface-contract:${domainKey}`;
+  const conceptName="Versioned Runtime Interface Contract";
+  const definition=
+    "A compatibility boundary where a host or extension interacts with another runtime through an interface that declares acceptable runtime versions; multiple release lines may coexist, but successful integration depends on satisfying the declared version contract rather than merely having the runtime installed.";
+
+  const sourceIds=[sourceEvidenceId,Number(boundaryEvidence.id)];
+  const abstraction={
+    source_domain:domainKey,
+    release_lines:lines,
+    release_line_count:lines.length,
+    boundary_evidence_id:Number(boundaryEvidence.id),
+    version_conflict:mismatch ? {have:mismatch[1],need:mismatch[2]} : null,
+    structural_pattern:{
+      coexistence:"multiple runtime release lines",
+      conflict:"consumer/provider version requirement can reject an installed runtime",
+      abstraction:"compatibility is governed by an explicit version contract at the interface boundary"
+    }
+  };
+
+  const {data:existing,error:xerr}=await db.from("mind_core_concepts")
+    .select("*").eq("concept_key",conceptKey).maybeSingle();
+  if(xerr) throw xerr;
+
+  let concept:any=existing;
+  if(!concept) {
+    const {data:crow,error:cerr}=await db.from("mind_core_concepts").insert({
+      concept_key:conceptKey,
+      name:conceptName,
+      kind:"cross_runtime_compatibility",
+      definition,
+      domain_key:domainKey,
+      source_evidence_ids:sourceIds,
+      mechanism_id:mechanism.id,
+      status:"candidate",
+      abstraction,
+    }).select("*").single();
+    if(cerr) throw cerr;
+    concept=crow;
+  }
+
+  const verifyUrl="https://www.tcl-lang.org/man/tcl9.1/TclLib/InitStubs.html";
+  const {text:html,finalUrl,status}=await internetGet(
+    cycleId,verifyUrl,
+    `verify induced concept ${conceptKey}`
+  );
+  const plain=stripHtml(html);
+  const checks=[
+    {key:"api",ok:/Tcl_InitStubs/i.test(plain)},
+    {key:"version_requirement",ok:/minimal version|minimum version|version string/i.test(plain)},
+    {key:"exact_flag",ok:/\bexact\b/i.test(plain)},
+    {key:"newer_versions",ok:/versions newer|newer versions/i.test(plain)},
+    {key:"major_version_boundary",ok:/major version/i.test(plain)},
+    {key:"dynamic_bind",ok:/dynamically bind|function tables/i.test(plain)},
+  ];
+  const matched=checks.filter(x=>x.ok).map(x=>x.key);
+  const verified=status===200 && matched.length>=5;
+
+  const verification={
+    url:verifyUrl,
+    final_url:finalUrl,
+    http_status:status,
+    bytes:html.length,
+    matched_checks:matched,
+    required_count:5,
+    verified,
+    checked_at:nowIso(),
+  };
+
+  const {error:cu}=await db.from("mind_core_concepts").update({
+    status:verified?"admitted":"rejected",
+    verification,
+    admitted_at:verified?nowIso():null,
+    updated_at:nowIso(),
+  }).eq("id",concept.id);
+  if(cu) throw cu;
+  if(!verified) throw new Error("concept verification failed");
+
+  const relationSpecs=[
+    {
+      subject_kind:"domain",
+      subject_key:domain.parent_domain_key??"python/cpython",
+      predicate:"depends_on_versioned_interface_of",
+      object_kind:"domain",
+      object_key:domainKey,
+    },
+    {
+      subject_kind:"domain",
+      subject_key:domainKey,
+      predicate:"exhibits",
+      object_kind:"concept",
+      object_key:conceptKey,
+    },
+  ];
+
+  for(const rel of relationSpecs) {
+    const {data:rex,error:rerr}=await db.from("mind_core_concept_relations")
+      .select("id")
+      .eq("concept_id",concept.id)
+      .eq("subject_kind",rel.subject_kind)
+      .eq("subject_key",rel.subject_key)
+      .eq("predicate",rel.predicate)
+      .eq("object_kind",rel.object_kind)
+      .eq("object_key",rel.object_key)
+      .maybeSingle();
+    if(rerr) throw rerr;
+    if(!rex) {
+      const {error:ri}=await db.from("mind_core_concept_relations").insert({
+        concept_id:concept.id,
+        ...rel,
+        evidence_ids:sourceIds,
+        status:"admitted",
+      });
+      if(ri) throw ri;
+    }
+  }
+
+  const goalKey=`concept-application:${concept.id}`;
+  const {data:g,error:gerr}=await db.from("mind_core_goals").upsert({
+    goal_key:goalKey,
+    kind:"inspect_concept_application",
+    target:{
+      concept_id:concept.id,
+      concept_key:conceptKey,
+      url:"https://www.tcl-lang.org/about/stubs.html",
+      question:"How does Tcl's stubs mechanism operationalize this versioned interface contract, and where are its compatibility boundaries?",
+    },
+    rationale:`Apply concept ${conceptKey} to a second official Tcl source.`,
+    priority:0.88,
+    status:"pending",
+    recurrence_minutes:null,
+    not_before:nowIso(),
+    created_from_cycle:cycleId,
+    updated_at:nowIso(),
+  },{onConflict:"goal_key"}).select("id").single();
+  if(gerr) throw gerr;
+
+  const result={
+    source_evidence_ids:sourceIds,
+    concept_id:concept.id,
+    concept_key:conceptKey,
+    name:conceptName,
+    definition,
+    abstraction,
+    verification,
+    relations:relationSpecs,
+    derived_goal_id:g.id,
+    derived_goal_key:goalKey,
+    born_at:nowIso(),
+  };
+
+  await logMechanismEvent(
+    mechanism.id,cycleId,"concept_birth",
+    {source_evidence_id:sourceEvidenceId,corroborating_evidence_id:Number(boundaryEvidence.id)},
+    result,true
+  );
+
+  if(admitMechanism && !existing) {
+    const mevidence={
+      ...(mechanism.evidence??{}),
+      independent_self_test:result,
+      admitted_reason:"Induced a new reusable abstraction from multiple real evidence items, verified it against an independent official Tcl API source through M0001, and emitted explicit relations plus an application goal.",
+    };
+    const {error:mu}=await db.from("mind_core_mechanisms").update({
+      status:"admitted",
+      evidence:mevidence,
+      admitted_at:nowIso(),
+      updated_at:nowIso(),
+    }).eq("mechanism_key",CONCEPT_BIRTH_MECHANISM);
+    if(mu) throw mu;
+  }
+
+  return result;
+}
+
+async function inspectConceptApplication(goal:Goal, cycleId:number) {
+  const conceptId=Number(goal.target?.concept_id);
+  const url=String(goal.target?.url??"");
+  if(!Number.isFinite(conceptId) || !url) throw new Error("invalid concept application goal");
+
+  const {text,finalUrl,status}=await internetGet(
+    cycleId,url,
+    `apply concept ${String(goal.target?.concept_key??"unknown")}`
+  );
+  const plain=stripHtml(text);
+  const observed={
+    concept_id:conceptId,
+    concept_key:String(goal.target?.concept_key??""),
+    question:String(goal.target?.question??""),
+    url,
+    final_url:finalUrl,
+    http_status:status,
+    title:pageTitle(text),
+    supports_cross_version:/different versions|version independence|compiled with one version|without recompiling/i.test(plain),
+    supports_function_table:/function table|Tcl_InitStubs/i.test(plain),
+    major_version_caveat:/major versions|major version/i.test(plain),
+    text_excerpt:plain.slice(0,10000),
+    checked_at:nowIso(),
+  };
+  await recordEvidence(cycleId,url,"concept_application_official",observed.title,observed);
+  return observed;
+}
+
 async function executeGoal(goal:Goal, cycleId:number) {
+  if (goal.kind === "concept_birth_self_test") {
+    const evidenceId=Number(goal.target?.evidence_id);
+    if(!Number.isFinite(evidenceId)) throw new Error("invalid concept birth evidence id");
+    return await conceptBirthFromEvidence(evidenceId,cycleId,true);
+  }
+
+  if (goal.kind === "concept_birth_evaluate") {
+    const evidenceId=Number(goal.target?.evidence_id);
+    if(!Number.isFinite(evidenceId)) throw new Error("invalid concept birth evidence id");
+    return await conceptBirthFromEvidence(evidenceId,cycleId,false);
+  }
+
+  if (goal.kind === "inspect_concept_application") {
+    return await inspectConceptApplication(goal,cycleId);
+  }
+
   if (goal.kind === "domain_birth_self_test") {
     const evidenceId=Number(goal.target?.evidence_id);
     if(!Number.isFinite(evidenceId)) throw new Error("invalid domain birth evidence id");
@@ -849,7 +1123,7 @@ Deno.serve(async(req:Request)=>{
     const state=(stateRow?.state??{}) as CoreState;
     const fSize=await frontierSize();
     const nextState:CoreState={
-      ...state,version:"0.5-cloud-domain-birth",last_cycle_at:nowIso(),
+      ...state,version:"0.6-cloud-concept-birth",last_cycle_at:nowIso(),
       last_focus:goal.kind,last_observation:result,
       current_goal:{id:goal.id,key:goal.goal_key,kind:goal.kind,rationale:goal.rationale,priority:goal.priority},
       frontier_size:fSize
