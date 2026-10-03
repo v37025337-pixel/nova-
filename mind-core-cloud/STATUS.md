@@ -1,10 +1,10 @@
 # Live Status
 
 Runtime:
-- version: 0.4.2-cloud-autonomous-curiosity-loop
+- version: 0.5-cloud-domain-birth
 - Edge Function: noesis-internet-channel
-- Supabase function version: 19
-- deployed source SHA-256: 3bf80aba5091401b88d23cb4d45505fd226c0295624d71934eabf38c2fb63e94
+- Supabase function version: 20
+- deployed source SHA-256: bd365fe142ac3eb8b56c60d57a5187923e6eef646f3c38115a6e4374959ad654
 - cron: mind-core-research-hourly
 - schedule: 17 * * * *
 - cron active: true
@@ -12,33 +12,23 @@ Runtime:
 
 Admitted mechanisms:
 1. M0001:real-internet-read
-   - real public HTTPS read
-   - provenance logging
-   - private/local targets blocked
 2. M0002:curiosity-pressure
-   - evidence-grounded question genesis
-   - explicit interest pressure
-   - executable goal emission
+3. M0003:domain-birth
 
-Verified autonomous cloud cycles:
-- 1: stable release
-- 2: release blocker scan
-- 3: inspect #158629
-- 4: M0001 self-test
-- 5: cron release blocker scan
-- 6: cron recheck #158629
-- 7: cron release blocker scan
-- 8: M0002 self-test -> question #1
-- 9: answer question #1 from live comments
-- 10: M0002 chain -> question #2
-- 11: answer question #2 from live issue #150836
+Autonomous evidence after the previous chat:
+- cron cycles 12–15 ran without user interaction
+- CPython #158629 became closed at 2026-10-03T18:33:14Z
+- at cycle 15 the open release-blocker count became 0
 
-Question #1:
-- mismatch 9.0.4 -> 9.0.3
-- interest 1.000
-- status answered
-
-Question #2:
-- causal link #158629 -> #150836
-- interest 0.7425
-- status answered
+M0003 verification:
+- source evidence: #9
+- parent topic: python/cpython
+- new domain: Tcl/Tk Runtime Ecosystem
+- domain key: tcl-tk-runtime
+- birth pressure: 1.000
+- independent verification: https://www.tcl-lang.org/
+- HTTP: 200
+- domain status: admitted
+- cross-domain research cycle: 17
+- official source: https://www.tcl-lang.org/software/tcltk/download.html
+- observed release lines: Tcl/Tk 9.1.0, 9.0.4, 8.6.18
