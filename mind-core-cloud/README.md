@@ -184,3 +184,45 @@ verified it independently using the Tcl 9.1 `Tcl_InitStubs` manual page.
 A second official source, `about/stubs.html`, confirmed that the abstraction
 has predictive/operational value: stubs provide cross-version compatibility via
 function tables while major-version compatibility has explicit limits.
+
+
+## Mechanism #5 — Concept Transfer
+
+`M0005:concept-transfer` tests whether a concept born in one domain can be
+recognized structurally in another technology.
+
+Live transfer:
+- source concept: Versioned Runtime Interface Contract
+- source domain: Tcl/Tk
+- target technology: Node.js Node-API
+- target source: https://nodejs.org/api/n-api.html
+- transfer score: 1.000
+- Tcl/Tk contamination: false
+- CPython contamination: false
+- status: admitted
+
+Matched structure:
+- ABI stability
+- cross-version compatibility
+- operation without recompilation
+- explicit API version selection
+- version matrix
+- insulation from the underlying runtime
+
+## Online Self-Development
+
+A recurring goal, `recurring:self-development-audit`, is active every
+180 minutes with priority 0.81.
+
+The development loop is intentionally bounded:
+- production code is never auto-deployed;
+- measured deficits become development candidates;
+- candidates research public internet evidence through M0001;
+- candidates run in shadow on multiple independent public pages;
+- three distinct successful shadow pages are required before a design can be
+  marked admitted.
+
+First candidate:
+`D0001:safe-link-frontier-discovery`
+
+Current status: shadow.
