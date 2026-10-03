@@ -105,3 +105,36 @@ Admission test:
 
 All runtime web reads now call this mechanism rather than calling `fetch()`
 directly from individual research actions.
+
+
+## Mechanism #2 — Curiosity Pressure
+
+Mind Core now has a source-grounded question-generation mechanism:
+
+`M0002:curiosity-pressure`
+
+It consumes real evidence already stored by M0001 and computes an interest
+pressure from:
+
+- uncertainty
+- impact
+- causal gap
+- novelty
+- temporal relevance
+
+A question is persisted only when it can point back to a concrete evidence row.
+
+Verified chain:
+
+1. Autonomous evidence #6 contained:
+   `have 9.0.4, need exactly 9.0.3`
+2. M0002 generated:
+   "What caused the mismatch, and do the latest comments identify a fix?"
+3. It created an executable `inspect_issue_comments` goal.
+4. M0001 fetched the live GitHub comments.
+5. The comments referenced prior issue #150836.
+6. M0002 generated a second causal question linking #158629 -> #150836.
+7. M0001 fetched #150836 and answered that question.
+
+This demonstrates a real loop:
+`evidence -> interest -> question -> internet -> answer -> new evidence`.
