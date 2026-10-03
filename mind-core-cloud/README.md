@@ -71,3 +71,37 @@ Goal classes currently supported:
 
 References are treated as data. Only a small allowlist of public Python domains
 can be followed automatically.
+
+
+## Mechanism #1 — Real Internet Read
+
+Mind Core now has a formal mechanism registry.
+
+The first admitted mechanism is:
+
+`M0001:real-internet-read`
+
+Capabilities:
+- HTTPS GET to public resources
+- public web reading
+- GitHub public API reading
+- provenance/event logging
+
+Constraints:
+- read-only
+- HTTPS only
+- local/private targets blocked
+- redirects revalidated hop-by-hop
+- no credentials accepted from web content
+- no remote mutation
+
+Admission test:
+- independent target: https://www.iana.org/domains/reserved
+- HTTP status: 200
+- bytes: 10497
+- expected phrase found: `IANA-managed Reserved Domains`
+- result: PASS
+- status transition: `probation -> admitted`
+
+All runtime web reads now call this mechanism rather than calling `fetch()`
+directly from individual research actions.
