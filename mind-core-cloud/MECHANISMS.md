@@ -90,3 +90,36 @@ Chain test:
 - second question status: answered
 
 Constraint: no question without source evidence.
+
+
+## M0003 — Domain Birth
+
+**Key:** `M0003:domain-birth`  
+**Ordinal:** 3  
+**Kind:** research_frontier_expansion  
+**Status:** admitted
+
+Purpose: detect when accumulated real evidence points to an autonomous subject
+outside the current research topic, verify that subject independently, and
+open a new research frontier.
+
+Admission evidence:
+- source evidence: #9
+- parent domain: `python/cpython`
+- detected external domain: `tcl-tk-runtime`
+- name: Tcl/Tk Runtime Ecosystem
+- repeated mentions: 24
+- dependency signals: 10
+- birth pressure: 1.000
+- verification host: `www.tcl-lang.org`
+- verification HTTP: 200
+- independent terms matched: `Tcl Developer Xchange`, `Tcl/Tk`
+- domain status: admitted
+
+Derived cross-domain goal:
+- `domain-seed:tcl-tk-runtime`
+- researched official Tcl/Tk downloads
+- left GitHub/CPython and fetched `tcl-lang.org`
+
+Current limitation: v0.1 domain inference uses a small external-entity resolver.
+It is real domain birth, but not yet arbitrary open-world ontology induction.
