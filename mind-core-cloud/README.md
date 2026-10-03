@@ -42,3 +42,32 @@ inspection. It is read-only with respect to external websites.
 - `edge/index.ts` — exact deployed Edge Function source
 - `schema.sql` — persistent state/evidence tables
 - `cron.sql` — scheduler definition using Vault secret names only
+
+
+## Goal Genesis v0.2
+
+The runtime no longer alternates between two hard-coded checks.
+
+It now stores a persistent research frontier in `mind_core_goals` and selects
+the highest-priority eligible goal. New goals are generated from live evidence.
+
+Example verified chain:
+
+```
+release-blocker scan
+  -> discovers CPython #158629
+  -> creates inspect_github_issue goal (priority 0.95)
+  -> inspects issue body/state/labels
+  -> creates recurring recheck goal while blocker remains open
+```
+
+Goal classes currently supported:
+
+- `verify_stable_release`
+- `scan_release_blockers`
+- `inspect_github_issue`
+- `inspect_github_pull`
+- `inspect_web_reference`
+
+References are treated as data. Only a small allowlist of public Python domains
+can be followed automatically.
