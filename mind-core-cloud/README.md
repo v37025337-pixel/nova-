@@ -161,3 +161,26 @@ Source evidence #9 repeatedly contained Tcl/Tk runtime/install/version signals.
 M0003 independently verified the domain at `www.tcl-lang.org` and then
 researched the Tcl/Tk download page. The cloud runtime observed current release
 lines including Tcl/Tk 9.1.0, 9.0.4, and 8.6.18.
+
+
+## Mechanism #4 — Concept Birth
+
+`M0004:concept-birth` induces reusable abstractions from multiple evidence
+items rather than merely collecting facts.
+
+Verified concept birth:
+
+`Versioned Runtime Interface Contract`
+
+Evidence used:
+- #14: Tcl/Tk official download page showing simultaneous release lines 9.1,
+  9.0, and 8.6
+- #12: real CPython/Tcl version conflict showing 9.0.4 present while 9.0.3 was
+  required
+
+The mechanism abstracted a cross-runtime compatibility boundary and then
+verified it independently using the Tcl 9.1 `Tcl_InitStubs` manual page.
+
+A second official source, `about/stubs.html`, confirmed that the abstraction
+has predictive/operational value: stubs provide cross-version compatibility via
+function tables while major-version compatibility has explicit limits.
