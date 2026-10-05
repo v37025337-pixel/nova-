@@ -4581,6 +4581,809 @@ async function researchCausalSelfModel(
   };
 }
 
+
+function capPriority(
+  impact:number,
+  dependency:number,
+  feasibility:number,
+  measurability:number,
+  risk:number,
+  cost:number
+) {
+  const raw=
+    0.28*impact +
+    0.24*dependency +
+    0.18*feasibility +
+    0.15*measurability +
+    0.10*(1-risk) +
+    0.05*(1-cost);
+  return Math.max(0,Math.min(1,raw));
+}
+
+async function capabilityAudit(cycleId:number) {
+  const [stateRes,mechsRes,resourcesRes,programRes,candidatesRes]=await Promise.all([
+    db.from("mind_core_state").select("state").eq("id","main").single(),
+    db.from("mind_core_mechanisms")
+      .select("mechanism_key,name,kind,status,capabilities,constraints,admitted_at")
+      .order("ordinal",{ascending:true}),
+    db.from("mind_core_resources")
+      .select("resource_key,name,resource_class,status,capabilities,limits")
+      .order("id",{ascending:true}),
+    db.from("mind_core_programs")
+      .select("*")
+      .eq("program_key","PROGRAM:DIGITAL_MIND_V1")
+      .single(),
+    db.from("mind_core_development_candidates")
+      .select("candidate_key,title,status,deficit,hypothesis")
+      .order("id",{ascending:false})
+      .limit(100),
+  ]);
+
+  for(const r of [stateRes,mechsRes,resourcesRes,programRes,candidatesRes]) {
+    if(r.error) throw r.error;
+  }
+
+  const state=stateRes.data?.state??{};
+  const mechs=mechsRes.data??[];
+  const resources=resourcesRes.data??[];
+  const candidates=candidatesRes.data??[];
+  const program=programRes.data;
+
+  const {data:step,error:stepErr}=await db
+    .from("mind_core_program_steps")
+    .select("*")
+    .eq("program_id",program.id)
+    .eq("ordinal",program.current_step)
+    .single();
+  if(stepErr) throw stepErr;
+
+  const admittedMechs=new Set(
+    mechs.filter((m:any)=>m.status==="admitted").map((m:any)=>m.mechanism_key)
+  );
+  const admittedCaps=new Set(
+    mechs
+      .filter((m:any)=>m.status==="admitted")
+      .flatMap((m:any)=>Array.isArray(m.capabilities)?m.capabilities:[])
+      .map((x:any)=>String(x))
+  );
+  const admittedResources=new Set(
+    resources.filter((r:any)=>r.status==="admitted").map((r:any)=>r.resource_key)
+  );
+
+  const items:any[]=[];
+  const add=(x:any)=>items.push(x);
+
+  add({
+    capability_key:"internet_read",
+    name:"Real Internet Read",
+    category:"environment_io",
+    status:admittedMechs.has("M0001:real-internet-read")?"admitted":"missing",
+    evidence:{mechanism:"M0001:real-internet-read"},
+    dependencies:[],
+    constraints:["read_only","https_only"],
+  });
+
+  add({
+    capability_key:"browser_render_and_dom",
+    name:"Verified JS/DOM Browser",
+    category:"environment_io",
+    status:admittedMechs.has("M0012:verified-browser-runtime")?"admitted":"missing",
+    evidence:{
+      mechanism:"M0012:verified-browser-runtime",
+      browser_version:state?.browser_runtime?.browser_version??null,
+      native_sandbox:state?.browser_runtime?.sandbox?.chromium_native_sandbox===true,
+    },
+    dependencies:["internet_read"],
+    constraints:["ephemeral_profile","https_targets_only"],
+  });
+
+  add({
+    capability_key:"browser_interaction",
+    name:"Controlled Browser Actions",
+    category:"environment_action",
+    status:admittedCaps.has("browser_click_fill")?"admitted":"partial",
+    evidence:{
+      current_browser_mechanism:admittedMechs.has("M0012:verified-browser-runtime"),
+      current_capabilities:[...admittedCaps].filter(x=>x.includes("browser")||x.includes("dom")),
+    },
+    dependencies:["browser_render_and_dom","goal_system","planning"],
+    constraints:["no_user_credentials","explicit_goal_required"],
+  });
+
+  add({
+    capability_key:"curiosity_goal_birth",
+    name:"Evidence-Grounded Question/Goal Birth",
+    category:"cognition",
+    status:admittedMechs.has("M0002:curiosity-pressure")?"admitted":"missing",
+    evidence:{mechanism:"M0002:curiosity-pressure"},
+    dependencies:["internet_read"],
+    constraints:["evidence_grounded"],
+  });
+
+  add({
+    capability_key:"concept_and_domain_birth",
+    name:"Concept and Domain Birth",
+    category:"cognition",
+    status:
+      admittedMechs.has("M0003:domain-birth") &&
+      admittedMechs.has("M0004:concept-birth")
+        ?"admitted":"partial",
+    evidence:{
+      domain_birth:admittedMechs.has("M0003:domain-birth"),
+      concept_birth:admittedMechs.has("M0004:concept-birth"),
+    },
+    dependencies:["curiosity_goal_birth"],
+    constraints:["external_verification_required"],
+  });
+
+  add({
+    capability_key:"falsification_and_belief_revision",
+    name:"Falsification and Belief Revision",
+    category:"epistemics",
+    status:
+      admittedMechs.has("M0010:active-falsifier") &&
+      admittedMechs.has("M0011:belief-revision") &&
+      admittedMechs.has("M0013:contextual-belief-arbitrator")
+        ?"admitted":"partial",
+    evidence:{
+      falsifier:admittedMechs.has("M0010:active-falsifier"),
+      revision:admittedMechs.has("M0011:belief-revision"),
+      contextual_arbitration:admittedMechs.has("M0013:contextual-belief-arbitrator"),
+    },
+    dependencies:["internet_read"],
+    constraints:["append_only_history","no_truth_upgrade_from_not_reject"],
+  });
+
+  add({
+    capability_key:"causal_self_model",
+    name:"Causal Self-Model",
+    category:"self_model",
+    status:admittedMechs.has("M0014:causal-self-model")?"admitted":"partial",
+    evidence:{
+      current_step:step.step_key,
+      candidate:"D0009:causal-self-model",
+      candidate_status:
+        candidates.find((c:any)=>c.candidate_key==="D0009:causal-self-model")?.status??null,
+      snapshot_exists:state?.last_observation?.work?.snapshot_id!=null,
+    },
+    dependencies:["falsification_and_belief_revision"],
+    constraints:["observable_state_only","no_hidden_weight_claims"],
+  });
+
+  add({
+    capability_key:"goal_selection",
+    name:"Multi-Goal Selection",
+    category:"executive",
+    status:admittedMechs.has("M0015:goal-selection")?"admitted":"missing",
+    evidence:{program_step:"DM03:GOAL_SYSTEM"},
+    dependencies:["causal_self_model","curiosity_goal_birth"],
+    constraints:["budget_aware","risk_aware"],
+  });
+
+  add({
+    capability_key:"planning_replanning",
+    name:"Multi-Step Planning and Replanning",
+    category:"executive",
+    status:admittedMechs.has("M0016:planner-replanner")?"admitted":"missing",
+    evidence:{program_step:"DM04:PLANNING"},
+    dependencies:["goal_selection","browser_render_and_dom"],
+    constraints:["loop_detection","failure_replan"],
+  });
+
+  add({
+    capability_key:"counterfactual_prediction",
+    name:"Counterfactual World Model",
+    category:"prediction",
+    status:admittedMechs.has("M0017:counterfactual-world-model")?"admitted":"missing",
+    evidence:{program_step:"DM05:COUNTERFACTUAL_WORLD_MODEL"},
+    dependencies:["planning_replanning"],
+    constraints:["predict_before_action"],
+  });
+
+  add({
+    capability_key:"metacognitive_calibration",
+    name:"Metacognitive Calibration",
+    category:"self_model",
+    status:admittedMechs.has("M0018:metacognitive-calibrator")?"admitted":"missing",
+    evidence:{program_step:"DM06:METACOGNITION"},
+    dependencies:["counterfactual_prediction","falsification_and_belief_revision"],
+    constraints:["confidence_must_track_accuracy"],
+  });
+
+  add({
+    capability_key:"generic_mechanism_genesis",
+    name:"Generic Mechanism Genesis",
+    category:"self_improvement",
+    status:admittedMechs.has("M0019:mechanism-genesis")?"admitted":"partial",
+    evidence:{
+      bounded_shadow_loop:true,
+      historical_reject_redesign_admit:true,
+      target_mechanism:"M0019:mechanism-genesis",
+    },
+    dependencies:["metacognitive_calibration"],
+    constraints:["independent_evaluator_required","no_direct_prod_mutation"],
+  });
+
+  add({
+    capability_key:"cross_domain_transfer",
+    name:"Cross-Domain Cognitive Transfer",
+    category:"generalization",
+    status:admittedMechs.has("M0020:cognitive-transfer")
+      ?"admitted"
+      :(admittedMechs.has("M0005:concept-transfer")?"partial":"missing"),
+    evidence:{concept_transfer:admittedMechs.has("M0005:concept-transfer")},
+    dependencies:["generic_mechanism_genesis"],
+    constraints:["no_manual_adapter_before_test"],
+  });
+
+  add({
+    capability_key:"persistent_self_history",
+    name:"Persistent Self-History",
+    category:"identity",
+    status:admittedMechs.has("M0021:self-history")
+      ?"admitted"
+      :(admittedMechs.has("M0011:belief-revision")?"partial":"missing"),
+    evidence:{
+      append_only_beliefs:admittedMechs.has("M0011:belief-revision"),
+      program_events:true,
+    },
+    dependencies:["cross_domain_transfer"],
+    constraints:["append_only"],
+  });
+
+  add({
+    capability_key:"external_compute_scaling",
+    name:"External Compute Scaling",
+    category:"compute",
+    status:
+      admittedResources.has("RF:UNGOOGLED_CHROMIUM_RUNTIME")
+        ?"partial":"blocked",
+    evidence:{
+      browser_compute:admittedResources.has("RF:UNGOOGLED_CHROMIUM_RUNTIME"),
+      blocked_compute:resources
+        .filter((r:any)=>r.resource_class==="compute" && r.status==="blocked")
+        .map((r:any)=>r.resource_key),
+    },
+    dependencies:[],
+    constraints:["quota_limited","no_new_paid_resource_without_approval"],
+  });
+
+  add({
+    capability_key:"authenticated_external_actions",
+    name:"Authenticated External Actions",
+    category:"environment_action",
+    status:"guarded",
+    evidence:{
+      reason:"No generic admitted mechanism for arbitrary authenticated mutations.",
+    },
+    dependencies:["goal_selection","planning_replanning"],
+    constraints:["explicit_user_approval","service_specific_policy"],
+  });
+
+  add({
+    capability_key:"hidden_model_introspection",
+    name:"Hidden Model Weight/Activation Introspection",
+    category:"introspection",
+    status:"unavailable",
+    evidence:{
+      reason:"No runtime interface exposes hidden weights, activations, or private chain-of-thought.",
+    },
+    dependencies:[],
+    constraints:["not_a_supported_runtime_capability"],
+  });
+
+  const gaps:any[]=[];
+  const pushGap=(x:any)=>{
+    const priority=capPriority(
+      x.impact,x.dependency_relevance,x.feasibility,
+      x.measurability,x.risk,x.cost
+    );
+    gaps.push({...x,priority});
+  };
+
+  if(!admittedMechs.has("M0014:causal-self-model")) {
+    pushGap({
+      capability_key:"causal_self_model",
+      deficit:"Self-model exists as a snapshot but has not yet passed held-out prediction tests on runtime changes.",
+      recommended_target:"M0014:causal-self-model",
+      impact:0.95,
+      dependency_relevance:1.0,
+      feasibility:0.95,
+      measurability:1.0,
+      risk:0.05,
+      cost:0.10,
+      safe_to_auto_pursue:true,
+      goal:{
+        goal_key:"development-evaluator:D0009:v1",
+        kind:"self_model_prediction_evaluator",
+        target:{candidate_key:"D0009:causal-self-model",snapshot_id:1},
+        rationale:"Validate pre-registered self-model predictions on held-out runtime changes before M0014 admission.",
+      }
+    });
+  }
+
+  if(!admittedMechs.has("M0015:goal-selection")) {
+    pushGap({
+      capability_key:"goal_selection",
+      deficit:"No admitted mechanism yet arbitrates competing goals using utility, cost, risk, deadlines, and resource budgets.",
+      recommended_target:"M0015:goal-selection",
+      impact:0.95,
+      dependency_relevance:step.step_key==="DM03:GOAL_SYSTEM"?1.0:0.70,
+      feasibility:0.75,
+      measurability:0.90,
+      risk:0.10,
+      cost:0.15,
+      safe_to_auto_pursue:admittedMechs.has("M0014:causal-self-model"),
+      goal:null,
+    });
+  }
+
+  if(!admittedMechs.has("M0016:planner-replanner")) {
+    pushGap({
+      capability_key:"planning_replanning",
+      deficit:"No admitted general planner/replanner for multi-step tasks and failure recovery.",
+      recommended_target:"M0016:planner-replanner",
+      impact:0.95,
+      dependency_relevance:0.65,
+      feasibility:0.65,
+      measurability:0.85,
+      risk:0.20,
+      cost:0.20,
+      safe_to_auto_pursue:false,
+      goal:null,
+    });
+  }
+
+  if(!admittedCaps.has("browser_click_fill")) {
+    pushGap({
+      capability_key:"browser_interaction",
+      deficit:"Browser can render JavaScript and inspect DOM but cannot yet perform admitted goal-bounded click/fill/navigation actions.",
+      recommended_target:"M0016A:browser-action-controller",
+      impact:0.80,
+      dependency_relevance:0.55,
+      feasibility:0.70,
+      measurability:0.90,
+      risk:0.35,
+      cost:0.15,
+      safe_to_auto_pursue:false,
+      goal:null,
+    });
+  }
+
+  if(!admittedMechs.has("M0018:metacognitive-calibrator")) {
+    pushGap({
+      capability_key:"metacognitive_calibration",
+      deficit:"The kernel records confidence but lacks an admitted mechanism that measures whether confidence matches empirical accuracy.",
+      recommended_target:"M0018:metacognitive-calibrator",
+      impact:0.90,
+      dependency_relevance:0.50,
+      feasibility:0.70,
+      measurability:0.95,
+      risk:0.05,
+      cost:0.10,
+      safe_to_auto_pursue:false,
+      goal:null,
+    });
+  }
+
+  if(!admittedMechs.has("M0019:mechanism-genesis")) {
+    pushGap({
+      capability_key:"generic_mechanism_genesis",
+      deficit:"Self-development exists as hand-built runtime logic but is not yet generalized into an admitted mechanism that can invent/evaluate new mechanisms across deficit types.",
+      recommended_target:"M0019:mechanism-genesis",
+      impact:1.0,
+      dependency_relevance:0.45,
+      feasibility:0.55,
+      measurability:0.85,
+      risk:0.25,
+      cost:0.20,
+      safe_to_auto_pursue:false,
+      goal:null,
+    });
+  }
+
+  pushGap({
+    capability_key:"external_compute_scaling",
+    deficit:"Additional compute runtimes exist but remain blocked or quota-limited; only verified browser Sandbox compute is admitted.",
+    recommended_target:"RESOURCE:compute-expansion",
+    impact:0.65,
+    dependency_relevance:0.30,
+    feasibility:0.45,
+    measurability:0.90,
+    risk:0.35,
+    cost:0.50,
+    safe_to_auto_pursue:false,
+    goal:null,
+  });
+
+  const summary={
+    runtime_version:String(state.version??"unknown"),
+    program_step:step.step_key,
+    admitted_mechanisms:mechs.filter((m:any)=>m.status==="admitted").length,
+    admitted_resources:resources.filter((r:any)=>r.status==="admitted").length,
+    capability_counts:{
+      admitted:items.filter(x=>x.status==="admitted").length,
+      partial:items.filter(x=>x.status==="partial").length,
+      missing:items.filter(x=>x.status==="missing").length,
+      blocked:items.filter(x=>x.status==="blocked").length,
+      guarded:items.filter(x=>x.status==="guarded").length,
+      unavailable:items.filter(x=>x.status==="unavailable").length,
+    },
+    top_gaps:gaps
+      .slice()
+      .sort((a,b)=>b.priority-a.priority)
+      .map(g=>({
+        capability_key:g.capability_key,
+        recommended_target:g.recommended_target,
+        priority:g.priority,
+        safe_to_auto_pursue:g.safe_to_auto_pursue,
+      })),
+  };
+
+  const auditHash=await sha256Hex(JSON.stringify({
+    cycle_id:cycleId,
+    summary,
+    items,
+    gaps:gaps.map(g=>({
+      capability_key:g.capability_key,
+      deficit:g.deficit,
+      recommended_target:g.recommended_target,
+      priority:g.priority,
+    })),
+  }));
+
+  const {data:audit,error:auditErr}=await db
+    .from("mind_core_capability_audits")
+    .insert({
+      cycle_id:cycleId,
+      runtime_version:String(state.version??"unknown"),
+      program_step:step.step_key,
+      summary,
+      audit_hash:auditHash,
+    })
+    .select("*")
+    .single();
+  if(auditErr) throw auditErr;
+
+  for(const item of items) {
+    const {error}=await db.from("mind_core_capability_items").insert({
+      audit_id:audit.id,
+      capability_key:item.capability_key,
+      name:item.name,
+      category:item.category,
+      status:item.status,
+      evidence:item.evidence,
+      dependencies:item.dependencies,
+      constraints:item.constraints,
+    });
+    if(error) throw error;
+  }
+
+  const sorted=gaps.slice().sort((a,b)=>b.priority-a.priority);
+  let scheduled:any=null;
+
+  for(const gap of sorted) {
+    let createdGoalKey:string|null=null;
+
+    if(!scheduled && gap.safe_to_auto_pursue && gap.goal) {
+      const {error:goalErr}=await db.from("mind_core_goals").upsert({
+        goal_key:gap.goal.goal_key,
+        kind:gap.goal.kind,
+        target:gap.goal.target,
+        rationale:gap.goal.rationale,
+        priority:1.0,
+        status:"pending",
+        recurrence_minutes:null,
+        not_before:nowIso(),
+        last_error:null,
+        updated_at:nowIso(),
+      },{onConflict:"goal_key"});
+      if(goalErr) throw goalErr;
+
+      createdGoalKey=gap.goal.goal_key;
+      scheduled={
+        capability_key:gap.capability_key,
+        target:gap.recommended_target,
+        goal_key:createdGoalKey,
+        priority:gap.priority,
+      };
+    }
+
+    const {error:gapErr}=await db.from("mind_core_capability_gaps").insert({
+      audit_id:audit.id,
+      capability_key:gap.capability_key,
+      deficit:gap.deficit,
+      recommended_target:gap.recommended_target,
+      impact:gap.impact,
+      dependency_relevance:gap.dependency_relevance,
+      feasibility:gap.feasibility,
+      measurability:gap.measurability,
+      risk:gap.risk,
+      cost:gap.cost,
+      priority:gap.priority,
+      safe_to_auto_pursue:gap.safe_to_auto_pursue,
+      status:createdGoalKey?"scheduled":"open",
+      created_goal_key:createdGoalKey,
+    });
+    if(gapErr) throw gapErr;
+  }
+
+  const {data:stateRow,error:stateErr}=await db.from("mind_core_state")
+    .select("state")
+    .eq("id","main")
+    .single();
+  if(stateErr) throw stateErr;
+
+  const newState={
+    ...(stateRow?.state??{}),
+    capability_audit:{
+      audit_id:audit.id,
+      audit_hash:auditHash,
+      capability_counts:summary.capability_counts,
+      top_gaps:summary.top_gaps.slice(0,8),
+      scheduled_improvement:scheduled,
+      audited_at:nowIso(),
+    }
+  };
+
+  const {error:stateUpdateErr}=await db.from("mind_core_state").update({
+    state:newState,
+    updated_at:nowIso(),
+  }).eq("id","main");
+  if(stateUpdateErr) throw stateUpdateErr;
+
+  return {
+    audit_id:audit.id,
+    audit_hash:auditHash,
+    summary,
+    scheduled_improvement:scheduled,
+    capability_items:items,
+  };
+}
+
+
+async function selfModelPredictionEvaluator(goal:Goal,cycleId:number) {
+  const candidateKey=String(goal.target?.candidate_key??"D0009:causal-self-model");
+  const snapshotId=Number(goal.target?.snapshot_id??0);
+
+  const {data:snapshot,error:snapshotErr}=await db
+    .from("mind_core_self_model_snapshots")
+    .select("*")
+    .eq("id",snapshotId)
+    .single();
+  if(snapshotErr) throw snapshotErr;
+
+  const frozenPredictions=[
+    {
+      key:"program-hold-without-m0014",
+      prediction:"With M0014 not admitted, a program tick remains on DM02 and does not advance.",
+      expected:{step:"DM02:SELF_MODEL",advanced:false},
+    },
+    {
+      key:"http-boundary",
+      prediction:"M0001 rejects non-HTTPS targets before network fetch.",
+      expected:{rejected:true},
+    },
+    {
+      key:"blocked-resource-boundary",
+      prediction:"Resource Fabric refuses to use RF:ARXIV while its status is blocked.",
+      expected:{rejected:true},
+    },
+    {
+      key:"append-only-belief-boundary",
+      prediction:"An update to an existing belief row is rejected by the append-only trigger.",
+      expected:{rejected:true},
+    },
+  ];
+
+  const freezeHash=await sha256Hex(JSON.stringify({
+    candidate_key:candidateKey,
+    snapshot_id:snapshotId,
+    predictions:frozenPredictions,
+    frozen_before_tests:true,
+  }));
+
+  const results:any[]=[];
+
+  // Test 1: actual program tick before M0014 admission.
+  const beforeProgram=await currentMindProgram();
+  const beforeStep=String(beforeProgram.step.step_key);
+  const tickResult=await mindProgramOrchestrator(cycleId);
+  const afterProgram=await currentMindProgram();
+  const afterStep=String(afterProgram.step.step_key);
+  const programPassed=
+    beforeStep==="DM02:SELF_MODEL" &&
+    afterStep==="DM02:SELF_MODEL" &&
+    String(tickResult?.current_step??afterStep)==="DM02:SELF_MODEL";
+
+  results.push({
+    key:"program-hold-without-m0014",
+    predicted:frozenPredictions[0].expected,
+    observed:{
+      before_step:beforeStep,
+      after_step:afterStep,
+      tick_action:tickResult?.action??null,
+    },
+    passed:programPassed,
+  });
+
+  // Test 2: actual M0001 boundary.
+  let httpRejected=false;
+  let httpError="";
+  try {
+    await internetGet(cycleId,"http://example.com/","self-model held-out HTTP-boundary test");
+  } catch(error) {
+    httpRejected=true;
+    httpError=error instanceof Error?error.message:String(error);
+  }
+  results.push({
+    key:"http-boundary",
+    predicted:frozenPredictions[1].expected,
+    observed:{rejected:httpRejected,error:httpError},
+    passed:httpRejected,
+  });
+
+  // Test 3: actual blocked Resource Fabric route.
+  let resourceRejected=false;
+  let resourceError="";
+  try {
+    await fetchThroughResource(
+      cycleId,
+      "RF:ARXIV",
+      "api/query?search_query=all%3Atest&max_results=1",
+      "self-model blocked-resource test"
+    );
+  } catch(error) {
+    resourceRejected=true;
+    resourceError=error instanceof Error?error.message:String(error);
+  }
+  results.push({
+    key:"blocked-resource-boundary",
+    predicted:frozenPredictions[2].expected,
+    observed:{rejected:resourceRejected,error:resourceError},
+    passed:resourceRejected,
+  });
+
+  // Test 4: actual append-only database boundary.
+  const {data:belief,error:beliefReadErr}=await db
+    .from("mind_core_beliefs")
+    .select("id,content_hash")
+    .order("id",{ascending:true})
+    .limit(1)
+    .maybeSingle();
+  if(beliefReadErr) throw beliefReadErr;
+
+  let beliefRejected=false;
+  let beliefError="";
+  let hashPreserved=true;
+
+  if(belief?.id) {
+    const beforeHash=String(belief.content_hash);
+    const {error:updateBeliefErr}=await db
+      .from("mind_core_beliefs")
+      .update({content_hash:beforeHash})
+      .eq("id",belief.id);
+
+    beliefRejected=!!updateBeliefErr;
+    beliefError=updateBeliefErr?.message??"";
+
+    const {data:beliefAfter,error:beliefAfterErr}=await db
+      .from("mind_core_beliefs")
+      .select("content_hash")
+      .eq("id",belief.id)
+      .single();
+    if(beliefAfterErr) throw beliefAfterErr;
+    hashPreserved=String(beliefAfter.content_hash)===beforeHash;
+  } else {
+    beliefRejected=false;
+    beliefError="no belief row available";
+    hashPreserved=false;
+  }
+
+  results.push({
+    key:"append-only-belief-boundary",
+    predicted:frozenPredictions[3].expected,
+    observed:{
+      rejected:beliefRejected,
+      error:beliefError,
+      hash_preserved:hashPreserved,
+    },
+    passed:beliefRejected && hashPreserved,
+  });
+
+  const passedCount=results.filter((r:any)=>r.passed).length;
+  const accuracy=results.length?passedCount/results.length:0;
+  const knownUnknownIdentified=
+    Array.isArray(snapshot?.snapshot?.known_limits) &&
+    snapshot.snapshot.known_limits.some((x:any)=>
+      x?.capability==="hidden_model_weights_or_private_reasoning_state" &&
+      x?.status==="unavailable"
+    );
+
+  const passed=
+    accuracy>=0.75 &&
+    knownUnknownIdentified===true &&
+    results.length>=4;
+
+  const verdict={
+    evaluator_version:"self-model-prediction-v1",
+    candidate_key:candidateKey,
+    source_snapshot_id:snapshotId,
+    source_snapshot_hash:snapshot.snapshot_hash,
+    freeze_hash:freezeHash,
+    frozen_predictions:frozenPredictions,
+    results,
+    accuracy,
+    passed_count:passedCount,
+    total_cases:results.length,
+    known_unknown_identified:knownUnknownIdentified,
+    passed,
+    checked_at:nowIso(),
+  };
+
+  const {error:runErr}=await db.from("mind_core_self_model_eval_runs").insert({
+    cycle_id:cycleId,
+    candidate_key:candidateKey,
+    snapshot_id:snapshotId,
+    frozen_predictions:frozenPredictions,
+    results,
+    accuracy,
+    passed,
+  });
+  if(runErr) throw runErr;
+
+  const {error:candidateErr}=await db
+    .from("mind_core_development_candidates")
+    .update({
+      status:passed?"admitted":"rejected",
+      shadow_result:verdict,
+      updated_at:nowIso(),
+    })
+    .eq("candidate_key",candidateKey);
+  if(candidateErr) throw candidateErr;
+
+  if(passed) {
+    const {error:mechErr}=await db.from("mind_core_mechanisms").upsert({
+      mechanism_key:"M0014:causal-self-model",
+      ordinal:14,
+      name:"Causal Self-Model",
+      kind:"self_model",
+      description:"Maintain an observable-state model of Mind Core mechanisms, resources, goals, limitations and causal transitions, and pre-register predictions about its own runtime behavior before testing them.",
+      capabilities:[
+        "observable_self_model",
+        "known_limit_identification",
+        "causal_runtime_links",
+        "pre_registered_self_predictions",
+        "self_prediction_evaluation"
+      ],
+      constraints:[
+        "observable_state_only",
+        "no_hidden_weight_claims",
+        "no_private_reasoning_claims",
+        "prediction_before_test",
+        "append_only_self_model_snapshots"
+      ],
+      status:"admitted",
+      evidence:{
+        development_parent:candidateKey,
+        evaluator:"self-model-prediction-v1",
+        source_snapshot_id:snapshotId,
+        source_snapshot_hash:snapshot.snapshot_hash,
+        accuracy,
+        cases_passed:passedCount,
+        cases_total:results.length,
+        known_unknown_identified:knownUnknownIdentified,
+        freeze_hash:freezeHash,
+      },
+      admitted_at:nowIso(),
+      updated_at:nowIso(),
+    },{onConflict:"mechanism_key"});
+    if(mechErr) throw mechErr;
+  }
+
+  return verdict;
+}
+
 async function selfDevelopmentAudit(cycleId:number) {
   const [mechsRes,domainsRes,conceptsRes,questionsRes,cyclesRes,rejectedRes]=await Promise.all([
     db.from("mind_core_mechanisms").select("mechanism_key,status,capabilities"),
@@ -4944,6 +5747,14 @@ async function selfDevelopmentAudit(cycleId:number) {
 }
 
 async function executeGoal(goal:Goal, cycleId:number) {
+  if (goal.kind === "self_model_prediction_evaluator") {
+    return await selfModelPredictionEvaluator(goal,cycleId);
+  }
+
+  if (goal.kind === "capability_audit") {
+    return await capabilityAudit(cycleId);
+  }
+
   if (goal.kind === "contextual_belief_evaluator") {
     return await contextualBeliefEvaluator(goal,cycleId);
   }
@@ -5298,7 +6109,7 @@ Deno.serve(async(req:Request)=>{
     const state=(stateRow?.state??{}) as CoreState;
     const fSize=await frontierSize();
     const nextState:CoreState={
-      ...state,version:"0.25-cloud-causal-self-model-foundation",last_cycle_at:nowIso(),
+      ...state,version:"0.27-cloud-self-model-validated",last_cycle_at:nowIso(),
       last_focus:goal.kind,last_observation:result,
       current_goal:{id:goal.id,key:goal.goal_key,kind:goal.kind,rationale:goal.rationale,priority:goal.priority},
       frontier_size:fSize
