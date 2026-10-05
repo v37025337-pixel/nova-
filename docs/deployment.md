@@ -1,34 +1,58 @@
 # Runtime and deployment policy
 
-NOVA is a Python CLI package. Its supported entry points are declared in
-`pyproject.toml` under `[project.scripts]`; persistent local state and subprocess
-execution are part of the kernel runtime. The repository does not provide a
-WSGI/ASGI application for Vercel Functions.
+NOVA is a Python CLI/kernel repository. Its supported entry points are declared
+in `pyproject.toml`; it is not the production HTTP/browser runtime.
 
-The separate cloud runtime in `mind-core-cloud/` uses Supabase Postgres,
-Supabase Edge Functions and Supabase Cron. See
-[its runtime documentation](../mind-core-cloud/README.md).
+## Active cloud components
 
-## Vercel Git deployments
+The current Mind Core cloud stack is intentionally split:
 
-The root `vercel.json` sets `git.deploymentEnabled` to `false` for all
-branches. This prevents automatic production and preview deployments for every
-Vercel project connected to this repository, including `nova-` and
-`nova--fqt5`. It does not disable the GitHub Actions kernel verification workflow.
+- `nova-` — source/kernel repository and `mind-core-cloud/` source mirror.
+- Supabase — persistent state, Edge Function runtime, cron, Resource Fabric,
+  mechanisms, beliefs, evidence, and private bridge functions.
+- `v37025337-pixel/fastapi` — separate Vercel project used only for the
+  verified browser runtime.
+- Vercel Sandbox — ephemeral Firecracker microVM that runs the SHA-256-pinned
+  Ungoogled Chromium browser snapshot.
 
-Both Vercel production deployments of commit
-`5080b2b9df433be38cde75f34d5f5fa6654a56fb` selected the Python framework and
-failed during the build with `PYTHON_ENTRYPOINT_NOT_FOUND`. The root
-`pyproject.toml` describes an installable CLI package, not a Python HTTP
-entry point. A missing `package.json` was not the cause.
+The browser runtime is therefore **not** deployed from this repository.
 
-Historical failed deployments remain failed; disabling future deployments does
-not convert those records into successful builds. Vercel deployment status
-contexts are not required checks on the main branch as inspected on
-2026-10-04: main was unprotected and the repository ruleset list was empty.
+## Vercel Git deployments for nova-
 
-If a Vercel web application is introduced later, define and validate its actual
-HTTP runtime and project root before re-enabling Git deployments.
+The root `vercel.json` intentionally sets:
 
-Official configuration reference:
-https://vercel.com/docs/project-configuration/git-configuration#turning-off-all-automatic-deployments
+```json
+{
+  "git": {
+    "deploymentEnabled": false
+  }
+}
+```
+
+This prevents the historical false Vercel deployments of the NOVA CLI
+repository from producing misleading production failures.
+
+The earlier failures such as `PYTHON_ENTRYPOINT_NOT_FOUND` were caused by
+binding this CLI repository to a web deployment target. They are historical
+records and are not the active Mind Core runtime.
+
+## Browser runtime
+
+The active browser service is deployed from the separate repository/project:
+
+`v37025337-pixel/fastapi`
+
+It exposes a private HMAC-authenticated bridge to a Vercel Sandbox snapshot
+containing verified Ungoogled Chromium. Mind Core reaches it through private
+Supabase functions; user browser cookies/passwords are not imported.
+
+## Branch consolidation
+
+On 2026-10-05 all historical NOVA development branches were reviewed against
+`main`. Every branch except
+`fix/disable-vercel-auto-deploy-20261004` had no commits ahead of main. The
+useful deployment-policy content from that remaining branch was reconciled into
+main before branch refs were synchronized.
+
+This keeps `main` as the canonical kernel source while preserving the separate
+cloud/browser deployment boundaries.
