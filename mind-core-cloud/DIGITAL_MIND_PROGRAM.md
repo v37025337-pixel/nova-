@@ -72,16 +72,34 @@ tests. REJECT and UNRESOLVED are valid outcomes.
 
 Program key: `PROGRAM:DIGITAL_MIND_V1`
 
-Current step: `DM01:CONTEXTUAL_BELIEF_ARBITRATION`
+Current step: `DM02:SELF_MODEL`
 
-Target mechanism: `M0013:contextual-belief-arbitrator`
+DM01 status: **completed**
 
-Program launch cycle: `93`
+DM01 admitted mechanism:
+`M0013:contextual-belief-arbitrator`
 
-Current state: `researching`
+DM01 evidence:
+- development evaluator: 4 / 4 PASS on Python/Tcl official-source conflicts
+- independent production admission: 2 / 2 PASS on Node-API conflicts
+- no forced winner without a scope discriminator
+- provenance hashes preserved
 
-First research source:
-`https://plato.stanford.edu/entries/logic-belief-revision/`
+Current target mechanism:
+`M0014:causal-self-model`
+
+DM02 status: **researching**
+
+First self-model snapshot:
+- runtime cycle: `97`
+- snapshot id: `1`
+- snapshot SHA-256:
+  `4bbe9a8a24b6347750f158dd0b932a207316a13298f3da94bd5842c4e1c768b6`
+- admitted mechanisms observed: 13
+- admitted resources observed: 6
+- explicit known limitations: 4
+- causal links modeled: 4
+- pre-registered predictions: 3
 
 Next required artifact:
-**independent contextual-conflict evaluator**
+**held-out self-model prediction evaluator on runtime changes**
