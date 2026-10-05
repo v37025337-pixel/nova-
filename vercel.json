@@ -1,15 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "git": {
-    "deploymentEnabled": true
-  },
-  "experimentalServices": {
-    "browser": {
-      "entrypoint": "browser-runtime",
-      "routePrefix": "/",
-      "framework": "nextjs",
-      "memory": 2048,
-      "maxDuration": 300
-    }
+    "deploymentEnabled": false
   }
 }
