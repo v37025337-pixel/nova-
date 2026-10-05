@@ -126,3 +126,13 @@ Required admission evidence:
 - Production requires independent admission.
 - Confidence must be calibrated against observed outcomes.
 - No hidden-weight/private-reasoning claims.
+
+## DM08 local implementation increment (2026-10-05)
+
+A bounded rule-genesis shadow kernel and independent held-out evaluator are now
+available in source; see [GENESIS.md](GENESIS.md) for reproduction and limitations.
+The synthetic exercise retains a 5/7 rejection, generates a redesigned rule from
+a separate public training batch, and obtains 11/11 on a distinct held-out suite.
+The public example is reproducible and is not production admission evidence.
+DM08 stays ACTIVE; three new mechanisms, real-task evaluation and Deno/Supabase
+integration remain outstanding. No automatic production admission is enabled.

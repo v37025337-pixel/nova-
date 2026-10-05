@@ -1,0 +1,21 @@
+name: Mind Core bounded genesis verification
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  verify-bounded-genesis:
+    runs-on: ubuntu-latest
+    container: node:24.19.0-bookworm-slim
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Check cloud TypeScript syntax
+        run: for file in mind-core-cloud/edge/*.ts; do node --check "$file" || exit; done
+      - name: Verify bounded synthesis and independent admission
+        run: node --test mind-core-cloud/tests/*.test.ts
+      - name: Reproduce the synthetic shadow chain
+        run: node mind-core-cloud/scripts/run_genesis_shadow.ts

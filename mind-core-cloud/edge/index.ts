@@ -1,6 +1,8 @@
 
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
 import { createClient } from "jsr:@supabase/supabase-js@2";
+import { GENESIS_MECHANISM } from "./genesis.ts";
+import { runMechanismGenesisShadow } from "./genesis_shadow.ts";
 
 type Json = Record<string, any>;
 type Goal = {
@@ -4814,7 +4816,7 @@ async function capabilityAudit(cycleId:number) {
     evidence:{
       bounded_shadow_loop:true,
       historical_reject_redesign_admit:true,
-      target_mechanism:"M0019:mechanism-genesis",
+      target_mechanism:GENESIS_MECHANISM,
     },
     dependencies:["metacognitive_calibration"],
     constraints:["independent_evaluator_required","no_direct_prod_mutation"],
@@ -9295,6 +9297,12 @@ async function selfDevelopmentAudit(cycleId:number) {
 }
 
 async function executeGoal(goal:Goal, cycleId:number) {
+  // Explicit shadow exercise only. This path never writes to the mechanism registry
+  // or creates an autonomous genesis goal. Existing cycle logging preserves results.
+  if (goal.kind === "mechanism_genesis_shadow") {
+    return await runMechanismGenesisShadow();
+  }
+
   if (goal.kind === "metacognitive_calibration_self_test") {
     return await metacognitiveCalibrationSelfTest(goal,cycleId);
   }
