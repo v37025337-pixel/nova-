@@ -3805,6 +3805,260 @@ async function ungoogledSourceSync(goal:Goal, cycleId:number) {
   };
 }
 
+
+async function currentMindProgram() {
+  const {data:program,error:programErr}=await db
+    .from("mind_core_programs")
+    .select("*")
+    .eq("program_key","PROGRAM:DIGITAL_MIND_V1")
+    .single();
+  if(programErr) throw programErr;
+
+  const {data:step,error:stepErr}=await db
+    .from("mind_core_program_steps")
+    .select("*")
+    .eq("program_id",program.id)
+    .eq("ordinal",program.current_step)
+    .single();
+  if(stepErr) throw stepErr;
+
+  return {program,step};
+}
+
+async function researchContextualBeliefArbitration(
+  program:any,
+  step:any,
+  cycleId:number
+) {
+  const researchUrl="https://plato.stanford.edu/entries/logic-belief-revision/";
+  const {text,finalUrl,status}=await internetGet(
+    cycleId,
+    researchUrl,
+    "Digital Mind DM01 research: contextual belief arbitration"
+  );
+  const plain=stripHtml(text).toLowerCase();
+
+  const signals={
+    belief_revision:/belief revision/.test(plain),
+    inconsistency:/inconsisten/.test(plain),
+    contraction:/contraction/.test(plain),
+    revision:/revision/.test(plain),
+    epistemic_state:/epistemic/.test(plain),
+    agm:/\bagm\b/.test(plain),
+  };
+
+  const {data:candidate,error:candidateErr}=await db
+    .from("mind_core_development_candidates")
+    .select("*")
+    .eq("candidate_key","D0007:contextual-belief-arbitration")
+    .maybeSingle();
+  if(candidateErr) throw candidateErr;
+
+  const evidence={
+    ...(candidate?.internet_evidence??{}),
+    program_key:program.program_key,
+    program_step:step.step_key,
+    research_source:finalUrl,
+    http_status:status,
+    content_length:text.length,
+    signals,
+    next_required_artifact:"independent contextual-conflict evaluator",
+    researched_at:nowIso(),
+  };
+
+  if(candidate) {
+    const {error:updateErr}=await db
+      .from("mind_core_development_candidates")
+      .update({
+        status:"researching",
+        internet_evidence:evidence,
+        updated_at:nowIso(),
+      })
+      .eq("id",candidate.id);
+    if(updateErr) throw updateErr;
+  } else {
+    const {error:insertErr}=await db
+      .from("mind_core_development_candidates")
+      .insert({
+        candidate_key:"D0007:contextual-belief-arbitration",
+        title:"Contextual Belief Arbitration",
+        deficit:"Belief revision handles one claim against one verdict, but the kernel lacks a principled way to handle apparently conflicting beliefs supported by different sources, scopes, or contexts without oscillating or overwriting one side.",
+        hypothesis:"Conflicting beliefs should first be tested for scope/context separability; if they apply to disjoint contexts they should coexist under scoped beliefs, otherwise the conflict remains unresolved until discriminating evidence is found.",
+        candidate_kind:"mechanism_candidate_research",
+        proposed_change:{
+          suggested_mechanism_key:"M0013:contextual-belief-arbitrator",
+          protocol:["detect conflict","compare scope","split context or mark unresolved","seek discriminating evidence"],
+          safety:["no destructive overwrite","preserve both provenance chains","no forced winner without discriminator"],
+        },
+        source_metrics:{},
+        internet_evidence:evidence,
+        status:"researching",
+        shadow_result:{},
+        created_from_cycle:cycleId,
+      });
+    if(insertErr) throw insertErr;
+  }
+
+  return {
+    action:"research_contextual_belief_arbitration",
+    research_url:finalUrl,
+    http_status:status,
+    research_signals:signals,
+    development_candidate:"D0007:contextual-belief-arbitration",
+    candidate_status:"researching",
+    next_required_artifact:"independent contextual-conflict evaluator",
+  };
+}
+
+async function mindProgramOrchestrator(cycleId:number) {
+  const {program,step}=await currentMindProgram();
+
+  const {data:targetMechanism,error:targetErr}=await db
+    .from("mind_core_mechanisms")
+    .select("mechanism_key,status,admitted_at")
+    .eq("mechanism_key",String(step.mechanism_target??""))
+    .maybeSingle();
+  if(targetErr) throw targetErr;
+
+  if(targetMechanism?.status==="admitted") {
+    const {error:completeErr}=await db
+      .from("mind_core_program_steps")
+      .update({
+        status:"completed",
+        completed_at:nowIso(),
+        evidence:{
+          ...(step.evidence??{}),
+          admitted_mechanism:targetMechanism.mechanism_key,
+          admitted_at:targetMechanism.admitted_at,
+          completed_by_cycle:cycleId,
+        },
+        updated_at:nowIso(),
+      })
+      .eq("id",step.id);
+    if(completeErr) throw completeErr;
+
+    const nextOrdinal=Number(step.ordinal)+1;
+    const {data:nextStep,error:nextErr}=await db
+      .from("mind_core_program_steps")
+      .select("*")
+      .eq("program_id",program.id)
+      .eq("ordinal",nextOrdinal)
+      .maybeSingle();
+    if(nextErr) throw nextErr;
+
+    if(!nextStep) {
+      await db.from("mind_core_programs").update({
+        status:"completed",
+        updated_at:nowIso(),
+      }).eq("id",program.id);
+
+      await db.from("mind_core_program_events").insert({
+        program_id:program.id,
+        step_id:step.id,
+        cycle_id:cycleId,
+        event_type:"program_completed",
+        payload:{completed_step:step.step_key,completed_at:nowIso()},
+      });
+
+      return {
+        program_key:program.program_key,
+        status:"completed",
+        completed_step:step.step_key,
+      };
+    }
+
+    await db.from("mind_core_programs").update({
+      current_step:nextOrdinal,
+      updated_at:nowIso(),
+    }).eq("id",program.id);
+
+    await db.from("mind_core_program_steps").update({
+      status:"active",
+      started_at:nowIso(),
+      updated_at:nowIso(),
+    }).eq("id",nextStep.id);
+
+    await db.from("mind_core_program_events").insert({
+      program_id:program.id,
+      step_id:nextStep.id,
+      cycle_id:cycleId,
+      event_type:"step_advanced",
+      payload:{
+        from_step:step.step_key,
+        to_step:nextStep.step_key,
+        target_mechanism:nextStep.mechanism_target,
+      },
+    });
+
+    return {
+      program_key:program.program_key,
+      action:"advance_step",
+      completed_step:step.step_key,
+      current_step:nextStep.step_key,
+      target_mechanism:nextStep.mechanism_target,
+    };
+  }
+
+  await db.from("mind_core_program_steps").update({
+    status:"researching",
+    started_at:step.started_at??nowIso(),
+    updated_at:nowIso(),
+  }).eq("id",step.id);
+
+  let work:any={
+    action:"awaiting_step_mechanism",
+    target_mechanism:step.mechanism_target,
+  };
+
+  if(step.step_key==="DM01:CONTEXTUAL_BELIEF_ARBITRATION") {
+    work=await researchContextualBeliefArbitration(program,step,cycleId);
+  } else {
+    const {error:devGoalErr}=await db.from("mind_core_goals").upsert({
+      goal_key:"recurring:self-development-audit",
+      kind:"self_development_audit",
+      target:{},
+      rationale:`Program ${program.program_key} requests development for ${step.step_key}`,
+      priority:0.92,
+      status:"pending",
+      recurrence_minutes:180,
+      not_before:nowIso(),
+      updated_at:nowIso(),
+    },{onConflict:"goal_key"});
+    if(devGoalErr) throw devGoalErr;
+    work={
+      action:"scheduled_self_development",
+      target_mechanism:step.mechanism_target,
+    };
+  }
+
+  const {error:eventErr}=await db.from("mind_core_program_events").insert({
+    program_id:program.id,
+    step_id:step.id,
+    cycle_id:cycleId,
+    event_type:"step_tick",
+    payload:{
+      step_key:step.step_key,
+      target_mechanism:step.mechanism_target,
+      work,
+      tick_at:nowIso(),
+    },
+  });
+  if(eventErr) throw eventErr;
+
+  return {
+    program_key:program.program_key,
+    program_name:program.name,
+    program_status:program.status,
+    current_step:step.step_key,
+    step_title:step.title,
+    step_status:"researching",
+    target_mechanism:step.mechanism_target,
+    pass_criteria:step.pass_criteria,
+    fail_criteria:step.fail_criteria,
+    work,
+  };
+}
+
 async function selfDevelopmentAudit(cycleId:number) {
   const [mechsRes,domainsRes,conceptsRes,questionsRes,cyclesRes,rejectedRes]=await Promise.all([
     db.from("mind_core_mechanisms").select("mechanism_key,status,capabilities"),
@@ -4168,6 +4422,10 @@ async function selfDevelopmentAudit(cycleId:number) {
 }
 
 async function executeGoal(goal:Goal, cycleId:number) {
+  if (goal.kind === "mind_program_orchestrator") {
+    return await mindProgramOrchestrator(cycleId);
+  }
+
   if (goal.kind === "ungoogled_source_sync") {
     return await ungoogledSourceSync(goal,cycleId);
   }
@@ -4510,7 +4768,7 @@ Deno.serve(async(req:Request)=>{
     const state=(stateRow?.state??{}) as CoreState;
     const fSize=await frontierSize();
     const nextState:CoreState={
-      ...state,version:"0.22-cloud-consolidated-internet",last_cycle_at:nowIso(),
+      ...state,version:"0.23-cloud-digital-mind-program",last_cycle_at:nowIso(),
       last_focus:goal.kind,last_observation:result,
       current_goal:{id:goal.id,key:goal.goal_key,kind:goal.kind,rationale:goal.rationale,priority:goal.priority},
       frontier_size:fSize
