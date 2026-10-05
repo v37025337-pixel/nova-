@@ -4751,10 +4751,25 @@ async function capabilityAudit(cycleId:number) {
   });
 
   add({
+    capability_key:"self_learning_algorithm_genesis",
+    name:"Self-Learning Rule/Algorithm Synthesis",
+    category:"learning",
+    status:admittedMechs.has("M0015:self-learning-engine")?"admitted":"missing",
+    evidence:{
+      program_step:"DM03:SELF_LEARNING",
+      candidate:"D0010:self-learning-rule-synthesis",
+      candidate_status:
+        candidates.find((c:any)=>c.candidate_key==="D0010:self-learning-rule-synthesis")?.status??null,
+    },
+    dependencies:["causal_self_model","internet_read","falsification_and_belief_revision"],
+    constraints:["bounded_DSL","heldout_evaluation","artifact_provenance"],
+  });
+
+  add({
     capability_key:"goal_selection",
     name:"Multi-Goal Selection",
     category:"executive",
-    status:admittedMechs.has("M0015:goal-selection")?"admitted":"missing",
+    status:admittedMechs.has("M0016:goal-selection")?"admitted":"missing",
     evidence:{program_step:"DM03:GOAL_SYSTEM"},
     dependencies:["causal_self_model","curiosity_goal_birth"],
     constraints:["budget_aware","risk_aware"],
@@ -4764,7 +4779,7 @@ async function capabilityAudit(cycleId:number) {
     capability_key:"planning_replanning",
     name:"Multi-Step Planning and Replanning",
     category:"executive",
-    status:admittedMechs.has("M0016:planner-replanner")?"admitted":"missing",
+    status:admittedMechs.has("M0017:planner-replanner")?"admitted":"missing",
     evidence:{program_step:"DM04:PLANNING"},
     dependencies:["goal_selection","browser_render_and_dom"],
     constraints:["loop_detection","failure_replan"],
@@ -4774,7 +4789,7 @@ async function capabilityAudit(cycleId:number) {
     capability_key:"counterfactual_prediction",
     name:"Counterfactual World Model",
     category:"prediction",
-    status:admittedMechs.has("M0017:counterfactual-world-model")?"admitted":"missing",
+    status:admittedMechs.has("M0018:counterfactual-world-model")?"admitted":"missing",
     evidence:{program_step:"DM05:COUNTERFACTUAL_WORLD_MODEL"},
     dependencies:["planning_replanning"],
     constraints:["predict_before_action"],
@@ -4784,7 +4799,7 @@ async function capabilityAudit(cycleId:number) {
     capability_key:"metacognitive_calibration",
     name:"Metacognitive Calibration",
     category:"self_model",
-    status:admittedMechs.has("M0018:metacognitive-calibrator")?"admitted":"missing",
+    status:admittedMechs.has("M0019:metacognitive-calibrator")?"admitted":"missing",
     evidence:{program_step:"DM06:METACOGNITION"},
     dependencies:["counterfactual_prediction","falsification_and_belief_revision"],
     constraints:["confidence_must_track_accuracy"],
@@ -4794,7 +4809,7 @@ async function capabilityAudit(cycleId:number) {
     capability_key:"generic_mechanism_genesis",
     name:"Generic Mechanism Genesis",
     category:"self_improvement",
-    status:admittedMechs.has("M0019:mechanism-genesis")?"admitted":"partial",
+    status:admittedMechs.has("M0020:mechanism-genesis")?"admitted":"partial",
     evidence:{
       bounded_shadow_loop:true,
       historical_reject_redesign_admit:true,
@@ -4808,7 +4823,7 @@ async function capabilityAudit(cycleId:number) {
     capability_key:"cross_domain_transfer",
     name:"Cross-Domain Cognitive Transfer",
     category:"generalization",
-    status:admittedMechs.has("M0020:cognitive-transfer")
+    status:admittedMechs.has("M0021:cognitive-transfer")
       ?"admitted"
       :(admittedMechs.has("M0005:concept-transfer")?"partial":"missing"),
     evidence:{concept_transfer:admittedMechs.has("M0005:concept-transfer")},
@@ -4820,7 +4835,7 @@ async function capabilityAudit(cycleId:number) {
     capability_key:"persistent_self_history",
     name:"Persistent Self-History",
     category:"identity",
-    status:admittedMechs.has("M0021:self-history")
+    status:admittedMechs.has("M0022:self-history")
       ?"admitted"
       :(admittedMechs.has("M0011:belief-revision")?"partial":"missing"),
     evidence:{
@@ -4902,27 +4917,48 @@ async function capabilityAudit(cycleId:number) {
     });
   }
 
-  if(!admittedMechs.has("M0015:goal-selection")) {
+  if(!admittedMechs.has("M0015:self-learning-engine")) {
+    pushGap({
+      capability_key:"self_learning_algorithm_genesis",
+      deficit:"The kernel lacks an admitted general cycle that researches a deficit, writes an explicit algorithm/rule artifact, tests it on held-out evidence, and applies it to a fresh task.",
+      recommended_target:"M0015:self-learning-engine",
+      impact:1.0,
+      dependency_relevance:step.step_key==="DM03:SELF_LEARNING"?1.0:0.75,
+      feasibility:0.90,
+      measurability:1.0,
+      risk:0.05,
+      cost:0.10,
+      safe_to_auto_pursue:true,
+      goal:{
+        goal_key:"development-evaluator:D0010:v1",
+        kind:"self_learning_rule_evaluator",
+        target:{candidate_key:"D0010:self-learning-rule-synthesis"},
+        rationale:"Research, synthesize, held-out test, and freshly apply a bounded LRA-1 algorithm before M0015 admission.",
+      }
+    });
+  }
+
+  if(!admittedMechs.has("M0016:goal-selection")) {
     pushGap({
       capability_key:"goal_selection",
       deficit:"No admitted mechanism yet arbitrates competing goals using utility, cost, risk, deadlines, and resource budgets.",
-      recommended_target:"M0015:goal-selection",
+      recommended_target:"M0016:goal-selection",
       impact:0.95,
       dependency_relevance:step.step_key==="DM03:GOAL_SYSTEM"?1.0:0.70,
       feasibility:0.75,
       measurability:0.90,
       risk:0.10,
       cost:0.15,
-      safe_to_auto_pursue:admittedMechs.has("M0014:causal-self-model"),
+      safe_to_auto_pursue:admittedMechs.has("M0015:self-learning-engine"),
       goal:null,
     });
   }
 
-  if(!admittedMechs.has("M0016:planner-replanner")) {
+  if(!admittedMechs.has("M0017:planner-replanner")) {
     pushGap({
       capability_key:"planning_replanning",
       deficit:"No admitted general planner/replanner for multi-step tasks and failure recovery.",
-      recommended_target:"M0016:planner-replanner",
+      recommended_target:"M0017:planner-replanner",
       impact:0.95,
       dependency_relevance:0.65,
       feasibility:0.65,
@@ -4938,7 +4974,7 @@ async function capabilityAudit(cycleId:number) {
     pushGap({
       capability_key:"browser_interaction",
       deficit:"Browser can render JavaScript and inspect DOM but cannot yet perform admitted goal-bounded click/fill/navigation actions.",
-      recommended_target:"M0016A:browser-action-controller",
+      recommended_target:"M0017A:browser-action-controller",
       impact:0.80,
       dependency_relevance:0.55,
       feasibility:0.70,
@@ -4950,11 +4986,11 @@ async function capabilityAudit(cycleId:number) {
     });
   }
 
-  if(!admittedMechs.has("M0018:metacognitive-calibrator")) {
+  if(!admittedMechs.has("M0019:metacognitive-calibrator")) {
     pushGap({
       capability_key:"metacognitive_calibration",
       deficit:"The kernel records confidence but lacks an admitted mechanism that measures whether confidence matches empirical accuracy.",
-      recommended_target:"M0018:metacognitive-calibrator",
+      recommended_target:"M0019:metacognitive-calibrator",
       impact:0.90,
       dependency_relevance:0.50,
       feasibility:0.70,
@@ -4966,11 +5002,11 @@ async function capabilityAudit(cycleId:number) {
     });
   }
 
-  if(!admittedMechs.has("M0019:mechanism-genesis")) {
+  if(!admittedMechs.has("M0020:mechanism-genesis")) {
     pushGap({
       capability_key:"generic_mechanism_genesis",
       deficit:"Self-development exists as hand-built runtime logic but is not yet generalized into an admitted mechanism that can invent/evaluate new mechanisms across deficit types.",
-      recommended_target:"M0019:mechanism-genesis",
+      recommended_target:"M0020:mechanism-genesis",
       impact:1.0,
       dependency_relevance:0.45,
       feasibility:0.55,
@@ -5384,6 +5420,547 @@ async function selfModelPredictionEvaluator(goal:Goal,cycleId:number) {
   return verdict;
 }
 
+
+type LraCondition = {
+  feature:"consistency"|"coverage"|"left_uniqueness";
+  op:">="|"<=";
+  threshold:number;
+};
+
+type LraRule = {
+  language:"LRA-1";
+  kind:"decision_rule";
+  conditions:LraCondition[];
+  combine:"AND";
+  if_true:"accept";
+  if_false:"reject";
+};
+
+function relationExampleFromRun(run:any) {
+  const proposal=run?.train_result?.proposal??null;
+  const stats=proposal?.train_stats??null;
+  return {
+    case_key:String(run?.case_key??""),
+    label:run?.expect_generalizes===true,
+    features:{
+      consistency:Number(stats?.consistency??0),
+      coverage:Number(stats?.coverage??0),
+      left_uniqueness:Number(stats?.left_uniqueness??0),
+    },
+  };
+}
+
+function applyLraRule(rule:LraRule,features:any) {
+  const ok=rule.conditions.every((c)=>{
+    const value=Number(features?.[c.feature]??0);
+    return c.op===">="?value>=c.threshold:value<=c.threshold;
+  });
+  return ok ? "accept" : "reject";
+}
+
+function ruleAccuracy(rule:LraRule,examples:any[]) {
+  let correct=0;
+  for(const ex of examples) {
+    const predicted=applyLraRule(rule,ex.features)==="accept";
+    if(predicted===ex.label) correct += 1;
+  }
+  return examples.length?correct/examples.length:0;
+}
+
+function candidateThresholds(values:number[]) {
+  const unique=[...new Set(values.filter(Number.isFinite))].sort((a,b)=>a-b);
+  const out=new Set<number>();
+  for(const v of unique) out.add(v);
+  for(let i=0;i<unique.length-1;i++) {
+    out.add((unique[i]+unique[i+1])/2);
+  }
+  return [...out].sort((a,b)=>a-b);
+}
+
+function synthesizeLraRule(train:any[]) {
+  const features:LraCondition["feature"][]=[
+    "consistency","coverage","left_uniqueness"
+  ];
+  const atomic:LraCondition[]=[];
+
+  for(const feature of features) {
+    const thresholds=candidateThresholds(
+      train.map((e:any)=>Number(e.features?.[feature]??0))
+    );
+    for(const threshold of thresholds) {
+      atomic.push({feature,op:">=",threshold});
+      atomic.push({feature,op:"<=",threshold});
+    }
+  }
+
+  const rules:LraRule[]=[];
+  for(const c of atomic) {
+    rules.push({
+      language:"LRA-1",
+      kind:"decision_rule",
+      conditions:[c],
+      combine:"AND",
+      if_true:"accept",
+      if_false:"reject",
+    });
+  }
+
+  // If no single condition is sufficient, the engine can synthesize
+  // a two-condition conjunction rather than hand-patching a threshold.
+  for(let i=0;i<atomic.length;i++) {
+    for(let j=i+1;j<atomic.length;j++) {
+      if(atomic[i].feature===atomic[j].feature) continue;
+      rules.push({
+        language:"LRA-1",
+        kind:"decision_rule",
+        conditions:[atomic[i],atomic[j]],
+        combine:"AND",
+        if_true:"accept",
+        if_false:"reject",
+      });
+    }
+  }
+
+  let best:LraRule|null=null;
+  let bestAccuracy=-1;
+  let bestComplexity=999;
+  let bestMargin=-1;
+
+  for(const rule of rules) {
+    const accuracy=ruleAccuracy(rule,train);
+    const complexity=rule.conditions.length;
+    let margin=0;
+
+    for(const c of rule.conditions) {
+      const values=train.map((e:any)=>Number(e.features?.[c.feature]??0));
+      const d=Math.min(...values.map(v=>Math.abs(v-c.threshold)));
+      if(Number.isFinite(d)) margin += d;
+    }
+
+    if(
+      accuracy>bestAccuracy ||
+      (accuracy===bestAccuracy && complexity<bestComplexity) ||
+      (accuracy===bestAccuracy && complexity===bestComplexity && margin>bestMargin)
+    ) {
+      best=rule;
+      bestAccuracy=accuracy;
+      bestComplexity=complexity;
+      bestMargin=margin;
+    }
+  }
+
+  if(!best) throw new Error("LRA-1 synthesis produced no candidate rule");
+
+  return {
+    rule:best,
+    train_accuracy:bestAccuracy,
+    candidate_count:rules.length,
+    complexity:bestComplexity,
+  };
+}
+
+function lraRuleSource(rule:LraRule) {
+  const conditions=rule.conditions.map(c=>
+    c.feature+" "+c.op+" "+c.threshold.toFixed(12)
+  ).join(" AND ");
+  return [
+    "LANGUAGE LRA-1",
+    "TYPE decision_rule",
+    "IF "+conditions,
+    "THEN accept",
+    "ELSE reject",
+  ].join("\n");
+}
+
+async function selfLearningResearch(cycleId:number) {
+  const query="rule induction program synthesis decision rules";
+  const encoded=encodeURIComponent(query);
+  const evidence:any[]=[];
+
+  for(const job of [
+    {
+      key:"RF:CROSSREF",
+      path:`works?query.title=${encoded}&rows=3`,
+      purpose:"self-learning research: rule induction"
+    },
+    {
+      key:"RF:OPENALEX",
+      path:`works?search=${encoded}&per-page=3`,
+      purpose:"self-learning research: program synthesis"
+    }
+  ]) {
+    try {
+      const r=await fetchThroughResource(
+        cycleId,job.key,job.path,job.purpose
+      );
+      const parsed=JSON.parse(r.text);
+      let items:any[]=[];
+
+      if(job.key==="RF:CROSSREF") {
+        items=(parsed?.message?.items??[]).slice(0,3).map((x:any)=>({
+          title:Array.isArray(x?.title)?x.title[0]:x?.title??null,
+          doi:x?.DOI??null,
+          type:x?.type??null,
+        }));
+      } else {
+        items=(parsed?.results??[]).slice(0,3).map((x:any)=>({
+          title:x?.title??null,
+          doi:x?.doi??null,
+          type:x?.type??null,
+        }));
+      }
+
+      evidence.push({
+        resource_key:job.key,
+        http_status:r.http_status,
+        items,
+      });
+    } catch(error) {
+      evidence.push({
+        resource_key:job.key,
+        error:error instanceof Error?error.message:String(error),
+      });
+    }
+  }
+
+  return {
+    query,
+    sources:evidence,
+    successful_sources:evidence.filter(x=>!x.error).length,
+    researched_at:nowIso(),
+  };
+}
+
+async function selfLearningRuleEvaluator(goal:Goal,cycleId:number) {
+  const candidateKey=String(
+    goal.target?.candidate_key??"D0010:self-learning-rule-synthesis"
+  );
+
+  // Phase 1: research occurs before training-set freeze and synthesis.
+  const research=await selfLearningResearch(cycleId);
+  if(research.successful_sources<1) {
+    throw new Error("self-learning research phase found no usable research source");
+  }
+
+  // Historical D0004 is training. D0004R1 remains unseen until after rule synthesis.
+  const {data:trainRows,error:trainErr}=await db
+    .from("mind_core_relation_generalization_runs")
+    .select("*, mind_core_relation_generalization_cases!inner(case_key,expect_generalizes)")
+    .eq("candidate_key","D0004:heldout-relation-validation")
+    .order("id",{ascending:true});
+  if(trainErr) throw trainErr;
+
+  const train=(trainRows??[]).map((r:any)=>relationExampleFromRun({
+    ...r,
+    case_key:r.mind_core_relation_generalization_cases?.case_key,
+    expect_generalizes:r.mind_core_relation_generalization_cases?.expect_generalizes,
+  }));
+
+  if(train.length<4) throw new Error("self-learning training set too small");
+
+  const trainHash=await sha256Hex(JSON.stringify(train));
+  const synthesis=synthesizeLraRule(train);
+  const rule=synthesis.rule;
+  const generatedSource=lraRuleSource(rule);
+
+  const artifactSpec={
+    language:"LRA-1",
+    objective:"Decide whether a relation candidate is likely to generalize from observed train statistics.",
+    input_schema:{
+      consistency:"number[0,1]",
+      coverage:"number[0,1]",
+      left_uniqueness:"number[0,1]",
+    },
+    rule,
+    synthesis:{
+      method:"bounded program synthesis over single/two-condition threshold rules",
+      candidate_count:synthesis.candidate_count,
+      train_accuracy:synthesis.train_accuracy,
+      training_hash:trainHash,
+      heldout_labels_visible_during_synthesis:false,
+    }
+  };
+
+  const artifactHash=await sha256Hex(JSON.stringify({
+    artifact_key:"ALG:RELATION_GENERALIZATION_RULE",
+    version:1,
+    research,
+    spec:artifactSpec,
+    source:generatedSource,
+  }));
+
+  let artifact:any=null;
+  const {data:existing,error:existingErr}=await db
+    .from("mind_core_learning_artifacts")
+    .select("*")
+    .eq("artifact_hash",artifactHash)
+    .maybeSingle();
+  if(existingErr) throw existingErr;
+
+  if(existing) {
+    artifact=existing;
+  } else {
+    const {data:created,error:createErr}=await db
+      .from("mind_core_learning_artifacts")
+      .insert({
+        artifact_key:"ALG:RELATION_GENERALIZATION_RULE",
+        version:1,
+        parent_artifact_id:null,
+        artifact_type:"algorithm",
+        language:"LRA-1",
+        title:"Learned Relation Generalization Rule",
+        objective:"Classify relation candidates from observed structural statistics without a hard-coded domain predicate.",
+        research,
+        spec:artifactSpec,
+        generated_source:generatedSource,
+        status:"shadow",
+        artifact_hash:artifactHash,
+        created_from_cycle:cycleId,
+      })
+      .select("*")
+      .single();
+    if(createErr) throw createErr;
+    artifact=created;
+  }
+
+  const {error:trainExpErr}=await db
+    .from("mind_core_learning_experiments")
+    .insert({
+      artifact_id:artifact.id,
+      cycle_id:cycleId,
+      experiment_type:"train",
+      dataset_key:"D0004:relation-generalization:v1",
+      frozen_input_hash:trainHash,
+      result:{
+        examples:train,
+        synthesized_rule:rule,
+        generated_source:generatedSource,
+        accuracy:synthesis.train_accuracy,
+      },
+      score:synthesis.train_accuracy,
+      passed:synthesis.train_accuracy>=0.75,
+    });
+  if(trainExpErr) throw trainExpErr;
+
+  // Phase 2: held-out labels are fetched only after artifact serialization.
+  const {data:heldRows,error:heldErr}=await db
+    .from("mind_core_relation_generalization_runs")
+    .select("*, mind_core_relation_generalization_cases!inner(case_key,expect_generalizes)")
+    .eq("candidate_key","D0004R1:key-directed-relation-generalization")
+    .order("id",{ascending:true});
+  if(heldErr) throw heldErr;
+
+  const heldout=(heldRows??[]).map((r:any)=>relationExampleFromRun({
+    ...r,
+    case_key:r.mind_core_relation_generalization_cases?.case_key,
+    expect_generalizes:r.mind_core_relation_generalization_cases?.expect_generalizes,
+  }));
+
+  const heldHash=await sha256Hex(JSON.stringify(heldout));
+  const heldResults=heldout.map((ex:any)=>{
+    const output=applyLraRule(rule,ex.features);
+    const predicted=output==="accept";
+    return {
+      case_key:ex.case_key,
+      features:ex.features,
+      expected:ex.label,
+      output,
+      passed:predicted===ex.label,
+    };
+  });
+  const heldAccuracy=heldResults.length
+    ? heldResults.filter((x:any)=>x.passed).length/heldResults.length
+    : 0;
+
+  const {error:heldExpErr}=await db
+    .from("mind_core_learning_experiments")
+    .insert({
+      artifact_id:artifact.id,
+      cycle_id:cycleId,
+      experiment_type:"heldout",
+      dataset_key:"D0004R1:key-directed-relation-generalization:v2",
+      frozen_input_hash:heldHash,
+      result:{
+        examples:heldResults,
+        heldout_labels_hidden_until_after_synthesis:true,
+        accuracy:heldAccuracy,
+      },
+      score:heldAccuracy,
+      passed:heldAccuracy>=0.75,
+    });
+  if(heldExpErr) throw heldExpErr;
+
+  // Phase 3: apply learned artifact to a fresh relation from the independent
+  // M0009 admission source (HTTP Field Registry), not part of train/heldout.
+  const {data:m9,error:m9Err}=await db
+    .from("mind_core_mechanisms")
+    .select("evidence")
+    .eq("mechanism_key","M0009:key-directed-relation-generalizer")
+    .single();
+  if(m9Err) throw m9Err;
+
+  const freshRel=m9?.evidence?.independent_self_test?.matched_relation??null;
+  const freshStats=freshRel?.train_stats??null;
+  if(!freshStats) throw new Error("fresh application relation evidence unavailable");
+
+  const freshInput={
+    source:"M0009 independent HTTP Field Registry admission",
+    relation:{
+      left_header:freshRel.left_header,
+      right_header:freshRel.right_header,
+    },
+    features:{
+      consistency:Number(freshStats.consistency??0),
+      coverage:Number(freshStats.coverage??0),
+      left_uniqueness:Number(freshStats.left_uniqueness??0),
+    }
+  };
+  const freshOutput=applyLraRule(rule,freshInput.features);
+  const freshPassed=freshOutput==="accept";
+
+  const {error:appErr}=await db
+    .from("mind_core_learning_applications")
+    .insert({
+      artifact_id:artifact.id,
+      cycle_id:cycleId,
+      application_key:"fresh:http-fields:field-name-to-status",
+      input:freshInput,
+      output:{
+        decision:freshOutput,
+        rule,
+      },
+      evidence:{
+        source_mechanism:"M0009:key-directed-relation-generalizer",
+        independent_from_training:true,
+        independent_from_heldout:true,
+      },
+      passed:freshPassed,
+    });
+  if(appErr) throw appErr;
+
+  const {error:freshExpErr}=await db
+    .from("mind_core_learning_experiments")
+    .insert({
+      artifact_id:artifact.id,
+      cycle_id:cycleId,
+      experiment_type:"fresh_application",
+      dataset_key:"M0009:http-fields:admission",
+      frozen_input_hash:await sha256Hex(JSON.stringify(freshInput)),
+      result:{
+        input:freshInput,
+        output:freshOutput,
+      },
+      score:freshPassed?1:0,
+      passed:freshPassed,
+    });
+  if(freshExpErr) throw freshExpErr;
+
+  const passed=
+    synthesis.train_accuracy>=0.75 &&
+    heldAccuracy>=0.75 &&
+    freshPassed &&
+    research.successful_sources>=1;
+
+  const verdict={
+    evaluator_version:"self-learning-lra-v1",
+    candidate_key:candidateKey,
+    research,
+    artifact_id:artifact.id,
+    artifact_key:artifact.artifact_key,
+    artifact_hash:artifactHash,
+    generated_source:generatedSource,
+    rule,
+    train_accuracy:synthesis.train_accuracy,
+    heldout_accuracy:heldAccuracy,
+    heldout_results:heldResults,
+    fresh_application:{
+      input:freshInput,
+      output:freshOutput,
+      passed:freshPassed,
+    },
+    train_test_separation:true,
+    arbitrary_code_execution:false,
+    artifact_interpreted_by:"LRA-1 interpreter",
+    reject_redesign_supported:true,
+    passed,
+    checked_at:nowIso(),
+  };
+
+  await db.from("mind_core_learning_artifacts").update({
+    status:passed?"admitted":"rejected",
+    admitted_at:passed?nowIso():null,
+  }).eq("id",artifact.id);
+
+  const {error:candidateErr}=await db
+    .from("mind_core_development_candidates")
+    .update({
+      status:passed?"admitted":"rejected",
+      shadow_result:verdict,
+      source_metrics:{
+        research_sources:research.successful_sources,
+        train_accuracy:synthesis.train_accuracy,
+        heldout_accuracy:heldAccuracy,
+        fresh_application_passed:freshPassed,
+      },
+      internet_evidence:{
+        research,
+        training_hash:trainHash,
+        heldout_hash:heldHash,
+        artifact_hash:artifactHash,
+      },
+      updated_at:nowIso(),
+    })
+    .eq("candidate_key",candidateKey);
+  if(candidateErr) throw candidateErr;
+
+  if(passed) {
+    const {error:mechErr}=await db.from("mind_core_mechanisms").upsert({
+      mechanism_key:"M0015:self-learning-engine",
+      ordinal:15,
+      name:"Self-Learning Engine",
+      kind:"learning_and_algorithm_genesis",
+      description:"Research a deficit, freeze training evidence, synthesize an explicit bounded algorithm/rule artifact, serialize and hash it, evaluate on held-out data, apply it to a fresh task, and admit or reject the artifact without arbitrary code execution.",
+      capabilities:[
+        "research_before_synthesis",
+        "rule_induction",
+        "bounded_program_synthesis",
+        "algorithm_artifact_generation",
+        "artifact_hashing",
+        "heldout_evaluation",
+        "fresh_task_application",
+        "reject_redesign_loop"
+      ],
+      constraints:[
+        "LRA-1_bounded_DSL_v1",
+        "no_eval",
+        "no_arbitrary_shell",
+        "no_network_inside_artifact",
+        "heldout_labels_hidden_until_after_synthesis",
+        "artifact_provenance_required",
+        "production_use_only_after_admission"
+      ],
+      status:"admitted",
+      evidence:{
+        development_parent:candidateKey,
+        evaluator:"self-learning-lra-v1",
+        research,
+        artifact_id:artifact.id,
+        artifact_hash:artifactHash,
+        generated_source:generatedSource,
+        train_accuracy:synthesis.train_accuracy,
+        heldout_accuracy:heldAccuracy,
+        fresh_application_passed:freshPassed,
+        train_test_separation:true,
+      },
+      admitted_at:nowIso(),
+      updated_at:nowIso(),
+    },{onConflict:"mechanism_key"});
+    if(mechErr) throw mechErr;
+  }
+
+  return verdict;
+}
+
 async function selfDevelopmentAudit(cycleId:number) {
   const [mechsRes,domainsRes,conceptsRes,questionsRes,cyclesRes,rejectedRes]=await Promise.all([
     db.from("mind_core_mechanisms").select("mechanism_key,status,capabilities"),
@@ -5747,6 +6324,10 @@ async function selfDevelopmentAudit(cycleId:number) {
 }
 
 async function executeGoal(goal:Goal, cycleId:number) {
+  if (goal.kind === "self_learning_rule_evaluator") {
+    return await selfLearningRuleEvaluator(goal,cycleId);
+  }
+
   if (goal.kind === "self_model_prediction_evaluator") {
     return await selfModelPredictionEvaluator(goal,cycleId);
   }
@@ -6109,7 +6690,7 @@ Deno.serve(async(req:Request)=>{
     const state=(stateRow?.state??{}) as CoreState;
     const fSize=await frontierSize();
     const nextState:CoreState={
-      ...state,version:"0.27-cloud-self-model-validated",last_cycle_at:nowIso(),
+      ...state,version:"0.28-cloud-self-learning-engine",last_cycle_at:nowIso(),
       last_focus:goal.kind,last_observation:result,
       current_goal:{id:goal.id,key:goal.goal_key,kind:goal.kind,rationale:goal.rationale,priority:goal.priority},
       frontier_size:fSize
