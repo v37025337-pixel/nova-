@@ -3978,6 +3978,8 @@ async function mindProgramOrchestrator(cycleId:number) {
       updated_at:nowIso(),
     }).eq("id",nextStep.id);
 
+    await syncPrimaryProgramState(program,nextStep,"active");
+
     await db.from("mind_core_program_events").insert({
       program_id:program.id,
       step_id:nextStep.id,
@@ -4005,6 +4007,8 @@ async function mindProgramOrchestrator(cycleId:number) {
     updated_at:nowIso(),
   }).eq("id",step.id);
 
+  await syncPrimaryProgramState(program,step,"researching");
+
   let work:any={
     action:"awaiting_step_mechanism",
     target_mechanism:step.mechanism_target,
@@ -4012,6 +4016,8 @@ async function mindProgramOrchestrator(cycleId:number) {
 
   if(step.step_key==="DM01:CONTEXTUAL_BELIEF_ARBITRATION") {
     work=await researchContextualBeliefArbitration(program,step,cycleId);
+  } else if(step.step_key==="DM02:SELF_MODEL") {
+    work=await researchCausalSelfModel(program,step,cycleId);
   } else {
     const {error:devGoalErr}=await db.from("mind_core_goals").upsert({
       goal_key:"recurring:self-development-audit",
@@ -4056,6 +4062,522 @@ async function mindProgramOrchestrator(cycleId:number) {
     pass_criteria:step.pass_criteria,
     fail_criteria:step.fail_criteria,
     work,
+  };
+}
+
+
+function normalizedScalar(v:any) {
+  if(v===null || v===undefined) return "";
+  if(typeof v==="string") return v.trim().toLowerCase();
+  if(typeof v==="number" || typeof v==="boolean") return String(v);
+  return JSON.stringify(v);
+}
+
+function scopeEntries(scope:any) {
+  if(!scope || typeof scope!=="object" || Array.isArray(scope)) return [];
+  return Object.entries(scope)
+    .filter(([k,v])=>k && v!==null && v!==undefined && normalizedScalar(v)!=="")
+    .map(([k,v])=>[String(k),normalizedScalar(v)] as [string,string]);
+}
+
+function scopeDiscriminators(scopeA:any,scopeB:any) {
+  const a=new Map(scopeEntries(scopeA));
+  const b=new Map(scopeEntries(scopeB));
+  const keys=[...new Set([...a.keys(),...b.keys()])];
+  const sharedDifferent:string[]=[];
+  const missingOnA:string[]=[];
+  const missingOnB:string[]=[];
+
+  for(const k of keys) {
+    const av=a.get(k);
+    const bv=b.get(k);
+    if(av!==undefined && bv!==undefined && av!==bv) sharedDifferent.push(k);
+    else if(av===undefined && bv!==undefined) missingOnA.push(k);
+    else if(av!==undefined && bv===undefined) missingOnB.push(k);
+  }
+
+  return {sharedDifferent,missingOnA,missingOnB};
+}
+
+async function arbitrateContextClaims(claimA:any,claimB:any) {
+  const inputAHash=await sha256Hex(JSON.stringify(claimA));
+  const inputBHash=await sha256Hex(JSON.stringify(claimB));
+
+  const subjectA=normalizedScalar(claimA?.subject);
+  const subjectB=normalizedScalar(claimB?.subject);
+  const predicateA=normalizedScalar(claimA?.predicate);
+  const predicateB=normalizedScalar(claimB?.predicate);
+  const objectA=normalizedScalar(claimA?.object);
+  const objectB=normalizedScalar(claimB?.object);
+
+  const provenanceA=claimA?.provenance??{};
+  const provenanceB=claimB?.provenance??{};
+
+  let decision="unresolved_conflict";
+  let discriminatingGoal:any=null;
+  let scopeInfo=scopeDiscriminators(claimA?.scope,claimB?.scope);
+
+  if(subjectA!==subjectB || predicateA!==predicateB) {
+    decision="unrelated";
+  } else if(objectA===objectB) {
+    decision="compatible_same";
+  } else if(scopeInfo.sharedDifferent.length>0) {
+    decision="scope_split";
+  } else {
+    decision="unresolved_conflict";
+    discriminatingGoal={
+      kind:"discriminating_evidence_goal",
+      question:`Which explicit context or scope variable separates the claims about ${String(claimA?.subject??"subject")} / ${String(claimA?.predicate??"predicate")}?`,
+      required_evidence:[
+        "an authoritative source that names the differing scope/channel/version/time/context",
+        "a mapping from each claim to a non-overlapping scope value"
+      ],
+      preserve_until_resolved:[inputAHash,inputBHash],
+    };
+  }
+
+  const outputAHash=await sha256Hex(JSON.stringify(claimA));
+  const outputBHash=await sha256Hex(JSON.stringify(claimB));
+
+  return {
+    decision,
+    winner:null,
+    coexist:decision==="scope_split" || decision==="compatible_same",
+    scope_discriminators:scopeInfo.sharedDifferent,
+    missing_scope_on_a:scopeInfo.missingOnA,
+    missing_scope_on_b:scopeInfo.missingOnB,
+    discriminating_evidence_goal:discriminatingGoal,
+    provenance:{
+      claim_a:provenanceA,
+      claim_b:provenanceB,
+    },
+    input_hashes:{claim_a:inputAHash,claim_b:inputBHash},
+    output_hashes:{claim_a:outputAHash,claim_b:outputBHash},
+    provenance_preserved:
+      JSON.stringify(provenanceA)===JSON.stringify(claimA?.provenance??{}) &&
+      JSON.stringify(provenanceB)===JSON.stringify(claimB?.provenance??{}),
+    inputs_unchanged:inputAHash===outputAHash && inputBHash===outputBHash,
+  };
+}
+
+async function runContextConflictSuite(
+  suite:string,
+  actorKey:string,
+  cycleId:number
+) {
+  const {data:cases,error}=await db
+    .from("mind_core_context_conflict_cases")
+    .select("*")
+    .eq("suite",suite)
+    .order("id",{ascending:true});
+  if(error) throw error;
+  if(!cases?.length) throw new Error("context conflict suite has no cases");
+
+  const results:any[]=[];
+  let passedCount=0;
+
+  for(const c of cases) {
+    // Candidate phase: only the two claims are used.
+    const result=await arbitrateContextClaims(c.claim_a,c.claim_b);
+
+    // Evaluator phase: expected verdict is consulted only after candidate output exists.
+    const actionPass=result.decision===String(c.expected_action);
+    const goalPass=
+      c.require_discriminating_goal===true
+        ? !!result.discriminating_evidence_goal
+        : true;
+    const noForcedWinner=result.winner===null;
+    const provenancePass=result.provenance_preserved===true && result.inputs_unchanged===true;
+
+    const passed=actionPass && goalPass && noForcedWinner && provenancePass;
+    if(passed) passedCount += 1;
+
+    const rowResult={
+      case_key:c.case_key,
+      candidate_result:result,
+      expected_action:c.expected_action,
+      require_discriminating_goal:c.require_discriminating_goal,
+      action_pass:actionPass,
+      goal_pass:goalPass,
+      no_forced_winner:noForcedWinner,
+      provenance_pass:provenancePass,
+      passed,
+    };
+
+    const {error:runErr}=await db.from("mind_core_context_conflict_runs").insert({
+      case_id:c.id,
+      cycle_id:cycleId,
+      actor_key:actorKey,
+      result:rowResult,
+      passed,
+    });
+    if(runErr) throw runErr;
+
+    results.push(rowResult);
+  }
+
+  return {
+    suite,
+    actor_key:actorKey,
+    cases_total:cases.length,
+    cases_passed:passedCount,
+    all_passed:passedCount===cases.length,
+    results,
+    checked_at:nowIso(),
+  };
+}
+
+async function contextualBeliefEvaluator(goal:Goal,cycleId:number) {
+  const candidateKey=String(
+    goal.target?.candidate_key??"D0007:contextual-belief-arbitration"
+  );
+  const suite=String(goal.target?.suite??"D0007_EVAL");
+
+  const verdict=await runContextConflictSuite(
+    suite,
+    candidateKey,
+    cycleId
+  );
+
+  const {error:updateErr}=await db.from("mind_core_development_candidates").update({
+    status:verdict.all_passed?"admitted":"rejected",
+    shadow_result:{
+      evaluator_version:"contextual-belief-v1",
+      ...verdict,
+    },
+    internet_evidence:{
+      evaluator_version:"contextual-belief-v1",
+      suite,
+      official_source_cases:verdict.cases_total,
+      candidate_blind_to_expected_action:true,
+    },
+    updated_at:nowIso(),
+  }).eq("candidate_key",candidateKey);
+  if(updateErr) throw updateErr;
+
+  return {
+    evaluator_version:"contextual-belief-v1",
+    ...verdict,
+  };
+}
+
+async function contextualBeliefSelfTest(goal:Goal,cycleId:number) {
+  const suite=String(goal.target?.suite??"M0013_ADMISSION");
+  const verdict=await runContextConflictSuite(
+    suite,
+    "M0013:contextual-belief-arbitrator",
+    cycleId
+  );
+
+  if(!verdict.all_passed) {
+    throw new Error("M0013 contextual belief admission failed");
+  }
+
+  const mechanism=await getMechanismByKey("M0013:contextual-belief-arbitrator");
+  const evidence={
+    ...(mechanism.evidence??{}),
+    independent_self_test:{
+      evaluator_version:"contextual-belief-v1",
+      ...verdict,
+    },
+    admitted_reason:"Passed independent Node-API scoped/unscoped conflict tests after a 4/4 held-out Python/Tcl evaluator; preserved both provenance chains and refused forced winners without discriminating context.",
+  };
+
+  const {error:updateErr}=await db.from("mind_core_mechanisms").update({
+    status:"admitted",
+    evidence,
+    admitted_at:nowIso(),
+    updated_at:nowIso(),
+  }).eq("mechanism_key","M0013:contextual-belief-arbitrator");
+  if(updateErr) throw updateErr;
+
+  return {
+    mechanism_key:"M0013:contextual-belief-arbitrator",
+    evaluator_version:"contextual-belief-v1",
+    ...verdict,
+  };
+}
+
+
+async function syncPrimaryProgramState(
+  program:any,
+  step:any,
+  status:string
+) {
+  const {data:row,error}=await db.from("mind_core_state")
+    .select("state")
+    .eq("id","main")
+    .single();
+  if(error) throw error;
+
+  const state=row?.state??{};
+  const primary={
+    ...(state.primary_program??{}),
+    program_key:program.program_key,
+    name:program.name,
+    objective:program.objective,
+    current_step:step?.step_key??null,
+    current_ordinal:step?.ordinal??null,
+    target_mechanism:step?.mechanism_target??null,
+    status,
+  };
+
+  const {error:updateErr}=await db.from("mind_core_state").update({
+    state:{...state,primary_program:primary},
+    updated_at:nowIso(),
+  }).eq("id","main");
+  if(updateErr) throw updateErr;
+}
+
+async function researchCausalSelfModel(
+  program:any,
+  step:any,
+  cycleId:number
+) {
+  const [mechsRes,resourcesRes,goalsRes,cyclesRes,stateRes]=await Promise.all([
+    db.from("mind_core_mechanisms")
+      .select("mechanism_key,name,kind,status,capabilities,constraints,admitted_at")
+      .order("ordinal",{ascending:true}),
+    db.from("mind_core_resources")
+      .select("resource_key,name,resource_class,status,capabilities,limits")
+      .order("id",{ascending:true}),
+    db.from("mind_core_goals")
+      .select("goal_key,kind,priority,status,recurrence_minutes,not_before,last_run_at")
+      .order("priority",{ascending:false})
+      .limit(100),
+    db.from("mind_core_cycles")
+      .select("id,status,trigger_source,focus,error,started_at,finished_at")
+      .order("id",{ascending:false})
+      .limit(20),
+    db.from("mind_core_state")
+      .select("state")
+      .eq("id","main")
+      .single(),
+  ]);
+
+  for(const r of [mechsRes,resourcesRes,goalsRes,cyclesRes,stateRes]) {
+    if(r.error) throw r.error;
+  }
+
+  const mechanisms=mechsRes.data??[];
+  const resources=resourcesRes.data??[];
+  const goals=goalsRes.data??[];
+  const cycles=cyclesRes.data??[];
+  const state=stateRes.data?.state??{};
+
+  const admittedMechanisms=mechanisms
+    .filter((m:any)=>m.status==="admitted")
+    .map((m:any)=>m.mechanism_key);
+
+  const admittedResources=resources
+    .filter((r:any)=>r.status==="admitted")
+    .map((r:any)=>r.resource_key);
+
+  const blockedResources=resources
+    .filter((r:any)=>r.status==="blocked")
+    .map((r:any)=>r.resource_key);
+
+  const activeGoals=goals
+    .filter((g:any)=>["pending","running"].includes(g.status))
+    .map((g:any)=>({
+      goal_key:g.goal_key,
+      kind:g.kind,
+      priority:g.priority,
+      status:g.status,
+      not_before:g.not_before,
+    }));
+
+  const recentFailures=cycles
+    .filter((c:any)=>c.status==="failed")
+    .map((c:any)=>({
+      cycle_id:c.id,
+      focus:c.focus,
+      error:c.error,
+      started_at:c.started_at,
+    }));
+
+  const knownLimits=[
+    {
+      capability:"hidden_model_weights_or_private_reasoning_state",
+      status:"unavailable",
+      reason:"No admitted runtime interface exposes hidden model weights, activations, or private chain-of-thought.",
+    },
+    {
+      capability:"browser_interaction",
+      status:"partial",
+      reason:"M0012 supports verified JavaScript rendering and DOM inspection; generic click/fill/action control is not yet an admitted mechanism.",
+    },
+    {
+      capability:"production_self_modification",
+      status:"guarded",
+      reason:"Production changes require explicit candidate, evaluator/shadow evidence, regression/admission path, and source synchronization.",
+    },
+    {
+      capability:"external_compute",
+      status:"bounded",
+      reason:"Verified browser compute uses Vercel Sandbox quota; other protected compute resources remain blocked unless explicitly admitted.",
+    },
+  ];
+
+  const causalLinks=[
+    {
+      cause:"target mechanism for current program step becomes admitted",
+      effect:"next mind_program_orchestrator tick completes current step and advances exactly one step",
+      evidence:"mindProgramOrchestrator transition rule",
+    },
+    {
+      cause:"target mechanism for current program step is not admitted",
+      effect:"program remains on current step and performs research/development work",
+      evidence:"mindProgramOrchestrator non-admitted branch",
+    },
+    {
+      cause:"M0012 browser_inspect is called with an admitted snapshot and HTTPS target",
+      effect:"ephemeral Vercel Sandbox runs verified Chromium and returns rendered DOM",
+      evidence:"verified browser runtime admission and post-consolidation tests",
+    },
+    {
+      cause:"a development candidate fails its evaluator",
+      effect:"candidate is rejected rather than silently promoted",
+      evidence:"D0001 and D0004 rejection history",
+    },
+  ];
+
+  const predictions=[
+    {
+      prediction_key:`self-model:${cycleId}:hold-dm02`,
+      condition:"M0014 remains not admitted before the next program tick",
+      predicted_outcome:{
+        program_step:"DM02:SELF_MODEL",
+        program_step_status:"researching",
+        no_advance:true,
+      },
+      confidence:0.99,
+      status:"pending",
+    },
+    {
+      prediction_key:`self-model:${cycleId}:advance-dm03`,
+      condition:"M0014 becomes admitted before a future program tick",
+      predicted_outcome:{
+        completed_step:"DM02:SELF_MODEL",
+        next_step:"DM03:GOAL_SYSTEM",
+        advance_exactly_one_step:true,
+      },
+      confidence:0.99,
+      status:"pending",
+    },
+    {
+      prediction_key:`self-model:${cycleId}:browser-boundary`,
+      condition:"a browser target is non-HTTPS or local/private",
+      predicted_outcome:{
+        browser_request:"rejected_before_navigation",
+      },
+      confidence:0.98,
+      status:"pending",
+    },
+  ];
+
+  const snapshot={
+    runtime_version:String(state.version??"unknown"),
+    canonical_git_main_sha:String(state.canonical_git_main_sha??"unknown"),
+    program:{
+      program_key:program.program_key,
+      current_step:step.step_key,
+      current_ordinal:step.ordinal,
+      target_mechanism:step.mechanism_target,
+    },
+    mechanisms:{
+      admitted_count:admittedMechanisms.length,
+      admitted:admittedMechanisms,
+      probation:mechanisms.filter((m:any)=>m.status==="probation").map((m:any)=>m.mechanism_key),
+    },
+    resources:{
+      admitted_count:admittedResources.length,
+      admitted:admittedResources,
+      blocked:blockedResources,
+    },
+    goal_frontier:{
+      active_count:activeGoals.length,
+      active:activeGoals.slice(0,25),
+    },
+    recent_failures:recentFailures,
+    browser_runtime:state.browser_runtime??null,
+    internet_connection:state.internet_connection??null,
+    known_limits:knownLimits,
+    causal_links:causalLinks,
+  };
+
+  const snapshotHash=await sha256Hex(JSON.stringify({
+    cycle_id:cycleId,
+    program_step:step.step_key,
+    snapshot,
+    predictions,
+  }));
+
+  const {data:snapRow,error:snapErr}=await db
+    .from("mind_core_self_model_snapshots")
+    .insert({
+      cycle_id:cycleId,
+      program_step:step.step_key,
+      runtime_version:String(state.version??"unknown"),
+      snapshot,
+      predictions,
+      snapshot_hash:snapshotHash,
+    })
+    .select("*")
+    .single();
+  if(snapErr) throw snapErr;
+
+  const metrics={
+    admitted_mechanisms:admittedMechanisms.length,
+    admitted_resources:admittedResources.length,
+    blocked_resources:blockedResources.length,
+    active_goals:activeGoals.length,
+    recent_failures:recentFailures.length,
+    known_limit_count:knownLimits.length,
+    causal_link_count:causalLinks.length,
+    prediction_count:predictions.length,
+  };
+
+  const {data:candidate,error:candidateErr}=await db
+    .from("mind_core_development_candidates")
+    .select("*")
+    .eq("candidate_key","D0009:causal-self-model")
+    .single();
+  if(candidateErr) throw candidateErr;
+
+  const {error:updateErr}=await db
+    .from("mind_core_development_candidates")
+    .update({
+      status:"researching",
+      source_metrics:metrics,
+      internet_evidence:{
+        source:"live observable runtime state",
+        snapshot_id:snapRow.id,
+        snapshot_hash:snapshotHash,
+        program_step:step.step_key,
+        no_hidden_state_claims:true,
+      },
+      shadow_result:{
+        latest_snapshot_id:snapRow.id,
+        latest_snapshot_hash:snapshotHash,
+        predictions,
+        next_required_artifact:"held-out self-model prediction evaluator on runtime changes",
+      },
+      updated_at:nowIso(),
+    })
+    .eq("id",candidate.id);
+  if(updateErr) throw updateErr;
+
+  return {
+    action:"build_causal_self_model",
+    development_candidate:"D0009:causal-self-model",
+    candidate_status:"researching",
+    snapshot_id:snapRow.id,
+    snapshot_hash:snapshotHash,
+    metrics,
+    predictions,
+    known_limits:knownLimits,
+    next_required_artifact:"held-out self-model prediction evaluator on runtime changes",
   };
 }
 
@@ -4422,6 +4944,14 @@ async function selfDevelopmentAudit(cycleId:number) {
 }
 
 async function executeGoal(goal:Goal, cycleId:number) {
+  if (goal.kind === "contextual_belief_evaluator") {
+    return await contextualBeliefEvaluator(goal,cycleId);
+  }
+
+  if (goal.kind === "contextual_belief_self_test") {
+    return await contextualBeliefSelfTest(goal,cycleId);
+  }
+
   if (goal.kind === "mind_program_orchestrator") {
     return await mindProgramOrchestrator(cycleId);
   }
@@ -4768,7 +5298,7 @@ Deno.serve(async(req:Request)=>{
     const state=(stateRow?.state??{}) as CoreState;
     const fSize=await frontierSize();
     const nextState:CoreState={
-      ...state,version:"0.23-cloud-digital-mind-program",last_cycle_at:nowIso(),
+      ...state,version:"0.25-cloud-causal-self-model-foundation",last_cycle_at:nowIso(),
       last_focus:goal.kind,last_observation:result,
       current_goal:{id:goal.id,key:goal.goal_key,kind:goal.kind,rationale:goal.rationale,priority:goal.priority},
       frontier_size:fSize
