@@ -1,114 +1,128 @@
 # Digital Mind Development V1
 
-## Primary objective
+## Objective
 
-Develop a digital mind by building mechanisms that research, learn, write
-algorithms/rules, test them, apply them, revise beliefs, choose goals, plan,
-predict, transfer, and improve — rather than hard-coding final answers.
+Develop a measurable digital mind that researches deficits, learns and writes
+algorithms/rules, tests them out-of-sample, applies them, chooses goals, plans,
+predicts outcomes, calibrates uncertainty, invents mechanisms, transfers them,
+and preserves a causal self-history.
 
-A capability is real only after independent or held-out validation.
+No capability is real until independently validated.
 
-## Sequence
+## Program status
 
-1. **DM01 — Contextual Belief Arbitration → M0013**
-   - COMPLETED
-   - Held-out: 4/4 PASS
-   - Independent admission: 2/2 PASS
+1. **DM01 Contextual Belief Arbitration -> M0013** — COMPLETED
+2. **DM02 Causal Self-Model -> M0014** — COMPLETED
+3. **DM03 Self-Learning & Algorithm Genesis -> M0015** — COMPLETED
+4. **DM04 Goal & Interest Architecture -> M0016** — COMPLETED
+5. **DM05 Planning & Replanning -> M0017** — COMPLETED
+6. **DM06 Counterfactual World Model -> M0018** — COMPLETED
+7. **DM07 Metacognition & Calibration -> M0019** — COMPLETED
+8. **DM08 Generic Mechanism Genesis -> M0020** — ACTIVE
+9. **DM09 Cross-Domain Cognitive Transfer -> M0021** — PENDING
+10. **DM10 Persistent Self-History -> M0022** — PENDING
+11. **DM11 Autonomous Cognitive Evolution -> M0023** — PENDING
 
-2. **DM02 — Causal Self-Model → M0014**
-   - COMPLETED
-   - Pre-registered self-predictions: 4/4 PASS
-   - Accuracy: 1.00
-   - Explicitly identifies unavailable hidden-model introspection
+## Learned artifacts
 
-3. **DM03 — Self-Learning and Algorithm Genesis → M0015**
-   - COMPLETED
-   - Research first, then synthesize
-   - Writes explicit versioned algorithm/rule artifacts
-   - Held-out testing required
-   - Fresh-task application required
-   - Reject/redesign path supported
+### LRA-1 — relation generalization
+Artifact hash:
+`8f2b695f118e9d4f2cea1e2981b10fca4abf1c0c736629cf715f2bfed87322a8`
 
-4. **DM04 — Goal and Interest Architecture → M0016**
-   - ACTIVE
-   - Competing goals, utility, cost, risk, deadlines and budgets
+### GSA-1 — goal selection
+Artifact hash:
+`bcd618eb065e1b475fceb802095ea5f452e12cbbc080981147bd7701cdea7a75`
 
-5. **DM05 — Multi-Step Planning and Replanning → M0017**
+Development:
+- 13 trade-off cases
+- train accuracy 1.00
+- held-out accuracy 1.00
+- hard cost/risk budgets enforced
 
-6. **DM06 — Counterfactual World Model → M0018**
+Independent M0016 admission:
+- 3 / 3 PASS
+- program dependency
+- hard budget exclusion
+- no-feasible-goal behavior
 
-7. **DM07 — Metacognition and Calibration → M0019**
+### PRA-1 — planner/replanner
+Artifact hash:
+`1ad0066899251df7a6f9becd2b16cbd1c6124937f294d74494cd4f69ce19e45f`
 
-8. **DM08 — Generic Mechanism Genesis → M0020**
-
-9. **DM09 — Cross-Domain Cognitive Transfer → M0021**
-
-10. **DM10 — Persistent Self-History → M0022**
-
-11. **DM11 — Autonomous Cognitive Evolution → M0023**
-
-## M0015 Self-Learning admission evidence
-
-Research sources:
-- Crossref
-- OpenAlex
-
-Research query:
-`rule induction program synthesis decision rules`
-
-The kernel then froze historical real relation-generalization examples and
-synthesized an executable bounded artifact in **LRA-1**.
-
-Learned artifact:
-
+Configuration:
 ```
-LANGUAGE LRA-1
-TYPE decision_rule
-IF consistency >= 0.974114774115
-THEN accept
-ELSE reject
+SEARCH astar_goal_count
+HEURISTIC_WEIGHT 0.5
+COST_WEIGHT 0.5
+MAX_EXPANSIONS 100
+LOOP_DETECTION state_hash
+ON_FAILURE block_failed_action_and_replan
+REPLAN_FROM observed_current_state
 ```
 
-Artifact:
-- key: `ALG:RELATION_GENERALIZATION_RULE`
-- version: 1
-- SHA-256:
-  `8f2b695f118e9d4f2cea1e2981b10fca4abf1c0c736629cf715f2bfed87322a8`
+Development:
+- train 4 / 4
+- held-out 6 / 6
+- replanning rate 1.00
+- loop detection PASS
+- unsolvable case returns no_plan
 
-Results:
-- training accuracy: 1.00
-- held-out accuracy: 1.00
-- held-out labels hidden until after synthesis: true
-- fresh application: PASS
-- arbitrary code execution: false
-- artifact interpreter: LRA-1
+Independent M0017 admission:
+- 3 / 3 PASS
 
-The fresh application used the independent HTTP Field Registry relation
-`Field Name -> Status`, which was not part of the self-learning training or
-held-out sets.
+### CFM-1 — counterfactual runtime model
+Artifact hash:
+`f7917daba9f9e54a906841c97bad6aa75afbd4d04356d27366f7c92d31a6faf4`
 
-## Operating rules
+Development:
+- six predictions frozen before six real runtime actions
+- accuracy 1.00
+- multiclass Brier 0.00
+- prediction errors 0
+- fresh application PASS
+
+Independent M0018 admission:
+- freeze SHA:
+  `8c4b5a488db7784668983bb0e19d3a4644596cc4fbe0d36cc350c1e398dd1d79`
+- 6 / 6 PASS
+- Brier 0.00
+
+### MCA-1 — metacognitive calibrator
+Artifact hash:
+`4da60376b0bd08d3335d33399bfa56076d7b5e03f46c1fa6c98f9ce54231445c`
+
+Development:
+- train accuracy 1.00
+- held-out accuracy 1.00
+- ECE 0.00
+- Brier 0.00
+- correctly used UNRESOLVED 3 times
+- correctly requested missing evidence
+
+Independent M0019 admission:
+- 3 / 3 PASS
+- browser capability -> ANSWER
+- under-scoped Node-API conflict -> UNRESOLVED + request scope evidence
+- future PyPI state -> UNRESOLVED + request future observation
+
+## Current step — DM08
+
+Target:
+`M0020:mechanism-genesis`
+
+Required admission evidence:
+- at least three new mechanisms produced through the generic genesis process
+- every mechanism has an independent evaluator
+- at least one full REJECT -> REDESIGN -> ADMIT chain
+- no candidate/evaluator hidden-answer leakage
+
+## Rules
 
 - Research before synthesis.
-- Never hard-code the held-out answer into an artifact.
-- Learned algorithms are versioned and hashed.
-- No arbitrary `eval`, shell, or network access inside learned artifacts.
-- REJECT/REDESIGN is valid and preserved.
-- Production use requires artifact admission.
-- Internet/browser actions remain bounded by admitted mechanisms.
-- NOT_REJECT is not proof of truth.
-- Every autonomous step must exist in the runtime cycle journal.
-
-## Live status
-
-Runtime:
-`v0.28-cloud-self-learning-engine`
-
-Current step:
-`DM04:GOAL_SYSTEM`
-
-Current target:
-`M0016:goal-selection`
-
-Admitted mechanisms:
-15
+- Freeze predictions/rules before held-out observations.
+- REJECT and UNRESOLVED are valid.
+- Preserve prior model/artifact versions.
+- No arbitrary eval/shell/network inside learned DSL artifacts.
+- Production requires independent admission.
+- Confidence must be calibrated against observed outcomes.
+- No hidden-weight/private-reasoning claims.
